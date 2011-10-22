@@ -35,26 +35,24 @@
 class FireGento_GermanSetup_Block_Bundle_CatalogProductPrice extends Mage_Bundle_Block_Catalog_Product_Price
 {
     /**
-     * Add content of static block below price html if defined in config
+     * Add content of template block below price html if defined in config
      *
      * @return string
      */
     public function _toHtml()
     {
-        $html = parent::_toHtml();
+        $html = trim(parent::_toHtml());
 
-        $blockIdentifier = Mage::getStoreConfig('catalog/price/block_below_price');
-
-        if ($blockIdentifier) {
-            $blockModel = Mage::getModel('cms/block')
-                ->setStoreId(Mage::app()->getStore()->getId())
-                ->load($blockIdentifier);
-
-            if ($blockModel->getId() && $blockModel->getIsActive()) {
-                $html .= $this->getLayout()->createBlock('cms/block')->setBlockId($blockModel->getId())->toHtml();
-            }
-
+        if (empty($html)) {
+            return '';
         }
+
+        if (!Mage::getStoreConfigFlag('catalog/price/display_block_below_price')) {
+            return $html;
+        }
+
+        $html .= $this->getLayout()->createBlock('core/template')->setTemplate('germansetup/price_info.phtml')->toHtml();
+
         return $html;
     }
 }

@@ -21,7 +21,7 @@
  * @since     0.1.0
  */
 /**
- * CMS Source model for configuration dropdown of CMS pages
+ * CMS Source model for configuration dropdown of CMS static blocks
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup

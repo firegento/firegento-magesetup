@@ -1,0 +1,57 @@
+<!--@vars
+{"store url=\"\"":"Store Url",
+"skin url=\"images/logo_email.gif\" _area='frontend'":"Email Logo Image",
+"htmlescape var=$order.getCustomerName()":"Customer Name",
+"var order.increment_id":"Order Id",
+"var order.getStatusLabel()":"Order Status",
+"store url=\"customer/account/\"":"Customer Account Url",
+"var comment":"Order Comment",
+"var store.getFrontendName()":"Store Name"}
+@-->
+
+<!--@styles
+    body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+    a { color:#1E7EC8; }
+@-->
+
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+	<table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+	<tr>
+	    <td align="center" valign="top">
+	        <!-- [ header starts here] -->
+	        <table cellspacing="0" cellpadding="0" border="0" width="650">
+	        <tr>
+	            <td valign="top"><a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area=''frontend''}}" alt="{{block type="imprint/field" value="shop_name"}}"  style="margin-bottom:10px;" border="0"/></a></td>
+	        </tr>
+	        </table>
+	
+	        <!-- [ middle starts here] -->
+	        <table cellspacing="0" cellpadding="0" border="0" width="650">
+	        <tr>
+	            <td valign="top">
+	                <p><strong>Hallo {{htmlescape var=$order.getCustomerName()}}</strong>,</p>
+	                <p>Ihr Lieferschein Nr. {{var order.increment_id}} wurde atkualisiert. Neuer Status: <strong>{{var order.getStatusLabel()}}</strong>.</p>
+	                <p>Sie können den aktuellen Status Ihrer Bestellung jederzeit <a href="{{store url="customer/account/"}}" style="color:#1E7EC8;">in Ihrem Kundenbereich</a> einsehen.</p>
+	                <p>{{var comment}}</p>
+	                <p>
+	                    Sollten Sie Fragen haben,
+	                    senden Sie uns eine E-Mail an <a href="mailto:{{block type="imprint/field" value="email"}}" style="color:#1E7EC8;">{{block type="imprint/field" value="email"}}</a>.
+	                </p>
+	            </td>
+	        </tr>
+            <tr>
+                <td>
+                    {{block type="imprint/content" template="symmetrics/imprint/email/footer.phtml"}}
+                </td>
+            </tr>
+            <tr><td style="border-bottom:2px solid #eee;">&nbsp;</td></tr>
+            <tr>
+                <td style="font:9px/1em Verdana, Arial, Helvetica, sans-serif;">
+                    {{block type="cms/block" block_id="mrg_business_terms"}}
+                </td>
+            </tr>
+	        </table>
+	    </td>
+	</tr>
+	</table>
+</div>

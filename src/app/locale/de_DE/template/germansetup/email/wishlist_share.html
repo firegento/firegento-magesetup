@@ -1,0 +1,47 @@
+<!--@vars
+{"store url=\"\"":"Store Url",
+"skin url=\"images/logo_email.gif\" _area='frontend'":"Email Logo Image",
+"var message":"Wishlist Message",
+"var items":"Wishlist Items"}
+@-->
+
+<!--@styles
+    body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+    <table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+        <tr>
+            <td align="center" valign="top">
+            <!-- [ header starts here] -->
+            <table cellspacing="0" cellpadding="0" border="0" width="650">
+            <tr>
+                <td valign="top">
+                    <p><a href="{{store url=""}}" style="color:#1E7EC8;"><img src="{{skin url="images/logo_email.gif" _area=''frontend''}}" alt="{{block type="imprint/field" value="shop_name"}}" border="0"/></a></p>
+                </td>
+            </tr>
+            </table>
+
+            <!-- [ middle starts here] -->
+            <table cellspacing="0" cellpadding="0" border="0" width="650">
+            <tr>
+                <td valign="top">
+                    <p>Hallo,<br/> hier gibt es meinen Wunschzettel!</p>
+                    <p>{{var message}}</p>
+                    {{var items}}
+                    
+                    <br/>
+                    
+                    {{depend salable}}
+                    <p><strong><a href="{{var addAllLink}}" style="color:#DC6809;">Alle Artikel in Warenkorb legen</a></strong> |
+                    {{/depend}}
+                    <strong><a href="{{var viewOnSiteLink}}" style="color:#1E7EC8;">Alle Artikel im Shop ansehen!</a></strong></p>
+                    <p>Danke,<br/><strong>{{htmlescape var=$customer.name}}</strong></p>
+                </td>
+            </tr>
+            </table>
+            </td>
+        </tr>
+    </table>
+</div>
+{{block type="imprint/content" template="symmetrics/imprint/email/footer.phtml"}}

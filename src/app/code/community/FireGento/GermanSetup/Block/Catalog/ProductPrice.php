@@ -35,7 +35,7 @@
 class FireGento_GermanSetup_Block_Catalog_ProductPrice extends Mage_Catalog_Block_Product_Price
 {
     /**
-     * Add content of static block below price html if defined in config
+     * Add content of template block below price html if defined in config
      *
      * @return string
      */
@@ -47,18 +47,12 @@ class FireGento_GermanSetup_Block_Catalog_ProductPrice extends Mage_Catalog_Bloc
             return '';
         }
 
-        $blockIdentifier = Mage::getStoreConfig('catalog/price/block_below_price');
-
-        if ($blockIdentifier) {
-            $blockModel = Mage::getModel('cms/block')
-                ->setStoreId(Mage::app()->getStore()->getId())
-                ->load($blockIdentifier);
-
-            if ($blockModel->getId() && $blockModel->getIsActive()) {
-                $html .= $this->getLayout()->createBlock('cms/block')->setBlockId($blockModel->getId())->toHtml();
-            }
-
+        if (!Mage::getStoreConfigFlag('catalog/price/display_block_below_price')) {
+            return $html;
         }
+
+        $html .= $this->getLayout()->createBlock('core/template')->setTemplate('germansetup/price_info.phtml')->toHtml();
+
         return $html;
     }
 }

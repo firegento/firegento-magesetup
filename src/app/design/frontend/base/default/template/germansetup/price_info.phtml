@@ -1,0 +1,6 @@
+<?php $shippingCostUrl = Mage::helper('germansetup')->getShippingCostUrl() ?>
+<?php if (!empty($shippingCostUrl)): ?>
+    <?php echo $this->__('Incl. Tax, plus <a href="%s">Shipping Cost</a>', $shippingCostUrl) ?>
+<?php else: ?>
+    <?php echo $this->__('Incl. Tax') ?>
+<?php endif ?>
