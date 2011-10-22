@@ -9,3 +9,6 @@ build.properties
 .settings/**/*
 .externalToolBuilders
 .externalToolBuilders/**/*
+.vagrant
+.vagrant/**/*
+Vagrantfile
