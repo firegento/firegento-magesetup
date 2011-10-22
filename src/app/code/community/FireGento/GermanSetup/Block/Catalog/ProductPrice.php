@@ -35,7 +35,7 @@
 class FireGento_GermanSetup_Block_Catalog_ProductPrice extends Mage_Catalog_Block_Product_Price
 {
     /**
-     * Add content of static block below price html if defined in config
+     * Add content of template block below price html if defined in config
      *
      * @return string
      */
