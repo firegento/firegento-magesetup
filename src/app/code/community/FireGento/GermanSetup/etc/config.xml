@@ -7,22 +7,22 @@
     </modules>
     <global>
         <models>
-            <tweaksgerman>
+            <germansetup>
                 <class>FireGento_GermanSetup_Model</class>
-            </tweaksgerman>
+            </germansetup>
         </models>
         <blocks>
-            <tweaksgerman>
+            <germansetup>
                 <class>FireGento_GermanSetup_Block</class>
-            </tweaksgerman>
+            </germansetup>
         </blocks>
         <helpers>
-            <tweaksgerman>
+            <germansetup>
                 <class>FireGento_GermanSetup_Helper</class>
-            </tweaksgerman>
+            </germansetup>
         </helpers>
         <resources>
-            <tweaksgerman_setup>
+            <germansetup_setup>
                 <setup>
                     <module>FireGento_GermanSetup</module>
                     <class>Mage_Eav_Model_Entity_Setup</class>
@@ -30,89 +30,43 @@
                 <connection>
                     <use>core_setup</use>
                 </connection>
-            </tweaksgerman_setup>
-            <tweaksgerman_write>
-                <connection>
-                    <use>core_write</use>
-                </connection>
-            </tweaksgerman_write>
-            <tweaksgerman_read>
-                <connection>
-                    <use>core_read</use>
-                </connection>
-            </tweaksgerman_read>
+            </germansetup_setup>
         </resources>
-        <sales>
-            <quote>
-                <totals>
-                    <tax>
-                        <renderer>FireGento_GermanSetup_Block_Tax_Render</renderer>
-                    </tax>
-                </totals>
-            </quote>
-        </sales>
     </global>
     <frontend>
         <layout>
             <updates>
-                <tweaksgerman>
-                    <file>tweaksgerman.xml</file>
-                </tweaksgerman>
+                <germansetup>
+                    <file>germansetup.xml</file>
+                </germansetup>
             </updates>
         </layout>
         <translate>
             <modules>
                 <FireGento_GermanSetup>
                     <files>
-                        <tweaksgerman>FireGento_GermanSetup.csv</tweaksgerman>
+                        <germansetup>FireGento_GermanSetup.csv</germansetup>
                     </files>
                 </FireGento_GermanSetup>
             </modules>
         </translate>
-        <events>
-            <sales_order_place_after>
-                <observers>
-                    <tweaksgerman>
-                        <type>singleton</type>
-                        <class>FireGento_GermanSetup_Model_Observer</class>
-                        <method>checkoutSubmit</method>
-                    </tweaksgerman>
-                </observers>
-            </sales_order_place_after>
-        </events>
     </frontend>
     <adminhtml>
         <layout>
             <updates>
-                <tweaksgerman>
-                    <file>tweaksgerman.xml</file>
-                </tweaksgerman>
+                <germansetup>
+                    <file>germansetup.xml</file>
+                </germansetup>
             </updates>
         </layout>
         <translate>
             <modules>
                 <FireGento_GermanSetup>
                     <files>
-                        <tweaksgerman>FireGento_GermanSetup.csv</tweaksgerman>
+                        <germansetup>FireGento_GermanSetup.csv</germansetup>
                     </files>
                 </FireGento_GermanSetup>
             </modules>
         </translate>
     </adminhtml>
-    <default>
-        <customer>
-            <create_account>
-                <enable_emailnotice>0</enable_emailnotice>
-                <emailnotice><![CDATA[Wir senden Ihnen regelmäßig sorgfältig ausgesuchte Angebote zu ähnlichen Produkten aus unserem Sortiment per E-Mail zu. Ihre E-Mail-Adresse wird nicht an andere Unternehmen weitergegeben. Sie können der Nutzung Ihrer E-Mail-Adresse für Werbezwecke jederzeit durch formlose E-Mail widersprechen, ohne dass hierfür andere als die Übermittlungskosten nach den Basistarifen entstehen.]]></emailnotice>
-            </create_account>
-        </customer>
-        <catalog>
-            <frontend>
-                <enable_weight_info>0</enable_weight_info>
-                <enable_delivery_info>1</enable_delivery_info>
-                <display_shippingcosts>excl</display_shippingcosts>
-                <display_taxinfo>1</display_taxinfo>
-            </frontend>
-        </catalog>
-    </default>
 </config>
