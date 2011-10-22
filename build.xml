@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FireGento_DynamicCategory" default="deploy-dev.local" basedir=".">
+    <property file="build.properties"/>
+    <property file="build.default.properties"/>
+    <property name="srcdir" value="${basedir}/src"/>
+    <property name="targetdir" value="${dev.local.deployDir}"/>
+    <property name="builddir" value="${basedir}/build"/>    
+    
+    <target name="deploy-dev.local">
+        <copy todir="${dev.local.deployDir}" overwrite="true" verbose="true">
+            <fileset dir="${srcdir}">
+                <exclude name="doc/**"/>
+                <include name="**/*"/>
+                <modified/>
+                <exclude name="**/.svn"/>
+                <exclude name=".buildpath"/>
+                <exclude name=".project"/>
+                <exclude name=".settings"/>
+                <exclude name="cache.properties"/>
+                <exclude name="build.default.properties"/>
+                <exclude name="build.properties"/>
+                <exclude name="build.xml"/>
+                <exclude name="TODO"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="prepare">
+        <replaceregexp file="${basedir}/package.xml"
+            match="(&lt;version&gt;.*?&lt;(release)&gt;).*?(&lt;/\2&gt;.*?&lt;(api)&gt;).*?(&lt;/\4&gt;.*?&lt;/version&gt;)"
+            replace="\1${package.version}\3${package.version}\5" flags="gs" />
+    </target>
+
+    <target name="package" depends="prepare" description="Creates a PEAR package">
+        <copy file="${basedir}/package.xml" tofile="${srcdir}/package.xml"/>
+        <exec dir='${srcdir}/' executable="${pear}">
+            <arg value="mpx"/>
+        </exec>
+        <copy file="${srcdir}/package.xml" tofile="${basedir}/package.xml"/>
+        <exec dir="${srcdir}" executable="${pear}">
+            <arg value="mage-package"/>
+        </exec>
+        <delete file="${srcdir}/package.xml"/>
+        <move file="${srcdir}/${ant.project.name}-${package.version}.tgz" todir="${builddir}"/>
+    </target>
+
+    <target name="clean">
+        <delete failonerror="false">
+            <fileset dir="${dev.local.deployDir}/app/code/community/Flagbit/Mip" />
+        </delete>
+        <delete file="${basedir}/cache.properties" failonerror="false" />
+    </target>
+</project>
