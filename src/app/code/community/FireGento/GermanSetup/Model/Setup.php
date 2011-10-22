@@ -100,11 +100,11 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Eav_Model_Entity_Setup
      * Collect data and create CMS page
      *
      * @param array  $pageData cms page data
-     * @param string $isActive if '1' cms page will be set to active
+     * @param boolean $override override cms page if it exists
      *
      * @return void
      */
-    public function createCmsPage($pageData, $isActive='1')
+    public function createCmsPage($pageData, $override=true)
     {
         if (!is_array($pageData)) {
             return null;
@@ -116,7 +116,7 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Eav_Model_Entity_Setup
             'content' => $this->getTemplateContent($pageData['text']),
             'root_template' => $pageData['root_template'],
             'stores' => array('0'),
-            'is_active' => $isActive,
+            'is_active' => 1,
         );
 
         $model = Mage::getModel('cms/page');
@@ -127,9 +127,12 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Eav_Model_Entity_Setup
             $model->setData($pageData)->save();
         } else {
             // update
-            $pageData['page_id'] = $page->getId();
-            $pageData['stores'] = $page->getStoreId();
-            $model->setData($pageData)->setId($pageData['page_id'])->save();
+            if ($override) {
+
+                $pageData['page_id'] = $page->getId();
+                $pageData['stores'] = $page->getStoreId();
+                $model->setData($pageData)->setId($pageData['page_id'])->save();
+            }
         }
     }
 
@@ -222,10 +225,11 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Eav_Model_Entity_Setup
      * Create transactional email template
      *
      * @param array $emailData template data
+     * @param boolean $override override email template if set
      *
      * @return voids
      */
-    public function createEmail($emailData)
+    public function createEmail($emailData, $override=true)
     {
         $model = Mage::getModel('core/email_template');
         $template = $model->loadByCode($emailData['template_code']);
@@ -239,12 +243,14 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Eav_Model_Entity_Setup
                 ->save();
         } else {
             //update
-            $template->setTemplateSubject($emailData['template_subject'])
-                ->setTemplateCode($emailData['template_code'])
-                ->setTemplateText($this->getTemplateContent($emailData['text']))
-                ->setTemplateType($emailData['template_type'])
-                ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate())
-                ->save();
+            if ($override) {
+                $template->setTemplateSubject($emailData['template_subject'])
+                    ->setTemplateCode($emailData['template_code'])
+                    ->setTemplateText($this->getTemplateContent($emailData['text']))
+                    ->setTemplateType($emailData['template_type'])
+                    ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate())
+                    ->save();
+            }
         }
 
         $this->setConfigData($emailData['config_data_path'], $template->getId());
