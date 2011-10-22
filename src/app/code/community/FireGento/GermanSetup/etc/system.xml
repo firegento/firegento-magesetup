@@ -3,7 +3,7 @@
     <sections>
         <general>
             <groups>
-                <imprint translate="label" module="imprint">
+                <imprint translate="label" module="germansetup">
                     <label>Imprint</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>0</sort_order>
