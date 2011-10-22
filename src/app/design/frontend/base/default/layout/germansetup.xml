@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+<!--
+Adding custom product price block   
+-->
+
+    <catalog_category_default>
+        <reference name="product_list">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_view>
+        <reference name="product_list">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </catalog_category_view>
+
+    <catalog_category_layered>
+        <reference name="product_list">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </catalog_category_layered>
+
+    <catalog_product_compare_index>
+        <reference name="catalog.compare.list">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </catalog_product_compare_index>
+
+    <catalogsearch_result_index>
+        <reference name="search_result_list">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </catalogsearch_result_index>
+
+    <catalogsearch_advanced_result>
+        <reference name="search_result_list">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </catalogsearch_advanced_result>
+
+    <tag_product_list>
+        <reference name="search_result_list">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </tag_product_list>
+
+    <tag_customer_view>
+        <reference name="customer_view">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </tag_customer_view>
+
+    <default>
+        <reference name="wishlist_sidebar">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+        <reference name="catalog_product_price_template">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </default>
+
+    <catalog_product_view>
+        <reference name="catalog.product.related">
+            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_productPrice</block><template>catalog/product/price.phtml</template></action>
+        </reference>
+    </catalog_product_view>
+
+</layout>
