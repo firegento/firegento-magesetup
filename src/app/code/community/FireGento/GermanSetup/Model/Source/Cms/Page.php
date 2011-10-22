@@ -21,7 +21,7 @@
  * @since     0.1.0
  */
 /**
- * CMS Source model for configuration dropdown of CMS blocks
+ * CMS Source model for configuration dropdown of CMS pages
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -31,7 +31,7 @@
  * @version   $Id:$
  * @since     0.1.0
  */
-class FireGento_GermanSetup_Model_System_Config_Source_Cms_Page
+class FireGento_GermanSetup_Model_Source_Cms_Page
     extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
     /**
@@ -47,11 +47,24 @@ class FireGento_GermanSetup_Model_System_Config_Source_Cms_Page
     public function toOptionArray()
     {
         if (!$this->_options) {
-            $this->_options = Mage::getModel('cms/page')->getCollection()
+            $blocks = Mage::getModel('cms/page')->getCollection()
                 ->addFieldToFilter('is_active', 1)
-                ->setOrder('title', 'ASC')
-                ->toOptionArray();
+                ->setOrder('identifier', 'ASC');
+
+            foreach($blocks as $block) {
+                $options[$block->getIdentifier()] = $block->getIdentifier();
+            }
+
+            foreach($options as $identifier) {
+                $this->_options[] = array(
+                    'value' => $identifier,
+                    'label' => $identifier,
+                );
+            }
         }
+
+
+        array_unshift($this->_options, array('value' => '', 'label' => Mage::helper('germansetup')->__('No Page')));
 
         return $this->_options;
     }

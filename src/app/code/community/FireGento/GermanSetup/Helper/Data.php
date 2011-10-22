@@ -33,5 +33,22 @@
  */
 class FireGento_GermanSetup_Helper_Data extends Mage_Core_Helper_Abstract
 {
-	
+    /**
+     * Generate URL to configured shipping cost page, or '' if none.
+     *
+     * @return string
+     */
+	public function getShippingCostUrl()
+    {
+        /** @var $cmsPage Mage_Cms_Model_Page */
+        $cmsPage = Mage::getModel('cms/page')
+                ->setStoreId(Mage::app()->getStore()->getId())
+                ->load(Mage::getStoreConfig('catalog/price/cms_page_shipping'));
+
+        if (!$cmsPage->getId() || !$cmsPage->getIsActive()) {
+            return '';
+        }
+        
+        return Mage::helper('cms/page')->getPageUrl($cmsPage->getId());
+    }
 }

@@ -1,0 +1,55 @@
+<!--@vars
+{"store url=\"\"":"Store Url",
+"skin url=\"images/logo_email.gif\" _area='frontend'":"Email Logo Image",
+"htmlescape var=$customer.name":"Customer Name",
+"store url=\"customer/account/\"":"Customer Account Url"}
+@-->
+
+<!--@styles
+	body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+	a { color:#1E7EC8; }
+@-->
+
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+	<table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+		<tr>
+			<td align="center" valign="top">
+				<!-- [ header starts here] -->
+				<table cellspacing="0" cellpadding="0" border="0" width="650">
+					<tr>
+						<td valign="top"><a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area=''frontend''}}" alt="{{block type="imprint/field" value="shop_name"}}"  style="margin-bottom:10px;" border="0"/></a></td>
+					</tr>
+				</table>
+				<!-- [ middle starts here] -->
+				<table cellspacing="0" cellpadding="0" border="0" width="650">
+					<tr>
+						<td valign="top">
+							<p><strong>Hallo {{htmlescape var=$customer.name}}</strong>,<br/>herzlich willkommen in unserem Shop. Um sich bei Ihrem nächsten Besuch in unserem Shop einzuloggen, klicken Sie einfach auf <a href="{{store url="customer/account/"}}" style="color:#1E7EC8;">Login</a> or <a href="{{store url="customer/account/"}}" style="color:#1E7EC8;">Mein Kundenkonto</a> im oberen Bereich jeder Seite, und geben Sie Ihre E-Mail-Adresse und Passwort ein.</p>
+							<p>Nach erfolgreichem Login auf unsere Seite haben Sie die folgenden Möglichkeiten:</p>
+							<ul>
+							    <li>Schnellerer Bezahlvorgang beim nächsten Einkauf</li>
+							    <li>Alle laufenden Bestellungen im Auge behalten</li>
+							    <li>Verlauf der vergangenen Bestellungen</li>
+							    <li>Verwalten der Kundenkonto-Einstellungen</li>
+							    <li>Ihr Passwort ändern</li>
+							    <li>Verschiedene Adressen für den Versand an Familienmitglieder und Freunde sowie Rechnungsadressen speichern</li>
+							</ul>
+							<p>Sollten Sie Fragen zu Ihrem Kundenkonto oder andere Anfragen haben, senden Sie uns eine E-Mail an <a href="mailto:{{block type="imprint/field" value="email"}}" style="color:#1E7EC8;">{{block type="imprint/field" value="email"}}</a></p>
+						</td>
+					</tr>
+					<tr>
+						<td>{{block type="imprint/content" template="symmetrics/imprint/email/footer.phtml"}}</td>
+					</tr>
+                    <tr>
+                       <td style="border-bottom:2px solid #eee;">
+                           &nbsp;
+                       </td>
+                    </tr>
+					<tr>
+						<td style="font:9px/1em Verdana, Arial, Helvetica, sans-serif;">{{block type="cms/block" block_id="mrg_business_terms"}}</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>

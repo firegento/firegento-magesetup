@@ -1,0 +1,27 @@
+<h1>MRG Beispiel Seite</h1>
+
+<h2>Ein Beispiel für Einbindung einzelner Felder / Strings aus dem Impressum-Modul:</h2>
+
+<p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Bestellungen, die Privatpersonen über den Online-Shop der {{block type="imprint/field" value="company_first"}}, {{block type="imprint/field" value="zip"}} {{block type="imprint/field" value="city"}}, Geschäftsführer: {{block type="imprint/field" value="ceo"}}</p>
+<p>(nachfolgend "{{block type="imprint/field" value="shop_name"}}") abgeben.</p>
+<p><strong>Service-Hotline: Mo bis So 8 - 22 Uhr unter Telefon {{block type="imprint/field" value="telephone"}} E-Mail {{block type="imprint/field" value="email"}}</strong></p>
+
+
+<hr /><h2>Ein Beispiel für Einbindung von vorformatierten Templates mit Impressum-Daten:</h2>
+
+<pre>
+{{block type="imprint/content" template="symmetrics/imprint/email/footer.phtml"}}
+</pre>
+
+<hr /><h2>Ein Beispiel für Einbindung von anderen CMS Blocks innerhalb der Seite:</h2>
+
+<h4><a name="p8">§ 8 Widerrufsrecht</a></h4>
+<p>§ 8.1 Verbraucher haben ein zweiwöchiges Widerrufsrecht.</p>
+<pre>
+{{block type="cms/block" block_id="mrg_revocation"}}
+</pre>
+
+<hr /><h2>Ein Beispiel für Einbindung von vordefinierten Variablen für z.B. E-Mail Footer:</h2>
+<pre>
+{{block type="cms/block" block_id="mrg_business_terms"}}
+</pre>

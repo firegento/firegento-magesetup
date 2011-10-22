@@ -1,0 +1,109 @@
+<!--@vars
+{"store url=\"\"":"Store Url",
+"skin url=\"images/logo_email.gif\" _area='frontend'":"Email Logo Image",
+"htmlescape var=$billing.getName()":"Guest Customer Name (Billing)",
+"var store.getFrontendName()":"Store Name",
+"var creditmemo.increment_id":"Credit Memo Id",
+"var order.increment_id":"Order Id",
+"var order.billing_address.format('html')":"Billing Address",
+"var payment_html":"Payment Details",
+"var order.shipping_address.format('html')":"Shipping Address",
+"var order.shipping_description":"Shipping Description",
+"layout handle=\"sales_email_order_creditmemo_items\" creditmemo=$creditmemo order=$order":"Credit Memo Items Grid",
+"var comment":"Credit Memo Comment"}
+@-->
+
+<!--@styles
+    body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+    a { color:#1E7EC8; }
+@-->
+
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+	<table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+	<tr>
+	    <td align="center" valign="top">
+	        <!-- [ header starts here] -->
+	        <table cellspacing="0" cellpadding="0" border="0" width="650">
+	            <tr>
+	                <td valign="top"><a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area=''frontend''}}" alt="{{block type="imprint/field" value="shop_name"}}"  style="margin-bottom:10px;" border="0"/></a></td>
+	            </tr>
+	        </table>
+	        <!-- [ middle starts here] -->
+	        <table cellspacing="0" cellpadding="0" border="0" width="650">
+	            <tr>
+	                <td valign="top">
+	                    <p>
+	                        <strong>Hallo {{htmlescape var=$billing.getName()}}</strong>,<br/>
+	                        Vielen Dank für Ihre Bestellung bei {{block type="imprint/field" value="shop_name"}}.
+	                        Sollten Sie Fragen haben, senden Sie uns eine E-Mail an <a href="mailto:{{block type="imprint/field" value="email"}}" style="color:#1E7EC8;">{{block type="imprint/field" value="email"}}</a>.
+	                        Vielen Dank!
+	                    </p>
+	                    <h3 style="border-bottom:2px solid #eee; font-size:1.05em; padding-bottom:1px; ">
+	                        Ihre Gutschrift Nr. {{var creditmemo.increment_id}} für Ihre Bestellung Nr. {{var order.increment_id}}
+	                    </h3>
+	                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <thead>
+	                        <tr>
+	                            <th align="left" width="48.5%" bgcolor="#d9e5ee" style="padding:5px 9px 6px 9px; border:1px solid #bebcb7; border-bottom:none; line-height:1em;">Rechnungsadresse:</th>
+	                            <th width="3%"></th>
+	                            <th align="left" width="48.5%" bgcolor="#d9e5ee" style="padding:5px 9px 6px 9px; border:1px solid #bebcb7; border-bottom:none; line-height:1em;">Zahlungsmethode:</th>
+	                        </tr>
+	                        </thead>
+	                        <tbody>
+	                        <tr>
+	                            <td valign="top" style="padding:7px 9px 9px 9px; border:1px solid #bebcb7; border-top:0; background:#f8f7f5;">
+	                                {{var order.billing_address.format('html')}}
+	                            </td>
+	                            <td>&nbsp;</td>
+	                            <td valign="top" style="padding:7px 9px 9px 9px; border:1px solid #bebcb7; border-top:0; background:#f8f7f5;">
+	                                {{var payment_html}}
+	                            </td>
+	                        </tr>
+	                        </tbody>
+	                    </table>
+	                    <br/>
+	                    {{depend order.getIsNotVirtual()}}
+	                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <thead>
+	                        <tr>
+	                            <th align="left" width="48.5%" bgcolor="#d9e5ee" style="padding:5px 9px 6px 9px; border:1px solid #bebcb7; border-bottom:none; line-height:1em;">Versandadresse:</th>
+	                            <th width="3%"></th>
+	                            <th align="left" width="48.5%" bgcolor="#d9e5ee" style="padding:5px 9px 6px 9px; border:1px solid #bebcb7; border-bottom:none; line-height:1em;">Versandart:</th>
+	                        </tr>
+	                        </thead>
+	                        <tbody>
+	                        <tr>
+	                            <td valign="top" style="padding:7px 9px 9px 9px; border:1px solid #bebcb7; border-top:0; background:#f8f7f5;">
+	                                {{var order.shipping_address.format('html')}}
+	                            </td>
+	                            <td>&nbsp;</td>
+	                            <td valign="top" style="padding:7px 9px 9px 9px; border:1px solid #bebcb7; border-top:0; background:#f8f7f5;">
+	                                {{var order.shipping_description}}
+	                            </td>
+	                        </tr>
+	                        </tbody>
+	                    </table>
+	                    <br/>
+	                    {{/depend}}
+	
+	                    {{layout handle="sales_email_order_creditmemo_items" creditmemo=$creditmemo order=$order}}
+	
+	                    <p>{{var comment}}</p>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td>
+                        {{block type="imprint/content" template="symmetrics/imprint/email/footer.phtml"}}
+	                 </td>
+                </tr>
+                <tr><td style="border-bottom:2px solid #eee;">&nbsp;</td></tr>
+	            <tr>
+	                <td style="font:9px/1em Verdana, Arial, Helvetica, sans-serif;">
+	                   {{block type="cms/block" block_id="mrg_business_terms"}}
+	                </td>
+	            </tr>
+                </table>
+            </td>
+	</tr>
+	</table>
+</div>
