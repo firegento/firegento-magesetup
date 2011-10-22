@@ -1,0 +1,82 @@
+<project name="Firegento_GermanSetup Deployment" default="deploy" basedir=".">
+
+    <property file="${basedir}\\build.properties" />
+    <property file="${basedir}\\build.default.properties" />
+
+    <property name="srcdir" value="${basedir}\\src"/>
+    <property name="targetdir" value="${targetdir}"/>
+
+<target name="deploy_to_live">
+<input
+message="Are you sure you want to deploy to the Live-System (yes/no)?"
+validargs="yes,no"
+addproperty="do.deploy"
+/>
+<condition property="do.abort">
+<equals arg1="no" arg2="${do.deploy}"/>
+</condition>
+<fail if="do.abort">Build aborted by user.</fail>
+
+<antcall target="deploy_scp">
+<param name="ssh.user" value="${live.ssh.user}"/>
+<param name="ssh.pass" value="${live.ssh.pass}"/>
+<param name="ssh.server" value="${live.ssh.server}"/>
+<param name="ssh.path" value="${live.ssh.path}"/>
+<param name="ssh.cache" value="${live.ssh.cache}"/>
+</antcall>
+</target>
+
+<target name="deploy_to_dev">
+<antcall target="deploy_scp">
+<param name="ssh.user" value="${dev.ssh.user}"/>
+<param name="ssh.pass" value="${dev.ssh.pass}"/>
+<param name="ssh.server" value="${dev.ssh.server}"/>
+<param name="ssh.path" value="${dev.ssh.path}"/>
+<param name="ssh.cache" value="${dev.ssh.cache}"/>
+</antcall>
+</target>
+
+<target name="deploy_scp">
+        <scp
+            todir="${ssh.user}@${ssh.server}:${ssh.path}"
+            password="${ssh.pass}"
+         trust="true"
+         verbose="true"
+            >
+            <fileset dir="src/">
+                <include name="**/*"/>
+                <modified>
+                 <param name="cache.cachefile" value="${ssh.cache}.cache.properties"/>
+                </modified>
+                <exclude name="**/.svn"/>
+                <exclude name=".buildpath"/>
+                <exclude name=".project"/>
+                <exclude name=".settings/**"/>
+             <exclude name=".cache/**"/>
+             <exclude name="webserver/**"/>
+             <exclude name=".externalToolBuilders/**"/>
+                <exclude name="downloader/**"/>
+             <exclude name="pear"/>
+                <exclude name="*cache.properties"/>
+                <exclude name="build.default.properties"/>
+                <exclude name="build.properties"/>
+                <exclude name="build.xml"/>
+                <exclude name="TODO"/>
+             <exclude name="var/**" />
+             <exclude name="Thumbs.db" />
+            </fileset>
+        </scp>
+    </target>
+
+    <target name="deploy">
+        <copy todir="${deploydir}" overwrite="yes" verbose="yes">
+            <fileset dir="src/">
+                <modified>
+                 <param name="cache.cachefile" value="dev.cache.properties"/>
+                </modified>
+                <exclude name="**/.svn" />
+            </fileset>
+        </copy>
+    </target>
+
+</project>
