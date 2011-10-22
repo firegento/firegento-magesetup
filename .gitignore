@@ -12,3 +12,4 @@ build.properties
 .vagrant
 .vagrant/**/*
 Vagrantfile
+/.idea
