@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="FireGento_DynamicCategory" default="deploy-dev.local" basedir=".">
-    <property file="build.properties"/>
-    <property file="build.default.properties"/>
-    <property name="srcdir" value="${basedir}/src"/>
-    <property name="targetdir" value="${dev.local.deployDir}"/>
-    <property name="builddir" value="${basedir}/build"/>    
-    
-    <target name="deploy-dev.local">
-        <copy todir="${dev.local.deployDir}" overwrite="true" verbose="true">
-            <fileset dir="${srcdir}">
-                <exclude name="doc/**"/>
-                <include name="**/*"/>
-                <modified/>
-                <exclude name="**/.svn"/>
-                <exclude name=".buildpath"/>
-                <exclude name=".project"/>
-                <exclude name=".settings"/>
-                <exclude name="cache.properties"/>
-                <exclude name="build.default.properties"/>
-                <exclude name="build.properties"/>
-                <exclude name="build.xml"/>
-                <exclude name="TODO"/>
-            </fileset>
-        </copy>
-    </target>
+<project name="Firegento_GermanSetup Deployment" default="deploy" basedir=".">
+
+    <property file="${basedir}\\build.properties" />
+    <property file="${basedir}\\build.default.properties" />
+
+    <property name="srcdir" value="${basedir}\\src"/>
+    <property name="targetdir" value="${targetdir}"/>
+
+
 
     <target name="prepare">
         <replaceregexp file="${basedir}/package.xml"
@@ -49,5 +33,16 @@
             <fileset dir="${dev.local.deployDir}/app/code/community/Flagbit/Mip" />
         </delete>
         <delete file="${basedir}/cache.properties" failonerror="false" />
+    </target>
+
+    <target name="deploy">
+        <copy todir="${deploydir}" overwrite="yes" verbose="yes">
+            <fileset dir="src/">
+                <modified>
+                 <param name="cache.cachefile" value="dev.cache.properties"/>
+                </modified>
+                <exclude name="**/.svn" />
+            </fileset>
+        </copy>
     </target>
 </project>
