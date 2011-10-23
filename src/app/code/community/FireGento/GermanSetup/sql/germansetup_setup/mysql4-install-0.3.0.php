@@ -40,7 +40,7 @@ $installer->startSetup();
 // execute pages
 foreach ($this->getConfigPages() as $name => $data) {
     if ($data['execute'] == 1) {
-        $this->createCmsPage($data, false);
+        $this->createCmsPage($data, true);
     }
 }
 
@@ -50,7 +50,7 @@ foreach ($this->getConfigBlocks() as $name => $data) {
         if ($name == 'gs_footerlinks') {
             $this->updateFooterLinksBlock($data);
         } else {
-            $this->createCmsBlock($data, false);
+            $this->createCmsBlock($data, true);
         }
     }
 }
@@ -58,7 +58,7 @@ foreach ($this->getConfigBlocks() as $name => $data) {
 // execute emails
 foreach ($this->getConfigEmails() as $name => $data) {
     if ($data['execute'] == 1) {
-        $this->createEmail($data, false);
+        $this->createEmail($data, true);
     }
 }
 
