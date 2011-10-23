@@ -21,7 +21,8 @@
  * @since     0.1.0
  */
 /**
- * Setup script; Creates all initial pages, blocks and emails
+ * Setup script; Adds the delivery_time attribute for products
+ * and creates all initial pages, blocks and emails
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -61,4 +62,27 @@ foreach ($this->getConfigEmails() as $name => $data) {
     }
 }
 
+$installer->addAttribute(
+    'catalog_product',
+    'delivery_time',
+    array(
+        'label'                         => 'Lieferzeit',
+        'input'                         => 'text',
+        'required'                      => false,
+        'user_defined'                  => true,
+        'default'                       => '2-3 Tage',
+        'group'                         => 'General',
+        'global'                        => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible'                       => true,
+        'filterable'                    => true,
+        'searchable'                    => true,
+        'comparable'                    => true,
+        'visible_on_front'              => true,
+        'visible_in_advanced_search'    => true,
+        'used_in_product_listing'       => true,
+        'is_html_allowed_on_front'      => true,
+    )
+);
+
 $installer->endSetup();
+
