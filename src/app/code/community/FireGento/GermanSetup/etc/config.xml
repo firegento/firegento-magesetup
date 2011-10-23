@@ -2,7 +2,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>0.4.0</version>
+            <version>0.5.0</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -32,6 +32,16 @@
                 </connection>
             </germansetup_setup>
         </resources>
+        <events>
+            <catalog_product_save_before>
+                <observers>
+                    <germansetup_observer>
+                        <class>germansetup/observer</class>
+                        <method>autogenerateMetaInformation</method>
+                    </germansetup_observer>
+                </observers>
+            </catalog_product_save_before>
+        </events>
     </global>
     <frontend>
         <layout>

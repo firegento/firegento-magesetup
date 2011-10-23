@@ -34,6 +34,40 @@
 class FireGento_GermanSetup_Model_Observer
 {
     /**
+     * Auto-Generates the meta information of a product.
+     *
+     * @param Varien_Event_Observer $observer Observer
+     * @return FireGento_GermanSetup_Model_Observer Self.
+     */
+    public function autogenerateMetaInformation(Varien_Event_Observer $observer)
+    {
+        /** @var $product Mage_Catalog_Model_Product */
+        $product = $observer->getEvent()->getProduct();
+        if ($product->getData('meta_autogenerate') == 1) {
+            // Set Meta Title
+            $product->setMetaTitle($product->getName());
+
+            // Set Meta Keywords
+            $keywords = 'foocamp, fodcamp, damian, tossens, arsch der welt';
+            $product->setMetaKeyword($keywords);
+
+            // Set Meta Description
+            $description = $product->getShortDescription();
+            if (empty($description)) {
+                $description = $product->getDescription();
+            }
+            if (empty($description)) {
+                $description = $keywords;
+            }
+            if (mb_strlen($description) > 255) {
+                $description = Mage::helper('core/string')->truncate($description, 255, '...', '', false);
+            }
+            $product->setMetaDescription($description);
+        }
+        return $this;
+    }
+
+    /**
      * Filters all agreements
      *
      * Filters all agreements against the Magento template filter. This enables the Magento
