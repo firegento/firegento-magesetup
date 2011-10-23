@@ -50,6 +50,16 @@
                 </FireGento_GermanSetup>
             </modules>
         </translate>
+        <events>
+            <model_load_after>
+                <observers>
+                    <germansetup_observer>
+                        <class>germansetup/observer</class>
+                        <method>filterAgreements</method>
+                    </germansetup_observer>
+                </observers>
+            </model_load_after>
+        </events>
     </frontend>
     <adminhtml>
         <layout>
