@@ -48,8 +48,8 @@ class FireGento_GermanSetup_Model_Observer
             $product->setMetaTitle($product->getName());
 
             // Set Meta Keywords
-            $keywords = 'foocamp, fodcamp, damian, tossens, arsch der welt';
-            $product->setMetaKeyword($keywords);
+            $keywords = $this->_getCategories($product);
+            //$product->setMetaKeyword(implode(', ', $keywords));
 
             // Set Meta Description
             $description = $product->getShortDescription();
@@ -105,5 +105,36 @@ class FireGento_GermanSetup_Model_Observer
         $processor = Mage::getModel('cms/template_filter');
         $string    = $processor->filter($string);
         return $string;
+    }
+
+    /**
+     * Get the categories of the current product
+     * 
+     * @param Mage_Catalog_Model_Product $product Product
+     * @return array Categories
+     */
+    protected function _getCategories($product)
+    {
+        $categoryArr = array();
+        $categories = $product->getCategoryIds();
+        foreach ($categories as $categoryId) {
+            $categoryArr[$categoryId] = $this->_loadCategoriesRecursive($categoryId);
+        }
+        return $categoryArr;
+    }
+
+    protected function _loadCategoriesRecursive($categoryId)
+    {
+        $categoryArr = array();
+
+        /** @var $category Mage_Catalog_Model_Category */
+        $category = Mage::getModel('catalog/category')
+            ->setStoreId()
+            ->load($categoryId);
+        $categoryArr[$categoryId] = $category->getName();
+        if (!in_array($category->getParentId(), array(1, 2))) {
+            $categoryArr[$categoryId] = $this->_loadCategoriesRecursive($category->getParentId());
+        }
+        return $categoryArr;
     }
 }
