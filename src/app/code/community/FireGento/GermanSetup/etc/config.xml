@@ -51,14 +51,14 @@
             </modules>
         </translate>
         <events>
-            <model_load_after>
+            <core_block_abstract_to_html_before>
                 <observers>
                     <germansetup_observer>
                         <class>germansetup/observer</class>
                         <method>filterAgreements</method>
                     </germansetup_observer>
                 </observers>
-            </model_load_after>
+            </core_block_abstract_to_html_before>
         </events>
     </frontend>
     <adminhtml>
