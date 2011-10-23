@@ -21,8 +21,8 @@
  * @since     0.1.0
  */
 /**
- * Enhanced block for product price display of bundle products. Contains the normal price.phtml
- * rendering and additionally a configured static block.
+ * Enhanced block for product price display of all products in spite of bundles (got own block!).
+ * Contains the normal price.phtml rendering and additionally a configured static block.
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -32,7 +32,7 @@
  * @version   $Id:$
  * @since     0.1.0
  */
-class FireGento_GermanSetup_Block_Bundle_CatalogProductPrice extends Mage_Bundle_Block_Catalog_Product_Price
+class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Block_Product_Price
 {
     /**
      * Add content of template block below price html if defined in config
