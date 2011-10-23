@@ -40,12 +40,14 @@ $agreements = array(
     array(
         'name'          => 'AGB',
         'content'       => '{{block type="cms/block" block_id="gs_business_terms"}}',
-        'checkbox_text' => 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und stimme diesen ausdrücklich zu.'
+        'checkbox_text' => 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und stimme diesen ausdrücklich zu.',
+        'is_html'       => true
     ),
     array(
         'name'          => 'Widerrufsbelehrung',
         'content'       => '{{block type="cms/block" block_id="gs_revocation"}}',
-        'checkbox_text' => 'Ich habe die Widerrufsbelehrung gelesen.'
+        'checkbox_text' => 'Ich habe die Widerrufsbelehrung gelesen.',
+        'is_html'       => true
     )
 );
 foreach ($agreements as $agreement) {

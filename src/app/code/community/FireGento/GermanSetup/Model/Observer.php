@@ -69,7 +69,7 @@ class FireGento_GermanSetup_Model_Observer
     protected function _filterString($string)
     {
         $processor = Mage::getModel('cms/template_filter');
-        $html      = $processor->filter($string);
-        return $html;
+        $string    = $processor->filter($string);
+        return $string;
     }
 }
