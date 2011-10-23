@@ -2,7 +2,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>0.4.0</version>
+            <version>0.5.0</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -78,7 +78,45 @@
                 </FireGento_GermanSetup>
             </modules>
         </translate>
+        <menu>
+            <system>
+                <children>
+                    <germansetup translate="title">
+                        <title>German Setup</title>
+                        <action>adminhtml/germansetup</action>
+                        <sort_order>11</sort_order>
+                    </germansetup>
+                </children>
+            </system>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <germansetup translate="title">
+                                    <title>German Setup</title>
+                                    <sort_order>11</sort_order>
+                                </germansetup>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
     </adminhtml>
+    <admin>
+        <routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<FireGento_GermanSetup before="Mage_Adminhtml">FireGento_GermanSetup</FireGento_GermanSetup>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+    </admin>
     <default>
         <catalog>
             <price>

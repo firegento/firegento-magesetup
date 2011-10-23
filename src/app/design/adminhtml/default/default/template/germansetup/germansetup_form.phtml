@@ -1,0 +1,63 @@
+<?php
+/**
+ * This file is part of the FIREGENTO project.
+ *
+ * FireGento_GermanSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_GermanSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.4.0
+ */
+?>
+<?php
+/**
+ * @see FireGento_GermanSetup_Block_Adminhtml_Germansetup
+ */
+?>
+
+<?php $session = Mage::getSingleton('core/session'); ?>
+
+
+<div class="page-head">
+    <h3><?php echo $this->__('German Setup') ?></h3>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<p><?php echo $this->__('Please choose below.') ?></p>
+<form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
+    <fieldset class="group-select wide">
+        <ul>
+            <li>
+                <div class="input-box">
+                    <label for="type"><?php echo $this->__('Type') ?> <span class="required">*</span></label><br/>
+                    <select name="type" id="type" style="width: 134px; line-height: 15px;">
+                        <option value="0"><?php echo $this->__('External Sale') ?></option>
+                        <option value="1"><?php echo $this->__('Credit Memo') ?></option>
+                    </select>
+
+                </div>
+            </li>
+        </ul>
+    </fieldset>
+
+    <div class="button-set">
+        <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+        <button class="form-button" type="submit"><span><?php echo $this->__('Submit') ?></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+//]]>
+</script>

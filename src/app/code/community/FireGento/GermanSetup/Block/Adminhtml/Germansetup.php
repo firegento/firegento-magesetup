@@ -21,7 +21,7 @@
  * @since     0.4.0
  */
 /**
- * Setup script; Adds a notification message
+ * Displays a form with some options to setup things
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,19 +29,20 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.5.0
+ * @since     0.4.0
  */
+class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_Block_Widget
+{
+    public function __construct()
+    {
+        parent::__construct();
 
-/* @var $installer Mage_Eav_Model_Entity_Setup */
-$installer = $this;
-$installer->startSetup();
+        $this->setTemplate('germansetup/germansetup_form.phtml');
+        $this->setTitle('German Setup');
+    }
 
-/** @todo Set correct admin url */
-$notification = Mage::getModel('adminnotification/inbox')
-        ->setTitle(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
-        ->setDescription(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
-        ->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/germansetup'))
-        ->setSeverity(Mage_AdminNotification_Model_Inbox::SEVERITY_NOTICE)
-        ->save();
-
-$installer->endSetup();
+    public function getPostActionUrl()
+    {
+        return $this->getUrl('*/*/save', array('_current'=>true));
+    }
+}

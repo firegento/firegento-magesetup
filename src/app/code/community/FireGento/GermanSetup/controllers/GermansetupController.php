@@ -18,10 +18,10 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.4.0
+ * @since     0.1.0
  */
 /**
- * Setup script; Adds a notification message
+ * Adminhtml Controller for dislaying a form for some actions
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,19 +29,33 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.5.0
+ * @since     0.4.0
  */
+class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Controller_Action
+{
+    /**
+      * Basic action: external sale form
+      */
+    public function indexAction() {
 
-/* @var $installer Mage_Eav_Model_Entity_Setup */
-$installer = $this;
-$installer->startSetup();
+		$this->loadLayout()
+			->_setActiveMenu('system/shop_config')
+			->_addBreadcrumb(Mage::helper('germansetup')->__('German Setup'), Mage::helper('germansetup')->__('German Setup'))
 
-/** @todo Set correct admin url */
-$notification = Mage::getModel('adminnotification/inbox')
-        ->setTitle(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
-        ->setDescription(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
-        ->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/germansetup'))
-        ->setSeverity(Mage_AdminNotification_Model_Inbox::SEVERITY_NOTICE)
-        ->save();
+            ->_addContent($this->getLayout()->createBlock('germansetup/adminhtml_germansetup'))
+			->renderLayout();
+    }
+    
+    /**
+      * Basic action: external sale save action
+      */
+    public function saveAction() {
+    
+        if ($this->getRequest()->isPost()) {
 
-$installer->endSetup();
+            $this->_getSession()->addSuccess($this->__('The configuration has been updated.'));
+        }
+
+        $this->_redirectReferer();
+    }
+}
