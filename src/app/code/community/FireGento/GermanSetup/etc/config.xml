@@ -529,6 +529,54 @@
 	                </imprint>
                 </default>
             </footer_links>
+
+            <tax_calc_rule>
+                <default>
+                    <products_19_percent>
+                        <tax_calculation_rule_id>3</tax_calculation_rule_id>
+                        <code>Produkte mit 19% MwSt.</code>
+                        <priority>1</priority>
+                        <position>0</position>
+                    </products_19_percent>
+                    <products_19_percent>
+                        <tax_calculation_rule_id>4</tax_calculation_rule_id>
+                        <code>Produkte mit 7% MwSt.</code>
+                        <priority>2</priority>
+                        <position>0</position>
+                    </products_19_percent>
+                    <products_19_percent>
+                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
+                        <code>Versand mit 19% MwSt.</code>
+                        <priority>3</priority>
+                        <position>0</position>
+                    </products_19_percent>
+                </default>
+            </tax_calc_rule>
+
+            <tax_class>
+                <default>
+                    <products_19_percent>
+                        <class_id>1</class_id>
+                        <class_name>Umsatzsteuerpflichtige Güter 19%</class_name>
+                        <class_type>PRODUCT</class_type>
+                    </products_19_percent>
+                    <products_19_percent>
+                        <class_id>2</class_id>
+                        <class_name>Umsatzsteuerpflichtige Güter 7%</class_name>
+                        <class_type>PRODUCT</class_type>
+                    </products_19_percent>
+                    <customer_incl_tax>
+                        <class_id>3</class_id>
+                        <class_name>inkl. Mehrwertsteuer</class_name>
+                        <class_type>CUSTOMER</class_type>
+                    </customer_incl_tax>
+                    <shipping>
+                        <class_id>4</class_id>
+                        <class_name>Versand</class_name>
+                        <class_type>PRODUCT</class_type>
+                    </shipping>
+                </default>
+            </tax_class>
         </germansetup>
 
         <general>
