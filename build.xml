@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Firegento_GermanSetup Deployment" default="deploy" basedir=".">
 
-    <property file="${basedir}\\build.properties" />
-    <property file="${basedir}\\build.default.properties" />
+    <property file="${basedir}/build.properties" />
+    <property file="${basedir}/build.default.properties" />
 
-    <property name="srcdir" value="${basedir}\\src"/>
-    <property name="targetdir" value="${targetdir}"/>
-
-
+    <property name="srcdir" value="${basedir}/src"/>
+    <property name="targetdir" value="${dev.local.deployDir}"/>
 
     <target name="prepare">
         <replaceregexp file="${basedir}/package.xml"
@@ -36,7 +34,7 @@
     </target>
 
     <target name="deploy">
-        <copy todir="${deploydir}" overwrite="yes" verbose="yes">
+        <copy todir="${targetdir}" overwrite="yes" verbose="yes">
             <fileset dir="src/">
                 <modified>
                  <param name="cache.cachefile" value="dev.cache.properties"/>
