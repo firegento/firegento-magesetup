@@ -33,7 +33,7 @@
                 <imprint translate="label" module="germansetup">
                     <label>Imprint</label>
                     <frontend_type>text</frontend_type>
-                    <sort_order>0</sort_order>
+                    <sort_order>900</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
@@ -158,6 +158,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </ceo>
+                        <owner translate="label">
+                            <label>Owner</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>135</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </owner>
                         <register_number translate="label">
                             <label>Register number</label>
                             <frontend_type>text</frontend_type>
