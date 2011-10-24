@@ -49,7 +49,12 @@ class FireGento_GermanSetup_Model_Observer
 
             // Set Meta Keywords
             $keywords = $this->_getCategories($product);
-            //$product->setMetaKeyword(implode(', ', $keywords));
+            if (!empty($keywords)) {
+                if (mb_strlen($keywords) > 255) {
+                    $keywords = Mage::helper('core/string')->truncate($keywords, 255, '', '', false);
+                }
+                $product->setMetaKeyword($keywords);
+            }
 
             // Set Meta Description
             $description = $product->getShortDescription();
@@ -115,26 +120,55 @@ class FireGento_GermanSetup_Model_Observer
      */
     protected function _getCategories($product)
     {
-        $categoryArr = array();
         $categories = $product->getCategoryIds();
-        foreach ($categories as $categoryId) {
-            $categoryArr[$categoryId] = $this->_loadCategoriesRecursive($categoryId);
-        }
-        return $categoryArr;
+        $categoryArr = $this->_loadCategoriesRecursive($categories);
+        Zend_Debug::dump($categoryArr);
+        $keywords = $this->_buildKeywords($categoryArr);
+        return $keywords;
     }
 
-    protected function _loadCategoriesRecursive($categoryId)
+    /**
+     * Loads the categories recursice bottom-up to root-categories
+     * 
+     * @param array $categories Category Ids
+     * @param int   $level      Current level
+     * @return array Categories
+     */
+    protected function _loadCategoriesRecursive($categories, $level=0)
     {
-        $categoryArr = array();
-
-        /** @var $category Mage_Catalog_Model_Category */
-        $category = Mage::getModel('catalog/category')
-            ->setStoreId()
-            ->load($categoryId);
-        $categoryArr[$categoryId] = $category->getName();
-        if (!in_array($category->getParentId(), array(1, 2))) {
-            $categoryArr[$categoryId] = $this->_loadCategoriesRecursive($category->getParentId());
+        $return = array();
+        foreach ($categories as $categoryId) {
+            /** @var $category Mage_Catalog_Model_Category */
+            $category = Mage::getModel('catalog/category')
+                ->setStoreId()
+                ->load($categoryId);
+            $return[$level][$categoryId] = $category->getName();
+            if (!in_array($category->getParentId(), array(1, 2))) {
+                $tmp = $this->_loadCategoriesRecursive(array($category->getParentId()), $level+1);
+                $return[$level+1][$category->getParentId()] = $tmp[$level+1][$category->getParentId()];
+            }
         }
-        return $categoryArr;
+        return $return;
+    }
+
+    /**
+     * Processes the category array and generates a string
+     * 
+     * @param array $categories Categories
+     * @return string Keywords
+     */
+    protected function _buildKeywords($categories)
+    {
+        $keywords  = '';
+        $processed = array();
+        foreach ($categories as $level => $categoryNames) {
+            foreach ($categoryNames as $catId => $cat) {
+                if (!in_array($catId, $processed)) {
+                    $keywords .= $cat.', ';
+                    $processed[] = $catId;
+                }
+            }
+        }
+        return $keywords;
     }
 }
