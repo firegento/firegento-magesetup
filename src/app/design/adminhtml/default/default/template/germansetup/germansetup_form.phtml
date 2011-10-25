@@ -27,37 +27,37 @@
  */
 ?>
 
-<?php $session = Mage::getSingleton('core/session'); ?>
-
-
 <div class="page-head">
     <h3><?php echo $this->__('German Setup') ?></h3>
 </div>
-<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-<p><?php echo $this->__('Please choose below.') ?></p>
-<form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
+
+<div id="messages">
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php echo $this->getMessageHtml() ?>
+</div>
+
+<p><?php echo $this->__('Please choose:') ?></p>
+<form action="<?php echo $this->getPostActionUrl() ?>" method="get" id="form-validate">
     <fieldset class="group-select wide">
         <ul>
             <li>
                 <div class="input-box">
-                    <label for="type"><?php echo $this->__('Type') ?> <span class="required">*</span></label><br/>
-                    <select name="type" id="type" style="width: 134px; line-height: 15px;">
-                        <option value="0"><?php echo $this->__('External Sale') ?></option>
-                        <option value="1"><?php echo $this->__('Credit Memo') ?></option>
-                    </select>
-
+                    <input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
+                    <label for="checkbox_cms"><?php echo $this->__('Create CMS Pages and Blocks') ?></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
+                    <label for="checkbox_email"><?php echo $this->__('Create Email Templates') ?></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
+                    <label for="checkbox_tax"><?php echo $this->__('Configure Tax') ?></label>
                 </div>
             </li>
         </ul>
     </fieldset>
 
     <div class="button-set">
-        <p class="required"><?php echo $this->__('* Required Fields') ?></p>
         <button class="form-button" type="submit"><span><?php echo $this->__('Submit') ?></span></button>
     </div>
 </form>
-<script type="text/javascript">
-//<![CDATA[
-    var dataForm = new VarienForm('form-validate', true);
-//]]>
-</script>

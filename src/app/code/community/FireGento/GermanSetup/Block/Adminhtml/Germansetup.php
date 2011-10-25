@@ -43,6 +43,6 @@ class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_B
 
     public function getPostActionUrl()
     {
-        return $this->getUrl('*/*/save', array('_current'=>true));
+        return $this->getUrl('*/*/save');
     }
 }

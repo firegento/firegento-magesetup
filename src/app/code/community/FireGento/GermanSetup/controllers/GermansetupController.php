@@ -36,10 +36,12 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
     /**
       * Basic action: external sale form
       */
-    public function indexAction() {
-
-		$this->loadLayout()
-			->_setActiveMenu('system/shop_config')
+    public function indexAction()
+    {
+        $this->_initLayoutMessages('adminhtml/session');
+        
+        $this->loadLayout()
+			->_setActiveMenu('system/germansetup')
 			->_addBreadcrumb(Mage::helper('germansetup')->__('German Setup'), Mage::helper('germansetup')->__('German Setup'))
 
             ->_addContent($this->getLayout()->createBlock('germansetup/adminhtml_germansetup'))
@@ -50,12 +52,21 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
       * Basic action: external sale save action
       */
     public function saveAction() {
-    
-        if ($this->getRequest()->isPost()) {
 
-            $this->_getSession()->addSuccess($this->__('The configuration has been updated.'));
-        }
+        //Mage::log('$this->getRequest()->getParams()');
+        //Mage::log($this->getRequest()->getParams());
 
-        $this->_redirectReferer();
+        /** @todo make post requests work */
+        //if ($this->getRequest()->isPost()) {
+
+            if ($this->getRequest()->getParam('cms') == 1) {
+
+                Mage::getSingleton('germansetup/setup_cms')->setup();
+                $this->_getSession()->addSuccess($this->__('CMS Blocks and Pages have been created.'));
+            }
+
+        //}
+
+        $this->_redirect('*/*/');
     }
 }

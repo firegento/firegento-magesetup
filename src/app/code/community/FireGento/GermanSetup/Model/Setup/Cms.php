@@ -31,37 +31,26 @@
  * @version   $Id:$
  * @since     0.2.0
  */
-class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Eav_Model_Entity_Setup
+class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_Setup_Abstract
 {
-    /**
-     * Get config.xml data
-     *
-     * @return array
-     */
-    public function getConfigData()
+    public function setup()
     {
-        $configData = Mage::getConfig()
-            ->getNode('default/germansetup')
-            ->asArray();
+        // execute pages
+        foreach ($this->getConfigPages() as $name => $data) {
+            if ($data['execute'] == 1) {
+                $this->createCmsPage($data, false);
+            }
+        }
 
-        return $configData;
-    }
-
-    /**
-     * Get config.xml data
-     *
-     * @param string      $node      xml noce
-     * @param string|null $childNode if set, child node of the first noce
-     *
-     * @return array
-     */
-    protected function _getConfigNode($node, $childNode = null)
-    {
-        $configData = $this->getConfigData();
-        if ($childNode) {
-            return $configData[$node][$childNode];
-        } else {
-            return $configData[$node];
+        // execute blocks
+        foreach ($this->getConfigBlocks() as $name => $data) {
+            if ($data['execute'] == 1) {
+                if ($name == 'gs_footerlinks') {
+                    $this->updateFooterLinksBlock($data);
+                } else {
+                    $this->createCmsBlock($data, false);
+                }
+            }
         }
     }
 
@@ -83,38 +72,6 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Eav_Model_Entity_S
     public function getConfigBlocks()
     {
         return $this->_getConfigNode('blocks', 'default');
-    }
-
-    /**
-     * Get emails/default from config file
-     *
-     * @return array
-     */
-    public function getConfigEmails()
-    {
-        return $this->_getConfigNode('emails', 'default');
-    }
-
-    /**
-     * Get imprint from config file
-     *
-     * @return array
-     */
-    public function getConfigImprint()
-    {
-        return $this->_getConfigNode('imprint');
-    }
-
-    /**
-     * Get template content
-     *
-     * @param string $filename template file name
-     *
-     * @return string
-     */
-    public function getTemplateContent($filename)
-    {
-        return file_get_contents(Mage::getBaseDir() . DS . $filename);
     }
 
     /**
