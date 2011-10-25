@@ -568,7 +568,7 @@
                 </default>
             </footer_links>
 
-            <tax_calc_rule>
+            <tax_calc_rules>
                 <default>
                     <products_19_percent>
                         <tax_calculation_rule_id>3</tax_calculation_rule_id>
@@ -589,9 +589,9 @@
                         <position>0</position>
                     </products_19_percent>
                 </default>
-            </tax_calc_rule>
+            </tax_calc_rules>
 
-            <tax_class>
+            <tax_classes>
                 <default>
                     <products_19_percent>
                         <class_id>1</class_id>
@@ -614,7 +614,7 @@
                         <class_type>PRODUCT</class_type>
                     </shipping>
                 </default>
-            </tax_class>
+            </tax_classes>
         </germansetup>
 
         <general>

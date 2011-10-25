@@ -31,7 +31,7 @@
  * @version   $Id:$
  * @since     0.2.0
  */
-class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Eav_Model_Entity_Setup
+class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
 {
     /**
      * Get config.xml data

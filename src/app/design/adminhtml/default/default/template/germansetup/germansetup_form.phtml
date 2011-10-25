@@ -37,13 +37,18 @@
 </div>
 
 <p><?php echo $this->__('Please choose:') ?></p>
-<form action="<?php echo $this->getPostActionUrl() ?>" method="get" id="form-validate">
+<form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
+    <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
     <fieldset class="group-select wide">
         <ul>
             <li>
                 <div class="input-box">
                     <input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
                     <label for="checkbox_cms"><?php echo $this->__('Create CMS Pages and Blocks') ?></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
+                    <label for="checkbox_agreements"><?php echo $this->__('Create Checkout Agreements') ?></label>
                 </div>
                 <div class="input-box">
                     <input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />

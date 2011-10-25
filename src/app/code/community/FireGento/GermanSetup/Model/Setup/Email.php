@@ -21,7 +21,7 @@
  * @since     0.2.0
  */
 /**
- * Setup class
+ * Setup class for transaction emails
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,17 +29,21 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.2.0
+ * @since     0.5.0
  */
 class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Model_Setup_Abstract
 {
-
+    /**
+     * Setup Transaction Emails
+     *
+     * @return void
+     */
     public function setup()
     {
         // execute emails
-        foreach ($this->getConfigEmails() as $data) {
+        foreach ($this->_getConfigEmails() as $data) {
             if ($data['execute'] == 1) {
-                $this->createEmail($data, false);
+                $this->_createEmail($data, false);
             }
         }
     }
@@ -49,7 +53,7 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
      *
      * @return array
      */
-    public function getConfigEmails()
+    protected function _getConfigEmails()
     {
         return $this->_getConfigNode('emails', 'default');
     }
@@ -62,7 +66,7 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
      *
      * @return voids
      */
-    public function createEmail($emailData, $override=true)
+    protected function _createEmail($emailData, $override=true)
     {
         $model = Mage::getModel('core/email_template');
         $template = $model->loadByCode($emailData['template_code']);

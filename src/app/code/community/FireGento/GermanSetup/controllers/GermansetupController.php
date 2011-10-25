@@ -34,7 +34,7 @@
 class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Controller_Action
 {
     /**
-      * Basic action: external sale form
+      * Basic action: setup form
       */
     public function indexAction()
     {
@@ -49,23 +49,33 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
     }
     
     /**
-      * Basic action: external sale save action
+      * Basic action: setup save action
       */
     public function saveAction() {
 
-        //Mage::log('$this->getRequest()->getParams()');
-        //Mage::log($this->getRequest()->getParams());
-
-        /** @todo make post requests work */
-        //if ($this->getRequest()->isPost()) {
+        if ($this->getRequest()->isPost()) {
 
             if ($this->getRequest()->getParam('cms') == 1) {
 
                 Mage::getSingleton('germansetup/setup_cms')->setup();
                 $this->_getSession()->addSuccess($this->__('CMS Blocks and Pages have been created.'));
+                Mage::log($this->__('CMS Blocks and Pages have been created.'));
             }
 
-        //}
+            if ($this->getRequest()->getParam('agreements') == 1) {
+
+                Mage::getSingleton('germansetup/setup_agreements')->setup();
+                $this->_getSession()->addSuccess($this->__('Checkout Agreements have been created.'));
+                Mage::log($this->__('Checkout Agreements have been created.'));
+            }
+
+            if ($this->getRequest()->getParam('email') == 1) {
+
+                Mage::getSingleton('germansetup/setup_email')->setup();
+                $this->_getSession()->addSuccess($this->__('Email Templates have been created.'));
+                Mage::log($this->__('Email Templates have been created.'));
+            }
+        }
 
         $this->_redirect('*/*/');
     }

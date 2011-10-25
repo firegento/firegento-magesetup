@@ -21,7 +21,7 @@
  * @since     0.2.0
  */
 /**
- * Setup class
+ * Setup class for CMS pages and blocks
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,26 +29,31 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.2.0
+ * @since     0.5.0
  */
 class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_Setup_Abstract
 {
+    /**
+     * Setup Pages, Blocks and especially Footer Block
+     *
+     * @return void
+     */
     public function setup()
     {
         // execute pages
-        foreach ($this->getConfigPages() as $name => $data) {
+        foreach ($this->_getConfigPages() as $name => $data) {
             if ($data['execute'] == 1) {
-                $this->createCmsPage($data, false);
+                $this->_createCmsPage($data, false);
             }
         }
 
         // execute blocks
-        foreach ($this->getConfigBlocks() as $name => $data) {
+        foreach ($this->_getConfigBlocks() as $name => $data) {
             if ($data['execute'] == 1) {
                 if ($name == 'gs_footerlinks') {
-                    $this->updateFooterLinksBlock($data);
+                    $this->_updateFooterLinksBlock($data);
                 } else {
-                    $this->createCmsBlock($data, false);
+                    $this->_createCmsBlock($data, false);
                 }
             }
         }
@@ -59,7 +64,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      *
      * @return array
      */
-    public function getConfigPages()
+    protected function _getConfigPages()
     {
         return $this->_getConfigNode('pages', 'default');
     }
@@ -69,7 +74,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      *
      * @return array
      */
-    public function getConfigBlocks()
+    protected function _getConfigBlocks()
     {
         return $this->_getConfigNode('blocks', 'default');
     }
@@ -79,7 +84,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      *
      * @return array
      */
-    public function getFooterLinks()
+    protected function _getFooterLinks()
     {
         return $this->_getConfigNode('footer_links', 'default');
     }
@@ -92,7 +97,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      *
      * @return void
      */
-    public function createCmsPage($pageData, $override=true)
+    protected function _createCmsPage($pageData, $override=true)
     {
         if (!is_array($pageData)) {
             return null;
@@ -132,7 +137,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      *
      * @return void
      */
-    public function createCmsBlock($blockData, $override=true)
+    protected function _createCmsBlock($blockData, $override=true)
     {
         $model = Mage::getModel('cms/block');
         $block = $model->load($blockData['identifier']);
@@ -157,17 +162,17 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      *
      * @return string
      */
-    public function createFooterLinksContent()
+    protected function _createFooterLinksContent()
     {
         $footerLinksHtml = '<ul>';
         $footerLinksCounter = 0;
 
-        foreach ($this->getFooterLinks() as $data) {
+        foreach ($this->_getFooterLinks() as $data) {
             $footerLinksCounter++;
             $title = $data['title'];
             $target = $data['target'];
             $class = '';
-            if ($footerLinksCounter == count($this->getFooterLinks())) {
+            if ($footerLinksCounter == count($this->_getFooterLinks())) {
                 $class = 'last';
             }
             $footerLinksHtml .= '<li class="'.$class.'">';
@@ -186,7 +191,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      *
      * @return void
      */
-    public function updateFooterLinksBlock($blockData)
+    protected function _updateFooterLinksBlock($blockData)
     {
         $model = Mage::getModel('cms/block');
         $block = $model->load($blockData['identifier']);
@@ -201,46 +206,11 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
         $data = array(
             'title' => $blockData['title'],
             'identifier' => $blockData['identifier'],
-            'content' => $this->createFooterLinksContent(),
+            'content' => $this->_createFooterLinksContent(),
             'stores' => array('0'),
             'is_active' => '1',
         );
 
         $model->setData($data)->save();
-    }
-
-    /**
-     * Create transactional email template
-     *
-     * @param array $emailData template data
-     * @param boolean $override override email template if set
-     *
-     * @return voids
-     */
-    public function createEmail($emailData, $override=true)
-    {
-        $model = Mage::getModel('core/email_template');
-        $template = $model->loadByCode($emailData['template_code']);
-        if (!$template->getId()) {
-            // create
-            $template = $model->setTemplateSubject($emailData['template_subject'])
-                ->setTemplateCode($emailData['template_code'])
-                ->setTemplateText($this->getTemplateContent($emailData['text']))
-                ->setTemplateType($emailData['template_type'])
-                ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate())
-                ->save();
-        } else {
-            //update
-            if ($override) {
-                $template->setTemplateSubject($emailData['template_subject'])
-                    ->setTemplateCode($emailData['template_code'])
-                    ->setTemplateText($this->getTemplateContent($emailData['text']))
-                    ->setTemplateType($emailData['template_type'])
-                    ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate())
-                    ->save();
-            }
-        }
-
-        $this->setConfigData($emailData['config_data_path'], $template->getId());
     }
 }
