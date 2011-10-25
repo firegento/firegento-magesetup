@@ -6,6 +6,11 @@
 "Incl. Tax, plus <a href=""%s"">Shipping Cost</a>","Inkl. MwSt., zzgl. <a href=""%s"">Versandkosten</a>"
 "Incl. Tax","Inkl. MwSt."
 
+"Please choose:","Bitte wählen Sie:"
+"Create CMS Pages and Blocks","CMS-Seiten und Statische Blöcke erstellen"
+"Create Email Templates","Email-Templates erstellen"
+"Configure Tax","Steuereinstellungen konfigurieren"
+
 "Imprint","Impressum"
 "Account","Kontonummer"
 "Account owner","Kontoinhaber"

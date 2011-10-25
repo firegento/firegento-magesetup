@@ -18,10 +18,10 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     0.2.0
  */
 /**
- * Setup script; Adds the delivery_time attribute for products
+ * Setup class
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,33 +29,51 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     0.2.0
  */
+class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
+{
+    /**
+     * Get config.xml data
+     *
+     * @return array
+     */
+    public function getConfigData()
+    {
+        $configData = Mage::getConfig()
+            ->getNode('default/germansetup')
+            ->asArray();
 
-/* @var $installer Mage_Eav_Model_Entity_Setup */
-$installer = $this;
-$installer->startSetup();
+        return $configData;
+    }
 
-$installer->addAttribute(
-    'catalog_product',
-    'delivery_time',
-    array(
-        'label'                         => 'Lieferzeit',
-        'input'                         => 'text',
-        'required'                      => false,
-        'user_defined'                  => true,
-        'default'                       => '2-3 Tage',
-        'group'                         => 'General',
-        'global'                        => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-        'visible'                       => true,
-        'filterable'                    => true,
-        'searchable'                    => true,
-        'comparable'                    => true,
-        'visible_on_front'              => true,
-        'visible_in_advanced_search'    => true,
-        'used_in_product_listing'       => true,
-        'is_html_allowed_on_front'      => true,
-    )
-);
+    /**
+     * Get config.xml data
+     *
+     * @param string      $node      xml noce
+     * @param string|null $childNode if set, child node of the first noce
+     *
+     * @return array
+     */
+    protected function _getConfigNode($node, $childNode = null)
+    {
+        $configData = $this->getConfigData();
+        if ($childNode) {
+            return $configData[$node][$childNode];
+        } else {
+            return $configData[$node];
+        }
+    }
 
-$installer->endSetup();
+    /**
+     * Get template content
+     *
+     * @param string $filename template file name
+     *
+     * @return string
+     */
+    public function getTemplateContent($filename)
+    {
+        return file_get_contents(Mage::getBaseDir() . DS . $filename);
+    }
+}

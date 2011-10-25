@@ -21,7 +21,7 @@
  * @since     0.4.0
  */
 /**
- * Setup script; Adds the delivery_time attribute for products
+ * Displays a form with some options to setup things
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -31,37 +31,18 @@
  * @version   $Id:$
  * @since     0.4.0
  */
+class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_Block_Widget
+{
+    public function __construct()
+    {
+        parent::__construct();
 
-/* @var $installer Mage_Eav_Model_Entity_Setup */
-$installer = $this;
-$installer->startSetup();
+        $this->setTemplate('germansetup/germansetup_form.phtml');
+        $this->setTitle('German Setup');
+    }
 
-// Build and create agreements
-$agreements = array(
-    array(
-        'name'          => 'AGB',
-        'content'       => '{{block type="cms/block" block_id="gs_business_terms"}}',
-        'checkbox_text' => 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und stimme diesen ausdrücklich zu.',
-        'is_active'     => '1',
-        'is_html'       => '1',
-        'stores'        => array('0')
-    ),
-    array(
-        'name'          => 'Widerrufsbelehrung',
-        'content'       => '{{block type="cms/block" block_id="gs_revocation"}}',
-        'checkbox_text' => 'Ich habe die Widerrufsbelehrung gelesen.',
-        'is_active'     => '1',
-        'is_html'       => '1',
-        'stores'        => array('0')
-    )
-);
-foreach ($agreements as $agreement) {
-    $model = Mage::getModel('checkout/agreement');
-    $model->setData($agreement);
-    $model->save();
+    public function getPostActionUrl()
+    {
+        return $this->getUrl('*/*/save');
+    }
 }
-
-// Set config value to true
-$installer->setConfigData('checkout/options/enable_agreements', '1');
-
-$installer->endSetup();
