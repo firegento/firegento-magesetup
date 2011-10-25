@@ -40,10 +40,12 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
      */
     public function getConfigData()
     {
-        $configData = Mage::getConfig()
+//        $configData = Mage::getConfig()
+//        ->getNode('default/germansetup')
+//        ->asArray();
+        $configData = Mage::getSingleton('germansetup/config')
             ->getNode('default/germansetup')
             ->asArray();
-
         return $configData;
     }
 
