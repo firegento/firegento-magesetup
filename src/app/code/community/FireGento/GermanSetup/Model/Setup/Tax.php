@@ -34,16 +34,64 @@
 class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_Setup_Abstract
 {
     /**
+     * @var FireGento_GermanSetup_Model_Setup
+     */
+    protected $_setup;
+    
+    /**
+     * @var Varien_Db_Adapter_Interface
+     */
+    protected $_connection;
+
+    /**
+     * Setup setup class and connection
+     */
+    public function __construct()
+    {
+        $this->_setup = Mage::getModel('germansetup/setup', 'core_setup');
+        $this->_connection = $this->_setup->getConnection();
+    }
+
+    /**
      * Setup Pages, Blocks and especially Footer Block
      *
      * @return void
      */
     public function setup()
     {
-        // execute pages
-        foreach ($this->_getConfigTaxClasses() as $name => $data) {
+        // execute tax classes
+        $this->_truncateTable('tax_class');
+
+        foreach ($this->_getConfigTaxClasses() as $data) {
             if ($data['execute'] == 1) {
-                $this->_createTaxClass($data, false);
+                $this->_createTaxClass($data);
+            }
+        }
+
+        // execute tax calculation rules
+        $this->_truncateTable('tax_calculation_rule');
+
+        foreach ($this->_getConfigTaxCalcRules() as $data) {
+            if ($data['execute'] == 1) {
+                $this->_createTaxCalcRule($data);
+            }
+        }
+
+        // execute tax calculation rates
+        $this->_truncateTable('tax_calculation_rate');
+
+        foreach ($this->_getConfigTaxCalcRates() as $data) {
+            if ($data['execute'] == 1) {
+                $this->_createTaxCalcRate($data);
+            }
+        }
+
+        // execute tax calculations
+        $this->_truncateTable('tax_calculation');
+
+        foreach ($this->_getConfigTaxCalculations() as $data) {
+            if ($data['execute'] == 1) {
+                $this->_createTaxCalculation($data);
             }
         }
     }
@@ -62,27 +110,119 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      * Collect data and create tax class
      *
      * @param array   $taxClassData tax class data
-     * @param boolean $override  override tax class if it exists
      *
      * @return void
      */
-    protected function _createTaxClass($taxClassData, $override=true)
+    protected function _createTaxClass($taxClassData)
     {
-        $model = Mage::getModel('cms/block');
-        $block = $model->load($taxClassData['identifier']);
-        $taxClassData['content'] = $this->getTemplateContent($taxClassData['text']);
-        if (!$block->getId()) {
-            $taxClassData['stores'] = array('0');
-            $taxClassData['is_active'] = '1';
+        $this->_insertIntoTable('tax_class', $taxClassData);
+    }
 
-            $model->setData($taxClassData)->save();
-        } else {
-            if ($override) {
-                $taxClassData['stores'] = array('0');
-                $taxClassData['is_active'] = '1';
-                $taxClassData['block_id'] = $block->getId();
-                $model->setData($taxClassData)->save();
-            }
-        }
+    /**
+     * Get tax calculation rules from config file
+     *
+     * @return array
+     */
+    protected function _getConfigTaxCalcRules()
+    {
+        return $this->_getConfigNode('tax_calculation_rules', 'default');
+    }
+
+    /**
+     * Collect data and create tax calculation rules
+     *
+     * @param array   $taxCalcRuleData tax class data
+     *
+     * @return void
+     */
+    protected function _createTaxCalcRule($taxCalcRuleData)
+    {
+        $this->_insertIntoTable('tax_calculation_rule', $taxCalcRuleData);
+    }
+    
+    /**
+     * Get tax calculation rates from config file
+     *
+     * @return array
+     */
+    protected function _getConfigTaxCalcRates()
+    {
+        return $this->_getConfigNode('tax_calculation_rates', 'default');
+    }
+
+    /**
+     * Collect data and create tax calculation rates
+     *
+     * @param array   $taxCalcRateData tax class data
+     *
+     * @return void
+     */
+    protected function _createTaxCalcRate($taxCalcRateData)
+    {
+        $this->_insertIntoTable('tax_calculation_rate', $taxCalcRateData);
+    }
+
+     /**
+     * Get tax calculations from config file
+     *
+     * @return array
+     */
+    protected function _getConfigTaxCalculations()
+    {
+        return $this->_getConfigNode('tax_calculations', 'default');
+    }
+
+    /**
+     * Collect data and create tax calculations
+     *
+     * @param array   $taxCalculationData tax class data
+     *
+     * @return void
+     */
+    protected function _createTaxCalculation($taxCalculationData)
+    {
+        $this->_insertIntoTable('tax_calculation', $taxCalculationData);
+    }
+
+    /**
+     * Truncate a database table
+     *
+     * @param string $table
+     * @return void
+     */
+    protected function _truncateTable($table)
+    {
+        $tableName = $this->_getSetup()->getTable($table);
+        $this->_getConnection()->delete($tableName);
+    }
+
+    /**
+     * Insert a line into a database table
+     *
+     * @param string $table
+     * @param array $data
+     * @return void
+     */
+    protected function _insertIntoTable($table, $data)
+    {
+        unset($data['execute']);
+        $tableName = $this->_getSetup()->getTable($table);
+        $this->_getConnection()->insert($tableName, $data);
+    }
+
+    /**
+     * @return Varien_Db_Adapter_Interface
+     */
+    protected function _getConnection()
+    {
+        return $this->_connection;
+    }
+
+    /**
+     * @return FireGento_GermanSetup_Model_Setup|Mage_Core_Model_Abstract
+     */
+    protected function _getSetup()
+    {
+        return $this->_setup;
     }
 }

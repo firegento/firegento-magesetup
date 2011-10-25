@@ -75,6 +75,13 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                 $this->_getSession()->addSuccess($this->__('Email Templates have been created.'));
                 Mage::log($this->__('Email Templates have been created.'));
             }
+
+            if ($this->getRequest()->getParam('tax') == 1) {
+
+                Mage::getSingleton('germansetup/setup_tax')->setup();
+                $this->_getSession()->addSuccess($this->__('Tax Settings have been created.'));
+                Mage::log($this->__('Tax Settings have been created.'));
+            }
         }
 
         $this->_redirect('*/*/');

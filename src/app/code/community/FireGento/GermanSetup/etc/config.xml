@@ -568,53 +568,150 @@
                 </default>
             </footer_links>
 
-            <tax_calc_rules>
+            <tax_calculation_rules>
                 <default>
                     <products_19_percent>
+                        <execute>1</execute>
                         <tax_calculation_rule_id>3</tax_calculation_rule_id>
                         <code>Produkte mit 19% MwSt.</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_19_percent>
-                    <products_19_percent>
+                    <products_7_percent>
+                        <execute>1</execute>
                         <tax_calculation_rule_id>4</tax_calculation_rule_id>
                         <code>Produkte mit 7% MwSt.</code>
                         <priority>2</priority>
                         <position>0</position>
-                    </products_19_percent>
-                    <products_19_percent>
+                    </products_7_percent>
+                    <shipping>
+                        <execute>1</execute>
                         <tax_calculation_rule_id>5</tax_calculation_rule_id>
                         <code>Versand mit 19% MwSt.</code>
                         <priority>3</priority>
                         <position>0</position>
-                    </products_19_percent>
+                    </shipping>
                 </default>
-            </tax_calc_rules>
+            </tax_calculation_rules>
 
             <tax_classes>
                 <default>
                     <products_19_percent>
+                        <execute>1</execute>
                         <class_id>1</class_id>
                         <class_name>Umsatzsteuerpflichtige Güter 19%</class_name>
                         <class_type>PRODUCT</class_type>
                     </products_19_percent>
-                    <products_19_percent>
+                    <products_7_percent>
+                        <execute>1</execute>
                         <class_id>2</class_id>
                         <class_name>Umsatzsteuerpflichtige Güter 7%</class_name>
                         <class_type>PRODUCT</class_type>
-                    </products_19_percent>
+                    </products_7_percent>
                     <customer_incl_tax>
+                        <execute>1</execute>
                         <class_id>3</class_id>
                         <class_name>inkl. Mehrwertsteuer</class_name>
                         <class_type>CUSTOMER</class_type>
                     </customer_incl_tax>
                     <shipping>
+                        <execute>1</execute>
                         <class_id>4</class_id>
                         <class_name>Versand</class_name>
                         <class_type>PRODUCT</class_type>
                     </shipping>
                 </default>
             </tax_classes>
+
+            <tax_calculation_rates>
+                <default>
+                    <tax_calculation_rate_19>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
+                        <tax_country_id>DE</tax_country_id>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
+                        <code>19% Steuer</code>
+                        <rate>19</rate>
+                    </tax_calculation_rate_19>
+                    <tax_calculation_rate_0>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>4</tax_calculation_rate_id>
+                        <tax_country_id>DE</tax_country_id>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
+                        <code>0% Steuer</code>
+                        <rate>0</rate>
+                    </tax_calculation_rate_0>
+                    <tax_calculation_rate_7>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
+                        <tax_country_id>DE</tax_country_id>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
+                        <code>7% Steuer</code>
+                        <rate>7</rate>
+                    </tax_calculation_rate_7>
+                </default>
+            </tax_calculation_rates>
+
+            <tax_calculations>
+                <default>
+                    <tax_calculation_19>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>3</tax_calculation_rule_id>
+                        <customer_tax_class_id>3</customer_tax_class_id>
+                        <product_tax_class_id>1</product_tax_class_id>
+                    </tax_calculation_19>
+                    <tax_calculation_shipping>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
+                        <customer_tax_class_id>3</customer_tax_class_id>
+                        <product_tax_class_id>4</product_tax_class_id>
+                    </tax_calculation_shipping>
+                    <tax_calculation_7>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>4</tax_calculation_rule_id>
+                        <customer_tax_class_id>3</customer_tax_class_id>
+                        <product_tax_class_id>2</product_tax_class_id>
+                    </tax_calculation_7>
+                </default>
+            </tax_calculations>
+<!--
+
+            /**
+             * get data for table tax_calculation
+             *
+             * @return array
+             */
+            protected function _getTaxCalcData()
+            {
+                $taxCalcData = array(
+                    array(
+                        'tax_calculation_rate_id' => 3,
+                        'tax_calculation_rule_id' => 3,
+                        'customer_tax_class_id' => 3,
+                        'product_tax_class_id' => 1
+                    ),
+                    array(
+                        'tax_calculation_rate_id' => 3,
+                        'tax_calculation_rule_id' => 5,
+                        'customer_tax_class_id' => 3,
+                        'product_tax_class_id' => 4
+                    ),
+                    array(
+                        'tax_calculation_rate_id' => 5,
+                        'tax_calculation_rule_id' => 4,
+                        'customer_tax_class_id' => 3,
+                        'product_tax_class_id' => 2
+                    )
+                );
+
+                return $taxCalcData;
+            }-->
         </germansetup>
 
         <general>
