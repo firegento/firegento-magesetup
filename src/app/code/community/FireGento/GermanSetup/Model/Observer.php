@@ -40,6 +40,7 @@ class FireGento_GermanSetup_Model_Observer
      * administrator define a cms static block as the content of the checkout agreements..
      *
      * @param Varien_Event_Observer $observer Observer
+     * @event core_block_abstract_to_html_before
      * @return FireGento_GermanSetup_Model_Observer Self.
      */
     public function filterAgreements(Varien_Event_Observer $observer)
@@ -60,7 +61,7 @@ class FireGento_GermanSetup_Model_Observer
     }
 
     /**
-     * Calls the Magento template filter to transform {{block type="cms/block" block_id="XXX"}}
+     * Calls the Magento template filter to transform {{block type="cms/block" block_id="xyz"}}
      * into the specific html code
      *
      * @param string $string Agreement to filter
@@ -77,6 +78,7 @@ class FireGento_GermanSetup_Model_Observer
      * Auto-Generates the meta information of a product.
      *
      * @param Varien_Event_Observer $observer Observer
+     * @event catalog_product_save_before
      * @return FireGento_GermanSetup_Model_Observer Self.
      */
     public function autogenerateMetaInformation(Varien_Event_Observer $observer)
@@ -89,7 +91,7 @@ class FireGento_GermanSetup_Model_Observer
             $product->setMetaTitle($product->getName());
 
             // Set Meta Keywords
-            $keywords = $this->_getCategories($product);
+            $keywords = $this->_getCategoryKeywords($product);
             if (!empty($keywords)) {
                 if (mb_strlen($keywords) > 255) {
                     $keywords = Mage::helper('core/string')->truncate($keywords, 255, '', '', false);
@@ -119,7 +121,7 @@ class FireGento_GermanSetup_Model_Observer
      * @param Mage_Catalog_Model_Product $product Product
      * @return array Categories
      */
-    protected function _getCategories($product)
+    protected function _getCategoryKeywords($product)
     {
         $categories = $product->getCategoryIds();
         $categoryArr = $this->_fetchCategoryNames($categories);
@@ -132,7 +134,6 @@ class FireGento_GermanSetup_Model_Observer
      * categories and second all categories via path.
      *
      * @param array $categories Category Ids
-     * @param int   $level      Current level
      * @return array Categories
      */
     protected function _fetchCategoryNames($categories)
@@ -182,17 +183,11 @@ class FireGento_GermanSetup_Model_Observer
      * @param array $categories Categories
      * @return string Keywords
      */
-    protected function _buildKeywords($categories)
+    protected function _buildKeywords($categoryTypes)
     {
-        $keywords  = '';
-        $processed = array();
-        foreach ($categories as $cats) {
-            foreach ($cats as $catId => $cat) {
-                if (!in_array($catId, $processed)) {
-                    $keywords .= $cat.', ';
-                    $processed[] = $catId;
-                }
-            }
+        $keywords = '';
+        foreach ($categoryTypes as $categories) {
+            $keywords .= implode(', ', $categories);
         }
         return $keywords;
     }
