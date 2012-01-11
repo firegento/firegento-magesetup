@@ -103,29 +103,20 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
             return null;
         }
 
+        $page = Mage::getModel('cms/page')->load($pageData['identifier']);
+        
         $pageData = array(
+            'page_id' => $page->getId(),
             'title' => $pageData['title'],
             'identifier' => $pageData['identifier'],
             'content' => $this->getTemplateContent($pageData['text']),
             'root_template' => $pageData['root_template'],
-            'stores' => array('0'),
+            'stores' => $page->getStoreId() ? $page->getStoreId() : array('0'),
             'is_active' => 1,
         );
 
-        $model = Mage::getModel('cms/page');
-        $page = $model->load($pageData['identifier']);
-
-        if (!(int)$page->getId()) {
-            // create
-            $model->setData($pageData)->save();
-        } else {
-            // update
-            if ($override) {
-
-                $pageData['page_id'] = $page->getId();
-                $pageData['stores'] = $page->getStoreId();
-                $model->setData($pageData)->setId($pageData['page_id'])->save();
-            }
+        if (!(int)$page->getId() || $override) {
+            $page->setData($pageData)->save();
         }
     }
 
@@ -139,21 +130,14 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      */
     protected function _createCmsBlock($blockData, $override=true)
     {
-        $model = Mage::getModel('cms/block');
-        $block = $model->load($blockData['identifier']);
+        $block = Mage::getModel('cms/block')->load($blockData['identifier']);
         $blockData['content'] = $this->getTemplateContent($blockData['text']);
-        if (!$block->getId()) {
+        if (!$block->getId() || $override) {
             $blockData['stores'] = array('0');
             $blockData['is_active'] = '1';
-
-            $model->setData($blockData)->save();
-        } else {
-            if ($override) {
-                $blockData['stores'] = array('0');
-                $blockData['is_active'] = '1';
-                $blockData['block_id'] = $block->getId();
-                $model->setData($blockData)->save();
-            }
+            $blockData['block_id'] = $block->getId();
+            
+            $block->setData($blockData)->save();
         }
     }
 
@@ -192,14 +176,15 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      */
     protected function _updateFooterLinksBlock($blockData)
     {
-        $cmsBlock = Mage::getModel('cms/block');
-        $block = $cmsBlock->load($blockData['identifier']);
+        $block = Mage::getModel('cms/block')->load($blockData['identifier']);
 
         if ($block->getId()) {
             $data = array();
             $data['block_id'] = $block->getId();
             $data['identifier'] = $blockData['identifier'] . '_backup';
-            $cmsBlock->setData($data)->save();
+            
+            $block->setData($data)->save();
+            $block = Mage::getModel('cms/block');
         }
 
         $data = array(
