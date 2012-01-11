@@ -61,10 +61,7 @@ class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_B
      */
     public function getProductTaxClasses()
     {
-        $options = Mage::getSingleton('tax/class_source_product')->getAllOptions();
-        array_unshift($options, array('value' => '', 'label' =>''));
-
-        return $options;
+        return Mage::getSingleton('tax/class_source_product')->getAllOptions();
     }
 
     /**
@@ -77,5 +74,11 @@ class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_B
         return Mage::getSingleton('germansetup/source_tax_newProductTaxClass')->getAllOptions();
     }
 
-
+    /**
+     * @return int default new tax class (yet to be created)
+     */
+    public function getDefaultProductTaxClass()
+    {
+        return Mage::getSingleton('germansetup/source_tax_newProductTaxClass')->getDefaultOption();
+    }
 }

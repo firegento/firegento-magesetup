@@ -47,104 +47,68 @@
             	<table cellspacing="0" class="form-list">
             		<tbody>
                     	<tr>
-                        	<td class="label"><label for="name"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
+                        	<td class="label"><label for="checkbox_cms"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
                         	<td class="value">
                             	<input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
                             </td>
-                            <td class="label">
+                            <td class="value">
                                 <?php echo $this->__('i.e. shipping, conditions, revocation') ?>
                             </td>
                         </tr>
                     	<tr>
-                        	<td class="label"><label for="name"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
+                        	<td class="label"><label for="checkbox_agreements"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
                         	<td class="value">
                             	<input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
                             </td>
-                            <td class="label">
+                            <td class="value">
                                 <?php echo $this->__('Conditions') ?>
                             </td>
                         </tr>
                     	<tr>
-                        	<td class="label"><label for="name"><?php echo $this->__('Create Email Templates') ?></label></td>
+                        	<td class="label"><label for="checkbox_email"><?php echo $this->__('Create Email Templates') ?></label></td>
                         	<td class="value">
                             	<input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
                             </td>
-                            <td class="label"><?php echo $this->__('German Email Templates') ?></td>
+                            <td class="value"><?php echo $this->__('German Email Templates') ?></td>
                         </tr>
                         <tr>
-                            <td class="label"><label for="name"><?php echo $this->__('Configure Tax') ?></label></td>
+                            <td class="label"><label for="checkbox_tax"><?php echo $this->__('Configure Tax') ?></label></td>
                             <td class="value">
                                 <input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
                             </td>
-                            <td class="label">
+                            <td class="value">
                                 <?php echo $this->__('Shipping from Germany') ?><br />
                                 <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
                                 <?php echo $this->__('All tax settings will be overwritten!') ?>
                             </td>
                         </tr>
                     	<tr>
-                        	<td class="label"><label for="name"><?php echo $this->__('Update Product Tax Classes') ?></label></td>
-                        	<td class="value">
-                                <input type="checkbox" name="product_tax_classes" id="checkbox_product_tax_classes" value="1" checked="checked" style="float:left; margin: 5px 5px 5px 0;" />
+                        	<td class="label"><label><?php echo $this->__('Update Product Tax Classes') ?></label></td>
+                            <td class="value"></td>
+                            <td class="value">
                                 <table cellspacing="5" class="">
                                     <tbody>
+                                        <?php foreach($this->getProductTaxClasses() as $taxClass): ?>
                                         <tr>
-                                            <td rowspan="3">
-
-                                            </td>
-                                            <td rowspan="3"><?php echo $this->__('Old') ?>: </td>
+                                            <td><?php echo $this->__('Old') ?>: </td>
+                                            <td><strong><?php echo $taxClass['label'] ?></strong></td>
+                                            <td><?php echo $this->__('New') ?>: </td>
                                             <td>
-                                                <select name="product_tax_class_source_1">
-                                                    <?php foreach($this->getProductblocks() as $taxClass): ?>
-                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </td>
-                                            <td rowspan="3"><?php echo $this->__('New') ?>: </td>
-                                            <td>
-                                                <select name="product_tax_class_target_1">
-                                                    <?php foreach($this->getNewProductblocks() as $taxClass): ?>
-                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
+                                                <select name="product_tax_class_target[<?php echo $taxClass['value'] ?>]">
+                                                    <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
+                                                        <option
+                                                            value="<?php echo $taxClass['value'] ?>"
+                                                            <?php if ($this->getDefaultProductTaxClass() == $taxClass['value']): ?>selected="selected"<?php endif ?>
+                                                        >
+                                                        <?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
                                                 </select>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <select name="product_tax_class_source_2">
-                                                    <?php foreach($this->getProductblocks() as $taxClass): ?>
-                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <select name="product_tax_class_target_2">
-                                                    <?php foreach($this->getNewProductblocks() as $taxClass): ?>
-                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <select name="product_tax_class_source_3">
-                                                    <?php foreach($this->getProductblocks() as $taxClass): ?>
-                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <select name="product_tax_class_target_3">
-                                                    <?php foreach($this->getNewProductblocks() as $taxClass): ?>
-                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </td>
-                                        </tr>
+                                        <?php endforeach ?>
                                     </tbody>
                                 </table>
                             </td>
-                            <td class="label"></td>
                         </tr>
 					</tbody>
 				</table>
