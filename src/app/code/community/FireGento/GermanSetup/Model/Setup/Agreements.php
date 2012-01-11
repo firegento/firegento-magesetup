@@ -66,7 +66,7 @@ class FireGento_GermanSetup_Model_Setup_Agreements extends FireGento_GermanSetup
         }
 
         // Set config value to true
-        $setup = Mage::getModel('germansetup/setup', 'core_setup');
+        $setup = Mage::getModel('eav/entity_setup', 'core_setup');
         $setup->setConfigData('checkout/options/enable_agreements', '1');
     }
 }
