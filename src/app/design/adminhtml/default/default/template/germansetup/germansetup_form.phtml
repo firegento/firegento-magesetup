@@ -27,42 +27,60 @@
  */
 ?>
 
-<div class="page-head">
-    <h3><?php echo $this->__('German Setup') ?></h3>
-</div>
-
 <div id="messages">
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php echo $this->getMessageHtml() ?>
 </div>
 
-<p><?php echo $this->__('Please choose:') ?></p>
-<form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
-    <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
-    <fieldset class="group-select wide">
-        <ul>
-            <li>
-                <div class="input-box">
-                    <input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
-                    <label for="checkbox_cms"><?php echo $this->__('Create CMS Pages and Blocks') ?></label>
-                </div>
-                <div class="input-box">
-                    <input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
-                    <label for="checkbox_agreements"><?php echo $this->__('Create Checkout Agreements') ?></label>
-                </div>
-                <div class="input-box">
-                    <input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
-                    <label for="checkbox_email"><?php echo $this->__('Create Email Templates') ?></label>
-                </div>
-                <div class="input-box">
-                    <input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
-                    <label for="checkbox_tax"><?php echo $this->__('Configure Tax') ?></label>
-                </div>
-            </li>
-        </ul>
-    </fieldset>
+<div class="content-header">
+    <h3><?php echo $this->__('German Setup') ?></h3>
+    <p class="form-buttons">
+    	<button id="id_cc93f39eeda0c1be8d55238cf4a0757a" type="button" class="scalable save" onclick="setupForm.submit();"><span><?php echo $this->__('Run German Setup')?></span></button>
+    </p>
+</div>
 
-    <div class="button-set">
-        <button class="form-button" type="submit"><span><?php echo $this->__('Submit') ?></span></button>
-    </div>
-</form>
+<div class="entry-edit">
+    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="setup_form">
+        <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Please choose the requested setups:') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields7">
+    		<div class="hor-scroll">
+            	<table cellspacing="0" class="form-list">
+            		<tbody>
+                    	<tr>
+                        	<td class="label"><label for="name"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
+                        	<td class="value">
+                            	<input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td class="label"><label for="name"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
+                        	<td class="value">
+                            	<input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td class="label"><label for="name"><?php echo $this->__('Create Email Templates') ?></label></td>
+                        	<td class="value">
+                            	<input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td class="label"><label for="name"><?php echo $this->__('Configure Tax') ?></label></td>
+                        	<td class="value">
+                            	<input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
+                            </td>
+                        </tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+    </form>
+</div>
+<script type="text/javascript">
+	setupForm = new varienForm('setup_form', '');
+</script>
