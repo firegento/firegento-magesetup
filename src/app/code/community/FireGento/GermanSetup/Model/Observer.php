@@ -34,6 +34,32 @@
 class FireGento_GermanSetup_Model_Observer
 {
     /**
+     * Filters all agreements
+     *
+     * Filters all agreements against the Magento template filter. This enables the Magento
+     * administrator define a cms static block as the content of the checkout agreements..
+     *
+     * @param Varien_Event_Observer $observer Observer
+     * @return FireGento_GermanSetup_Model_Observer Self.
+     */
+    public function filterAgreements(Varien_Event_Observer $observer)
+    {
+        $block = $observer->getEvent()->getBlock();
+        if ($block->getType() == 'checkout/agreements') {
+            if ($agreements = $block->getAgreements()) {
+                $collection = new Varien_Data_Collection();
+                foreach ($agreements as $agreement) {
+                    $agreement->setData('content', $this->_filterString($agreement->getData('content')));
+                    $agreement->setData('checkbox_text', $this->_filterString($agreement->getData('checkbox_text')));
+                    $collection->addItem($agreement);
+                }
+                $observer->getEvent()->getBlock()->setAgreements($collection);
+            }
+        }
+        return $this;
+    }
+
+    /**
      * Calls the Magento template filter to transform {{block type="cms/block" block_id="XXX"}}
      * into the specific html code
      *
@@ -83,32 +109,6 @@ class FireGento_GermanSetup_Model_Observer
                 $description = Mage::helper('core/string')->truncate($description, 255, '...', '', false);
             }
             $product->setMetaDescription($description);
-        }
-        return $this;
-    }
-
-    /**
-     * Filters all agreements
-     *
-     * Filters all agreements against the Magento template filter. This enables the Magento
-     * administrator define a cms static block as the content of the checkout agreements..
-     *
-     * @param Varien_Event_Observer $observer Observer
-     * @return FireGento_GermanSetup_Model_Observer Self.
-     */
-    public function filterAgreements(Varien_Event_Observer $observer)
-    {
-        $block = $observer->getEvent()->getBlock();
-        if ($block->getType() == 'checkout/agreements') {
-            if ($agreements = $block->getAgreements()) {
-                $collection = new Varien_Data_Collection();
-                foreach ($agreements as $agreement) {
-                    $agreement->setData('content', $this->_filterString($agreement->getData('content')));
-                    $agreement->setData('checkbox_text', $this->_filterString($agreement->getData('checkbox_text')));
-                    $collection->addItem($agreement);
-                }
-                $observer->getEvent()->getBlock()->setAgreements($collection);
-            }
         }
         return $this;
     }
