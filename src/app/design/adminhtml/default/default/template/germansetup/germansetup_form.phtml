@@ -27,14 +27,12 @@
  */
 ?>
 
-<div id="messages">
-    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-</div>
+<div id="messages"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 
 <div class="content-header">
     <h3><?php echo $this->__('German Setup') ?></h3>
     <p class="form-buttons">
-    	<button id="id_cc93f39eeda0c1be8d55238cf4a0757a" type="button" class="scalable save" onclick="setupForm.submit();"><span><?php echo $this->__('Run German Setup')?></span></button>
+    	<?php echo $this->getButtonHtml($this->__('Run German Setup'), 'setupForm.submit();', 'save'); ?>
     </p>
 </div>
 
