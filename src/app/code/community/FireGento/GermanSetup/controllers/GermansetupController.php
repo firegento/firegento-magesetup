@@ -44,7 +44,6 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
         $this->loadLayout()
             ->_setActiveMenu('system/germansetup/setup')
             ->_addBreadcrumb($helper->__('German Setup'), $helper->__('German Setup'))
-            ->_addContent($this->getLayout()->createBlock('germansetup/adminhtml_germansetup'))
             ->renderLayout();
     }
 
