@@ -33,16 +33,22 @@
  */
 class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_Block_Widget
 {
+    /**
+     * Class Constructor
+     *
+     * @return void
+     */
     public function __construct()
     {
         parent::__construct();
-
         $this->setTemplate('germansetup/germansetup_form.phtml');
         $this->setTitle('German Setup');
     }
 
     /**
-     * @return string
+     * Retrieve the POST URL for the form
+     *
+     * @return string URL
      */
     public function getPostActionUrl()
     {
