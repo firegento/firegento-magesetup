@@ -86,7 +86,7 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
      */
     protected function _loadExistingModel($model, $attributeCode, $value)
     {
-        foreach($model->getCollection() as $singleModel) {
+        foreach ($model->getCollection() as $singleModel) {
             if ($singleModel->getData($attributeCode) == $value) {
                 $model->load($singleModel->getId());
                 return $model;
