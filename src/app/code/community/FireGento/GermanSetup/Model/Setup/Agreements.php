@@ -61,7 +61,8 @@ class FireGento_GermanSetup_Model_Setup_Agreements extends FireGento_GermanSetup
         );
         foreach ($agreements as $agreement) {
             $model = Mage::getModel('checkout/agreement');
-            $model->setData($agreement);
+            $model = $this->_loadExistingModel($model, 'name', $agreement['name']);
+            $model->addData($agreement);
             $model->save();
         }
 
