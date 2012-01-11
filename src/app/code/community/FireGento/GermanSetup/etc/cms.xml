@@ -70,7 +70,7 @@
                 </default>
             </pages>
 
-            <taxClasses>
+            <blocks>
                 <default>
                     <gs_business_terms>
                         <execute>1</execute>
@@ -92,7 +92,7 @@
                         <identifier>footer_links</identifier>
                     </gs_footerlinks>
                 </default>
-            </taxClasses>
+            </blocks>
 
             <footer_links>
                 <default>

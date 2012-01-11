@@ -95,7 +95,7 @@
                                             <td rowspan="3"><?php echo $this->__('Old') ?>: </td>
                                             <td>
                                                 <select name="product_tax_class_source_1">
-                                                    <?php foreach($this->getProductTaxClasses() as $taxClass): ?>
+                                                    <?php foreach($this->getProductblocks() as $taxClass): ?>
                                                         <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
                                                 </select>
@@ -103,7 +103,7 @@
                                             <td rowspan="3"><?php echo $this->__('New') ?>: </td>
                                             <td>
                                                 <select name="product_tax_class_target_1">
-                                                    <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
+                                                    <?php foreach($this->getNewProductblocks() as $taxClass): ?>
                                                         <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
                                                 </select>
@@ -112,14 +112,14 @@
                                         <tr>
                                             <td>
                                                 <select name="product_tax_class_source_2">
-                                                    <?php foreach($this->getProductTaxClasses() as $taxClass): ?>
+                                                    <?php foreach($this->getProductblocks() as $taxClass): ?>
                                                         <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select name="product_tax_class_target_2">
-                                                    <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
+                                                    <?php foreach($this->getNewProductblocks() as $taxClass): ?>
                                                         <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
                                                 </select>
@@ -128,14 +128,14 @@
                                         <tr>
                                             <td>
                                                 <select name="product_tax_class_source_3">
-                                                    <?php foreach($this->getProductTaxClasses() as $taxClass): ?>
+                                                    <?php foreach($this->getProductblocks() as $taxClass): ?>
                                                         <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select name="product_tax_class_target_3">
-                                                    <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
+                                                    <?php foreach($this->getNewProductblocks() as $taxClass): ?>
                                                         <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
                                                 </select>

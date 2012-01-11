@@ -104,7 +104,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
         }
 
         $page = Mage::getModel('cms/page')->load($pageData['identifier']);
-        
+
         $pageData = array(
             'page_id' => $page->getId(),
             'title' => $pageData['title'],
@@ -136,7 +136,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
             $blockData['stores'] = array('0');
             $blockData['is_active'] = '1';
             $blockData['block_id'] = $block->getId();
-            
+
             $block->setData($blockData)->save();
         }
     }
@@ -182,7 +182,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
             $data = array();
             $data['block_id'] = $block->getId();
             $data['identifier'] = $blockData['identifier'] . '_backup';
-            
+
             $block->setData($data)->save();
             $block = Mage::getModel('cms/block');
         }

@@ -118,6 +118,6 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
         if ($taxPercent) {
             return $taxPercent;
         }
-        return '';
+        return 0;
     }
 }
