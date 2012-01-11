@@ -40,4 +40,48 @@
             </fileset>
         </copy>
     </target>
+    
+    <target name="deploy_to_dev">
+      <antcall target="deploy_scp">
+        <param name="ssh.user" value="${dev.ssh.user}"/>
+        <param name="ssh.keyfile" value="${dev.ssh.keyfile}"/>
+        <param name="ssh.passphrase" value="${dev.ssh.passphrase}"/>
+        <param name="ssh.server" value="${dev.ssh.server}"/>
+        <param name="ssh.path" value="${dev.ssh.path}"/>
+        <param name="ssh.cache" value="${dev.ssh.cache}"/>
+      </antcall>
+    </target>
+    
+    <target name="deploy_scp">
+        <scp
+            todir="${ssh.user}@${ssh.server}:${ssh.path}"
+            keyfile="${ssh.keyfile}"
+            passphrase="${ssh.passphrase}"
+            trust="true"
+            verbose="true"
+            >
+            <fileset dir="src/">
+                <include name="**/*"/>
+                <modified>
+                     <param name="cache.cachefile" value="${ssh.cache}.cache.properties"/>
+                </modified>
+                <exclude name="**/.svn"/>
+                <exclude name=".buildpath"/>
+                <exclude name=".project"/>
+                <exclude name=".settings/**"/>
+                <exclude name=".cache/**"/>
+                <exclude name="webserver/**"/>
+                <exclude name=".externalToolBuilders/**"/>
+                <exclude name="downloader/**"/>
+                <exclude name="pear"/>
+                <exclude name="*cache.properties"/>
+                <exclude name="build.default.properties"/>
+                <exclude name="build.properties"/>
+                <exclude name="build.xml"/>
+                <exclude name="TODO"/>
+                <exclude name="var/**" />
+                <exclude name="Thumbs.db" />
+            </fileset>
+        </scp>
+    </target>
 </project>
