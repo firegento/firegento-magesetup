@@ -47,12 +47,12 @@ class FireGento_GermanSetup_Model_Source_Cms_Page
     public function toOptionArray()
     {
         if (!$this->_options) {
-            $blocks = Mage::getModel('cms/page')->getCollection()
+            $pages = Mage::getModel('cms/page')->getCollection()
                 ->addFieldToFilter('is_active', 1)
                 ->setOrder('identifier', 'ASC');
 
-            foreach ($blocks as $block) {
-                $options[$block->getIdentifier()] = $block->getIdentifier();
+            foreach ($pages as $page) {
+                $options[$page->getIdentifier()] = $page->getIdentifier();
             }
 
             foreach ($options as $identifier) {

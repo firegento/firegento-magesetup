@@ -66,7 +66,6 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
         if (!$this->getData('tax_rate')) {
             $this->setData('tax_rate', $this->_loadTaxCalculationRate($this->getProduct()));
         }
-
         return $this->getData('tax_rate');
     }
 
@@ -77,7 +76,7 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
      */
     public function getFormattedTaxRate()
     {
-        if ($this->getTaxRate() === NULL) {
+        if ($this->getTaxRate() === null) {
             return '';
         }
 
@@ -96,7 +95,6 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
         if (!$this->getData('is_including_tax')) {
             $this->setData('is_including_tax', Mage::getStoreConfig('tax/sales_display/price'));
         }
-
         return $this->getData('is_including_tax');
     }
 
@@ -108,20 +106,18 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
      */
     protected function _loadTaxCalculationRate(Mage_Catalog_Model_Product $product)
     {
-        $taxCalculationRateId = Mage::getModel('tax/calculation')
-            ->getCollection()
-            ->getItemById($product->getTaxClassId())
-            ->getTaxCalculationRateId();
-
-        $taxPercent = Mage::getModel('tax/calculation_rate')
-            ->getCollection()
-            ->getItemById($taxCalculationRateId)
-            ->getRate();
-
-        if (is_string($taxPercent)) {
-            return $taxPercent;
+        $taxPercent = $product->getTaxPercent();
+        if (is_null($taxPercent)) {
+            $taxClassId = $product->getTaxClassId();
+            if ($taxClassId) {
+                $request    = Mage::getSingleton('tax/calculation')->getRateRequest(null, null, null, null);
+                $taxPercent = Mage::getSingleton('tax/calculation')->getRate($request->setProductClassId($taxClassId));
+            }
         }
 
-        return '';
+        if ($taxPercent) {
+            return $taxPercent;
+        }
+        return 0;
     }
 }
