@@ -43,11 +43,7 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
     {
         $html = trim(parent::_toHtml());
 
-        if (empty($html)) {
-            return '';
-        }
-
-        if (!Mage::getStoreConfigFlag('catalog/price/display_block_below_price')) {
+        if (empty($html) || !Mage::getStoreConfigFlag('catalog/price/display_block_below_price')) {
             return $html;
         }
 
