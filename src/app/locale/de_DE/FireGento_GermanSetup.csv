@@ -6,6 +6,8 @@
 "Incl. Tax, plus <a href=""%s"">Shipping Cost</a>","Inkl. MwSt., zzgl. <a href=""%s"">Versandkosten</a>"
 "Incl. Tax","Inkl. MwSt."
 
+"German Setup has been installed.","German Setup wurde installiert."
+"Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Klicken Sie <a href=""%s"">hier</a>, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren."
 "Please choose the requested setups:","Bitte wählen Sie die gewünschten Setups:"
 "Run German Setup","German Setup ausführen"
 "Create CMS Pages and Blocks","CMS-Seiten und Statische Blöcke erstellen"

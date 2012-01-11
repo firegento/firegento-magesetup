@@ -56,30 +56,39 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
     public function saveAction()
     {
         if ($this->getRequest()->isPost()) {
-            if ($this->getRequest()->getParam('cms') == 1) {
-                Mage::getSingleton('germansetup/setup_cms')->setup();
-                $this->_getSession()->addSuccess($this->__('German Setup: CMS Blocks and Pages have been created.'));
-                Mage::log($this->__('German Setup: CMS Blocks and Pages have been created.'));
-            }
+            try {
+                if ($this->getRequest()->getParam('cms') == 1) {
+                    Mage::getSingleton('germansetup/setup_cms')->setup();
+                    $this->_getSession()->addSuccess($this->__('German Setup: CMS Blocks and Pages have been created.'));
+                    Mage::log($this->__('German Setup: CMS Blocks and Pages have been created.'));
+                }
 
-            if ($this->getRequest()->getParam('agreements') == 1) {
-                Mage::getSingleton('germansetup/setup_agreements')->setup();
-                $this->_getSession()->addSuccess($this->__('German Setup: Checkout Agreements have been created.'));
-                Mage::log($this->__('German Setup: Checkout Agreements have been created.'));
-            }
+                if ($this->getRequest()->getParam('agreements') == 1) {
+                    Mage::getSingleton('germansetup/setup_agreements')->setup();
+                    $this->_getSession()->addSuccess($this->__('German Setup: Checkout Agreements have been created.'));
+                    Mage::log($this->__('German Setup: Checkout Agreements have been created.'));
+                }
 
-            if ($this->getRequest()->getParam('email') == 1) {
-                Mage::getSingleton('germansetup/setup_email')->setup();
-                $this->_getSession()->addSuccess($this->__('German Setup: Email Templates have been created.'));
-                Mage::log($this->__('German Setup: Email Templates have been created.'));
-            }
+                if ($this->getRequest()->getParam('email') == 1) {
+                    Mage::getSingleton('germansetup/setup_email')->setup();
+                    $this->_getSession()->addSuccess($this->__('German Setup: Email Templates have been created.'));
+                    Mage::log($this->__('German Setup: Email Templates have been created.'));
+                }
 
-            if ($this->getRequest()->getParam('tax') == 1) {
-                Mage::getSingleton('germansetup/setup_tax')->setup();
-                $this->_getSession()->addSuccess($this->__('German Setup: Tax Settings have been created.'));
-                Mage::log($this->__('German Setup: Tax Settings have been created.'));
+                if ($this->getRequest()->getParam('tax') == 1) {
+                    Mage::getSingleton('germansetup/setup_tax')->setup();
+                    $this->_getSession()->addSuccess($this->__('German Setup: Tax Settings have been created.'));
+                    Mage::log($this->__('German Setup: Tax Settings have been created.'));
+                }
+
+                // Set a config flag to indicate that the setup has been initialized.
+                Mage::getModel('eav/entity_setup', 'core_setup')->setConfigData('germansetup/is_initialized', '1');
+
+            } catch (Exception $e) {
+                $this->_getSession()->addError($e->getMessage());
+                Mage::logException($e);
             }
         }
-        $this->_redirect('*/*/');
+        $this->_redirect('*/*');
     }
 }

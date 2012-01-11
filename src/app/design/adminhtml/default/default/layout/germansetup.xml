@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="notifications">
+            <block type="germansetup/adminhtml_notifications" name="germansetup_notifications" template="germansetup/notifications.phtml" before="-"></block>
+        </reference>
+    </default>
+</layout>

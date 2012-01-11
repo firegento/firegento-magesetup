@@ -69,6 +69,13 @@
         </events>
     </frontend>
     <adminhtml>
+        <layout>
+            <updates>
+                <germansetup>
+                    <file>germansetup.xml</file>
+                </germansetup>
+            </updates>
+        </layout>
         <translate>
             <modules>
                 <FireGento_GermanSetup>
