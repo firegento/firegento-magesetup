@@ -1,6 +1,14 @@
 <?php $shippingCostUrl = Mage::helper('germansetup')->getShippingCostUrl() ?>
 <?php if (!empty($shippingCostUrl)): ?>
-    <?php echo $this->__('Incl. Tax, plus <a href="%s">Shipping Cost</a>', $shippingCostUrl) ?>
+	<?php if ($this->getIsIncludingTax() == 1): ?>
+    	<?php echo $this->__('Excl. %s Tax, plus <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?>
+	<?php elseif ($this->getIsIncludingTax() == 2): ?>  
+    	<?php echo $this->__('Incl. %s Tax, plus <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?>
+	<?php endif ?>   
 <?php else: ?>
-    <?php echo $this->__('Incl. Tax') ?>
+	<?php if ($this->getIsIncludingTax() == 1): ?>
+    	<?php echo $this->__('Excl. %s Tax', $this->getFormattedTaxRate()) ?>
+    <?php elseif ($this->getIsIncludingTax() == 2): ?>  
+    	<?php echo $this->__('Incl. %s Tax', $this->getFormattedTaxRate()) ?>
+    <?php endif ?>
 <?php endif ?>

@@ -18,10 +18,10 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     0.4.0
  */
 /**
- * Setup script; Creates all initial pages, blocks and emails
+ * Displays a form with some options to setup things
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,36 +29,20 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     0.4.0
  */
+class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_Block_Widget
+{
+    public function __construct()
+    {
+        parent::__construct();
 
-/* @var $installer Mage_Eav_Model_Entity_Setup */
-$installer = $this;
-$installer->startSetup();
+        $this->setTemplate('germansetup/germansetup_form.phtml');
+        $this->setTitle('German Setup');
+    }
 
-// execute pages
-foreach ($this->getConfigPages() as $name => $data) {
-    if ($data['execute'] == 1) {
-        $this->createCmsPage($data, false);
+    public function getPostActionUrl()
+    {
+        return $this->getUrl('*/*/save');
     }
 }
-
-// execute blocks
-foreach ($this->getConfigBlocks() as $name => $data) {
-    if ($data['execute'] == 1) {
-        if ($name == 'gs_footerlinks') {
-            $this->updateFooterLinksBlock($data);
-        } else {
-            $this->createCmsBlock($data, false);
-        }
-    }
-}
-
-// execute emails
-foreach ($this->getConfigEmails() as $name => $data) {
-    if ($data['execute'] == 1) {
-        $this->createEmail($data, false);
-    }
-}
-
-$installer->endSetup();

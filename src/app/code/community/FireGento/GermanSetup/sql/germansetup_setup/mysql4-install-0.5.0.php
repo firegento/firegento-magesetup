@@ -37,31 +37,6 @@
 $installer = $this;
 $installer->startSetup();
 
-// execute pages
-foreach ($this->getConfigPages() as $name => $data) {
-    if ($data['execute'] == 1) {
-        $this->createCmsPage($data, false);
-    }
-}
-
-// execute blocks
-foreach ($this->getConfigBlocks() as $name => $data) {
-    if ($data['execute'] == 1) {
-        if ($name == 'gs_footerlinks') {
-            $this->updateFooterLinksBlock($data);
-        } else {
-            $this->createCmsBlock($data, false);
-        }
-    }
-}
-
-// execute emails
-foreach ($this->getConfigEmails() as $name => $data) {
-    if ($data['execute'] == 1) {
-        $this->createEmail($data, false);
-    }
-}
-
 $installer->addAttribute(
     'catalog_product',
     'delivery_time',
@@ -83,6 +58,14 @@ $installer->addAttribute(
         'is_html_allowed_on_front'      => true,
     )
 );
+
+/** @todo Set correct admin url */
+$notification = Mage::getModel('adminnotification/inbox')
+        ->setTitle(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
+        ->setDescription(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
+        ->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/germansetup'))
+        ->setSeverity(Mage_AdminNotification_Model_Inbox::SEVERITY_NOTICE)
+        ->save();
 
 $installer->endSetup();
 
