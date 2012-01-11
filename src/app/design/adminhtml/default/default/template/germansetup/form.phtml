@@ -47,7 +47,7 @@
             	<table cellspacing="0" class="form-list">
             		<tbody>
                     	<tr>
-                        	<td class="label"><label for="name"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
+                        	<td class="label"><label for="checkbox_cms"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
                         	<td class="value">
                             	<input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
                             </td>
@@ -56,7 +56,7 @@
                             </td>
                         </tr>
                     	<tr>
-                        	<td class="label"><label for="name"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
+                        	<td class="label"><label for="checkbox_agreements"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
                         	<td class="value">
                             	<input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
                             </td>
@@ -65,14 +65,14 @@
                             </td>
                         </tr>
                     	<tr>
-                        	<td class="label"><label for="name"><?php echo $this->__('Create Email Templates') ?></label></td>
+                        	<td class="label"><label for="checkbox_email"><?php echo $this->__('Create Email Templates') ?></label></td>
                         	<td class="value">
                             	<input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
                             </td>
                             <td class="value"><?php echo $this->__('German Email Templates') ?></td>
                         </tr>
                         <tr>
-                            <td class="label"><label for="name"><?php echo $this->__('Configure Tax') ?></label></td>
+                            <td class="label"><label for="checkbox_tax"><?php echo $this->__('Configure Tax') ?></label></td>
                             <td class="value">
                                 <input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
                             </td>
@@ -83,10 +83,8 @@
                             </td>
                         </tr>
                     	<tr>
-                        	<td class="label"><label for="name"><?php echo $this->__('Update Product Tax Classes') ?></label></td>
-                            <td class="value">
-                                <input type="checkbox" name="product_tax_classes" id="checkbox_product_tax_classes" value="1" checked="checked" />
-                            </td>
+                        	<td class="label"><label><?php echo $this->__('Update Product Tax Classes') ?></label></td>
+                            <td class="value"></td>
                             <td class="value">
                                 <table cellspacing="5" class="">
                                     <tbody>
@@ -98,7 +96,11 @@
                                             <td>
                                                 <select name="product_tax_class_target[<?php echo $taxClass['value'] ?>]">
                                                     <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
-                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
+                                                        <option
+                                                            value="<?php echo $taxClass['value'] ?>"
+                                                            <?php if ($this->getDefaultProductTaxClass() == $taxClass['value']): ?>selected="selected"<?php endif ?>
+                                                        >
+                                                        <?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
                                                 </select>
                                             </td>

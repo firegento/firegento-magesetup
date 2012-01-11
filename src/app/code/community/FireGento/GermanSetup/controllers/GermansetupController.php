@@ -92,9 +92,7 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                     Mage::getSingleton('germansetup/setup_tax')->setup();
                     $this->_getSession()->addSuccess($this->__('German Setup: Tax Settings have been created.'));
                     Mage::log($this->__('German Setup: Tax Settings have been created.'));
-                }
 
-                if ($this->getRequest()->getParam('product_tax_classes') == 1) {
                     $this->_updateProductTaxClasses();
                     $this->_getSession()->addSuccess($this->__('German Setup: Product Tax Classes have been updated.'));
                     Mage::log($this->__('German Setup: Product Tax Classes have been updated.'));
