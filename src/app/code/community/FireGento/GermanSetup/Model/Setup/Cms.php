@@ -195,6 +195,6 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
             'is_active' => '1',
         );
 
-        $cmsBlock->setData($data)->save();
+        $block->setData($data)->save();
     }
 }
