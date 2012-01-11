@@ -51,17 +51,35 @@
                         	<td class="value">
                             	<input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
                             </td>
+                            <td class="label">
+                                <?php echo $this->__('i.e. shipping, conditions, revocation') ?>
+                            </td>
                         </tr>
                     	<tr>
                         	<td class="label"><label for="name"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
                         	<td class="value">
                             	<input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
                             </td>
+                            <td class="label">
+                                <?php echo $this->__('Conditions') ?>
+                            </td>
                         </tr>
                     	<tr>
                         	<td class="label"><label for="name"><?php echo $this->__('Create Email Templates') ?></label></td>
                         	<td class="value">
                             	<input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
+                            </td>
+                            <td class="label"><?php echo $this->__('German Email Templates') ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="name"><?php echo $this->__('Configure Tax') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
+                            </td>
+                            <td class="label">
+                                <?php echo $this->__('Shipping from Germany') ?><br />
+                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
+                                <?php echo $this->__('All tax settings will be overwritten!') ?>
                             </td>
                         </tr>
                     	<tr>
@@ -126,12 +144,7 @@
                                     </tbody>
                                 </table>
                             </td>
-                        </tr>
-                    	<tr>
-                        	<td class="label"><label for="name"><?php echo $this->__('Configure Tax') ?></label></td>
-                        	<td class="value">
-                            	<input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
-                            </td>
+                            <td class="label"></td>
                         </tr>
 					</tbody>
 				</table>
