@@ -139,7 +139,7 @@
         <catalog>
             <price>
                 <display_block_below_price>1</display_block_below_price>
-                <cms_page_shipping>germansetup_shipping</cms_page_shipping>
+                <cms_page_shipping>lieferung</cms_page_shipping>
             </price>
         </catalog>
         <general>
