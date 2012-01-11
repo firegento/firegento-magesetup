@@ -37,7 +37,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      * @var FireGento_GermanSetup_Model_Setup
      */
     protected $_setup;
-    
+
     /**
      * @var Varien_Db_Adapter_Interface
      */
@@ -137,7 +137,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     {
         $this->_insertIntoTable('tax_calculation_rule', $taxCalcRuleData);
     }
-    
+
     /**
      * Get tax calculation rates from config file
      *
@@ -159,7 +159,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
         $this->_insertIntoTable('tax_calculation_rate', $taxCalcRateData);
     }
 
-     /**
+    /**
      * Get tax calculations from config file
      *
      * @return array
