@@ -27,9 +27,6 @@
     </target>
 
     <target name="clean">
-        <delete failonerror="false">
-            <fileset dir="${dev.local.deployDir}/app/code/community/Flagbit/Mip" />
-        </delete>
         <delete file="${basedir}/cache.properties" failonerror="false" />
     </target>
 
