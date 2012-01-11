@@ -41,7 +41,6 @@ class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_B
     public function __construct()
     {
         parent::__construct();
-        $this->setTemplate('germansetup/germansetup_form.phtml');
         $this->setTitle('German Setup');
     }
 

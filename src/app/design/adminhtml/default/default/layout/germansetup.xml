@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<adminhtml_germansetup_index>
+        <reference name="content">
+            <block type="germansetup/adminhtml_germansetup" name="germansetup.index" template="germansetup/form.phtml"/>
+        </reference>
+    </adminhtml_germansetup_index>
+	<adminhtml_germansetup_extensions>
+        <reference name="content">
+            <block type="adminhtml/template" name="germansetup.extensions" template="germansetup/extensions.phtml"/>
+        </reference>
+    </adminhtml_germansetup_extensions>
+</layout>
