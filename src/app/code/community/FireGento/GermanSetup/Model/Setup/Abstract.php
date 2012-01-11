@@ -40,9 +40,6 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
      */
     public function getConfigData()
     {
-//        $configData = Mage::getConfig()
-//        ->getNode('default/germansetup')
-//        ->asArray();
         $configData = Mage::getSingleton('germansetup/config')
             ->getNode('default/germansetup')
             ->asArray();
@@ -52,8 +49,8 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
     /**
      * Get config.xml data
      *
-     * @param string      $node      xml noce
-     * @param string|null $childNode if set, child node of the first noce
+     * @param string      $node      xml node
+     * @param string|null $childNode if set, child node of the first node
      *
      * @return array
      */
