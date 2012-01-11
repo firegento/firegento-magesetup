@@ -75,4 +75,23 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
     {
         return file_get_contents(Mage::getBaseDir() . DS . $filename);
     }
+
+    /**
+     * Load a model by attribute code
+     *
+     * @param Mage_Core_Model_Abstract $model
+     * @param string $attributeCode
+     * @param string $value
+     * @return Mage_Core_Model_Abstract
+     */
+    protected function _loadExistingModel($model, $attributeCode, $value)
+    {
+        foreach($model->getCollection() as $singleModel) {
+            if ($singleModel->getData($attributeCode) == $value) {
+                $model->load($singleModel->getId());
+                return $model;
+            }
+        }
+        return $model;
+    }
 }
