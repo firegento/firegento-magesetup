@@ -1362,6 +1362,38 @@
                     </tax_calculation_CY_7>
                 </default>
             </tax_calculations>
+            <tax_config>
+                 <default>
+                     <general__country__default>DE</general__country__default>
+                     <tax__classes__shipping_tax_class>4</tax__classes__shipping_tax_class>
+                     <tax__calculation__based_on>billing</tax__calculation__based_on>
+                     <tax__calculation__price_includes_tax>1</tax__calculation__price_includes_tax>
+                     <tax__calculation__shipping_includes_tax>1</tax__calculation__shipping_includes_tax>
+                     <tax__calculation__apply_after_discount>1</tax__calculation__apply_after_discount>
+                     <tax__calculation__discount_tax>1</tax__calculation__discount_tax>
+                     <tax__defaults__country>DE</tax__defaults__country>
+                     <tax__defaults__region>79</tax__defaults__region>
+                     <tax__defaults__postcode>12345</tax__defaults__postcode>
+                     <tax__display__type>2</tax__display__type>
+                     <tax__display__shipping>2</tax__display__shipping>
+                     <tax__cart_display__subtotal>2</tax__cart_display__subtotal>
+                     <tax__cart_display__full_summary>1</tax__cart_display__full_summary>
+                     <tax__cart_display__shipping>2</tax__cart_display__shipping>
+                     <tax__cart_display__price>2</tax__cart_display__price>
+                     <tax__cart_display__zero_tax>1</tax__cart_display__zero_tax>
+                     <tax__cart_display__grandtotal>0</tax__cart_display__grandtotal>
+                     <tax__sales_display__price>2</tax__sales_display__price>
+                     <tax__sales_display__subtotal>2</tax__sales_display__subtotal>
+                     <tax__sales_display__shipping>2</tax__sales_display__shipping>
+                     <tax__sales_display__grandtotal>0</tax__sales_display__grandtotal>
+                     <tax__sales_display__full_summary>1</tax__sales_display__full_summary>
+                     <tax__sales_display__zero_tax>1</tax__sales_display__zero_tax>
+                     <shipping__origin__country_id>DE</shipping__origin__country_id>
+                     <shipping__origin__region_id>79</shipping__origin__region_id>
+                     <shipping__origin__postcode>12345</shipping__origin__postcode>
+                     <shipping__origin__city>Musterstadt</shipping__origin__city>
+                 </default>
+            </tax_config>
         </germansetup>
     </default>
 </config>

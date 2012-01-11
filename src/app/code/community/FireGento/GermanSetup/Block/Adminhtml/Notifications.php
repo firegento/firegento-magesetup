@@ -18,11 +18,10 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     0.4.0
  */
 /**
- * Setup script; Adds the delivery_time attribute for products
- * and creates all initial pages, blocks and emails
+ * Displays German Setup notifications
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -30,33 +29,40 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     0.4.0
  */
+class FireGento_GermanSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_Block_Template
+{
+    /**
+     * Returns a value that indicates if some of the german setup settings have already been initialized.
+     *
+     * @return bool
+     */
+    public function isInitialized()
+    {
+        return Mage::getStoreConfigFlag('germansetup/is_initialized');
+    }
 
-/* @var $installer Mage_Eav_Model_Entity_Setup */
-$installer = $this;
-$installer->startSetup();
+    /**
+     * Get germansetup management url
+     *
+     * @return string
+     */
+    public function getManageUrl()
+    {
+        return $this->getUrl('adminhtml/germansetup');
+    }
 
-$installer->addAttribute(
-    'catalog_product',
-    'delivery_time',
-    array(
-        'label'                      => 'Lieferzeit',
-        'input'                      => 'text',
-        'required'                   => false,
-        'user_defined'               => true,
-        'default'                    => '2-3 Tage',
-        'group'                      => 'General',
-        'global'                     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-        'visible'                    => true,
-        'filterable'                 => false,
-        'searchable'                 => false,
-        'comparable'                 => true,
-        'visible_on_front'           => true,
-        'visible_in_advanced_search' => true,
-        'used_in_product_listing'    => true,
-        'is_html_allowed_on_front'   => true,
-    )
-);
-
-$installer->endSetup();
+    /**
+     * ACL validation before html generation
+     *
+     * @return string
+     */
+    protected function _toHtml()
+    {
+        if (Mage::getSingleton('admin/session')->isAllowed('system/germansetup')) {
+            return parent::_toHtml();
+        }
+        return '';
+    }
+}
