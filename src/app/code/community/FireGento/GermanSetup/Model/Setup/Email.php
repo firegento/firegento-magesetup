@@ -64,30 +64,20 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
      * @param array $emailData template data
      * @param boolean $override override email template if set
      *
-     * @return voids
+     * @return void
      */
-    protected function _createEmail($emailData, $override=true)
+    protected function _createEmail($emailData, $override = true)
     {
-        $model = Mage::getModel('core/email_template');
-        $template = $model->loadByCode($emailData['template_code']);
-        if (!$template->getId()) {
-            // create
-            $template = $model->setTemplateSubject($emailData['template_subject'])
+        $template = Mage::getModel('core/email_template')
+            ->loadByCode($emailData['template_code']);
+        
+        if (!$template->getId() || $override) {
+            $template->setTemplateSubject($emailData['template_subject'])
                 ->setTemplateCode($emailData['template_code'])
                 ->setTemplateText($this->getTemplateContent($emailData['text']))
                 ->setTemplateType($emailData['template_type'])
                 ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate())
                 ->save();
-        } else {
-            //update
-            if ($override) {
-                $template->setTemplateSubject($emailData['template_subject'])
-                    ->setTemplateCode($emailData['template_code'])
-                    ->setTemplateText($this->getTemplateContent($emailData['text']))
-                    ->setTemplateType($emailData['template_type'])
-                    ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate())
-                    ->save();
-            }
         }
 
         $this->setConfigData($emailData['config_data_path'], $template->getId());
