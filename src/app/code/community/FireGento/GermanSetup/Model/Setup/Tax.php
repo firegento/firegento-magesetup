@@ -64,6 +64,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
 
         foreach ($this->_getConfigTaxClasses() as $data) {
             if ($data['execute'] == 1) {
+                unset($data['default']);
                 $this->_createTaxClass($data);
             }
         }
