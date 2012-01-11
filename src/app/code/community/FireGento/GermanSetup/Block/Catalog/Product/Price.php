@@ -48,61 +48,80 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
         }
 
         $html .= $this->getLayout()->createBlock('core/template')
-        	->setTemplate('germansetup/price_info.phtml')
-        	->setFormattedTaxRate($this->getFormattedTaxRate())
-        	->setIsIncludingTax($this->isIncludingTax())
-        	->toHtml();
+            ->setTemplate('germansetup/price_info.phtml')
+            ->setFormattedTaxRate($this->getFormattedTaxRate())
+            ->setIsIncludingTax($this->isIncludingTax())
+            ->toHtml();
         
         return $html;
     }
     
+    /**
+     * Read tax rate from current product.
+     * 
+     * @return string
+     */
     public function getTaxRate()
     {
-    	if(!$this->getData('tax_rate'))
-    	{
-    		$this->setData('tax_rate', $this->_loadTaxCalculationRate($this->getProduct()));
-    	}
-    	
-    	return $this->getData('tax_rate');
+        if (!$this->getData('tax_rate')) {
+            $this->setData('tax_rate', $this->_loadTaxCalculationRate($this->getProduct()));
+        }
+        
+        return $this->getData('tax_rate');
     }
     
+    /**
+     * Retrieves formatted string of tax rate for user output
+     * 
+     * @return string
+     */
     public function getFormattedTaxRate()
     {
-    	if($this->getTaxRate() === NULL)
-    	{
-    		return '';
-    	}
-    	
-		$locale = Mage::app()->getLocale()->getLocaleCode();
-		$test = Mage::app()->getLocale();
-
-		// format number using shop locale
-		return Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale, 'precision' => 2)) . '%';
+        if ($this->getTaxRate() === NULL) {
+            return '';
+        }
+        
+        $locale = Mage::app()->getLocale()->getLocaleCode();
+        
+        return $this->__('%s%%', Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale, 'precision' => 2)));
     }
     
+    /**
+     * Returns whether or not the price contains taxes
+     * 
+     * @return bool
+     */
     public function isIncludingTax()
     {
-    	if(!$this->getData('is_including_tax'))
-    	{
-    		$this->setData('is_including_tax', Mage::getStoreConfig('tax/sales_display/price'));
-    	}
-    	
-    	return $this->getData('is_including_tax');
+        if (!$this->getData('is_including_tax')) {
+            $this->setData('is_including_tax', Mage::getStoreConfig('tax/sales_display/price'));
+        }
+        
+        return $this->getData('is_including_tax');
     }
-	
-    protected function _loadTaxCalculationRate(Mage_Catalog_Model_Product $product) {
-		$_taxCalculationRateId = Mage::getModel('tax/calculation')
-			->getCollection()
-			->getItemById($product->getTaxClassId())
-			->getTaxCalculationRateId();
-		$_taxPercent = Mage::getModel('tax/calculation_rate')
-			->getCollection()
-			->getItemById($_taxCalculationRateId)
-			->getRate();
-		if(is_string($_taxPercent)) {
-			return $_taxPercent;
-		}
-		
-		return NULL;
-	}
+    
+    /**
+     * Gets tax percents for current product
+     * 
+     * @param Mage_Catalog_Model_Product $product
+     * @return string
+     */
+    protected function _loadTaxCalculationRate(Mage_Catalog_Model_Product $product)
+    {
+        $taxCalculationRateId = Mage::getModel('tax/calculation')
+            ->getCollection()
+            ->getItemById($product->getTaxClassId())
+            ->getTaxCalculationRateId();
+        
+        $taxPercent = Mage::getModel('tax/calculation_rate')
+            ->getCollection()
+            ->getItemById($taxCalculationRateId)
+            ->getRate();
+        
+        if (is_string($taxPercent)) {
+            return $taxPercent;
+        }
+        
+        return '';
+    }
 }
