@@ -113,11 +113,9 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
 
     protected function _updateProductTaxClasses()
     {
-        for ($i = 1; $i <= 3; $i++) {
-            if (
-                (strlen($source = $this->getRequest()->getParam('product_tax_class_source_' . $i))) &&
-                ($target = $this->getRequest()->getParam('product_tax_class_target_' . $i))
-            ) {
+        $taxClasses = $this->getRequest()->getParam('product_tax_class_target');
+        foreach ($taxClasses as $source => $target) {
+            if ($target = intval($target)) {
 
                 Mage::getSingleton('germansetup/setup_tax')->updateProductTaxClasses($source, $target);
             }
