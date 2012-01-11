@@ -48,7 +48,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      */
     public function __construct()
     {
-        $this->_setup = Mage::getModel('germansetup/setup', 'core_setup');
+        $this->_setup = Mage::getModel('eav/entity_setup', 'core_setup');
         $this->_connection = $this->_setup->getConnection();
     }
 
@@ -110,7 +110,6 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      * Collect data and create tax class
      *
      * @param array   $taxClassData tax class data
-     *
      * @return void
      */
     protected function _createTaxClass($taxClassData)
@@ -132,7 +131,6 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      * Collect data and create tax calculation rules
      *
      * @param array   $taxCalcRuleData tax class data
-     *
      * @return void
      */
     protected function _createTaxCalcRule($taxCalcRuleData)
@@ -154,7 +152,6 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      * Collect data and create tax calculation rates
      *
      * @param array   $taxCalcRateData tax class data
-     *
      * @return void
      */
     protected function _createTaxCalcRate($taxCalcRateData)
