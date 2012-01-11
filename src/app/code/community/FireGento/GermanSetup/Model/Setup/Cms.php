@@ -76,7 +76,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      */
     protected function _getConfigBlocks()
     {
-        return $this->_getConfigNode('staticblocks', 'default');
+        return $this->_getConfigNode('blocks', 'default');
     }
 
     /**
