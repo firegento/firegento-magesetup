@@ -18,10 +18,10 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.4.0
+ * @since     0.5.0
  */
 /**
- * Setup script; Adds a notification message
+ * Setup script; Adds the delivery_time attribute for products
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -35,13 +35,26 @@
 /* @var $installer Mage_Eav_Model_Entity_Setup */
 $installer = $this;
 $installer->startSetup();
-
-/** @todo Set correct admin url */
-$notification = Mage::getModel('adminnotification/inbox')
-        ->setTitle(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
-        ->setDescription(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
-        ->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/germansetup'))
-        ->setSeverity(Mage_AdminNotification_Model_Inbox::SEVERITY_NOTICE)
-        ->save();
-
+$installer->addAttribute(
+    'catalog_product',
+    'meta_autogenerate',
+    array(
+        'label'                      => 'Auto-Generate Meta-Information',
+        'input'                      => 'select',
+        'source'                     => 'eav/entity_attribute_source_boolean',
+        'required'                   => false,
+        'user_defined'               => true,
+        'default'                    => '0',
+        'group'                      => 'Meta Information',
+        'global'                     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible'                    => true,
+        'filterable'                 => false,
+        'searchable'                 => false,
+        'comparable'                 => false,
+        'visible_on_front'           => false,
+        'visible_in_advanced_search' => false,
+        'used_in_product_listing'    => false,
+        'is_html_allowed_on_front'   => false,
+    )
+);
 $installer->endSetup();
