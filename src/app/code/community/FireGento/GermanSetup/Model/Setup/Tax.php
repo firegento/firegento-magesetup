@@ -94,6 +94,9 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
                 $this->_createTaxCalculation($data);
             }
         }
+
+        // modify config data
+        $this->_updateConfigData();
     }
 
     /**
@@ -159,7 +162,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
         $this->_insertIntoTable('tax_calculation_rate', $taxCalcRateData);
     }
 
-    /**
+     /**
      * Get tax calculations from config file
      *
      * @return array
@@ -179,6 +182,29 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     protected function _createTaxCalculation($taxCalculationData)
     {
         $this->_insertIntoTable('tax_calculation', $taxCalculationData);
+    }
+
+    /**
+     * Update configuration settings
+     *
+     * @return void
+     */
+    protected function _updateConfigData()
+    {
+        $setup = Mage::getModel('eav/entity_setup', 'core_setup');
+        foreach ($this->_getConfigTaxConfig() as $key => $value) {
+            $setup->setConfigData(str_replace('__', '/', $key), $value);
+        }
+    }
+
+    /**
+     * Get tax calculations from config file
+     *
+     * @return array
+     */
+    protected function _getConfigTaxConfig()
+    {
+        return $this->_getConfigNode('tax_config', 'default');
     }
 
     /**
