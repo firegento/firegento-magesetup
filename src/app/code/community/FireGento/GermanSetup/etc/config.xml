@@ -25,11 +25,8 @@
             <germansetup_setup>
                 <setup>
                     <module>FireGento_GermanSetup</module>
-                    <class>germansetup/setup</class>
+                    <class>eav/entity_setup</class>
                 </setup>
-                <connection>
-                    <use>core_setup</use>
-                </connection>
             </germansetup_setup>
         </resources>
     </global>
