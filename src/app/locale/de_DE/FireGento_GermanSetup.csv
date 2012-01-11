@@ -44,3 +44,5 @@
 "Account","Kontonummer"
 "Bank number","BLZ"
 "Bank name","Kreditinstitut"
+
+"%s%%","%s%%"
