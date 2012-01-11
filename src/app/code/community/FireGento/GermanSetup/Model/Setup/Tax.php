@@ -208,6 +208,26 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     }
 
     /**
+     * Update the tax class of all products with specified tax class id
+     *
+     * @param int $source source tax class id
+     * @param int $target target tax class id
+     */
+    public function updateProductTaxClasses($source, $target)
+    {
+        if (!Mage::getModel('tax/class')->load(intval($target))->getId()) return;
+
+        $productCollection = Mage::getModel('catalog/product')
+            ->getCollection()
+            ->addAttributeToFilter('tax_class_id', intval($source));
+
+        foreach($productCollection as $product) {
+            $product->setTaxClassId(intval($target));
+            $product->getResource()->saveAttribute($product, 'tax_class_id');
+        }
+    }
+
+    /**
      * Truncate a database table
      *
      * @param string $table

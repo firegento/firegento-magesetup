@@ -69,11 +69,12 @@
                     	<tr>
                         	<td class="label"><label for="name"><?php echo $this->__('Update Product Tax Classes') ?></label></td>
                         	<td class="value">
+                                <input type="checkbox" name="product_tax_classes" id="checkbox_product_tax_classes" value="1" checked="checked" style="float:left; margin: 5px 5px 5px 0;" />
                                 <table cellspacing="5" class="">
                                     <tbody>
                                         <tr>
                                             <td rowspan="3">
-                                                <input type="checkbox" name="product_tax_classes" id="checkbox_product_tax_classes" value="1" checked="checked" />
+
                                             </td>
                                             <td rowspan="3"><?php echo $this->__('Old') ?>: </td>
                                             <td>
@@ -85,7 +86,7 @@
                                             </td>
                                             <td rowspan="3"><?php echo $this->__('New') ?>: </td>
                                             <td>
-                                                <select name="product_tax_class_source_1">
+                                                <select name="product_tax_class_target_1">
                                                     <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
                                                         <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
@@ -101,7 +102,7 @@
                                                 </select>
                                             </td>
                                             <td>
-                                                <select name="product_tax_class_source_2">
+                                                <select name="product_tax_class_target_2">
                                                     <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
                                                         <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
@@ -117,7 +118,7 @@
                                                 </select>
                                             </td>
                                             <td>
-                                                <select name="product_tax_class_source_3">
+                                                <select name="product_tax_class_target_3">
                                                     <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
                                                         <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
                                                     <?php endforeach ?>
