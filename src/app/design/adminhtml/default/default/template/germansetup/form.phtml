@@ -1,0 +1,144 @@
+<?php
+/**
+ * This file is part of the FIREGENTO project.
+ *
+ * FireGento_GermanSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_GermanSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.4.0
+ */
+?>
+<?php
+/**
+ * @see FireGento_GermanSetup_Block_Adminhtml_Germansetup
+ */
+?>
+
+<div class="content-header">
+    <h3><?php echo $this->__('German Setup') ?></h3>
+    <p class="form-buttons">
+    	<?php echo $this->getButtonHtml($this->__('Run German Setup'), 'setupForm.submit();', 'save'); ?>
+    </p>
+</div>
+
+<div class="entry-edit">
+    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="setup_form">
+        <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Please choose the requested setups:') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields7">
+    		<div class="hor-scroll">
+            	<table cellspacing="0" class="form-list">
+            		<tbody>
+                    	<tr>
+                        	<td class="label"><label for="name"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
+                        	<td class="value">
+                            	<input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td class="label"><label for="name"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
+                        	<td class="value">
+                            	<input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td class="label"><label for="name"><?php echo $this->__('Create Email Templates') ?></label></td>
+                        	<td class="value">
+                            	<input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td class="label"><label for="name"><?php echo $this->__('Update Product Tax Classes') ?></label></td>
+                        	<td class="value">
+                                <input type="checkbox" name="product_tax_classes" id="checkbox_product_tax_classes" value="1" checked="checked" style="float:left; margin: 5px 5px 5px 0;" />
+                                <table cellspacing="5" class="">
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="3">
+
+                                            </td>
+                                            <td rowspan="3"><?php echo $this->__('Old') ?>: </td>
+                                            <td>
+                                                <select name="product_tax_class_source_1">
+                                                    <?php foreach($this->getProductTaxClasses() as $taxClass): ?>
+                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            </td>
+                                            <td rowspan="3"><?php echo $this->__('New') ?>: </td>
+                                            <td>
+                                                <select name="product_tax_class_target_1">
+                                                    <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
+                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select name="product_tax_class_source_2">
+                                                    <?php foreach($this->getProductTaxClasses() as $taxClass): ?>
+                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select name="product_tax_class_target_2">
+                                                    <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
+                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select name="product_tax_class_source_3">
+                                                    <?php foreach($this->getProductTaxClasses() as $taxClass): ?>
+                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select name="product_tax_class_target_3">
+                                                    <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
+                                                        <option value="<?php echo $taxClass['value'] ?>"><?php echo $taxClass['label'] ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td class="label"><label for="name"><?php echo $this->__('Configure Tax') ?></label></td>
+                        	<td class="value">
+                            	<input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
+                            </td>
+                        </tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+    </form>
+</div>
+<script type="text/javascript">
+	setupForm = new varienForm('setup_form', '');
+</script>

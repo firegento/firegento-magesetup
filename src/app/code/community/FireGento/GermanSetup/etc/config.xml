@@ -90,8 +90,19 @@
                 <children>
                     <germansetup translate="title">
                         <title>German Setup</title>
-                        <action>adminhtml/germansetup</action>
                         <sort_order>11</sort_order>
+                        <children>
+                        	<setup>
+                        		<title>Setup</title>
+                        		<action>adminhtml/germansetup</action>
+                        		<sort_order>10</sort_order>
+                        	</setup>
+                        	<recommended_extensions>
+                        		<title>Recommended Extensions</title>
+                        		<action>adminhtml/germansetup/extensions</action>
+                        		<sort_order>15</sort_order>
+                        	</recommended_extensions>
+                        </children>
                     </germansetup>
                 </children>
             </system>

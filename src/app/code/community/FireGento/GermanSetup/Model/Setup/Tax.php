@@ -94,6 +94,9 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
                 $this->_createTaxCalculation($data);
             }
         }
+
+        // modify config data
+        $this->_updateConfigData();
     }
 
     /**
@@ -159,7 +162,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
         $this->_insertIntoTable('tax_calculation_rate', $taxCalcRateData);
     }
 
-    /**
+     /**
      * Get tax calculations from config file
      *
      * @return array
@@ -179,6 +182,49 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     protected function _createTaxCalculation($taxCalculationData)
     {
         $this->_insertIntoTable('tax_calculation', $taxCalculationData);
+    }
+
+    /**
+     * Update configuration settings
+     *
+     * @return void
+     */
+    protected function _updateConfigData()
+    {
+        $setup = Mage::getModel('eav/entity_setup', 'core_setup');
+        foreach ($this->_getConfigTaxConfig() as $key => $value) {
+            $setup->setConfigData(str_replace('__', '/', $key), $value);
+        }
+    }
+
+    /**
+     * Get tax calculations from config file
+     *
+     * @return array
+     */
+    protected function _getConfigTaxConfig()
+    {
+        return $this->_getConfigNode('tax_config', 'default');
+    }
+
+    /**
+     * Update the tax class of all products with specified tax class id
+     *
+     * @param int $source source tax class id
+     * @param int $target target tax class id
+     */
+    public function updateProductTaxClasses($source, $target)
+    {
+        if (!Mage::getModel('tax/class')->load(intval($target))->getId()) return;
+
+        $productCollection = Mage::getModel('catalog/product')
+            ->getCollection()
+            ->addAttributeToFilter('tax_class_id', intval($source));
+
+        foreach($productCollection as $product) {
+            $product->setTaxClassId(intval($target));
+            $product->getResource()->saveAttribute($product, 'tax_class_id');
+        }
     }
 
     /**

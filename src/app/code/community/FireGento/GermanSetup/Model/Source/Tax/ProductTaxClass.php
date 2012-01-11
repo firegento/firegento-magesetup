@@ -18,10 +18,10 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.4.0
+ * @since     0.1.0
  */
 /**
- * Displays a form with some options to setup things
+ * CMS Source model for configuration dropdown of CMS static blocks
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,53 +29,52 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.4.0
+ * @since     0.1.0
  */
-class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_Block_Widget
+class FireGento_GermanSetup_Model_Source_Tax_ProductTaxClass
+    extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
     /**
-     * Class Constructor
-     *
-     * @return void
+     * @var array $_options cached options
      */
-    public function __construct()
+    protected $_options = array();
+
+    /**
+     * Return option array
+     *
+     * @return array options
+     */
+    public function toOptionArray()
     {
-        parent::__construct();
-        $this->setTitle('German Setup');
+        if (!$this->_options) {
+            $taxClasses = Mage::getModel('tax/class')->getCollection()
+                ->addFieldToFilter('class_type', Mage_Tax_Model_Class::TAX_CLASS_TYPE_PRODUCT)
+                ->setOrder('class_id', 'ASC');
+
+            foreach ($taxClasses as $taxClass) {
+                $options[$taxClass->getId()] = $taxClass->getClassName();
+            }
+
+            foreach ($options as $id => $label) {
+                $this->_options[] = array(
+                    'value' => $id,
+                    'label' => $label,
+                );
+            }
+            array_unshift($this->_options, array('value' => '', 'label' =>''));
+        }
+
+
+        return $this->_options;
     }
 
     /**
-     * Retrieve the POST URL for the form
+     * Get all options as array
      *
-     * @return string URL
+     * @return array options
      */
-    public function getPostActionUrl()
+    public function getAllOptions()
     {
-        return $this->getUrl('*/*/save');
+        return $this->toOptionArray();
     }
-
-    /**
-     * Get old product tax classes
-     *
-     * @return array
-     */
-    public function getProductTaxClasses()
-    {
-        $options = Mage::getSingleton('tax/class_source_product')->getAllOptions();
-        array_unshift($options, array('value' => '', 'label' =>''));
-
-        return $options;
-    }
-
-    /**
-     * Get new product tax classes (yet to be created)
-     *
-     * @return array
-     */
-    public function getNewProductTaxClasses()
-    {
-        return Mage::getSingleton('germansetup/source_tax_newProductTaxClass')->getAllOptions();
-    }
-
-
 }

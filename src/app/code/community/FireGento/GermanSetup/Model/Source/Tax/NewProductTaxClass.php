@@ -18,10 +18,10 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.2.0
+ * @since     0.1.0
  */
 /**
- * Setup class
+ * CMS Source model for configuration dropdown of CMS static blocks
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,21 +29,47 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.2.0
+ * @since     0.1.0
  */
-class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
+class FireGento_GermanSetup_Model_Source_Tax_NewProductTaxClass
+    extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
     /**
-     * Get config.xml data
-     *
-     * @return array
+     * @var array $_options cached options
      */
-    public function getConfigData()
+    protected $_options = array();
+
+    /**
+     * Return option array
+     *
+     * @return array options
+     */
+    public function toOptionArray()
     {
-        $configData = Mage::getSingleton('germansetup/config')
-            ->getNode('default/germansetup')
-            ->asArray();
-        return $configData;
+        if (!sizeof($this->_options)) {
+            $taxClasses = $this->_getConfigNode('tax_classes', 'default');
+            foreach($taxClasses as $taxClass) {
+                if ($taxClass['class_type'] != 'PRODUCT' || $taxClass['execute'] != 1) continue;
+                $this->_options[] = array(
+                    'value' => $taxClass['class_id'],
+                    'label' => $taxClass['class_name'],
+                );
+            }
+
+            array_unshift($this->_options, array('value' => '', 'label' =>''));
+        }
+
+        return $this->_options;
+    }
+
+    /**
+     * Get all options as array
+     *
+     * @return array options
+     */
+    public function getAllOptions()
+    {
+        return $this->toOptionArray();
     }
 
     /**
@@ -51,7 +77,6 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
      *
      * @param string      $node      xml node
      * @param string|null $childNode if set, child node of the first node
-     *
      * @return array
      */
     protected function _getConfigNode($node, $childNode = null)
@@ -65,33 +90,15 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
     }
 
     /**
-     * Get template content
+     * Get config.xml data
      *
-     * @param string $filename template file name
-     *
-     * @return string
+     * @return array
      */
-    public function getTemplateContent($filename)
+    public function getConfigData()
     {
-        return file_get_contents(Mage::getBaseDir() . DS . $filename);
-    }
-
-    /**
-     * Load a model by attribute code
-     *
-     * @param Mage_Core_Model_Abstract $model
-     * @param string $attributeCode
-     * @param string $value
-     * @return Mage_Core_Model_Abstract
-     */
-    protected function _loadExistingModel($model, $attributeCode, $value)
-    {
-        foreach ($model->getCollection() as $singleModel) {
-            if ($singleModel->getData($attributeCode) == $value) {
-                $model->load($singleModel->getId());
-                return $model;
-            }
-        }
-        return $model;
+        $configData = Mage::getSingleton('germansetup/config')
+            ->getNode('default/germansetup')
+            ->asArray();
+        return $configData;
     }
 }

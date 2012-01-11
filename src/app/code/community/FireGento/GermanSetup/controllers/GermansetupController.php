@@ -40,11 +40,24 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
      */
     public function indexAction()
     {
+        $helper = Mage::helper('germansetup');
         $this->loadLayout()
-            ->_initLayoutMessages('adminhtml/session')
-            ->_setActiveMenu('system/germansetup')
-            ->_addBreadcrumb(Mage::helper('germansetup')->__('German Setup'), Mage::helper('germansetup')->__('German Setup'))
-            ->_addContent($this->getLayout()->createBlock('germansetup/adminhtml_germansetup'))
+            ->_setActiveMenu('system/germansetup/setup')
+            ->_addBreadcrumb($helper->__('German Setup'), $helper->__('German Setup'))
+            ->renderLayout();
+    }
+
+    /**
+     * Recommended extensions
+     *
+     * @return void
+     */
+    public function extensionsAction()
+    {
+        $helper = Mage::helper('germansetup');
+        $this->loadLayout()
+            ->_setActiveMenu('system/germansetup/extensions')
+            ->_addBreadcrumb($helper->__('German Setup'), $helper->__('German Setup'))
             ->renderLayout();
     }
 
@@ -88,7 +101,26 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                 $this->_getSession()->addError($e->getMessage());
                 Mage::logException($e);
             }
+
+            if ($this->getRequest()->getParam('product_tax_classes') == 1) {
+                $this->_updateProductTaxClasses();
+                $this->_getSession()->addSuccess($this->__('German Setup: Product Tax Classes have been updated.'));
+                Mage::log($this->__('German Setup: Product Tax Classes have been updated.'));
+            }
         }
         $this->_redirect('*/*');
+    }
+
+    protected function _updateProductTaxClasses()
+    {
+        for ($i = 1; $i <= 3; $i++) {
+            if (
+                (strlen($source = $this->getRequest()->getParam('product_tax_class_source_' . $i))) &&
+                ($target = $this->getRequest()->getParam('product_tax_class_target_' . $i))
+            ) {
+
+                Mage::getSingleton('germansetup/setup_tax')->updateProductTaxClasses($source, $target);
+            }
+        }
     }
 }
