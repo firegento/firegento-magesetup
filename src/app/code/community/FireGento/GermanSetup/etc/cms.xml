@@ -36,13 +36,13 @@
                         <text>app/locale/de_DE/template/germansetup/page/datenschutz.html</text>
                     </germansetup_privacy>
 
-                    <germansetup_shipment>
+                    <germansetup_shipping>
                         <execute>1</execute>
                         <title>Lieferung</title>
                         <identifier>lieferung</identifier>
                         <root_template>one_column</root_template>
                         <text>app/locale/de_DE/template/germansetup/page/lieferung.html</text>
-                    </germansetup_shipment>
+                    </germansetup_shipping>
 
                     <germansetup_order>
                         <execute>1</execute>

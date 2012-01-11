@@ -98,20 +98,20 @@
     </adminhtml>
     <admin>
         <routers>
-			<adminhtml>
-				<args>
-					<modules>
-						<FireGento_GermanSetup before="Mage_Adminhtml">FireGento_GermanSetup</FireGento_GermanSetup>
-					</modules>
-				</args>
-			</adminhtml>
-		</routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <FireGento_GermanSetup before="Mage_Adminhtml">FireGento_GermanSetup</FireGento_GermanSetup>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
     </admin>
     <default>
         <catalog>
             <price>
                 <display_block_below_price>1</display_block_below_price>
-                <cms_page_shipping>germansetup_shipment</cms_page_shipping>
+                <cms_page_shipping>germansetup_shipping</cms_page_shipping>
             </price>
         </catalog>
         <general>
