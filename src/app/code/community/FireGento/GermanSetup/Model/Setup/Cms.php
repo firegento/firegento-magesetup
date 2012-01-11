@@ -188,19 +188,18 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      * Update footer_links cms block
      *
      * @param array $blockData cms block data
-     *
      * @return void
      */
     protected function _updateFooterLinksBlock($blockData)
     {
-        $model = Mage::getModel('cms/block');
-        $block = $model->load($blockData['identifier']);
+        $cmsBlock = Mage::getModel('cms/block');
+        $block = $cmsBlock->load($blockData['identifier']);
 
         if ($block->getId()) {
             $data = array();
             $data['block_id'] = $block->getId();
             $data['identifier'] = $blockData['identifier'] . '_backup';
-            $model->setData($data)->save();
+            $cmsBlock->setData($data)->save();
         }
 
         $data = array(
@@ -211,6 +210,6 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
             'is_active' => '1',
         );
 
-        $model->setData($data)->save();
+        $cmsBlock->setData($data)->save();
     }
 }
