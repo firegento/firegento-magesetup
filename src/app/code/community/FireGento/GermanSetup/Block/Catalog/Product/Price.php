@@ -1,15 +1,15 @@
 <?php
-/**                                                                       
+/**
  * This file is part of the FIREGENTO project.
- * 
- * FireGento_GermanSetup is free software; you can redistribute it and/or 
- * modify it under the terms of the GNU General Public License version 3 as 
+ *
+ * FireGento_GermanSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
- * 
- * This script is distributed in the hope that it will be useful, but WITHOUT 
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- * 
+ *
  * PHP version 5
  *
  * @category  FireGento
@@ -52,13 +52,13 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
             ->setFormattedTaxRate($this->getFormattedTaxRate())
             ->setIsIncludingTax($this->isIncludingTax())
             ->toHtml();
-        
+
         return $html;
     }
-    
+
     /**
      * Read tax rate from current product.
-     * 
+     *
      * @return string
      */
     public function getTaxRate()
@@ -66,13 +66,13 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
         if (!$this->getData('tax_rate')) {
             $this->setData('tax_rate', $this->_loadTaxCalculationRate($this->getProduct()));
         }
-        
+
         return $this->getData('tax_rate');
     }
-    
+
     /**
      * Retrieves formatted string of tax rate for user output
-     * 
+     *
      * @return string
      */
     public function getFormattedTaxRate()
@@ -80,15 +80,15 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
         if ($this->getTaxRate() === NULL) {
             return '';
         }
-        
-        $locale = Mage::app()->getLocale()->getLocaleCode();
-        
-        return $this->__('%s%%', Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale, 'precision' => 2)));
+
+        $locale  = Mage::app()->getLocale()->getLocaleCode();
+        $taxRate = Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale, 'precision' => 2));
+        return $this->__('%s%%', $taxRate);
     }
-    
+
     /**
      * Returns whether or not the price contains taxes
-     * 
+     *
      * @return bool
      */
     public function isIncludingTax()
@@ -96,13 +96,13 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
         if (!$this->getData('is_including_tax')) {
             $this->setData('is_including_tax', Mage::getStoreConfig('tax/sales_display/price'));
         }
-        
+
         return $this->getData('is_including_tax');
     }
-    
+
     /**
      * Gets tax percents for current product
-     * 
+     *
      * @param Mage_Catalog_Model_Product $product
      * @return string
      */
@@ -112,16 +112,16 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
             ->getCollection()
             ->getItemById($product->getTaxClassId())
             ->getTaxCalculationRateId();
-        
+
         $taxPercent = Mage::getModel('tax/calculation_rate')
             ->getCollection()
             ->getItemById($taxCalculationRateId)
             ->getRate();
-        
+
         if (is_string($taxPercent)) {
             return $taxPercent;
         }
-        
+
         return '';
     }
 }

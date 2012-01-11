@@ -1,15 +1,15 @@
 <?php
-/**                                                                       
+/**
  * This file is part of the FIREGENTO project.
- * 
- * FireGento_GermanSetup is free software; you can redistribute it and/or 
- * modify it under the terms of the GNU General Public License version 3 as 
+ *
+ * FireGento_GermanSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
- * 
- * This script is distributed in the hope that it will be useful, but WITHOUT 
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- * 
+ *
  * PHP version 5
  *
  * @category  FireGento
@@ -38,17 +38,17 @@ class FireGento_GermanSetup_Helper_Data extends Mage_Core_Helper_Abstract
      *
      * @return string
      */
-	public function getShippingCostUrl()
+    public function getShippingCostUrl()
     {
         /** @var $cmsPage Mage_Cms_Model_Page */
         $cmsPage = Mage::getModel('cms/page')
-                ->setStoreId(Mage::app()->getStore()->getId())
-                ->load(Mage::getStoreConfig('catalog/price/cms_page_shipping'));
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->load(Mage::getStoreConfig('catalog/price/cms_page_shipping'));
 
         if (!$cmsPage->getId() || !$cmsPage->getIsActive()) {
             return '';
         }
-        
+
         return Mage::helper('cms/page')->getPageUrl($cmsPage->getId());
     }
 }

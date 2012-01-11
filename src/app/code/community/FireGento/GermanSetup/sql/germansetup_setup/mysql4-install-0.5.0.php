@@ -41,31 +41,31 @@ $installer->addAttribute(
     'catalog_product',
     'delivery_time',
     array(
-        'label'                         => 'Lieferzeit',
-        'input'                         => 'text',
-        'required'                      => false,
-        'user_defined'                  => true,
-        'default'                       => '2-3 Tage',
-        'group'                         => 'General',
-        'global'                        => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-        'visible'                       => true,
-        'filterable'                    => false,
-        'searchable'                    => false,
-        'comparable'                    => true,
-        'visible_on_front'              => true,
-        'visible_in_advanced_search'    => true,
-        'used_in_product_listing'       => true,
-        'is_html_allowed_on_front'      => true,
+        'label'                      => 'Lieferzeit',
+        'input'                      => 'text',
+        'required'                   => false,
+        'user_defined'               => true,
+        'default'                    => '2-3 Tage',
+        'group'                      => 'General',
+        'global'                     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible'                    => true,
+        'filterable'                 => false,
+        'searchable'                 => false,
+        'comparable'                 => true,
+        'visible_on_front'           => true,
+        'visible_in_advanced_search' => true,
+        'used_in_product_listing'    => true,
+        'is_html_allowed_on_front'   => true,
     )
 );
 
 /** @todo Set correct admin url */
 $notification = Mage::getModel('adminnotification/inbox')
-        ->setTitle(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
-        ->setDescription(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
-        ->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/germansetup'))
-        ->setSeverity(Mage_AdminNotification_Model_Inbox::SEVERITY_NOTICE)
-        ->save();
+    ->setTitle(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
+    ->setDescription(Mage::helper('germansetup')->__('German Setup has been installed. Click <a href=="%s">here</a> to set up your pages, blocks, emails and tax settings.', Mage::getUrl('adminhtml/germansetup')))
+    ->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/germansetup'))
+    ->setSeverity(Mage_AdminNotification_Model_Inbox::SEVERITY_NOTICE)
+    ->save();
 
 $installer->endSetup();
 

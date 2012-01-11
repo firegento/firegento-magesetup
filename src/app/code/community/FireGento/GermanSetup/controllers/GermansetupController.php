@@ -34,28 +34,29 @@
 class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Controller_Action
 {
     /**
-      * Basic action: setup form
-      */
+     * Basic action: setup form
+     *
+     * @return void
+     */
     public function indexAction()
     {
         $this->_initLayoutMessages('adminhtml/session');
-        
-        $this->loadLayout()
-			->_setActiveMenu('system/germansetup')
-			->_addBreadcrumb(Mage::helper('germansetup')->__('German Setup'), Mage::helper('germansetup')->__('German Setup'))
 
+        $this->loadLayout()
+            ->_setActiveMenu('system/germansetup')
+            ->_addBreadcrumb(Mage::helper('germansetup')->__('German Setup'), Mage::helper('germansetup')->__('German Setup'))
             ->_addContent($this->getLayout()->createBlock('germansetup/adminhtml_germansetup'))
-			->renderLayout();
+            ->renderLayout();
     }
-    
+
     /**
-      * Basic action: setup save action
-      */
+     * Basic action: setup save action
+     *
+     * @return void
+     */
     public function saveAction()
     {
-
         if ($this->getRequest()->isPost()) {
-
             if ($this->getRequest()->getParam('cms') == 1) {
                 Mage::getSingleton('germansetup/setup_cms')->setup();
                 $this->_getSession()->addSuccess($this->__('German Setup: CMS Blocks and Pages have been created.'));
@@ -80,7 +81,6 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                 Mage::log($this->__('German Setup: Tax Settings have been created.'));
             }
         }
-
         $this->_redirect('*/*/');
     }
 }

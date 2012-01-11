@@ -1,15 +1,15 @@
 <?php
-/**                                                                       
+/**
  * This file is part of the FIREGENTO project.
- * 
- * FireGento_GermanSetup is free software; you can redistribute it and/or 
- * modify it under the terms of the GNU General Public License version 3 as 
+ *
+ * FireGento_GermanSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
- * 
- * This script is distributed in the hope that it will be useful, but WITHOUT 
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- * 
+ *
  * PHP version 5
  *
  * @category  FireGento
@@ -51,18 +51,17 @@ class FireGento_GermanSetup_Model_Source_Cms_Block
                 ->addFieldToFilter('is_active', 1)
                 ->setOrder('identifier', 'ASC');
 
-            foreach($blocks as $block) {
+            foreach ($blocks as $block) {
                 $options[$block->getIdentifier()] = $block->getIdentifier();
             }
 
-            foreach($options as $identifier) {
+            foreach ($options as $identifier) {
                 $this->_options[] = array(
                     'value' => $identifier,
                     'label' => $identifier,
                 );
             }
         }
-
 
         array_unshift($this->_options, array('value' => '', 'label' => Mage::helper('germansetup')->__('No Block')));
 
