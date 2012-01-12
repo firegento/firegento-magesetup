@@ -4,7 +4,11 @@
 "No Page","Keine Seite"
 "No Block","Kein Block"
 "Incl. Tax, plus <a href=""%s"">Shipping Cost</a>","Inkl. MwSt., zzgl. <a href=""%s"">Versandkosten</a>"
+"Incl. %s Tax, plus <a href=""%s"">Shipping Cost</a>","Inkl. %s MwSt., zzgl. <a href=""%s"">Versandkosten</a>"
+"Excl. %s Tax, plus <a href=""%s"">Shipping Cost</a>","Zzgl. %s MwSt., zzgl. <a href=""%s"">Versandkosten</a>"
 "Incl. Tax","Inkl. MwSt."
+"Incl. %s Tax","Inkl. %s MwSt."
+"Excl. %s Tax","Zzgl. %s MwSt."
 
 "German Setup has been installed.","German Setup wurde installiert."
 "Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Klicken Sie <a href=""%s"">hier</a>, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren."
