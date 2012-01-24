@@ -21,7 +21,7 @@
  * @since     0.1.0
  */
 /**
- * CMS Source model for configuration dropdown of CMS static blocks
+ * Tax Source model for new tax classes, possibly not created yet
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,7 +29,7 @@
  * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     0.5.0
  */
 class FireGento_GermanSetup_Model_Source_Tax_NewProductTaxClass
     extends Mage_Eav_Model_Entity_Attribute_Source_Abstract

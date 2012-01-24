@@ -176,15 +176,25 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
      */
     protected function _updateFooterLinksBlock($blockData)
     {
+        /** @var $block Mage_Cms_Model_Block */
         $block = Mage::getModel('cms/block')->load($blockData['identifier']);
 
         if ($block->getId()) {
-            $data = array();
-            $data['block_id'] = $block->getId();
-            $data['identifier'] = $blockData['identifier'] . '_backup';
 
-            $block->setData($data)->save();
-            $block = Mage::getModel('cms/block');
+            /** @var $backupBlock Mage_Cms_Model_Block */
+            $backupBlock = Mage::getModel('cms/block')->load($blockData['identifier'] . '_backup');
+            if (!$backupBlock->getId()) {
+
+                // create copy of original block
+                $data = array();
+                $data['block_id'] = $block->getId();
+                $data['identifier'] = $blockData['identifier'] . '_backup';
+
+                $block->setData($data)->save();
+
+                /** @var $block Mage_Cms_Model_Block */
+                $block = Mage::getModel('cms/block');
+            }
         }
 
         $data = array(
@@ -195,6 +205,6 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
             'is_active' => '1',
         );
 
-        $block->setData($data)->save();
+        $block->addData($data)->save();
     }
 }

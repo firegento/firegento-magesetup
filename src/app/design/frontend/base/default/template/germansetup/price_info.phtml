@@ -1,14 +1,14 @@
 <?php $shippingCostUrl = Mage::helper('germansetup')->getShippingCostUrl() ?>
 <?php if (!empty($shippingCostUrl)): ?>
-	<?php if ($this->getIsIncludingTax() == 1): ?>
+	<?php if ($this->getIsIncludingTax() == Mage_Tax_Model_Config::DISPLAY_TYPE_EXCLUDING_TAX): ?>
     	<?php echo $this->__('Excl. %s Tax, plus <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?>
-	<?php elseif ($this->getIsIncludingTax() == 2): ?>  
+	<?php elseif ($this->getIsIncludingTax() == Mage_Tax_Model_Config::DISPLAY_TYPE_INCLUDING_TAX): ?>
     	<?php echo $this->__('Incl. %s Tax, plus <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?>
-	<?php endif ?>   
+	<?php endif ?>
 <?php else: ?>
-	<?php if ($this->getIsIncludingTax() == 1): ?>
+	<?php if ($this->getIsIncludingTax() == Mage_Tax_Model_Config::DISPLAY_TYPE_EXCLUDING_TAX): ?>
     	<?php echo $this->__('Excl. %s Tax', $this->getFormattedTaxRate()) ?>
-    <?php elseif ($this->getIsIncludingTax() == 2): ?>  
+    <?php elseif ($this->getIsIncludingTax() == Mage_Tax_Model_Config::DISPLAY_TYPE_INCLUDING_TAX): ?>
     	<?php echo $this->__('Incl. %s Tax', $this->getFormattedTaxRate()) ?>
     <?php endif ?>
 <?php endif ?>

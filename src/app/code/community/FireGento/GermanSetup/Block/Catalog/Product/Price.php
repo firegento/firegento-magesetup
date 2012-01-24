@@ -81,7 +81,7 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
         }
 
         $locale  = Mage::app()->getLocale()->getLocaleCode();
-        $taxRate = Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale, 'precision' => 2));
+        $taxRate = Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale));
         return $this->__('%s%%', $taxRate);
     }
 
