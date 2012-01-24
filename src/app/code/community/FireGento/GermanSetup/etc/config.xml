@@ -15,6 +15,11 @@
             <germansetup>
                 <class>FireGento_GermanSetup_Block</class>
             </germansetup>
+            <googleanalytics>
+                <rewrite>
+                    <ga>FireGento_GermanSetup_Block_Ga</ga>
+                </rewrite>
+            </googleanalytics>
         </blocks>
         <helpers>
             <germansetup>
@@ -92,16 +97,16 @@
                         <title>German Setup</title>
                         <sort_order>11</sort_order>
                         <children>
-                        	<setup>
-                        		<title>Setup</title>
-                        		<action>adminhtml/germansetup</action>
-                        		<sort_order>10</sort_order>
-                        	</setup>
-                        	<recommended_extensions>
-                        		<title>Recommended Extensions</title>
-                        		<action>adminhtml/germansetup/extensions</action>
-                        		<sort_order>15</sort_order>
-                        	</recommended_extensions>
+                            <setup>
+                                <title>Setup</title>
+                                <action>adminhtml/germansetup</action>
+                                <sort_order>10</sort_order>
+                            </setup>
+                            <recommended_extensions>
+                                <title>Recommended Extensions</title>
+                                <action>adminhtml/germansetup/extensions</action>
+                                <sort_order>15</sort_order>
+                            </recommended_extensions>
                         </children>
                     </germansetup>
                 </children>
