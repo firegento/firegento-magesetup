@@ -33,6 +33,8 @@
  */
 class FireGento_GermanSetup_Block_Ga extends Mage_GoogleAnalytics_Block_Ga
 {
+    const CONFIG_GOOGLE_ANALYTICS_IP_ANONYMIZATION = 'google/analytics/ip_anonymization';
+
     /**
      * Prepare and return block's html output
      *
@@ -40,7 +42,10 @@ class FireGento_GermanSetup_Block_Ga extends Mage_GoogleAnalytics_Block_Ga
      */
     protected function _toHtml()
     {
-    	$html = parent::_toHtml();
+        $html = parent::_toHtml();
+        if (!Mage::getStoreConfigFlag( self::CONFIG_GOOGLE_ANALYTICS_IP_ANONYMIZATION )) {
+            return $html;
+        }
 
         $matches = array();
         $setAccountExpression = '/_gaq\.push\(\[\'_setAccount\', \'[a-zA-Z0-9-_]+\'\]\);\n/';

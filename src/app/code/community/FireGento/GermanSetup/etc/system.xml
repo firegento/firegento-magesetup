@@ -235,5 +235,23 @@
                 </imprint>
             </groups>
         </general>
+        <google>
+            <groups>
+                <analytics>
+                    <fields>
+                        <ip_anonymization translate="label, comment">
+                            <label>Ip anonymization</label>
+                            <comment>Ensures that the ip address of the customers doesnt get involved into the tracking</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ip_anonymization>
+                    </fields>
+                </analytics>
+            </groups>
+        </google>
     </sections>
 </config>
