@@ -51,6 +51,7 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
             ->setTemplate('germansetup/price_info.phtml')
             ->setFormattedTaxRate($this->getFormattedTaxRate())
             ->setIsIncludingTax($this->isIncludingTax())
+            ->setIsShowShippingLink($this->isShowShippingLink())
             ->toHtml();
 
         return $html;
@@ -76,7 +77,9 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
      */
     public function getFormattedTaxRate()
     {
-        if ($this->getTaxRate() === null) {
+        if ($this->getTaxRate() === null
+            || $this->getProduct()->getTypeId() == 'bundle'
+        ) {
             return '';
         }
 
@@ -96,6 +99,22 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
             $this->setData('is_including_tax', Mage::getStoreConfig('tax/sales_display/price'));
         }
         return $this->getData('is_including_tax');
+    }
+
+    /**
+     * Returns whether the shipping link needs to be shown
+     * on the frontend or not.
+     *
+     * @return bool
+     */
+    public function isShowShippingLink()
+    {
+        $productTypeId = $this->getProduct()->getTypeId();
+        $ignoreTypeIds = array('virtual', 'downloadable');
+        if (in_array($productTypeId, $ignoreTypeIds)) {
+            return false;
+        }
+        return true;
     }
 
     /**
