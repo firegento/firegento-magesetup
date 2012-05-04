@@ -64,10 +64,11 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
      */
     public function getTaxRate()
     {
-        if (!$this->getData('tax_rate')) {
-            $this->setData('tax_rate', $this->_loadTaxCalculationRate($this->getProduct()));
+        $taxRateKey = 'tax_rate_'.$this->getProduct()->getId();
+        if (!$this->getData($taxRateKey)) {
+            $this->setData($taxRateKey, $this->_loadTaxCalculationRate($this->getProduct()));
         }
-        return $this->getData('tax_rate');
+        return $this->getData($taxRateKey);
     }
 
     /**
