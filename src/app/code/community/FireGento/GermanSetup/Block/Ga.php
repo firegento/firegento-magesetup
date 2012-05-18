@@ -1,15 +1,15 @@
 <?php
-/**                                                                       
+/**
  * This file is part of the FIREGENTO project.
- * 
- * FireGento_GermanSetup is free software; you can redistribute it and/or 
- * modify it under the terms of the GNU General Public License version 3 as 
+ *
+ * FireGento_GermanSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
- * 
- * This script is distributed in the hope that it will be useful, but WITHOUT 
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- * 
+ *
  * PHP version 5
  *
  * @category  FireGento
@@ -51,8 +51,7 @@ class FireGento_GermanSetup_Block_Ga extends Mage_GoogleAnalytics_Block_Ga
         $setAccountExpression = '/_gaq\.push\(\[\'_setAccount\', \'[a-zA-Z0-9-_]+\'\]\);\n/';
         $append = '_gaq.push([\'_gat._anonymizeIp\']);';
 
-        if(preg_match_all($setAccountExpression, $html, $matches) && count($matches) && count($matches[0]))
-        {
+        if (preg_match_all($setAccountExpression, $html, $matches) && count($matches) && count($matches[0])) {
             $html = preg_replace($setAccountExpression, $matches[0][0] . $append . "\n", $html);
         }
         return $html;

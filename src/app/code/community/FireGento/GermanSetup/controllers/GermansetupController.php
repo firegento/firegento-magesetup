@@ -72,29 +72,39 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
             try {
                 if ($this->getRequest()->getParam('cms') == 1) {
                     Mage::getSingleton('germansetup/setup_cms')->setup();
-                    $this->_getSession()->addSuccess($this->__('German Setup: CMS Blocks and Pages have been created.'));
+                    $this->_getSession()->addSuccess(
+                        $this->__('German Setup: CMS Blocks and Pages have been created.')
+                    );
                     Mage::log($this->__('German Setup: CMS Blocks and Pages have been created.'));
                 }
 
                 if ($this->getRequest()->getParam('agreements') == 1) {
                     Mage::getSingleton('germansetup/setup_agreements')->setup();
-                    $this->_getSession()->addSuccess($this->__('German Setup: Checkout Agreements have been created.'));
+                    $this->_getSession()->addSuccess(
+                        $this->__('German Setup: Checkout Agreements have been created.')
+                    );
                     Mage::log($this->__('German Setup: Checkout Agreements have been created.'));
                 }
 
                 if ($this->getRequest()->getParam('email') == 1) {
                     Mage::getSingleton('germansetup/setup_email')->setup();
-                    $this->_getSession()->addSuccess($this->__('German Setup: Email Templates have been created.'));
+                    $this->_getSession()->addSuccess(
+                        $this->__('German Setup: Email Templates have been created.')
+                    );
                     Mage::log($this->__('German Setup: Email Templates have been created.'));
                 }
 
                 if ($this->getRequest()->getParam('tax') == 1) {
                     Mage::getSingleton('germansetup/setup_tax')->setup();
-                    $this->_getSession()->addSuccess($this->__('German Setup: Tax Settings have been created.'));
+                    $this->_getSession()->addSuccess(
+                        $this->__('German Setup: Tax Settings have been created.')
+                    );
                     Mage::log($this->__('German Setup: Tax Settings have been created.'));
 
                     $this->_updateProductTaxClasses();
-                    $this->_getSession()->addSuccess($this->__('German Setup: Product Tax Classes have been updated.'));
+                    $this->_getSession()->addSuccess(
+                        $this->__('German Setup: Product Tax Classes have been updated.')
+                    );
                     Mage::log($this->__('German Setup: Product Tax Classes have been updated.'));
                 }
 

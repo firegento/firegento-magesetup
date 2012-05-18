@@ -164,10 +164,10 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     }
 
      /**
-     * Get tax calculations from config file
-     *
-     * @return array
-     */
+      * Get tax calculations from config file
+      *
+      * @return array
+      */
     protected function _getConfigTaxCalculations()
     {
         return $this->_getConfigNode('tax_calculations', 'default');
@@ -216,13 +216,15 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      */
     public function updateProductTaxClasses($source, $target)
     {
-        if (!Mage::getModel('tax/class')->load(intval($target))->getId()) return;
+        if (!Mage::getModel('tax/class')->load(intval($target))->getId()) {
+            return;
+        }
 
         $productCollection = Mage::getModel('catalog/product')
             ->getCollection()
             ->addAttributeToFilter('tax_class_id', intval($source));
 
-        foreach($productCollection as $product) {
+        foreach ($productCollection as $product) {
             $product->setTaxClassId(intval($target));
             $product->getResource()->saveAttribute($product, 'tax_class_id');
         }

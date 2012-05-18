@@ -45,7 +45,8 @@ class FireGento_GermanSetup_Model_Setup_Agreements extends FireGento_GermanSetup
             array(
                 'name' => 'AGB',
                 'content' => '{{block type="cms/block" block_id="gs_business_terms"}}',
-                'checkbox_text' => 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und stimme diesen ausdrücklich zu.',
+                'checkbox_text'
+                    => 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und stimme diesen ausdrücklich zu.',
                 'is_active' => '1',
                 'is_html' => '1',
                 'stores' => array('0')

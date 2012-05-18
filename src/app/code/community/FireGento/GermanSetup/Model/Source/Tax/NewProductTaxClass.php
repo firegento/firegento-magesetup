@@ -49,14 +49,16 @@ class FireGento_GermanSetup_Model_Source_Tax_NewProductTaxClass
     {
         if (!sizeof($this->_options)) {
             $taxClasses = $this->_getConfigNode('tax_classes', 'default');
-            foreach($taxClasses as $taxClass) {
-                if ($taxClass['class_type'] != 'PRODUCT' || $taxClass['execute'] != 1) continue;
+            foreach ($taxClasses as $taxClass) {
+                if ($taxClass['class_type'] != 'PRODUCT' || $taxClass['execute'] != 1) {
+                    continue;
+                }
+
                 $this->_options[] = array(
                     'value' => $taxClass['class_id'],
                     'label' => $taxClass['class_name'],
                 );
             }
-
             array_unshift($this->_options, array('value' => '', 'label' =>''));
         }
 
@@ -72,14 +74,16 @@ class FireGento_GermanSetup_Model_Source_Tax_NewProductTaxClass
     {
         if (!sizeof($this->_options)) {
             $taxClasses = $this->_getConfigNode('tax_classes', 'default');
-            foreach($taxClasses as $taxClass) {
-                if ($taxClass['class_type'] != 'PRODUCT' || $taxClass['execute'] != 1) continue;
+            foreach ($taxClasses as $taxClass) {
+                if ($taxClass['class_type'] != 'PRODUCT' || $taxClass['execute'] != 1) {
+                     continue;
+                }
+
                 $this->_options[] = array(
                     'value' => $taxClass['class_id'],
                     'label' => $taxClass['class_name'],
                 );
             }
-
             array_unshift($this->_options, array('value' => '', 'label' =>''));
         }
 
@@ -95,8 +99,11 @@ class FireGento_GermanSetup_Model_Source_Tax_NewProductTaxClass
     {
         if (!$this->_defaultOption) {
             $taxClasses = $this->_getConfigNode('tax_classes', 'default');
-            foreach($taxClasses as $taxClass) {
-                if ($taxClass['class_type'] != 'PRODUCT' || $taxClass['execute'] != 1) continue;
+            foreach ($taxClasses as $taxClass) {
+                if ($taxClass['class_type'] != 'PRODUCT' || $taxClass['execute'] != 1) {
+                    continue;
+                }
+
                 if ($taxClass['default'] == 1) {
                     $this->_defaultOption = $taxClass['class_id'];
                     break;
