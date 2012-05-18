@@ -35,7 +35,13 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
 {
     const CACHE_ID  = 'germansetup_config';
     const CACHE_TAG = 'germansetup_config';
-     
+
+    /**
+     * Sets cache ID and cache tags and loads configuration
+     *
+     * @param string|Varien_Simplexml_Element $sourceData
+     * @return void
+     */
     public function __construct($sourceData=null)
     {
         $this->setCacheId(self::CACHE_ID);
@@ -56,10 +62,10 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
                 return $this;
             }
         }
-     
+
         $mergeConfig = Mage::getModel('core/config_base');
         $config = Mage::getConfig();
-     
+
         // Load additional config files
         $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . 'cms.xml';
         if (file_exists($configFile)) {
@@ -81,13 +87,12 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
                 $config->extend($mergeConfig, true);
             }
         }
-        
+
         $this->setXml($config->getNode());
-     
+
         if (Mage::app()->useCache(self::CACHE_ID)) {
             $this->saveCache();
         }
         return $this;
     }
 }
-     
