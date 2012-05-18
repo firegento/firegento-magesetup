@@ -35,6 +35,11 @@
 class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Block_Product_Price
 {
     /**
+     * @var string Path to default tier price template
+     */
+    protected $_tierPriceDefaultTemplate  = 'catalog/product/view/tierprices.phtml';
+
+    /**
      * Add content of template block below price html if defined in config
      *
      * @return string
@@ -47,12 +52,14 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
             return $html;
         }
 
-        $html .= $this->getLayout()->createBlock('core/template')
-            ->setTemplate('germansetup/price_info.phtml')
-            ->setFormattedTaxRate($this->getFormattedTaxRate())
-            ->setIsIncludingTax($this->isIncludingTax())
-            ->setIsShowShippingLink($this->isShowShippingLink())
-            ->toHtml();
+        if ($this->getTemplate() != $this->_tierPriceDefaultTemplate) {
+            $html .= $this->getLayout()->createBlock('core/template')
+                ->setTemplate('germansetup/price_info.phtml')
+                ->setFormattedTaxRate($this->getFormattedTaxRate())
+                ->setIsIncludingTax($this->isIncludingTax())
+                ->setIsShowShippingLink($this->isShowShippingLink())
+                ->toHtml();
+        }
 
         return $html;
     }
