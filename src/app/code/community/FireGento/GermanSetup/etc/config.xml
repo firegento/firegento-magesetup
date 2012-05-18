@@ -6,11 +6,6 @@
         </FireGento_GermanSetup>
     </modules>
     <global>
-        <models>
-            <germansetup>
-                <class>FireGento_GermanSetup_Model</class>
-            </germansetup>
-        </models>
         <blocks>
             <germansetup>
                 <class>FireGento_GermanSetup_Block</class>
@@ -26,6 +21,16 @@
                 <class>FireGento_GermanSetup_Helper</class>
             </germansetup>
         </helpers>
+        <models>
+            <germansetup>
+                <class>FireGento_GermanSetup_Model</class>
+            </germansetup>
+			<tax>
+				<rewrite>
+					<config>FireGento_GermanSetup_Model_Tax_Config</config>
+				</rewrite>
+			</tax>
+        </models>
         <resources>
             <germansetup_setup>
                 <setup>
