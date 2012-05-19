@@ -36,12 +36,11 @@ class FireGento_GermanSetup_Model_Tax_Config extends Mage_Tax_Model_Config
     const XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX = 'tax/classes/shipping_tax_on_product_tax';
 
     /**
-     * Get tax class id specified for shipping tax estimation
+     * Get tax class id specified for shipping tax estimation based on highest product
+     * tax rate of the products in the current customer quote.
      *
-     * CUSTOM: Select shipping tax class based on highest product tax rate
-     *
-     * @param   store $store
-     * @return  int
+     * @param Mage_Core_Model_Store $store
+     * @return int
      */
     public function getShippingTaxClass($store=null)
     {
