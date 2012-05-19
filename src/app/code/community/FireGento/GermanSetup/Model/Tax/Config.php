@@ -60,18 +60,19 @@ class FireGento_GermanSetup_Model_Tax_Config extends Mage_Tax_Model_Config
             return $taxClassId;
         }
 
-
+        // Fetch the tax rates from the quote items
         foreach ($quoteItems as $item) {
             if ($item->getParentItem()) {
                 continue;
             }
 
-            $taxPercent = $item->getTaxPercent();
+            $taxPercent = $this->_loadTaxCalculationRate($item);
             if (is_float($taxPercent) && !in_array($taxPercent, $taxClassIds)) {
                 $taxClassIds[$taxPercent] = $item->getTaxClassId();
             }
         }
 
+        // Get the highest tax rate
         ksort($taxClassIds);
         if (count($taxClassIds)) {
             $highestTaxRate = array_pop($taxClassIds);
@@ -84,5 +85,28 @@ class FireGento_GermanSetup_Model_Tax_Config extends Mage_Tax_Model_Config
         }
 
         return (int) $taxClassId;
+    }
+
+    /**
+     * Gets tax percents for current sales quote item
+     *
+     * @param Mage_Sales_Model_Quote_Item $item
+     * @return string
+     */
+    protected function _loadTaxCalculationRate(Mage_Sales_Model_Quote_Item $item)
+    {
+        $taxPercent = $item->getTaxPercent();
+        if (is_null($taxPercent)) {
+            $taxClassId = $item->getTaxClassId();
+            if ($taxClassId) {
+                $request    = Mage::getSingleton('tax/calculation')->getRateRequest(null, null, null, null);
+                $taxPercent = Mage::getSingleton('tax/calculation')->getRate($request->setProductClassId($taxClassId));
+            }
+        }
+
+        if ($taxPercent) {
+            return $taxPercent;
+        }
+        return 0;
     }
 }
