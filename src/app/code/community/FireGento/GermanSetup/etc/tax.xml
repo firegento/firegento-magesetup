@@ -44,12 +44,12 @@
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </products_7_percent>
-                    <customer_incl_tax>
+                    <customer_customers>
                         <execute>1</execute>
                         <class_id>3</class_id>
-                        <class_name>inkl. Mehrwertsteuer</class_name>
+                        <class_name>Endkunden</class_name>
                         <class_type>CUSTOMER</class_type>
-                    </customer_incl_tax>
+                    </customer_customers>
                     <shipping>
                         <execute>1</execute>
                         <class_id>4</class_id>
@@ -57,6 +57,12 @@
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping>
+                    <customer_companies>
+                        <execute>1</execute>
+                        <class_id>5</class_id>
+                        <class_name>Unternehmen</class_name>
+                        <class_type>CUSTOMER</class_type>
+                    </customer_companies>
                 </default>
             </tax_classes>
 
