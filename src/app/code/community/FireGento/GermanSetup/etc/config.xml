@@ -2,7 +2,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>0.6.2</version>
+            <version>1.0.0</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
