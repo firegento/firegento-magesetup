@@ -133,20 +133,20 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
 
     /**
      * Mark relevant indices as outdated after chinging tax rates
+     *
+     * @return void
      */
     protected function _markIndicesOutdated()
     {
+        // Indexes which need to be updated after setup
+        $indexes = array('catalog_product_price', 'catalog_product_flat', 'catalog_product_attribute');
+
         $indices = Mage::getModel('index/process')
             ->getCollection()
-            ->addFieldToFilter('indexer_code', array('in' => array(
-                'catalog_product_price',
-                'catalog_product_flat',
-                'catalog_product_attribute',
-            )));
+            ->addFieldToFilter('indexer_code', array('in' => $indexes));
 
-        foreach($indices as $index) {
+        foreach ($indices as $index) {
             $index->setStatus(Mage_Index_Model_Process::STATUS_REQUIRE_REINDEX)->save();
         }
-
     }
 }
