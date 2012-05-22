@@ -34,6 +34,19 @@
 class FireGento_GermanSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_Block_Template
 {
     /**
+     * (non-PHPdoc)
+     * @see Mage_Core_Block_Template::_construct()
+     */
+    protected function _construct()
+    {
+        $this->addData(
+            array(
+                'cache_lifetime'=> null
+            )
+        );
+    }
+
+    /**
      * Returns a value that indicates if some of the german setup settings have already been initialized.
      *
      * @return bool
