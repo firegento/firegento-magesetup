@@ -76,3 +76,8 @@
 "Dynamic Shipping Tax Class Calculation","Dynamische Berechnung der Versand-Steuerklasse"
 "Set to ""yes"" if you want to calculate the shipping tax rate based on the highest product tax rate in cart.<br /><b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","Auf ""Ja"" stellen, wenn Sie die Versand-Steuerklasse basierend auf der höchsten Produktsteuerklasse im Warenkorb dynamisch berechnen lassen möchten.<br /><b>ACHTUNG:</b> Diese Einstellung überschreibt die Einstellung ""Steuerklasse für den Versand"" darüber."
 
+"Germany","Deutschland"
+"Austria","Österreich"
+"Switzerland","Schweiz"
+"Shipping from","Versand aus"
+"This setting is base for the tax rate setup!","Diese Einstellung wird für das Setup der Steuereinstellungen verwendet!"
