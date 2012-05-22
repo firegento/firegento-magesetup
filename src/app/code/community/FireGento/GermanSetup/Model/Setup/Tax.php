@@ -160,7 +160,22 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      */
     protected function _createTaxCalcRate($taxCalcRateData)
     {
+        $label = '';
+        if (isset($taxCalcRateData['label'])) {
+
+            $label = $taxCalcRateData['label'];
+            unset($taxCalcRateData['label']);
+        }
         $this->_insertIntoTable('tax_calculation_rate', $taxCalcRateData);
+        if ($label) {
+            foreach(Mage::app()->getStores() as $storeId => $store) {
+                $this->_insertIntoTable('tax_calculation_rate_title', array(
+                    'tax_calculation_rate_id' => $taxCalcRateData['tax_calculation_rate_id'],
+                    'store_id' => $storeId,
+                    'value' => $label,
+                ));
+            }
+        }
     }
 
      /**

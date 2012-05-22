@@ -25,6 +25,27 @@
                         <priority>3</priority>
                         <position>0</position>
                     </shipping>
+                    <products_19_percent_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rule_id>6</tax_calculation_rule_id>
+                        <code>Produkte mit 19% MwSt.</code>
+                        <priority>1</priority>
+                        <position>0</position>
+                    </products_19_percent_companies>
+                    <products_7_percent_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
+                        <code>Produkte mit 7% MwSt.</code>
+                        <priority>2</priority>
+                        <position>0</position>
+                    </products_7_percent_companies>
+                    <shipping_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rule_id>8</tax_calculation_rule_id>
+                        <code>Versand mit 19% MwSt.</code>
+                        <priority>3</priority>
+                        <position>0</position>
+                    </shipping_companies>
                 </default>
             </tax_calculation_rules>
 
@@ -74,7 +95,8 @@
                         <tax_country_id>DE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>DE 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_DE_19>
                     <tax_calculation_rate_DE_0>
@@ -83,7 +105,8 @@
                         <tax_country_id>DE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>DE 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_DE_0>
                     <tax_calculation_rate_DE_7>
@@ -92,7 +115,8 @@
                         <tax_country_id>DE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>DE 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_DE_7>
                     <tax_calculation_rate_BE_19>
@@ -101,7 +125,8 @@
                         <tax_country_id>BE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>BE 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_BE_19>
                     <tax_calculation_rate_BE_0>
@@ -110,7 +135,8 @@
                         <tax_country_id>BE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>BE 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_BE_0>
                     <tax_calculation_rate_BE_7>
@@ -119,7 +145,8 @@
                         <tax_country_id>BE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>BE 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_BE_7>
                     <tax_calculation_rate_BG_19>
@@ -128,7 +155,8 @@
                         <tax_country_id>BG</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>BG 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_BG_19>
                     <tax_calculation_rate_BG_0>
@@ -137,7 +165,8 @@
                         <tax_country_id>BG</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>BG 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_BG_0>
                     <tax_calculation_rate_BG_7>
@@ -146,7 +175,8 @@
                         <tax_country_id>BG</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>BG 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_BG_7>
                     <tax_calculation_rate_DK_19>
@@ -155,7 +185,8 @@
                         <tax_country_id>DK</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>DK 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_DK_19>
                     <tax_calculation_rate_DK_0>
@@ -164,7 +195,8 @@
                         <tax_country_id>DK</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>DK 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_DK_0>
                     <tax_calculation_rate_DK_7>
@@ -173,7 +205,8 @@
                         <tax_country_id>DK</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>DK 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_DK_7>
                     <tax_calculation_rate_EE_19>
@@ -182,7 +215,8 @@
                         <tax_country_id>EE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>EE 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_EE_19>
                     <tax_calculation_rate_EE_0>
@@ -191,7 +225,8 @@
                         <tax_country_id>EE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>EE 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_EE_0>
                     <tax_calculation_rate_EE_7>
@@ -200,7 +235,8 @@
                         <tax_country_id>EE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>EE 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_EE_7>
                     <tax_calculation_rate_FI_19>
@@ -209,7 +245,8 @@
                         <tax_country_id>FI</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>FI 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_FI_19>
                     <tax_calculation_rate_FI_0>
@@ -218,7 +255,8 @@
                         <tax_country_id>FI</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>FI 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_FI_0>
                     <tax_calculation_rate_FI_7>
@@ -227,7 +265,8 @@
                         <tax_country_id>FI</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>FI 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_FI_7>
                     <tax_calculation_rate_FR_19>
@@ -236,7 +275,8 @@
                         <tax_country_id>FR</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>FR 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_FR_19>
                     <tax_calculation_rate_FR_0>
@@ -245,7 +285,8 @@
                         <tax_country_id>FR</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>FR 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_FR_0>
                     <tax_calculation_rate_FR_7>
@@ -254,7 +295,8 @@
                         <tax_country_id>FR</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>FR 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_FR_7>
                     <tax_calculation_rate_GR_19>
@@ -263,7 +305,8 @@
                         <tax_country_id>GR</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>GR 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_GR_19>
                     <tax_calculation_rate_GR_0>
@@ -272,7 +315,8 @@
                         <tax_country_id>GR</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>GR 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_GR_0>
                     <tax_calculation_rate_GR_7>
@@ -281,7 +325,8 @@
                         <tax_country_id>GR</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>GR 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_GR_7>
                     <tax_calculation_rate_IE_19>
@@ -290,7 +335,8 @@
                         <tax_country_id>IE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>IE 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_IE_19>
                     <tax_calculation_rate_IE_0>
@@ -299,7 +345,8 @@
                         <tax_country_id>IE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>IE 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_IE_0>
                     <tax_calculation_rate_IE_7>
@@ -308,7 +355,8 @@
                         <tax_country_id>IE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>IE 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_IE_7>
                     <tax_calculation_rate_IT_19>
@@ -317,7 +365,8 @@
                         <tax_country_id>IT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>IT 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_IT_19>
                     <tax_calculation_rate_IT_0>
@@ -326,7 +375,8 @@
                         <tax_country_id>IT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>IT 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_IT_0>
                     <tax_calculation_rate_IT_7>
@@ -335,7 +385,8 @@
                         <tax_country_id>IT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>IT 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_IT_7>
                     <tax_calculation_rate_LV_19>
@@ -344,7 +395,8 @@
                         <tax_country_id>LV</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>LV 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_LV_19>
                     <tax_calculation_rate_LV_0>
@@ -353,7 +405,8 @@
                         <tax_country_id>LV</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>LV 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_LV_0>
                     <tax_calculation_rate_LV_7>
@@ -362,7 +415,8 @@
                         <tax_country_id>LV</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>LV 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_LV_7>
                     <tax_calculation_rate_LT_19>
@@ -371,7 +425,8 @@
                         <tax_country_id>LT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>LT 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_LT_19>
                     <tax_calculation_rate_LT_0>
@@ -380,7 +435,8 @@
                         <tax_country_id>LT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>LT 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_LT_0>
                     <tax_calculation_rate_LT_7>
@@ -389,7 +445,8 @@
                         <tax_country_id>LT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>LT 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_LT_7>
                     <tax_calculation_rate_LU_19>
@@ -398,7 +455,8 @@
                         <tax_country_id>LU</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>LU 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_LU_19>
                     <tax_calculation_rate_LU_0>
@@ -407,7 +465,8 @@
                         <tax_country_id>LU</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>LU 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_LU_0>
                     <tax_calculation_rate_LU_7>
@@ -416,7 +475,8 @@
                         <tax_country_id>LU</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>LU 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_LU_7>
                     <tax_calculation_rate_MT_19>
@@ -425,7 +485,8 @@
                         <tax_country_id>MT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>MT 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_MT_19>
                     <tax_calculation_rate_MT_0>
@@ -434,7 +495,8 @@
                         <tax_country_id>MT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>MT 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_MT_0>
                     <tax_calculation_rate_MT_7>
@@ -443,7 +505,8 @@
                         <tax_country_id>MT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>MT 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_MT_7>
                     <tax_calculation_rate_NL_19>
@@ -452,7 +515,8 @@
                         <tax_country_id>NL</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>NL 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_NL_19>
                     <tax_calculation_rate_NL_0>
@@ -461,7 +525,8 @@
                         <tax_country_id>NL</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>NL 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_NL_0>
                     <tax_calculation_rate_NL_7>
@@ -470,7 +535,8 @@
                         <tax_country_id>NL</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>NL 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_NL_7>
                     <tax_calculation_rate_AT_19>
@@ -479,7 +545,8 @@
                         <tax_country_id>AT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>AT 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_AT_19>
                     <tax_calculation_rate_AT_0>
@@ -488,7 +555,8 @@
                         <tax_country_id>AT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>AT 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_AT_0>
                     <tax_calculation_rate_AT_7>
@@ -497,7 +565,8 @@
                         <tax_country_id>AT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>AT 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_AT_7>
                     <tax_calculation_rate_PL_19>
@@ -506,7 +575,8 @@
                         <tax_country_id>PL</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>PL 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_PL_19>
                     <tax_calculation_rate_PL_0>
@@ -515,7 +585,8 @@
                         <tax_country_id>PL</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>PL 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_PL_0>
                     <tax_calculation_rate_PL_7>
@@ -524,7 +595,8 @@
                         <tax_country_id>PL</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>PL 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_PL_7>
                     <tax_calculation_rate_PT_19>
@@ -533,7 +605,8 @@
                         <tax_country_id>PT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>PT 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_PT_19>
                     <tax_calculation_rate_PT_0>
@@ -542,7 +615,8 @@
                         <tax_country_id>PT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>PT 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_PT_0>
                     <tax_calculation_rate_PT_7>
@@ -551,7 +625,8 @@
                         <tax_country_id>PT</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>PT 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_PT_7>
                     <tax_calculation_rate_RO_19>
@@ -560,7 +635,8 @@
                         <tax_country_id>RO</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>RO 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_RO_19>
                     <tax_calculation_rate_RO_0>
@@ -569,7 +645,8 @@
                         <tax_country_id>RO</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>RO 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_RO_0>
                     <tax_calculation_rate_RO_7>
@@ -578,7 +655,8 @@
                         <tax_country_id>RO</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>RO 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_RO_7>
                     <tax_calculation_rate_SE_19>
@@ -587,7 +665,8 @@
                         <tax_country_id>SE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>SE 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_SE_19>
                     <tax_calculation_rate_SE_0>
@@ -596,7 +675,8 @@
                         <tax_country_id>SE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>SE 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_SE_0>
                     <tax_calculation_rate_SE_7>
@@ -605,7 +685,8 @@
                         <tax_country_id>SE</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>SE 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_SE_7>
                     <tax_calculation_rate_SK_19>
@@ -614,7 +695,8 @@
                         <tax_country_id>SK</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>SK 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_SK_19>
                     <tax_calculation_rate_SK_0>
@@ -623,7 +705,8 @@
                         <tax_country_id>SK</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>SK 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_SK_0>
                     <tax_calculation_rate_SK_7>
@@ -632,7 +715,8 @@
                         <tax_country_id>SK</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>SK 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_SK_7>
                     <tax_calculation_rate_SI_19>
@@ -641,7 +725,8 @@
                         <tax_country_id>SI</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>SI 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_SI_19>
                     <tax_calculation_rate_SI_0>
@@ -650,7 +735,8 @@
                         <tax_country_id>SI</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>SI 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_SI_0>
                     <tax_calculation_rate_SI_7>
@@ -659,7 +745,8 @@
                         <tax_country_id>SI</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>SI 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_SI_7>
                     <tax_calculation_rate_ES_19>
@@ -668,7 +755,8 @@
                         <tax_country_id>ES</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>ES 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_ES_19>
                     <tax_calculation_rate_ES_0>
@@ -677,7 +765,8 @@
                         <tax_country_id>ES</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>ES 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_ES_0>
                     <tax_calculation_rate_ES_7>
@@ -686,7 +775,8 @@
                         <tax_country_id>ES</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>ES 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_ES_7>
                     <tax_calculation_rate_CZ_19>
@@ -695,7 +785,8 @@
                         <tax_country_id>CZ</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>CZ 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_CZ_19>
                     <tax_calculation_rate_CZ_0>
@@ -704,7 +795,8 @@
                         <tax_country_id>CZ</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>CZ 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_CZ_0>
                     <tax_calculation_rate_CZ_7>
@@ -713,7 +805,8 @@
                         <tax_country_id>CZ</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>CZ 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_CZ_7>
                     <tax_calculation_rate_HU_19>
@@ -722,7 +815,8 @@
                         <tax_country_id>HU</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>HU 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_HU_19>
                     <tax_calculation_rate_HU_0>
@@ -731,7 +825,8 @@
                         <tax_country_id>HU</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>HU 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_HU_0>
                     <tax_calculation_rate_HU_7>
@@ -740,7 +835,8 @@
                         <tax_country_id>HU</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>HU 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_HU_7>
                     <tax_calculation_rate_GB_19>
@@ -749,7 +845,8 @@
                         <tax_country_id>GB</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>GB 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_GB_19>
                     <tax_calculation_rate_GB_0>
@@ -758,7 +855,8 @@
                         <tax_country_id>GB</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>GB 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_GB_0>
                     <tax_calculation_rate_GB_7>
@@ -767,7 +865,8 @@
                         <tax_country_id>GB</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>GB 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_GB_7>
                     <tax_calculation_rate_CY_19>
@@ -776,7 +875,8 @@
                         <tax_country_id>CY</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>19% Steuer</code>
+                        <code>CY 19%</code>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_CY_19>
                     <tax_calculation_rate_CY_0>
@@ -785,7 +885,8 @@
                         <tax_country_id>CY</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>0% Steuer</code>
+                        <code>CY 0%</code>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_CY_0>
                     <tax_calculation_rate_CY_7>
@@ -794,7 +895,8 @@
                         <tax_country_id>CY</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>7% Steuer</code>
+                        <code>CY 7%</code>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_CY_7>
                 </default>
@@ -809,6 +911,13 @@
                         <customer_tax_class_id>3</customer_tax_class_id>
                         <product_tax_class_id>1</product_tax_class_id>
                     </tax_calculation_DE_19>
+                    <tax_calculation_DE_19_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>6</tax_calculation_rule_id>
+                        <customer_tax_class_id>5</customer_tax_class_id>
+                        <product_tax_class_id>1</product_tax_class_id>
+                    </tax_calculation_DE_19_companies>
                     <tax_calculation_DE_shipping>
                         <execute>1</execute>
                         <tax_calculation_rate_id>3</tax_calculation_rate_id>
@@ -816,6 +925,13 @@
                         <customer_tax_class_id>3</customer_tax_class_id>
                         <product_tax_class_id>4</product_tax_class_id>
                     </tax_calculation_DE_shipping>
+                    <tax_calculation_DE_shipping_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
+                        <customer_tax_class_id>5</customer_tax_class_id>
+                        <product_tax_class_id>4</product_tax_class_id>
+                    </tax_calculation_DE_shipping_companies>
                     <tax_calculation_DE_7>
                         <execute>1</execute>
                         <tax_calculation_rate_id>5</tax_calculation_rate_id>
@@ -823,6 +939,13 @@
                         <customer_tax_class_id>3</customer_tax_class_id>
                         <product_tax_class_id>2</product_tax_class_id>
                     </tax_calculation_DE_7>
+                    <tax_calculation_DE_7_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>8</tax_calculation_rule_id>
+                        <customer_tax_class_id>5</customer_tax_class_id>
+                        <product_tax_class_id>2</product_tax_class_id>
+                    </tax_calculation_DE_7_companies>
                     <tax_calculation_BE_19>
                         <execute>1</execute>
                         <tax_calculation_rate_id>6</tax_calculation_rate_id>
