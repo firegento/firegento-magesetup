@@ -128,5 +128,26 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                 Mage::getSingleton('germansetup/setup_tax')->updateProductTaxClasses($source, $target);
             }
         }
+
+        $this->_markIndicesOutdated();
+    }
+
+    /**
+     * Mark relevant indices as outdated after chinging tax rates
+     */
+    protected function _markIndicesOutdated()
+    {
+        $indices = Mage::getModel('index/process')
+            ->getCollection()
+            ->addFieldToFilter('indexer_code', array('in' => array(
+                'catalog_product_price',
+                'catalog_product_flat',
+                'catalog_product_attribute',
+            )));
+
+        foreach($indices as $index) {
+            $index->setStatus(Mage_Index_Model_Process::STATUS_REQUIRE_REINDEX)->save();
+        }
+
     }
 }
