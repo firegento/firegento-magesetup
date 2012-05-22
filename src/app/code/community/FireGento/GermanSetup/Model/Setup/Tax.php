@@ -225,6 +225,8 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
             ->addAttributeToFilter('tax_class_id', intval($source));
 
         foreach ($productCollection as $product) {
+
+            /** @var $product Mage_Catalog_Model_Product */
             $product->setTaxClassId(intval($target));
             $product->getResource()->saveAttribute($product, 'tax_class_id');
         }
