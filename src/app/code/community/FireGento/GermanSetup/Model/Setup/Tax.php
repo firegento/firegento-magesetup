@@ -80,6 +80,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
 
         // execute tax calculation rates
         $this->_truncateTable('tax_calculation_rate');
+        $this->_truncateTable('tax_calculation_rate_title');
 
         foreach ($this->_getConfigTaxCalcRates() as $data) {
             if ($data['execute'] == 1) {
@@ -160,13 +161,18 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      */
     protected function _createTaxCalcRate($taxCalcRateData)
     {
+        // look up label
         $label = '';
         if (isset($taxCalcRateData['label'])) {
 
             $label = $taxCalcRateData['label'];
             unset($taxCalcRateData['label']);
         }
+
+        // base tax rate db entry
         $this->_insertIntoTable('tax_calculation_rate', $taxCalcRateData);
+
+        // add labels to all store views
         if ($label) {
             foreach(Mage::app()->getStores() as $storeId => $store) {
                 $this->_insertIntoTable('tax_calculation_rate_title', array(
