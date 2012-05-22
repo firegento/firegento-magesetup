@@ -75,7 +75,6 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                     $this->_getSession()->addSuccess(
                         $this->__('German Setup: CMS Blocks and Pages have been created.')
                     );
-                    Mage::log($this->__('German Setup: CMS Blocks and Pages have been created.'));
                 }
 
                 if ($this->getRequest()->getParam('agreements') == 1) {
@@ -83,7 +82,6 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                     $this->_getSession()->addSuccess(
                         $this->__('German Setup: Checkout Agreements have been created.')
                     );
-                    Mage::log($this->__('German Setup: Checkout Agreements have been created.'));
                 }
 
                 if ($this->getRequest()->getParam('email') == 1) {
@@ -91,7 +89,6 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                     $this->_getSession()->addSuccess(
                         $this->__('German Setup: Email Templates have been created.')
                     );
-                    Mage::log($this->__('German Setup: Email Templates have been created.'));
                 }
 
                 if ($this->getRequest()->getParam('tax') == 1) {
@@ -99,13 +96,11 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                     $this->_getSession()->addSuccess(
                         $this->__('German Setup: Tax Settings have been created.')
                     );
-                    Mage::log($this->__('German Setup: Tax Settings have been created.'));
 
                     $this->_updateProductTaxClasses();
                     $this->_getSession()->addSuccess(
                         $this->__('German Setup: Product Tax Classes have been updated.')
                     );
-                    Mage::log($this->__('German Setup: Product Tax Classes have been updated.'));
                 }
 
                 // Set a config flag to indicate that the setup has been initialized.
@@ -119,12 +114,16 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
         $this->_redirect('*/*');
     }
 
+    /**
+     * Update the old product tax classes to the new tax class ids
+     *
+     * @return void
+     */
     protected function _updateProductTaxClasses()
     {
         $taxClasses = $this->getRequest()->getParam('product_tax_class_target');
         foreach ($taxClasses as $source => $target) {
             if ($target = intval($target)) {
-
                 Mage::getSingleton('germansetup/setup_tax')->updateProductTaxClasses($source, $target);
             }
         }
