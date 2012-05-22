@@ -67,26 +67,11 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
         $config = Mage::getConfig();
 
         // Load additional config files
-        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . 'cms.xml';
-        if (file_exists($configFile)) {
-            if ($mergeConfig->loadFile($configFile)) {
-                $config->extend($mergeConfig, true);
-            }
-        }
+        $this->_addConfigFile('cms.xml', $mergeConfig);
 
-        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . 'email.xml';
-        if (file_exists($configFile)) {
-            if ($mergeConfig->loadFile($configFile)) {
-                $config->extend($mergeConfig, true);
-            }
-        }
+        $this->_addConfigFile('email.xml', $mergeConfig);
 
-        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . 'tax.xml';
-        if (file_exists($configFile)) {
-            if ($mergeConfig->loadFile($configFile)) {
-                $config->extend($mergeConfig, true);
-            }
-        }
+        $this->_addConfigFile('tax.xml', $mergeConfig);
 
         $this->setXml($config->getNode());
 
@@ -94,5 +79,23 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
             $this->saveCache();
         }
         return $this;
+    }
+
+    /**
+     * @param $fileName
+     * @param $mergeConfig
+     */
+    protected function _addConfigFile($fileName, $mergeConfig)
+    {
+        $config = Mage::getConfig();
+        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . Mage::app()->getRequest()->getParam('country') . DS . $fileName;
+        if (!file_exists($configFile)) {
+            $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . 'default' . DS . $fileName;
+        }
+        if (file_exists($configFile)) {
+            if ($mergeConfig->loadFile($configFile)) {
+                $config->extend($mergeConfig, true);
+            }
+        }
     }
 }
