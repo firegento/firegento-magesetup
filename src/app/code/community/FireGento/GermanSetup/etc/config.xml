@@ -25,11 +25,11 @@
             <germansetup>
                 <class>FireGento_GermanSetup_Model</class>
             </germansetup>
-			<tax>
-				<rewrite>
-					<config>FireGento_GermanSetup_Model_Tax_Config</config>
-				</rewrite>
-			</tax>
+            <tax>
+                <rewrite>
+                    <config>FireGento_GermanSetup_Model_Tax_Config</config>
+                </rewrite>
+            </tax>
         </models>
         <resources>
             <germansetup_setup>
@@ -77,6 +77,11 @@
                 </observers>
             </core_block_abstract_to_html_before>
         </events>
+        <frontend>
+            <secure_url>
+                <contacts>/contacts/</contacts>
+            </secure_url>
+        </frontend>
     </frontend>
     <adminhtml>
         <layout>
