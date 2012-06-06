@@ -6,6 +6,8 @@
 * development => entspricht dem aktuellen Entwicklungsstand
 * review => entspricht dem aktuellen Stand vor einem neuen Release
 
+Die Tags unter https://github.com/firegento/firegento-germansetup/tags entsprechen ebenfalls jeweils den veröffentlichten Versionen auf MagentoConnect. 
+
 
 ## Über diese Extension
 
@@ -19,6 +21,7 @@ GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden M
 * Erweiterte Preisdarstellung mit MwSt. und Versandkosten – per Template anpassbar
 * Automatische Generierung von Meta-Daten bei Produkten
 
+## Weiterführende Links
 
 **Modul auf MagentoConnect** 
 
