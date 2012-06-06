@@ -1,5 +1,14 @@
 # FIREGENTO GermanSetup
 
+## Branches
+
+* master => entspricht dem aktuellen Stand auf MagentoConnect
+* development => entspricht dem aktuellen Entwicklungsstand
+* review => entspricht dem aktuellen Stand vor einem neuen Release
+
+
+## Über diese Extension
+
 GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen wie "Market Ready Germany" oder "German Shop". Zentrale Features des Moduls GermanSetup dabei sind:
 
 * Steuereinstellungen und Steuerklassen für die ganze EU
@@ -11,7 +20,11 @@ GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden M
 * Automatische Generierung von Meta-Daten bei Produkten
 
 
-### Erläuternde Blogeinträge:
+**Modul auf MagentoConnect** 
+
+* http://www.magentocommerce.com/magento-connect/german-setup-6623.html
+
+**Erläuternde Blogeinträge:**
 
 * http://www.avs-webentwicklung.de/nc/blog/artikel/magento-german-setup-die-alternative-zu-market-ready-germany-ua.html
 * http://www.mageblog.de/2012/02/15/neues-modul-germansetup-als-mrg-ersatz/
