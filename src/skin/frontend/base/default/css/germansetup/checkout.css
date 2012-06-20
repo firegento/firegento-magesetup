@@ -1,0 +1,8 @@
+
+
+#checkout-review-table td.last {
+    text-align: right;
+}
+#checkout-review-table td.last .price {
+    font-weight: bold;
+}
