@@ -123,4 +123,18 @@ Adding custom product price block
         </reference>
     </catalog_product_view>
 
+<!-- Added Button Loesung -->
+    <checkout_onepage_index>
+        <reference name="root">
+            <action method="addCss"><stylesheet>css/germansetup/checkout.css</stylesheet></action>
+        </reference>
+    </checkout_onepage_index>
+    <checkout_onepage_review>
+        <reference name="root">
+            <action method="unsetChild"><alias>agreements</alias></action>
+        </reference>
+        <reference name="checkout.onepage.review.info.items.before">
+            <action method="insert"><blockName>checkout.onepage.agreements</blockName></action>
+        </reference>
+    </checkout_onepage_review>
 </layout>
