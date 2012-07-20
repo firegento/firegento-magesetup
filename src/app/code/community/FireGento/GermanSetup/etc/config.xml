@@ -215,5 +215,18 @@ Tel: {{var telephone}}
                 </js_template>
             </address_templates>
         </customer>
+
+        <url>
+            <convert>
+                <char0228><from>ä</from><to>ae</to></char0228>
+                <char0246><from>ö</from><to>oe</to></char0246>
+                <char0252><from>ü</from><to>ue</to></char0252>
+                <char0223><from>ß</from><to>ss</to></char0223>
+                <char0196><from>Ä</from><to>ae</to></char0196>
+                <char0214><from>Ö</from><to>oe</to></char0214>
+                <char0220><from>Ü</from><to>ue</to></char0220>
+            </convert>
+        </url>
+
     </default>
 </config>
