@@ -213,7 +213,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      */
     protected function _updateConfigData()
     {
-        $setup = Mage::getModel('eav/entity_setup', 'core_setup');
+        $setup = $this->_getSetup();
         foreach ($this->_getConfigTaxConfig() as $key => $value) {
             $setup->setConfigData(str_replace('__', '/', $key), $value);
         }
