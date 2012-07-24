@@ -70,6 +70,13 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
     {
         if ($this->getRequest()->isPost()) {
             try {
+                if ($this->getRequest()->getParam('systemconfig') == 1) {
+                    Mage::getSingleton('germansetup/setup_systemconfig')->setup();
+                    $this->_getSession()->addSuccess(
+                        $this->__('German Setup: System Config Settings have been updated.')
+                    );
+                }
+
                 if ($this->getRequest()->getParam('cms') == 1) {
                     Mage::getSingleton('germansetup/setup_cms')->setup();
                     $this->_getSession()->addSuccess(

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<default>
+		<germansetup>
+            <system_config>
+                 <default>
+                     <customer__create_account__confirm>1</customer__create_account__confirm>
+                     <newsletter__subscription__confirm>1</newsletter__subscription__confirm>
+                 </default>
+            </system_config>
+        </germansetup>
+    </default>
+</config>
