@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-	<default>
-		<germansetup>
+    <default>
+        <germansetup>
             <system_config>
                  <default>
                      <customer__create_account__confirm>1</customer__create_account__confirm>
