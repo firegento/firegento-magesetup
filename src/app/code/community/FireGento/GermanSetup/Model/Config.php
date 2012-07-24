@@ -68,9 +68,8 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
 
         // Load additional config files
         $this->_addConfigFile('cms.xml', $mergeConfig);
-
         $this->_addConfigFile('email.xml', $mergeConfig);
-
+        $this->_addConfigFile('systemconfig.xml', $mergeConfig);
         $this->_addConfigFile('tax.xml', $mergeConfig);
 
         $this->setXml($config->getNode());

@@ -2,7 +2,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.0.0</version>
+            <version>1.0.4</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -44,6 +44,7 @@
                 <observers>
                     <germansetup_observer>
                         <class>germansetup/observer</class>
+                        <type>model</type>
                         <method>autogenerateMetaInformation</method>
                     </germansetup_observer>
                 </observers>
@@ -72,6 +73,7 @@
                 <observers>
                     <germansetup_observer>
                         <class>germansetup/observer</class>
+                        <type>model</type>
                         <method>filterAgreements</method>
                     </germansetup_observer>
                 </observers>
@@ -82,6 +84,15 @@
                 <contacts>/contacts/</contacts>
             </secure_url>
         </frontend>
+        <routers>
+            <germansetup>
+                <use>standard</use>
+                <args>
+                    <module>FireGento_GermanSetup</module>
+                    <frontName>germansetup</frontName>
+                </args>
+            </germansetup>
+        </routers>
     </frontend>
     <adminhtml>
         <layout>
@@ -167,6 +178,11 @@
                 <email>info@musterdomain.de</email>
             </imprint>
         </general>
+        <checkout>
+        	<options>
+        		<additional_information><![CDATA[Zusätzlich fallen noch Kosten oder Steuern an, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
+        	</options>
+        </checkout>
         <customer>
             <address_templates>
                 <text><![CDATA[
