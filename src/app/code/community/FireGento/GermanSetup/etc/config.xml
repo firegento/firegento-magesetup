@@ -2,7 +2,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -84,6 +84,15 @@
                 <contacts>/contacts/</contacts>
             </secure_url>
         </frontend>
+        <routers>
+            <germansetup>
+                <use>standard</use>
+                <args>
+                    <module>FireGento_GermanSetup</module>
+                    <frontName>germansetup</frontName>
+                </args>
+            </germansetup>
+        </routers>
     </frontend>
     <adminhtml>
         <layout>
