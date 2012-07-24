@@ -2,7 +2,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -44,6 +44,7 @@
                 <observers>
                     <germansetup_observer>
                         <class>germansetup/observer</class>
+                        <type>model</type>
                         <method>autogenerateMetaInformation</method>
                     </germansetup_observer>
                 </observers>
@@ -72,6 +73,7 @@
                 <observers>
                     <germansetup_observer>
                         <class>germansetup/observer</class>
+                        <type>model</type>
                         <method>filterAgreements</method>
                     </germansetup_observer>
                 </observers>
