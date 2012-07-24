@@ -237,6 +237,22 @@
                 </imprint>
             </groups>
         </general>
+        <checkout>
+        	<groups>
+        		<options>
+        			<fields>
+                        <additional_information translate="label">
+                            <label>Additional Information</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </additional_information>
+        			</fields>
+        		</options>
+        	</groups>
+        </checkout>
         <google>
             <groups>
                 <analytics>

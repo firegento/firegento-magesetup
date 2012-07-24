@@ -169,6 +169,11 @@
                 <email>info@musterdomain.de</email>
             </imprint>
         </general>
+        <checkout>
+        	<options>
+        		<additional_information><![CDATA[Zusätzlich fallen noch Kosten oder Steuern an, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
+        	</options>
+        </checkout>
         <customer>
             <address_templates>
                 <text><![CDATA[

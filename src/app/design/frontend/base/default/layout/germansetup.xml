@@ -137,5 +137,8 @@ Adding custom product price block
         <reference name="checkout.onepage.review.info.items.before">
             <action method="insert"><blockName>checkout.onepage.agreements</blockName></action>
         </reference>
+        <reference name="checkout.onepage.review.info.items.after">
+            <block type="germansetup/checkout_information" name="checkout.onepage.additional" template="germansetup/checkout/additional.phtml" />
+        </reference>
     </checkout_onepage_review>
 </layout>

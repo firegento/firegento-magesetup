@@ -6,3 +6,12 @@
 #checkout-review-table td.last .price {
     font-weight: bold;
 }
+
+#opc-review .additional-information {
+	clear: both;
+	margin:0;
+	padding: 15px 10px;
+	border: 1px solid #d9dde3;
+	border-width: 0 1px 1px;
+	text-align: right;
+}
