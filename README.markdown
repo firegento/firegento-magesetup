@@ -2,17 +2,17 @@
 
 ## Branches
 
-* master => entspricht dem aktuellen Stand auf MagentoConnect
-* development => entspricht dem aktuellen Entwicklungsstand
-* review => entspricht dem aktuellen Stand vor einem neuen Release
+* master => entspicht einem aktuellen Stand des Moduls
+* development => Enthält neue Features für GermanSetup
 
-Die Tags unter https://github.com/firegento/firegento-germansetup/tags entsprechen ebenfalls jeweils den veröffentlichten Versionen auf MagentoConnect. 
+Ausschließlich die Tags unter https://github.com/firegento/firegento-germansetup/tags entsprechen den jeweils veröffentlichten Versionen auf MagentoConnect. 
 
 
 ## Über diese Extension
 
 GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen wie "Market Ready Germany" oder "German Shop". Zentrale Features des Moduls GermanSetup dabei sind:
 
+* Button-Lösung
 * Steuereinstellungen und Steuerklassen für die ganze EU
 * Direkte Zuweisung der neuen Steuerklassen zu allen Produkten (konfigurierbar)
 * Integration deutscher E-Mail-Vorlagen
