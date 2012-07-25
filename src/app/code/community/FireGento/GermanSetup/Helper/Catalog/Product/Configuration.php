@@ -51,7 +51,7 @@ class FireGento_GermanSetup_Helper_Catalog_Product_Configuration
      * @param Mage_Catalog_Model_Product_Configuration_Item_Interface $item
      * @return array
      */
-    public function getCustomOptions($item)
+    public function getCustomOptions(Mage_Catalog_Model_Product_Configuration_Item_Interface $item)
     {
         $optionsParent = parent::getCustomOptions($item);
         $optionsSelf   = $this->_getAttributes($item);
