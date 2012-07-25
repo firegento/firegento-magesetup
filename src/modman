@@ -6,3 +6,4 @@ app/design/adminhtml/default/default/layout/germansetup.xml     app/design/admin
 app/design/adminhtml/default/default/template/germansetup/      app/design/adminhtml/default/default/template/germansetup/
 app/design/frontend/base/default/layout/germansetup.xml	        app/design/frontend/base/default/layout/germansetup.xml
 app/design/frontend/base/default/template/germansetup/	        app/design/frontend/base/default/template/germansetup/
+skin/frontend/base/default/css/germansetup/                     skin/frontend/base/default/css/germansetup
