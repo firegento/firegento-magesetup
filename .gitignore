@@ -1,3 +1,5 @@
+build.default.properties
+build.xml
 .DS_Store
 *.cache.properties
 *~
