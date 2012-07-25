@@ -34,6 +34,34 @@
 class FireGento_GermanSetup_Model_Observer
 {
     /**
+     * Add "Visible on Checkout Review on Front-end" Option to Attribute Settings
+     *
+     * @param Varien_Event_Observer $observer Observer
+     * @event adminhtml_catalog_product_attribute_edit_prepare_form
+     * @return FireGento_GermanSetup_Model_Observer
+     */
+    public function addIsVisibleOnCheckoutOption(Varien_Event_Observer $observer)
+    {
+        $event = $observer->getEvent();
+        $form  = $event->getForm();
+
+        $fieldset = $form->getElement('front_fieldset');
+        $source   = Mage::getModel('adminhtml/system_config_source_yesno')->toOptionArray();
+        $fieldset->addField(
+            'is_visible_on_checkout',
+            'select',
+            array(
+                'name'     => 'is_visible_on_checkout',
+                'label'    => Mage::helper('germansetup')->__('Visible in Checkout'),
+                'title'    => Mage::helper('germansetup')->__('Visible in Checkout'),
+                'values'   => $source,
+            )
+        );
+
+        return $this;
+    }
+
+    /**
      * Filters all agreements
      *
      * Filters all agreements against the Magento template filter. This enables the Magento

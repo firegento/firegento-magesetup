@@ -2,7 +2,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -20,6 +20,11 @@
             <germansetup>
                 <class>FireGento_GermanSetup_Helper</class>
             </germansetup>
+    		<catalog>
+                <rewrite>
+                    <product_configuration>FireGento_GermanSetup_Helper_Catalog_Product_Configuration</product_configuration>
+                </rewrite>
+            </catalog>
         </helpers>
         <models>
             <germansetup>
@@ -149,6 +154,17 @@
                 </admin>
             </resources>
         </acl>
+        <events>
+            <adminhtml_catalog_product_attribute_edit_prepare_form>
+                <observers>
+                    <germansetup_observer>
+                        <class>germansetup/observer</class>
+                        <type>model</type>
+                        <method>addIsVisibleOnCheckoutOption</method>
+                    </germansetup_observer>
+                </observers>
+            </adminhtml_catalog_product_attribute_edit_prepare_form>     
+        </events>
     </adminhtml>
     <admin>
         <routers>
@@ -179,9 +195,9 @@
             </imprint>
         </general>
         <checkout>
-        	<options>
-        		<additional_information><![CDATA[Zusätzlich fallen noch Kosten oder Steuern an, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
-        	</options>
+            <options>
+                <additional_information><![CDATA[Zusätzlich fallen noch Kosten oder Steuern an, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
+            </options>
         </checkout>
         <customer>
             <address_templates>
