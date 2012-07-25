@@ -86,8 +86,10 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
      */
     protected function _addConfigFile($fileName, $mergeConfig)
     {
+        $country = Mage::app()->getRequest()->getParam('country');
+
         $config = Mage::getConfig();
-        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . Mage::app()->getRequest()->getParam('country') . DS . $fileName;
+        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . $country . DS . $fileName;
         if (!file_exists($configFile)) {
             $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . 'default' . DS . $fileName;
         }

@@ -174,12 +174,15 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
 
         // add labels to all store views
         if ($label) {
-            foreach(Mage::app()->getStores() as $storeId => $store) {
-                $this->_insertIntoTable('tax_calculation_rate_title', array(
-                    'tax_calculation_rate_id' => $taxCalcRateData['tax_calculation_rate_id'],
-                    'store_id' => $storeId,
-                    'value' => $label,
-                ));
+            foreach (Mage::app()->getStores() as $storeId => $store) {
+                $this->_insertIntoTable(
+                    'tax_calculation_rate_title',
+                    array(
+                        'tax_calculation_rate_id' => $taxCalcRateData['tax_calculation_rate_id'],
+                        'store_id' => $storeId,
+                        'value' => $label,
+                    )
+                );
             }
         }
     }
