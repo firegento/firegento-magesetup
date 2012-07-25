@@ -45,7 +45,7 @@ if (version_compare(Mage::getVersion(), '1.6', '<')) {
 
 } else {
 
-    $installer = new Mage_Eav_Model_Entity_Setup();
+    $installer = $this;
     $installer->startSetup();
     $installer->getConnection()->addColumn(
         $installer->getTable('catalog/eav_attribute'),
