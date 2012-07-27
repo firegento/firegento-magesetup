@@ -33,20 +33,19 @@
  * @since     1.0.5
  */
 
+/* @var $this Mage_Eav_Model_Entity_Setup */
+$installer = $this;
+$installer->startSetup();
+
 if (version_compare(Mage::getVersion(), '1.6', '<')) {
 
-    $installer = new Mage_Catalog_Model_Resource_Eav_Mysql4_Setup();
-    $installer->startSetup();
     $installer->run("
         ALTER TABLE `{$installer->getTable('catalog/eav_attribute')}`
         ADD `is_visible_on_checkout` SMALLINT(5) NOT NULL DEFAULT '0';
     ");
-    $installer->endSetup();
 
 } else {
 
-    $installer = new Mage_Eav_Model_Entity_Setup();
-    $installer->startSetup();
     $installer->getConnection()->addColumn(
         $installer->getTable('catalog/eav_attribute'),
         'is_visible_on_checkout',
@@ -58,6 +57,7 @@ if (version_compare(Mage::getVersion(), '1.6', '<')) {
             'comment'  => 'Visible in Checkout'
         )
     );
-    $installer->endSetup();
 
 }
+
+$installer->endSetup();

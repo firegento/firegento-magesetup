@@ -63,7 +63,7 @@
             <germansetup_setup>
                 <setup>
                     <module>FireGento_GermanSetup</module>
-                    <class>eav/entity_setup</class>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
                 </setup>
             </germansetup_setup>
         </resources>
