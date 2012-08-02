@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
@@ -26,7 +26,7 @@
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.4.0
@@ -41,6 +41,11 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
     public function indexAction()
     {
         $helper = Mage::helper('germansetup');
+
+        $this->_title($helper->__('System'))
+            ->_title($helper->__('German Setup'))
+            ->_title($helper->__('Setup'));
+
         $this->loadLayout()
             ->_setActiveMenu('system/germansetup/setup')
             ->_addBreadcrumb($helper->__('German Setup'), $helper->__('German Setup'))
@@ -55,6 +60,11 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
     public function extensionsAction()
     {
         $helper = Mage::helper('germansetup');
+
+        $this->_title($helper->__('System'))
+            ->_title($helper->__('German Setup'))
+            ->_title($helper->__('Recommended Extensions'));
+
         $this->loadLayout()
             ->_setActiveMenu('system/germansetup/extensions')
             ->_addBreadcrumb($helper->__('German Setup'), $helper->__('German Setup'))
@@ -70,6 +80,13 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
     {
         if ($this->getRequest()->isPost()) {
             try {
+                if ($this->getRequest()->getParam('systemconfig') == 1) {
+                    Mage::getSingleton('germansetup/setup_systemconfig')->setup();
+                    $this->_getSession()->addSuccess(
+                        $this->__('German Setup: System Config Settings have been updated.')
+                    );
+                }
+
                 if ($this->getRequest()->getParam('cms') == 1) {
                     Mage::getSingleton('germansetup/setup_cms')->setup();
                     $this->_getSession()->addSuccess(

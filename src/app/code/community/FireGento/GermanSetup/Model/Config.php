@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.2.0
@@ -26,7 +26,7 @@
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.2.0
@@ -68,9 +68,8 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
 
         // Load additional config files
         $this->_addConfigFile('cms.xml', $mergeConfig);
-
         $this->_addConfigFile('email.xml', $mergeConfig);
-
+        $this->_addConfigFile('systemconfig.xml', $mergeConfig);
         $this->_addConfigFile('tax.xml', $mergeConfig);
 
         $this->setXml($config->getNode());
@@ -87,8 +86,10 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
      */
     protected function _addConfigFile($fileName, $mergeConfig)
     {
+        $country = Mage::app()->getRequest()->getParam('country');
+
         $config = Mage::getConfig();
-        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . Mage::app()->getRequest()->getParam('country') . DS . $fileName;
+        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . $country . DS . $fileName;
         if (!file_exists($configFile)) {
             $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . 'default' . DS . $fileName;
         }

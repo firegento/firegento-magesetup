@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.2.0
@@ -26,7 +26,7 @@
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.5.0
@@ -174,12 +174,15 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
 
         // add labels to all store views
         if ($label) {
-            foreach(Mage::app()->getStores() as $storeId => $store) {
-                $this->_insertIntoTable('tax_calculation_rate_title', array(
-                    'tax_calculation_rate_id' => $taxCalcRateData['tax_calculation_rate_id'],
-                    'store_id' => $storeId,
-                    'value' => $label,
-                ));
+            foreach (Mage::app()->getStores() as $storeId => $store) {
+                $this->_insertIntoTable(
+                    'tax_calculation_rate_title',
+                    array(
+                        'tax_calculation_rate_id' => $taxCalcRateData['tax_calculation_rate_id'],
+                        'store_id' => $storeId,
+                        'value' => $label,
+                    )
+                );
             }
         }
     }
@@ -213,7 +216,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
      */
     protected function _updateConfigData()
     {
-        $setup = Mage::getModel('eav/entity_setup', 'core_setup');
+        $setup = $this->_getSetup();
         foreach ($this->_getConfigTaxConfig() as $key => $value) {
             $setup->setConfigData(str_replace('__', '/', $key), $value);
         }

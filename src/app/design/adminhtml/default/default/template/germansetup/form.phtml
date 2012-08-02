@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2011 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.4.0
@@ -30,7 +30,7 @@
 <div class="content-header">
     <h3><?php echo $this->__('German Setup') ?></h3>
     <p class="form-buttons">
-    	<?php echo $this->getButtonHtml($this->__('Run German Setup'), 'setupForm.submit();', 'save'); ?>
+        <?php echo $this->getButtonHtml($this->__('Run German Setup'), 'setupForm.submit();', 'save'); ?>
     </p>
 </div>
 
@@ -43,46 +43,56 @@
         </div>
 
         <div class="fieldset fieldset-wide" id="group_fields7">
-    		<div class="hor-scroll">
-            	<table cellspacing="0" class="form-list">
-            		<tbody>
-                    	<tr>
-                        	<td class="label"><label for="select_country"><?php echo $this->__('Shipping from') ?></label></td>
-                        	<td class="value" style="width:160px !important;">
-                            	<select name="country" id="select_country" style="width:150px !important;">
-                            		<option value="de" selected="selected"><?php echo $this->__('Germany')?></option>
-                            		<option value="at"><?php echo $this->__('Austria')?></option>
-                            		<option value="ch"><?php echo $this->__('Switzerland')?></option>
-                            	</select>
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                        <tr>
+                            <td class="label"><label for="select_country"><?php echo $this->__('Shipping from') ?></label></td>
+                            <td class="value" style="width:160px !important;">
+                                <select name="country" id="select_country" style="width:150px !important;">
+                                    <option value="de" selected="selected"><?php echo $this->__('Germany')?></option>
+                                    <option value="at"><?php echo $this->__('Austria')?></option>
+                                    <option value="ch"><?php echo $this->__('Switzerland')?></option>
+                                </select>
                             </td>
                             <td class="value">
-                            	<img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
+                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
                                 <?php echo $this->__('This setting is base for the tax rate setup!') ?>
                             </td>
                         </tr>
                         <tr><td colspan="3">&nbsp;</td></tr>
-                    	<tr>
-                        	<td class="label"><label for="checkbox_cms"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
-                        	<td class="value">
-                            	<input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
+                        <tr>
+                            <td class="label"><label for="checkbox_systemconfig"><?php echo $this->__('Update System Config Settings') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="systemconfig" id="checkbox_systemconfig" value="1" checked="checked" />
+                            </td>
+                            <td class="value">
+                                <?php echo $this->__('i.e. newsletter confirmation, account confirmation, ..') ?>
+                            </td>
+                        </tr>
+                        <tr><td colspan="3">&nbsp;</td></tr>
+                        <tr>
+                            <td class="label"><label for="checkbox_cms"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
                             </td>
                             <td class="value">
                                 <?php echo $this->__('i.e. shipping, conditions, revocation') ?>
                             </td>
                         </tr>
-                    	<tr>
-                        	<td class="label"><label for="checkbox_agreements"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
-                        	<td class="value">
-                            	<input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
+                        <tr>
+                            <td class="label"><label for="checkbox_agreements"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
                             </td>
                             <td class="value">
                                 <?php echo $this->__('Conditions') ?>
                             </td>
                         </tr>
-                    	<tr>
-                        	<td class="label"><label for="checkbox_email"><?php echo $this->__('Create Email Templates') ?></label></td>
-                        	<td class="value">
-                            	<input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
+                        <tr>
+                            <td class="label"><label for="checkbox_email"><?php echo $this->__('Create Email Templates') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
                             </td>
                             <td class="value"><?php echo $this->__('German Email Templates') ?></td>
                         </tr>
@@ -96,8 +106,8 @@
                                 <?php echo $this->__('All tax settings will be overwritten!') ?>
                             </td>
                         </tr>
-                    	<tr>
-                        	<td class="label"><label><?php echo $this->__('Update Product Tax Classes') ?></label></td>
+                        <tr>
+                            <td class="label"><label><?php echo $this->__('Update Product Tax Classes') ?></label></td>
                             <td class="value"></td>
                             <td class="value">
                                 <table cellspacing="5" class="">
@@ -124,12 +134,12 @@
                                 </table>
                             </td>
                         </tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </form>
 </div>
 <script type="text/javascript">
-	setupForm = new varienForm('setup_form', '');
+    setupForm = new varienForm('setup_form', '');
 </script>

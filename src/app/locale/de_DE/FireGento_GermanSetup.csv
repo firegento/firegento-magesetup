@@ -14,6 +14,8 @@
 "Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Klicken Sie <a href=""%s"">hier</a>, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren."
 "Please choose the requested setups:","Bitte wählen Sie die gewünschten Setups:"
 "Run German Setup","German Setup ausführen"
+"Update System Config Settings","Einstellungen in der Systemkonfiguration aktualisieren"
+"i.e. newsletter confirmation, account confirmation, ..","z.B. Newsletter Bestätigung, Benutzerkonto Bestätigung, .."
 "Create CMS Pages and Blocks","CMS-Seiten und Statische Blöcke erstellen"
 "i.e. shipping, conditions, revocation","z.B. Versand, AGB, Widerruf"
 "Create Checkout Agreements","Bestellbedingungen erstellen"
@@ -26,11 +28,13 @@
 "Update Product Tax Classes","Produktsteuerklassen neu zuweisen"
 "Old","Alt"
 "New","Neu"
+
 "German Setup: CMS Blocks and Pages have been created.","German Setup: CMS-Blocks und Seiten wurden erfolgreich angelegt."
 "German Setup: Checkout Agreements have been created.","German Setup: Bestellbedingungen wurden erfolgreich angelegt."
 "German Setup: Email Templates have been created.","German Setup: Email-Vorlagen wurden erfolgreich angelegt."
 "German Setup: Tax Settings have been created.","German Setup: Steuereinstellungen wurden erfolgreich angelegt."
 "German Setup: Product Tax Classes have been updated.","German Setup: Produktsteuerklassen wurden aktualisiert."
+"German Setup: System Config Settings have been updated.","German Setup: Einstellungen in der Systemkonfiguration wurden aktualisiert."
 
 "Imprint","Impressum"
 "Account","Kontonummer"
@@ -81,3 +85,6 @@
 "Switzerland","Schweiz"
 "Shipping from","Versand aus"
 "This setting is base for the tax rate setup!","Diese Einstellung wird für das Setup der Steuereinstellungen verwendet!"
+
+"[Show]","[Anzeigen]"
+"Visible in Checkout","Sichtbar im Bestellprozess"

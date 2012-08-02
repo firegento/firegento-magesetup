@@ -1,8 +1,31 @@
 <?xml version="1.0"?>
+<!-- 
+/**
+ * This file is part of the FIREGENTO project.
+ *
+ * FireGento_GermanSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_GermanSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.1.0
+ */
+ -->
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.0.0</version>
+            <version>1.0.6</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -20,6 +43,11 @@
             <germansetup>
                 <class>FireGento_GermanSetup_Helper</class>
             </germansetup>
+    		<catalog>
+                <rewrite>
+                    <product_configuration>FireGento_GermanSetup_Helper_Catalog_Product_Configuration</product_configuration>
+                </rewrite>
+            </catalog>
         </helpers>
         <models>
             <germansetup>
@@ -35,7 +63,7 @@
             <germansetup_setup>
                 <setup>
                     <module>FireGento_GermanSetup</module>
-                    <class>eav/entity_setup</class>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
                 </setup>
             </germansetup_setup>
         </resources>
@@ -44,6 +72,7 @@
                 <observers>
                     <germansetup_observer>
                         <class>germansetup/observer</class>
+                        <type>model</type>
                         <method>autogenerateMetaInformation</method>
                     </germansetup_observer>
                 </observers>
@@ -72,6 +101,7 @@
                 <observers>
                     <germansetup_observer>
                         <class>germansetup/observer</class>
+                        <type>model</type>
                         <method>filterAgreements</method>
                     </germansetup_observer>
                 </observers>
@@ -82,6 +112,15 @@
                 <contacts>/contacts/</contacts>
             </secure_url>
         </frontend>
+        <routers>
+            <germansetup>
+                <use>standard</use>
+                <args>
+                    <module>FireGento_GermanSetup</module>
+                    <frontName>germansetup</frontName>
+                </args>
+            </germansetup>
+        </routers>
     </frontend>
     <adminhtml>
         <layout>
@@ -138,6 +177,17 @@
                 </admin>
             </resources>
         </acl>
+        <events>
+            <adminhtml_catalog_product_attribute_edit_prepare_form>
+                <observers>
+                    <germansetup_observer>
+                        <class>germansetup/observer</class>
+                        <type>model</type>
+                        <method>addIsVisibleOnCheckoutOption</method>
+                    </germansetup_observer>
+                </observers>
+            </adminhtml_catalog_product_attribute_edit_prepare_form>     
+        </events>
     </adminhtml>
     <admin>
         <routers>
@@ -167,6 +217,11 @@
                 <email>info@musterdomain.de</email>
             </imprint>
         </general>
+        <checkout>
+            <options>
+                <additional_information><![CDATA[Zusätzlich fallen noch Kosten oder Steuern an, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
+            </options>
+        </checkout>
         <customer>
             <address_templates>
                 <text><![CDATA[
@@ -215,5 +270,18 @@ Tel: {{var telephone}}
                 </js_template>
             </address_templates>
         </customer>
+
+        <url>
+            <convert>
+                <char0228><from>ä</from><to>ae</to></char0228>
+                <char0246><from>ö</from><to>oe</to></char0246>
+                <char0252><from>ü</from><to>ue</to></char0252>
+                <char0223><from>ß</from><to>ss</to></char0223>
+                <char0196><from>Ä</from><to>ae</to></char0196>
+                <char0214><from>Ö</from><to>oe</to></char0214>
+                <char0220><from>Ü</from><to>ue</to></char0220>
+            </convert>
+        </url>
+
     </default>
 </config>

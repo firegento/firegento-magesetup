@@ -1,9 +1,34 @@
 <?xml version="1.0"?>
+<!-- 
+/**
+ * This file is part of the FIREGENTO project.
+ *
+ * FireGento_GermanSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_GermanSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.1.0
+ */
+ -->
 <config>
     <sections>
         <catalog>
             <groups>
                 <price>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
                     <fields>
                         <display_block_below_price translate="label,comment" module="germansetup">
                             <label>Display Block below Price</label>
@@ -235,6 +260,22 @@
                 </imprint>
             </groups>
         </general>
+        <checkout>
+        	<groups>
+        		<options>
+        			<fields>
+                        <additional_information translate="label">
+                            <label>Additional Information</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </additional_information>
+        			</fields>
+        		</options>
+        	</groups>
+        </checkout>
         <google>
             <groups>
                 <analytics>
