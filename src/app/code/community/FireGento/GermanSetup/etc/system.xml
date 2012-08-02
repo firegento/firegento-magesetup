@@ -274,7 +274,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </display_additional_information>
-
                         <additional_information translate="label">
                             <label>Additional Information</label>
                             <frontend_type>textarea</frontend_type>
@@ -282,6 +281,9 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <depends>
+                            	<display_additional_information>1</display_additional_information>
+                            </depends>
                         </additional_information>
         			</fields>
         		</options>
