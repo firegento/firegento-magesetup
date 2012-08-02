@@ -36,6 +36,11 @@ class FireGento_GermanSetup_Block_Checkout_Information extends Mage_Core_Block_T
     /**
      * @var string
      */
+    const XML_PATH_CHECKOUT_DISPLAY_ADDITIONAL_INFORMATION = 'checkout/options/display_additional_information';
+
+    /**
+     * @var string
+     */
     const XML_PATH_CHECKOUT_ADDITIONAL_INFORMATION = 'checkout/options/additional_information';
 
     /**
@@ -45,6 +50,10 @@ class FireGento_GermanSetup_Block_Checkout_Information extends Mage_Core_Block_T
      */
     public function getCheckoutAdditionalInformation()
     {
+        if (!Mage::getStoreConfigFlag(self::XML_PATH_CHECKOUT_DISPLAY_ADDITIONAL_INFORMATION)) {
+            return false;
+        }
+
         $additional = Mage::getStoreConfig(self::XML_PATH_CHECKOUT_ADDITIONAL_INFORMATION);
         $additional = trim($additional);
 

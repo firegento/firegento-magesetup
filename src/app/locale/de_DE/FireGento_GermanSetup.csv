@@ -88,3 +88,6 @@
 
 "[Show]","[Anzeigen]"
 "Visible in Checkout","Sichtbar im Bestellprozess"
+
+"Display Additional Information","Zusatzinformation anzeigen"
+"Display content from text field below at the checkout confirm page directly above the checkout button","Inhalt des Textfeldes (unten) auf der Bestellbestätigungsseite anzeigen (direkt über dem ""Kaufen""-Button)"
