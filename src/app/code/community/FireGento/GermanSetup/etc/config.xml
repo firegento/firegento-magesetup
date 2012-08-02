@@ -219,7 +219,7 @@
         </general>
         <checkout>
             <options>
-                <additional_information><![CDATA[Zusätzlich fallen noch Kosten oder Steuern an, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
+                <additional_information><![CDATA[Zusätzlich können noch Kosten oder Steuern anfallen, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
             </options>
         </checkout>
         <customer>
