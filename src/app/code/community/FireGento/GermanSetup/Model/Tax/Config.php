@@ -47,7 +47,16 @@ class FireGento_GermanSetup_Model_Tax_Config extends Mage_Tax_Model_Config
         /* @var $session Mage_Checkout_Model_Session */
         $session = Mage::getSingleton('checkout/session');
 
-        $quoteItems = $session->getQuote()->getAllItems();
+        if ($session->hasQuote()) {
+            $quoteItems = $session->getQuote()->getAllItems();
+        } else {
+            // This case happens if the store currency is switched by the customer.
+            // The quote isn't yet set on the session model at the time collectTotals()
+            // by the session because of the changed currency, which in turn ends up in this
+            // method, which again triggers collectTotals() by getting the quote from the
+            // session model, ending in a recursion loop.
+            $quoteItems = array();
+        }
         $taxClassIds = array();
         $highestTaxRate = null;
 
