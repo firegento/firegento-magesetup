@@ -25,7 +25,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.0.6</version>
+            <version>1.0.7</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -38,6 +38,11 @@
                     <ga>FireGento_GermanSetup_Block_Ga</ga>
                 </rewrite>
             </googleanalytics>
+            <adminhtml>
+                <rewrite>
+                    <checkout_agreement_edit_form>FireGento_GermanSetup_Block_Adminhtml_Checkout_Agreement_Edit_Form</checkout_agreement_edit_form>
+                </rewrite>
+            </adminhtml>
         </blocks>
         <helpers>
             <germansetup>
@@ -48,6 +53,11 @@
                     <product_configuration>FireGento_GermanSetup_Helper_Catalog_Product_Configuration</product_configuration>
                 </rewrite>
             </catalog>
+            <checkout>
+                <rewrite>
+                    <data>FireGento_GermanSetup_Helper_Checkout_Data</data>
+                </rewrite>
+            </checkout>
         </helpers>
         <models>
             <germansetup>
