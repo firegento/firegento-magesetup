@@ -219,4 +219,42 @@ class FireGento_GermanSetup_Model_Observer
         }
         return $keywords;
     }
+    
+    /**
+     * Add "Required" Option to Checkout Agreements
+     *
+     * @param Varien_Event_Observer $observer Observer
+     * @event adminhtml_block_html_before
+     * @return FireGento_GermanSetup_Model_Observer
+     */
+    public function addIsRequiredOnAgreements(Varien_Event_Observer $observer)
+    {
+        $block = $observer->getEvent()->getBlock();
+        if ($block instanceof Mage_Adminhtml_Block_Checkout_Agreement_Edit_Form) {
+            $form = $block->getForm();
+        
+            $fieldset = $form->getElement('base_fieldset');
+            $fieldset->addField('is_required', 'select', array(
+                'label'     => Mage::helper('germansetup')->__('Required'),
+                'title'     => Mage::helper('germansetup')->__('Required'),
+                'note'      => Mage::helper('germansetup')->__('Display Checkbox on Frontend'),
+                'name'      => 'is_required',
+                'required'  => true,
+                'options'   => array(
+                    '1' => Mage::helper('germansetup')->__('Yes'),
+                    '0' => Mage::helper('germansetup')->__('No'),
+                ),
+            ));
+            
+            Mage::dispatchEvent('germansetup_adminhtml_checkout_agreement_edit_form', array(
+                'form' => $form,
+                'fieldset' => $fieldset,
+            ));
+            
+            $model  = Mage::registry('checkout_agreement');
+            $form->setValues($model->getData());
+            $block->setForm($form);
+        }
+        return $this;
+    }
 }

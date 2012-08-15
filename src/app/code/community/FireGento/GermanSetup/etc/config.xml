@@ -38,11 +38,6 @@
                     <ga>FireGento_GermanSetup_Block_Ga</ga>
                 </rewrite>
             </googleanalytics>
-            <adminhtml>
-                <rewrite>
-                    <checkout_agreement_edit_form>FireGento_GermanSetup_Block_Adminhtml_Checkout_Agreement_Edit_Form</checkout_agreement_edit_form>
-                </rewrite>
-            </adminhtml>
         </blocks>
         <helpers>
             <germansetup>
@@ -196,7 +191,16 @@
                         <method>addIsVisibleOnCheckoutOption</method>
                     </germansetup_observer>
                 </observers>
-            </adminhtml_catalog_product_attribute_edit_prepare_form>     
+            </adminhtml_catalog_product_attribute_edit_prepare_form>
+            <adminhtml_block_html_before>
+                <observers>
+                    <germansetup_observer_agreement>
+                        <class>germansetup/observer</class>
+                        <type>model</type>
+                        <method>addIsRequiredOnAgreements</method>
+                    </germansetup_observer_agreement>
+                </observers>
+            </adminhtml_block_html_before>
         </events>
     </adminhtml>
     <admin>
