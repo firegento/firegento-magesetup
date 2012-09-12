@@ -1,6 +1,7 @@
 <!--@vars
 {"store url=\"\"":"Store Url",
-"skin url=\"images/logo_email.gif\" _area='frontend'":"Email Logo Image",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
 "htmlescape var=$customer.name":"Customer Name",
 "store url=\"customer/account/\"":"Customer Account Url",
 "var customer.email":"Customer Email",
@@ -20,7 +21,7 @@
 				<table cellspacing="0" cellpadding="0" border="0" width="650">
 					<tr>
 						<td valign="top">
-							<a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area=''frontend''}}" alt="{{block type="germansetup/imprint_field" value="shop_name"}}"  style="margin-bottom:10px;" border="0"/></a>
+							<a href="{{store url=""}}"><img src="{{var logo_url}}" alt="{{block type="germansetup/imprint_field" value="shop_name"}}" style="margin-bottom:10px;" border="0"/></a>
 						</td>
 					</tr>
 				</table>
