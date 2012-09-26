@@ -91,3 +91,5 @@
 
 "Display Additional Information","Zusatzinformation anzeigen"
 "Display content from text field below at the checkout confirm page directly above the checkout button","Inhalt des Textfeldes (unten) auf der Bestellbestätigungsseite anzeigen (direkt über dem ""Kaufen""-Button)"
+
+"Directory ""%s"" not found. Locale not installed?","Verzeichnis ""%s"" nicht gefunden. Ist das Sprachpaket korrekt installiert?"

@@ -33,6 +33,9 @@
  */
 class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Model_Setup_Abstract
 {
+    /** @var array */
+    protected $_localeTemplatePath = array();
+
     /**
      * Setup Transaction Emails
      *
@@ -43,7 +46,10 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
         // execute emails
         foreach ($this->_getConfigEmails() as $data) {
             if ($data['execute'] == 1) {
-                $this->_createEmail($data, false);
+                /** @todo get locale from post params */
+                $locale = 'de_DE';
+                /** @todo get change true to false; changed for testing */
+                $this->_createEmail($data, $locale, true);
             }
         }
     }
@@ -62,24 +68,75 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
      * Create transactional email template
      *
      * @param array $emailData template data
+     * @param string $locale
      * @param boolean $override override email template if set
      *
      * @return void
      */
-    protected function _createEmail($emailData, $override = true)
+    protected function _createEmail($emailData, $locale, $override = true)
     {
         $template = Mage::getModel('core/email_template')
             ->loadByCode($emailData['template_code']);
         
         if (!$template->getId() || $override) {
-            $template->setTemplateSubject($emailData['template_subject'])
+
+            $localeEmailPath = $this->_getLocaleEmailPath($locale);
+
+            $template
                 ->setTemplateCode($emailData['template_code'])
-                ->setTemplateText($this->getTemplateContent($emailData['text']))
                 ->setTemplateType($emailData['template_type'])
-                ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate())
+                ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate());
+
+            /**
+             * Filter areas from template file
+             */
+            $templateText = $this->getTemplateContent($localeEmailPath . $emailData['template_file']);
+
+            if (preg_match('/<!--@subject\s*(.*?)\s*@-->/u', $templateText, $matches)) {
+                $template->setTemplateSubject($matches[1]);
+                $templateText = str_replace($matches[0], '', $templateText);
+            }
+
+            if (preg_match('/<!--@vars\s*((?:.)*?)\s*@-->/us', $templateText, $matches)) {
+                $templateText = str_replace($matches[0], '', $templateText);
+            }
+
+            if (preg_match('/<!--@styles\s*(.*?)\s*@-->/s', $templateText, $matches)) {
+                $template->setTemplateStyles($matches[1]);
+                $templateText = str_replace($matches[0], '', $templateText);
+            }
+
+            /**
+             * Remove comment lines
+             */
+            $templateText = preg_replace('#\{\*.*\*\}#suU', '', $templateText);
+
+            $template
+                ->setTemplateText($templateText)
                 ->save();
         }
 
         $this->setConfigData($emailData['config_data_path'], $template->getId());
+    }
+
+    /**
+     * Retrieve email template path for given locale
+     *
+     * @param string $locale
+     * @return string
+     */
+    protected function _getLocaleEmailPath($locale)
+    {
+        if (!isset($this->_localeTemplatePath[$locale])) {
+
+            $this->_localeTemplatePath[$locale] = 'app' . DS . 'locale' . DS . $locale . DS . 'template' . DS . 'email' . DS;
+            if (!is_dir(Mage::getBaseDir() . DS . $this->_localeTemplatePath[$locale])) {
+                Mage::throwException(
+                    Mage::helper('germansetup')->__('Directory "%s" not found. Locale not installed?', $this->_localeTemplatePath[$locale])
+                );
+            }
+        }
+
+        return $this->_localeTemplatePath[$locale];
     }
 }
