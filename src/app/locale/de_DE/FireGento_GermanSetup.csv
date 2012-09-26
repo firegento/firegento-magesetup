@@ -91,3 +91,8 @@
 
 "Display Additional Information","Zusatzinformation anzeigen"
 "Display content from text field below at the checkout confirm page directly above the checkout button","Inhalt des Textfeldes (unten) auf der Bestellbestätigungsseite anzeigen (direkt über dem ""Kaufen""-Button)"
+
+"No Checkbox","Keine Bestätigung notwendig"
+"Yes","Ja"
+"No","Nein"
+"Display Checkbox on Frontend","Zeige Checkbox im Shop-Frontend"

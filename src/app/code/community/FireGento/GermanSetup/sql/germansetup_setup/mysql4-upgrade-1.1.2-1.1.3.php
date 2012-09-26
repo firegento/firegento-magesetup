@@ -18,10 +18,11 @@
  * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.2.0
+ * @since     1.0.7
  */
 /**
- * Setup class for Tax Settings
+ * Setup script; Adds the delivery_time attribute for products
+ * and creates all initial pages, blocks and emails
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -29,41 +30,33 @@
  * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.5.0
+ * @since     1.0.7
  */
-class FireGento_GermanSetup_Model_Setup_Systemconfig extends FireGento_GermanSetup_Model_Setup_Abstract
-{
-    /**
-     * Setup Tax setting
-     *
-     * @return void
-     */
-    public function setup()
-    {
-        // modify config data
-        $this->_updateConfigData();
+
+/* @var $this Mage_Eav_Model_Entity_Setup */
+$installer = $this;
+$installer->startSetup();
+
+if (version_compare(Mage::getVersion(), '1.6', '<')) {
+    
+    $installer->run("
+        ALTER TABLE `{$installer->getTable('checkout/agreement')}`
+        ADD `is_required` SMALLINT( 5 ) NOT NULL DEFAULT '1' COMMENT 'Agreement is Required'
+    ");
+
+} else {
+
+    $installer->getConnection()->addColumn(
+            $installer->getTable('checkout/agreement'),
+            'is_required',
+            array(
+                'type'      => Varien_Db_Ddl_Table::TYPE_SMALLINT,
+                'unsigned'  => true,
+                'nullable'  => false,
+                'default'   => '1',
+                'comment'   => 'Agreement is Required'
+            )
+        );
     }
 
-    /**
-     * Update configuration settings
-     *
-     * @return void
-     */
-    protected function _updateConfigData()
-    {
-        $setup = $this->_getSetup();
-        foreach ($this->_getConfigSystemConfig() as $key => $value) {
-            $setup->setConfigData(str_replace('__', '/', $key), $value);
-        }
-    }
-
-    /**
-     * Get tax calculations from config file
-     *
-     * @return array
-     */
-    protected function _getConfigSystemConfig()
-    {
-        return $this->_getConfigNode('system_config', 'default');
-    }
-}
+$installer->endSetup();

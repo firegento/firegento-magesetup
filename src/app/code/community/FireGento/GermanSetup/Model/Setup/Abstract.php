@@ -34,6 +34,25 @@
 class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
 {
     /**
+     * @var FireGento_GermanSetup_Model_Setup
+     */
+    protected $_setup;
+
+    /**
+     * @var Varien_Db_Adapter_Interface
+     */
+    protected $_connection;
+
+    /**
+     * Setup setup class and connection
+     */
+    public function __construct()
+    {
+        $this->_setup = Mage::getModel('eav/entity_setup', 'core_setup');
+        $this->_connection = $this->_setup->getConnection();
+    }
+
+    /**
      * Get config.xml data
      *
      * @return array
@@ -44,6 +63,16 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
             ->getNode('default/germansetup')
             ->asArray();
         return $configData;
+    }
+
+    /**
+     * @param string $configPath
+     * @param string $value
+     */
+    public function setConfigData($configPath, $value)
+    {
+        $setup = $this->_getSetup();
+        $setup->setConfigData($configPath, $value);
     }
 
     /**
@@ -93,5 +122,21 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
             }
         }
         return $model;
+    }
+
+    /**
+     * @return Varien_Db_Adapter_Interface
+     */
+    protected function _getConnection()
+    {
+        return $this->_connection;
+    }
+
+    /**
+     * @return FireGento_GermanSetup_Model_Setup|Mage_Core_Model_Abstract
+     */
+    protected function _getSetup()
+    {
+        return $this->_setup;
     }
 }
