@@ -51,7 +51,7 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
                 $locale = Mage::app()->getRequest()->getPost('email_locale');
 
                 /** Change third param from false to true to override existing templates for testing */
-                $this->_createEmail($data, $locale, true);
+                $this->_createEmail($data, $locale, false);
             }
         }
     }
