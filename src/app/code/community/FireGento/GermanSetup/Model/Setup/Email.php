@@ -119,6 +119,8 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
              */
             $templateText = preg_replace('#\{\*.*\*\}#suU', '', $templateText);
 
+            $templateText = $this->_addFooterBlocks($templateText);
+
             $template
                 ->setTemplateText($templateText)
                 ->save();
@@ -146,5 +148,14 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
         }
 
         return $this->_localeTemplatePath[$locale];
+    }
+
+    /**
+     * @param string $templateText
+     * @return string
+     */
+    protected function _addFooterBlocks($templateText)
+    {
+        return $templateText;
     }
 }
