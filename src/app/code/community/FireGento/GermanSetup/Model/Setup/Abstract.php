@@ -34,7 +34,7 @@
 class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
 {
     /**
-     * @var FireGento_GermanSetup_Model_Setup
+     * @var Mage_Eav_Model_Entity_Setup
      */
     protected $_setup;
 
@@ -133,7 +133,7 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
     }
 
     /**
-     * @return FireGento_GermanSetup_Model_Setup|Mage_Core_Model_Abstract
+     * @return Mage_Eav_Model_Entity_Setup
      */
     protected function _getSetup()
     {
