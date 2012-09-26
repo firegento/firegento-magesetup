@@ -35,6 +35,14 @@
                         <config_data_path>admin/emails/forgot_email_template</config_data_path>
                     </admin_password_new>
 
+                    <admin_password_reset_confirmation>
+                        <execute>1</execute>
+                        <template_code>Admin-Passwort zurücksetzen (Template)</template_code>
+                        <template_type>2</template_type>
+                        <template_file>admin_password_reset_confirmation.html</template_file>
+                        <config_data_path>admin/emails/forgot_email_template</config_data_path>
+                    </admin_password_reset_confirmation>
+
                     <currency_update_warning>
                         <execute>1</execute>
                         <template_code>Währung Aktualisierung (Template)</template_code>
@@ -51,6 +59,14 @@
                         <config_data_path>customer/create_account/email_template</config_data_path>
                     </account_new>
 
+                    <customer_password_remind_email_template>
+                        <execute>1</execute>
+                        <template_code>Passwort Erinnerung (Template)</template_code>
+                        <template_type>2</template_type>
+                        <template_file>password_new.html</template_file>
+                        <config_data_path>customer/password/remind_email_template</config_data_path>
+                    </customer_password_remind_email_template>
+
                     <account_new_confirmation>
                         <execute>1</execute>
                         <template_code>Neues Konto Aktivierung  (Template)</template_code>
@@ -66,6 +82,14 @@
                         <template_file>account_new_confirmed.html</template_file>
                         <config_data_path>customer/create_account/email_confirmed_template</config_data_path>
                     </account_new_confirmed>
+
+                    <account_password_reset_confirmation>
+                        <execute>1</execute>
+                        <template_code>Kunden Konto Passwort Zurücksetzen Bestätigung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>account_password_reset_confirmation.html</template_file>
+                        <config_data_path>customer/password/forgot_email_template</config_data_path>
+                    </account_password_reset_confirmation>
 
                     <password_new>
                         <execute>1</execute>
@@ -306,6 +330,14 @@
                         <template_file>enterprise_invitation.html</template_file>
                         <config_data_path>enterprise_invitation/email/template</config_data_path>
                     </enterprise_invitation>
+
+                    <token>
+                        <execute>1</execute>
+                        <template_code>OAuth Tokenänderung (Template) [Invitation]</template_code>
+                        <template_type>2</template_type>
+                        <template_file>token.html</template_file>
+                        <config_data_path>oauth/email/template</config_data_path>
+                    </token>
                 </default>
             </emails>
         </germansetup>
