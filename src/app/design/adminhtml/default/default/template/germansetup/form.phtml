@@ -97,6 +97,17 @@
                             <td class="value"><?php echo $this->__('German Email Templates') ?></td>
                         </tr>
                         <tr>
+                            <td class="label"><label for="select_email_locale"><?php echo $this->__('Select Locale') ?></label></td>
+                            <td class="value">
+                                <select name="email_locale" id="select_email_locale">
+                                    <?php foreach($this->getLocaleOptions() as $_option): ?>
+                                        <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                            <td class="value"></td>
+                        </tr>
+                        <tr>
                             <td class="label"><label for="checkbox_tax"><?php echo $this->__('Configure Tax') ?></label></td>
                             <td class="value">
                                 <input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
