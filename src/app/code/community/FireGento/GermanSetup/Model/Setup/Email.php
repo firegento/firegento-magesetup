@@ -151,11 +151,21 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
     }
 
     /**
-     * @param string $templateText
-     * @return string
+     * @param $templateText the content of the template
+     * @param array $blocks all blocks that should be inserted before penultimate </table>
+     * @return string the content of the template with the block before penultimate </table>
      */
-    protected function _addFooterBlocks($templateText)
+    protected function _addFooterBlocks($templateText, array $blocks = array())
     {
+        $lastPos = strripos($templateText, '</table>');
+        $part = substr($templateText, 0, $lastPos);
+        $penultimatePos = strripos($part, '</table>');
+        $templateText = substr($templateText, 0, $penultimatePos);
+        foreach($blocks as $block) {
+            $templateText .= $block;
+        }
+        $templateText .= substr($templateText, $penultimatePos);
+
         return $templateText;
     }
 }
