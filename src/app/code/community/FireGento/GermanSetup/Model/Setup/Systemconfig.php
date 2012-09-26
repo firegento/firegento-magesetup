@@ -34,25 +34,6 @@
 class FireGento_GermanSetup_Model_Setup_Systemconfig extends FireGento_GermanSetup_Model_Setup_Abstract
 {
     /**
-     * @var FireGento_GermanSetup_Model_Setup
-     */
-    protected $_setup;
-
-    /**
-     * @var Varien_Db_Adapter_Interface
-     */
-    protected $_connection;
-
-    /**
-     * Setup setup class and connection
-     */
-    public function __construct()
-    {
-        $this->_setup = Mage::getModel('eav/entity_setup', 'core_setup');
-        $this->_connection = $this->_setup->getConnection();
-    }
-
-    /**
      * Setup Tax setting
      *
      * @return void
@@ -84,21 +65,5 @@ class FireGento_GermanSetup_Model_Setup_Systemconfig extends FireGento_GermanSet
     protected function _getConfigSystemConfig()
     {
         return $this->_getConfigNode('system_config', 'default');
-    }
-
-    /**
-     * @return Varien_Db_Adapter_Interface
-     */
-    protected function _getConnection()
-    {
-        return $this->_connection;
-    }
-
-    /**
-     * @return FireGento_GermanSetup_Model_Setup|Mage_Core_Model_Abstract
-     */
-    protected function _getSetup()
-    {
-        return $this->_setup;
     }
 }
