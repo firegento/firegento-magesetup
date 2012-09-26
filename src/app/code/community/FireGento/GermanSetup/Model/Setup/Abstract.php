@@ -73,7 +73,7 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
      */
     public function getTemplateContent($filename)
     {
-        return file_get_contents(Mage::getBaseDir() . DS . $filename);
+        return @file_get_contents(Mage::getBaseDir() . DS . $filename);
     }
 
     /**

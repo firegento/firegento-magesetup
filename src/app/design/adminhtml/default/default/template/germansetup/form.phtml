@@ -34,11 +34,13 @@
     </p>
 </div>
 
+<p><?php echo $this->__('Please choose the requested setups:') ?></p>
+
 <div class="entry-edit">
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="setup_form">
         <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
         <div class="entry-edit-head">
-            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Please choose the requested setups:') ?></h4>
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Configuration Settings') ?></h4>
             <div class="form-buttons"></div>
         </div>
 
@@ -70,7 +72,20 @@
                                 <?php echo $this->__('i.e. newsletter confirmation, account confirmation, ..') ?>
                             </td>
                         </tr>
-                        <tr><td colspan="3">&nbsp;</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('CMS Settings') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields8">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
                         <tr>
                             <td class="label"><label for="checkbox_cms"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
                             <td class="value">
@@ -89,6 +104,20 @@
                                 <?php echo $this->__('Conditions') ?>
                             </td>
                         </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Email Settings') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields9">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
                         <tr>
                             <td class="label"><label for="checkbox_email"><?php echo $this->__('Create Email Templates') ?></label></td>
                             <td class="value">
@@ -105,8 +134,26 @@
                                     <?php endforeach; ?>
                                 </select>
                             </td>
-                            <td class="value"><?php echo $this->__('Language Package for Email-Templates') ?></td>
+                            <td class="value">
+                                <?php echo $this->__('Language Package for Email-Templates') ?><br />
+                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
+                                <?php echo $this->__('If your desired locale is missing, please check if it installed.') ?>
+                            </td>
                         </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Tax Settings') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields10">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
                         <tr>
                             <td class="label"><label for="checkbox_tax"><?php echo $this->__('Configure Tax') ?></label></td>
                             <td class="value">
