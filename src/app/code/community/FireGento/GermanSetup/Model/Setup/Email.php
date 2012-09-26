@@ -92,6 +92,12 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
              */
             $templateText = $this->getTemplateContent($localeEmailPath . $emailData['template_file']);
 
+            if (!$templateText) {
+
+                // file not found: return silently
+                return;
+            }
+
             if (preg_match('/<!--@subject\s*(.*?)\s*@-->/u', $templateText, $matches)) {
                 $template->setTemplateSubject($matches[1]);
                 $templateText = str_replace($matches[0], '', $templateText);
