@@ -25,7 +25,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.0.6</version>
+            <version>1.0.7</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -48,6 +48,11 @@
                     <product_configuration>FireGento_GermanSetup_Helper_Catalog_Product_Configuration</product_configuration>
                 </rewrite>
             </catalog>
+            <checkout>
+                <rewrite>
+                    <data>FireGento_GermanSetup_Helper_Checkout_Data</data>
+                </rewrite>
+            </checkout>
         </helpers>
         <models>
             <germansetup>
@@ -186,7 +191,16 @@
                         <method>addIsVisibleOnCheckoutOption</method>
                     </germansetup_observer>
                 </observers>
-            </adminhtml_catalog_product_attribute_edit_prepare_form>     
+            </adminhtml_catalog_product_attribute_edit_prepare_form>
+            <adminhtml_block_html_before>
+                <observers>
+                    <germansetup_observer_agreement>
+                        <class>germansetup/observer</class>
+                        <type>model</type>
+                        <method>addIsRequiredOnAgreements</method>
+                    </germansetup_observer_agreement>
+                </observers>
+            </adminhtml_block_html_before>
         </events>
     </adminhtml>
     <admin>
