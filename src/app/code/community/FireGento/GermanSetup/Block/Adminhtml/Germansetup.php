@@ -81,4 +81,20 @@ class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_B
     {
         return Mage::getSingleton('germansetup/source_tax_newProductTaxClass')->getDefaultOption();
     }
+
+    /**
+     * @return array all locale where the directory email/template exists
+     */
+    public function getLocaleOptions()
+    {
+        $options = new Mage_Adminhtml_Model_System_Config_Source_Locale();
+        $options = $options->toOptionArray();
+        foreach($options as $key => $value) {
+            $filePath = Mage::getBaseDir('locale')  . DS . $value['value'] . DS . 'template' . DS . 'email';
+            if(!file_exists($filePath)) {
+                unset($options[$key]);
+            }
+        }
+        return $options;
+    }
 }
