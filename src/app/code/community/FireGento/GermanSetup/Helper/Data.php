@@ -51,4 +51,15 @@ class FireGento_GermanSetup_Helper_Data extends Mage_Core_Helper_Abstract
 
         return Mage::helper('cms/page')->getPageUrl($cmsPage->getId());
     }
+
+    /**
+     * Get url of agreement view for checkout
+     *
+     * @param Mage_Checkout_Model_Agreement $agreement
+     * @return string
+     */
+    public function getAgreementUrl(Mage_Checkout_Model_Agreement $agreement)
+    {
+        return Mage::getUrl('germansetup/frontend/agreements', array('id' => $agreement->getId()));
+    }
 }
