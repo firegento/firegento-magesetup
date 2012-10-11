@@ -39,7 +39,7 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
     /**
      * Sets cache ID and cache tags and loads configuration
      *
-     * @param string|Varien_Simplexml_Element $sourceData
+     * @param  string|Varien_Simplexml_Element $sourceData
      * @return void
      */
     public function __construct($sourceData=null)
@@ -77,6 +77,7 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
         if (Mage::app()->useCache(self::CACHE_ID)) {
             $this->saveCache();
         }
+
         return $this;
     }
 

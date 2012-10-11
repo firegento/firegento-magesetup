@@ -48,7 +48,7 @@ class FireGento_GermanSetup_Helper_Catalog_Product_Configuration
      * Merge Attributes
      *
      * @see parent::getCustomOptions()
-     * @param Mage_Catalog_Model_Product_Configuration_Item_Interface $item
+     * @param  Mage_Catalog_Model_Product_Configuration_Item_Interface $item
      * @return array
      */
     public function getCustomOptions(Mage_Catalog_Model_Product_Configuration_Item_Interface $item)
@@ -56,13 +56,14 @@ class FireGento_GermanSetup_Helper_Catalog_Product_Configuration
         $optionsParent = parent::getCustomOptions($item);
         $optionsSelf   = $this->_getAttributes($item);
         $options       = array_merge($optionsSelf, $optionsParent);
+
         return $options;
     }
 
     /**
      * Get the product for the current quote item
      *
-     * @param Mage_Catalog_Model_Product_Configuration_Item_Interface $item
+     * @param  Mage_Catalog_Model_Product_Configuration_Item_Interface $item
      * @return Mage_Catalog_Model_Product
      */
     protected function _getProduct($item)
@@ -76,13 +77,14 @@ class FireGento_GermanSetup_Helper_Catalog_Product_Configuration
 
             $this->_products[$productId] = $product;
         }
+
         return $this->_products[$productId];
     }
 
     /**
      * Retreve the product attributes
      *
-     * @param Mage_Catalog_Model_Product_Configuration_Item_Interface $item
+     * @param  Mage_Catalog_Model_Product_Configuration_Item_Interface $item
      * @return array
      */
     protected function _getAttributes($item)
@@ -96,13 +98,14 @@ class FireGento_GermanSetup_Helper_Catalog_Product_Configuration
                 return $attributes;
             }
         }
+
         return array();
     }
 
     /**
      * Retrieve the attributes which are visible on the checkout page
      *
-     * @param Mage_Catalog_Model_Product $product
+     * @param  Mage_Catalog_Model_Product $product
      * @return array
      */
     protected function _getAdditionalData(Mage_Catalog_Model_Product $product)
@@ -129,6 +132,7 @@ class FireGento_GermanSetup_Helper_Catalog_Product_Configuration
                 }
             }
         }
+
         return $data;
     }
 }

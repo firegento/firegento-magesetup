@@ -75,7 +75,9 @@ class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_B
     }
 
     /**
-     * @return int default new tax class (yet to be created)
+     * Retrieve the default default new product tax class (yet to be created)
+     *
+     * @return int
      */
     public function getDefaultProductTaxClass()
     {
@@ -83,18 +85,21 @@ class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_B
     }
 
     /**
-     * @return array all locale where the directory email/template exists
+     * Retrieve all locales where the directory email/template exists
+     *
+     * @return array
      */
     public function getLocaleOptions()
     {
         $options = new Mage_Adminhtml_Model_System_Config_Source_Locale();
         $options = $options->toOptionArray();
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $filePath = Mage::getBaseDir('locale')  . DS . $value['value'] . DS . 'template' . DS . 'email';
-            if(!file_exists($filePath)) {
+            if (!file_exists($filePath)) {
                 unset($options[$key]);
             }
         }
+
         return $options;
     }
 }

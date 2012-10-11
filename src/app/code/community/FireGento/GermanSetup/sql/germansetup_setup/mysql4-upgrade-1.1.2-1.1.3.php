@@ -21,8 +21,7 @@
  * @since     1.0.7
  */
 /**
- * Setup script; Adds the delivery_time attribute for products
- * and creates all initial pages, blocks and emails
+ * Setup script; Adds the is_required field for the checkout agreements
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -38,7 +37,7 @@ $installer = $this;
 $installer->startSetup();
 
 if (version_compare(Mage::getVersion(), '1.6', '<')) {
-    
+
     $installer->run("
         ALTER TABLE `{$installer->getTable('checkout/agreement')}`
         ADD `is_required` SMALLINT( 5 ) NOT NULL DEFAULT '1' COMMENT 'Agreement is Required'
@@ -57,6 +56,6 @@ if (version_compare(Mage::getVersion(), '1.6', '<')) {
                 'comment'   => 'Agreement is Required'
             )
         );
-    }
+}
 
 $installer->endSetup();

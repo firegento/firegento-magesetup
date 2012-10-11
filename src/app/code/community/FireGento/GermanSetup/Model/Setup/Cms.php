@@ -92,7 +92,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
     /**
      * Collect data and create CMS page
      *
-     * @param array  $pageData cms page data
+     * @param array   $pageData cms page data
      * @param boolean $override override cms page if it exists
      *
      * @return void
@@ -115,7 +115,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
             'is_active' => 1,
         );
 
-        if (!(int)$page->getId() || $override) {
+        if (!(int) $page->getId() || $override) {
             $page->setData($pageData)->save();
         }
     }
@@ -171,7 +171,7 @@ class FireGento_GermanSetup_Model_Setup_Cms extends FireGento_GermanSetup_Model_
     /**
      * Update footer_links cms block
      *
-     * @param array $blockData cms block data
+     * @param  array $blockData cms block data
      * @return void
      */
     protected function _updateFooterLinksBlock($blockData)

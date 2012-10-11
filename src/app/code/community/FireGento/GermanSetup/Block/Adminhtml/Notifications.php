@@ -76,6 +76,7 @@ class FireGento_GermanSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml
         if (Mage::getSingleton('admin/session')->isAllowed('system/germansetup')) {
             return parent::_toHtml();
         }
+
         return '';
     }
 }

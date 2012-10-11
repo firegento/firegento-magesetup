@@ -122,8 +122,8 @@ class FireGento_GermanSetup_Model_Source_Tax_NewProductTaxClass
     /**
      * Get config.xml data
      *
-     * @param string      $node      xml node
-     * @param string|null $childNode if set, child node of the first node
+     * @param  string      $node      xml node
+     * @param  string|null $childNode if set, child node of the first node
      * @return array
      */
     protected function _getConfigNode($node, $childNode = null)
@@ -146,6 +146,7 @@ class FireGento_GermanSetup_Model_Source_Tax_NewProductTaxClass
         $configData = Mage::getSingleton('germansetup/config')
             ->getNode('default/germansetup')
             ->asArray();
+
         return $configData;
     }
 }

@@ -79,9 +79,9 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
     /**
      * Create transactional email template
      *
-     * @param array $emailData template data
-     * @param string $locale
-     * @param boolean $override override email template if set
+     * @param array   $emailData template data
+     * @param string  $locale
+     * @param boolean $override  override email template if set
      *
      * @return void
      */
@@ -89,7 +89,7 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
     {
         $template = Mage::getModel('core/email_template')
             ->loadByCode($emailData['template_code']);
-        
+
         if (!$template->getId() || $override) {
 
             $localeEmailPath = $this->_getLocaleEmailPath($locale);
@@ -143,7 +143,7 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
     /**
      * Retrieve email template path for given locale
      *
-     * @param string $locale
+     * @param  string $locale
      * @return string
      */
     protected function _getLocaleEmailPath($locale)
@@ -165,7 +165,7 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
      * Add configured blocks before the second last </body> tag
      *
      * @param $templateText the content of the template
-     * @param array $blocks all blocks that should be inserted before penultimate </table>
+     * @param  array  $blocks all blocks that should be inserted before penultimate </table>
      * @return string the content of the template with the block before penultimate </table>
      */
     protected function _addFooterBlocks($templateText, array $blocks = array())
@@ -175,7 +175,7 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
         $part = substr($templateText, 0, $lastPos);
         $penultimatePos = strripos($part, '</table>');
         $templateText = substr($templateText, 0, $penultimatePos);
-        foreach($blocks as $block) {
+        foreach ($blocks as $block) {
             $templateText .= $block;
         }
         $templateText .= substr($origTemplateText, $penultimatePos);
@@ -186,7 +186,7 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
     /**
      * Get HTML blocks which should be appended to the emails
      *
-     * @param array $emailData
+     * @param  array $emailData
      * @return array
      */
     protected function _getFooterBlocks($emailData)
@@ -202,6 +202,7 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
         if ($emailData['add_revocation'] == 1) {
             $blocks[] = $configFooters['revocation'];
         }
+
         return $blocks;
     }
 }

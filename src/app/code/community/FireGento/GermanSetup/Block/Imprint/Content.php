@@ -58,6 +58,7 @@ class FireGento_GermanSetup_Block_Imprint_Content extends Mage_Core_Block_Templa
         if ($orderId > 0) {
             return Mage::getSingleton('sales/order')->load($orderId)->getStoreId();
         }
+
         return null;
     }
 

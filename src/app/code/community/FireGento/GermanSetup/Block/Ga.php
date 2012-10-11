@@ -54,6 +54,7 @@ class FireGento_GermanSetup_Block_Ga extends Mage_GoogleAnalytics_Block_Ga
         if (preg_match_all($setAccountExpression, $html, $matches) && count($matches) && count($matches[0])) {
             $html = preg_replace($setAccountExpression, $matches[0][0] . $append . "\n", $html);
         }
+
         return $html;
     }
 }

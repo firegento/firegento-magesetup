@@ -55,7 +55,7 @@ class FireGento_GermanSetup_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Get url of agreement view for checkout
      *
-     * @param Mage_Checkout_Model_Agreement $agreement
+     * @param  Mage_Checkout_Model_Agreement $agreement
      * @return string
      */
     public function getAgreementUrl(Mage_Checkout_Model_Agreement $agreement)

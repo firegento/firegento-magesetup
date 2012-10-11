@@ -85,6 +85,7 @@ class FireGento_GermanSetup_Model_Observer
                 $observer->getEvent()->getBlock()->setAgreements($collection);
             }
         }
+
         return $this;
     }
 
@@ -92,13 +93,14 @@ class FireGento_GermanSetup_Model_Observer
      * Calls the Magento template filter to transform {{block type="cms/block" block_id="xyz"}}
      * into the specific html code
      *
-     * @param string $string Agreement to filter
+     * @param  string $string Agreement to filter
      * @return string Processed String
      */
     protected function _filterString($string)
     {
         $processor = Mage::getModel('cms/template_filter');
         $string    = $processor->filter($string);
+
         return $string;
     }
 
@@ -140,20 +142,22 @@ class FireGento_GermanSetup_Model_Observer
             }
             $product->setMetaDescription($description);
         }
+
         return $this;
     }
 
     /**
      * Get the categories of the current product
      *
-     * @param Mage_Catalog_Model_Product $product Product
-     * @return array Categories
+     * @param  Mage_Catalog_Model_Product $product Product
+     * @return array                      Categories
      */
     protected function _getCategoryKeywords($product)
     {
         $categories = $product->getCategoryIds();
         $categoryArr = $this->_fetchCategoryNames($categories);
         $keywords = $this->_buildKeywords($categoryArr);
+
         return $keywords;
     }
 
@@ -161,7 +165,7 @@ class FireGento_GermanSetup_Model_Observer
      * Fetches all category names via category path; adds first the assigned
      * categories and second all categories via path.
      *
-     * @param array $categories Category Ids
+     * @param  array $categories Category Ids
      * @return array Categories
      */
     protected function _fetchCategoryNames($categories)
@@ -202,13 +206,14 @@ class FireGento_GermanSetup_Model_Observer
                 }
             }
         }
+
         return $return;
     }
 
     /**
      * Processes the category array and generates a string
      *
-     * @param array $categories Categories
+     * @param  array  $categories Categories
      * @return string Keywords
      */
     protected function _buildKeywords($categoryTypes)
@@ -217,9 +222,10 @@ class FireGento_GermanSetup_Model_Observer
         foreach ($categoryTypes as $categories) {
             $keywords .= implode(', ', $categories);
         }
+
         return $keywords;
     }
-    
+
     /**
      * Add "Required" Option to Checkout Agreements
      *
@@ -232,7 +238,7 @@ class FireGento_GermanSetup_Model_Observer
         $block = $observer->getEvent()->getBlock();
         if ($block instanceof Mage_Adminhtml_Block_Checkout_Agreement_Edit_Form) {
             $form = $block->getForm();
-        
+
             $fieldset = $form->getElement('base_fieldset');
             $fieldset->addField('is_required', 'select', array(
                 'label'     => Mage::helper('germansetup')->__('Required'),
@@ -245,16 +251,17 @@ class FireGento_GermanSetup_Model_Observer
                     '0' => Mage::helper('germansetup')->__('No'),
                 ),
             ));
-            
+
             Mage::dispatchEvent('germansetup_adminhtml_checkout_agreement_edit_form', array(
                 'form' => $form,
                 'fieldset' => $fieldset,
             ));
-            
+
             $model  = Mage::registry('checkout_agreement');
             $form->setValues($model->getData());
             $block->setForm($form);
         }
+
         return $this;
     }
 }

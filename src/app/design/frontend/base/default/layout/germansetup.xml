@@ -2,7 +2,7 @@
 <layout version="0.1.0">
 
 	<!--
-	Adding custom product price block   
+	Adding custom product price block
 	-->
     <catalog_category_default>
         <reference name="product_list">
@@ -139,7 +139,7 @@
             <action method="addCss"><stylesheet>css/germansetup/checkout.css</stylesheet></action>
         </reference>
     </checkout_onepage_index>
-    
+
     <checkout_onepage_review>
 		<reference name="checkout.onepage.agreements">
             <action method="setTemplate"><template>germansetup/checkout/onepage/agreements.phtml</template></action>
@@ -154,7 +154,7 @@
             <block type="germansetup/checkout_information" name="checkout.onepage.additional" as="additional" template="germansetup/checkout/additional.phtml" />
         </reference>
     </checkout_onepage_review>
-    
+
     <checkout_multishipping_overview>
         <reference name="head">
             <action method="addCss"><stylesheet>css/germansetup/checkout.css</stylesheet></action>

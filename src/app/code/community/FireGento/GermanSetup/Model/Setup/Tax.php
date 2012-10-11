@@ -114,7 +114,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     /**
      * Collect data and create tax class
      *
-     * @param array   $taxClassData tax class data
+     * @param  array $taxClassData tax class data
      * @return void
      */
     protected function _createTaxClass($taxClassData)
@@ -135,7 +135,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     /**
      * Collect data and create tax calculation rules
      *
-     * @param array   $taxCalcRuleData tax class data
+     * @param  array $taxCalcRuleData tax class data
      * @return void
      */
     protected function _createTaxCalcRule($taxCalcRuleData)
@@ -156,7 +156,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     /**
      * Collect data and create tax calculation rates
      *
-     * @param array   $taxCalcRateData tax class data
+     * @param  array $taxCalcRateData tax class data
      * @return void
      */
     protected function _createTaxCalcRate($taxCalcRateData)
@@ -200,7 +200,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     /**
      * Collect data and create tax calculations
      *
-     * @param array   $taxCalculationData tax class data
+     * @param array $taxCalculationData tax class data
      *
      * @return void
      */
@@ -259,7 +259,7 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     /**
      * Truncate a database table
      *
-     * @param string $table
+     * @param  string $table
      * @return void
      */
     protected function _truncateTable($table)
@@ -271,8 +271,8 @@ class FireGento_GermanSetup_Model_Setup_Tax extends FireGento_GermanSetup_Model_
     /**
      * Insert a line into a database table
      *
-     * @param string $table
-     * @param array $data
+     * @param  string $table
+     * @param  array  $data
      * @return void
      */
     protected function _insertIntoTable($table, $data)

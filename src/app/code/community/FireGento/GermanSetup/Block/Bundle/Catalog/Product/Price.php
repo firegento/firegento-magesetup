@@ -67,6 +67,7 @@ class FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price extends Mage_Bund
         if (!$this->getData('tax_rate')) {
             $this->setData('tax_rate', $this->_loadTaxCalculationRate($this->getProduct()));
         }
+
         return $this->getData('tax_rate');
     }
 
@@ -85,6 +86,7 @@ class FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price extends Mage_Bund
 
         $locale  = Mage::app()->getLocale()->getLocaleCode();
         $taxRate = Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale));
+
         return $this->__('%s%%', $taxRate);
     }
 
@@ -98,6 +100,7 @@ class FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price extends Mage_Bund
         if (!$this->getData('is_including_tax')) {
             $this->setData('is_including_tax', Mage::getStoreConfig('tax/sales_display/price'));
         }
+
         return $this->getData('is_including_tax');
     }
 
@@ -114,13 +117,14 @@ class FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price extends Mage_Bund
         if (in_array($productTypeId, $ignoreTypeIds)) {
             return false;
         }
+
         return true;
     }
 
     /**
      * Gets tax percents for current product
      *
-     * @param Mage_Catalog_Model_Product $product
+     * @param  Mage_Catalog_Model_Product $product
      * @return string
      */
     protected function _loadTaxCalculationRate(Mage_Catalog_Model_Product $product)
@@ -137,6 +141,7 @@ class FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price extends Mage_Bund
         if ($taxPercent) {
             return $taxPercent;
         }
+
         return 0;
     }
 }

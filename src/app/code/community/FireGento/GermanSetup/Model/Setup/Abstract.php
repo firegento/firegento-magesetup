@@ -62,6 +62,7 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
         $configData = Mage::getSingleton('germansetup/config')
             ->getNode('default/germansetup')
             ->asArray();
+
         return $configData;
     }
 
@@ -108,9 +109,9 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
     /**
      * Load a model by attribute code
      *
-     * @param Mage_Core_Model_Abstract $model
-     * @param string $attributeCode
-     * @param string $value
+     * @param  Mage_Core_Model_Abstract $model
+     * @param  string                   $attributeCode
+     * @param  string                   $value
      * @return Mage_Core_Model_Abstract
      */
     protected function _loadExistingModel($model, $attributeCode, $value)
@@ -118,9 +119,11 @@ class FireGento_GermanSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstrac
         foreach ($model->getCollection() as $singleModel) {
             if ($singleModel->getData($attributeCode) == $value) {
                 $model->load($singleModel->getId());
+
                 return $model;
             }
         }
+
         return $model;
     }
 

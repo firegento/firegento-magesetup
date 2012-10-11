@@ -60,6 +60,7 @@ class FireGento_GermanSetup_Block_Checkout_Information extends Mage_Core_Block_T
         if ($additional) {
             return $additional;
         }
+
         return false;
     }
 }
