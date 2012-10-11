@@ -43,7 +43,7 @@
             <germansetup>
                 <class>FireGento_GermanSetup_Helper</class>
             </germansetup>
-    		<catalog>
+            <catalog>
                 <rewrite>
                     <product_configuration>FireGento_GermanSetup_Helper_Catalog_Product_Configuration</product_configuration>
                 </rewrite>
@@ -85,6 +85,9 @@
         </events>
     </global>
     <frontend>
+        <secure_url>
+            <contacts>/contacts/</contacts>
+        </secure_url>
         <layout>
             <updates>
                 <germansetup>
@@ -112,11 +115,6 @@
                 </observers>
             </core_block_abstract_to_html_before>
         </events>
-        <frontend>
-            <secure_url>
-                <contacts>/contacts/</contacts>
-            </secure_url>
-        </frontend>
         <routers>
             <germansetup>
                 <use>standard</use>
