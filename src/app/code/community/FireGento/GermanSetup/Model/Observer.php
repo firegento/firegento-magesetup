@@ -235,8 +235,8 @@ class FireGento_GermanSetup_Model_Observer
         
             $fieldset = $form->getElement('base_fieldset');
             $fieldset->addField('is_required', 'select', array(
-                'label'     => Mage::helper('germansetup')->__('Required'),
-                'title'     => Mage::helper('germansetup')->__('Required'),
+                'label'     => Mage::helper('adminhtml')->__('Required'),
+                'title'     => Mage::helper('adminhtml')->__('Required'),
                 'note'      => Mage::helper('germansetup')->__('Display Checkbox on Frontend'),
                 'name'      => 'is_required',
                 'required'  => true,
