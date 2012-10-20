@@ -271,7 +271,7 @@ class FireGento_GermanSetup_Model_Observer
     public function recollectAfterQuoteItemUpdate()
     {
         $store = Mage::app()->getStore();
-        if (Mage::getStoreConfig(FireGento_GermanSetup_Model_Tax_Config::CONFIG_XML_PATH_SHIPPING_TAX_CLASS, $store)
+        if (Mage::getStoreConfig(FireGento_GermanSetup_Model_Tax_Config::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX, $store)
             == FireGento_GermanSetup_Model_Tax_Config::USE_TAX_DEPENDING_ON_PRODUCT_VALUES
         ) {
             Mage::getSingleton('checkout/session')

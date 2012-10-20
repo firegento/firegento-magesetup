@@ -82,7 +82,7 @@ class FireGento_GermanSetup_Model_Tax_Config extends Mage_Tax_Model_Config
                 continue;
             }
 
-            if (Mage::getStoreConfig(self::CONFIG_XML_PATH_SHIPPING_TAX_CLASS, $store)
+            if (Mage::getStoreConfig(self::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX, $store)
                 == self::USE_TAX_DEPENDING_ON_PRODUCT_VALUES
             ) {
                 // sum up all product values grouped by the tax class id
@@ -99,7 +99,7 @@ class FireGento_GermanSetup_Model_Tax_Config extends Mage_Tax_Model_Config
             }
         }
 
-        if (Mage::getStoreConfig(self::CONFIG_XML_PATH_SHIPPING_TAX_CLASS, $store)
+        if (Mage::getStoreConfig(self::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX, $store)
             == self::USE_TAX_DEPENDING_ON_PRODUCT_VALUES
         ) {
             // get the highest value of the sums and set the taxClass
