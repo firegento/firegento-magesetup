@@ -87,9 +87,9 @@ class FireGento_GermanSetup_Model_Tax_Config extends Mage_Tax_Model_Config
             ) {
                 // sum up all product values grouped by the tax class id
                 if (isset($taxClassSums[$item->getTaxClassId()])) {
-                    $taxClassSums[$item->getTaxClassId()] += $item->getPrice() * $item->getQty();
+                    $taxClassSums[$item->getTaxClassId()] += $item->getPriceInclTax() * $item->getQty();
                 } else {
-                    $taxClassSums[$item->getTaxClassId()] = $item->getPrice() * $item->getQty();
+                    $taxClassSums[$item->getTaxClassId()] = $item->getPriceInclTax() * $item->getQty();
                 }
             } else {
                 $taxPercent = $this->_loadTaxCalculationRate($item);
