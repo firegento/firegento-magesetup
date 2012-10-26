@@ -114,6 +114,15 @@
                     </germansetup_observer>
                 </observers>
             </core_block_abstract_to_html_before>
+            <checkout_cart_update_items_after>
+                <observers>
+                    <recalculate_dynamic_shipping_tax>
+                        <type>singleton</type>
+                        <class>FireGento_GermanSetup_Model_Observer</class>
+                        <method>recollectAfterQuoteItemUpdate</method>
+                    </recalculate_dynamic_shipping_tax>
+                </observers>
+            </checkout_cart_update_items_after>
         </events>
         <routers>
             <germansetup>
@@ -285,13 +294,34 @@ Tel: {{var telephone}}
 
         <url>
             <convert>
-                <char0228><from>ä</from><to>ae</to></char0228>
-                <char0246><from>ö</from><to>oe</to></char0246>
-                <char0252><from>ü</from><to>ue</to></char0252>
-                <char0223><from>ß</from><to>ss</to></char0223>
-                <char0196><from>Ä</from><to>ae</to></char0196>
-                <char0214><from>Ö</from><to>oe</to></char0214>
-                <char0220><from>Ü</from><to>ue</to></char0220>
+                <char0228>
+                    <from>ä</from>
+                    <to>ae</to>
+                </char0228>
+                <char0246>
+                    <from>ö</from>
+                    <to>oe</to>
+                </char0246>
+                <char0252>
+                    <from>ü</from>
+                    <to>ue</to>
+                </char0252>
+                <char0223>
+                    <from>ß</from>
+                    <to>ss</to>
+                </char0223>
+                <char0196>
+                    <from>Ä</from>
+                    <to>ae</to>
+                </char0196>
+                <char0214>
+                    <from>Ö</from>
+                    <to>oe</to>
+                </char0214>
+                <char0220>
+                    <from>Ü</from>
+                    <to>ue</to>
+                </char0220>
             </convert>
         </url>
 

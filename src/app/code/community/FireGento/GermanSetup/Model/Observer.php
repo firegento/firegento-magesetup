@@ -43,18 +43,18 @@ class FireGento_GermanSetup_Model_Observer
     public function addIsVisibleOnCheckoutOption(Varien_Event_Observer $observer)
     {
         $event = $observer->getEvent();
-        $form  = $event->getForm();
+        $form = $event->getForm();
 
         $fieldset = $form->getElement('front_fieldset');
-        $source   = Mage::getModel('adminhtml/system_config_source_yesno')->toOptionArray();
+        $source = Mage::getModel('adminhtml/system_config_source_yesno')->toOptionArray();
         $fieldset->addField(
             'is_visible_on_checkout',
             'select',
             array(
-                'name'     => 'is_visible_on_checkout',
-                'label'    => Mage::helper('germansetup')->__('Visible in Checkout'),
-                'title'    => Mage::helper('germansetup')->__('Visible in Checkout'),
-                'values'   => $source,
+                'name' => 'is_visible_on_checkout',
+                'label' => Mage::helper('germansetup')->__('Visible in Checkout'),
+                'title' => Mage::helper('germansetup')->__('Visible in Checkout'),
+                'values' => $source,
             )
         );
 
@@ -99,7 +99,7 @@ class FireGento_GermanSetup_Model_Observer
     protected function _filterString($string)
     {
         $processor = Mage::getModel('cms/template_filter');
-        $string    = $processor->filter($string);
+        $string = $processor->filter($string);
 
         return $string;
     }
@@ -172,7 +172,7 @@ class FireGento_GermanSetup_Model_Observer
     {
         $return = array(
             'assigned' => array(),
-            'path'     => array()
+            'path' => array()
         );
 
         foreach ($categories as $categoryId) {
@@ -188,7 +188,7 @@ class FireGento_GermanSetup_Model_Observer
             $return['assigned'][$categoryId] = $category->getName();
 
             // Fetch path ids and remove the first two (base and root category)
-            $path    = $category->getPath();
+            $path = $category->getPath();
             $pathIds = explode('/', $path);
             array_shift($pathIds);
             array_shift($pathIds);
@@ -241,12 +241,12 @@ class FireGento_GermanSetup_Model_Observer
 
             $fieldset = $form->getElement('base_fieldset');
             $fieldset->addField('is_required', 'select', array(
-                'label'     => Mage::helper('germansetup')->__('Required'),
-                'title'     => Mage::helper('germansetup')->__('Required'),
-                'note'      => Mage::helper('germansetup')->__('Display Checkbox on Frontend'),
-                'name'      => 'is_required',
-                'required'  => true,
-                'options'   => array(
+                'label' => Mage::helper('germansetup')->__('Required'),
+                'title' => Mage::helper('germansetup')->__('Required'),
+                'note' => Mage::helper('germansetup')->__('Display Checkbox on Frontend'),
+                'name' => 'is_required',
+                'required' => true,
+                'options' => array(
                     '1' => Mage::helper('germansetup')->__('Yes'),
                     '0' => Mage::helper('germansetup')->__('No'),
                 ),
@@ -257,11 +257,26 @@ class FireGento_GermanSetup_Model_Observer
                 'fieldset' => $fieldset,
             ));
 
-            $model  = Mage::registry('checkout_agreement');
+            $model = Mage::registry('checkout_agreement');
             $form->setValues($model->getData());
             $block->setForm($form);
         }
 
         return $this;
     }
+
+    /**
+     * After updating the quantities of cart items, it might be needed to recalculate the shipping tax
+     */
+    public function recollectAfterQuoteItemUpdate()
+    {
+        $store = Mage::app()->getStore();
+        if (Mage::getStoreConfig(FireGento_GermanSetup_Model_Tax_Config::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX, $store)
+            == FireGento_GermanSetup_Model_Tax_Config::USE_TAX_DEPENDING_ON_PRODUCT_VALUES
+        ) {
+            Mage::getSingleton('checkout/session')
+                ->getQuote()->setTotalsCollectedFlag(false)->collectTotals();
+        }
+    }
+
 }
