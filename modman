@@ -1,0 +1,9 @@
+src/app/code/community/FireGento/GermanSetup/                       src/app/code/community/FireGento/GermanSetup/
+src/app/etc/modules/FireGento_GermanSetup.xml                       src/app/etc/modules/FireGento_GermanSetup.xml
+src/app/locale/de_DE/FireGento_GermanSetup.csv                      src/app/locale/de_DE/FireGento_GermanSetup.csv
+src/app/locale/de_DE/template/germansetup/                          src/app/locale/de_DE/template/germansetup/
+src/app/design/adminhtml/default/default/layout/germansetup.xml     src/app/design/adminhtml/default/default/layout/germansetup.xml
+src/app/design/adminhtml/default/default/template/germansetup/      src/app/design/adminhtml/default/default/template/germansetup/
+src/app/design/frontend/base/default/layout/germansetup.xml	        src/app/design/frontend/base/default/layout/germansetup.xml
+src/app/design/frontend/base/default/template/germansetup/	        src/app/design/frontend/base/default/template/germansetup/
+src/skin/frontend/base/default/css/germansetup/                     src/skin/frontend/base/default/css/germansetup
