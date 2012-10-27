@@ -1,5 +1,6 @@
 {
    "name": "firegento/germansetup",
+   "version": "dev-composer",
    "type": "library",
    "minimum-stability": "dev",
    "require": {
