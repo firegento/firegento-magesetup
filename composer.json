@@ -1,7 +1,7 @@
 {
    "name": "firegento/germansetup",
    "version": "dev-composer",
-   "type": "library",
+   "type": "magento-module",
    "minimum-stability": "dev",
    "require": {
       "magento-hackathon/magento-composer-installer": "dev-master"
