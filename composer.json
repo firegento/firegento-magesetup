@@ -1,0 +1,13 @@
+{
+   "name": "firegento/germansetup",
+   "type": "library",
+   "require": {
+      "magento-hackathon/magento-composer-installer": "dev-master#4fa26066f0421185fdb6c71bb6eed659bb039146@dev"
+   },
+   "repositories": [
+      {
+         "type": "vcs",
+         "url": "git://github.com/magento-hackathon/magento-composer-installer.git"
+      }
+   ]
+}
