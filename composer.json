@@ -6,11 +6,5 @@
    "minimum-stability": "dev",
    "require": {
       "magento-hackathon/magento-composer-installer": "dev-master"
-   },
-   "repositories": [
-      {
-         "type": "vcs",
-         "url": "git://github.com/magento-hackathon/magento-composer-installer.git"
-      }
-   ]
+   }
 }
