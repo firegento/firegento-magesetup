@@ -1,4 +1,4 @@
-src/app/code/community/FireGento/GermanSetup                    app/code/community/FireGento/GermanSetup
+src/app/code/community/FireGento/GermanSetup                        app/code/community/FireGento/GermanSetup
 src/app/etc/modules/FireGento_GermanSetup.xml                       app/etc/modules/FireGento_GermanSetup.xml
 src/app/locale/de_DE/FireGento_GermanSetup.csv                      app/locale/de_DE/FireGento_GermanSetup.csv
 src/app/locale/de_DE/template/germansetup/                          app/locale/de_DE/template/germansetup/
