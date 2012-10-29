@@ -1,7 +1,6 @@
 {
    "name": "firegento/germansetup",
    "license": ["GPL-3.0"],
-   "version": "dev-master",
    "type": "magento-module",
    "minimum-stability": "dev",
    "require": {
