@@ -32,3 +32,6 @@
 <?php endif ?>
 <?php echo $this->getStreet() ?><br />
 <?php echo $this->getZip() ?> <?php echo $this->getCity() ?>
+<?php if (strlen(trim($this->getCountry()))): ?>
+    <br /><?php echo $this->getCountry()?>
+<?php endif;?>

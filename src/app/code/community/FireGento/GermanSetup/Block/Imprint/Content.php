@@ -91,4 +91,15 @@ class FireGento_GermanSetup_Block_Imprint_Content extends Mage_Core_Block_Templa
 
         return $web;
     }
+
+    /**
+     * Retrieve the specific country name by the selected country code
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        $countryCode = $this->getData('country');
+        return Mage::app()->getLocale()->getCountryTranslation($countryCode);
+    }
 }
