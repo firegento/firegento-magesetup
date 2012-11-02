@@ -34,10 +34,20 @@
 class FireGento_GermanSetup_Block_Imprint_Content extends Mage_Core_Block_Template
 {
     /**
+     * Constructor to set config store view.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $storeId = $this->getStoreId();
+        $this->setData(Mage::getStoreConfig('general/imprint', $storeId));
+    }
+
+    /**
      * Set StoreId to get impressum data for this store.
      *
-     * @param int $storeId Store id.
-     *
+     * @param  int $storeId Store id.
      * @return void
      */
     public function setStoreId($storeId)
@@ -54,7 +64,6 @@ class FireGento_GermanSetup_Block_Imprint_Content extends Mage_Core_Block_Templa
     protected function getStoreId()
     {
         $orderId = $this->getRequest()->getParam('order_id', 0);
-
         if ($orderId > 0) {
             return Mage::getSingleton('sales/order')->load($orderId)->getStoreId();
         }
@@ -63,11 +72,23 @@ class FireGento_GermanSetup_Block_Imprint_Content extends Mage_Core_Block_Templa
     }
 
     /**
-     * Constructor to set config store view.
+     * Retrieve the setting "website". If parameter checkForProtocol is true,
+     * check if there is a valid protocol given, otherwise add http:// manually.
+     *
+     * @param  bool $checkForProtocol
+     * @return string
      */
-    public function __construct()
+    public function getWeb($checkForProtocol=false)
     {
-        $storeId = $this->getStoreId();
-        $this->setData(Mage::getStoreConfig('general/imprint', $storeId));
+        $web = $this->getData('web');
+        if ($checkForProtocol && strlen(trim($web))) {
+            if (strpos($web, 'http://') === false
+                && strpos($web, 'https://') === false
+            ) {
+                $web = 'http://'.$web;
+            }
+        }
+
+        return $web;
     }
 }
