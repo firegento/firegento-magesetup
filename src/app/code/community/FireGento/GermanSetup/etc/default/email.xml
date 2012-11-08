@@ -104,17 +104,6 @@
                         <add_revocation>0</add_revocation>
                     </account_new_confirmed>
 
-                    <account_password_reset_confirmation>
-                        <execute>1</execute>
-                        <template_code>Kunden Konto Passwort Zurücksetzen Bestätigung</template_code>
-                        <template_type>2</template_type>
-                        <template_file>account_password_reset_confirmation.html</template_file>
-                        <config_data_path>customer/password/forgot_email_template</config_data_path>
-                        <add_footer>1</add_footer>
-                        <add_business_terms>0</add_business_terms>
-                        <add_revocation>0</add_revocation>
-                    </account_password_reset_confirmation>
-
                     <password_new>
                         <execute>1</execute>
                         <template_code>Neues Passwort (Template)</template_code>
@@ -125,6 +114,17 @@
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
                     </password_new>
+
+                    <account_password_reset_confirmation>
+                        <execute>1</execute>
+                        <template_code>Kunden Konto Passwort Zurücksetzen Bestätigung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>account_password_reset_confirmation.html</template_file>
+                        <config_data_path>customer/password/forgot_email_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </account_password_reset_confirmation>
 
                     <order_new>
                         <execute>1</execute>
