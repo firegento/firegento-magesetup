@@ -10,7 +10,7 @@ Branches
 Ausschließlich die Tags unter https://github.com/firegento/firegento-germansetup/tags entsprechen den jeweils veröffentlichten Versionen auf MagentoConnect. 
 
 Fakten
------
+------
 - Version: check [config.xml](https://github.com/firegento/firegento-germansetup/blob/master/src/app/code/community/FireGento/GermanSetup/etc/config.xml)
 - extension key: FireGento_GermanSetup
 - [Extension auf GitHub](https://github.com/firegento/firegento-germansetup/)
@@ -19,7 +19,7 @@ Fakten
 - Magento Connect 2.0 extension key: http://connect20.magentocommerce.com/community/FireGento_GermanSetup
 
 Beschreibung
------------
+------------
 GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen wie "Market Ready Germany" oder "German Shop". Zentrale Features des Moduls GermanSetup dabei sind:
 
 * Button-Lösung
@@ -42,7 +42,7 @@ Kompatibilität
 - Magento >= 1.6
 
 Installations-Anleitung
--------------------------
+-----------------------
 Nachdem Sie die Extension über Magento Connect installiert haben oder manuell hochgeladen haben, sollten Sie sich aus dem Magento Backend aus- und wieder einloggen. Sie sollten dann unterhalb des Backend Hauptmenüs folgenden Hinweis sehen:
 
 German Setup wurde installiert. Klicken Sie hier, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren.
@@ -54,7 +54,7 @@ Support
 Sollten Sie einen Fehler feststellen oder eine Funktionalität vermissen, erstellen Sie bitte ein Ticket auf [GitHub](https://github.com/firegento/firegento-germansetup/issues).
 
 Mitwirkung
-------------
+----------
 Jede Mitwirkung für die Weiterentwicklung von GermanSetup ist herzlich willkommen. Die beste Möglichkeit um Code beizusteuern ist das Öffnen eines [Pull Requests auf GitHub](https://help.github.com/articles/using-pull-requests).
 
 Developer
