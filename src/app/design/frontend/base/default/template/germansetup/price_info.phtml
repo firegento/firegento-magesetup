@@ -40,9 +40,17 @@
 <?php $shippingCostUrl = Mage::helper('germansetup')->getShippingCostUrl() ?>
 <?php if (!empty($shippingCostUrl) && $this->getIsShowShippingLink()): ?>
 	<?php if ($this->getIsIncludingTax() == Mage_Tax_Model_Config::DISPLAY_TYPE_EXCLUDING_TAX): ?>
-    	<span class="tax-details"><?php echo $this->__('Excl. %s Tax, plus <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?></span>
+	    <?php if ($this->getIsIncludingShippingCosts()): ?>
+    	    <span class="tax-details"><?php echo $this->__('Excl. %s Tax, incl. <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?></span>
+        <?php else: ?>
+            <span class="tax-details"><?php echo $this->__('Excl. %s Tax, excl. <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?></span>
+        <?php endif ?>
 	<?php elseif ($this->getIsIncludingTax() == Mage_Tax_Model_Config::DISPLAY_TYPE_INCLUDING_TAX): ?>
-    	<span class="tax-details"><?php echo $this->__('Incl. %s Tax, plus <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?></span>
+        <?php if ($this->getIsIncludingShippingCosts()): ?>
+    	    <span class="tax-details"><?php echo $this->__('Incl. %s Tax, incl. <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?></span>
+        <?php else: ?>
+    	    <span class="tax-details"><?php echo $this->__('Incl. %s Tax, excl. <a href="%s">Shipping Cost</a>', $this->getFormattedTaxRate(), $shippingCostUrl) ?></span>
+        <?php endif ?>
 	<?php endif ?>
 <?php else: ?>
 	<?php if ($this->getIsIncludingTax() == Mage_Tax_Model_Config::DISPLAY_TYPE_EXCLUDING_TAX): ?>

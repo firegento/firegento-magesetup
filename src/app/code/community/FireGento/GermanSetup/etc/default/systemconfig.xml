@@ -27,7 +27,7 @@
         <germansetup>
             <system_config>
                  <default>
-                     <customer__create_account__confirm>1</customer__create_account__confirm>
+                     <customer__create_account__confirm>0</customer__create_account__confirm>
                      <newsletter__subscription__confirm>1</newsletter__subscription__confirm>
                  </default>
             </system_config>
