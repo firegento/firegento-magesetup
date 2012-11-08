@@ -267,6 +267,8 @@ class FireGento_GermanSetup_Model_Observer
 
     /**
      * After updating the quantities of cart items, it might be needed to recalculate the shipping tax
+     *
+     * @return void
      */
     public function recollectAfterQuoteItemUpdate()
     {
@@ -280,5 +282,4 @@ class FireGento_GermanSetup_Model_Observer
                 ->collectTotals();
         }
     }
-
 }
