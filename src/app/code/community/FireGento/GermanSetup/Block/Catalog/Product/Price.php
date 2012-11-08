@@ -53,12 +53,25 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Blo
         }
 
         if ($this->getTemplate() != $this->_tierPriceDefaultTemplate) {
-            $html .= $this->getLayout()->createBlock('core/template')
+            $htmlObj = new Varien_Object();
+            $htmlObj->setParentHtml($html);
+            $htmlTmpl = $this->getLayout()->createBlock('core/template')
                 ->setTemplate('germansetup/price_info.phtml')
                 ->setFormattedTaxRate($this->getFormattedTaxRate())
                 ->setIsIncludingTax($this->isIncludingTax())
                 ->setIsShowShippingLink($this->isShowShippingLink())
                 ->toHtml();
+            $htmlObj->setHtml($htmlTmpl);
+            Mage::dispatchEvent('germansetup_after_product_price',
+                array(
+                    'html_obj' => $htmlObj,
+                    'block' => $this,
+                )
+            );
+            $html = $htmlObj->getPrefix();
+            $html .= $htmlObj->getParentHtml();
+            $html .= $htmlObj->getHtml();
+            $html .= $htmlObj->getSuffix();
         }
 
         return $html;
