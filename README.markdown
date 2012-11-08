@@ -60,8 +60,8 @@ Jede Mitwirkung für die Weiterentwicklung von GermanSetup ist herzlich willkomm
 Developer
 ---------
 FireGento Team 
-[http://firegento.com](http://firegento.com)  
-[@firegento](https://twitter.com/firegento)
+* Website: [http://firegento.com](http://firegento.com)  
+* Twitter: [@firegento](https://twitter.com/firegento)
 
 Licence
 -------
