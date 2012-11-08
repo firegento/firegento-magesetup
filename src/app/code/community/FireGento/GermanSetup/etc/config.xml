@@ -25,7 +25,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.1.3</version>
+            <version>1.1.4</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -57,7 +57,16 @@
         <models>
             <germansetup>
                 <class>FireGento_GermanSetup_Model</class>
+                <resourceModel>germansetup_resource</resourceModel>
             </germansetup>
+            <germansetup_resource>
+                <class>FireGento_GermanSetup_Model_Resource</class>
+                <entities>
+                    <newsletter_subscriber_status>
+                        <table>newsletter_subscriber_status</table>
+                    </newsletter_subscriber_status>
+                </entities>
+            </germansetup_resource>
             <tax>
                 <rewrite>
                     <config>FireGento_GermanSetup_Model_Tax_Config</config>
@@ -82,6 +91,15 @@
                     </germansetup_observer>
                 </observers>
             </catalog_product_save_before>
+            <newsletter_subscriber_save_after>
+                <observers>
+                    <germansetup_observer>
+                        <class>germansetup/newsletter_observer</class>
+                        <type>model</type>
+                        <method>saveSubscriberStatusHistory</method>
+                    </germansetup_observer>
+                </observers>
+            </newsletter_subscriber_save_after>
         </events>
     </global>
     <frontend>

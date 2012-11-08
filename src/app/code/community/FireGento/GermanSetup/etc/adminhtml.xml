@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <newsletter>
+            <children>
+                <subscriber_status translate="title" module="germansetup">
+                    <title>Newsletter Subscribers Status History</title>
+                    <action>germansetup/adminhtml_newsletter/</action>
+                </subscriber_status>
+			</children>
+		</newsletter>
+	</menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <newsletter>
+                        <children>
+                            <subscriber_status translate="title" module="germansetup">
+                                <title>Newsletter Subscribers Status History</title>
+                            </subscriber_status>
+                        </children>
+                   </newsletter>
+               </children>
+           </admin>
+       </resources>
+    </acl>
+</config>
