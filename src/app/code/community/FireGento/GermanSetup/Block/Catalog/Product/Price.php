@@ -32,7 +32,8 @@
  * @version   $Id:$
  * @since     0.1.0
  */
-class FireGento_GermanSetup_Block_Catalog_Product_Price extends FireGento_GermanSetup_Block_Catalog_Product_Price_Abstract
+class FireGento_GermanSetup_Block_Catalog_Product_Price
+    extends FireGento_GermanSetup_Block_Catalog_Product_Price_Abstract
 {
     /**
      * @var string Path to default tier price template
@@ -136,7 +137,10 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends FireGento_German
     public function isIncludingShippingCosts()
     {
         if (!$this->getData('is_including_shipping_costs')) {
-            $this->setData('is_including_shipping_costs', Mage::getStoreConfig('catalog/price/including_shipping_costs'));
+            $this->setData(
+                'is_including_shipping_costs',
+                Mage::getStoreConfig('catalog/price/including_shipping_costs')
+            );
         }
 
         return $this->getData('is_including_shipping_costs');

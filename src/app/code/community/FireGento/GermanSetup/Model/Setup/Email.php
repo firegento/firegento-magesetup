@@ -149,11 +149,14 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
     protected function _getLocaleEmailPath($locale)
     {
         if (!isset($this->_localeTemplatePath[$locale])) {
-
-            $this->_localeTemplatePath[$locale] = 'app' . DS . 'locale' . DS . $locale . DS . 'template' . DS . 'email' . DS;
+            $_localeTemplatePath = 'app' . DS . 'locale' . DS . $locale . DS . 'template' . DS . 'email' . DS;
+            $this->_localeTemplatePath[$locale] = $_localeTemplatePath;
             if (!is_dir(Mage::getBaseDir() . DS . $this->_localeTemplatePath[$locale])) {
                 Mage::throwException(
-                    Mage::helper('germansetup')->__('Directory "%s" not found. Locale not installed?', $this->_localeTemplatePath[$locale])
+                    Mage::helper('germansetup')->__(
+                        'Directory "%s" not found. Locale not installed?',
+                        $this->_localeTemplatePath[$locale]
+                    )
                 );
             }
         }

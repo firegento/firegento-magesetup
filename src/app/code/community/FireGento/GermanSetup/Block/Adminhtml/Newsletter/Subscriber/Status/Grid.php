@@ -59,6 +59,7 @@ class FireGento_GermanSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid
     {
         $collection = Mage::getResourceModel('germansetup/newsletter_subscriber_status_collection');
         $this->setCollection($collection);
+
         return parent::_prepareCollection();
     }
 

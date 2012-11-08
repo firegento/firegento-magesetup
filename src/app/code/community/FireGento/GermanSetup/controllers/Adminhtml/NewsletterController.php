@@ -45,6 +45,7 @@ class FireGento_GermanSetup_Adminhtml_NewsletterController extends Mage_Adminhtm
 
         if ($this->getRequest()->getParam('ajax')) {
             $this->_forward('grid');
+
             return;
         }
 

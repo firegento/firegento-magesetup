@@ -47,7 +47,7 @@ class FireGento_GermanSetup_Block_Imprint_Content extends Mage_Core_Block_Templa
     /**
      * Set StoreId to get impressum data for this store.
      *
-     * @param  int $storeId Store id.
+     * @param  int  $storeId Store id.
      * @return void
      */
     public function setStoreId($storeId)
@@ -75,7 +75,7 @@ class FireGento_GermanSetup_Block_Imprint_Content extends Mage_Core_Block_Templa
      * Retrieve the setting "website". If parameter checkForProtocol is true,
      * check if there is a valid protocol given, otherwise add http:// manually.
      *
-     * @param  bool $checkForProtocol
+     * @param  bool   $checkForProtocol
      * @return string
      */
     public function getWeb($checkForProtocol=false)
@@ -100,6 +100,7 @@ class FireGento_GermanSetup_Block_Imprint_Content extends Mage_Core_Block_Templa
     public function getCountry()
     {
         $countryCode = $this->getData('country');
+
         return Mage::app()->getLocale()->getCountryTranslation($countryCode);
     }
 }
