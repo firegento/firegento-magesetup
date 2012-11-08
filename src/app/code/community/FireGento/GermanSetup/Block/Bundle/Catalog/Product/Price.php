@@ -32,7 +32,7 @@
  * @version   $Id:$
  * @since     0.1.0
  */
-class FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price extends Mage_Bundle_Block_Catalog_Product_Price
+class FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price extends FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price_Abstract
 {
     /**
      * Add content of template block below price html if defined in config

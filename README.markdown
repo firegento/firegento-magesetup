@@ -13,6 +13,7 @@ Ausschließlich die Tags unter https://github.com/firegento/firegento-germansetu
 GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen wie "Market Ready Germany" oder "German Shop". Zentrale Features des Moduls GermanSetup dabei sind:
 
 * Button-Lösung
+* Setzen wichtiger Konfigurationseinstellungen
 * Steuereinstellungen und Steuerklassen für die ganze EU
 * Direkte Zuweisung der neuen Steuerklassen zu allen Produkten (konfigurierbar)
 * Integration deutscher E-Mail-Vorlagen
