@@ -32,7 +32,7 @@
  * @version   $Id:$
  * @since     0.1.0
  */
-class FireGento_GermanSetup_Block_Catalog_Product_Price extends Mage_Catalog_Block_Product_Price
+class FireGento_GermanSetup_Block_Catalog_Product_Price extends FireGento_GermanSetup_Block_Catalog_Product_Price_Abstract
 {
     /**
      * @var string Path to default tier price template
