@@ -275,7 +275,9 @@ class FireGento_GermanSetup_Model_Observer
             == FireGento_GermanSetup_Model_Tax_Config::USE_TAX_DEPENDING_ON_PRODUCT_VALUES
         ) {
             Mage::getSingleton('checkout/session')
-                ->getQuote()->setTotalsCollectedFlag(false)->collectTotals();
+                ->getQuote()
+                ->setTotalsCollectedFlag(false)
+                ->collectTotals();
         }
     }
 
