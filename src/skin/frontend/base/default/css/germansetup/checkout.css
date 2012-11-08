@@ -36,3 +36,7 @@
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
+
+#review-buttons-container p.f-left {
+    display: none;
+}
