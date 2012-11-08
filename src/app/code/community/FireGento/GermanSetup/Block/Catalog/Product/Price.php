@@ -53,25 +53,28 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends FireGento_German
         }
 
         if ($this->getTemplate() != $this->_tierPriceDefaultTemplate) {
-            $htmlObj = new Varien_Object();
-            $htmlObj->setParentHtml($html);
-            $htmlTmpl = $this->getLayout()->createBlock('core/template')
+            $htmlObject = new Varien_Object();
+            $htmlObject->setParentHtml($html);
+            $htmlTemplate = $this->getLayout()->createBlock('core/template')
                 ->setTemplate('germansetup/price_info.phtml')
                 ->setFormattedTaxRate($this->getFormattedTaxRate())
                 ->setIsIncludingTax($this->isIncludingTax())
+                ->setIsIncludingShippingCosts($this->isIncludingShippingCosts())
                 ->setIsShowShippingLink($this->isShowShippingLink())
                 ->toHtml();
-            $htmlObj->setHtml($htmlTmpl);
+            $htmlObject->setHtml($htmlTemplate);
+
             Mage::dispatchEvent('germansetup_after_product_price',
                 array(
-                    'html_obj' => $htmlObj,
+                    'html_obj' => $htmlObject,
                     'block' => $this,
                 )
             );
-            $html = $htmlObj->getPrefix();
-            $html .= $htmlObj->getParentHtml();
-            $html .= $htmlObj->getHtml();
-            $html .= $htmlObj->getSuffix();
+
+            $html = $htmlObject->getPrefix();
+            $html .= $htmlObject->getParentHtml();
+            $html .= $htmlObject->getHtml();
+            $html .= $htmlObject->getSuffix();
         }
 
         return $html;
@@ -123,6 +126,20 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price extends FireGento_German
         }
 
         return $this->getData('is_including_tax');
+    }
+
+    /**
+     * Returns whether or not the price contains taxes
+     *
+     * @return bool
+     */
+    public function isIncludingShippingCosts()
+    {
+        if (!$this->getData('is_including_shipping_costs')) {
+            $this->setData('is_including_shipping_costs', Mage::getStoreConfig('catalog/price/including_shipping_costs'));
+        }
+
+        return $this->getData('is_including_shipping_costs');
     }
 
     /**
