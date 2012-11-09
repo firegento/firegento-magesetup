@@ -122,9 +122,14 @@
         </reference>
     </catalog_product_view>
 
-	<!--
-	Changes for Button Loesung
-	-->
+    <reference name="product.clone_prices">
+        <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/view/price.phtml</template></action>
+    </reference>
+
+
+    <!--
+    Changes for Button Loesung
+    -->
     <germansetup_frontend_agreements>
         <reference name="root">
             <action method="setTemplate"><template>page/popup.phtml</template></action>
