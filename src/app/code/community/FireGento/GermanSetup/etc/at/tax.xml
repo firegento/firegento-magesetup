@@ -55,20 +55,20 @@
                         <priority>1</priority>
                         <position>0</position>
                     </products_20_percent_companies>
-                    <products_10_percent_companies>
-                        <execute>1</execute>
-                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
-                        <code>Produkte mit 10% MwSt.</code>
-                        <priority>2</priority>
-                        <position>0</position>
-                    </products_10_percent_companies>
                     <shipping_companies>
                         <execute>1</execute>
-                        <tax_calculation_rule_id>8</tax_calculation_rule_id>
+                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
                         <code>Versand mit 20% MwSt.</code>
                         <priority>3</priority>
                         <position>0</position>
                     </shipping_companies>
+                    <products_10_percent_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rule_id>8</tax_calculation_rule_id>
+                        <code>Produkte mit 10% MwSt.</code>
+                        <priority>2</priority>
+                        <position>0</position>
+                    </products_10_percent_companies>
                 </default>
             </tax_calculation_rules>
 
