@@ -213,7 +213,7 @@ class FireGento_GermanSetup_Model_Observer
     /**
      * Processes the category array and generates a string
      *
-     * @param  array  $categories Categories
+     * @param  array  $categoryTypes Categories
      * @return string Keywords
      */
     protected function _buildKeywords($categoryTypes)
