@@ -48,23 +48,23 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Core_Model_Abstract
 
         Mage::register('setup_country', $params['country']);
 
-        if ($params['systemconfig'] == 1) {
+        if ($params['systemconfig']) {
             Mage::getSingleton('germansetup/setup_systemconfig')->setup();
         }
 
-        if ($params['cms'] == 1) {
+        if ($params['cms']) {
             Mage::getSingleton('germansetup/setup_cms')->setup();
         }
 
-        if ($params['agreements'] == 1) {
+        if ($params['agreements']) {
             Mage::getSingleton('germansetup/setup_agreements')->setup();
         }
 
-        if ($params['email'] == 1) {
+        if ($params['email']) {
             Mage::getSingleton('germansetup/setup_email')->setup($params['email_locale'], $params['overwrite_emails']);
         }
 
-        if ($params['tax'] == 1) {
+        if ($params['tax']) {
             Mage::getSingleton('germansetup/setup_tax')->setup();
 
             $this->_updateProductTaxClasses($params);
@@ -91,15 +91,15 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Core_Model_Abstract
         }
 
         return array(
-            'country' => 'de',
-            'systemconfig' => 1,
-            'cms' => 1,
-            'agreements' => 1,
-            'email' => 1,
-            'email_locale' => 'de_DE',
-            'overwrite_emails' => false,
-            'tax' => 1,
-            'product_tax_class_target' => $productTaxClassTargets,
+            'country'                   => 'de',
+            'systemconfig'              => true,
+            'cms'                       => true,
+            'agreements'                => true,
+            'email'                     => true,
+            'email_locale'              => 'de_DE',
+            'overwrite_emails'          => false,
+            'tax'                       => true,
+            'product_tax_class_target'  => $productTaxClassTargets,
         );
     }
 
