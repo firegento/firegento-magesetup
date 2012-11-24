@@ -79,6 +79,8 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
     public function saveAction()
     {
         if ($this->getRequest()->isPost()) {
+            $country = $this->getRequest()->getParam('country');
+            Mage::register('setup_country', $country);
             try {
                 if ($this->getRequest()->getParam('systemconfig') == 1) {
                     Mage::getSingleton('germansetup/setup_systemconfig')->setup();
@@ -102,7 +104,8 @@ class FireGento_GermanSetup_GermansetupController extends Mage_Adminhtml_Control
                 }
 
                 if ($this->getRequest()->getParam('email') == 1) {
-                    Mage::getSingleton('germansetup/setup_email')->setup();
+                    $emailLocale = $this->getRequest()->getParam('email_locale');
+                    Mage::getSingleton('germansetup/setup_email')->setup($emailLocale);
                     $this->_getSession()->addSuccess(
                         $this->__('German Setup: Email Templates have been created.')
                     );

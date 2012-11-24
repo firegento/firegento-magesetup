@@ -37,6 +37,11 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
     const CACHE_TAG = 'germansetup_config';
 
     /**
+     * @var string
+     */
+    protected $_country = 'de';
+
+    /**
      * Sets cache ID and cache tags and loads configuration
      *
      * @param  string|Varien_Simplexml_Element $sourceData
@@ -51,6 +56,16 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
     }
 
     /**
+     * @param string $country
+     * @return FireGento_GermanSetup_Model_Config
+     */
+    public function setCountry($country)
+    {
+        $this->_country = $country;
+        return $this;
+    }
+
+    /**
      * Merge default config with config from additional xml files
      *
      * @return FireGento_GermanSetup_Model_Config
@@ -61,6 +76,10 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
             if ($this->loadCache()) {
                 return $this;
             }
+        }
+
+        if (!is_null(Mage::registry('setup_country'))) {
+            $this->setCountry(Mage::registry('setup_country'));
         }
 
         $mergeConfig = Mage::getModel('core/config_base');
@@ -87,10 +106,8 @@ class FireGento_GermanSetup_Model_Config extends Varien_Simplexml_Config
      */
     protected function _addConfigFile($fileName, $mergeConfig)
     {
-        $country = Mage::app()->getRequest()->getParam('country');
-
         $config = Mage::getConfig();
-        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . $country . DS . $fileName;
+        $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . $this->_country . DS . $fileName;
         if (!file_exists($configFile)) {
             $configFile = $config->getModuleDir('etc', 'FireGento_GermanSetup') . DS . 'default' . DS . $fileName;
         }

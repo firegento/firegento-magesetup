@@ -41,14 +41,12 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
      *
      * @return void
      */
-    public function setup()
+    public function setup($locale = 'de')
     {
         // execute emails
         foreach ($this->_getConfigEmails() as $data) {
 
             if ($data['execute'] == 1) {
-
-                $locale = Mage::app()->getRequest()->getPost('email_locale');
 
                 /** Change third param from false to true to override existing templates for testing */
                 $this->_createEmail($data, $locale, false);
