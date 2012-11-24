@@ -21,8 +21,7 @@
  * @since     1.0.5
  */
 /**
- * Setup script; Adds the delivery_time attribute for products
- * and creates all initial pages, blocks and emails
+ * Setup script; Adds a new column 'Visible in Checkout' to attributes
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup

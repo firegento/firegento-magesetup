@@ -22,7 +22,6 @@
  */
 /**
  * Setup script; Adds the delivery_time attribute for products
- * and creates all initial pages, blocks and emails
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup

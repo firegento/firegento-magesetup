@@ -21,7 +21,7 @@
  * @since     1.0.7
  */
 /**
- * Setup script; Adds the is_required field for the checkout agreements
+ * Setup script; Adds a new table for newsletter subscriber status
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
