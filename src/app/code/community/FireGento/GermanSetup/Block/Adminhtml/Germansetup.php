@@ -61,7 +61,7 @@ class FireGento_GermanSetup_Block_Adminhtml_Germansetup extends Mage_Adminhtml_B
      */
     public function getProductTaxClasses()
     {
-        return Mage::getSingleton('tax/class_source_product')->getAllOptions();
+        return Mage::getSingleton('germansetup/source_tax_productTaxClass')->getAllOptions();
     }
 
     /**

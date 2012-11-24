@@ -34,6 +34,9 @@
 class FireGento_GermanSetup_Model_Setup extends Mage_Core_Model_Abstract
 {
     /**
+     * Setup GermanSetup as if a user sends the adminhtml form
+     * See method _getDefaultParams for possible params
+     *
      * @param array $params
      * @return FireGento_GermanSetup_Model_Setup
      */
@@ -76,10 +79,17 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Core_Model_Abstract
     }
 
     /**
+     * Get default parameters like they are in the backend form
+     *
      * @return array
      */
     protected function _getDefaultParams()
     {
+        $productTaxClassTargets = array();
+        foreach(Mage::getSingleton('germansetup/source_tax_productTaxClass')->getAllOptions() as $option) {
+            $productTaxClassTargets[$option['value']] = 1;
+        }
+
         return array(
             'country' => 'de',
             'systemconfig' => 1,
@@ -88,7 +98,7 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Core_Model_Abstract
             'email' => 1,
             'email_locale' => 'de_DE',
             'tax' => 1,
-            'product_tax_class_target' => array(),
+            'product_tax_class_target' => $productTaxClassTargets,
         );
     }
 
