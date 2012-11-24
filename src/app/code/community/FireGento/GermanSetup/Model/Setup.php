@@ -61,7 +61,7 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Core_Model_Abstract
         }
 
         if ($params['email'] == 1) {
-            Mage::getSingleton('germansetup/setup_email')->setup($params['email_locale']);
+            Mage::getSingleton('germansetup/setup_email')->setup($params['email_locale'], $params['overwrite_emails']);
         }
 
         if ($params['tax'] == 1) {
@@ -97,6 +97,7 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Core_Model_Abstract
             'agreements' => 1,
             'email' => 1,
             'email_locale' => 'de_DE',
+            'overwrite_emails' => false,
             'tax' => 1,
             'product_tax_class_target' => $productTaxClassTargets,
         );

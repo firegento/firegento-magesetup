@@ -39,17 +39,19 @@ class FireGento_GermanSetup_Model_Setup_Email extends FireGento_GermanSetup_Mode
     /**
      * Setup Transaction Emails
      *
+     * @param string $locale
+     * @param bool $overwrite
      * @return void
      */
-    public function setup($locale = 'de')
+    public function setup($locale = 'de_DE', $overwrite = false)
     {
         // execute emails
         foreach ($this->_getConfigEmails() as $data) {
 
             if ($data['execute'] == 1) {
 
-                /** Change third param from false to true to override existing templates for testing */
-                $this->_createEmail($data, $locale, false);
+                /** Change override param from false to true to override existing templates for testing */
+                $this->_createEmail($data, $locale, $overwrite);
             }
         }
     }
