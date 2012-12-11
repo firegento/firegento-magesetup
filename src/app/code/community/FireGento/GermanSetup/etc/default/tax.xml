@@ -41,13 +41,8 @@
                         <priority>2</priority>
                         <position>0</position>
                     </products_7_percent>
-                    <shipping>
-                        <execute>1</execute>
-                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
-                        <code>Versand mit 19% MwSt.</code>
-                        <priority>3</priority>
-                        <position>0</position>
-                    </shipping>
+
+                    <!-- Firmen -->
                     <products_19_percent_companies>
                         <execute>1</execute>
                         <tax_calculation_rule_id>6</tax_calculation_rule_id>
@@ -55,13 +50,6 @@
                         <priority>1</priority>
                         <position>0</position>
                     </products_19_percent_companies>
-                    <shipping_companies>
-                        <execute>1</execute>
-                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
-                        <code>Versand mit 19% MwSt.</code>
-                        <priority>3</priority>
-                        <position>0</position>
-                    </shipping_companies>
                     <products_7_percent_companies>
                         <execute>1</execute>
                         <tax_calculation_rule_id>8</tax_calculation_rule_id>
@@ -69,6 +57,30 @@
                         <priority>2</priority>
                         <position>0</position>
                     </products_7_percent_companies>
+                    <products_companies_vat>
+                        <execute>1</execute>
+                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
+                        <code>USt.-befreite Firmen kaufen voll- und ermäßigtbesteuerte Produkte</code>
+                        <priority>1</priority>
+                        <position>0</position>
+                    </products_companies_vat>
+
+                    <!-- Versand -->
+                    <shipping_19_percent>
+                        <execute>1</execute>
+                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
+                        <code>vollbesteuerter Versand</code>
+                        <priority>3</priority>
+                        <position>0</position>
+                    </shipping_19_percent>
+                    <shipping_7_percent>
+                        <execute>1</execute>
+                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
+                        <code>ermäßigtbesteuerter Versand</code>
+                        <priority>3</priority>
+                        <position>0</position>
+                    </shipping_7_percent>
+
                 </default>
             </tax_calculation_rules>
 
@@ -94,19 +106,32 @@
                         <class_name>Endkunden</class_name>
                         <class_type>CUSTOMER</class_type>
                     </customer_customers>
-                    <shipping>
+                    <shipping_19_percent>
                         <execute>1</execute>
                         <class_id>4</class_id>
                         <class_name>Vollbesteuerter Versand</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
-                    </shipping>
+                    </shipping_19_percent>
+                    <shipping_7_percent>
+                        <execute>1</execute>
+                        <class_id>7</class_id>
+                        <class_name>Vollbesteuerter Versand</class_name>
+                        <class_type>PRODUCT</class_type>
+                        <default>0</default>
+                    </shipping_7_percent>
                     <customer_companies>
                         <execute>1</execute>
                         <class_id>5</class_id>
-                        <class_name>Unternehmen</class_name>
+                        <class_name>USt.-pflichtige Unternehmen</class_name>
                         <class_type>CUSTOMER</class_type>
                     </customer_companies>
+                    <customer_companies_vat>
+                        <execute>1</execute>
+                        <class_id>6</class_id>
+                        <class_name>USt.-befreite Unternehmen</class_name>
+                        <class_type>CUSTOMER</class_type>
+                    </customer_companies_vat>
                 </default>
             </tax_classes>
 
@@ -941,20 +966,34 @@
                         <customer_tax_class_id>5</customer_tax_class_id>
                         <product_tax_class_id>1</product_tax_class_id>
                     </tax_calculation_DE_19_companies>
-                    <tax_calculation_DE_shipping>
+                    <tax_calculation_DE_19_shipping_customer>
                         <execute>1</execute>
                         <tax_calculation_rate_id>3</tax_calculation_rate_id>
                         <tax_calculation_rule_id>5</tax_calculation_rule_id>
                         <customer_tax_class_id>3</customer_tax_class_id>
                         <product_tax_class_id>4</product_tax_class_id>
-                    </tax_calculation_DE_shipping>
-                    <tax_calculation_DE_shipping_companies>
+                    </tax_calculation_DE_19_shipping_customer>
+                    <tax_calculation_DE_19_shipping_companies>
                         <execute>1</execute>
                         <tax_calculation_rate_id>3</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
+                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
                         <customer_tax_class_id>5</customer_tax_class_id>
                         <product_tax_class_id>4</product_tax_class_id>
-                    </tax_calculation_DE_shipping_companies>
+                    </tax_calculation_DE_19_shipping_companies>
+                    <tax_calculation_DE_7_shipping_customer>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
+                        <customer_tax_class_id>3</customer_tax_class_id>
+                        <product_tax_class_id>7</product_tax_class_id>
+                    </tax_calculation_DE_7_shipping_customer>
+                    <tax_calculation_DE_7_shipping_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
+                        <customer_tax_class_id>5</customer_tax_class_id>
+                        <product_tax_class_id>7</product_tax_class_id>
+                    </tax_calculation_DE_7_shipping_companies>
                     <tax_calculation_DE_7>
                         <execute>1</execute>
                         <tax_calculation_rate_id>5</tax_calculation_rate_id>
@@ -969,6 +1008,22 @@
                         <customer_tax_class_id>5</customer_tax_class_id>
                         <product_tax_class_id>2</product_tax_class_id>
                     </tax_calculation_DE_7_companies>
+                    <tax_calculation_DE_19_companies_vat>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>4</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
+                        <customer_tax_class_id>6</customer_tax_class_id>
+                        <product_tax_class_id>1</product_tax_class_id>
+                    </tax_calculation_DE_19_companies_vat>
+                    <tax_calculation_DE_7_companies_vat>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>4</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
+                        <customer_tax_class_id>6</customer_tax_class_id>
+                        <product_tax_class_id>2</product_tax_class_id>
+                    </tax_calculation_DE_7_companies_vat>
+
+                    <!-- @TODO ID assoc checken -->
                     <tax_calculation_BE_19>
                         <execute>1</execute>
                         <tax_calculation_rate_id>6</tax_calculation_rate_id>
