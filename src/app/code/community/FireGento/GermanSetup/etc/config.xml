@@ -292,7 +292,7 @@ Tel: {{var telephone}}
                 <pdf><![CDATA[
 {{depend company}}{{var company}}|{{/depend}}
 {{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}|
-{{if street1}}{{var street1}}
+{{if street1}}{{var street1}}|
 {{/if}}
 {{depend street2}}{{var street2}}|{{/depend}}
 {{depend street3}}{{var street3}}|{{/depend}}
