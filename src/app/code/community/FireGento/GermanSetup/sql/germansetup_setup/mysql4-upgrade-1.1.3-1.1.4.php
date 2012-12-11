@@ -46,7 +46,7 @@ if (version_compare(Mage::getVersion(), '1.6', '<')) {
           `status` int(11) NOT NULL DEFAULT '0' COMMENT 'Subscriber Status',
           `email` text COMMENT 'Subscriber Status',
           `created_at` timestamp NULL DEFAULT NULL COMMENT 'Changed at',
-          PRIMARY KEY (`id`),
+          PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Newsletter Subscriber Status Table';
     ");
 
