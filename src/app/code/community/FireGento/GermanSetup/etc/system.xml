@@ -210,6 +210,22 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </owner>
+                        <content_responsable_name translate="label">
+                            <label>Responsible for content</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>137</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </content_responsable_name>
+                        <content_responsable_address translate="label">
+                            <label>Responsible for content address</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>138</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </content_responsable_address>
                         <register_number translate="label">
                             <label>Register number</label>
                             <frontend_type>text</frontend_type>
