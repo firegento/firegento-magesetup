@@ -30,14 +30,14 @@
                     <products_19_percent>
                         <execute>1</execute>
                         <tax_calculation_rule_id>3</tax_calculation_rule_id>
-                        <code>Produkte mit 19% MwSt.</code>
+                        <code>Endkunden kaufen vollbesteuerte Produkte</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_19_percent>
                     <products_7_percent>
                         <execute>1</execute>
                         <tax_calculation_rule_id>4</tax_calculation_rule_id>
-                        <code>Produkte mit 7% MwSt.</code>
+                        <code>Endkunden kaufen ermäßigtbesteuerte Produkte</code>
                         <priority>2</priority>
                         <position>0</position>
                     </products_7_percent>
@@ -51,7 +51,7 @@
                     <products_19_percent_companies>
                         <execute>1</execute>
                         <tax_calculation_rule_id>6</tax_calculation_rule_id>
-                        <code>Produkte mit 19% MwSt.</code>
+                        <code>USt.-pflichtige Firmen kaufen vollbesteuerte Produkte</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_19_percent_companies>
@@ -65,7 +65,7 @@
                     <products_7_percent_companies>
                         <execute>1</execute>
                         <tax_calculation_rule_id>8</tax_calculation_rule_id>
-                        <code>Produkte mit 7% MwSt.</code>
+                        <code>USt.-pflichtige Firmen kaufen ermäßigtbesteuerte Produkte</code>
                         <priority>2</priority>
                         <position>0</position>
                     </products_7_percent_companies>
@@ -77,14 +77,14 @@
                     <products_19_percent>
                         <execute>1</execute>
                         <class_id>1</class_id>
-                        <class_name>Umsatzsteuerpflichtige Güter 19%</class_name>
+                        <class_name>Vollbesteuerte Artikel</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>1</default>
                     </products_19_percent>
                     <products_7_percent>
                         <execute>1</execute>
                         <class_id>2</class_id>
-                        <class_name>Umsatzsteuerpflichtige Güter 7%</class_name>
+                        <class_name>Ermäßigtbesteuerte Artikel</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </products_7_percent>
@@ -97,7 +97,7 @@
                     <shipping>
                         <execute>1</execute>
                         <class_id>4</class_id>
-                        <class_name>Versand</class_name>
+                        <class_name>Vollbesteuerter Versand</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping>
