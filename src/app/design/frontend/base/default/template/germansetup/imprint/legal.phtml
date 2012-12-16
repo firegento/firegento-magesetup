@@ -33,11 +33,11 @@
 <?php if (strlen(trim($this->getOwner()))): ?>
 <?php echo $this->__('Owner') ?>: <?php echo $this->getOwner() ?><br />
 <?php endif ?>
-<?php if (strlen(trim($this->getContentResponsable())) || strlen(trim($this->getContentResponsableAddress()))): ?>
+<?php if (strlen(trim($this->getContentResponsableName())) || strlen(trim($this->getContentResponsableAddress()))): ?>
     <p><?php echo $this->__('Responsible according to § 5 TMG'); ?>:</p>
 <?php endif;?>
-<?php if (strlen(trim($this->getContentResponsable()))): ?>
-<?php echo $this->__('Responsible for content') ?>: <?php echo $this->getContentResponsable() ?><br />
+<?php if (strlen(trim($this->getContentResponsableName()))): ?>
+<?php echo $this->__('Responsible for content') ?>: <?php echo $this->getContentResponsableName() ?><br />
 <?php endif ?>
 <?php if (strlen(trim($this->getContentResponsableAddress()))): ?>
 <?php echo $this->__('Responsible for content address') ?>: <?php echo $this->getContentResponsableAddress() ?><br />
