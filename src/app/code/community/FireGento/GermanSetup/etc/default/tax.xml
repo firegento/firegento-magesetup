@@ -30,14 +30,14 @@
                     <products_19_percent>
                         <execute>1</execute>
                         <tax_calculation_rule_id>3</tax_calculation_rule_id>
-                        <code>Endkunden kaufen vollbesteuerte Produkte</code>
+                        <code>Endkunden kaufen vollbesteuerte Artikel</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_19_percent>
                     <products_7_percent>
                         <execute>1</execute>
                         <tax_calculation_rule_id>4</tax_calculation_rule_id>
-                        <code>Endkunden kaufen ermäßigtbesteuerte Produkte</code>
+                        <code>Endkunden kaufen ermäßigtbesteuerte Artikel</code>
                         <priority>2</priority>
                         <position>0</position>
                     </products_7_percent>
@@ -46,21 +46,21 @@
                     <products_19_percent_companies>
                         <execute>1</execute>
                         <tax_calculation_rule_id>6</tax_calculation_rule_id>
-                        <code>USt.-pflichtige Firmen kaufen vollbesteuerte Produkte</code>
+                        <code>USt.-pflichtige Firmen kaufen vollbesteuerte Artikel</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_19_percent_companies>
                     <products_7_percent_companies>
                         <execute>1</execute>
                         <tax_calculation_rule_id>8</tax_calculation_rule_id>
-                        <code>USt.-pflichtige Firmen kaufen ermäßigtbesteuerte Produkte</code>
+                        <code>USt.-pflichtige Firmen kaufen ermäßigtbesteuerte Artikel</code>
                         <priority>2</priority>
                         <position>0</position>
                     </products_7_percent_companies>
                     <products_companies_vat>
                         <execute>1</execute>
                         <tax_calculation_rule_id>10</tax_calculation_rule_id>
-                        <code>USt.-befreite Firmen kaufen voll- und ermäßigtbesteuerte Produkte</code>
+                        <code>USt.-befreite Firmen kaufen voll- und ermäßigtbesteuerte Artikel</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_companies_vat>
@@ -116,7 +116,7 @@
                     <shipping_7_percent>
                         <execute>1</execute>
                         <class_id>7</class_id>
-                        <class_name>Vollbesteuerter Versand</class_name>
+                        <class_name>Ermäßigtbesteuerter Versand</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping_7_percent>
