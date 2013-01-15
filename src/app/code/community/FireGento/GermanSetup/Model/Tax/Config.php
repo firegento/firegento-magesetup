@@ -48,11 +48,15 @@ class FireGento_GermanSetup_Model_Tax_Config extends Mage_Tax_Model_Config
      */
     public function getShippingTaxClass($store = null)
     {
+        /** @var Mage_Adminhtml_Model_Session_Quote */
+        $adminhtmlSession = Mage::getSingleton('adminhtml/session_quote');
 
         /* @var $session Mage_Checkout_Model_Session */
         $session = Mage::getSingleton('checkout/session');
 
-        if ($session->hasQuote()) {
+        if(Mage::app()->getStore()->getId() == Mage_Core_Model_App::ADMIN_STORE_ID && $adminhtmlSession->getQuote()) {
+            $quoteItems = $adminhtmlSession->getQuote()->getAllItems();
+        } elseif ($session->hasQuote()) {
             $quoteItems = $session->getQuote()->getAllItems();
         } else {
             // This case happens if the store currency is switched by the customer.
