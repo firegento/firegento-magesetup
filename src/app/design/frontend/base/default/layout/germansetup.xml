@@ -173,4 +173,15 @@
             <block type="germansetup/checkout_information" name="checkout.multishipping.additional" as="additional" template="germansetup/checkout/additional.phtml" />
         </reference>
     </checkout_multishipping_overview>
+
+    <!-- Customer Terms and Condition Confirmation -->
+    <customer_account_create>
+        <reference name="form.additional.info">
+            <block type="checkout/agreements" name="customer.tc-confirmation"
+                   template="germansetup/customer/form/tc-confirmation.phtml"/>
+        </reference>
+        <reference name="form.additional.info">
+            <action method="unsetChild" ifconfig="customer/create_account/avoid_tc"><value>customer.tc-confirmation</value></action>
+        </reference>
+    </customer_account_create>
 </layout>

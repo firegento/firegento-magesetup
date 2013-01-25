@@ -262,6 +262,9 @@
             </options>
         </checkout>
         <customer>
+            <create_account>
+                <avoid_tc>Yes</avoid_tc>
+            </create_account>
             <address_templates>
                 <text><![CDATA[
 {{depend company}}{{var company}}
