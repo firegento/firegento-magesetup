@@ -108,5 +108,6 @@
 "Email Settings","Email-Einstellungen"
 "Tax Settings","Steuer-Einstellungen"
 
-"Avoid T&amp;C Confirmation","AGB Bestätigung ausschalten"
-"Turn off confirmation of terms and condition","Schalte die Bestätigung der Bestellbedingungen bei der Benutzerregistrierung ab"
+"Use on Customer Creation","In Benutzerregistrierung verwenden"
+"Require Confirmation on Customer Registration","Bestätigung bei Benutzerregistrierung nötig"
+"Agreements not confirmed.","Bedingungen wurden nicht bestätigt."

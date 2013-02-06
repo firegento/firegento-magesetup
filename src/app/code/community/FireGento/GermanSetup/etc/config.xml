@@ -25,7 +25,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.1.4</version>
+            <version>1.1.5</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -100,6 +100,15 @@
                     </germansetup_observer>
                 </observers>
             </newsletter_subscriber_save_after>
+            <controller_action_predispatch_customer_account_createpost>
+                <observers>
+                    <germansetup_observer>
+                        <class>germansetup/observer</class>
+                        <type>model</type>
+                        <method>customerCreatePreDispatch</method>
+                    </germansetup_observer>
+                </observers>
+            </controller_action_predispatch_customer_account_createpost>
         </events>
     </global>
     <frontend>
@@ -222,7 +231,7 @@
                     <germansetup_observer_agreement>
                         <class>germansetup/observer</class>
                         <type>model</type>
-                        <method>addIsRequiredOnAgreements</method>
+                        <method>addOptionsForAgreements</method>
                     </germansetup_observer_agreement>
                 </observers>
             </adminhtml_block_html_before>
