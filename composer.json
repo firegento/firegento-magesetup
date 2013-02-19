@@ -5,6 +5,6 @@
    "description": "GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen.",
    "homepage": "https://github.com/firegento/firegento-germansetup",
    "require": {
-      "magento-hackathon/magento-composer-installer": "dev-master"
+      "magento-hackathon/magento-composer-installer": "*"
    }
 }
