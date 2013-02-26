@@ -25,7 +25,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.1.4</version>
+            <version>1.2.0</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -77,7 +77,7 @@
             <germansetup_setup>
                 <setup>
                     <module>FireGento_GermanSetup</module>
-                    <class>Mage_Eav_Model_Entity_Setup</class>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
                 </setup>
             </germansetup_setup>
         </resources>
