@@ -32,10 +32,11 @@
  * @since     0.1.0
  */
 
-/* @var $installer Mage_Catalog_Model_Resource_Eav_Mysql4_Setup */
+/** @var $installer Mage_Catalog_Model_Resource_Eav_Mysql4_Setup */
 $installer = $this;
 $installer->startSetup();
 
+// Update attribute properties
 $installer->updateAttribute(
     'catalog_product',
     'delivery_time',
@@ -74,6 +75,13 @@ $installer->updateAttribute(
 $installer->updateAttribute(
     'catalog_product',
     'delivery_time',
+    'is_visible_on_checkout',
+    true
+);
+
+$installer->updateAttribute(
+    'catalog_product',
+    'short_description',
     'is_visible_on_checkout',
     true
 );
