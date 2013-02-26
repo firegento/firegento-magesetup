@@ -305,12 +305,14 @@
             </groups>
         </general>
         <checkout>
-        	<groups>
-        		<options>
-        			<fields>
+            <groups>
+                <options>
+                    <fields>
                         <display_additional_information translate="label,comment" module="germansetup">
                             <label>Display Additional Information</label>
-                            <comment>Display content from text field below at the checkout confirm page directly above the checkout button</comment>
+                            <comment>Display content from text field below at the checkout confirm page directly above
+                                the checkout button
+                            </comment>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>500</sort_order>
@@ -326,15 +328,16 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <depends>
-                            	<display_additional_information>1</display_additional_information>
+                                <display_additional_information>1</display_additional_information>
                             </depends>
                         </additional_information>
-        			</fields>
-        		</options>
-        		<cart>
-        			<fields>
-                        <hide_shipping translate="label" module="germansetup">
+                    </fields>
+                </options>
+                <cart>
+                    <fields>
+                        <hide_shipping translate="label,comment" module="germansetup">
                             <label>Hide estimated shipping costs in cart</label>
+                            <comment>Replace with a link to the shipping costs cms page</comment>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>500</sort_order>
@@ -342,17 +345,36 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </hide_shipping>
-        			</fields>
-        		</cart>
-        	</groups>
+                    </fields>
+                </cart>
+            </groups>
         </checkout>
+        <sales>
+            <groups>
+                <reorder>
+                    <fields>
+                        <hide_sidebar_box translate="label" module="germansetup">
+                            <label>Hide box "Last Ordered Items"</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hide_sidebar_box>
+                    </fields>
+                </reorder>
+            </groups>
+        </sales>
         <google>
             <groups>
                 <analytics>
                     <fields>
                         <ip_anonymization translate="label, comment">
                             <label>Ip anonymization</label>
-                            <comment>Ensures that the ip address of the customers doesnt get involved into the tracking</comment>
+                            <comment>Ensures that the ip address of the customers doesnt get involved into the
+                                tracking
+                            </comment>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>190</sort_order>
@@ -365,12 +387,13 @@
             </groups>
         </google>
         <tax>
-        	<groups>
-        		<classes>
-        			<fields>
+            <groups>
+                <classes>
+                    <fields>
                         <shipping_tax_on_product_tax translate="label,comment" module="germansetup">
                             <label>Dynamic Shipping Tax Class Calculation</label>
-                            <comment><![CDATA[Set to "yes" if you want to calculate the shipping tax rate based on the highest product tax rate or according to the tax rate of products that make up the biggest amount in cart.<br /><b>ATTENTION:</b> This setting overwrites the "Tax Class for Shipping" setting above!]]></comment>
+                            <comment>
+                                <![CDATA[Set to "yes" if you want to calculate the shipping tax rate based on the highest product tax rate or according to the tax rate of products that make up the biggest amount in cart.<br /><b>ATTENTION:</b> This setting overwrites the "Tax Class for Shipping" setting above!]]></comment>
                             <frontend_type>select</frontend_type>
                             <source_model>germansetup/source_tax_dynamicType</source_model>
                             <sort_order>11</sort_order>
@@ -378,9 +401,9 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                         </shipping_tax_on_product_tax>
-        			</fields>
-        		</classes>
-        	</groups>
+                    </fields>
+                </classes>
+            </groups>
         </tax>
     </sections>
 </config>

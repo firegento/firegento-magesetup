@@ -259,10 +259,11 @@
         </general>
         <checkout>
             <options>
-                <additional_information><![CDATA[Zusätzlich können noch Kosten oder Steuern anfallen, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
+                <additional_information>
+                    <![CDATA[Zusätzlich können noch Kosten oder Steuern anfallen, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
             </options>
             <cart>
-                <hide_shipping>0</hide_shipping>
+                <hide_shipping>1</hide_shipping>
             </cart>
         </checkout>
         <customer>
@@ -280,7 +281,8 @@ Tel: {{var telephone}}
 {{depend fax}}Fax: {{var fax}}
 {{/depend}}
                 ]]></text>
-                <oneline><![CDATA[{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}, {{var street}}, {{var postcode}} {{var city}}, {{var country}}]]></oneline>
+                <oneline>
+                    <![CDATA[{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}, {{var street}}, {{var postcode}} {{var city}}, {{var country}}]]></oneline>
                 <html><![CDATA[
 {{depend company}}{{var company}}<br />{{/depend}}
 {{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}<br/>
@@ -308,7 +310,8 @@ Tel: {{var telephone}}
                 ]]></pdf>
                 <js_template template="title" module="customer">
                     <title>Javascript Template</title>
-                    <defaultFormat><![CDATA[#{company}<br/>#{prefix} #{firstname} #{middlename} #{lastname} #{suffix}<br/>#{street0}<br/>#{street1}<br/>#{street2}<br/>#{street3}<br/>#{postcode} #{city}<br/>#{country_id}<br/>Tel: #{telephone}<br/>Fax: #{fax}]]>
+                    <defaultFormat>
+                        <![CDATA[#{company}<br/>#{prefix} #{firstname} #{middlename} #{lastname} #{suffix}<br/>#{street0}<br/>#{street1}<br/>#{street2}<br/>#{street3}<br/>#{postcode} #{city}<br/>#{country_id}<br/>Tel: #{telephone}<br/>Fax: #{fax}]]>
                     </defaultFormat>
                 </js_template>
             </address_templates>

@@ -444,9 +444,9 @@
     </germansetup_frontend_agreements>
 
     <checkout_cart_index>
-        <reference name="checkout.cart">
-            <action method="unsetChild" ifconfig="checkout/cart/hide_shipping">
-                <name>shipping</name>
+        <reference name="checkout.cart.shipping">
+            <action method="setTemplate" ifconfig="checkout/cart/hide_shipping">
+                <template>germansetup/shipping.phtml</template>
             </action>
         </reference>
     </checkout_cart_index>
@@ -502,4 +502,12 @@
                    template="germansetup/checkout/additional.phtml"/>
         </reference>
     </checkout_multishipping_overview>
+
+    <customer_logged_in>
+        <reference name="right">
+            <action method="unsetChild" ifconfig="sales/reorder/hide_sidebar_box">
+                <name>sale.reorder.sidebar</name>
+            </action>
+        </reference>
+    </customer_logged_in>
 </layout>
