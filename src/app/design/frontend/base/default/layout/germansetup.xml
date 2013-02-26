@@ -1,176 +1,497 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
 
-	<!--
+    <!--
 	Adding custom product price block
 	-->
     <catalog_category_default>
         <reference name="product_list">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </catalog_category_default>
 
     <catalog_category_view>
         <reference name="product_list">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </catalog_category_view>
 
     <catalog_category_layered>
         <reference name="product_list">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </catalog_category_layered>
 
     <catalog_product_compare_index>
         <reference name="catalog.compare.list">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </catalog_product_compare_index>
 
     <catalogsearch_result_index>
         <reference name="search_result_list">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </catalogsearch_result_index>
 
     <catalogsearch_advanced_result>
         <reference name="search_result_list">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </catalogsearch_advanced_result>
 
     <tag_product_list>
         <reference name="search_result_list">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </tag_product_list>
 
     <tag_customer_view>
         <reference name="customer_view">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </tag_customer_view>
 
     <default>
         <reference name="wishlist_sidebar">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
         <reference name="catalog_product_price_template">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </default>
 
     <catalog_product_view>
         <reference name="catalog.product.related">
-            <action method="addPriceBlockType"><type>simple</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>virtual</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>grouped</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>downloadable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>configurable</type><block>germansetup/catalog_product_price</block><template>catalog/product/price.phtml</template></action>
-            <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>germansetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>germansetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
         </reference>
     </catalog_product_view>
 
     <reference name="product.clone_prices">
-        <action method="addPriceBlockType"><type>bundle</type><block>germansetup/bundle_catalog_product_price</block><template>bundle/catalog/product/view/price.phtml</template></action>
+        <action method="addPriceBlockType">
+            <type>bundle</type>
+            <block>germansetup/bundle_catalog_product_price</block>
+            <template>bundle/catalog/product/view/price.phtml</template>
+        </action>
     </reference>
 
+    <PRODUCT_TYPE_simple>
+        <reference name="product.info.simple.extra">
+            <block type="catalog/product_view_type_simple" name="germansetup.deliverytime"
+                   template="germansetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_simple>
+
+    <PRODUCT_TYPE_configurable>
+        <reference name="product.info.configurable.extra">
+            <block type="catalog/product_view_type_configurable" name="germansetup.deliverytime"
+                   template="germansetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_configurable>
+
+    <PRODUCT_TYPE_grouped>
+        <reference name="product.info.grouped.extra">
+            <block type="catalog/product_view_type_grouped" name="germansetup.deliverytime"
+                   template="germansetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_grouped>
+
+    <PRODUCT_TYPE_virtual>
+        <reference name="product.info.virtual.extra">
+            <block type="catalog/product_view_type_virtual" name="germansetup.deliverytime"
+                   template="germansetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_virtual>
+
+    <PRODUCT_TYPE_downloadable>
+        <reference name="product.info.downloadable.extra">
+            <block type="downloadable/catalog_product_view_type" name="germansetup.deliverytime"
+                   template="germansetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_downloadable>
 
     <!--
     Changes for Button Loesung
     -->
     <germansetup_frontend_agreements>
         <reference name="root">
-            <action method="setTemplate"><template>page/popup.phtml</template></action>
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
         </reference>
         <reference name="content">
-            <block type="core/text" name="agreement" />
+            <block type="core/text" name="agreement"/>
         </reference>
     </germansetup_frontend_agreements>
 
     <checkout_onepage_index>
         <reference name="head">
-            <action method="addCss"><stylesheet>css/germansetup/checkout.css</stylesheet></action>
+            <action method="addCss">
+                <stylesheet>css/germansetup/checkout.css</stylesheet>
+            </action>
         </reference>
     </checkout_onepage_index>
 
     <checkout_onepage_review>
-		<reference name="checkout.onepage.agreements">
-            <action method="setTemplate"><template>germansetup/checkout/onepage/agreements.phtml</template></action>
+        <reference name="checkout.onepage.agreements">
+            <action method="setTemplate">
+                <template>germansetup/checkout/onepage/agreements.phtml</template>
+            </action>
         </reference>
         <reference name="root">
-            <action method="unsetChild"><alias>agreements</alias></action>
+            <action method="unsetChild">
+                <alias>agreements</alias>
+            </action>
         </reference>
         <reference name="checkout.onepage.review.info.items.before">
-            <action method="insert"><blockName>checkout.onepage.agreements</blockName></action>
+            <action method="insert">
+                <blockName>checkout.onepage.agreements</blockName>
+            </action>
         </reference>
         <reference name="checkout.onepage.review.info.items.after">
-            <block type="germansetup/checkout_information" name="checkout.onepage.additional" as="additional" template="germansetup/checkout/additional.phtml" />
+            <block type="germansetup/checkout_information" name="checkout.onepage.additional" as="additional"
+                   template="germansetup/checkout/additional.phtml"/>
         </reference>
     </checkout_onepage_review>
 
     <checkout_multishipping_overview>
         <reference name="head">
-            <action method="addCss"><stylesheet>css/germansetup/checkout.css</stylesheet></action>
+            <action method="addCss">
+                <stylesheet>css/germansetup/checkout.css</stylesheet>
+            </action>
         </reference>
         <reference name="checkout_overview">
-			<action method="setTemplate"><name>germansetup/checkout/multishipping/overview.phtml</name></action>
-            <action method="unsetChild"><name>agreements</name></action>
-            <block type="checkout/agreements" name="checkout.multishipping.agreements" as="agreements" template="germansetup/checkout/multishipping/agreements.phtml" />
+            <action method="setTemplate">
+                <name>germansetup/checkout/multishipping/overview.phtml</name>
+            </action>
+            <action method="unsetChild">
+                <name>agreements</name>
+            </action>
+            <block type="checkout/agreements" name="checkout.multishipping.agreements" as="agreements"
+                   template="germansetup/checkout/multishipping/agreements.phtml"/>
         </reference>
         <reference name="checkout.multishipping.overview.items.after">
-            <block type="germansetup/checkout_information" name="checkout.multishipping.additional" as="additional" template="germansetup/checkout/additional.phtml" />
+            <block type="germansetup/checkout_information" name="checkout.multishipping.additional" as="additional"
+                   template="germansetup/checkout/additional.phtml"/>
         </reference>
     </checkout_multishipping_overview>
 </layout>

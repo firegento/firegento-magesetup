@@ -243,6 +243,7 @@
         <catalog>
             <price>
                 <display_block_below_price>1</display_block_below_price>
+                <display_delivery_time_on_categories>1</display_delivery_time_on_categories>
                 <cms_page_shipping>lieferung</cms_page_shipping>
             </price>
         </catalog>

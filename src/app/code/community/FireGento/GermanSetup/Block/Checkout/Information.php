@@ -50,17 +50,21 @@ class FireGento_GermanSetup_Block_Checkout_Information extends Mage_Core_Block_T
      */
     public function getCheckoutAdditionalInformation()
     {
-        if (!Mage::getStoreConfigFlag(self::XML_PATH_CHECKOUT_DISPLAY_ADDITIONAL_INFORMATION)) {
+        $additional = '';
+
+        if (Mage::getStoreConfigFlag(self::XML_PATH_CHECKOUT_DISPLAY_ADDITIONAL_INFORMATION)) {
+            $additional = trim(Mage::getStoreConfig(self::XML_PATH_CHECKOUT_ADDITIONAL_INFORMATION));
+        }
+
+        // Dispatch Event in order to allow adding more additional information texts
+        $additionalObject = new Varien_Object(array('text' => $additional));
+        Mage::dispatchEvent('checkout_additional_information', array('additional' => $additionalObject));
+        $additional = $additionalObject->getText();
+
+        if (!$additional) {
             return false;
         }
 
-        $additional = Mage::getStoreConfig(self::XML_PATH_CHECKOUT_ADDITIONAL_INFORMATION);
-        $additional = trim($additional);
-
-        if ($additional) {
-            return $additional;
-        }
-
-        return false;
+        return $additional;
     }
 }
