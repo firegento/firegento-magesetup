@@ -261,6 +261,9 @@
             <options>
                 <additional_information><![CDATA[Zusätzlich können noch Kosten oder Steuern anfallen, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
             </options>
+            <cart>
+                <hide_shipping>0</hide_shipping>
+            </cart>
         </checkout>
         <customer>
             <address_templates>

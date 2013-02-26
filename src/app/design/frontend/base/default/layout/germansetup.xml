@@ -443,6 +443,14 @@
         </reference>
     </germansetup_frontend_agreements>
 
+    <checkout_cart_index>
+        <reference name="checkout.cart">
+            <action method="unsetChild" ifconfig="checkout/cart/hide_shipping">
+                <name>shipping</name>
+            </action>
+        </reference>
+    </checkout_cart_index>
+
     <checkout_onepage_index>
         <reference name="head">
             <action method="addCss">
