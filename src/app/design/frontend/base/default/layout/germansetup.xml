@@ -506,7 +506,7 @@
     <customer_logged_in>
         <reference name="right">
             <action method="unsetChild" ifconfig="sales/reorder/hide_sidebar_box">
-                <name>sale.reorder.sidebar</name>
+                <name>reorder</name>
             </action>
         </reference>
     </customer_logged_in>
