@@ -1,5 +1,9 @@
 
 
+#checkout-review-table tr.odd {
+    background-color: #EEEDED;
+}
+
 #checkout-review-table td.last {
     text-align: right;
 }
