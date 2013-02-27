@@ -509,5 +509,10 @@
                 <name>reorder</name>
             </action>
         </reference>
+        <reference name="left">
+            <action method="unsetChild" ifconfig="sales/reorder/hide_sidebar_box">
+                <name>reorder</name>
+            </action>
+        </reference>
     </customer_logged_in>
 </layout>
