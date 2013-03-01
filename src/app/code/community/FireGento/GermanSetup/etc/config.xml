@@ -259,8 +259,7 @@
         </general>
         <checkout>
             <options>
-                <additional_information>
-                    <![CDATA[Zusätzlich können noch Kosten oder Steuern anfallen, die nicht über uns abgeführt bzw. von uns in Rechnung gestellt werden.]]></additional_information>
+                <additional_information><![CDATA[Beim Versand ins Nicht-EU-Ausland können zusätzlich Zölle, Steuern und Gebühren entstehen.]]></additional_information>
             </options>
             <cart>
                 <hide_shipping>1</hide_shipping>
