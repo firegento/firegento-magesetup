@@ -1,7 +1,10 @@
+#checkout-review-table tfoot tr {
+    background-color: #FBFAF6 !important;
+}
 
-
-#checkout-review-table tr.odd {
-    background-color: #EEEDED;
+#checkout-review-table tr.odd,
+#checkout-review-table tr.even {
+    background-color: #FBFAF6;
 }
 
 #checkout-review-table td.last {
@@ -11,34 +14,38 @@
     font-weight: bold;
 }
 
+#checkout-review-submit {
+    background-color: #FBFAF6;
+}
+
 #opc-review .additional-information {
-	clear: both;
-	margin:0;
-	padding: 15px 10px;
-	border: 1px solid #d9dde3;
-	border-width: 0 1px 1px;
-	text-align: right;
+    clear: both;
+    margin:0;
+    padding: 15px 10px;
+    border: 1px solid #d9dde3;
+    border-width: 0 1px 1px;
+    text-align: right;
 }
 
 .checkout-multishipping-overview .additional-information {
-	margin: 0;
-	padding: 0 10px 25px;
-	text-align: right;
+    margin: 0;
+    padding: 0 10px 25px;
+    text-align: right;
 }
 
 .checkout-multishipping-overview .checkout-agreements {
-	margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .opc .checkout-agreements li,
 .checkout-multishipping-overview .checkout-agreements li {
-	margin: 10px 0;
+    margin: 10px 0;
 }
 
 .opc .checkout-agreements .agree,
 .checkout-multishipping-overview .checkout-agreements .agree {
-	padding-top: 0px;
-	padding-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 #review-buttons-container p.f-left {
