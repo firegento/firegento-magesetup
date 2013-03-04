@@ -10,6 +10,10 @@
 "Excl. %s Tax","Zzgl. %s MwSt."
 "excl. <a href=""%s"">Shipping Cost</a>","zzgl. <a href=""%s"">Versandkosten</a>"
 "incl. <a href=""%s"">Shipping Cost</a>","inkl. <a href=""%s"">Versandkosten</a>"
+"Display Product Weight below Price","Produktgewicht unterhalb der Preise darstellen"
+"Unit for Product Weight","Einheit für Produktgewicht"
+"e.g. g, kg, lb, ...","z.B. g, kg, lb, ..."
+"Shipping Weight %s","Versandgewicht %s"
 
 "German Setup has been installed.","German Setup wurde installiert."
 "Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Klicken Sie <a href=""%s"">hier</a>, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren."
