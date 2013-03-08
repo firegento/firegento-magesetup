@@ -25,7 +25,7 @@
 <config>
     <modules>
         <FireGento_GermanSetup>
-            <version>1.2.0</version>
+            <version>1.2.1</version>
         </FireGento_GermanSetup>
     </modules>
     <global>
@@ -245,6 +245,7 @@
                 <display_block_below_price>1</display_block_below_price>
                 <display_delivery_time_on_categories>1</display_delivery_time_on_categories>
                 <cms_page_shipping>lieferung</cms_page_shipping>
+                <weight_unit>kg</weight_unit>
             </price>
         </catalog>
         <general>
@@ -259,8 +260,7 @@
         </general>
         <checkout>
             <options>
-                <additional_information><![CDATA[Beim Versand ins Nicht-EU-Ausland können zusätzlich Zölle, Steuern und Gebühren entstehen.]]></additional_information>
-            </options>
+                <additional_information><![CDATA[Beim Versand ins Nicht-EU-Ausland können zusätzlich Zölle, Steuern und Gebühren entstehen.]]></additional_information></options>
             <cart>
                 <hide_shipping>1</hide_shipping>
             </cart>
