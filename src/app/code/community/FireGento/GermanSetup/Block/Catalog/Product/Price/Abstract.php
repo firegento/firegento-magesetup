@@ -44,6 +44,14 @@ if (
 
     }
 
+} elseif (Mage::getConfig()->getModuleConfig('Belvg_CallForPrice')->is('active', 'true')) {
+
+    abstract class FireGento_GermanSetup_Block_Catalog_Product_Price_Abstract
+        extends Belvg_CallForPrice_Block_Catalog_Product_Price
+    {
+
+    }
+
 } else {
 
     abstract class FireGento_GermanSetup_Block_Catalog_Product_Price_Abstract
