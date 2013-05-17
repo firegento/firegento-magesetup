@@ -29,33 +29,19 @@
  * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     1.2.1
  */
 
-/* @var $installer Mage_Eav_Model_Entity_Setup */
+/** @var $installer Mage_Catalog_Model_Resource_Eav_Mysql4_Setup */
 $installer = $this;
 $installer->startSetup();
 
-$installer->addAttribute(
+// Update attribute properties
+$installer->updateAttribute(
     'catalog_product',
-    'delivery_time',
-    array(
-        'label'                      => 'Lieferzeit',
-        'input'                      => 'text',
-        'required'                   => 0,
-        'user_defined'               => 1,
-        'default'                    => '2-3 Tage',
-        'group'                      => 'General',
-        'global'                     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-        'visible'                    => 1,
-        'filterable'                 => 0,
-        'searchable'                 => 0,
-        'comparable'                 => 1,
-        'visible_on_front'           => 1,
-        'visible_in_advanced_search' => 1,
-        'used_in_product_listing'    => 1,
-        'is_html_allowed_on_front'   => 1,
-    )
+    'weight',
+    'used_in_product_listing',
+    true
 );
 
 $installer->endSetup();

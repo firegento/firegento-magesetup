@@ -58,6 +58,9 @@
             <span class="tax-details"><?php echo $this->__('excl. <a href="%s">Shipping Cost</a>', $shippingCostUrl) ?></span>
         <?php endif ?>
     <?php endif ?>
+    <?php if ($this->getIsShowWeightInfo()): ?>
+        (<?php echo $this->__('Shipping Weight %s', $this->getFormattedWeight()) ?>)
+    <?php endif ?>
 <?php else: ?>
     <?php if( $this->getIsIncludingTax() == Mage_Tax_Model_Config::DISPLAY_TYPE_EXCLUDING_TAX ): ?>
 		<span class="tax-details"><?php echo $this->__( 'Excl. %s Tax', $this->getFormattedTaxRate() ) ?></span>
