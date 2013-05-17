@@ -253,6 +253,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </content_responsable_address>
+                        <content_responsable_press_law translate="label">
+                            <label>Responsible in the interests of the press law</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>139</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </content_responsable_press_law>
                         <register_number translate="label">
                             <label>Register number</label>
                             <frontend_type>text</frontend_type>

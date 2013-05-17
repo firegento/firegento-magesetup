@@ -42,6 +42,9 @@
 <?php if (strlen(trim($this->getContentResponsableAddress()))): ?>
 <?php echo $this->__('Responsible for content address') ?>: <?php echo $this->getContentResponsableAddress() ?><br />
 <?php endif ?>
+<?php if (strlen(trim($this->getContentResponsablePressLaw()))): ?>
+<?php echo $this->__('Responsible in the interests of the press law') ?>: <?php echo $this->getContentResponsablePressLaw() ?><br />
+<?php endif ?>
 <?php if (strlen(trim($this->getVatId()))): ?>
     <?php echo $this->__('VAT-ID') ?>: <?php echo $this->getVatId() ?><br />
 <?php endif ?>
