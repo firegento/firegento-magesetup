@@ -1,5 +1,6 @@
 "Display Block below Price","Block unterhalb der Preise darstellen"
 "Display tax info and shipping cost link below the price on all pages","Steuerinformationen und Link zur Versandkostenseite auf allen Seiten unterhalb der Preise darstellen"
+"Display Delivery time on Category Pages","Lieferzeit auf Produktübersichtsseiten anzeigen"
 "CMS Page for Shipping Info","CMS-Seite für Versandkosten"
 "Show ""incl. Shipping Cost"" instead of ""excl. Shipping Cost""","Zeige ""inkl. Versandkosten"" statt ""zzgl. Versandkosten"""
 "No Page","Keine Seite"
@@ -9,6 +10,10 @@
 "Excl. %s Tax","Zzgl. %s MwSt."
 "excl. <a href=""%s"">Shipping Cost</a>","zzgl. <a href=""%s"">Versandkosten</a>"
 "incl. <a href=""%s"">Shipping Cost</a>","inkl. <a href=""%s"">Versandkosten</a>"
+"Display Product Weight below Price","Produktgewicht unterhalb der Preise darstellen"
+"Unit for Product Weight","Einheit für Produktgewicht"
+"e.g. g, kg, lb, ...","z.B. g, kg, lb, ..."
+"Shipping Weight %s","Versandgewicht %s"
 
 "German Setup has been installed.","German Setup wurde installiert."
 "Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Klicken Sie <a href=""%s"">hier</a>, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren."
@@ -106,3 +111,10 @@
 "CMS Settings","CMS-Einstellungen"
 "Email Settings","Email-Einstellungen"
 "Tax Settings","Steuer-Einstellungen"
+
+"Delivery Time","Lieferzeit"
+"Shipping Costs","Versandkosten"
+"Hide estimated shipping costs in cart","Geschätzte Versandkosten im Warenkorb verstecken"
+"Replace with a link to the shipping costs cms page","Mit einem Link zur CMS-Seite ""Versandkosten"" ersetzen"
+"Here you find information regarding the shipping costs.","Hier finden Sie Informationen zu den Versandkosten."
+"Hide box ""Last Ordered Items""","Box ""Zuletzt bestellte Artikel"" verstecken"

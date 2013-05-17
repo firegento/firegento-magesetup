@@ -53,6 +53,8 @@ class FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price
             ->setFormattedTaxRate($this->getFormattedTaxRate())
             ->setIsIncludingTax($this->isIncludingTax())
             ->setIsShowShippingLink($this->isShowShippingLink())
+            ->setIsShowWeightInfo($this->getIsShowWeightInfo())
+            ->setFormattedWeight($this->getFormattedWeight())
             ->toHtml();
 
         return $html;
@@ -144,5 +146,25 @@ class FireGento_GermanSetup_Block_Bundle_Catalog_Product_Price
         }
 
         return 0;
+    }
+
+    /**
+     * Check if Shipping by Weight is active
+     *
+     * @return bool
+     */
+    public function getIsShowWeightInfo()
+    {
+        return Mage::getStoreConfigFlag('catalog/price/display_product_weight');
+    }
+
+    /**
+     * Get formatted weight incl. unit
+     *
+     * @return string
+     */
+    public function getFormattedWeight()
+    {
+        return floatval($this->getProduct()->getWeight()) . ' ' . Mage::getStoreConfig('catalog/price/weight_unit');
     }
 }

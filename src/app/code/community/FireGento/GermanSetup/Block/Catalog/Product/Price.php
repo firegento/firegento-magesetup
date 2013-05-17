@@ -62,8 +62,12 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price
                 ->setIsIncludingTax($this->isIncludingTax())
                 ->setIsIncludingShippingCosts($this->isIncludingShippingCosts())
                 ->setIsShowShippingLink($this->isShowShippingLink())
+                ->setIsShowWeightInfo($this->getIsShowWeightInfo())
+                ->setFormattedWeight($this->getFormattedWeight())
                 ->toHtml();
             $htmlObject->setHtml($htmlTemplate);
+
+            $this->_addDeliveryTimeHtml($htmlObject);
 
             Mage::dispatchEvent('germansetup_after_product_price',
                 array(
@@ -79,6 +83,27 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price
         }
 
         return $html;
+    }
+
+    /**
+     * Add delivery time on category pages only
+     *
+     * @param $htmlObject
+     */
+    protected function _addDeliveryTimeHtml($htmlObject)
+    {
+        if (!Mage::getStoreConfigFlag('catalog/price/display_delivery_time_on_categories')) {
+            return;
+        }
+
+        $pathInfo = Mage::app()->getRequest()->getPathInfo();
+        if (strpos($pathInfo, 'catalog/category/view') !== false
+            || strpos($pathInfo, 'catalogsearch/result') !== false) {
+            if ($this->getProduct()->getDeliveryTime()) {
+                $html = '<p class="delivery-time">' . $this->__('Delivery Time') . ': ' . $this->getProduct()->getDeliveryTime() . '</p>';
+                $htmlObject->setSuffix($html);
+            }
+        }
     }
 
     /**
@@ -185,5 +210,25 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price
         }
 
         return 0;
+    }
+
+    /**
+     * Check if Shipping by Weight is active
+     *
+     * @return bool
+     */
+    public function getIsShowWeightInfo()
+    {
+        return Mage::getStoreConfigFlag('catalog/price/display_product_weight');
+    }
+
+    /**
+     * Get formatted weight incl. unit
+     *
+     * @return string
+     */
+    public function getFormattedWeight()
+    {
+        return floatval($this->getProduct()->getWeight()) . ' ' . Mage::getStoreConfig('catalog/price/weight_unit');
     }
 }
