@@ -86,7 +86,7 @@ class FireGento_GermanSetup_Model_Setup extends Mage_Core_Model_Abstract
     protected function _getDefaultParams()
     {
         $productTaxClassTargets = array();
-        foreach(Mage::getSingleton('germansetup/source_tax_productTaxClass')->getAllOptions() as $option) {
+        foreach (Mage::getSingleton('germansetup/source_tax_productTaxClass')->getAllOptions() as $option) {
             $productTaxClassTargets[$option['value']] = 1;
         }
 

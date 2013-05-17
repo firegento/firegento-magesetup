@@ -54,7 +54,7 @@ class FireGento_GermanSetup_Model_Tax_Config extends Mage_Tax_Model_Config
         /* @var $session Mage_Checkout_Model_Session */
         $session = Mage::getSingleton('checkout/session');
 
-        if(Mage::app()->getStore()->getId() == Mage_Core_Model_App::ADMIN_STORE_ID && $adminhtmlSession->getQuote()) {
+        if (Mage::app()->getStore()->getId() == Mage_Core_Model_App::ADMIN_STORE_ID && $adminhtmlSession->getQuote()) {
             $quoteItems = $adminhtmlSession->getQuote()->getAllItems();
         } elseif ($session->hasQuote()) {
             $quoteItems = $session->getQuote()->getAllItems();

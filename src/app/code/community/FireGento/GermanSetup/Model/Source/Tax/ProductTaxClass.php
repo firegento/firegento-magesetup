@@ -37,7 +37,7 @@ class FireGento_GermanSetup_Model_Source_Tax_ProductTaxClass extends Mage_Tax_Mo
     {
         $options = parent::getAllOptions($withEmpty);
 
-        foreach($options as $optionKey => $option) {
+        foreach ($options as $optionKey => $option) {
 
             if (intval($option['value']) <= 0) {
                 continue;

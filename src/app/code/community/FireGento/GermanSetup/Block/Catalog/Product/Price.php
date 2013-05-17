@@ -100,7 +100,9 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price
         if (strpos($pathInfo, 'catalog/category/view') !== false
             || strpos($pathInfo, 'catalogsearch/result') !== false) {
             if ($this->getProduct()->getDeliveryTime()) {
-                $html = '<p class="delivery-time">' . $this->__('Delivery Time') . ': ' . $this->getProduct()->getDeliveryTime() . '</p>';
+                $html = '<p class="delivery-time">';
+                $html .= $this->__('Delivery Time') . ': ' . $this->getProduct()->getDeliveryTime();
+                $html .= '</p>';
                 $htmlObject->setSuffix($html);
             }
         }
