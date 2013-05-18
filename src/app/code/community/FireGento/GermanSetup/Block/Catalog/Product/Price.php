@@ -36,9 +36,12 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price
     extends FireGento_GermanSetup_Block_Catalog_Product_Price_Abstract
 {
     /**
-     * @var string Path to default tier price template
+     * @var array Path to common tier price template
      */
-    protected $_tierPriceDefaultTemplate  = 'catalog/product/view/tierprices.phtml';
+    protected $_tierPriceDefaultTemplates = array(
+        'catalog/product/view/tierprices.phtml',
+        'dermodpro/bcp/catalog/product/view/tierprices.phtml'
+    );
 
     /**
      * Add content of template block below price html if defined in config
@@ -53,7 +56,7 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price
             return $html;
         }
 
-        if ($this->getTemplate() != $this->_tierPriceDefaultTemplate) {
+        if (!in_array($this->getTemplate(), $this->_tierPriceDefaultTemplates)) {
             $htmlObject = new Varien_Object();
             $htmlObject->setParentHtml($html);
             $htmlTemplate = $this->getLayout()->createBlock('core/template')
