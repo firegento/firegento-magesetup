@@ -124,7 +124,8 @@ class FireGento_GermanSetup_Model_Observer
             $keywords = $this->_getCategoryKeywords($product);
             if (!empty($keywords)) {
                 if (mb_strlen($keywords) > 255) {
-                    $keywords = Mage::helper('core/string')->truncate($keywords, 255, '', '', false);
+                    $remainder = '';
+                    $keywords = Mage::helper('core/string')->truncate($keywords, 255, '', $remainder, false);
                 }
                 $product->setMetaKeyword($keywords);
             }
@@ -138,7 +139,8 @@ class FireGento_GermanSetup_Model_Observer
                 $description = $keywords;
             }
             if (mb_strlen($description) > 255) {
-                $description = Mage::helper('core/string')->truncate($description, 255, '...', '', false);
+                $remainder = '';
+                $description = Mage::helper('core/string')->truncate($description, 255, '...', $remainder, false);
             }
             $product->setMetaDescription($description);
         }
