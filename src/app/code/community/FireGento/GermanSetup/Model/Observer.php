@@ -227,13 +227,13 @@ class FireGento_GermanSetup_Model_Observer
     }
 
     /**
-     * Add "Required" Option to Checkout Agreements
+     * Add "Required" and "Visible on Custom Creation" Option to Checkout Agreements
      *
      * @param Varien_Event_Observer $observer Observer
      * @event adminhtml_block_html_before
      * @return FireGento_GermanSetup_Model_Observer
      */
-    public function addIsRequiredOnAgreements(Varien_Event_Observer $observer)
+    public function addOptionsForAgreements(Varien_Event_Observer $observer)
     {
         $block = $observer->getEvent()->getBlock();
         if ($block instanceof Mage_Adminhtml_Block_Checkout_Agreement_Edit_Form) {
@@ -251,6 +251,19 @@ class FireGento_GermanSetup_Model_Observer
                     '0' => Mage::helper('germansetup')->__('No'),
                 ),
             ));
+
+            $fieldset->addField('is_visible_on_registration', 'select', array(
+                'label' => Mage::helper('germansetup')->__('Use on Customer Creation'),
+                'title' => Mage::helper('germansetup')->__('Use on Customer Creation'),
+                'note' => Mage::helper('germansetup')->__('Require Confirmation on Customer Registration'),
+                'name' => 'is_visible_on_registration',
+                'required' => true,
+                'options' => array(
+                    '1' => Mage::helper('germansetup')->__('Yes'),
+                    '0' => Mage::helper('germansetup')->__('No'),
+                ),
+             ));
+
 
             Mage::dispatchEvent('germansetup_adminhtml_checkout_agreement_edit_form', array(
                 'form' => $form,
@@ -280,6 +293,34 @@ class FireGento_GermanSetup_Model_Observer
                 ->getQuote()
                 ->setTotalsCollectedFlag(false)
                 ->collectTotals();
+        }
+    }
+
+    /**
+     * Get required agreements on custom registration
+     *
+     * @return mixed
+     */
+    protected function _getCustomerCreateAgreements()
+    {
+        $ids = $this->_agreements = Mage::getModel('checkout/agreement')->getCollection()
+            ->addStoreFilter(Mage::app()->getStore()->getId())
+            ->addFieldToFilter('is_active', 1)
+            ->addFieldToFilter('is_visible_on_registration', 1) // Only get Required Elements
+            ->getAllIds();
+        return $ids;
+    }
+
+    public function customerCreatePreDispatch(Varien_Event_Observer $event)
+    {
+        $requiredAgreements = $this->_getCustomerCreateAgreements();
+        $controller = $event->getControllerAction();
+        $postedAgreements = array_keys($controller->getRequest()->getPost('agreement', array()));
+        if ($diff = array_diff($requiredAgreements, $postedAgreements)) {
+            $session = Mage::getSingleton('customer/session');
+            $session->addException(new Mage_Customer_Exception('Cannot create customer: agreements not confirmed'), Mage::helper('germansetup')->__('Agreements not confirmed.'));
+            $controller->getResponse()->setRedirect( Mage::getUrl('*/*/create', array('_secure' => true)) );
+            $controller->setFlag($controller->getRequest()->getActionName(), Mage_Core_Controller_Varien_Action::FLAG_NO_DISPATCH, true);
         }
     }
 }

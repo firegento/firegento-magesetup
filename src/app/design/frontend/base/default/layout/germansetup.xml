@@ -503,6 +503,14 @@
         </reference>
     </checkout_multishipping_overview>
 
+    <!-- Customer Terms and Condition Confirmation -->
+    <customer_account_create>
+        <reference name="form.additional.info">
+            <block type="germansetup/customer_account_agreements" name="customer.tc-confirmation"
+                   template="germansetup/customer/form/tc-confirmation.phtml"/>
+        </reference>
+    </customer_account_create>
+
     <customer_logged_in>
         <reference name="right">
             <action method="unsetChild" ifconfig="sales/reorder/hide_sidebar_box">
