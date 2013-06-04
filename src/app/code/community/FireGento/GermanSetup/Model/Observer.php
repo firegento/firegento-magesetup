@@ -252,16 +252,13 @@ class FireGento_GermanSetup_Model_Observer
                 ),
             ));
 
-            $fieldset->addField('is_visible_on_registration', 'select', array(
-                'label' => Mage::helper('germansetup')->__('Use on Customer Creation'),
-                'title' => Mage::helper('germansetup')->__('Use on Customer Creation'),
-                'note' => Mage::helper('germansetup')->__('Require Confirmation on Customer Registration'),
-                'name' => 'is_visible_on_registration',
+            $fieldset->addField('agreement_type', 'select', array(
+                'label' => Mage::helper('germansetup')->__('Display on'),
+                'title' => Mage::helper('germansetup')->__('Display on'),
+                'note' => Mage::helper('germansetup')->__('Require Confirmation on Customer Registration and/or Checkout'),
+                'name' => 'agreement_type',
                 'required' => true,
-                'options' => array(
-                    '1' => Mage::helper('germansetup')->__('Yes'),
-                    '0' => Mage::helper('germansetup')->__('No'),
-                ),
+                'options' => Mage::getSingleton('germansetup/source_agreementType')->getOptionArray(),
              ));
 
 
@@ -306,7 +303,10 @@ class FireGento_GermanSetup_Model_Observer
         $ids = $this->_agreements = Mage::getModel('checkout/agreement')->getCollection()
             ->addStoreFilter(Mage::app()->getStore()->getId())
             ->addFieldToFilter('is_active', 1)
-            ->addFieldToFilter('is_visible_on_registration', 1) // Only get Required Elements
+            ->addFieldToFilter('agreement_type', array('in' => array(
+                FireGento_GermanSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CUSTOMER,
+                FireGento_GermanSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
+            ))) // Only get Required Elements
             ->getAllIds();
         return $ids;
     }

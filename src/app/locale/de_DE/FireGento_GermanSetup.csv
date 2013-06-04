@@ -121,6 +121,9 @@
 "Hide box ""Last Ordered Items""","Box ""Zuletzt bestellte Artikel"" verstecken"
 "Tax Settings","Steuer-Einstellungen"
 
-"Use on Customer Creation","In Benutzerregistrierung verwenden"
-"Require Confirmation on Customer Registration","Bestätigung bei Benutzerregistrierung nötig"
+"Display on","Anzeigen in"
+"On checkout (Magento Default)","Im Checkout (Magento-Standard)"
+"On customer registration (or on checkout, if customer not registered before)","In der Kundenregistrierung (oder im Checkout, wenn der Kunde vorher nicht registriert ist)"
+"On customer registration and on checkout","In der Kundenregistrierung und im Checkout"
+"Nowhere","Nirgendwo"
 "Agreements not confirmed.","Bedingungen wurden nicht bestätigt."

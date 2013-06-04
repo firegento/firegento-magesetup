@@ -40,20 +40,20 @@ if (version_compare(Mage::getVersion(), '1.6', '<')) {
 
     $installer->run("
         ALTER TABLE `{$installer->getTable('checkout/agreement')}`
-        ADD `is_visible_on_registration` SMALLINT( 5 ) NOT NULL DEFAULT '0' COMMENT 'Agreement is required on customer registration'
+        ADD `agreement_type` SMALLINT( 5 ) NOT NULL DEFAULT '0' COMMENT 'Agreement Type'
     ");
 
 } else {
 
     $installer->getConnection()->addColumn(
             $installer->getTable('checkout/agreement'),
-            'is_visible_on_registration',
+            'agreement_type',
             array(
                 'type'      => Varien_Db_Ddl_Table::TYPE_SMALLINT,
                 'unsigned'  => true,
                 'nullable'  => false,
                 'default'   => '0',
-                'comment'   => 'Agreement is required on customer registration'
+                'comment'   => 'Agreement Type'
             )
         );
 }

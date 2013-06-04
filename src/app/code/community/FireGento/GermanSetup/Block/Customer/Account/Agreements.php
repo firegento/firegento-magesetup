@@ -21,29 +21,32 @@
  * @since     0.1.0
  */
 /**
- * Block to enable ip anonymization for german tracking.
+ * Block to display agreements on customer registration.
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     1.2.2
  */
 
 class FireGento_GermanSetup_Block_Customer_Account_Agreements extends Mage_Checkout_Block_Agreements
 {
 
     /**
-     * Filter by "Visible on registration"
+     * Filter by "Agreement Type"
      *
      * @return mixed
      */
     public function getAgreements()
     {
         $agreements = parent::getAgreements();
-        $agreements->addFieldToFilter('is_visible_on_registration', 1);
+        $agreements->addFieldToFilter('agreement_type', array('in' => array(
+            FireGento_GermanSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CUSTOMER,
+            FireGento_GermanSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
+        )));
         return $agreements;
     }
 
