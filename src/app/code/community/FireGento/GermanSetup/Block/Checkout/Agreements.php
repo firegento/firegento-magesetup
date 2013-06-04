@@ -65,5 +65,4 @@ class FireGento_GermanSetup_Block_Checkout_Agreements extends Mage_Checkout_Bloc
     {
         return Mage::getSingleton('customer/session');
     }
-
 }
