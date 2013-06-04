@@ -236,4 +236,18 @@ class FireGento_GermanSetup_Block_Catalog_Product_Price
     {
         return floatval($this->getProduct()->getWeight()) . ' ' . Mage::getStoreConfig('catalog/price/weight_unit');
     }
+
+    /**
+     * Translate block sentence
+     *
+     * @return string
+     */
+    public function __()
+    {
+        $args = func_get_args();
+        $expr = new Mage_Core_Model_Translate_Expr(array_shift($args), 'Mage_Catalog');
+        array_unshift($args, $expr);
+
+        return Mage::app()->getTranslator()->translate($args);
+    }
 }
