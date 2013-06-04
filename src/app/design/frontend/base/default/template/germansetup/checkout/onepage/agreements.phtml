@@ -33,14 +33,12 @@
  */
 
 /**
- * @var $this Mage_Checkout_Block_Agreements
+ * @var $this FireGento_GermanSetup_Block_Checkout_Agreements
  */
 
-$agreements = $this->getAgreements()
-    ->addFieldToFilter('agreement_type', array('in' => array(
-        FireGento_GermanSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CHECKOUT,
-        FireGento_GermanSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
-    )));
+/** @var $helper FireGento_GermanSetup_Helper_Data */
+$helper = Mage::helper('germansetup');
+$agreements = $this->getAgreements();
 ?>
 
 <?php if (!$agreements) return; ?>
