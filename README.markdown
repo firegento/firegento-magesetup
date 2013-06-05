@@ -27,7 +27,7 @@ GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden M
 * Steuereinstellungen und Steuerklassen für die ganze EU
 * Direkte Zuweisung der neuen Steuerklassen zu allen Produkten (konfigurierbar)
 * Integration deutscher E-Mail-Vorlagen
-* Aktivierung von Bestellbedingungen
+* Aktivierung von Bestellbedingungen inkl. Möglichkeit, einzelne Bedingungen bei der Kundenregistrierung abzufragen und zu entscheiden, ob sie Pflichtfelder sein sollen
 * Erstellung von Standard-CMS-Seiten
 * Erweiterte Preisdarstellung mit MwSt. und Versandkosten – per Template anpassbar
 * Automatische Generierung von Meta-Daten bei Produkten
