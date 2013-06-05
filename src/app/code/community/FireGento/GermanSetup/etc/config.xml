@@ -100,15 +100,6 @@
                     </germansetup_observer>
                 </observers>
             </newsletter_subscriber_save_after>
-            <controller_action_predispatch_customer_account_createpost>
-                <observers>
-                    <germansetup_observer>
-                        <class>germansetup/observer</class>
-                        <type>model</type>
-                        <method>customerCreatePreDispatch</method>
-                    </germansetup_observer>
-                </observers>
-            </controller_action_predispatch_customer_account_createpost>
         </events>
     </global>
     <frontend>
@@ -150,6 +141,15 @@
                     </recalculate_dynamic_shipping_tax>
                 </observers>
             </checkout_cart_update_items_after>
+            <controller_action_predispatch_customer_account_createpost>
+                <observers>
+                    <germansetup_observer>
+                        <class>germansetup/observer</class>
+                        <type>model</type>
+                        <method>customerCreatePreDispatch</method>
+                    </germansetup_observer>
+                </observers>
+            </controller_action_predispatch_customer_account_createpost>
         </events>
         <routers>
             <germansetup>
