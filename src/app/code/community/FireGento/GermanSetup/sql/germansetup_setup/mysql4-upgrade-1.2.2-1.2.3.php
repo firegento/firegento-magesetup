@@ -17,10 +17,11 @@
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
  * @since     0.1.0
  */
 /**
- * Setup script; Adds the is_required field for the checkout agreements
+ * Setup script; Adds the meta_autogenerate attribute for products
  *
  * @category  FireGento
  * @package   FireGento_GermanSetup
@@ -28,33 +29,34 @@
  * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     1.2.2
+ * @since     1.2.3
  */
 
 /** @var $installer Mage_Catalog_Model_Resource_Eav_Mysql4_Setup */
 $installer = $this;
 $installer->startSetup();
 
-if (version_compare(Mage::getVersion(), '1.6', '<')) {
-
-    $installer->run("
-        ALTER TABLE `{$installer->getTable('checkout/agreement')}`
-        ADD `agreement_type` SMALLINT( 5 ) NOT NULL DEFAULT '0' COMMENT 'Agreement Type'
-    ");
-
-} else {
-
-    $installer->getConnection()->addColumn(
-            $installer->getTable('checkout/agreement'),
-            'agreement_type',
-            array(
-                'type'      => Varien_Db_Ddl_Table::TYPE_SMALLINT,
-                'unsigned'  => true,
-                'nullable'  => false,
-                'default'   => '0',
-                'comment'   => 'Agreement Type'
-            )
-        );
-}
+$installer->addAttribute(
+    'catalog_product',
+    'meta_autogenerate',
+    array(
+        'label' => 'Auto-Generate Meta-Information',
+        'input' => 'select',
+        'source' => 'eav/entity_attribute_source_boolean',
+        'required' => false,
+        'user_defined' => true,
+        'default' => '0',
+        'group' => 'Meta Information',
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible' => true,
+        'filterable' => false,
+        'searchable' => false,
+        'comparable' => false,
+        'visible_on_front' => false,
+        'visible_in_advanced_search' => false,
+        'used_in_product_listing' => false,
+        'is_html_allowed_on_front' => false,
+    )
+);
 
 $installer->endSetup();

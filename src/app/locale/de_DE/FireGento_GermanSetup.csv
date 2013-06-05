@@ -119,3 +119,11 @@
 "Replace with a link to the shipping costs cms page","Mit einem Link zur CMS-Seite ""Versandkosten"" ersetzen"
 "Here you find information regarding the shipping costs.","Hier finden Sie Informationen zu den Versandkosten."
 "Hide box ""Last Ordered Items""","Box ""Zuletzt bestellte Artikel"" verstecken"
+"Tax Settings","Steuer-Einstellungen"
+
+"Display on","Anzeigen in"
+"On checkout (Magento Default)","Im Checkout (Magento-Standard)"
+"On customer registration (or on checkout, if customer not registered before)","In der Kundenregistrierung (oder im Checkout, wenn der Kunde vorher nicht registriert ist)"
+"On customer registration and on checkout","In der Kundenregistrierung und im Checkout"
+"Nowhere","Nirgendwo"
+"Agreements not confirmed.","Bedingungen wurden nicht bestätigt."
