@@ -460,20 +460,14 @@
     </checkout_onepage_index>
 
     <checkout_onepage_review>
-        <reference name="checkout.onepage.agreements">
-            <action method="setTemplate">
-                <template>germansetup/checkout/onepage/agreements.phtml</template>
-            </action>
-        </reference>
         <reference name="root">
             <action method="unsetChild">
                 <alias>agreements</alias>
             </action>
         </reference>
         <reference name="checkout.onepage.review.info.items.before">
-            <action method="insert">
-                <blockName>checkout.onepage.agreements</blockName>
-            </action>
+            <block type="germansetup/checkout_agreements" name="germansetup.checkout.agreements" as="agreements"
+                   template="germansetup/checkout/onepage/agreements.phtml"/>
         </reference>
         <reference name="checkout.onepage.review.info.items.after">
             <block type="germansetup/checkout_information" name="checkout.onepage.additional" as="additional"
@@ -502,6 +496,14 @@
                    template="germansetup/checkout/additional.phtml"/>
         </reference>
     </checkout_multishipping_overview>
+
+    <!-- Customer Terms and Condition Confirmation -->
+    <customer_account_create>
+        <reference name="form.additional.info">
+            <block type="germansetup/customer_account_agreements" name="customer.tc-confirmation"
+                   template="germansetup/customer/form/tc-confirmation.phtml"/>
+        </reference>
+    </customer_account_create>
 
     <customer_logged_in>
         <reference name="right">

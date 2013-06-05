@@ -1,0 +1,55 @@
+<?php
+/**
+ * This file is part of the FIREGENTO project.
+ *
+ * FireGento_GermanSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_GermanSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.1.0
+ */
+/**
+ * Checkout Agreements
+ *
+ * @category  FireGento
+ * @package   FireGento_GermanSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.1.0
+ */
+
+/**
+ * @var $this Mage_Checkout_Block_Agreements
+ */
+
+/* @var $helper FireGento_GermanSetup_Helper_Data */
+$helper = $this->helper('germansetup');
+?>
+
+<?php if (!$this->getAgreements()) return; ?>
+
+<?php foreach ($this->getAgreements() as $_a): ?>
+<li class="control">
+    <p class="agree">
+        <?php if( $_a->getIsRequired() ): ?>
+            <input type="checkbox" id="agreement-<?php echo $_a->getId()?>" name="agreement[<?php echo $_a->getId()?>]" value="1" title="<?php echo $this->htmlEscape( $_a->getCheckboxText() ) ?>" class="checkbox required-entry"/>
+        <?php endif; ?>
+        <label <?php if( $_a->getIsRequired() ): ?>for="agreement-<?php echo $_a->getId()?>"<?php endif; ?> style="float:none;"><?php echo $_a->getIsHtml() ? $_a->getCheckboxText() : $this->htmlEscape( $_a->getCheckboxText() ) ?></label>
+        <a href="<?php echo $helper->getAgreementUrl( $_a ) ?>" onclick="window.open(this.href, '', 'width=600,height=600,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes').focus(); return false;"><?php echo $this->__( '[Show]' ) ?></a>
+    </p>
+</li>
+<?php endforeach ?>
