@@ -37,12 +37,12 @@
  */
 
 /* @var $helper FireGento_GermanSetup_Helper_Data */
-$helper = $this->helper( 'germansetup' );
+$helper = $this->helper('germansetup');
 ?>
 
-<?php if( !$this->getAgreements() ) return; ?>
+<?php if (!$this->getAgreements()) return; ?>
 
-<?php foreach( $this->getAgreements() as $_a ): ?>
+<?php foreach ($this->getAgreements() as $_a): ?>
 <li class="control">
     <p class="agree">
         <?php if( $_a->getIsRequired() ): ?>

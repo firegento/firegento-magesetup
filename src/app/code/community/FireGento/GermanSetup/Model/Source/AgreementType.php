@@ -73,7 +73,7 @@ class FireGento_GermanSetup_Model_Source_AgreementType
     public function getOptionArray()
     {
         $options = array();
-        foreach($this->toOptionArray() as $option) {
+        foreach ($this->toOptionArray() as $option) {
             $options[$option['value']] = $option['label'];
         }
         return $options;
