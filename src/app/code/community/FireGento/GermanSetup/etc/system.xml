@@ -278,10 +278,40 @@
                             <show_in_store>1</show_in_store>
                             <hide_in_invoice_pdf>1</hide_in_invoice_pdf>
                         </business_rules>
+                        <authority translate="label,comment">
+                            <label>Authority (ECG)</label>
+                            <comment>relevant for Austrian shops</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <hide_in_invoice_pdf>1</hide_in_invoice_pdf>
+                        </authority>
+                        <shareholdings translate="label,comment">
+                            <label>Shareholdings</label>
+                            <comment>relevant for Austrian shops</comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <hide_in_invoice_pdf>1</hide_in_invoice_pdf>
+                        </shareholdings>
+                        <editorial_concept translate="label,comment">
+                            <label>Editorial Concept</label>
+                            <comment>relevant for Austrian shops</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <hide_in_invoice_pdf>1</hide_in_invoice_pdf>
+                        </editorial_concept>
                         <bank_account_owner translate="label">
                             <label>Account owner</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>145</sort_order>
+                            <sort_order>245</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -289,7 +319,7 @@
                         <bank_account translate="label">
                             <label>Account</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>150</sort_order>
+                            <sort_order>250</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -297,7 +327,7 @@
                         <bank_code_number translate="label">
                             <label>Bank number</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>160</sort_order>
+                            <sort_order>260</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -305,15 +335,15 @@
                         <bank_name translate="label">
                             <label>Bank name</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>170</sort_order>
+                            <sort_order>270</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </bank_name>
                         <swift translate="label">
-                            <label>SWIFT</label>
+                            <label>BIC/SWIFT</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>180</sort_order>
+                            <sort_order>280</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -321,7 +351,7 @@
                         <iban translate="label">
                             <label>IBAN</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>190</sort_order>
+                            <sort_order>290</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>

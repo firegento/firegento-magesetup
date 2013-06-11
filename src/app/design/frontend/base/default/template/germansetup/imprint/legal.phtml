@@ -55,5 +55,14 @@
     <?php echo $this->__('Register number') ?>: <?php echo $this->getRegisterNumber() ?><br />
 <?php endif ?>
 <?php if (strlen(trim($this->getBusinessRules()))): ?>
-    <?php echo $this->__('Reference for business rules') ?>: <?php echo $this->getBusinessRules() ?>
+    <?php echo $this->__('Reference for business rules') ?>: <?php echo $this->getBusinessRules() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getAuthority()))): ?>
+    <?php echo $this->__('Authority (ECG)') ?>: <?php echo $this->getAuthority() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getShareholdings()))): ?>
+    <?php echo $this->__('Shareholdings') ?>: <?php echo nl2br($this->getShareholdings()) ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getEditorialConcept()))): ?>
+    <?php echo $this->__('Editorial Concept') ?>: <?php echo $this->getEditorialConcept() ?><br />
 <?php endif ?>
