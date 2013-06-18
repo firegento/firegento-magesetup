@@ -105,6 +105,7 @@
     <frontend>
         <secure_url>
             <contacts>/contacts/</contacts>
+            <review>/review/</review>
         </secure_url>
         <layout>
             <updates>
