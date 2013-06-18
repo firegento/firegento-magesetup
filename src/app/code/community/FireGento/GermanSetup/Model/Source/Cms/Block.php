@@ -26,7 +26,7 @@
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
@@ -47,11 +47,15 @@ class FireGento_GermanSetup_Model_Source_Cms_Block
     public function toOptionArray()
     {
         if (!$this->_options) {
+            /** @var $blocks Mage_Cms_Model_Resource_Block_Collection */
             $blocks = Mage::getModel('cms/block')->getCollection()
                 ->addFieldToFilter('is_active', 1)
                 ->setOrder('identifier', 'ASC');
 
+            $options = array();
+
             foreach ($blocks as $block) {
+                /** @var $block Mage_Cms_Model_Block */
                 $options[$block->getIdentifier()] = $block->getIdentifier();
             }
 
