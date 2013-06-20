@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_GermanSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.4.0
@@ -24,6 +24,7 @@
 <?php
 /**
  * @see FireGento_GermanSetup_Block_Adminhtml_Germansetup
+ * @var $this FireGento_GermanSetup_Block_Adminhtml_Germansetup
  */
 ?>
 
@@ -52,9 +53,9 @@
                             <td class="label"><label for="select_country"><?php echo $this->__('Shipping from') ?></label></td>
                             <td class="value" style="width:160px !important;">
                                 <select name="country" id="select_country" style="width:150px !important;">
-                                    <option value="de" selected="selected"><?php echo $this->__('Germany')?></option>
-                                    <option value="at"><?php echo $this->__('Austria')?></option>
-                                    <option value="ch"><?php echo $this->__('Switzerland')?></option>
+                                    <option value="de"<?php if (Mage::getStoreConfig('germansetup/default_country') == 'de'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Germany')?></option>
+                                    <option value="at"<?php if (Mage::getStoreConfig('germansetup/default_country') == 'at'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Austria')?></option>
+                                    <option value="ch"<?php if (Mage::getStoreConfig('germansetup/default_country') == 'ch'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Switzerland')?></option>
                                 </select>
                             </td>
                             <td class="value">
