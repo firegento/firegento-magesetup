@@ -1,0 +1,4 @@
+firegento-magesetup
+===================
+
+MageSetup
