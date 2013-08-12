@@ -98,12 +98,12 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
      * Get template content
      *
      * @param string $filename template file name
-     *
      * @return string
      */
     public function getTemplateContent($filename)
     {
-        return @file_get_contents(Mage::getBaseDir() . DS . $filename);
+        /** @todo replace 'de_DE' with dynamic value */
+        return @file_get_contents(Mage::getBaseDir('locale') . DS . 'de_DE' . DS . 'template' . DS . $filename);
     }
 
     /**

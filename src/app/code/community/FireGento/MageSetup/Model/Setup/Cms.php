@@ -109,11 +109,13 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             'page_id' => $page->getId(),
             'title' => $pageData['title'],
             'identifier' => $pageData['identifier'],
-            'content' => $this->getTemplateContent($pageData['text']),
+            'content' => $this->getTemplateContent($pageData['filename']),
             'root_template' => $pageData['root_template'],
             'stores' => $page->getStoreId() ? $page->getStoreId() : array('0'),
             'is_active' => 1,
         );
+
+        Mage::log($pageData);
 
         if (!(int) $page->getId() || $override) {
             $page->setData($pageData)->save();
@@ -131,7 +133,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     protected function _createCmsBlock($blockData, $override=true)
     {
         $block = Mage::getModel('cms/block')->load($blockData['identifier']);
-        $blockData['content'] = $this->getTemplateContent($blockData['text']);
+        $blockData['content'] = $this->getTemplateContent($blockData['filename']);
         if (!$block->getId() || $override) {
             $blockData['stores'] = array('0');
             $blockData['is_active'] = '1';

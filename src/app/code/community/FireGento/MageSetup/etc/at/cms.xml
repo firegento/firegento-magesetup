@@ -29,7 +29,7 @@
                 <default>
                     <magesetup_404>
                         <execute>1</execute>
-                        <title>Page not found</title>
+                        <title>Seite nicht gefunden</title>
                         <identifier>no-route</identifier>
                         <root_template>one_column</root_template>
                         <filename>magesetup/page/404.html</filename>
@@ -37,7 +37,7 @@
 
                     <magesetup_imprint>
                         <execute>1</execute>
-                        <title>Imprint</title>
+                        <title>Impressum</title>
                         <identifier>imprint</identifier>
                         <root_template>one_column</root_template>
                         <filename>magesetup/page/imprint.html</filename>
@@ -45,7 +45,7 @@
 
                     <magesetup_payment>
                         <execute>1</execute>
-                        <title>Payment Methods</title>
+                        <title>Zahlungsarten</title>
                         <identifier>payment</identifier>
                         <root_template>one_column</root_template>
                         <filename>magesetup/page/payment.html</filename>
@@ -53,7 +53,7 @@
 
                     <magesetup_privacy>
                         <execute>1</execute>
-                        <title>Privacy</title>
+                        <title>Datenschutz</title>
                         <identifier>privacy</identifier>
                         <root_template>one_column</root_template>
                         <filename>magesetup/page/privacy.html</filename>
@@ -61,7 +61,7 @@
 
                     <magesetup_shipping>
                         <execute>1</execute>
-                        <title>Shipping</title>
+                        <title>Lieferung</title>
                         <identifier>shipping</identifier>
                         <root_template>one_column</root_template>
                         <filename>magesetup/page/shipping.html</filename>
@@ -69,15 +69,15 @@
 
                     <magesetup_order>
                         <execute>1</execute>
-                        <title>Order</title>
+                        <title>Bestellvorgang</title>
                         <identifier>order_process</identifier>
                         <root_template>one_column</root_template>
-                        <filename>magesetup/page/order.html</filename>
+                        <filename>magesetup/page/order_process.html</filename>
                     </magesetup_order>
 
                     <magesetup_business_terms>
                         <execute>1</execute>
-                        <title>Business Terms</title>
+                        <title>AGB</title>
                         <identifier>business_terms</identifier>
                         <root_template>one_column</root_template>
                         <filename>magesetup/page/business_terms.html</filename>
@@ -85,7 +85,7 @@
 
                     <magesetup_revocation>
                         <execute>1</execute>
-                        <title>Revocation</title>
+                        <title>Widerrufsbelehrung</title>
                         <identifier>revocation</identifier>
                         <root_template>one_column</root_template>
                         <filename>magesetup/page/revocation.html</filename>
@@ -97,14 +97,14 @@
                 <default>
                     <gs_business_terms>
                         <execute>1</execute>
-                        <title>Business Terms</title>
+                        <title>AGB</title>
                         <identifier>gs_business_terms</identifier>
                         <filename>magesetup/block/business_terms.html</filename>
                     </gs_business_terms>
 
                     <gs_revocation>
                         <execute>1</execute>
-                        <title>Revocation</title>
+                        <title>Widerrufsbelehrung</title>
                         <identifier>gs_revocation</identifier>
                         <filename>magesetup/block/revocation.html</filename>
                     </gs_revocation>
@@ -120,31 +120,31 @@
             <footer_links>
                 <default>
                     <business_terms>
-                        <title>Business Terms</title>
+                        <title>AGB</title>
                         <target>business_terms</target>
                     </business_terms>
                     <revocation>
-                        <title>Revocation</title>
+                        <title>Widerruf</title>
                         <target>revocation</target>
                     </revocation>
                     <shipping>
-                        <title>Shipping</title>
+                        <title>Lieferung</title>
                         <target>shipping</target>
                     </shipping>
                     <payment>
-                        <title>Payment Methods</title>
+                        <title>Zahlungsarten</title>
                         <target>payment</target>
                     </payment>
                     <privacy>
-                        <title>Privacy</title>
+                        <title>Datenschutz</title>
                         <target>privacy</target>
                     </privacy>
                     <order>
-                        <title>Order Process</title>
+                        <title>Bestellvorgang</title>
                         <target>order</target>
                     </order>
                     <imprint>
-                        <title>Imprint</title>
+                        <title>Impressum</title>
                         <target>imprint</target>
                     </imprint>
                 </default>

@@ -27,57 +27,56 @@
         <magesetup>
             <tax_calculation_rules>
                 <default>
-                    <!-- Customers -->
                     <products_full_tax>
                         <execute>1</execute>
                         <tax_calculation_rule_id>3</tax_calculation_rule_id>
-                        <code>End Customers buy Products with full Tax</code>
+                        <code>Endkunden kaufen vollbesteuerte Artikel</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_full_tax>
                     <products_reduced_tax>
                         <execute>1</execute>
                         <tax_calculation_rule_id>4</tax_calculation_rule_id>
-                        <code>End Customers buy Products with reduced Tax</code>
+                        <code>Endkunden kaufen ermäßigtbesteuerte Artikel</code>
                         <priority>2</priority>
                         <position>0</position>
                     </products_reduced_tax>
 
-                    <!-- Companies -->
+                    <!-- Firmen -->
                     <products_full_tax_companies>
                         <execute>1</execute>
                         <tax_calculation_rule_id>6</tax_calculation_rule_id>
-                        <code>Taxable Companies buy Products with full Tax</code>
+                        <code>USt.-pflichtige Firmen kaufen vollbesteuerte Artikel</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_full_tax_companies>
                     <products_reduced_tax_companies>
                         <execute>1</execute>
                         <tax_calculation_rule_id>8</tax_calculation_rule_id>
-                        <code>Taxable Companies buy Products with reduced Tax</code>
+                        <code>USt.-pflichtige Firmen kaufen ermäßigtbesteuerte Artikel</code>
                         <priority>2</priority>
                         <position>0</position>
                     </products_reduced_tax_companies>
                     <products_companies_vat>
                         <execute>1</execute>
                         <tax_calculation_rule_id>10</tax_calculation_rule_id>
-                        <code>Non-taxable Companies buy Products with full and reduced Tax</code>
+                        <code>USt.-befreite Firmen kaufen voll- und ermäßigtbesteuerte Artikel</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_companies_vat>
 
-                    <!-- Shipping -->
+                    <!-- Versand -->
                     <shipping_full_tax>
                         <execute>1</execute>
                         <tax_calculation_rule_id>5</tax_calculation_rule_id>
-                        <code>Shipping with full Tax</code>
+                        <code>vollbesteuerter Versand</code>
                         <priority>3</priority>
                         <position>0</position>
                     </shipping_full_tax>
                     <shipping_reduced_tax>
                         <execute>1</execute>
                         <tax_calculation_rule_id>7</tax_calculation_rule_id>
-                        <code>Shipping with reduced Tax</code>
+                        <code>ermäßigtbesteuerter Versand</code>
                         <priority>3</priority>
                         <position>0</position>
                     </shipping_reduced_tax>
@@ -90,47 +89,47 @@
                     <products_full_tax>
                         <execute>1</execute>
                         <class_id>1</class_id>
-                        <class_name>Products with full Tax</class_name>
+                        <class_name>Vollbesteuerte Artikel</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>1</default>
                     </products_full_tax>
                     <products_reduced_tax>
                         <execute>1</execute>
                         <class_id>2</class_id>
-                        <class_name>Products with reduced Tax</class_name>
+                        <class_name>Ermäßigtbesteuerte Artikel</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </products_reduced_tax>
                     <customer_customers>
                         <execute>1</execute>
                         <class_id>3</class_id>
-                        <class_name>End Customers</class_name>
+                        <class_name>Endkunden</class_name>
                         <class_type>CUSTOMER</class_type>
                     </customer_customers>
                     <shipping_full_tax>
                         <execute>1</execute>
                         <class_id>4</class_id>
-                        <class_name>Shipping with full Tax</class_name>
+                        <class_name>Vollbesteuerter Versand</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping_full_tax>
                     <shipping_reduced_tax>
                         <execute>1</execute>
                         <class_id>7</class_id>
-                        <class_name>Shipping with reduced Tax</class_name>
+                        <class_name>Ermäßigtbesteuerter Versand</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping_reduced_tax>
                     <customer_companies>
                         <execute>1</execute>
                         <class_id>5</class_id>
-                        <class_name>Taxable Companies</class_name>
+                        <class_name>USt.-pflichtige Unternehmen</class_name>
                         <class_type>CUSTOMER</class_type>
                     </customer_companies>
                     <customer_companies_vat>
                         <execute>1</execute>
                         <class_id>6</class_id>
-                        <class_name>Non-Taxable Companies</class_name>
+                        <class_name>USt.-befreite Unternehmen</class_name>
                         <class_type>CUSTOMER</class_type>
                     </customer_companies_vat>
                 </default>
@@ -146,7 +145,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>DE full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_DE_full>
 
@@ -157,7 +156,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>DE reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_DE_reduced>
 
@@ -168,7 +167,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>DE zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_DE_zero>
 
@@ -179,7 +178,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>BE full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_BE_full>
 
@@ -190,7 +189,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>BE reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_BE_reduced>
 
@@ -201,7 +200,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>BE zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_BE_zero>
 
@@ -212,7 +211,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>BG full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_BG_full>
 
@@ -223,7 +222,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>BG reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_BG_reduced>
 
@@ -234,7 +233,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>BG zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_BG_zero>
 
@@ -245,7 +244,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>DK full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_DK_full>
 
@@ -256,7 +255,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>DK reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_DK_reduced>
 
@@ -267,7 +266,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>DK zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_DK_zero>
 
@@ -278,7 +277,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>EE full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_EE_full>
 
@@ -289,7 +288,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>EE reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_EE_reduced>
 
@@ -300,7 +299,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>EE zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_EE_zero>
 
@@ -311,7 +310,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>FI full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_FI_full>
 
@@ -322,7 +321,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>FI reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_FI_reduced>
 
@@ -333,7 +332,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>FI zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_FI_zero>
 
@@ -344,7 +343,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>FR full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_FR_full>
 
@@ -355,7 +354,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>FR reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_FR_reduced>
 
@@ -366,7 +365,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>FR zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_FR_zero>
 
@@ -377,7 +376,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>GR full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_GR_full>
 
@@ -388,7 +387,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>GR reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_GR_reduced>
 
@@ -399,7 +398,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>GR zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_GR_zero>
 
@@ -410,7 +409,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>IE full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_IE_full>
 
@@ -421,7 +420,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>IE reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_IE_reduced>
 
@@ -432,7 +431,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>IE zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_IE_zero>
 
@@ -443,7 +442,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>IT full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_IT_full>
 
@@ -454,7 +453,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>IT reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_IT_reduced>
 
@@ -465,7 +464,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>IT zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_IT_zero>
 
@@ -476,7 +475,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LV full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_LV_full>
 
@@ -487,7 +486,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LV reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_LV_reduced>
 
@@ -498,7 +497,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LV zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_LV_zero>
 
@@ -509,7 +508,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LT full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_LT_full>
 
@@ -520,7 +519,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LT reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_LT_reduced>
 
@@ -531,7 +530,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LT zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_LT_zero>
 
@@ -542,7 +541,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LU full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_LU_full>
 
@@ -553,7 +552,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LU reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_LU_reduced>
 
@@ -564,7 +563,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LU zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_LU_zero>
 
@@ -575,7 +574,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>MT full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_MT_full>
 
@@ -586,7 +585,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>MT reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_MT_reduced>
 
@@ -597,7 +596,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>MT zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_MT_zero>
 
@@ -608,7 +607,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>NL full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_NL_full>
 
@@ -619,7 +618,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>NL reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_NL_reduced>
 
@@ -630,7 +629,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>NL zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_NL_zero>
 
@@ -641,7 +640,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>AT full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_AT_full>
 
@@ -652,7 +651,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>AT reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_AT_reduced>
 
@@ -663,7 +662,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>AT zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_AT_zero>
 
@@ -674,7 +673,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>PL full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_PL_full>
 
@@ -685,7 +684,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>PL reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_PL_reduced>
 
@@ -696,7 +695,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>PL zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_PL_zero>
 
@@ -707,7 +706,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>PT full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_PT_full>
 
@@ -718,7 +717,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>PT reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_PT_reduced>
 
@@ -729,7 +728,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>PT zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_PT_zero>
 
@@ -740,7 +739,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>RO full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_RO_full>
 
@@ -751,7 +750,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>RO reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_RO_reduced>
 
@@ -762,7 +761,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>RO zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_RO_zero>
 
@@ -773,7 +772,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SE full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_SE_full>
 
@@ -784,7 +783,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SE reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_SE_reduced>
 
@@ -795,7 +794,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SE zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_SE_zero>
 
@@ -806,7 +805,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SK full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_SK_full>
 
@@ -817,7 +816,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SK reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_SK_reduced>
 
@@ -828,7 +827,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SK zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_SK_zero>
 
@@ -839,7 +838,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SI full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_SI_full>
 
@@ -850,7 +849,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SI reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_SI_reduced>
 
@@ -861,7 +860,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SI zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_SI_zero>
 
@@ -872,7 +871,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>ES full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_ES_full>
 
@@ -883,7 +882,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>ES reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_ES_reduced>
 
@@ -894,7 +893,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>ES zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_ES_zero>
 
@@ -905,7 +904,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>CZ full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_CZ_full>
 
@@ -916,7 +915,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>CZ reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_CZ_reduced>
 
@@ -927,7 +926,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>CZ zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_CZ_zero>
 
@@ -938,7 +937,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>HU full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_HU_full>
 
@@ -949,7 +948,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>HU reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_HU_reduced>
 
@@ -960,7 +959,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>HU zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_HU_zero>
 
@@ -971,7 +970,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>GB full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_GB_full>
 
@@ -982,7 +981,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>GB reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_GB_reduced>
 
@@ -993,7 +992,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>GB zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_GB_zero>
 
@@ -1004,7 +1003,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>CY full</code>
-                        <label>VAT</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_CY_full>
 
@@ -1015,7 +1014,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>CY reduced</code>
-                        <label>reduced VAT</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_CY_reduced>
 
@@ -1026,7 +1025,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>CY zero</code>
-                        <label>without VAT</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_CY_zero>
                 </default>
@@ -3658,7 +3657,7 @@
                     <shipping__origin__country_id>DE</shipping__origin__country_id>
                     <shipping__origin__region_id>79</shipping__origin__region_id>
                     <shipping__origin__postcode>12345</shipping__origin__postcode>
-                    <shipping__origin__city>Sample City</shipping__origin__city>
+                    <shipping__origin__city>Musterstadt</shipping__origin__city>
                 </default>
             </tax_config>
         </magesetup>
