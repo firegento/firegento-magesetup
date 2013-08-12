@@ -89,6 +89,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
         $this->_addConfigFile('cms.xml', $mergeConfig);
         $this->_addConfigFile('email.xml', $mergeConfig);
         $this->_addConfigFile('systemconfig.xml', $mergeConfig);
+        $this->_addConfigFile('agreement.xml', $mergeConfig);
         $this->_addConfigFile('tax.xml', $mergeConfig);
 
         $this->setXml($config->getNode());

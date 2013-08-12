@@ -40,35 +40,58 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
      */
     public function setup()
     {
-        // Build and create agreements
-        $agreements = array(
-            array(
-                'name' => 'AGB',
-                'content' => '{{block type="cms/block" block_id="gs_business_terms"}}',
-                'checkbox_text'
-                    => 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und stimme diesen ausdrücklich zu.',
-                'is_active' => '1',
-                'is_html' => '1',
-                'stores' => array('0')
-            ),
-            array(
-                'name' => 'Widerrufsbelehrung',
-                'content' => '{{block type="cms/block" block_id="gs_revocation"}}',
-                'checkbox_text' => 'Ich habe die Widerrufsbelehrung gelesen.',
-                'is_active' => '1',
-                'is_html' => '1',
-                'stores' => array('0')
-            )
-        );
-        foreach ($agreements as $agreement) {
-            $model = Mage::getModel('checkout/agreement');
-            $model = $this->_loadExistingModel($model, 'name', $agreement['name']);
-            $model->addData($agreement);
-            $model->save();
+        foreach ($this->_getConfigAgreements() as $name => $data) {
+            if ($data['execute'] == 1) {
+                $this->_createAgreement($data, false);
+            }
         }
 
         // Set config value to true
         $setup = Mage::getModel('eav/entity_setup', 'core_setup');
         $setup->setConfigData('checkout/options/enable_agreements', '1');
+    }
+
+    /**
+     * Collect data and create Agreement
+     *
+     * @param array   $agreementData cms page data
+     * @param boolean $override override cms page if it exists
+     *
+     * @return void
+     */
+    protected function _createAgreement($agreementData, $override=true)
+    {
+        if (!is_array($agreementData)) {
+            return null;
+        }
+
+        $model = Mage::getModel('checkout/agreement');
+        $agreement = $this->_loadExistingModel($model, 'name', $agreementData['name']);
+
+        $agreementData = array(
+            'name' => $agreementData['name'],
+            'content' => $this->getTemplateContent($agreementData['filename']),
+            'checkbox_text' => $agreementData['checkbox_text'],
+            'is_active' => $agreementData['is_active'],
+            'is_html' => $agreementData['is_html'],
+            'is_required' => $agreementData['is_required'],
+            'agreement_type' => $agreementData['agreement_type'],
+            'stores' => array('0'),
+        );
+
+        if (!(int) $agreement->getId() || $override) {
+            $agreement->setData($agreementData)->save();
+        }
+    }
+
+
+    /**
+     * Get pages/default from config file
+     *
+     * @return array
+     */
+    protected function _getConfigAgreements()
+    {
+        return $this->_getConfigNode('agreements', 'default');
     }
 }
