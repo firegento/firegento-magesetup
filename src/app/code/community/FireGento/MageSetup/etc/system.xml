@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the FIREGENTO project.
+ *
+ * FireGento_MageSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_MageSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.1.0
+ */
+ -->
+<config>
+    <sections>
+        <catalog>
+            <groups>
+                <price>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <display_block_below_price translate="label,comment" module="magesetup">
+                            <label>Display Block below Price</label>
+                            <comment>Display tax info and shipping cost link below the price on all pages</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </display_block_below_price>
+                        <display_delivery_time_on_categories translate="label,comment" module="magesetup">
+                            <label>Display Delivery time on Category Pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </display_delivery_time_on_categories>
+                        <cms_page_shipping translate="label" module="magesetup">
+                            <label>CMS Page for Shipping Info</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>magesetup/source_cms_page</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cms_page_shipping>
+                        <including_shipping_costs translate="label" module="magesetup">
+                            <label>Show "incl. Shipping Cost" instead of "excl. Shipping Cost"</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </including_shipping_costs>
+                        <display_product_weight translate="label,comment" module="magesetup">
+                            <label>Display Product Weight below Price</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </display_product_weight>
+                        <weight_unit translate="label,comment" module="magesetup">
+                            <label>Unit for Product Weight</label>
+                            <comment>e.g. g, kg, lb, ...</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </weight_unit>
+                    </fields>
+                </price>
+            </groups>
+        </catalog>
+        <general>
+            <groups>
+                <imprint translate="label" module="magesetup">
+                    <label>Imprint</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>900</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <shop_name translate="label">
+                            <label>Shop Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </shop_name>
+                        <company_first translate="label">
+                            <label>Company 1</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </company_first>
+                        <company_second translate="label">
+                            <label>Company 2</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </company_second>
+                        <street translate="label">
+                            <label>Street</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </street>
+                        <zip translate="label">
+                            <label>Zip</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </zip>
+                        <city translate="label">
+                            <label>City</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </city>
+                        <country translate="label">
+                            <label>Country</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </country>
+                        <telephone translate="label">
+                            <label>Telephone</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </telephone>
+                        <fax translate="label">
+                            <label>Fax</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </fax>
+                        <email translate="label">
+                            <label>E-Mail</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>75</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email>
+                        <web translate="label">
+                            <label>Website</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </web>
+                        <tax_number translate="label">
+                            <label>Tax number</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tax_number>
+                        <vat_id translate="label">
+                            <label>VAT-ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </vat_id>
+                        <court translate="label">
+                            <label>Register court</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </court>
+                        <financial_office translate="label">
+                            <label>Financial office</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </financial_office>
+                        <ceo translate="label">
+                            <label>CEO</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ceo>
+                        <owner translate="label">
+                            <label>Owner</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>135</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </owner>
+                        <content_responsable_name translate="label">
+                            <label>Responsible for content</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>137</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </content_responsable_name>
+                        <content_responsable_address translate="label">
+                            <label>Responsible for content address</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>138</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </content_responsable_address>
+                        <content_responsable_press_law translate="label">
+                            <label>Responsible in the interests of the press law</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>139</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </content_responsable_press_law>
+                        <register_number translate="label">
+                            <label>Register number</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </register_number>
+                        <business_rules translate="label">
+                            <label>Reference for business rules (physician, physician...)</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>142</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <hide_in_invoice_pdf>1</hide_in_invoice_pdf>
+                        </business_rules>
+                        <authority translate="label,comment">
+                            <label>Authority (ECG)</label>
+                            <comment>relevant for Austrian shops</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <hide_in_invoice_pdf>1</hide_in_invoice_pdf>
+                        </authority>
+                        <shareholdings translate="label,comment">
+                            <label>Shareholdings</label>
+                            <comment>relevant for Austrian shops</comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <hide_in_invoice_pdf>1</hide_in_invoice_pdf>
+                        </shareholdings>
+                        <editorial_concept translate="label,comment">
+                            <label>Editorial Concept</label>
+                            <comment>relevant for Austrian shops</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <hide_in_invoice_pdf>1</hide_in_invoice_pdf>
+                        </editorial_concept>
+                        <bank_account_owner translate="label">
+                            <label>Account owner</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>245</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bank_account_owner>
+                        <bank_account translate="label">
+                            <label>Account</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>250</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bank_account>
+                        <bank_code_number translate="label">
+                            <label>Bank number</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>260</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bank_code_number>
+                        <bank_name translate="label">
+                            <label>Bank name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>270</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bank_name>
+                        <swift translate="label">
+                            <label>BIC/SWIFT</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>280</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </swift>
+                        <iban translate="label">
+                            <label>IBAN</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>290</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </iban>
+                    </fields>
+                </imprint>
+            </groups>
+        </general>
+        <checkout>
+            <groups>
+                <options>
+                    <fields>
+                        <display_additional_information translate="label,comment" module="magesetup">
+                            <label>Display Additional Information</label>
+                            <comment>Display content from text field below at the checkout confirm page directly above
+                                the checkout button
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </display_additional_information>
+                        <additional_information translate="label">
+                            <label>Additional Information</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>505</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <display_additional_information>1</display_additional_information>
+                            </depends>
+                        </additional_information>
+                    </fields>
+                </options>
+                <cart>
+                    <fields>
+                        <hide_shipping translate="label,comment" module="magesetup">
+                            <label>Hide estimated shipping costs in cart</label>
+                            <comment>Replace with a link to the shipping costs cms page</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hide_shipping>
+                    </fields>
+                </cart>
+            </groups>
+        </checkout>
+        <sales>
+            <groups>
+                <reorder>
+                    <fields>
+                        <hide_sidebar_box translate="label" module="magesetup">
+                            <label>Hide box "Last Ordered Items"</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hide_sidebar_box>
+                    </fields>
+                </reorder>
+            </groups>
+        </sales>
+        <google>
+            <groups>
+                <analytics>
+                    <fields>
+                        <ip_anonymization translate="label, comment">
+                            <label>Ip anonymization</label>
+                            <comment>Ensures that the ip address of the customers doesnt get involved into the
+                                tracking
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ip_anonymization>
+                    </fields>
+                </analytics>
+            </groups>
+        </google>
+        <tax>
+            <groups>
+                <classes>
+                    <fields>
+                        <shipping_tax_on_product_tax translate="label,comment" module="magesetup">
+                            <label>Dynamic Shipping Tax Class Calculation</label>
+                            <comment>
+                                <![CDATA[Set to "yes" if you want to calculate the shipping tax rate based on the highest product tax rate or according to the tax rate of products that make up the biggest amount in cart.<br /><b>ATTENTION:</b> This setting overwrites the "Tax Class for Shipping" setting above!]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>magesetup/source_tax_dynamicType</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </shipping_tax_on_product_tax>
+                    </fields>
+                </classes>
+            </groups>
+        </tax>
+    </sections>
+</config>

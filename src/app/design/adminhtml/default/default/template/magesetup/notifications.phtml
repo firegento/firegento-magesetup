@@ -1,0 +1,7 @@
+<?php /** @var $this FireGento_MageSetup_Block_Adminhtml_Notifications */ ?>
+<?php if (!$this->isInitialized()): ?>
+<div class="notification-global">
+    <strong><?php echo $this->helper('magesetup')->__('MageSetup has been installed.') ?></strong>
+    <?php echo $this->helper('magesetup')->__('Click <a href="%s">here</a> to set up your pages, blocks, emails and tax settings.', $this->getManageUrl()) ?>
+</div>
+<?php endif ?>

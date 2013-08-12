@@ -1,0 +1,68 @@
+<?php
+/**
+ * This file is part of the FIREGENTO project.
+ *
+ * FireGento_MageSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_MageSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2012 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.1.0
+ */
+?>
+<?php
+/**
+ * @var $this FireGento_MageSetup_Block_Imprint_Content
+ * @see FireGento_MageSetup_Block_Imprint_Content
+ */
+?>
+<?php if (strlen(trim($this->getCeo()))): ?>
+    <?php echo $this->__('CEO') ?>: <?php echo $this->getCeo() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getOwner()))): ?>
+<?php echo $this->__('Owner') ?>: <?php echo $this->getOwner() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getContentResponsableName())) || strlen(trim($this->getContentResponsableAddress()))): ?>
+    <p><?php echo $this->__('Responsible according to § 5 TMG'); ?>:</p>
+<?php endif;?>
+<?php if (strlen(trim($this->getContentResponsableName()))): ?>
+<?php echo $this->__('Responsible for content') ?>: <?php echo $this->getContentResponsableName() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getContentResponsableAddress()))): ?>
+<?php echo $this->__('Responsible for content address') ?>: <?php echo $this->getContentResponsableAddress() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getContentResponsablePressLaw()))): ?>
+<?php echo $this->__('Responsible in the interests of the press law') ?>: <?php echo $this->getContentResponsablePressLaw() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getVatId()))): ?>
+    <?php echo $this->__('VAT-ID') ?>: <?php echo $this->getVatId() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getCourt()))): ?>
+    <?php echo $this->__('Register court') ?>: <?php echo $this->getCourt() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getRegisterNumber()))): ?>
+    <?php echo $this->__('Register number') ?>: <?php echo $this->getRegisterNumber() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getBusinessRules()))): ?>
+    <?php echo $this->__('Reference for business rules') ?>: <?php echo $this->getBusinessRules() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getAuthority()))): ?>
+    <?php echo $this->__('Authority (ECG)') ?>: <?php echo $this->getAuthority() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getShareholdings()))): ?>
+    <?php echo $this->__('Shareholdings') ?>: <?php echo nl2br($this->getShareholdings()) ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getEditorialConcept()))): ?>
+    <?php echo $this->__('Editorial Concept') ?>: <?php echo $this->getEditorialConcept() ?><br />
+<?php endif ?>

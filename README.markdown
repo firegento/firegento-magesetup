@@ -1,26 +1,26 @@
-FireGento_GermanSetup
+FireGento_MageSetup
 =====================
-German Setup konfiguriert einen Shop für den deutschen Markt.
+MageSetup konfiguriert einen Shop für den deutschen Markt.
 
 Branches
 --------
 * master => entspicht einem aktuellen Stand des Moduls
-* development => Enthält neue Features für GermanSetup
+* development => Enthält neue Features für MageSetup
 
-Ausschließlich die Tags unter https://github.com/firegento/firegento-germansetup/tags entsprechen den jeweils veröffentlichten Versionen auf MagentoConnect. 
+Ausschließlich die Tags unter https://github.com/firegento/firegento-magesetup/tags entsprechen den jeweils veröffentlichten Versionen auf MagentoConnect.
 
 Fakten
 ------
-- Version: check [config.xml](https://github.com/firegento/firegento-germansetup/blob/master/src/app/code/community/FireGento/GermanSetup/etc/config.xml)
-- extension key: FireGento_GermanSetup
-- [Extension auf GitHub](https://github.com/firegento/firegento-germansetup/)
+- Version: check [config.xml](https://github.com/firegento/firegento-magesetup/blob/master/src/app/code/community/FireGento/MageSetup/etc/config.xml)
+- extension key: FireGento_MageSetup
+- [Extension auf GitHub](https://github.com/firegento/firegento-magesetup/)
 - [Extension auf Magento Connect](http://www.magentocommerce.com/magento-connect/german-setup-6623.html)
-- Magento Connect 1.0 extension key: magento-community/FireGento_GermanSetup
-- Magento Connect 2.0 extension key: http://connect20.magentocommerce.com/community/FireGento_GermanSetup
+- Magento Connect 1.0 extension key: magento-community/FireGento_MageSetup
+- Magento Connect 2.0 extension key: http://connect20.magentocommerce.com/community/FireGento_MageSetup
 
 Beschreibung
 ------------
-GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen wie "Market Ready Germany" oder "German Shop". Zentrale Features des Moduls GermanSetup dabei sind:
+MageSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen wie "Market Ready Germany" oder "German Shop". Zentrale Features des Moduls MageSetup dabei sind:
 
 * Button-Lösung
 * Setzen wichtiger Konfigurationseinstellungen
@@ -45,17 +45,17 @@ Installations-Anleitung
 -----------------------
 Nachdem Sie die Extension über Magento Connect installiert haben oder manuell hochgeladen haben, sollten Sie sich aus dem Magento Backend aus- und wieder einloggen. Sie sollten dann unterhalb des Backend Hauptmenüs folgenden Hinweis sehen:
 
-German Setup wurde installiert. Klicken Sie hier, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren.
+MageSetup wurde installiert. Klicken Sie hier, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren.
 
-Auf der nächsten Seite können Sie die gewünschten Einstellungen wählen und dann rechts oben den "German Setup ausführen" Button klicken, um das gewünschte Setup auszuführen.
+Auf der nächsten Seite können Sie die gewünschten Einstellungen wählen und dann rechts oben den "MageSetup ausführen" Button klicken, um das gewünschte Setup auszuführen.
 
 Support
 -------
-Sollten Sie einen Fehler feststellen oder eine Funktionalität vermissen, erstellen Sie bitte ein Ticket auf [GitHub](https://github.com/firegento/firegento-germansetup/issues).
+Sollten Sie einen Fehler feststellen oder eine Funktionalität vermissen, erstellen Sie bitte ein Ticket auf [GitHub](https://github.com/firegento/firegento-magesetup/issues).
 
 Mitwirkung
 ----------
-Jede Mitwirkung für die Weiterentwicklung von GermanSetup ist herzlich willkommen. Die beste Möglichkeit um Code beizusteuern ist das Öffnen eines [Pull Requests auf GitHub](https://help.github.com/articles/using-pull-requests).
+Jede Mitwirkung für die Weiterentwicklung von MageSetup ist herzlich willkommen. Die beste Möglichkeit um Code beizusteuern ist das Öffnen eines [Pull Requests auf GitHub](https://help.github.com/articles/using-pull-requests).
 
 Developer
 ---------
@@ -74,5 +74,5 @@ Copyright
 Erläuternde Blogeinträge
 ------------------------
 * http://www.avs-webentwicklung.de/nc/blog/artikel/magento-german-setup-die-alternative-zu-market-ready-germany-ua.html
-* http://www.mageblog.de/2012/02/15/neues-modul-germansetup-als-mrg-ersatz/
-* http://www.webguys.de/magento/germansetup/
+* http://www.mageblog.de/2012/02/15/neues-modul-magesetup-als-mrg-ersatz/
+* http://www.webguys.de/magento/magesetup/

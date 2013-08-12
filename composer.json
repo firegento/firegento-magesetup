@@ -1,9 +1,9 @@
 {
-   "name": "firegento/germansetup",
+   "name": "firegento/magesetup",
    "license": ["GPL-3.0"],
    "type": "magento-module",
-   "description": "GermanSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen.",
-   "homepage": "https://github.com/firegento/firegento-germansetup",
+   "description": "MageSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen.",
+   "homepage": "https://github.com/firegento/firegento-magesetup",
    "require": {
       "magento-hackathon/magento-composer-installer": "*"
    }

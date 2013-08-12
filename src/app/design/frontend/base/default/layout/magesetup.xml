@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <!--
+	Adding custom product price block
+	-->
+    <catalog_category_default>
+        <reference name="product_list">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_view>
+        <reference name="product_list">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </catalog_category_view>
+
+    <catalog_category_layered>
+        <reference name="product_list">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </catalog_category_layered>
+
+    <catalog_product_compare_index>
+        <reference name="catalog.compare.list">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </catalog_product_compare_index>
+
+    <catalogsearch_result_index>
+        <reference name="search_result_list">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </catalogsearch_result_index>
+
+    <catalogsearch_advanced_result>
+        <reference name="search_result_list">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </catalogsearch_advanced_result>
+
+    <tag_product_list>
+        <reference name="search_result_list">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </tag_product_list>
+
+    <tag_customer_view>
+        <reference name="customer_view">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </tag_customer_view>
+
+    <default>
+        <reference name="wishlist_sidebar">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+        <reference name="catalog_product_price_template">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </default>
+
+    <catalog_product_view>
+        <reference name="catalog.product.related">
+            <action method="addPriceBlockType">
+                <type>simple</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>virtual</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>grouped</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>downloadable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>configurable</type>
+                <block>magesetup/catalog_product_price</block>
+                <template>catalog/product/price.phtml</template>
+            </action>
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </catalog_product_view>
+
+    <reference name="product.clone_prices">
+        <action method="addPriceBlockType">
+            <type>bundle</type>
+            <block>magesetup/bundle_catalog_product_price</block>
+            <template>bundle/catalog/product/view/price.phtml</template>
+        </action>
+    </reference>
+
+    <PRODUCT_TYPE_simple>
+        <reference name="product.info.simple.extra">
+            <block type="catalog/product_view_type_simple" name="magesetup.deliverytime"
+                   template="magesetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_simple>
+
+    <PRODUCT_TYPE_configurable>
+        <reference name="product.info.configurable.extra">
+            <block type="catalog/product_view_type_configurable" name="magesetup.deliverytime"
+                   template="magesetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_configurable>
+
+    <PRODUCT_TYPE_grouped>
+        <reference name="product.info.grouped.extra">
+            <block type="catalog/product_view_type_grouped" name="magesetup.deliverytime"
+                   template="magesetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_grouped>
+
+    <PRODUCT_TYPE_virtual>
+        <reference name="product.info.virtual.extra">
+            <block type="catalog/product_view_type_virtual" name="magesetup.deliverytime"
+                   template="magesetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_virtual>
+
+    <PRODUCT_TYPE_downloadable>
+        <reference name="product.info.downloadable.extra">
+            <block type="downloadable/catalog_product_view_type" name="magesetup.deliverytime"
+                   template="magesetup/delivery_time.phtml"/>
+        </reference>
+    </PRODUCT_TYPE_downloadable>
+
+    <!--
+    Changes for Button Loesung
+    -->
+    <magesetup_frontend_agreements>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="core/text" name="agreement"/>
+        </reference>
+    </magesetup_frontend_agreements>
+
+    <checkout_cart_index>
+        <reference name="checkout.cart.shipping">
+            <action method="setTemplate" ifconfig="checkout/cart/hide_shipping">
+                <template>magesetup/shipping.phtml</template>
+            </action>
+        </reference>
+    </checkout_cart_index>
+
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/magesetup/checkout.css</stylesheet>
+            </action>
+        </reference>
+    </checkout_onepage_index>
+
+    <checkout_onepage_review>
+        <reference name="root">
+            <action method="unsetChild">
+                <alias>agreements</alias>
+            </action>
+        </reference>
+        <reference name="checkout.onepage.review.info.items.before">
+            <block type="magesetup/checkout_agreements" name="magesetup.checkout.agreements" as="agreements"
+                   template="magesetup/checkout/onepage/agreements.phtml"/>
+        </reference>
+        <reference name="checkout.onepage.review.info.items.after">
+            <block type="magesetup/checkout_information" name="checkout.onepage.additional" as="additional"
+                   template="magesetup/checkout/additional.phtml"/>
+        </reference>
+    </checkout_onepage_review>
+
+    <checkout_multishipping_overview>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/magesetup/checkout.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="checkout_overview">
+            <action method="setTemplate">
+                <name>magesetup/checkout/multishipping/overview.phtml</name>
+            </action>
+            <action method="unsetChild">
+                <name>agreements</name>
+            </action>
+            <block type="checkout/agreements" name="checkout.multishipping.agreements" as="agreements"
+                   template="magesetup/checkout/multishipping/agreements.phtml"/>
+        </reference>
+        <reference name="checkout.multishipping.overview.items.after">
+            <block type="magesetup/checkout_information" name="checkout.multishipping.additional" as="additional"
+                   template="magesetup/checkout/additional.phtml"/>
+        </reference>
+    </checkout_multishipping_overview>
+
+    <!-- Customer Terms and Condition Confirmation -->
+    <customer_account_create>
+        <reference name="form.additional.info">
+            <block type="magesetup/customer_account_agreements" name="customer.tc-confirmation"
+                   template="magesetup/customer/form/tc-confirmation.phtml"/>
+        </reference>
+    </customer_account_create>
+
+    <customer_logged_in>
+        <reference name="right">
+            <action method="unsetChild" ifconfig="sales/reorder/hide_sidebar_box">
+                <name>reorder</name>
+            </action>
+        </reference>
+        <reference name="left">
+            <action method="unsetChild" ifconfig="sales/reorder/hide_sidebar_box">
+                <name>reorder</name>
+            </action>
+        </reference>
+    </customer_logged_in>
+</layout>

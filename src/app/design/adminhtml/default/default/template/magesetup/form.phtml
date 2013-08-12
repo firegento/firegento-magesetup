@@ -1,0 +1,204 @@
+<?php
+/**
+ * This file is part of the FIREGENTO project.
+ *
+ * FireGento_MageSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_MageSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.4.0
+ */
+?>
+<?php
+/**
+ * @see FireGento_MageSetup_Block_Adminhtml_Magesetup
+ * @var $this FireGento_MageSetup_Block_Adminhtml_Magesetup
+ */
+?>
+
+<div class="content-header">
+    <h3><?php echo $this->__('MageSetup') ?></h3>
+    <p class="form-buttons">
+        <?php echo $this->getButtonHtml($this->__('Run MageSetup'), 'setupForm.submit();', 'save'); ?>
+    </p>
+</div>
+
+<p><?php echo $this->__('Please choose the requested setups:') ?></p>
+
+<div class="entry-edit">
+    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="setup_form">
+        <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Configuration Settings') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields7">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                        <tr>
+                            <td class="label"><label for="select_country"><?php echo $this->__('Shipping from') ?></label></td>
+                            <td class="value" style="width:160px !important;">
+                                <select name="country" id="select_country" style="width:150px !important;">
+                                    <option value="de"<?php if (Mage::getStoreConfig('magesetup/default_country') == 'de'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Germany')?></option>
+                                    <option value="at"<?php if (Mage::getStoreConfig('magesetup/default_country') == 'at'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Austria')?></option>
+                                    <option value="ch"<?php if (Mage::getStoreConfig('magesetup/default_country') == 'ch'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Switzerland')?></option>
+                                </select>
+                            </td>
+                            <td class="value">
+                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
+                                <?php echo $this->__('This setting is base for the tax rate setup!') ?>
+                            </td>
+                        </tr>
+                        <tr><td colspan="3">&nbsp;</td></tr>
+                        <tr>
+                            <td class="label"><label for="checkbox_systemconfig"><?php echo $this->__('Update System Config Settings') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="systemconfig" id="checkbox_systemconfig" value="1" checked="checked" />
+                            </td>
+                            <td class="value">
+                                <?php echo $this->__('i.e. newsletter confirmation, account confirmation, ..') ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('CMS Settings') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields8">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                        <tr>
+                            <td class="label"><label for="checkbox_cms"><?php echo $this->__('Create CMS Pages and Blocks') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="cms" id="checkbox_cms" value="1" checked="checked" />
+                            </td>
+                            <td class="value">
+                                <?php echo $this->__('i.e. shipping, conditions, revocation') ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="checkbox_agreements"><?php echo $this->__('Create Checkout Agreements') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="agreements" id="checkbox_agreements" value="1" checked="checked" />
+                            </td>
+                            <td class="value">
+                                <?php echo $this->__('Conditions') ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Email Settings') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields9">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                        <tr>
+                            <td class="label"><label for="checkbox_email"><?php echo $this->__('Create Email Templates') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="email" id="checkbox_email" value="1" checked="checked" />
+                            </td>
+                            <td class="value"><?php echo $this->__('Create Transational Email Templates to be managed in the Magento admin area') ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="select_email_locale">&nbsp;</label></td>
+                            <td class="value">
+                                <select name="email_locale" id="select_email_locale">
+                                    <?php foreach($this->getLocaleOptions() as $_option): ?>
+                                        <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                            <td class="value">
+                                <?php echo $this->__('Language Package for Email-Templates') ?><br />
+                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
+                                <?php echo $this->__('If your desired locale is missing, please check if it installed.') ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Tax Settings') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields10">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                        <tr>
+                            <td class="label"><label for="checkbox_tax"><?php echo $this->__('Configure Tax') ?></label></td>
+                            <td class="value">
+                                <input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
+                            </td>
+                            <td class="value">
+                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
+                                <?php echo $this->__('All tax settings will be overwritten!') ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label><?php echo $this->__('Update Product Tax Classes') ?></label></td>
+                            <td class="value"></td>
+                            <td class="value">
+                                <table cellspacing="5" class="">
+                                    <tbody>
+                                        <?php foreach($this->getProductTaxClasses() as $taxClass): ?>
+                                        <tr>
+                                            <td><?php echo $this->__('Old') ?>: </td>
+                                            <td><strong><?php echo $taxClass['label'] ?></strong></td>
+                                            <td><?php echo $this->__('New') ?>: </td>
+                                            <td>
+                                                <select name="product_tax_class_target[<?php echo $taxClass['value'] ?>]">
+                                                    <?php foreach($this->getNewProductTaxClasses() as $taxClass): ?>
+                                                        <option
+                                                            value="<?php echo $taxClass['value'] ?>"
+                                                            <?php if ($this->getDefaultProductTaxClass() == $taxClass['value']): ?>selected="selected"<?php endif ?>
+                                                        >
+                                                        <?php echo $taxClass['label'] ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <?php endforeach ?>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    setupForm = new varienForm('setup_form', '');
+</script>
