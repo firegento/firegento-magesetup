@@ -98,7 +98,8 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
                 }
 
                 if ($this->getRequest()->getParam('agreements') == 1) {
-                    Mage::getSingleton('magesetup/setup_agreements')->setup();
+                    $cmsLocale = $this->getRequest()->getParam('cms_locale');
+                    Mage::getSingleton('magesetup/setup_agreements')->setup($cmsLocale);
                     $this->_getSession()->addSuccess(
                         $this->__('MageSetup: Checkout Agreements have been created.')
                     );

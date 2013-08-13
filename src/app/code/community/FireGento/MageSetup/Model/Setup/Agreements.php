@@ -36,13 +36,14 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
     /**
      * Setup Checkout Agreements
      *
+     * @param array $locale
      * @return void
      */
-    public function setup()
+    public function setup($locale = array('default' => 'de_DE'))
     {
         foreach ($this->_getConfigAgreements() as $name => $data) {
             if ($data['execute'] == 1) {
-                $this->_createAgreement($data, false);
+                $this->_createAgreement($data, $locale['default'], false);
             }
         }
 
@@ -55,11 +56,12 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
      * Collect data and create Agreement
      *
      * @param array   $agreementData cms page data
+     * @param string  $locale
      * @param boolean $override override cms page if it exists
      *
      * @return void
      */
-    protected function _createAgreement($agreementData, $override=true)
+    protected function _createAgreement($agreementData, $locale, $override=true)
     {
         if (!is_array($agreementData)) {
             return null;
@@ -67,10 +69,10 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
 
         $model = Mage::getModel('checkout/agreement');
         $agreement = $this->_loadExistingModel($model, 'name', $agreementData['name']);
-
+        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $agreementData['filename'];
         $agreementData = array(
             'name' => $agreementData['name'],
-            'content' => $this->getTemplateContent($agreementData['filename']),
+            'content' => $this->getTemplateContent($filename),
             'checkbox_text' => $agreementData['checkbox_text'],
             'is_active' => $agreementData['is_active'],
             'is_html' => $agreementData['is_html'],
