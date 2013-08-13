@@ -33,6 +33,7 @@
                         <checkbox_text>I have read the Business Terms and agree with them.</checkbox_text>
                         <is_active>1</is_active>
                         <is_html>1</is_html>
+                        <is_required>1</is_required>
                         <agreement_type>0</agreement_type>
                         <filename>magesetup/agreement/business_terms.html</filename>
                     </business_terms>
@@ -43,6 +44,7 @@
                         <checkbox_text>I have read the Right of Revocation</checkbox_text>
                         <is_active>1</is_active>
                         <is_html>1</is_html>
+                        <is_required>1</is_required>
                         <agreement_type>0</agreement_type>
                         <filename>magesetup/agreement/revocation.html</filename>
                     </revocation>

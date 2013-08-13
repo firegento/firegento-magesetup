@@ -69,11 +69,16 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     /**
      * @param string $configPath
      * @param string $value
+     * @param int|null $storeId
      */
-    public function setConfigData($configPath, $value)
+    public function setConfigData($configPath, $value, $storeId = null)
     {
         $setup = $this->_getSetup();
-        $setup->setConfigData($configPath, $value);
+        if (is_null($storeId)) {
+            $setup->setConfigData($configPath, $value);
+        } else {
+            $setup->setConfigData($configPath, $value, 'stores', $storeId);
+        }
     }
 
     /**
@@ -102,8 +107,7 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
      */
     public function getTemplateContent($filename)
     {
-        /** @todo replace 'de_DE' with dynamic value */
-        return @file_get_contents(Mage::getBaseDir('locale') . DS . 'de_DE' . DS . 'template' . DS . $filename);
+        return @file_get_contents($filename);
     }
 
     /**

@@ -102,4 +102,19 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
 
         return $options;
     }
+
+    /**
+     * Check if there is more than one Store View
+     *
+     * @return bool
+     */
+    public function isMultiStore()
+    {
+        return (sizeof(Mage::app()->getStores(false)) > 1);
+    }
+
+    public function getStores()
+    {
+        return Mage::app()->getStores(false);
+    }
 }

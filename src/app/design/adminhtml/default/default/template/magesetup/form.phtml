@@ -127,9 +127,9 @@
                             <td class="value"><?php echo $this->__('Create Transational Email Templates to be managed in the Magento admin area') ?></td>
                         </tr>
                         <tr>
-                            <td class="label"><label for="select_email_locale">&nbsp;</label></td>
+                            <td class="label"><label for="select_email_locale"><?php echo $this->__('Default Setting') ?>:</label></td>
                             <td class="value">
-                                <select name="email_locale" id="select_email_locale">
+                                <select name="email_locale[default]" id="select_email_locale">
                                     <?php foreach($this->getLocaleOptions() as $_option): ?>
                                         <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
                                     <?php endforeach; ?>
@@ -141,6 +141,34 @@
                                 <?php echo $this->__('If your desired locale is missing, please check if it installed.') ?>
                             </td>
                         </tr>
+                        <?php if ($this->isMultiStore()): ?>
+                        <tr>
+                            <td class="label"><label for="select_email_locale"><?php echo $this->__('Store Views') ?>:</label></td>
+                            <td class="value">
+                                <table>
+                                <?php foreach(Mage::app()->getWebsites(false) as $website): ?>
+                                    <?php /** @var Mage_Core_Model_Website $website  */ ?>
+                                    <?php foreach($website->getStores() as $store): ?>
+                                        <?php /** @var Mage_Core_Model_Store $store  */ ?>
+                                        <tr>
+                                            <td class="label"><?php echo $website->getName() ?></td>
+                                            <td class="label"><?php echo $store->getName() ?></td>
+                                            <td class="value">
+                                                <select name="email_locale[<?php echo $store->getId() ?>]" id="select_email_locale_<?php echo $store->getId() ?>">
+                                                    <option value=""><?php echo $this->__('Use Default Setting') ?></option>
+                                                    <?php foreach($this->getLocaleOptions() as $_option): ?>
+                                                        <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                <?php endforeach ?>
+                                </table>
+                            </td>
+                            <td class="value"></td>
+                        </tr>
+                        <?php endif ?>
                     </tbody>
                 </table>
             </div>

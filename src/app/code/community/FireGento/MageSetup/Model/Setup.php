@@ -61,6 +61,9 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
         }
 
         if ($params['email']) {
+            if (!is_array($params['email_locale'])) {
+                $params['email_locale'] = array('default' => $params['email_locale']);
+            }
             Mage::getSingleton('magesetup/setup_email')->setup($params['email_locale'], $params['overwrite_emails']);
         }
 

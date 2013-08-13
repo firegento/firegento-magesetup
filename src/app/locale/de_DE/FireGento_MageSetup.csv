@@ -109,6 +109,8 @@
 "Display content from text field below at the checkout confirm page directly above the checkout button","Inhalt des Textfeldes (unten) auf der Bestellbestätigungsseite anzeigen (direkt über dem ""Kaufen""-Button)"
 
 "Directory ""%s"" not found. Locale not installed?","Verzeichnis ""%s"" nicht gefunden. Ist das Sprachpaket korrekt installiert?"
+"Default Setting","Standardeinstellung"
+"Use Default Setting","Standardeinstellung benutzen"
 "Select Locale","Gewähltes Spachpaket"
 "Create Transational Email Templates to be managed in the Magento admin area","Transaktions-Emails erzeugen, die im Magento-Admin-Bereich verwaltet werden können."
 "Language Package for Email-Templates","Spachpaket für Email-Templates"

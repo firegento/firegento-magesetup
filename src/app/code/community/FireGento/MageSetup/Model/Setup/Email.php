@@ -39,19 +39,29 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     /**
      * Setup Transaction Emails
      *
-     * @param string $locale
+     * @param array $locale
      * @param bool $overwrite
      * @return void
      */
-    public function setup($locale = 'de_DE', $overwrite = false)
+    public function setup($locale = array('default' => 'de_DE'), $overwrite = false)
     {
-        // execute emails
-        foreach ($this->_getConfigEmails() as $data) {
+        foreach($locale as $localeIndex => $localeCode) {
 
-            if ($data['execute'] == 1) {
+            if (!$localeCode) continue;
 
-                /** Change override param from false to true to override existing templates for testing */
-                $this->_createEmail($data, $locale, $overwrite);
+            // execute emails
+            foreach ($this->_getConfigEmails($localeCode) as $data) {
+
+                $storeId = $localeIndex;
+                if ($storeId == 'default') {
+                    $storeId = null;
+                }
+
+                if ($data['execute'] == 1) {
+
+                    /** Change override param from false to true to override existing templates for testing */
+                    $this->_createEmail($data, $localeCode, $overwrite, $storeId);
+                }
             }
         }
     }
@@ -82,20 +92,22 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
      * @param array   $emailData template data
      * @param string  $locale
      * @param boolean $override  override email template if set
+     * @param int|null $storeId
      *
      * @return void
      */
-    protected function _createEmail($emailData, $locale, $override = true)
+    protected function _createEmail($emailData, $locale, $override = true, $storeId = null)
     {
+        $templateCode = $emailData['template_code'] . ' (' . $locale . ')';
         $template = Mage::getModel('core/email_template')
-            ->loadByCode($emailData['template_code']);
+            ->loadByCode($templateCode);
 
         if (!$template->getId() || $override) {
 
             $localeEmailPath = $this->_getLocaleEmailPath($locale);
 
             $template
-                ->setTemplateCode($emailData['template_code'])
+                ->setTemplateCode($templateCode)
                 ->setTemplateType($emailData['template_type'])
                 ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate());
 
@@ -137,7 +149,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
                 ->save();
         }
 
-        $this->setConfigData($emailData['config_data_path'], $template->getId());
+        $this->setConfigData($emailData['config_data_path'], $template->getId(), $storeId);
     }
 
     /**
@@ -149,9 +161,9 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     protected function _getLocaleEmailPath($locale)
     {
         if (!isset($this->_localeTemplatePath[$locale])) {
-            $_localeTemplatePath = 'app' . DS . 'locale' . DS . $locale . DS . 'template' . DS . 'email' . DS;
+            $_localeTemplatePath = Mage::getBaseDir() . DS . 'app' . DS . 'locale' . DS . $locale . DS . 'template' . DS . 'email' . DS;
             $this->_localeTemplatePath[$locale] = $_localeTemplatePath;
-            if (!is_dir(Mage::getBaseDir() . DS . $this->_localeTemplatePath[$locale])) {
+            if (!is_dir($this->_localeTemplatePath[$locale])) {
                 Mage::throwException(
                     Mage::helper('magesetup')->__(
                         'Directory "%s" not found. Locale not installed?',
