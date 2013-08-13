@@ -89,12 +89,29 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
      *
      * @return array
      */
-    public function getLocaleOptions()
+    public function getLocaleOptionsForEmailTemplates()
     {
-        $options = new Mage_Adminhtml_Model_System_Config_Source_Locale();
-        $options = $options->toOptionArray();
+        $options = Mage::getSingleton('adminhtml/system_config_source_locale')->toOptionArray();
         foreach ($options as $key => $value) {
             $filePath = Mage::getBaseDir('locale')  . DS . $value['value'] . DS . 'template' . DS . 'email';
+            if (!file_exists($filePath)) {
+                unset($options[$key]);
+            }
+        }
+
+        return $options;
+    }
+
+    /**
+     * Retrieve all locales where the directory email/template exists
+     *
+     * @return array
+     */
+    public function getLocaleOptionsForCmsContent()
+    {
+        $options = Mage::getSingleton('adminhtml/system_config_source_locale')->toOptionArray();
+        foreach ($options as $key => $value) {
+            $filePath = Mage::getBaseDir('locale')  . DS . $value['value'] . DS . 'template' . DS . 'magesetup';
             if (!file_exists($filePath)) {
                 unset($options[$key]);
             }

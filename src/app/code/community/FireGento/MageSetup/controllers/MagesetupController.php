@@ -90,7 +90,8 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
                 }
 
                 if ($this->getRequest()->getParam('cms') == 1) {
-                    Mage::getSingleton('magesetup/setup_cms')->setup();
+                    $cmsLocale = $this->getRequest()->getParam('cms_locale');
+                    Mage::getSingleton('magesetup/setup_cms')->setup($cmsLocale);
                     $this->_getSession()->addSuccess(
                         $this->__('MageSetup: CMS Blocks and Pages have been created.')
                     );

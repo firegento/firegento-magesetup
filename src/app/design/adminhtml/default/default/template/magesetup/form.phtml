@@ -105,6 +105,49 @@
                                 <?php echo $this->__('Conditions') ?>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="label"><label for="select_cms_locale"><?php echo $this->__('Default Setting') ?>:</label></td>
+                            <td class="value">
+                                <select name="cms_locale[default]" id="select_cms_locale">
+                                    <?php foreach($this->getLocaleOptionsForCmsContent() as $_option): ?>
+                                        <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                            <td class="value">
+                                <?php echo $this->__('Language Package for CMS Pages/Blocks/Agreements') ?><br />
+                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="<?php echo $this->__('Notification') ?>" />
+                                <?php echo $this->__('If your desired locale is missing, it is not supported yet by MageSetup.') ?>
+                            </td>
+                        </tr>
+                        <?php if ($this->isMultiStore()): ?>
+                            <tr>
+                                <td class="label"><label for="select_cms_locale"><?php echo $this->__('Store Views') ?>:</label></td>
+                                <td class="value">
+                                    <table>
+                                        <?php foreach(Mage::app()->getWebsites(false) as $website): ?>
+                                            <?php /** @var Mage_Core_Model_Website $website  */ ?>
+                                            <?php foreach($website->getStores() as $store): ?>
+                                                <?php /** @var Mage_Core_Model_Store $store  */ ?>
+                                                <tr>
+                                                    <td class="value"><?php echo $website->getName() ?></td>
+                                                    <td class="value"><?php echo $store->getName() ?></td>
+                                                    <td class="value">
+                                                        <select name="cms_locale[<?php echo $store->getId() ?>]" id="select_cms_locale_<?php echo $store->getId() ?>">
+                                                            <option value=""><?php echo $this->__('Use Default Setting') ?></option>
+                                                            <?php foreach($this->getLocaleOptionsForCmsContent() as $_option): ?>
+                                                                <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach ?>
+                                        <?php endforeach ?>
+                                    </table>
+                                </td>
+                                <td class="value"></td>
+                            </tr>
+                        <?php endif ?>
                     </tbody>
                 </table>
             </div>
@@ -130,14 +173,14 @@
                             <td class="label"><label for="select_email_locale"><?php echo $this->__('Default Setting') ?>:</label></td>
                             <td class="value">
                                 <select name="email_locale[default]" id="select_email_locale">
-                                    <?php foreach($this->getLocaleOptions() as $_option): ?>
+                                    <?php foreach($this->getLocaleOptionsForEmailTemplates() as $_option): ?>
                                         <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </td>
                             <td class="value">
-                                <?php echo $this->__('Language Package for Email-Templates') ?><br />
-                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
+                                <?php echo $this->__('Language Package for Email Templates') ?><br />
+                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="<?php echo $this->__('Notification') ?>" />
                                 <?php echo $this->__('If your desired locale is missing, please check if it installed.') ?>
                             </td>
                         </tr>
@@ -151,12 +194,12 @@
                                     <?php foreach($website->getStores() as $store): ?>
                                         <?php /** @var Mage_Core_Model_Store $store  */ ?>
                                         <tr>
-                                            <td class="label"><?php echo $website->getName() ?></td>
-                                            <td class="label"><?php echo $store->getName() ?></td>
+                                            <td class="value"><?php echo $website->getName() ?></td>
+                                            <td class="value"><?php echo $store->getName() ?></td>
                                             <td class="value">
                                                 <select name="email_locale[<?php echo $store->getId() ?>]" id="select_email_locale_<?php echo $store->getId() ?>">
                                                     <option value=""><?php echo $this->__('Use Default Setting') ?></option>
-                                                    <?php foreach($this->getLocaleOptions() as $_option): ?>
+                                                    <?php foreach($this->getLocaleOptionsForEmailTemplates() as $_option): ?>
                                                         <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
@@ -230,3 +273,9 @@
 <script type="text/javascript">
     setupForm = new varienForm('setup_form', '');
 </script>
+
+<div class="content-footer right">
+    <p class="form-buttons">
+        <?php echo $this->getButtonHtml($this->__('Run MageSetup'), 'setupForm.submit();', 'save'); ?>
+    </p>
+</div>

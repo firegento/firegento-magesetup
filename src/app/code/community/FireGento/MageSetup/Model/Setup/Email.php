@@ -45,17 +45,16 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
      */
     public function setup($locale = array('default' => 'de_DE'), $overwrite = false)
     {
-        foreach($locale as $localeIndex => $localeCode) {
+        foreach($locale as $storeId => $localeCode) {
 
             if (!$localeCode) continue;
 
+            if ($storeId == 'default') {
+                $storeId = null;
+            }
+
             // execute emails
             foreach ($this->_getConfigEmails($localeCode) as $data) {
-
-                $storeId = $localeIndex;
-                if ($storeId == 'default') {
-                    $storeId = null;
-                }
 
                 if ($data['execute'] == 1) {
 

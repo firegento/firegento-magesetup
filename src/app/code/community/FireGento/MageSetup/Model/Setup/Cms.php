@@ -36,24 +36,35 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Setup Pages, Blocks and especially Footer Block
      *
+     * @param array $locale
+     * @param boolean $override
      * @return void
      */
-    public function setup()
+    public function setup($locale = array('default' => 'de_DE'))
     {
-        // execute pages
-        foreach ($this->_getConfigPages() as $name => $data) {
-            if ($data['execute'] == 1) {
-                $this->_createCmsPage($data, false);
-            }
-        }
+        foreach($locale as $storeId => $localeCode) {
 
-        // execute blocks
-        foreach ($this->_getConfigBlocks() as $name => $data) {
-            if ($data['execute'] == 1) {
-                if ($name == 'gs_footerlinks') {
-                    $this->_updateFooterLinksBlock($data);
-                } else {
-                    $this->_createCmsBlock($data, false);
+            if (!$localeCode) continue;
+
+            if ($storeId == 'default') {
+                $storeId = null;
+            }
+
+            // execute pages
+            foreach ($this->_getConfigPages($locale) as $name => $data) {
+                if ($data['execute'] == 1) {
+                    $this->_createCmsPage($data, $localeCode, true, $storeId);
+                }
+            }
+
+            // execute blocks
+            foreach ($this->_getConfigBlocks($locale) as $name => $data) {
+                if ($data['execute'] == 1) {
+                    if ($name == 'gs_footerlinks') {
+                        $this->_updateFooterLinksBlock($data, $storeId);
+                    } else {
+                        $this->_createCmsBlock($data, $localeCode, true, $storeId);
+                    }
                 }
             }
         }
@@ -93,25 +104,33 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
      * Collect data and create CMS page
      *
      * @param array   $pageData cms page data
-     * @param boolean $override override cms page if it exists
-     *
+     * @param string  $locale
+     * @param boolean $override  override email template if set
+     * @param int|null $storeId
      * @return void
      */
-    protected function _createCmsPage($pageData, $override=true)
+    protected function _createCmsPage($pageData, $locale, $override = true, $storeId = null)
     {
         if (!is_array($pageData)) {
             return null;
         }
 
-        $page = Mage::getModel('cms/page')->load($pageData['identifier']);
+        $page = Mage::getModel('cms/page')->setStoreId($storeId)->load($pageData['identifier']);
+        Mage::log($storeId);
+        Mage::log($page->debug());
+        if (is_array($page->getStoreId()) && !in_array(intval($storeId), $page->getStoreId())) {
+            $page = Mage::getModel('cms/page');
+        }
+        Mage::log($page->debug());
 
+        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $pageData['filename'];
         $pageData = array(
             'page_id' => $page->getId(),
             'title' => $pageData['title'],
             'identifier' => $pageData['identifier'],
-            'content' => $this->getTemplateContent($pageData['filename']),
+            'content' => $this->getTemplateContent($filename),
             'root_template' => $pageData['root_template'],
-            'stores' => $page->getStoreId() ? $page->getStoreId() : array('0'),
+            'stores' => $storeId ? $storeId : 0,
             'is_active' => 1,
         );
 
@@ -124,16 +143,23 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
      * Collect data and create CMS block
      *
      * @param array   $blockData cms block data
-     * @param boolean $override  override cms block if it exists
+     * @param string  $locale
+     * @param boolean $override  override email template if set
+     * @param int|null $storeId
      *
      * @return void
      */
-    protected function _createCmsBlock($blockData, $override=true)
+    protected function _createCmsBlock($blockData, $locale, $override = true, $storeId = null)
     {
-        $block = Mage::getModel('cms/block')->load($blockData['identifier']);
-        $blockData['content'] = $this->getTemplateContent($blockData['filename']);
+        $block = Mage::getModel('cms/block')->setStoreId($storeId)->load($blockData['identifier']);
+        if (is_array($block->getStores()) && !in_array(intval($storeId), $block->getStores())) {
+            $block = Mage::getModel('cms/block');
+        }
+
+        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $blockData['filename'];
+        $blockData['content'] = $this->getTemplateContent($filename);
         if (!$block->getId() || $override) {
-            $blockData['stores'] = array('0');
+            $blockData['stores'] = $storeId ? $storeId : 0;
             $blockData['is_active'] = '1';
             $blockData['block_id'] = $block->getId();
 
@@ -172,12 +198,17 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
      * Update footer_links cms block
      *
      * @param  array $blockData cms block data
+     * @param  int|null $storeId
      * @return void
      */
-    protected function _updateFooterLinksBlock($blockData)
+    protected function _updateFooterLinksBlock($blockData, $storeId = null)
     {
         /** @var $block Mage_Cms_Model_Block */
-        $block = Mage::getModel('cms/block')->load($blockData['identifier']);
+        $block = Mage::getModel('cms/block')->setStoreId($storeId)->load($blockData['identifier']);
+
+        if (is_array($block->getStores()) && !in_array(intval($storeId), $block->getStores())) {
+            $block = Mage::getModel('cms/block');
+        }
 
         if ($block->getId()) {
 
@@ -201,10 +232,14 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             'title' => $blockData['title'],
             'identifier' => $blockData['identifier'],
             'content' => $this->_createFooterLinksContent(),
-            'stores' => array('0'),
+            'stores' => $storeId ? $storeId : 0,
             'is_active' => '1',
         );
 
-        $block->addData($data)->save();
+        if ($storeId) {
+            $data['stores'] = array($storeId);
+        }
+
+        //$block->addData($data)->save();
     }
 }
