@@ -33,6 +33,9 @@
  */
 class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setup_Abstract
 {
+
+    protected $_footerLinks = array();
+
     /**
      * Setup Pages, Blocks and especially Footer Block
      *
@@ -59,7 +62,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             // execute blocks
             foreach ($this->_getConfigBlocks($locale) as $name => $data) {
                 if ($data['execute'] == 1) {
-                    if ($name == 'gs_footerlinks') {
+                    if ($name == 'footerlinks') {
                         $this->_updateFooterLinksBlock($data, $storeId);
                     } else {
                         $this->_createCmsBlock($data, $localeCode, true, $storeId);
@@ -92,11 +95,15 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Get footer_links/default from config file
      *
+     * @param int|null $storeId
      * @return array
      */
-    protected function _getFooterLinks()
+    protected function _getFooterLinks($storeId)
     {
-        return $this->_getConfigNode('footer_links', 'default');
+        if (!$storeId) {
+            $storeId = 'default';
+        }
+        return $this->_footerLinks[$storeId];
     }
 
     /**
@@ -144,8 +151,6 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
 
         $data['content'] = $templateContent;
 
-        Mage::log($data);
-
         $page = Mage::getModel('cms/page')->setStoreId($storeId)->load($data['identifier']);
         if (is_array($page->getStoreId()) && !in_array(intval($storeId), $page->getStoreId())) {
             $page = Mage::getModel('cms/page');
@@ -155,6 +160,17 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
 
         if (!(int) $page->getId() || $override) {
             $page->setData($data)->save();
+        }
+
+        if (!$storeId) {
+            $storeId = 'default';
+        }
+
+        if ($pageData['footerlink'] == 1) {
+            $this->_footerLinks[$storeId][] = array(
+                'title' => $data['title'],
+                'target' => $data['identifier'],
+            );
         }
     }
 
@@ -176,8 +192,20 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         }
 
         $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $blockData['filename'];
-        $blockData['content'] = $this->getTemplateContent($filename);
+        $templateContent = $this->getTemplateContent($filename);
+
+        if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
+            $blockData['title'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        /**
+         * Remove comment lines
+         */
+        $templateContent = preg_replace('#\{\*.*\*\}#suU', '', $templateContent);
+
         if (!$block->getId() || $override) {
+            $blockData['content'] = $templateContent;
             $blockData['stores'] = $storeId ? $storeId : 0;
             $blockData['is_active'] = '1';
             $blockData['block_id'] = $block->getId();
@@ -189,14 +217,15 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Generate footer_links block from config data
      *
+     * @param int|null $storeId
      * @return string
      */
-    protected function _createFooterLinksContent()
+    protected function _createFooterLinksContent($storeId)
     {
         $footerLinksHtml = '<ul>';
         $footerLinksCounter = 0;
 
-        foreach ($this->_getFooterLinks() as $data) {
+        foreach ($this->_getFooterLinks($storeId) as $data) {
             $footerLinksCounter++;
             $title = $data['title'];
             $target = $data['target'];
@@ -250,7 +279,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         $data = array(
             'title' => $blockData['title'],
             'identifier' => $blockData['identifier'],
-            'content' => $this->_createFooterLinksContent(),
+            'content' => $this->_createFooterLinksContent($storeId),
             'stores' => $storeId ? $storeId : 0,
             'is_active' => '1',
         );
@@ -259,6 +288,6 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             $data['stores'] = array($storeId);
         }
 
-        //$block->addData($data)->save();
+        $block->addData($data)->save();
     }
 }

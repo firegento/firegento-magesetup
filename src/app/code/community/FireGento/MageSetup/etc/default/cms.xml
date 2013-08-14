@@ -29,126 +29,74 @@
                 <default>
                     <magesetup_404>
                         <execute>1</execute>
-                        <title>Page not found</title>
-                        <identifier>no-route</identifier>
-                        <root_template>one_column</root_template>
                         <filename>magesetup/page/404.html</filename>
+                        <footerlink>0</footerlink>
                     </magesetup_404>
 
                     <magesetup_imprint>
                         <execute>1</execute>
-                        <title>Imprint</title>
-                        <identifier>imprint</identifier>
-                        <root_template>one_column</root_template>
                         <filename>magesetup/page/imprint.html</filename>
+                        <footerlink>1</footerlink>
                     </magesetup_imprint>
 
                     <magesetup_payment>
                         <execute>1</execute>
-                        <title>Payment Methods</title>
-                        <identifier>payment</identifier>
-                        <root_template>one_column</root_template>
                         <filename>magesetup/page/payment.html</filename>
+                        <footerlink>1</footerlink>
                     </magesetup_payment>
 
                     <magesetup_privacy>
                         <execute>1</execute>
-                        <title>Privacy</title>
-                        <identifier>privacy</identifier>
-                        <root_template>one_column</root_template>
                         <filename>magesetup/page/privacy.html</filename>
+                        <footerlink>1</footerlink>
                     </magesetup_privacy>
 
                     <magesetup_shipping>
                         <execute>1</execute>
-                        <title>Shipping</title>
-                        <identifier>shipping</identifier>
-                        <root_template>one_column</root_template>
                         <filename>magesetup/page/shipping.html</filename>
+                        <footerlink>1</footerlink>
                     </magesetup_shipping>
 
                     <magesetup_order>
                         <execute>1</execute>
-                        <title>Order</title>
-                        <identifier>order_process</identifier>
-                        <root_template>one_column</root_template>
                         <filename>magesetup/page/order.html</filename>
+                        <footerlink>1</footerlink>
                     </magesetup_order>
 
                     <magesetup_business_terms>
                         <execute>1</execute>
-                        <title>Business Terms</title>
-                        <identifier>business_terms</identifier>
-                        <root_template>one_column</root_template>
                         <filename>magesetup/page/business_terms.html</filename>
+                        <footerlink>1</footerlink>
                     </magesetup_business_terms>
 
                     <magesetup_revocation>
                         <execute>1</execute>
-                        <title>Revocation</title>
-                        <identifier>revocation</identifier>
-                        <root_template>one_column</root_template>
                         <filename>magesetup/page/revocation.html</filename>
+                        <footerlink>1</footerlink>
                     </magesetup_revocation>
                 </default>
             </pages>
 
             <blocks>
                 <default>
-                    <gs_business_terms>
+                    <business_terms>
                         <execute>1</execute>
-                        <title>Business Terms</title>
-                        <identifier>gs_business_terms</identifier>
+                        <identifier>business_terms</identifier>
                         <filename>magesetup/block/business_terms.html</filename>
-                    </gs_business_terms>
+                    </business_terms>
 
-                    <gs_revocation>
+                    <revocation>
                         <execute>1</execute>
-                        <title>Revocation</title>
-                        <identifier>gs_revocation</identifier>
+                        <identifier>revocation</identifier>
                         <filename>magesetup/block/revocation.html</filename>
-                    </gs_revocation>
+                    </revocation>
 
-                    <gs_footerlinks>
+                    <footerlinks>
                         <execute>1</execute>
-                        <title>Footer Links</title>
                         <identifier>footer_links</identifier>
-                    </gs_footerlinks>
+                    </footerlinks>
                 </default>
             </blocks>
-
-            <footer_links>
-                <default>
-                    <business_terms>
-                        <title>Business Terms</title>
-                        <target>business_terms</target>
-                    </business_terms>
-                    <revocation>
-                        <title>Revocation</title>
-                        <target>revocation</target>
-                    </revocation>
-                    <shipping>
-                        <title>Shipping</title>
-                        <target>shipping</target>
-                    </shipping>
-                    <payment>
-                        <title>Payment Methods</title>
-                        <target>payment</target>
-                    </payment>
-                    <privacy>
-                        <title>Privacy</title>
-                        <target>privacy</target>
-                    </privacy>
-                    <order>
-                        <title>Order Process</title>
-                        <target>order</target>
-                    </order>
-                    <imprint>
-                        <title>Imprint</title>
-                        <target>imprint</target>
-                    </imprint>
-                </default>
-            </footer_links>
         </magesetup>
     </default>
 </config>
