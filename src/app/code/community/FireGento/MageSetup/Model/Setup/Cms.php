@@ -37,7 +37,6 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
      * Setup Pages, Blocks and especially Footer Block
      *
      * @param array $locale
-     * @param boolean $override
      * @return void
      */
     public function setup($locale = array('default' => 'de_DE'))
@@ -115,27 +114,47 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             return null;
         }
 
-        $page = Mage::getModel('cms/page')->setStoreId($storeId)->load($pageData['identifier']);
-        Mage::log($storeId);
-        Mage::log($page->debug());
-        if (is_array($page->getStoreId()) && !in_array(intval($storeId), $page->getStoreId())) {
-            $page = Mage::getModel('cms/page');
-        }
-        Mage::log($page->debug());
-
-        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $pageData['filename'];
-        $pageData = array(
-            'page_id' => $page->getId(),
-            'title' => $pageData['title'],
-            'identifier' => $pageData['identifier'],
-            'content' => $this->getTemplateContent($filename),
-            'root_template' => $pageData['root_template'],
+        $data = array(
             'stores' => $storeId ? $storeId : 0,
             'is_active' => 1,
         );
 
+        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $pageData['filename'];
+        $templateContent = $this->getTemplateContent($filename);
+
+        if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
+            $data['title'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@identifier\s*((?:.)*?)\s*@-->/us', $templateContent, $matches)) {
+            $data['identifier'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@root_template\s*(.*?)\s*@-->/s', $templateContent, $matches)) {
+            $data['root_template'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        /**
+         * Remove comment lines
+         */
+        $templateContent = preg_replace('#\{\*.*\*\}#suU', '', $templateContent);
+
+        $data['content'] = $templateContent;
+
+        Mage::log($data);
+
+        $page = Mage::getModel('cms/page')->setStoreId($storeId)->load($data['identifier']);
+        if (is_array($page->getStoreId()) && !in_array(intval($storeId), $page->getStoreId())) {
+            $page = Mage::getModel('cms/page');
+        } else {
+            $data['page_id'] = $page->getId();
+        }
+
         if (!(int) $page->getId() || $override) {
-            $page->setData($pageData)->save();
+            $page->setData($data)->save();
         }
     }
 
