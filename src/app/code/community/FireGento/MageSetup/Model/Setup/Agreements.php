@@ -41,9 +41,18 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
      */
     public function setup($locale = array('default' => 'de_DE'))
     {
-        foreach ($this->_getConfigAgreements() as $name => $data) {
-            if ($data['execute'] == 1) {
-                $this->_createAgreement($data, $locale['default'], false);
+        foreach($locale as $storeId => $localeCode) {
+
+            if (!$localeCode) continue;
+
+            if ($storeId == 'default') {
+                $storeId = null;
+            }
+
+            foreach ($this->_getConfigAgreements() as $name => $data) {
+                if ($data['execute'] == 1) {
+                    $this->_createAgreement($data, $localeCode, false, $storeId);
+                }
             }
         }
 
@@ -58,28 +67,50 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
      * @param array   $agreementData cms page data
      * @param string  $locale
      * @param boolean $override override cms page if it exists
-     *
+     * @param int|null $storeId
      * @return void
      */
-    protected function _createAgreement($agreementData, $locale, $override=true)
+    protected function _createAgreement($agreementData, $locale, $override=true, $storeId = null)
     {
         if (!is_array($agreementData)) {
             return null;
         }
 
-        $model = Mage::getModel('checkout/agreement');
-        $agreement = $this->_loadExistingModel($model, 'name', $agreementData['name']);
         $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $agreementData['filename'];
+        $templateContent = $this->getTemplateContent($filename);
+        $name = '';
+        $checkboxText = '';
+
+        if (preg_match('/<!--@name\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
+            $name = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@checkbox_text\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
+            $checkboxText = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        /**
+         * Remove comment lines
+         */
+        $templateContent = preg_replace('#\{\*.*\*\}#suU', '', $templateContent);
+
         $agreementData = array(
-            'name' => $agreementData['name'],
-            'content' => $this->getTemplateContent($filename),
-            'checkbox_text' => $agreementData['checkbox_text'],
+            'name' => $name,
+            'content' => $templateContent,
+            'checkbox_text' => $checkboxText,
             'is_active' => $agreementData['is_active'],
             'is_html' => $agreementData['is_html'],
             'is_required' => $agreementData['is_required'],
             'agreement_type' => $agreementData['agreement_type'],
-            'stores' => array('0'),
+            'stores' => $storeId ? $storeId : 0,
         );
+
+        $agreement = Mage::getModel('checkout/agreement')->setStoreId($storeId)->load($agreementData['name'], 'name');
+        if (is_array($agreement->getStores()) && !in_array(intval($storeId), $agreement->getStores())) {
+            $agreement = Mage::getModel('checkout/agreement');
+        }
 
         if (!(int) $agreement->getId() || $override) {
             $agreement->setData($agreementData)->save();
