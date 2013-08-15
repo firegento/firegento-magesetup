@@ -53,11 +53,17 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
         }
 
         if ($params['cms']) {
-            Mage::getSingleton('magesetup/setup_cms')->setup();
+            if (!is_array($params['cms_locale'])) {
+                $params['cms_locale'] = array('default' => $params['cms_locale']);
+            }
+            Mage::getSingleton('magesetup/setup_cms')->setup($params['cms_locale']);
         }
 
         if ($params['agreements']) {
-            Mage::getSingleton('magesetup/setup_agreements')->setup();
+            if (!is_array($params['cms_locale'])) {
+                $params['cms_locale'] = array('default' => $params['cms_locale']);
+            }
+            Mage::getSingleton('magesetup/setup_agreements')->setup($params['cms_locale']);
         }
 
         if ($params['email']) {
@@ -97,7 +103,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
             'country'                   => 'de',
             'systemconfig'              => true,
             'cms'                       => true,
-            'cms_locale'              => array('default' => 'de_DE'),
+            'cms_locale'                => array('default' => 'de_DE'),
             'agreements'                => true,
             'email'                     => true,
             'email_locale'              => array('default' => 'de_DE'),
