@@ -28,5 +28,8 @@
             <active>true</active>
             <codePool>community</codePool>
         </FireGento_MageSetup>
+        <FireGento_GermanSetup>
+            <active>false</active>
+        </FireGento_GermanSetup>
     </modules>
 </config>
