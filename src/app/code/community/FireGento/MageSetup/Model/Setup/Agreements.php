@@ -77,6 +77,11 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
         }
 
         $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $agreementData['filename'];
+
+        if (!file_exists($filename)) {
+            return;
+        }
+
         $templateContent = $this->getTemplateContent($filename);
         $name = '';
         $checkboxText = '';

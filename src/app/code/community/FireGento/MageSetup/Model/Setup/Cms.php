@@ -118,7 +118,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     protected function _createCmsPage($pageData, $locale, $override = true, $storeId = null)
     {
         if (!is_array($pageData)) {
-            return null;
+            return;
         }
 
         $data = array(
@@ -127,6 +127,10 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         );
 
         $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $pageData['filename'];
+        if (!file_exists($filename)) {
+            return;
+        }
+
         $templateContent = $this->getTemplateContent($filename);
 
         if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
@@ -196,6 +200,10 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         }
 
         $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $blockData['filename'];
+        if (!file_exists($filename)) {
+            return;
+        }
+
         $templateContent = $this->getTemplateContent($filename);
 
         if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
@@ -256,7 +264,11 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     protected function _updateFooterLinksBlock($blockData, $storeId = null)
     {
         /** @var $block Mage_Cms_Model_Block */
-        $block = Mage::getModel('cms/block')->setStoreId($storeId)->load('footer_links');
+        if (is_null($storeId)) {
+            $block = $this->_getDefaultBlock('footer_links');
+        } else {
+            $block = Mage::getModel('cms/block')->setStoreId($storeId)->load('footer_links');
+        }
 
         if (is_array($block->getStores()) && !in_array(intval($storeId), $block->getStores())) {
             $block = Mage::getModel('cms/block');
@@ -293,5 +305,12 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         }
 
         $block->addData($data)->save();
+    }
+
+    protected function _getDefaultBlock($identifier)
+    {
+        return Mage::getResourceModel('cms/block_collection')
+            ->addFieldToFilter('identifier', $identifier)
+            ->addStoreFilter(0)->getFirstItem();
     }
 }
