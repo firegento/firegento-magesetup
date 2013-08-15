@@ -230,7 +230,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             $title = $data['title'];
             $target = $data['target'];
             $class = '';
-            if ($footerLinksCounter == count($this->_getFooterLinks())) {
+            if ($footerLinksCounter == count($this->_getFooterLinks($storeId))) {
                 $class = 'last';
             }
             $footerLinksHtml .= '<li class="'.$class.'">';
@@ -261,13 +261,13 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         if ($block->getId()) {
 
             /** @var $backupBlock Mage_Cms_Model_Block */
-            $backupBlock = Mage::getModel('cms/block')->load($blockData['identifier'] . '_backup');
+            $backupBlock = Mage::getModel('cms/block')->load('footer_links_backup');
             if (!$backupBlock->getId()) {
 
                 // create copy of original block
                 $data = array();
                 $data['block_id'] = $block->getId();
-                $data['identifier'] = $blockData['identifier'] . '_backup';
+                $data['identifier'] = 'footer_links_backup';
 
                 $block->setData($data)->save();
 
@@ -277,8 +277,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         }
 
         $data = array(
-            'title' => $blockData['title'],
-            'identifier' => $blockData['identifier'],
+            'title' => 'Footer Links',
+            'identifier' => 'footer_links',
             'content' => $this->_createFooterLinksContent($storeId),
             'stores' => $storeId ? $storeId : 0,
             'is_active' => '1',
