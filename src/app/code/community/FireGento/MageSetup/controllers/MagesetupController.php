@@ -42,6 +42,10 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
     {
         $helper = Mage::helper('magesetup');
 
+        Mage::getSingleton('adminhtml/session')->addNotice(
+            $this->__('If you want to add additional StoreViews (i.e. for multiple languages), please do so before submitting this form.')
+        );
+
         $this->_title($helper->__('System'))
             ->_title($helper->__('MageSetup'))
             ->_title($helper->__('Setup'));
