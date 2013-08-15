@@ -55,6 +55,7 @@
                         <execute>1</execute>
                         <filename>magesetup/page/shipping.html</filename>
                         <footerlink>1</footerlink>
+                        <config_option>catalog/price/cms_page_shipping</config_option>
                     </magesetup_shipping>
 
                     <magesetup_order>

@@ -172,6 +172,10 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
                 'target' => $data['identifier'],
             );
         }
+
+        if (isset($pageData['config_option'])) {
+            $this->setConfigData($pageData['config_option'], $data['identifier'], $storeId);
+        }
     }
 
     /**
@@ -252,7 +256,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     protected function _updateFooterLinksBlock($blockData, $storeId = null)
     {
         /** @var $block Mage_Cms_Model_Block */
-        $block = Mage::getModel('cms/block')->setStoreId($storeId)->load($blockData['identifier']);
+        $block = Mage::getModel('cms/block')->setStoreId($storeId)->load('footer_links');
 
         if (is_array($block->getStores()) && !in_array(intval($storeId), $block->getStores())) {
             $block = Mage::getModel('cms/block');
