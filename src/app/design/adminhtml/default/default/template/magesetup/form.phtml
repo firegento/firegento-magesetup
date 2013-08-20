@@ -53,9 +53,9 @@
                             <td class="label"><label for="select_country"><?php echo $this->__('Shipping from') ?></label></td>
                             <td class="value" style="width:160px !important;">
                                 <select name="country" id="select_country" style="width:150px !important;">
-                                    <option value="de"<?php if (Mage::getStoreConfig('magesetup/default_country') == 'de'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Germany')?></option>
-                                    <option value="at"<?php if (Mage::getStoreConfig('magesetup/default_country') == 'at'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Austria')?></option>
-                                    <option value="ch"<?php if (Mage::getStoreConfig('magesetup/default_country') == 'ch'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Switzerland')?></option>
+                                    <?php foreach ($this->getAvailableCountriesForSetup() as $countryCode => $countryName): ?>
+                                    <option value="<?php echo $countryCode ?>"<?php if (Mage::getStoreConfig('magesetup/default_country') == $countryCode): ?> selected="selected"<?php endif ?>><?php echo $countryName ?></option>
+                                    <?php endforeach ?>
                                 </select>
                             </td>
                             <td class="value">
