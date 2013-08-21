@@ -1,61 +1,53 @@
 FireGento_MageSetup
 =====================
-MageSetup konfiguriert einen Shop für den deutschen Markt.
+MageSetup configures a shop for a national market. It's the international variant and successor of [GermanSetup](https://github.com/firegento/firegento-germansetup).
+Currently supported countries: Germany, Austria, Switzerland, Russia. More to follow.
 
-Branches
---------
-* master => entspicht einem aktuellen Stand des Moduls
-* development => Enthält neue Features für MageSetup
-
-Ausschließlich die Tags unter https://github.com/firegento/firegento-magesetup/tags entsprechen den jeweils veröffentlichten Versionen auf MagentoConnect.
-
-Fakten
+Facts
 ------
 - Version: check [config.xml](https://github.com/firegento/firegento-magesetup/blob/master/src/app/code/community/FireGento/MageSetup/etc/config.xml)
-- extension key: FireGento_MageSetup
-- [Extension auf GitHub](https://github.com/firegento/firegento-magesetup/)
-- [Extension auf Magento Connect](http://www.magentocommerce.com/magento-connect/german-setup-6623.html)
-- Magento Connect 1.0 extension key: magento-community/FireGento_MageSetup
-- Magento Connect 2.0 extension key: http://connect20.magentocommerce.com/community/FireGento_MageSetup
+- Extension key: FireGento_MageSetup
+- [Extension on GitHub](https://github.com/firegento/firegento-magesetup/)
 
-Beschreibung
+Description
 ------------
-MageSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen wie "Market Ready Germany" oder "German Shop". Zentrale Features des Moduls MageSetup dabei sind:
+Central features of MageSetup are:
 
-* Button-Lösung
-* Setzen wichtiger Konfigurationseinstellungen
-* Steuereinstellungen und Steuerklassen für die ganze EU
-* Direkte Zuweisung der neuen Steuerklassen zu allen Produkten (konfigurierbar)
-* Integration deutscher E-Mail-Vorlagen
-* Aktivierung von Bestellbedingungen inkl. Möglichkeit, einzelne Bedingungen bei der Kundenregistrierung abzufragen und zu entscheiden, ob sie Pflichtfelder sein sollen
-* Erstellung von Standard-CMS-Seiten
-* Erweiterte Preisdarstellung mit MwSt. und Versandkosten – per Template anpassbar
-* Automatische Generierung von Meta-Daten bei Produkten
-* Speicherung jeder Status-Änderung eines Newsletter-Abonnenten zur besseren Nachvollziehbarkeit eines Shop-Betreibers (u.a. für die Sicherstellung der Beweispflicht, im Falle eine Newsletter-Beschwerde)
+* Setting of important configuration settings
+* Predefined tax settings and tax classes for shipping from several countries to worldwide destinations
+* Assign new tax classes to all products (configurable)
+* Creation of email templates based on the local language pack. Legal texts can be added to some templates automatically.
+* Creation and Activation of Checkout Agreements. Agreements can be shown at customer registration instead of or additional to the checkout. They can be required or not.
+* Creation of default CMS pages like imprint, terms and conditions, privacy, shipping, payment methods.
+* Create email templates, cms pages and blocks as well as checkout agreements for store views with a different language as well
+* Possibility to add tax and/or shipping info to all prices
+* Automatical generation of meta data to products
+* Saving of every status change of newsletter subscriptions
+* Presets are configurable via xml files for every country seperately
 
 Requirements
 ------------
 - PHP >= 5.2.0
 
-Kompatibilität
+Compatibility
 --------------
 - Magento >= 1.6
 
-Installations-Anleitung
+Installation
 -----------------------
-Nachdem Sie die Extension über Magento Connect installiert haben oder manuell hochgeladen haben, sollten Sie sich aus dem Magento Backend aus- und wieder einloggen. Sie sollten dann unterhalb des Backend Hauptmenüs folgenden Hinweis sehen:
+After you have installed the module, you should log off from admin panel. When you log on again, you should see the following hint:
 
-MageSetup wurde installiert. Klicken Sie hier, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren.
+```MageSetup has been installed. Click here to set up your pages, blocks, emails and tax settings.
 
-Auf der nächsten Seite können Sie die gewünschten Einstellungen wählen und dann rechts oben den "MageSetup ausführen" Button klicken, um das gewünschte Setup auszuführen.
+On the linked page, you can make the desired settings and then click "Run MageSetup" on the top right. The adjustments will be made.
 
 Support
 -------
-Sollten Sie einen Fehler feststellen oder eine Funktionalität vermissen, erstellen Sie bitte ein Ticket auf [GitHub](https://github.com/firegento/firegento-magesetup/issues).
+If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/firegento/firegento-magesetup/issues).
 
 Mitwirkung
 ----------
-Jede Mitwirkung für die Weiterentwicklung von MageSetup ist herzlich willkommen. Die beste Möglichkeit um Code beizusteuern ist das Öffnen eines [Pull Requests auf GitHub](https://help.github.com/articles/using-pull-requests).
+Any contribution to the development of MageSetup is highly welcome. The best possibility to provide any code is to open a [pull request on GitHub](https://help.github.com/articles/using-pull-requests).
 
 Developer
 ---------
@@ -69,10 +61,4 @@ Licence
 
 Copyright
 ---------
-(c) 2012 FireGento Team
-
-Erläuternde Blogeinträge
-------------------------
-* http://www.avs-webentwicklung.de/nc/blog/artikel/magento-german-setup-die-alternative-zu-market-ready-germany-ua.html
-* http://www.mageblog.de/2012/02/15/neues-modul-magesetup-als-mrg-ersatz/
-* http://www.webguys.de/magento/magesetup/
+(c) 2011-2013 FireGento Team
