@@ -45,8 +45,8 @@ Support
 -------
 If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/firegento/firegento-magesetup/issues).
 
-Mitwirkung
-----------
+Contribution
+------------
 Any contribution to the development of MageSetup is highly welcome. The best possibility to provide any code is to open a [pull request on GitHub](https://help.github.com/articles/using-pull-requests).
 
 Developer
