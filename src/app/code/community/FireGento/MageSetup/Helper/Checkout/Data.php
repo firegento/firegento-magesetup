@@ -34,6 +34,15 @@
 class FireGento_MageSetup_Helper_Checkout_Data
     extends Mage_Checkout_Helper_Data
 {
+
+    /**
+     * Avoid loss of translation
+     */
+    function __construct()
+    {
+        $this->_moduleName = 'Mage_Checkout';
+    }
+
     /**
      * get all Required Agreement Ids
      *
