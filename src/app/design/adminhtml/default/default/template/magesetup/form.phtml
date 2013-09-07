@@ -130,8 +130,7 @@
                                             <?php foreach($website->getStores() as $store): ?>
                                                 <?php /** @var Mage_Core_Model_Store $store  */ ?>
                                                 <tr>
-                                                    <td class="value"><?php echo $website->getName() ?></td>
-                                                    <td class="value"><?php echo $store->getName() ?></td>
+                                                    <td class="value"><?php echo $website->getName() ?> &gt; <?php echo $store->getName() ?></td>
                                                     <td class="value">
                                                         <select name="cms_locale[<?php echo $store->getId() ?>]" id="select_cms_locale_<?php echo $store->getId() ?>">
                                                             <option value=""><?php echo $this->__('Use Default Setting') ?></option>
@@ -194,8 +193,7 @@
                                     <?php foreach($website->getStores() as $store): ?>
                                         <?php /** @var Mage_Core_Model_Store $store  */ ?>
                                         <tr>
-                                            <td class="value"><?php echo $website->getName() ?></td>
-                                            <td class="value"><?php echo $store->getName() ?></td>
+                                            <td class="value"><?php echo $website->getName() ?> &gt; <?php echo $store->getName() ?></td>
                                             <td class="value">
                                                 <select name="email_locale[<?php echo $store->getId() ?>]" id="select_email_locale_<?php echo $store->getId() ?>">
                                                     <option value=""><?php echo $this->__('Use Default Setting') ?></option>
