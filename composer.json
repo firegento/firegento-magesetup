@@ -9,7 +9,7 @@
    },
     "require-dev": {
       "ecomdev/mage-ci": "master-dev",
-      "magento-hackathon/magento-behat-extension": "master-dev"
+      "magento-hackathon/magento-behat-extension": "dev-master"
    },
     "config": {
         "bin-dir": "bin"
