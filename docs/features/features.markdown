@@ -1,7 +1,7 @@
 FireGento_MageSetup - Features
 =====================
-General
--------
+## Setup Features
+### General
 - Display a hint to fill out configuration form after first login  
 ![Hint after Installation](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/install-hint.png "Hint after Installation")
 - Supports the following countries right now:
@@ -12,15 +12,13 @@ General
     * Russia
     * Switzerland
     
-Configuration Setup
------
+### Configuration Setup
 ![Configuration Setup](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/setup-configuration.png "Configuration Setup")
 
 - Choose a country which will be configured as shipping source
 - Set country specific configuration settings (i.e. newsletter confirmation
 
-Tax Setup
----------
+### Tax Setup
 ![Tax Setup](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/setup-tax.png "Tax Setup")
 
 - Tax settings for the selected country (see **Configuration Setup**) 
@@ -28,8 +26,7 @@ Tax Setup
 - For EU countries, shipping to all EU countries is supported
 - You can select new tax classes for your products (if you have any yet) depending on the old product tax class
 
-CMS Setup
----------
+### CMS Setup
 ![CMS Setup](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/setup-cms.png "CMS Setup")
 
 - Setup preconfigured, language dependant CMS pages:  
@@ -51,9 +48,8 @@ CMS Setup
     
 You can choose a different language for every store view.
 
-Email Setup
----------
-![Email Setup](raw.https://github.com/firegento/firegento-magesetup/development/docs/features/images/setup-email.png "Email Setup")
+### Email Setup
+![Email Setup](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/setup-email.png "Email Setup")
   
 - Setup Emails 
     * Choose a different language for every store view 
@@ -63,3 +59,22 @@ Email Setup
         - Store information (template can be found at **/app/design/frontend/base/default/template/magesetup/imprint/email_footer.phtml**)
         - Business terms (taken from created static block)
         - Declaration of Revocation (taken from created static block)
+        
+## Backend Features        
+### Checkout Agreements
+- Option to display checkout agreements on checkout, and customer registration, on both or none
+- Option to make checkout agreements required (display checkbox on frontend) or optional (does not display checkbox, just the test)  
+![Checkout Agreements](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/checkout-agreements.png "Checkout Agreements")
+
+### Newsletter Subscribers Status History
+- Store all newsletter subscription statusses of all subscribers
+- Document all status changes in order to be able to prove subscriptions and unsubscriptions   
+![Newsletter History](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/newsletter-history.png "Newsletter History")
+
+## Frontend Features
+### Info Block below Prices
+- Display a block below prices on product list and product view pages  
+![Block on product list page](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/price-text-list.png "Block on product list page")
+![Block on product view page](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/price-text-view.png "Block on product view page")
+- Configure via backend in **System -> Configuration -> Catalog -> Price**  
+![Price configuration](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/price-configuration.png "Price configuration")
