@@ -12,5 +12,11 @@
    },
     "config": {
         "bin-dir": "bin"
-   }
+   },
+    "repositories": [
+      {
+        "type": "composer",
+        "url": "http://packages.firegento.com"
+      }
+    ]
 }
