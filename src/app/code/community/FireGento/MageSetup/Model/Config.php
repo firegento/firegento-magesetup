@@ -44,8 +44,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
     /**
      * Sets cache ID and cache tags and loads configuration
      *
-     * @param  string|Varien_Simplexml_Element $sourceData
-     * @return void
+     * @param string|Varien_Simplexml_Element $sourceData
      */
     public function __construct($sourceData=null)
     {
@@ -56,7 +55,9 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
     }
 
     /**
-     * @param string $country
+     * Set the current country for the config
+     *
+     * @param  string $country
      * @return FireGento_MageSetup_Model_Config
      */
     public function setCountry($country)
@@ -102,16 +103,22 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
     }
 
     /**
-     * @param $fileName
-     * @param $mergeConfig
+     * Add a config file to the given merge config
+     *
+     * @param string                      $fileName
+     * @param Mage_Core_Model_Config_Base $mergeConfig
      */
     protected function _addConfigFile($fileName, $mergeConfig)
     {
         $config = Mage::getConfig();
         $configFile = $config->getModuleDir('etc', 'FireGento_MageSetup') . DS . $this->_country . DS . $fileName;
+
+        // If the given file does not exist, use the default file
         if (!file_exists($configFile)) {
             $configFile = $config->getModuleDir('etc', 'FireGento_MageSetup') . DS . 'default' . DS . $fileName;
         }
+
+        // Load the given config file
         if (file_exists($configFile)) {
             if ($mergeConfig->loadFile($configFile)) {
                 $config->extend($mergeConfig, true);

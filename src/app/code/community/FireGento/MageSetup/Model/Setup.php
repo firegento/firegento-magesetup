@@ -37,7 +37,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
      * Setup MageSetup as if a user sends the adminhtml form
      * See method _getDefaultParams for possible params
      *
-     * @param array $params
+     * @param  array $params
      * @return FireGento_MageSetup_Model_Setup
      */
     public function setup($params = array())
@@ -117,7 +117,6 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
      * Update the old product tax classes to the new tax class ids
      *
      * @param array $params
-     * @return void
      */
     protected function _updateProductTaxClasses($params)
     {
@@ -133,8 +132,6 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
 
     /**
      * Mark relevant indices as outdated after changing tax rates
-     *
-     * @return void
      */
     protected function _markIndicesOutdated()
     {

@@ -35,9 +35,7 @@ class FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status_Collection
     extends Mage_Core_Model_Resource_Db_Collection_Abstract
 {
     /**
-     * Initialize the accounts collection
-     *
-     * @return void
+     * Initialize the model and resource for the collection
      */
     public function _construct()
     {

@@ -36,8 +36,9 @@ class FireGento_MageSetup_Model_Observer
     /**
      * Add "Visible on Checkout Review on Front-end" Option to Attribute Settings
      *
-     * @param Varien_Event_Observer $observer Observer
-     * @event adminhtml_catalog_product_attribute_edit_prepare_form
+     * @magentoEvent adminhtml_catalog_product_attribute_edit_prepare_form
+     *
+     * @param  Varien_Event_Observer $observer
      * @return FireGento_MageSetup_Model_Observer
      */
     public function addIsVisibleOnCheckoutOption(Varien_Event_Observer $observer)
@@ -67,8 +68,9 @@ class FireGento_MageSetup_Model_Observer
      * Filters all agreements against the Magento template filter. This enables the Magento
      * administrator define a cms static block as the content of the checkout agreements..
      *
-     * @param Varien_Event_Observer $observer Observer
-     * @event core_block_abstract_to_html_before
+     * @magentoEvent core_block_abstract_to_html_before
+     *
+     * @param  Varien_Event_Observer $observer
      * @return FireGento_MageSetup_Model_Observer Self.
      */
     public function filterAgreements(Varien_Event_Observer $observer)
@@ -107,9 +109,10 @@ class FireGento_MageSetup_Model_Observer
     /**
      * Auto-Generates the meta information of a product.
      *
-     * @param Varien_Event_Observer $observer Observer
-     * @event catalog_product_save_before
-     * @return FireGento_MageSetup_Model_Observer Self.
+     * @magentoEvent catalog_product_save_before
+     *
+     * @param  Varien_Event_Observer $observer
+     * @return FireGento_MageSetup_Model_Observer
      */
     public function autogenerateMetaInformation(Varien_Event_Observer $observer)
     {
@@ -235,8 +238,9 @@ class FireGento_MageSetup_Model_Observer
     /**
      * Add "Required" and "Visible on Custom Creation" Option to Checkout Agreements
      *
-     * @param Varien_Event_Observer $observer Observer
-     * @event adminhtml_block_html_before
+     * @magentoEvent adminhtml_block_html_before
+     *
+     * @param  Varien_Event_Observer $observer
      * @return FireGento_MageSetup_Model_Observer
      */
     public function addOptionsForAgreements(Varien_Event_Observer $observer)
@@ -284,9 +288,9 @@ class FireGento_MageSetup_Model_Observer
     /**
      * After updating the quantities of cart items, it might be needed to recalculate the shipping tax
      *
-     * @param  Varien_Event_Observer $observer
-     * @event  checkout_cart_update_items_after
-     * @return void
+     * @magentoEvent checkout_cart_update_items_after
+     *
+     * @param Varien_Event_Observer $observer
      */
     public function recollectAfterQuoteItemUpdate(Varien_Event_Observer $observer)
     {
@@ -324,9 +328,9 @@ class FireGento_MageSetup_Model_Observer
      * Check if there are required agreements for the customer registration
      * and validate them if applicable.
      *
-     * @param  Varien_Event_Observer $observer
-     * @event  controller_action_predispatch_customer_account_createpost
-     * @return void
+     * @magentoEvent controller_action_predispatch_customer_account_createpost
+     *
+     * @param Varien_Event_Observer $observer
      */
     public function customerCreatePreDispatch(Varien_Event_Observer $observer)
     {

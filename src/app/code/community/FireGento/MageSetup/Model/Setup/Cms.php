@@ -33,20 +33,23 @@
  */
 class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setup_Abstract
 {
-
+    /**
+     * @var array
+     */
     protected $_footerLinks = array();
 
     /**
      * Setup Pages, Blocks and especially Footer Block
      *
      * @param array $locale
-     * @return void
      */
     public function setup($locale = array('default' => 'de_DE'))
     {
-        foreach($locale as $storeId => $localeCode) {
+        foreach ($locale as $storeId => $localeCode) {
 
-            if (!$localeCode) continue;
+            if (!$localeCode) {
+                continue;
+            }
 
             if ($storeId == 'default') {
                 $storeId = null;
@@ -95,7 +98,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Get footer_links/default from config file
      *
-     * @param int|null $storeId
+     * @param  int|null $storeId
      * @return array
      */
     protected function _getFooterLinks($storeId)
@@ -112,10 +115,10 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Collect data and create CMS page
      *
-     * @param array   $pageData cms page data
-     * @param string  $locale
-     * @param boolean $override  override email template if set
-     * @param int|null $storeId
+     * @param  array   $pageData cms page data
+     * @param  string  $locale
+     * @param  boolean $override  override email template if set
+     * @param  int|null $storeId
      * @return void
      */
     protected function _createCmsPage($pageData, $locale, $override = true, $storeId = null)
@@ -188,11 +191,10 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Collect data and create CMS block
      *
-     * @param array   $blockData cms block data
-     * @param string  $locale
-     * @param boolean $override  override email template if set
-     * @param int|null $storeId
-     *
+     * @param  array   $blockData cms block data
+     * @param  string  $locale
+     * @param  boolean $override  override email template if set
+     * @param  int|null $storeId
      * @return void
      */
     protected function _createCmsBlock($blockData, $locale, $override = true, $storeId = null)
@@ -209,14 +211,13 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
 
         $templateContent = $this->getTemplateContent($filename);
 
+        // Find title
         if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
             $blockData['title'] = $matches[1];
             $templateContent = str_replace($matches[0], '', $templateContent);
         }
 
-        /**
-         * Remove comment lines
-         */
+        // Remove comment lines
         $templateContent = preg_replace('#\{\*.*\*\}#suU', '', $templateContent);
 
         if (!$block->getId() || $override) {
@@ -232,7 +233,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Generate footer_links block from config data
      *
-     * @param int|null $storeId
+     * @param  int|null $storeId
      * @return string
      */
     protected function _createFooterLinksContent($storeId)
@@ -260,9 +261,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Update footer_links cms block
      *
-     * @param  array $blockData cms block data
-     * @param  int|null $storeId
-     * @return void
+     * @param array $blockData cms block data
+     * @param int|null $storeId
      */
     protected function _updateFooterLinksBlock($blockData, $storeId = null)
     {
@@ -310,6 +310,12 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         $block->addData($data)->save();
     }
 
+    /**
+     * Retrieve the default block for the given identifier
+     *
+     * @param  string $identifier
+     * @return Mage_Cms_Model_Block
+     */
     protected function _getDefaultBlock($identifier)
     {
         return Mage::getResourceModel('cms/block_collection')
