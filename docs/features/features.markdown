@@ -11,6 +11,7 @@ FireGento_MageSetup - Features
     * Italy
     * Russia
     * Switzerland
+- **Important:** After form submission, the form still displays the default values. The settings have been changed though     
     
 ### Configuration Setup
 ![Configuration Setup](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/setup-configuration.png "Configuration Setup")

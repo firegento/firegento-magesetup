@@ -224,12 +224,12 @@ class FireGento_MageSetup_Model_Observer
             return '';
         }
 
-        $keywords = '';
+        $keywords = array();
         foreach ($categoryTypes as $categories) {
-            $keywords .= implode(', ', $categories);
+            $keywords[] = implode(', ', $categories);
         }
 
-        return $keywords;
+        return implode(', ', $keywords);
     }
 
     /**
