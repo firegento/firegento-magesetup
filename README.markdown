@@ -3,6 +3,11 @@ FireGento_MageSetup
 MageSetup configures a shop for a national market. It's the international variant and successor of [GermanSetup](https://github.com/firegento/firegento-germansetup).
 Currently supported countries: Germany, Austria, Switzerland, Russia. More to follow.
 
+Build Status
+------------
+* Latest Release: [![Master Branch](https://travis-ci.org/firegento/firegento-magesetup.png?branch=master)](https://travis-ci.org/firegento/firegento-magesetup)
+* Development Branch: [![Development Branch](https://travis-ci.org/firegento/firegento-magesetup.png?branch=development)](https://travis-ci.org/firegento/firegento-magesetup)
+
 Facts
 ------
 - Version: check [config.xml](https://github.com/firegento/firegento-magesetup/blob/master/src/app/code/community/FireGento/MageSetup/etc/config.xml)
@@ -53,8 +58,8 @@ Any contribution to the development of MageSetup is highly welcome. The best pos
 
 Developer
 ---------
-FireGento Team 
-* Website: [http://firegento.com](http://firegento.com)  
+FireGento Team
+* Website: [http://firegento.com](http://firegento.com)
 * Twitter: [@firegento](https://twitter.com/firegento)
 
 Licence
