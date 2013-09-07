@@ -39,6 +39,8 @@ After you have installed the module, you should log off from admin panel. When y
 
     MageSetup has been installed. Click here to set up your pages, blocks, emails and tax settings.
 
+If you don't see that hint, please check that the configuration setting **System -> Configuration -> Developer -> Template Settings -> Allow Symlinks** is enabled.
+
 On the linked page, you can make the desired settings and then click "Run MageSetup" on the top right. The adjustments will be made.
 
 Support
