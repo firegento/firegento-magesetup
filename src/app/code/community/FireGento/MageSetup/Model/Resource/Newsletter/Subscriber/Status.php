@@ -35,9 +35,7 @@ class FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status
     extends Mage_Core_Model_Resource_Db_Abstract
 {
     /**
-     * Init resource model
-     *
-     * @return void
+     * Init main table and id field name
      */
     protected function _construct()
     {

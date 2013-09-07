@@ -54,8 +54,6 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
 
     /**
      * Setup Tax setting
-     *
-     * @return void
      */
     public function setup()
     {
@@ -114,8 +112,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Collect data and create tax class
      *
-     * @param  array $taxClassData tax class data
-     * @return void
+     * @param array $taxClassData tax class data
      */
     protected function _createTaxClass($taxClassData)
     {
@@ -135,8 +132,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Collect data and create tax calculation rules
      *
-     * @param  array $taxCalcRuleData tax class data
-     * @return void
+     * @param array $taxCalcRuleData tax class data
      */
     protected function _createTaxCalcRule($taxCalcRuleData)
     {
@@ -156,8 +152,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Collect data and create tax calculation rates
      *
-     * @param  array $taxCalcRateData tax class data
-     * @return void
+     * @param array $taxCalcRateData tax class data
      */
     protected function _createTaxCalcRate($taxCalcRateData)
     {
@@ -187,11 +182,11 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
         }
     }
 
-     /**
-      * Get tax calculations from config file
-      *
-      * @return array
-      */
+    /**
+     * Get tax calculations from config file
+     *
+     * @return array
+     */
     protected function _getConfigTaxCalculations()
     {
         return $this->_getConfigNode('tax_calculations', 'default');
@@ -201,8 +196,6 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
      * Collect data and create tax calculations
      *
      * @param array $taxCalculationData tax class data
-     *
-     * @return void
      */
     protected function _createTaxCalculation($taxCalculationData)
     {
@@ -211,8 +204,6 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
 
     /**
      * Update configuration settings
-     *
-     * @return void
      */
     protected function _updateConfigData()
     {
@@ -259,8 +250,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Truncate a database table
      *
-     * @param  string $table
-     * @return void
+     * @param string $table
      */
     protected function _truncateTable($table)
     {
@@ -271,9 +261,8 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Insert a line into a database table
      *
-     * @param  string $table
-     * @param  array  $data
-     * @return void
+     * @param string $table
+     * @param array  $data
      */
     protected function _insertIntoTable($table, $data)
     {

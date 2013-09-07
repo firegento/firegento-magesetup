@@ -36,9 +36,8 @@ class FireGento_MageSetup_Model_Newsletter_Observer
     /**
      * Enter description here ...
      *
+     * @magentoEevent newsletter_subscriber_save_after
      * @param Varien_Event_Observer $observer
-     * @event newsletter_subscriber_save_after
-     * @return void
      */
     public function saveSubscriberStatusHistory(Varien_Event_Observer $observer)
     {

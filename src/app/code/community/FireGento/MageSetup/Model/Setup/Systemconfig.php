@@ -35,19 +35,14 @@ class FireGento_MageSetup_Model_Setup_Systemconfig extends FireGento_MageSetup_M
 {
     /**
      * Setup Tax setting
-     *
-     * @return void
      */
     public function setup()
     {
-        // modify config data
         $this->_updateConfigData();
     }
 
     /**
      * Update configuration settings
-     *
-     * @return void
      */
     protected function _updateConfigData()
     {

@@ -37,11 +37,10 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
      * Setup Checkout Agreements
      *
      * @param array $locale
-     * @return void
      */
     public function setup($locale = array('default' => 'de_DE'))
     {
-        foreach($locale as $storeId => $localeCode) {
+        foreach ($locale as $storeId => $localeCode) {
 
             if (!$localeCode) {
                 if (sizeof($locale) == 1) {
@@ -72,41 +71,40 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
     /**
      * Collect data and create Agreement
      *
-     * @param array   $agreementData cms page data
-     * @param string  $locale
-     * @param boolean $override override cms page if it exists
-     * @param int|null $storeId
+     * @param  array    $agreementData cms page data
+     * @param  string   $locale
+     * @param  boolean  $override override cms page if it exists
+     * @param  int|null $storeId
      * @return void
      */
     protected function _createAgreement($agreementData, $locale, $override=true, $storeId = null)
     {
         if (!is_array($agreementData)) {
-            return null;
+            return;
         }
 
         $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $agreementData['filename'];
-
         if (!file_exists($filename)) {
             return;
         }
 
         $templateContent = $this->getTemplateContent($filename);
-        $name = '';
-        $checkboxText = '';
 
+        // Find name
+        $name = '';
         if (preg_match('/<!--@name\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
             $name = $matches[1];
             $templateContent = str_replace($matches[0], '', $templateContent);
         }
 
+        // Find checkbox_text
+        $checkboxText = '';
         if (preg_match('/<!--@checkbox_text\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
             $checkboxText = $matches[1];
             $templateContent = str_replace($matches[0], '', $templateContent);
         }
 
-        /**
-         * Remove comment lines
-         */
+        // Remove comment lines
         $templateContent = preg_replace('#\{\*.*\*\}#suU', '', $templateContent);
 
         $agreementData = array(
@@ -120,6 +118,7 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
             'stores' => $storeId ? $storeId : 0,
         );
 
+        /* @var $agreement Mage_Checkout_Model_Agreement */
         $agreement = Mage::getModel('checkout/agreement')->setStoreId($storeId)->load($agreementData['name'], 'name');
         if (is_array($agreement->getStores()) && !in_array(intval($storeId), $agreement->getStores())) {
             $agreement = Mage::getModel('checkout/agreement');
@@ -129,7 +128,6 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
             $agreement->setData($agreementData)->save();
         }
     }
-
 
     /**
      * Get pages/default from config file

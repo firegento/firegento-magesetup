@@ -33,7 +33,9 @@
  */
 class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Setup_Abstract
 {
-    /** @var array */
+    /**
+     * @var array
+     */
     protected $_localeTemplatePath = array();
 
     /**
@@ -41,13 +43,14 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
      *
      * @param array $locale
      * @param bool $overwrite
-     * @return void
      */
     public function setup($locale = array('default' => 'de_DE'), $overwrite = false)
     {
-        foreach($locale as $storeId => $localeCode) {
+        foreach ($locale as $storeId => $localeCode) {
 
-            if (!$localeCode) continue;
+            if (!$localeCode) {
+                continue;
+            }
 
             if ($storeId == 'default') {
                 $storeId = null;
@@ -58,7 +61,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
 
                 if ($data['execute'] == 1) {
 
-                    /** Change override param from false to true to override existing templates for testing */
+                    // Change override param from false to true to override existing templates for testing
                     $this->_createEmail($data, $localeCode, $overwrite, $storeId);
                 }
             }
@@ -88,11 +91,10 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     /**
      * Create transactional email template
      *
-     * @param array   $emailData template data
-     * @param string  $locale
-     * @param boolean $override  override email template if set
-     * @param int|null $storeId
-     *
+     * @param  array   $emailData template data
+     * @param  string  $locale
+     * @param  boolean $override  override email template if set
+     * @param  int|null $storeId
      * @return void
      */
     protected function _createEmail($emailData, $locale, $override = true, $storeId = null)
@@ -110,15 +112,11 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
                 ->setTemplateType($emailData['template_type'])
                 ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate());
 
-            /**
-             * Filter areas from template file
-             */
+            // Filter areas from template file
             $templateText = $this->getTemplateContent($localeEmailPath . $emailData['template_file']);
 
             if (!$templateText) {
-
-                // file not found: return silently
-                return;
+                return; // file not found: return silently
             }
 
             if (preg_match('/<!--@subject\s*(.*?)\s*@-->/u', $templateText, $matches)) {
@@ -135,9 +133,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
                 $templateText = str_replace($matches[0], '', $templateText);
             }
 
-            /**
-             * Remove comment lines
-             */
+            // Remove comment lines
             $templateText = preg_replace('#\{\*.*\*\}#suU', '', $templateText);
 
             $footerBlocks = $this->_getFooterBlocks($emailData);
@@ -178,7 +174,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     /**
      * Add configured blocks before the second last </body> tag
      *
-     * @param $templateText the content of the template
+     * @param  string $templateText the content of the template
      * @param  array  $blocks all blocks that should be inserted before penultimate </table>
      * @return string the content of the template with the block before penultimate </table>
      */

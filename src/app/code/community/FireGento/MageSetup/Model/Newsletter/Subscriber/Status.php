@@ -36,8 +36,6 @@ class FireGento_MageSetup_Model_Newsletter_Subscriber_Status
 {
     /**
      * Init resource model
-     *
-     * @return void
      */
     protected function _construct()
     {
