@@ -33,6 +33,9 @@
  */
 class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    // Add support for Magento < 1.7
+    const XML_PATH_EU_COUNTRIES_LIST = 'general/country/eu_countries';
+
     /**
      * Generate URL to configured shipping cost page, or '' if none.
      *
@@ -79,5 +82,26 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
         }
         asort($availableCountries);
         return $availableCountries;
+    }
+
+    /**
+     * Check whether specified country is in EU countries list
+     *
+     * @param string $countryCode
+     * @return bool
+     */
+    public function isCountryInEU($countryCode)
+    {
+        return in_array(strtoupper($countryCode), $this->getEUCountries());
+    }
+
+    /**
+     * Get countries in the EU
+     *
+     * @return array
+     */
+    public function getEUCountries()
+    {
+        return explode(',', Mage::getStoreConfig(self::XML_PATH_EU_COUNTRIES_LIST));
     }
 }
