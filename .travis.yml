@@ -2,15 +2,13 @@ language: php
 php:
   - 5.3
 before_install:
-  - mkdir bin/
   - mkdir test/
+  - composer install --dev
 before_script:
   - CURR_DIR=$(pwd)
-  - wget https://raw.github.com/EcomDev/MageCI/master/bin/mage-ci
-  - chmod +x ./mage-ci
-  - ./mage-ci install test 1.7.0.2 magento_test -c -t -r http://mage-ci.ecomdev.org
-  - ./mage-ci install-module test $CURR_DIR
+  - bin/mage-ci install test 1.7.0.2 magento_test -c -t -r http://mage-ci.ecomdev.org
+  - bin/mage-ci install-module test $CURR_DIR
   - git clone https://github.com/EcomDev/EcomDev_PHPUnit.git ./phpunit/
-  - ./mage-ci install-module $CURR_DIR/test $CURR_DIR/phpunit/
+  - bin/mage-ci install-module $CURR_DIR/test $CURR_DIR/phpunit/
 script:
-  - ./mage-ci phpunit test
+  - bin/mage-ci phpunit test
