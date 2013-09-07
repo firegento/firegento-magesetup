@@ -103,3 +103,9 @@ You can choose a different language for every store view.
 - ![Checkout review page](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/checkout-review.png "Checkout review page")  
    Regrouping for better overview and due to legal issues
 - Display additional text (can be configured in **System -> Configuration -> Checkout -> Checkout Options -> Display Additional Information**)  
+
+### Dynamic Shipping Tax Class Calculation
+- Calculate shipping tax class depending on products in cart
+    * Use highest product tax class as shipping tax class
+    * Or use the tax rate of products that make up the biggest amount  
+![Shipping tax class](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/shipping-tax-class.png "Shipping tax class")
