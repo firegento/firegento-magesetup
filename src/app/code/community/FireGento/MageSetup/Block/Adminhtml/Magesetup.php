@@ -139,4 +139,32 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     {
         return Mage::helper('magesetup')->getAvailableCountries();
     }
+    
+    public function getNewProductTaxClassesJson()
+    {
+        $countryTaxClasses = array();
+        foreach(Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+            $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . $countryId . DS . 'tax.xml';
+
+            // If the given file does not exist, use the default file
+            if (!file_exists($configFile)) {
+                $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . 'default' . DS . 'tax.xml';
+            }
+
+            $xml = new SimpleXMLElement(file_get_contents($configFile));
+            
+            $taxClasses = $xml->default->magesetup->tax_classes->default;
+            foreach($taxClasses->children() as $identifier => $taxClass) {
+                if ($taxClass->class_type != 'PRODUCT'
+                    || $taxClass->execute != 1
+                    || strpos($identifier, 'shipping') === 0) {
+                    continue;
+                }
+                $countryTaxClasses[$countryId][(string)$taxClass->class_id] = (string)$taxClass->class_name;
+            }
+        }
+        
+        return Zend_Json::encode($countryTaxClasses);
+    }
 }
+
