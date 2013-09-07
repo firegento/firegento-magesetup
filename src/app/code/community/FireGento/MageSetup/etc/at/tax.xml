@@ -1028,6 +1028,39 @@
                         <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_CY_0>
+
+                    <tax_calculation_rate_HR_20>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>84</tax_calculation_rate_id>
+                        <tax_country_id>HR</tax_country_id>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
+                        <code>HR 20%</code>
+                        <label>MwSt.</label>
+                        <rate>20</rate>
+                    </tax_calculation_rate_HR_20>
+
+                    <tax_calculation_rate_HR_10>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>85</tax_calculation_rate_id>
+                        <tax_country_id>HR</tax_country_id>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
+                        <code>HR 10%</code>
+                        <label>reduzierte MwSt.</label>
+                        <rate>10</rate>
+                    </tax_calculation_rate_HR_10>
+
+                    <tax_calculation_rate_HR_0>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>86</tax_calculation_rate_id>
+                        <tax_country_id>HR</tax_country_id>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
+                        <code>HR 0%</code>
+                        <label>ohne MwSt.</label>
+                        <rate>0</rate>
+                    </tax_calculation_rate_HR_0>
                 </default>
 
             </tax_calculation_rates>
@@ -3626,6 +3659,102 @@
                         <customer_tax_class_id>6</customer_tax_class_id>
                         <product_tax_class_id>7</product_tax_class_id>
                     </tax_calculation_CY_10_shipping_companies_vat>
+
+                    <tax_calculation_HR_20_customer>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>84</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>3</tax_calculation_rule_id>
+                        <customer_tax_class_id>3</customer_tax_class_id>
+                        <product_tax_class_id>1</product_tax_class_id>
+                    </tax_calculation_HR_20_customer>
+
+                    <tax_calculation_HR_20_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>84</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>6</tax_calculation_rule_id>
+                        <customer_tax_class_id>5</customer_tax_class_id>
+                        <product_tax_class_id>1</product_tax_class_id>
+                    </tax_calculation_HR_20_companies>
+
+                    <tax_calculation_HR_20_shipping_customer>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>84</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
+                        <customer_tax_class_id>3</customer_tax_class_id>
+                        <product_tax_class_id>4</product_tax_class_id>
+                    </tax_calculation_HR_20_shipping_customer>
+
+                    <tax_calculation_HR_20_shipping_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>84</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
+                        <customer_tax_class_id>5</customer_tax_class_id>
+                        <product_tax_class_id>4</product_tax_class_id>
+                    </tax_calculation_HR_20_shipping_companies>
+
+                    <tax_calculation_HR_10_customer>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>85</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>4</tax_calculation_rule_id>
+                        <customer_tax_class_id>3</customer_tax_class_id>
+                        <product_tax_class_id>2</product_tax_class_id>
+                    </tax_calculation_HR_10_customer>
+
+                    <tax_calculation_HR_10_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>85</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>8</tax_calculation_rule_id>
+                        <customer_tax_class_id>5</customer_tax_class_id>
+                        <product_tax_class_id>2</product_tax_class_id>
+                    </tax_calculation_HR_10_companies>
+
+                    <tax_calculation_HR_10_shipping_customer>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>85</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
+                        <customer_tax_class_id>3</customer_tax_class_id>
+                        <product_tax_class_id>7</product_tax_class_id>
+                    </tax_calculation_HR_10_shipping_customer>
+
+                    <tax_calculation_HR_10_shipping_companies>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>85</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
+                        <customer_tax_class_id>5</customer_tax_class_id>
+                        <product_tax_class_id>7</product_tax_class_id>
+                    </tax_calculation_HR_10_shipping_companies>
+
+                    <tax_calculation_HR_20_companies_vat>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>86</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
+                        <customer_tax_class_id>6</customer_tax_class_id>
+                        <product_tax_class_id>1</product_tax_class_id>
+                    </tax_calculation_HR_20_companies_vat>
+
+                    <tax_calculation_HR_10_companies_vat>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>86</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
+                        <customer_tax_class_id>6</customer_tax_class_id>
+                        <product_tax_class_id>2</product_tax_class_id>
+                    </tax_calculation_HR_10_companies_vat>
+
+                    <tax_calculation_HR_20_shipping_companies_vat>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>86</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
+                        <customer_tax_class_id>6</customer_tax_class_id>
+                        <product_tax_class_id>4</product_tax_class_id>
+                    </tax_calculation_HR_20_shipping_companies_vat>
+
+                    <tax_calculation_HR_10_shipping_companies_vat>
+                        <execute>1</execute>
+                        <tax_calculation_rate_id>86</tax_calculation_rate_id>
+                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
+                        <customer_tax_class_id>6</customer_tax_class_id>
+                        <product_tax_class_id>7</product_tax_class_id>
+                    </tax_calculation_HR_10_shipping_companies_vat>
                 </default>
             </tax_calculations>
             <tax_config>
