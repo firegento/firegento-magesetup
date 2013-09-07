@@ -76,6 +76,12 @@ You can choose a different language for every store view.
 - Document all status changes in order to be able to prove subscriptions and unsubscriptions   
 ![Newsletter History](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/newsletter-history.png "Newsletter History")
 
+### Auto-generate meta data for products
+- Generate meta title from product name
+- Generate meta keywords from category names
+- Generate meta description from short description, (if empty) description or (if still empty) category names  
+![Product Meta Data Generation](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/product-meta-autogenerate.png "Product Meta Data Generation")
+
 ## Frontend Features
 ### Info Block below Prices
 - Display a block below prices on product list and product view pages  
