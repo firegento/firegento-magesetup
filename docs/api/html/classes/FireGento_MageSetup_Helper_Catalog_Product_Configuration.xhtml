@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_MageSetup - FireGento_MageSetup_Helper_Catalog_Product_Configuration - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_MageSetup - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_finished">$_finished</a>
+          </li>
+          <li>
+            <a href="#_products">$_products</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#_getAdditionalData">_getAdditionalData</a>
+          </li>
+          <li>
+            <a href="#_getAttributes">_getAttributes</a>
+          </li>
+          <li>
+            <a href="#_getProduct">_getProduct</a>
+          </li>
+          <li>
+            <a href="#getCustomOptions">getCustomOptions</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_MageSetup_Helper_Catalog_Product_Configuration</h2>
+        <div class="file-notice">
+          <p>Changed product configuration to add product attributes on checkout</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_finished"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $_finished</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="_products"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $_products</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getCustomOptions"/>
+            <h4><span class="label public">public</span>getCustomOptions<span style="font-size:90%;">( <span class="param-type"><span title="\\Mage_Catalog_Model_Product_Configuration_Item_Interface">Mage_Catalog_Model_Product_Configuration_Item_Interface</span></span><strong> $item</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Merge Attributes</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$item</code> - Quote item</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Custom Options</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getAdditionalData"/>
+            <h4><span class="label protected">protected</span>_getAdditionalData<span style="font-size:90%;">( <span class="param-type"><span title="\\Mage_Catalog_Model_Product">Mage_Catalog_Model_Product</span></span><strong> $product</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the attributes which are visible on the checkout page</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$product</code> - Product Model</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Addition data as array</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getAttributes"/>
+            <h4><span class="label protected">protected</span>_getAttributes<span style="font-size:90%;">( <span class="param-type"><span title="Mage_Catalog_Model_Product_Configuration_Item_Interface">Mage_Catalog_Model_Product_Configuration_Item_Interface</span></span><strong> $item</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retreve the product attributes</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$item</code> - Quote item</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Attributes</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getProduct"/>
+            <h4><span class="label protected">protected</span>_getProduct<span style="font-size:90%;">( <span class="param-type"><span title="Mage_Catalog_Model_Product_Configuration_Item_Interface">Mage_Catalog_Model_Product_Configuration_Item_Interface</span></span><strong> $item</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the product for the current quote item</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$item</code> - Quote item</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Product Model</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Test_Model_Source_Tax_DynamicType" namespace="" name="FireGento_MageSetup_Test_Model_Source_Tax_DynamicType" abstract="false" final="false" start="34" end="63">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Test/Model/Source/Tax" file="DynamicType.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Test/Model/Source/Tax/DynamicType.php" size="1900" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="52143e46f9913272036648a1dba24ba76d6ce054"/>
+  <docblock>
+    <description compact="PHPUnit Test Class"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="2.0.0"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case" namespace="" name="EcomDev_PHPUnit_Test_Case"/>
+  <member name="_model" type="{unknown}" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="object">
+        <type full="FireGento_MageSetup_Model_Source_Tax_DynamicType" namespace="" name="FireGento_MageSetup_Model_Source_Tax_DynamicType"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="44" end="48" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Sets up the model class"/>
+    </docblock>
+  </method>
+  <method name="testToOptionArray" start="53" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test the toOptionArray method"/>
+    </docblock>
+  </method>
+</class>

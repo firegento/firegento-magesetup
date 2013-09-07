@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass" namespace="" name="FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass" abstract="false" final="false" start="34" end="141">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax" file="NewProductTaxClass.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax/NewProductTaxClass.php" size="4148" time="2013-09-07T20:28:07+02:00" unixtime="1378578487" sha1="d29edef07c605930853aa364518d8c33a2689aaf"/>
+  <docblock>
+    <description compact="Tax Source model for new tax classes, possibly not created yet"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="0.5.0"/>
+  </docblock>
+  <extends full="Mage_Eav_Model_Entity_Attribute_Source_Abstract" namespace="" name="Mage_Eav_Model_Entity_Attribute_Source_Abstract"/>
+  <member name="_options" type="array" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var description="$_options cached options" type="array"/>
+    </docblock>
+  </member>
+  <member name="_defaultOption" type="integer" default="" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="toOptionArray" start="52" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return option array"/>
+      <return description="New product tax classes as option array" type="array"/>
+    </docblock>
+  </method>
+  <method name="getAllOptions" start="79" end="82" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get all options as array"/>
+      <return description="New product tax classes as option array" type="array"/>
+    </docblock>
+  </method>
+  <method name="getDefaultOption" start="89" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get default tax class"/>
+      <return description="Default tax class option" type="int"/>
+    </docblock>
+  </method>
+  <method name="_getConfigNode" start="118" end="126" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get config.xml data"/>
+      <param description="xml node" type="string" variable="$node"/>
+      <param description="if set, child node of the first node" type="object" variable="$childNode">
+        <type full="string|null" namespace="" name="string|null"/>
+      </param>
+      <return description="Config node" type="array"/>
+    </docblock>
+    <parameter name="node" byreference="false" type="{unknown}"/>
+    <parameter name="childNode" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="getConfigData" start="133" end="140" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get config.xml data"/>
+      <return description="Config data" type="array"/>
+    </docblock>
+  </method>
+</class>

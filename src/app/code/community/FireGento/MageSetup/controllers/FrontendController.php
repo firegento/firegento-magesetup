@@ -34,9 +34,7 @@
 class FireGento_MageSetup_FrontendController extends Mage_Core_Controller_Front_Action
 {
     /**
-     * Show an agreement
-     *
-     * @return void
+     * Shows the given agreement
      */
     public function agreementsAction()
     {
@@ -50,12 +48,12 @@ class FireGento_MageSetup_FrontendController extends Mage_Core_Controller_Front_
 
             $headBlock = $this->getLayout()->getBlock('head');
             $headBlock->setTitle(
-                $headBlock->htmlEscape($processor->filter($agreement->getCheckboxText()))
+                $headBlock->escapeHtml($processor->filter($agreement->getCheckboxText()))
             );
 
             $agreementText = $agreement->getContent();
             if (!$agreement->getIsHtml()) {
-                $agreementText = $headBlock->htmlEscape($agreementText);
+                $agreementText = $headBlock->escapeHtml($agreementText);
             }
 
             $agreeBlock = $this->getLayout()->getBlock('agreement');

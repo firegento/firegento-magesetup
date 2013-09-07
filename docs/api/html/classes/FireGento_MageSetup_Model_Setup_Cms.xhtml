@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_MageSetup - FireGento_MageSetup_Model_Setup_Cms - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_MageSetup - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_footerLinks">$_footerLinks</a>
+          </li>
+          <li>
+            <a href="#_setup">$_setup</a>
+          </li>
+          <li>
+            <a href="#_connection">$_connection</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_createCmsBlock">_createCmsBlock</a>
+          </li>
+          <li>
+            <a href="#_createCmsPage">_createCmsPage</a>
+          </li>
+          <li>
+            <a href="#_createFooterLinksContent">_createFooterLinksContent</a>
+          </li>
+          <li>
+            <a href="#_getConfigBlocks">_getConfigBlocks</a>
+          </li>
+          <li>
+            <a href="#_getConfigNode">_getConfigNode</a>
+          </li>
+          <li>
+            <a href="#_getConfigPages">_getConfigPages</a>
+          </li>
+          <li>
+            <a href="#_getConnection">_getConnection</a>
+          </li>
+          <li>
+            <a href="#_getDefaultBlock">_getDefaultBlock</a>
+          </li>
+          <li>
+            <a href="#_getFooterLinks">_getFooterLinks</a>
+          </li>
+          <li>
+            <a href="#_getSetup">_getSetup</a>
+          </li>
+          <li>
+            <a href="#_loadExistingModel">_loadExistingModel</a>
+          </li>
+          <li>
+            <a href="#_updateFooterLinksBlock">_updateFooterLinksBlock</a>
+          </li>
+          <li>
+            <a href="#getConfigData">getConfigData</a>
+          </li>
+          <li>
+            <a href="#getTemplateContent">getTemplateContent</a>
+          </li>
+          <li>
+            <a href="#setConfigData">setConfigData</a>
+          </li>
+          <li>
+            <a href="#setup">setup</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_MageSetup_Model_Setup_Cms</h2>
+        <div class="file-notice">
+          <p>Setup class for CMS pages and blocks</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_footerLinks"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $_footerLinks</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Setup setup class and connection</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getConfigData"/>
+            <h4><span class="label public">public</span>getConfigData<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get config.xml data</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Config data</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTemplateContent"/>
+            <h4><span class="label public">public</span>getTemplateContent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filename</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get template content</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filename</code> - Template file name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Template content</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setConfigData"/>
+            <h4><span class="label public">public</span>setConfigData<span style="font-size:90%;">( <span class="param-type">string</span><strong> $configPath</strong>, <span class="param-type">string</span><strong> $value</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $storeId</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Saves a system config value for the given config path and the given store id</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$configPath</code> - Config Path</li>
+                <li><code>$value</code> - Value</li>
+                <li><code>$storeId</code> - Store ID</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setup"/>
+            <h4><span class="label public">public</span>setup<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $locale</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Setup Pages, Blocks and especially Footer Block</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$locale</code> - Locale options</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_createCmsBlock"/>
+            <h4><span class="label protected">protected</span>_createCmsBlock<span style="font-size:90%;">( <span class="param-type">array</span><strong> $blockData</strong>, <span class="param-type">string</span><strong> $locale</strong>, <span class="param-type">boolean</span><strong> $override</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $storeId</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Collect data and create CMS block</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$blockData</code> - Cms block data</li>
+                <li><code>$locale</code> - Locale</li>
+                <li><code>$override</code> - Override email template if set</li>
+                <li><code>$storeId</code> - Store ID</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_createCmsPage"/>
+            <h4><span class="label protected">protected</span>_createCmsPage<span style="font-size:90%;">( <span class="param-type">array</span><strong> $pageData</strong>, <span class="param-type">string</span><strong> $locale</strong>, <span class="param-type">boolean</span><strong> $override</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $storeId</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Collect data and create CMS page</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pageData</code> - Cms page data</li>
+                <li><code>$locale</code> - Locale</li>
+                <li><code>$override</code> - Override email template if set</li>
+                <li><code>$storeId</code> - Store ID</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_createFooterLinksContent"/>
+            <h4><span class="label protected">protected</span>_createFooterLinksContent<span style="font-size:90%;">( <span class="param-type"><span title="int|null">int|null</span></span><strong> $storeId</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate footer_links block from config data</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$storeId</code> - Store ID</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Footer Links Content</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getConfigBlocks"/>
+            <h4><span class="label protected">protected</span>_getConfigBlocks<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get blocks/default from config file</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Config blocks</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getConfigNode"/>
+            <h4><span class="label protected">protected</span>_getConfigNode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $node</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $childNode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get config.xml data</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$node</code> - xml node</li>
+                <li><code>$childNode</code> - if set, child node of the first node</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Config Node</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getConfigPages"/>
+            <h4><span class="label protected">protected</span>_getConfigPages<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get pages/default from config file</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Config pages</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getConnection"/>
+            <h4><span class="label protected">protected</span>_getConnection<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the database connection</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Database connection</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getDefaultBlock"/>
+            <h4><span class="label protected">protected</span>_getDefaultBlock<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identifier</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the default block for the given identifier</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identifier</code> - Block Identifier</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Block Model</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getFooterLinks"/>
+            <h4><span class="label protected">protected</span>_getFooterLinks<span style="font-size:90%;">( <span class="param-type"><span title="int|null">int|null</span></span><strong> $storeId</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get footer_links/default from config file</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$storeId</code> - Store ID</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Footer Links</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getSetup"/>
+            <h4><span class="label protected">protected</span>_getSetup<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the Magento setup model class</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Setup Model</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_loadExistingModel"/>
+            <h4><span class="label protected">protected</span>_loadExistingModel<span style="font-size:90%;">( <span class="param-type"><span title="Mage_Core_Model_Abstract">Mage_Core_Model_Abstract</span></span><strong> $model</strong>, <span class="param-type">string</span><strong> $attributeCode</strong>, <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Load a model by attribute code</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$model</code> - Collection</li>
+                <li><code>$attributeCode</code> - Attribute code</li>
+                <li><code>$value</code> - Value</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_updateFooterLinksBlock"/>
+            <h4><span class="label protected">protected</span>_updateFooterLinksBlock<span style="font-size:90%;">( <span class="param-type">array</span><strong> $blockData</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $storeId</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Update footer_links cms block</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$blockData</code> - Cms block data</li>
+                <li><code>$storeId</code> - Store ID</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

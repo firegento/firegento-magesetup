@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_MageSetup - FireGento_MageSetup_Block_Catalog_Product_Price - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_MageSetup - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_tierPriceDefaultTemplates">$_tierPriceDefaultTemplates</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__">__</a>
+          </li>
+          <li>
+            <a href="#_addDeliveryTimeHtml">_addDeliveryTimeHtml</a>
+          </li>
+          <li>
+            <a href="#_loadTaxCalculationRate">_loadTaxCalculationRate</a>
+          </li>
+          <li>
+            <a href="#_toHtml">_toHtml</a>
+          </li>
+          <li>
+            <a href="#getFormattedTaxRate">getFormattedTaxRate</a>
+          </li>
+          <li>
+            <a href="#getFormattedWeight">getFormattedWeight</a>
+          </li>
+          <li>
+            <a href="#getIsShowWeightInfo">getIsShowWeightInfo</a>
+          </li>
+          <li>
+            <a href="#getTaxRate">getTaxRate</a>
+          </li>
+          <li>
+            <a href="#isIncludingShippingCosts">isIncludingShippingCosts</a>
+          </li>
+          <li>
+            <a href="#isIncludingTax">isIncludingTax</a>
+          </li>
+          <li>
+            <a href="#isShowShippingLink">isShowShippingLink</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_MageSetup_Block_Catalog_Product_Price</h2>
+        <div class="file-notice">
+          <p>Enhanced block for product price display of all products in spite of bundles (got own block!).</p>
+          <p>
+            <pre>Contains the normal price.phtml rendering and additionally a configured static block.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_tierPriceDefaultTemplates"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $_tierPriceDefaultTemplates</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__"/>
+            <h4><span class="label public">public</span>__<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Translate block sentence</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Translated text</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_toHtml"/>
+            <h4><span class="label public">public</span>_toHtml<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add content of template block below price html if defined in config</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Price HTML</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFormattedTaxRate"/>
+            <h4><span class="label public">public</span>getFormattedTaxRate<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieves formatted string of tax rate for user output</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Formatted Tax Rate for the given locale</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFormattedWeight"/>
+            <h4><span class="label public">public</span>getFormattedWeight<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get formatted weight incl. unit</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Formatted weight</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIsShowWeightInfo"/>
+            <h4><span class="label public">public</span>getIsShowWeightInfo<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if Shipping by Weight is active</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Flag if product weight should be displayed</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTaxRate"/>
+            <h4><span class="label public">public</span>getTaxRate<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Read tax rate from current product.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Tax Rate</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isIncludingShippingCosts"/>
+            <h4><span class="label public">public</span>isIncludingShippingCosts<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether or not the price contains taxes</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Flag if shipping costs are including taxes</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isIncludingTax"/>
+            <h4><span class="label public">public</span>isIncludingTax<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether or not the price contains taxes</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Flag if prices are shown with including tax</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isShowShippingLink"/>
+            <h4><span class="label public">public</span>isShowShippingLink<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether the shipping link needs to be shown on the frontend or not.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Flag if shipping link should be displayed</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_addDeliveryTimeHtml"/>
+            <h4><span class="label protected">protected</span>_addDeliveryTimeHtml<span style="font-size:90%;">( <span class="param-type"><span title="Varien_Object">Varien_Object</span></span><strong> $htmlObject</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add delivery time on category pages only</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$htmlObject</code> - Transport object</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_loadTaxCalculationRate"/>
+            <h4><span class="label protected">protected</span>_loadTaxCalculationRate<span style="font-size:90%;">( <span class="param-type"><span title="\\Mage_Catalog_Model_Product">Mage_Catalog_Model_Product</span></span><strong> $product</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets tax percents for current product</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$product</code> - Product Model</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Tax Rate</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

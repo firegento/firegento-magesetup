@@ -34,9 +34,7 @@
 class FireGento_MageSetup_Adminhtml_NewsletterController extends Mage_Adminhtml_Controller_Action
 {
     /**
-     * Enter description here ...
-     *
-     * @return void
+     * Displays the newsletter subscribers status history
      */
     public function indexAction()
     {
@@ -71,8 +69,6 @@ class FireGento_MageSetup_Adminhtml_NewsletterController extends Mage_Adminhtml_
 
     /**
      * Retrieve the new grid layout via ajax requests
-     *
-     * @return void
      */
     public function gridAction()
     {

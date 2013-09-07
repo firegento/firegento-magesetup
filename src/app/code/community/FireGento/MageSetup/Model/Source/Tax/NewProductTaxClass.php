@@ -47,14 +47,14 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
     /**
      * Return option array
      *
-     * @return array options
+     * @return array New product tax classes as option array
      */
     public function toOptionArray()
     {
         if (!sizeof($this->_options)) {
             $taxClasses = $this->_getConfigNode('tax_classes', 'default');
             foreach ($taxClasses as $identifier => $taxClass) {
-                if ($taxClass['class_type'] != 'PRODUCT' 
+                if ($taxClass['class_type'] != 'PRODUCT'
                     || $taxClass['execute'] != 1
                     || strpos($identifier, 'shipping') === 0) {
                     continue;
@@ -74,7 +74,7 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
     /**
      * Get all options as array
      *
-     * @return array options
+     * @return array New product tax classes as option array
      */
     public function getAllOptions()
     {
@@ -84,7 +84,7 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
     /**
      * Get default tax class
      *
-     * @return int
+     * @return int Default tax class option
      */
     public function getDefaultOption()
     {
@@ -113,7 +113,7 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
      *
      * @param  string      $node      xml node
      * @param  string|null $childNode if set, child node of the first node
-     * @return array
+     * @return array Config node
      */
     protected function _getConfigNode($node, $childNode = null)
     {
@@ -128,7 +128,7 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
     /**
      * Get config.xml data
      *
-     * @return array
+     * @return array Config data
      */
     public function getConfigData()
     {

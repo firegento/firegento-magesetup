@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_MageSetup - FireGento_MageSetup_Model_Setup_Abstract - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_MageSetup - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_setup">$_setup</a>
+          </li>
+          <li>
+            <a href="#_connection">$_connection</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_getConfigNode">_getConfigNode</a>
+          </li>
+          <li>
+            <a href="#_getConnection">_getConnection</a>
+          </li>
+          <li>
+            <a href="#_getSetup">_getSetup</a>
+          </li>
+          <li>
+            <a href="#_loadExistingModel">_loadExistingModel</a>
+          </li>
+          <li>
+            <a href="#getConfigData">getConfigData</a>
+          </li>
+          <li>
+            <a href="#getTemplateContent">getTemplateContent</a>
+          </li>
+          <li>
+            <a href="#setConfigData">setConfigData</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_MageSetup_Model_Setup_Abstract</h2>
+        <div class="file-notice">
+          <p>Setup class</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_setup"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $_setup</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="_connection"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $_connection</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Setup setup class and connection</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getConfigData"/>
+            <h4><span class="label public">public</span>getConfigData<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get config.xml data</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Config data</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTemplateContent"/>
+            <h4><span class="label public">public</span>getTemplateContent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filename</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get template content</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filename</code> - Template file name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Template content</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setConfigData"/>
+            <h4><span class="label public">public</span>setConfigData<span style="font-size:90%;">( <span class="param-type">string</span><strong> $configPath</strong>, <span class="param-type">string</span><strong> $value</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $storeId</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Saves a system config value for the given config path and the given store id</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$configPath</code> - Config Path</li>
+                <li><code>$value</code> - Value</li>
+                <li><code>$storeId</code> - Store ID</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getConfigNode"/>
+            <h4><span class="label protected">protected</span>_getConfigNode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $node</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $childNode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get config.xml data</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$node</code> - xml node</li>
+                <li><code>$childNode</code> - if set, child node of the first node</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Config Node</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getConnection"/>
+            <h4><span class="label protected">protected</span>_getConnection<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the database connection</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Database connection</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getSetup"/>
+            <h4><span class="label protected">protected</span>_getSetup<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the Magento setup model class</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Setup Model</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_loadExistingModel"/>
+            <h4><span class="label protected">protected</span>_loadExistingModel<span style="font-size:90%;">( <span class="param-type"><span title="Mage_Core_Model_Abstract">Mage_Core_Model_Abstract</span></span><strong> $model</strong>, <span class="param-type">string</span><strong> $attributeCode</strong>, <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Load a model by attribute code</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$model</code> - Collection</li>
+                <li><code>$attributeCode</code> - Attribute code</li>
+                <li><code>$value</code> - Value</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -31,14 +31,12 @@
  * @version   $Id:$
  * @since     1.2.2
  */
-
 class FireGento_MageSetup_Block_Customer_Account_Agreements extends Mage_Checkout_Block_Agreements
 {
-
     /**
      * Filter by "Agreement Type"
      *
-     * @return mixed
+     * @return Mage_Checkout_Model_Resource_Agreement_Collection Agreements
      */
     public function getAgreements()
     {

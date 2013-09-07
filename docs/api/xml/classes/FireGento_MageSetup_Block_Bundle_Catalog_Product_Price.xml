@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Bundle_Catalog_Product_Price" namespace="" name="FireGento_MageSetup_Block_Bundle_Catalog_Product_Price" abstract="false" final="false" start="35" end="170">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Bundle/Catalog/Product" file="Price.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Bundle/Catalog/Product/Price.php" size="5377" time="2013-09-07T19:56:54+02:00" unixtime="1378576614" sha1="4993dd9853f88635dd0bbc8bdf53819880edacbc"/>
+  <docblock>
+    <description compact="Enhanced block for product price display of bundle products. Contains the normal price.phtml rendering and additionally a configured static block."/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="0.1.0"/>
+  </docblock>
+  <extends full="FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract" namespace="" name="FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract"/>
+  <method name="_toHtml" start="43" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add content of template block below price html if defined in config"/>
+      <return description="Price HTML" type="string"/>
+    </docblock>
+  </method>
+  <method name="getTaxRate" start="68" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Read tax rate from current product."/>
+      <return description="Tax Rate" type="string"/>
+    </docblock>
+  </method>
+  <method name="getFormattedTaxRate" start="82" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves formatted string of tax rate for user output"/>
+      <return description="Formatted Tax Rate for the given locale" type="string"/>
+    </docblock>
+  </method>
+  <method name="isIncludingTax" start="101" end="108" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns whether or not the price contains taxes"/>
+      <return description="Flag if prices are shown with including tax" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isShowShippingLink" start="116" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns whether the shipping link needs to be shown on the frontend or not."/>
+      <return description="Flag if shipping link should be displayed" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_loadTaxCalculationRate" start="133" end="149" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Gets tax percents for current product"/>
+      <param description="Product Model" type="object" variable="$product">
+        <type full="Mage_Catalog_Model_Product" namespace="" name="Mage_Catalog_Model_Product"/>
+      </param>
+      <return description="Tax Rate" type="string"/>
+    </docblock>
+    <parameter name="product" byreference="false" type="object">
+      <type full="\\Mage_Catalog_Model_Product" namespace="\" name="Mage_Catalog_Model_Product"/>
+    </parameter>
+  </method>
+  <method name="getIsShowWeightInfo" start="156" end="159" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if Shipping by Weight is active"/>
+      <return description="Flag if product weight should be displayed" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getFormattedWeight" start="166" end="169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get formatted weight incl. unit"/>
+      <return description="Formatted weight" type="string"/>
+    </docblock>
+  </method>
+  <parent full="FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract" namepsace="" name="FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract">
+    <extends full="Mage_Bundle_Block_Catalog_Product_Price" namespace="" name="Mage_Bundle_Block_Catalog_Product_Price"/>
+  </parent>
+</class>

@@ -35,8 +35,6 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
 {
     /**
      * Class Constructor
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -57,7 +55,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     /**
      * Get old product tax classes
      *
-     * @return array
+     * @return array All existing product tax classes
      */
     public function getProductTaxClasses()
     {
@@ -67,7 +65,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     /**
      * Get new product tax classes (yet to be created)
      *
-     * @return array
+     * @return array All new product tax classes
      */
     public function getNewProductTaxClasses()
     {
@@ -77,7 +75,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     /**
      * Retrieve the default default new product tax class (yet to be created)
      *
-     * @return int
+     * @return int Default Product Tax Class
      */
     public function getDefaultProductTaxClass()
     {
@@ -87,7 +85,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     /**
      * Retrieve all locales where the directory email/template exists
      *
-     * @return array
+     * @return array Locale options for email templates
      */
     public function getLocaleOptionsForEmailTemplates()
     {
@@ -105,7 +103,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     /**
      * Retrieve all locales where the directory email/template exists
      *
-     * @return array
+     * @return array Locale options for CMS content
      */
     public function getLocaleOptionsForCmsContent()
     {
@@ -123,18 +121,28 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     /**
      * Check if there is more than one Store View
      *
-     * @return bool
+     * @return bool Flag if there are more than one store
      */
     public function isMultiStore()
     {
-        return (sizeof(Mage::app()->getStores(false)) > 1);
+        return (sizeof($this->getStores()) > 1);
     }
 
+    /**
+     * Retrieve all stores
+     *
+     * @return array All stores
+     */
     public function getStores()
     {
         return Mage::app()->getStores(false);
     }
 
+    /**
+     * Retrieve all available countries for MageSetup
+     *
+     * @return array All allowed countries
+     */
     public function getAvailableCountriesForSetup()
     {
         return Mage::helper('magesetup')->getAvailableCountries();

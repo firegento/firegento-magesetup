@@ -49,7 +49,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
     /**
      * Returns a value that indicates if some of the german setup settings have already been initialized.
      *
-     * @return bool
+     * @return bool Flag if MageSetup is already initialized
      */
     public function isInitialized()
     {
@@ -59,7 +59,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
     /**
      * Get magesetup management url
      *
-     * @return string
+     * @return string URL for MageSetup form
      */
     public function getManageUrl()
     {
@@ -69,7 +69,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
     /**
      * ACL validation before html generation
      *
-     * @return string
+     * @return string Notification content
      */
     protected function _toHtml()
     {

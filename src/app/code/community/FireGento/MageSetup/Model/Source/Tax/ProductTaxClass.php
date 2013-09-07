@@ -36,8 +36,8 @@ class FireGento_MageSetup_Model_Source_Tax_ProductTaxClass extends Mage_Tax_Mode
     /**
      * Retrieve all product tax classes as array
      *
-     * @param  bool $withEmpty
-     * @return array
+     * @param  bool $withEmpty Flag if an empty option should be prepended to the option array
+     * @return array Product tax class option array
      */
     public function getAllOptions($withEmpty = false)
     {

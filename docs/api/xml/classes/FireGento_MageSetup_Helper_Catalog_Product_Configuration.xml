@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Helper_Catalog_Product_Configuration" namespace="" name="FireGento_MageSetup_Helper_Catalog_Product_Configuration" abstract="false" final="false" start="34" end="138">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Catalog/Product" file="Configuration.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Catalog/Product/Configuration.php" size="4700" time="2013-09-07T20:07:04+02:00" unixtime="1378577224" sha1="08b1588eb119e15e09c67f7a245760480a07fb09"/>
+  <docblock>
+    <description compact="Changed product configuration to add product attributes on checkout"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="1.0.5"/>
+  </docblock>
+  <extends full="Mage_Catalog_Helper_Product_Configuration" namespace="" name="Mage_Catalog_Helper_Product_Configuration"/>
+  <member name="_finished" type="array" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_products" type="array" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="getCustomOptions" start="54" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Merge Attributes"/>
+      <see value="parent::getCustomOptions()"/>
+      <param description="Quote item" type="object" variable="$item">
+        <type full="Mage_Catalog_Model_Product_Configuration_Item_Interface" namespace="" name="Mage_Catalog_Model_Product_Configuration_Item_Interface"/>
+      </param>
+      <return description="Custom Options" type="array"/>
+    </docblock>
+    <parameter name="item" byreference="false" type="object">
+      <type full="\\Mage_Catalog_Model_Product_Configuration_Item_Interface" namespace="\" name="Mage_Catalog_Model_Product_Configuration_Item_Interface"/>
+    </parameter>
+  </method>
+  <method name="_getProduct" start="69" end="82" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the product for the current quote item"/>
+      <param description="Quote item" type="object" variable="$item">
+        <type full="Mage_Catalog_Model_Product_Configuration_Item_Interface" namespace="" name="Mage_Catalog_Model_Product_Configuration_Item_Interface"/>
+      </param>
+      <return description="Product Model" type="object">
+        <type full="Mage_Catalog_Model_Product" namespace="" name="Mage_Catalog_Model_Product"/>
+      </return>
+    </docblock>
+    <parameter name="item" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getAttributes" start="90" end="103" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retreve the product attributes"/>
+      <param description="Quote item" type="object" variable="$item">
+        <type full="Mage_Catalog_Model_Product_Configuration_Item_Interface" namespace="" name="Mage_Catalog_Model_Product_Configuration_Item_Interface"/>
+      </param>
+      <return description="Attributes" type="array"/>
+    </docblock>
+    <parameter name="item" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getAdditionalData" start="111" end="137" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the attributes which are visible on the checkout page"/>
+      <param description="Product Model" type="object" variable="$product">
+        <type full="Mage_Catalog_Model_Product" namespace="" name="Mage_Catalog_Model_Product"/>
+      </param>
+      <return description="Addition data as array" type="array"/>
+    </docblock>
+    <parameter name="product" byreference="false" type="object">
+      <type full="\\Mage_Catalog_Model_Product" namespace="\" name="Mage_Catalog_Model_Product"/>
+    </parameter>
+  </method>
+</class>

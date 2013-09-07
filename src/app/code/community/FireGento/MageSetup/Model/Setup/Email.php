@@ -41,8 +41,8 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     /**
      * Setup Transaction Emails
      *
-     * @param array $locale
-     * @param bool $overwrite
+     * @param array $locale    Locale options
+     * @param bool  $overwrite Flag if locale options should override existing templates
      */
     public function setup($locale = array('default' => 'de_DE'), $overwrite = false)
     {
@@ -71,7 +71,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     /**
      * Get email_footers/default from config file
      *
-     * @return array
+     * @return array Config email footers
      */
     protected function _getConfigEmailFooters()
     {
@@ -81,7 +81,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     /**
      * Get emails/default from config file
      *
-     * @return array
+     * @return array Config emails
      */
     protected function _getConfigEmails()
     {
@@ -91,10 +91,10 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     /**
      * Create transactional email template
      *
-     * @param  array   $emailData template data
-     * @param  string  $locale
-     * @param  boolean $override  override email template if set
-     * @param  int|null $storeId
+     * @param  array    $emailData Template data
+     * @param  string   $locale    Locale
+     * @param  boolean  $override  Override email template if set
+     * @param  int|null $storeId   Store ID
      * @return void
      */
     protected function _createEmail($emailData, $locale, $override = true, $storeId = null)
@@ -150,8 +150,8 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     /**
      * Retrieve email template path for given locale
      *
-     * @param  string $locale
-     * @return string
+     * @param  string $locale Locale
+     * @return string Locale Template Path
      */
     protected function _getLocaleEmailPath($locale)
     {
@@ -175,7 +175,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
      * Add configured blocks before the second last </body> tag
      *
      * @param  string $templateText the content of the template
-     * @param  array  $blocks all blocks that should be inserted before penultimate </table>
+     * @param  array  $blocks       all blocks that should be inserted before penultimate </table>
      * @return string the content of the template with the block before penultimate </table>
      */
     protected function _addFooterBlocks($templateText, array $blocks = array())
@@ -196,8 +196,8 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     /**
      * Get HTML blocks which should be appended to the emails
      *
-     * @param  array $emailData
-     * @return array
+     * @param  array $emailData Email data
+     * @return array Footer blocks
      */
     protected function _getFooterBlocks($emailData)
     {

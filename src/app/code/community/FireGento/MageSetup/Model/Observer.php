@@ -38,8 +38,8 @@ class FireGento_MageSetup_Model_Observer
      *
      * @magentoEvent adminhtml_catalog_product_attribute_edit_prepare_form
      *
-     * @param  Varien_Event_Observer $observer
-     * @return FireGento_MageSetup_Model_Observer
+     * @param  Varien_Event_Observer $observer Observer
+     * @return FireGento_MageSetup_Model_Observer Observer
      */
     public function addIsVisibleOnCheckoutOption(Varien_Event_Observer $observer)
     {
@@ -70,8 +70,8 @@ class FireGento_MageSetup_Model_Observer
      *
      * @magentoEvent core_block_abstract_to_html_before
      *
-     * @param  Varien_Event_Observer $observer
-     * @return FireGento_MageSetup_Model_Observer Self.
+     * @param  Varien_Event_Observer $observer Observer
+     * @return FireGento_MageSetup_Model_Observer Observer
      */
     public function filterAgreements(Varien_Event_Observer $observer)
     {
@@ -111,8 +111,8 @@ class FireGento_MageSetup_Model_Observer
      *
      * @magentoEvent catalog_product_save_before
      *
-     * @param  Varien_Event_Observer $observer
-     * @return FireGento_MageSetup_Model_Observer
+     * @param  Varien_Event_Observer $observer Observer
+     * @return FireGento_MageSetup_Model_Observer Observer
      */
     public function autogenerateMetaInformation(Varien_Event_Observer $observer)
     {
@@ -155,7 +155,7 @@ class FireGento_MageSetup_Model_Observer
      * Get the categories of the current product
      *
      * @param  Mage_Catalog_Model_Product $product Product
-     * @return array                      Categories
+     * @return array Categories
      */
     protected function _getCategoryKeywords($product)
     {
@@ -240,8 +240,8 @@ class FireGento_MageSetup_Model_Observer
      *
      * @magentoEvent adminhtml_block_html_before
      *
-     * @param  Varien_Event_Observer $observer
-     * @return FireGento_MageSetup_Model_Observer
+     * @param  Varien_Event_Observer $observer Observer
+     * @return FireGento_MageSetup_Model_Observer Observer
      */
     public function addOptionsForAgreements(Varien_Event_Observer $observer)
     {
@@ -290,7 +290,7 @@ class FireGento_MageSetup_Model_Observer
      *
      * @magentoEvent checkout_cart_update_items_after
      *
-     * @param Varien_Event_Observer $observer
+     * @param Varien_Event_Observer $observer Observer
      */
     public function recollectAfterQuoteItemUpdate(Varien_Event_Observer $observer)
     {
@@ -308,7 +308,7 @@ class FireGento_MageSetup_Model_Observer
     /**
      * Get required agreements on custom registration
      *
-     * @return array
+     * @return array Customer agreement ids
      */
     protected function _getCustomerCreateAgreements()
     {
@@ -330,7 +330,7 @@ class FireGento_MageSetup_Model_Observer
      *
      * @magentoEvent controller_action_predispatch_customer_account_createpost
      *
-     * @param Varien_Event_Observer $observer
+     * @param Varien_Event_Observer $observer Observer
      */
     public function customerCreatePreDispatch(Varien_Event_Observer $observer)
     {

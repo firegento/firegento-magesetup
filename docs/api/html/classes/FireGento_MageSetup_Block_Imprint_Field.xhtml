@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_MageSetup - FireGento_MageSetup_Block_Imprint_Field - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_MageSetup - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_toHtml">_toHtml</a>
+          </li>
+          <li>
+            <a href="#getCountry">getCountry</a>
+          </li>
+          <li>
+            <a href="#getStoreId">getStoreId</a>
+          </li>
+          <li>
+            <a href="#getWeb">getWeb</a>
+          </li>
+          <li>
+            <a href="#setStoreId">setStoreId</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_MageSetup_Block_Imprint_Field</h2>
+        <div class="file-notice">
+          <p>Block to retrieve data from imprint config field.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor to set config store view.</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getCountry"/>
+            <h4><span class="label public">public</span>getCountry<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the specific country name by the selected country code</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Country</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getWeb"/>
+            <h4><span class="label public">public</span>getWeb<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $checkForProtocol</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the setting "website". If parameter checkForProtocol is true, check if there is a valid protocol given, otherwise add http:// manually.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$checkForProtocol</code> - Flag if website url should be checked for http(s) protocol</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Website URL</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setStoreId"/>
+            <h4><span class="label public">public</span>setStoreId<span style="font-size:90%;">( <span class="param-type">int</span><strong> $storeId</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set StoreId to get impressum data for this store.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$storeId</code> - Store id.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_toHtml"/>
+            <h4><span class="label protected">protected</span>_toHtml<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Render imprint field</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Field value</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getStoreId"/>
+            <h4><span class="label protected">protected</span>getStoreId<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Getting StoreId to get proper store related information in order comments.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Store Id</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status_Collection" namespace="" name="FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status_Collection" abstract="false" final="false" start="34" end="44">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Resource/Newsletter/Subscriber/Status" file="Collection.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Resource/Newsletter/Subscriber/Status/Collection.php" size="1567" time="2013-09-07T17:52:27+02:00" unixtime="1378569147" sha1="5ecdcaab53e8560e55d27734a3750868cfcda638"/>
+  <docblock>
+    <description compact="Subscriber Status Resource Collection Model"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="1.1.4"/>
+  </docblock>
+  <extends full="Mage_Core_Model_Resource_Db_Collection_Abstract" namespace="" name="Mage_Core_Model_Resource_Db_Collection_Abstract"/>
+  <method name="_construct" start="40" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initialize the model and resource for the collection"/>
+    </docblock>
+  </method>
+</class>

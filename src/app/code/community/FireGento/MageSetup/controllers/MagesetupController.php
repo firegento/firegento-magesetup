@@ -57,6 +57,28 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
     }
 
     /**
+     * Basic action: setup save action
+     * Will be called from form, rendered in indexAction
+     */
+    public function saveAction()
+    {
+        if ($this->getRequest()->isPost()) {
+            $params = $this->getRequest()->getParams();
+
+            try {
+                /* @var $setupModel FireGento_MageSetup_Model_Setup */
+                $setupModel = Mage::getModel('magesetup/setup');
+                $setupModel->setup($params, true);
+            } catch (Exception $e) {
+                $this->_getSession()->addError($e->getMessage());
+                Mage::logException($e);
+            }
+        }
+
+        $this->_redirect('*/*');
+    }
+
+    /**
      * Recommended extensions
      */
     public function extensionsAction()
@@ -71,105 +93,5 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
             ->_setActiveMenu('system/magesetup/extensions')
             ->_addBreadcrumb($helper->__('MageSetup'), $helper->__('MageSetup'))
             ->renderLayout();
-    }
-
-    /**
-     * Basic action: setup save action
-     */
-    public function saveAction()
-    {
-        if ($this->getRequest()->isPost()) {
-            $country = $this->getRequest()->getParam('country');
-            Mage::register('setup_country', $country);
-            try {
-                if ($this->getRequest()->getParam('systemconfig') == 1) {
-                    Mage::getSingleton('magesetup/setup_systemconfig')->setup();
-                    $this->_getSession()->addSuccess(
-                        $this->__('MageSetup: System Config Settings have been updated.')
-                    );
-                }
-
-                if ($this->getRequest()->getParam('cms') == 1) {
-                    $cmsLocale = $this->getRequest()->getParam('cms_locale');
-                    Mage::getSingleton('magesetup/setup_cms')->setup($cmsLocale);
-                    $this->_getSession()->addSuccess(
-                        $this->__('MageSetup: CMS Blocks and Pages have been created.')
-                    );
-                }
-
-                if ($this->getRequest()->getParam('agreements') == 1) {
-                    $cmsLocale = $this->getRequest()->getParam('cms_locale');
-                    Mage::getSingleton('magesetup/setup_agreements')->setup($cmsLocale);
-                    $this->_getSession()->addSuccess(
-                        $this->__('MageSetup: Checkout Agreements have been created.')
-                    );
-                }
-
-                if ($this->getRequest()->getParam('email') == 1) {
-                    $emailLocale = $this->getRequest()->getParam('email_locale');
-                    Mage::getSingleton('magesetup/setup_email')->setup($emailLocale);
-                    $this->_getSession()->addSuccess(
-                        $this->__('MageSetup: Email Templates have been created.')
-                    );
-                }
-
-                if ($this->getRequest()->getParam('tax') == 1) {
-                    Mage::getSingleton('magesetup/setup_tax')->setup();
-                    $this->_getSession()->addSuccess(
-                        $this->__('MageSetup: Tax Settings have been created.')
-                    );
-
-                    $this->_updateProductTaxClasses();
-                    $this->_getSession()->addSuccess(
-                        $this->__('MageSetup: Product Tax Classes have been updated.')
-                    );
-                }
-
-                // Set a config flag to indicate that the setup has been initialized and refresh config cache.
-                Mage::getModel('eav/entity_setup', 'core_setup')->setConfigData('magesetup/is_initialized', '1');
-                Mage::app()->getCacheInstance()->cleanType('config');
-                Mage::dispatchEvent('adminhtml_cache_refresh_type', array('type' => 'config'));
-            } catch (Exception $e) {
-                $this->_getSession()->addError($e->getMessage());
-                Mage::logException($e);
-            }
-        }
-        $this->_redirect('*/*');
-    }
-
-    /**
-     * Update the old product tax classes to the new tax class ids
-     *
-     * @return void
-     */
-    protected function _updateProductTaxClasses()
-    {
-        $taxClasses = $this->getRequest()->getParam('product_tax_class_target');
-        foreach ($taxClasses as $source => $target) {
-            if ($target = intval($target)) {
-                Mage::getSingleton('magesetup/setup_tax')->updateProductTaxClasses($source, $target);
-            }
-        }
-
-        $this->_markIndicesOutdated();
-    }
-
-    /**
-     * Mark relevant indices as outdated after chinging tax rates
-     *
-     * @return void
-     */
-    protected function _markIndicesOutdated()
-    {
-        // Indexes which need to be updated after setup
-        $indexes = array('catalog_product_price', 'catalog_product_flat', 'catalog_product_attribute');
-
-        $indices = Mage::getModel('index/process')
-            ->getCollection()
-            ->addFieldToFilter('indexer_code', array('in' => $indexes));
-
-        foreach ($indices as $index) {
-            $index->setStatus(Mage_Index_Model_Process::STATUS_REQUIRE_REINDEX)->save();
-        }
     }
 }
