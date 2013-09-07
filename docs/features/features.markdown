@@ -1,6 +1,11 @@
 FireGento_MageSetup - Features
 =====================
-## Setup Features
+##Contents
+- [Setup features](#setup)
+- [backend features](#backend)
+- [Frontend features](#frontend)
+
+## <a id="setup"></a>Setup Features
 ### General
 - Display a hint to fill out configuration form after first login  
 ![Hint after Installation](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/install-hint.png "Hint after Installation")
@@ -61,7 +66,7 @@ You can choose a different language for every store view.
         - Business terms (taken from created static block)
         - Declaration of Revocation (taken from created static block)
         
-## Backend Features    
+## <a id="backend"></a>Backend Features    
 ### New configuration fields for shop information (imprint)
 - Can be found in **System -> Configuration -> General -> Imprint**
 - Displays entered information in cms page "imprint" and in email footer
@@ -82,7 +87,7 @@ You can choose a different language for every store view.
 - Generate meta description from short description, (if empty) description or (if still empty) category names  
 ![Product Meta Data Generation](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/product-meta-autogenerate.png "Product Meta Data Generation")
 
-## Frontend Features
+## <a id="frontend"></a>Frontend Features
 ### Info Block below Prices
 - Display a block below prices on product list and product view pages  
 ![Block on product view page](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/price-text-view.png "Block on product view page")
