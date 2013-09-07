@@ -101,6 +101,16 @@
                 </observers>
             </newsletter_subscriber_save_after>
         </events>
+        <magesetup>
+            <available_countries>
+                <at />
+                <ch />
+                <de />
+                <fr />
+                <it />
+                <ru />
+            </available_countries>
+        </magesetup>
     </global>
     <frontend>
         <secure_url>
