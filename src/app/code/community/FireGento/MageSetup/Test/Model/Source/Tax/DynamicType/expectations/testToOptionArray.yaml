@@ -1,0 +1,10 @@
+result:
+  -
+    value: 0
+    label: "No dynamic shipping tax caluclation"
+  -
+    value: 1
+    label: "Use the highest product tax"
+  -
+    value: 2
+    label: "Use the tax rate of products that make up the biggest amount"
