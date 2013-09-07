@@ -21,7 +21,7 @@
  * @since     2.0.0
  */
 /**
- * Setup class
+ * PHPUnit Test Class
  *
  * @category  FireGento
  * @package   FireGento_MageSetup
