@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Source_Tax_ProductTaxClass" namespace="" name="FireGento_MageSetup_Model_Source_Tax_ProductTaxClass" abstract="false" final="false" start="34" end="63">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax" file="ProductTaxClass.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax/ProductTaxClass.php" size="2289" time="2013-09-07T20:28:52+02:00" unixtime="1378578532" sha1="f7f45c0416a01ee3e5fff35b062b0ac8f2ca896f"/>
+  <docblock>
+    <description compact="Tax Source model for new tax classes, possibly not created yet"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="1.2.0"/>
+  </docblock>
+  <extends full="Mage_Tax_Model_Class_Source_Product" namespace="" name="Mage_Tax_Model_Class_Source_Product"/>
+  <method name="getAllOptions" start="42" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve all product tax classes as array"/>
+      <param description="Flag if an empty option should be prepended to the option array" type="object" variable="$withEmpty">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return description="Product tax class option array" type="array"/>
+    </docblock>
+    <parameter name="withEmpty" byreference="false" type="{unknown}" default="false"/>
+  </method>
+</class>

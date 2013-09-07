@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Adminhtml_NewsletterController" namespace="" name="FireGento_MageSetup_Adminhtml_NewsletterController" abstract="false" final="false" start="34" end="80">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers/Adminhtml" file="NewsletterController.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers/Adminhtml/NewsletterController.php" size="2629" time="2013-09-07T20:05:12+02:00" unixtime="1378577112" sha1="472df511b69da3ffde9541d2212afa8d9816dab3"/>
+  <docblock>
+    <description compact="Newsletter Subscriber Status Adminhtml Controller"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="1.1.4"/>
+  </docblock>
+  <extends full="Mage_Adminhtml_Controller_Action" namespace="" name="Mage_Adminhtml_Controller_Action"/>
+  <method name="indexAction" start="39" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Displays the newsletter subscribers status history"/>
+    </docblock>
+  </method>
+  <method name="gridAction" start="73" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the new grid layout via ajax requests"/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Test_Config_Main" namespace="" name="FireGento_MageSetup_Test_Config_Main" abstract="false" final="false" start="34" end="131">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Test/Config" file="Main.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Test/Config/Main.php" size="6925" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="ee9b4cdb22b885061d52c18e256f10dd345bf854"/>
+  <docblock>
+    <description compact="PHPUnit Test Class"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="2.0.0"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case_Config" namespace="" name="EcomDev_PHPUnit_Test_Case_Config"/>
+  <method name="testModuleConfig" start="39" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check it the installed module has the correct module version"/>
+    </docblock>
+  </method>
+  <method name="testGermanSetupNotActive" start="48" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check that GermanSetup is not active"/>
+    </docblock>
+  </method>
+  <method name="testBlockAliases" start="56" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the block aliases are returning the correct class names"/>
+    </docblock>
+  </method>
+  <method name="testHelperAliases" start="81" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the helper aliases are returning the correct class names"/>
+    </docblock>
+  </method>
+  <method name="testModelAliases" start="91" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the helper aliases are returning the correct class names"/>
+    </docblock>
+  </method>
+  <method name="testRewrites" start="122" end="130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the rewrites are returning the correct class names"/>
+    </docblock>
+  </method>
+</class>

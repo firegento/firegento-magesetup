@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Helper_Checkout_Data" namespace="" name="FireGento_MageSetup_Helper_Checkout_Data" abstract="false" final="false" start="34" end="90">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Checkout" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Checkout/Data.php" size="3276" time="2013-09-07T20:07:17+02:00" unixtime="1378577237" sha1="302cb1ce33b9365cfc78c6aa9582f3a35857e18d"/>
+  <docblock>
+    <description compact="Rewrite to fetch required agreement ids."/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="0.1.0"/>
+  </docblock>
+  <extends full="Mage_Checkout_Helper_Data" namespace="" name="Mage_Checkout_Helper_Data"/>
+  <constructor name="__construct" start="40" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Avoid loss of translation"/>
+    </docblock>
+  </constructor>
+  <method name="getRequiredAgreementIds" start="50" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get all required agreement ids"/>
+      <return description="Agreement Ids" type="array"/>
+    </docblock>
+  </method>
+  <method name="_getCustomerSession" start="86" end="89" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the customer session"/>
+      <return description="Customer Session" type="object">
+        <type full="Mage_Customer_Model_Session" namespace="" name="Mage_Customer_Model_Session"/>
+      </return>
+    </docblock>
+  </method>
+</class>

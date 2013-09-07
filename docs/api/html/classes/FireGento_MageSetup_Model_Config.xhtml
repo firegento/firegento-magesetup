@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_MageSetup - FireGento_MageSetup_Model_Config - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_MageSetup - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#CACHE_ID">CACHE_ID</a>
+          </li>
+          <li>
+            <a href="#CACHE_TAG">CACHE_TAG</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_country">$_country</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_addConfigFile">_addConfigFile</a>
+          </li>
+          <li>
+            <a href="#_loadConfig">_loadConfig</a>
+          </li>
+          <li>
+            <a href="#setCountry">setCountry</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_MageSetup_Model_Config</h2>
+        <div class="file-notice">
+          <p>Config class</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="CACHE_ID"/>CACHE_ID = 'magesetup_config'<hr/></li>
+          <li><a name="CACHE_TAG"/>CACHE_TAG = 'magesetup_config'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_country"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $_country</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="string|Varien_Simplexml_Element">string|Varien_Simplexml_Element</span></span><strong> $sourceData</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets cache ID and cache tags and loads configuration</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sourceData</code> - XML Source Data</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="setCountry"/>
+            <h4><span class="label public">public</span>setCountry<span style="font-size:90%;">( <span class="param-type">string</span><strong> $country</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the current country for the config</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$country</code> - Country</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Config Model</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_addConfigFile"/>
+            <h4><span class="label protected">protected</span>_addConfigFile<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fileName</strong>, <span class="param-type"><span title="Mage_Core_Model_Config_Base">Mage_Core_Model_Config_Base</span></span><strong> $mergeConfig</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a config file to the given merge config</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fileName</code> - File to load</li>
+                <li><code>$mergeConfig</code> - Global config for merging</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_loadConfig"/>
+            <h4><span class="label protected">protected</span>_loadConfig<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Merge default config with config from additional xml files</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Config Model</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

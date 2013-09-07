@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Source_AgreementType" namespace="" name="FireGento_MageSetup_Model_Source_AgreementType" abstract="false" final="false" start="34" end="80">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source" file="AgreementType.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/AgreementType.php" size="2651" time="2013-09-07T20:29:17+02:00" unixtime="1378578557" sha1="f202d6157c378e1eb9386e93525e3a11c7f6cae5"/>
+  <docblock>
+    <description compact="Source model for attribute &quot;agreement_type&quot;"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="1.2.2"/>
+  </docblock>
+  <constant name="AGREEMENT_TYPE_CHECKOUT" value="0"/>
+  <constant name="AGREEMENT_TYPE_CUSTOMER" value="1"/>
+  <constant name="AGREEMENT_TYPE_BOTH" value="2"/>
+  <constant name="AGREEMENT_TYPE_NOWHERE" value="3"/>
+  <method name="toOptionArray" start="46" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Options getter"/>
+      <return description="Agreement types as option array" type="array"/>
+    </docblock>
+  </method>
+  <method name="getOptionArray" start="72" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return description="Agreement types as option hash" type="array"/>
+    </docblock>
+  </method>
+</class>

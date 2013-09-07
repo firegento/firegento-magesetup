@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_MageSetup - FireGento_MageSetup_Model_Observer - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_MageSetup - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#_buildKeywords">_buildKeywords</a>
+          </li>
+          <li>
+            <a href="#_fetchCategoryNames">_fetchCategoryNames</a>
+          </li>
+          <li>
+            <a href="#_filterString">_filterString</a>
+          </li>
+          <li>
+            <a href="#_getCategoryKeywords">_getCategoryKeywords</a>
+          </li>
+          <li>
+            <a href="#_getCustomerCreateAgreements">_getCustomerCreateAgreements</a>
+          </li>
+          <li>
+            <a href="#addIsVisibleOnCheckoutOption">addIsVisibleOnCheckoutOption</a>
+          </li>
+          <li>
+            <a href="#addOptionsForAgreements">addOptionsForAgreements</a>
+          </li>
+          <li>
+            <a href="#autogenerateMetaInformation">autogenerateMetaInformation</a>
+          </li>
+          <li>
+            <a href="#customerCreatePreDispatch">customerCreatePreDispatch</a>
+          </li>
+          <li>
+            <a href="#filterAgreements">filterAgreements</a>
+          </li>
+          <li>
+            <a href="#recollectAfterQuoteItemUpdate">recollectAfterQuoteItemUpdate</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_MageSetup_Model_Observer</h2>
+        <div class="file-notice">
+          <p>Observer class</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addIsVisibleOnCheckoutOption"/>
+            <h4><span class="label public">public</span>addIsVisibleOnCheckoutOption<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add "Visible on Checkout Review on Front-end" Option to Attribute Settings</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$observer</code> - Observer</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Observer</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addOptionsForAgreements"/>
+            <h4><span class="label public">public</span>addOptionsForAgreements<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add "Required" and "Visible on Custom Creation" Option to Checkout Agreements</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$observer</code> - Observer</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Observer</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="autogenerateMetaInformation"/>
+            <h4><span class="label public">public</span>autogenerateMetaInformation<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Auto-Generates the meta information of a product.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$observer</code> - Observer</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Observer</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="customerCreatePreDispatch"/>
+            <h4><span class="label public">public</span>customerCreatePreDispatch<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if there are required agreements for the customer registration and validate them if applicable.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$observer</code> - Observer</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="filterAgreements"/>
+            <h4><span class="label public">public</span>filterAgreements<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Filters all agreements<pre>Filters all agreements against the Magento template filter. This enables the Magento
+administrator define a cms static block as the content of the checkout agreements..</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$observer</code> - Observer</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Observer</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="recollectAfterQuoteItemUpdate"/>
+            <h4><span class="label public">public</span>recollectAfterQuoteItemUpdate<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>After updating the quantities of cart items, it might be needed to recalculate the shipping tax</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$observer</code> - Observer</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_buildKeywords"/>
+            <h4><span class="label protected">protected</span>_buildKeywords<span style="font-size:90%;">( <span class="param-type">array</span><strong> $categoryTypes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Processes the category array and generates a string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$categoryTypes</code> - Categories</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Keywords</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_fetchCategoryNames"/>
+            <h4><span class="label protected">protected</span>_fetchCategoryNames<span style="font-size:90%;">( <span class="param-type">array</span><strong> $categories</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fetches all category names via category path; adds first the assigned categories and second all categories via path.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$categories</code> - Category Ids</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Categories</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_filterString"/>
+            <h4><span class="label protected">protected</span>_filterString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $string</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Calls the Magento template filter to transform {{block type="cms/block" block_id="xyz"}} into the specific html code</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - Agreement to filter</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Processed String</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getCategoryKeywords"/>
+            <h4><span class="label protected">protected</span>_getCategoryKeywords<span style="font-size:90%;">( <span class="param-type"><span title="Mage_Catalog_Model_Product">Mage_Catalog_Model_Product</span></span><strong> $product</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the categories of the current product</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$product</code> - Product</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Categories</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getCustomerCreateAgreements"/>
+            <h4><span class="label protected">protected</span>_getCustomerCreateAgreements<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get required agreements on custom registration</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Customer agreement ids</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>
