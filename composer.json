@@ -1,10 +1,25 @@
 {
-   "name": "firegento/magesetup",
-   "license": ["GPL-3.0"],
-   "type": "magento-module",
-   "description": "MageSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen.",
-   "homepage": "https://github.com/firegento/firegento-magesetup",
-   "require": {
-      "magento-hackathon/magento-composer-installer": "*"
-   }
+  "name": "firegento/magesetup",
+  "license": ["GPL-3.0"],
+  "type": "magento-module",
+  "description": "MageSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen.",
+  "homepage": "https://github.com/firegento/firegento-magesetup",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "1.2"
+  },
+  "require-dev": {
+    "ecomdev/mage-ci": "master-dev"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://packages.firegento.com"
+    }
+  ],
+  "extra":{
+    "magento-root-dir": "test/"
+  }
 }

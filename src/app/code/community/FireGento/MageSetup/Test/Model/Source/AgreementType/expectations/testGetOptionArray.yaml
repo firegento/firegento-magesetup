@@ -1,0 +1,5 @@
+result:
+  0: "On checkout (Magento Default)"
+  1: "On customer registration (or on checkout, if customer not registered before)"
+  2: "On customer registration and on checkout"
+  3: "Nowhere"
