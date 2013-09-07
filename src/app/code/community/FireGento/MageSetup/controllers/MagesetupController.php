@@ -35,8 +35,6 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
 {
     /**
      * Basic action: setup form
-     *
-     * @return void
      */
     public function indexAction()
     {
@@ -60,8 +58,6 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
 
     /**
      * Recommended extensions
-     *
-     * @return void
      */
     public function extensionsAction()
     {
@@ -79,8 +75,6 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
 
     /**
      * Basic action: setup save action
-     *
-     * @return void
      */
     public function saveAction()
     {

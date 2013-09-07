@@ -34,7 +34,7 @@
 class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setup_Abstract
 {
     /**
-     * @var FireGento_MageSetup_Model_Setup
+     * @var Mage_Eav_Model_Entity_Setup
      */
     protected $_setup;
 
@@ -280,7 +280,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     }
 
     /**
-     * @return FireGento_MageSetup_Model_Setup|Mage_Core_Model_Abstract
+     * @return Mage_Eav_Model_Entity_Setup
      */
     protected function _getSetup()
     {

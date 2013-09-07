@@ -33,17 +33,21 @@
  */
 class FireGento_MageSetup_Model_Source_Tax_ProductTaxClass extends Mage_Tax_Model_Class_Source_Product
 {
+    /**
+     * Retrieve all product tax classes as array
+     *
+     * @param  bool $withEmpty
+     * @return array
+     */
     public function getAllOptions($withEmpty = false)
     {
         $options = parent::getAllOptions($withEmpty);
-
         foreach ($options as $optionKey => $option) {
-
             if (intval($option['value']) <= 0) {
                 continue;
             }
 
-            /** @var $productCollection Mage_Catalog_Model_Resource_Product_Collection */
+            /* @var $productCollection Mage_Catalog_Model_Resource_Product_Collection */
             $productCollection = Mage::getModel('catalog/product')
                 ->getCollection()
                 ->addAttributeToFilter('tax_class_id', $option['value'])

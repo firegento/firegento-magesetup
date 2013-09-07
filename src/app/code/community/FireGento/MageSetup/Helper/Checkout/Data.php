@@ -34,7 +34,6 @@
 class FireGento_MageSetup_Helper_Checkout_Data
     extends Mage_Checkout_Helper_Data
 {
-
     /**
      * Avoid loss of translation
      */
@@ -44,7 +43,7 @@ class FireGento_MageSetup_Helper_Checkout_Data
     }
 
     /**
-     * get all Required Agreement Ids
+     * Get all required agreement ids
      *
      * @return array Agreement Ids
      **/
@@ -80,6 +79,8 @@ class FireGento_MageSetup_Helper_Checkout_Data
     }
 
     /**
+     * Retrieve the customer session
+     *
      * @return Mage_Customer_Model_Session
      */
     protected function _getCustomerSession()
