@@ -137,11 +137,6 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
 
     public function getAvailableCountriesForSetup()
     {
-        return array(
-            'de' => $this->__('Germany'),
-            'at' => $this->__('Austria'),
-            'ch' => $this->__('Switzerland'),
-            'ru' => $this->__('Russia'),
-        );
+        return Mage::helper('magesetup')->getAvailableCountries();
     }
 }
