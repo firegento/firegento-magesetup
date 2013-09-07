@@ -38,9 +38,10 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
      * See method _getDefaultParams for possible params
      *
      * @param  array $params
+     * @param  bool  $notify
      * @return FireGento_MageSetup_Model_Setup
      */
-    public function setup($params = array())
+    public function setup($params = array(), $notify=false)
     {
         $defaultParams = $this->_getDefaultParams();
 
@@ -50,6 +51,12 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
 
         if ($params['systemconfig']) {
             Mage::getSingleton('magesetup/setup_systemconfig')->setup();
+
+            if ($notify) {
+                $this->_getAdminhtmlSession()->addSuccess(
+                    $this->_getHelper()->__('MageSetup: System Config Settings have been updated.')
+                );
+            }
         }
 
         if ($params['cms']) {
@@ -57,6 +64,12 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
                 $params['cms_locale'] = array('default' => $params['cms_locale']);
             }
             Mage::getSingleton('magesetup/setup_cms')->setup($params['cms_locale']);
+
+            if ($notify) {
+                $this->_getAdminhtmlSession()->addSuccess(
+                    $this->_getHelper()->__('MageSetup: CMS Blocks and Pages have been created.')
+                );
+            }
         }
 
         if ($params['agreements']) {
@@ -64,6 +77,12 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
                 $params['cms_locale'] = array('default' => $params['cms_locale']);
             }
             Mage::getSingleton('magesetup/setup_agreements')->setup($params['cms_locale']);
+
+            if ($notify) {
+                $this->_getAdminhtmlSession()->addSuccess(
+                    $this->_getHelper()->__('MageSetup: Checkout Agreements have been created.')
+                );
+            }
         }
 
         if ($params['email']) {
@@ -71,12 +90,30 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
                 $params['email_locale'] = array('default' => $params['email_locale']);
             }
             Mage::getSingleton('magesetup/setup_email')->setup($params['email_locale'], $params['overwrite_emails']);
+
+            if ($notify) {
+                $this->_getAdminhtmlSession()->addSuccess(
+                    $this->_getHelper()->__('MageSetup: Email Templates have been created.')
+                );
+            }
         }
 
         if ($params['tax']) {
+            // Setup tax settings (rules, classes, ..)
             Mage::getSingleton('magesetup/setup_tax')->setup();
+            if ($notify) {
+                $this->_getAdminhtmlSession()->addSuccess(
+                    $this->_getHelper()->__('MageSetup: Tax Settings have been created.')
+                );
+            }
 
+            // Update product tax classes
             $this->_updateProductTaxClasses($params);
+            if ($notify) {
+                $this->_getAdminhtmlSession()->addSuccess(
+                    $this->_getHelper()->__('MageSetup: Product Tax Classes have been updated.')
+                );
+            }
         }
 
         // Set a config flag to indicate that the setup has been initialized and refresh config cache.
@@ -145,5 +182,25 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
         foreach ($indices as $index) {
             $index->setStatus(Mage_Index_Model_Process::STATUS_REQUIRE_REINDEX)->save();
         }
+    }
+
+    /**
+     * Retrieve the helper class
+     *
+     * @return FireGento_MageSetup_Helper_Data
+     */
+    protected function _getHelper()
+    {
+        return Mage::helper('magesetup');
+    }
+
+    /**
+     * Retrieve the adminhtml session for setup notifications
+     *
+     * @return Mage_Adminhtml_Model_Session
+     */
+    protected function _getAdminhtmlSession()
+    {
+        return Mage::getSingleton('adminhtml/session');
     }
 }
