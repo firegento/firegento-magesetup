@@ -367,4 +367,12 @@ Tel: {{var telephone}}
         </magesetup>
 
     </default>
+
+    <phpunit>
+        <suite>
+            <modules>
+                <FireGento_MageSetup/>
+            </modules>
+        </suite>
+    </phpunit>
 </config>
