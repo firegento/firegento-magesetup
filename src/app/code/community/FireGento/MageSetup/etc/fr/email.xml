@@ -29,7 +29,7 @@
                 <default>
                     <admin_password_new>
                         <execute>1</execute>
-                        <template_code>Neues Admin-Passwort</template_code>
+                        <template_code>Nouveau mot de passe d'administration</template_code>
                         <template_type>2</template_type>
                         <template_file>admin_password_new.html</template_file>
                         <config_data_path>admin/emails/forgot_email_template</config_data_path>
@@ -40,7 +40,7 @@
 
                     <admin_password_reset_confirmation>
                         <execute>1</execute>
-                        <template_code>Admin-Passwort zurücksetzen</template_code>
+                        <template_code>Mot de passe administration réinitialisé</template_code>
                         <template_type>2</template_type>
                         <template_file>admin_password_reset_confirmation.html</template_file>
                         <config_data_path>admin/emails/forgot_email_template</config_data_path>
@@ -51,7 +51,7 @@
 
                     <currency_update_warning>
                         <execute>1</execute>
-                        <template_code>Währung Aktualisierung</template_code>
+                        <template_code>Actualisation de la devise</template_code>
                         <template_type>1</template_type>
                         <template_file>currency_update_warning.html</template_file>
                         <config_data_path>currency/import/error_email_template</config_data_path>
@@ -62,7 +62,7 @@
 
                     <account_new>
                         <execute>1</execute>
-                        <template_code>Neues Konto</template_code>
+                        <template_code>Nouveau compte</template_code>
                         <template_type>2</template_type>
                         <template_file>account_new.html</template_file>
                         <config_data_path>customer/create_account/email_template</config_data_path>
@@ -73,7 +73,7 @@
 
                     <customer_password_remind_email_template>
                         <execute>1</execute>
-                        <template_code>Passwort Erinnerung</template_code>
+                        <template_code>Rappel du mot de passe</template_code>
                         <template_type>2</template_type>
                         <template_file>password_new.html</template_file>
                         <config_data_path>customer/password/remind_email_template</config_data_path>
@@ -84,7 +84,7 @@
 
                     <account_new_confirmation>
                         <execute>1</execute>
-                        <template_code>Neues Konto Aktivierung </template_code>
+                        <template_code>Activation du nouveau compte</template_code>
                         <template_type>2</template_type>
                         <template_file>account_new_confirmation.html</template_file>
                         <config_data_path>customer/create_account/email_confirmation_template</config_data_path>
@@ -95,7 +95,7 @@
 
                     <account_new_confirmed>
                         <execute>1</execute>
-                        <template_code>Neues Konto Bestätigung</template_code>
+                        <template_code>Confirmation du nouveau compte</template_code>
                         <template_type>2</template_type>
                         <template_file>account_new_confirmed.html</template_file>
                         <config_data_path>customer/create_account/email_confirmed_template</config_data_path>
@@ -106,7 +106,7 @@
 
                     <password_new>
                         <execute>1</execute>
-                        <template_code>Neues Passwort</template_code>
+                        <template_code>Nouveau mot de passe</template_code>
                         <template_type>2</template_type>
                         <template_file>password_new.html</template_file>
                         <config_data_path>customer/password/forgot_email_template</config_data_path>
@@ -117,7 +117,7 @@
 
                     <account_password_reset_confirmation>
                         <execute>1</execute>
-                        <template_code>Kunden Konto Passwort Zurücksetzen Bestätigung</template_code>
+                        <template_code>Confirmation de réinitialisation du mot de passe client</template_code>
                         <template_type>2</template_type>
                         <template_file>account_password_reset_confirmation.html</template_file>
                         <config_data_path>customer/password/forgot_email_template</config_data_path>
@@ -128,7 +128,7 @@
 
                     <order_new>
                         <execute>1</execute>
-                        <template_code>Neue Bestellung</template_code>
+                        <template_code>Nouvelle commande</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/order_new.html</template_file>
                         <config_data_path>sales_email/order/template</config_data_path>
@@ -139,7 +139,7 @@
 
                     <order_new_guest>
                         <execute>1</execute>
-                        <template_code>Neue Bestellung Gast</template_code>
+                        <template_code>Nouvelle commande invité</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/order_new_guest.html</template_file>
                         <config_data_path>sales_email/order/guest_template</config_data_path>
@@ -150,7 +150,7 @@
 
                     <order_update>
                         <execute>1</execute>
-                        <template_code>Bestellung Aktualsierung</template_code>
+                        <template_code>Commande actualisée</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/order_update.html</template_file>
                         <config_data_path>sales_email/order_comment/template</config_data_path>
@@ -161,7 +161,7 @@
 
                     <order_update_guest>
                         <execute>1</execute>
-                        <template_code>Bestellung Aktualsierung Gast</template_code>
+                        <template_code>Commande invité actualisée</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/order_update_guest.html</template_file>
                         <config_data_path>sales_email/order_comment/guest_template</config_data_path>
@@ -172,7 +172,7 @@
 
                     <invoice_new>
                         <execute>1</execute>
-                        <template_code>Neue Rechnung</template_code>
+                        <template_code>Nouvelle facture</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/invoice_new.html</template_file>
                         <config_data_path>sales_email/invoice/template</config_data_path>
@@ -183,7 +183,7 @@
 
                     <invoice_new_guest>
                         <execute>1</execute>
-                        <template_code>Neue Rechnung Gast</template_code>
+                        <template_code>Nouvelle facture invité</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/invoice_new_guest.html</template_file>
                         <config_data_path>sales_email/invoice/guest_template</config_data_path>
@@ -194,7 +194,7 @@
 
                     <invoice_update>
                         <execute>1</execute>
-                        <template_code>Rechnung Aktualisierung</template_code>
+                        <template_code>Actualisation de la facture</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/invoice_update.html</template_file>
                         <config_data_path>sales_email/invoice_comment/template</config_data_path>
@@ -205,7 +205,7 @@
 
                     <invoice_update_guest>
                         <execute>1</execute>
-                        <template_code>Rechnung Aktualisierung Gast</template_code>
+                        <template_code>Actualisation de la facture invité</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/invoice_update_guest.html</template_file>
                         <config_data_path>sales_email/invoice_comment/guest_template</config_data_path>
@@ -216,7 +216,7 @@
 
                     <creditmemo_new>
                         <execute>1</execute>
-                        <template_code>Neue Gutschrift</template_code>
+                        <template_code>Nouveau remboursement</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/creditmemo_new.html</template_file>
                         <config_data_path>sales_email/creditmemo/template</config_data_path>
@@ -227,7 +227,7 @@
 
                     <creditmemo_new_guest>
                         <execute>1</execute>
-                        <template_code>Neue Gutschrift Gast</template_code>
+                        <template_code>Nouveau remboursement invité</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/creditmemo_new_guest.html</template_file>
                         <config_data_path>sales_email/creditmemo/guest_template</config_data_path>
@@ -238,7 +238,7 @@
 
                     <creditmemo_update>
                         <execute>1</execute>
-                        <template_code>Gutschrift Aktualisierung</template_code>
+                        <template_code>Actualisation du remboursement</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/creditmemo_update.html</template_file>
                         <config_data_path>sales_email/creditmemo_comment/template</config_data_path>
@@ -249,7 +249,7 @@
 
                     <creditmemo_update_guest>
                         <execute>1</execute>
-                        <template_code>Gutschrift Aktualisierung Gast</template_code>
+                        <template_code>Actualisation du remboursement invité</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/creditmemo_update_guest.html</template_file>
                         <config_data_path>sales_email/creditmemo_comment/guest_template</config_data_path>
@@ -260,7 +260,7 @@
 
                     <shipment_new>
                         <execute>1</execute>
-                        <template_code>Neue Lieferung</template_code>
+                        <template_code>Nouvelle livraison</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/shipment_new.html</template_file>
                         <config_data_path>sales_email/shipment/template</config_data_path>
@@ -271,7 +271,7 @@
 
                     <shipment_new_guest>
                         <execute>1</execute>
-                        <template_code>Neue Lieferung Gast</template_code>
+                        <template_code>Nouvelle livraison invité</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/shipment_new_guest.html</template_file>
                         <config_data_path>sales_email/shipment/guest_template</config_data_path>
@@ -282,7 +282,7 @@
 
                     <shipment_update>
                         <execute>1</execute>
-                        <template_code>Lieferung Aktualisierung</template_code>
+                        <template_code>Actualisation de la livraison</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/shipment_update.html</template_file>
                         <config_data_path>sales_email/shipment_comment/template</config_data_path>
@@ -293,7 +293,7 @@
 
                     <shipment_update_guest>
                         <execute>1</execute>
-                        <template_code>Lieferung Aktualisierung Gast</template_code>
+                        <template_code>Actualisation de la livraison invité</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/shipment_update_guest.html</template_file>
                         <config_data_path>sales_email/shipment_comment/guest_template</config_data_path>
@@ -304,7 +304,7 @@
 
                     <payment_failed>
                         <execute>1</execute>
-                        <template_code>Zahlung fehlgeschlagen</template_code>
+                        <template_code>Paiement échoué</template_code>
                         <template_type>2</template_type>
                         <template_file>payment_failed.html</template_file>
                         <config_data_path>checkout/payment_failed/template</config_data_path>
@@ -315,7 +315,7 @@
 
                     <log_clean_warning>
                         <execute>1</execute>
-                        <template_code>Protokoll Bereinigung Warnungen</template_code>
+                        <template_code>Alerte de nettoyage du journal</template_code>
                         <template_type>1</template_type>
                         <template_file>log_clean_warning.html</template_file>
                         <config_data_path>system/log/error_email_template</config_data_path>
@@ -326,7 +326,7 @@
 
                     <newsletter_subscr_confirm>
                         <execute>1</execute>
-                        <template_code>Newsletter Anmeldung Bestätigung</template_code>
+                        <template_code>Confirmation d'inscription à la newsletter</template_code>
                         <template_type>2</template_type>
                         <template_file>newsletter_subscr_confirm.html</template_file>
                         <config_data_path>newsletter/subscription/confirm_email_template</config_data_path>
@@ -337,7 +337,7 @@
 
                     <newsletter_subscr_success>
                         <execute>1</execute>
-                        <template_code>Newsletter Anmeldung Erfolg</template_code>
+                        <template_code>Succès de l'inscription à la newsletter</template_code>
                         <template_type>2</template_type>
                         <template_file>newsletter_subscr_success.html</template_file>
                         <config_data_path>newsletter/subscription/success_email_template</config_data_path>
@@ -348,7 +348,7 @@
 
                     <newsletter_unsub_success>
                         <execute>1</execute>
-                        <template_code>Newsletter Abmeldung Erfolg</template_code>
+                        <template_code>Succès de la désinscription à la newsletter</template_code>
                         <template_type>2</template_type>
                         <template_file>newsletter_unsub_success.html</template_file>
                         <config_data_path>newsletter/subscription/un_email_template</config_data_path>
@@ -359,7 +359,7 @@
 
                     <wishlist_share>
                         <execute>1</execute>
-                        <template_code>Wunschliste gemeinsam nutzen</template_code>
+                        <template_code>Partage de la liste de souhaits</template_code>
                         <template_type>2</template_type>
                         <template_file>wishlist_share.html</template_file>
                         <config_data_path>wishlist/email/email_template</config_data_path>
@@ -370,7 +370,7 @@
 
                     <product_share>
                         <execute>1</execute>
-                        <template_code>Produkt an einen Freund verschicken</template_code>
+                        <template_code>Envoi du produit à un ami</template_code>
                         <template_type>2</template_type>
                         <template_file>product_share.html</template_file>
                         <config_data_path>sendfriend/email/template</config_data_path>
@@ -381,7 +381,7 @@
 
                     <contact_form>
                         <execute>1</execute>
-                        <template_code>Kontaktformular</template_code>
+                        <template_code>Formulaire de contact</template_code>
                         <template_type>1</template_type>
                         <template_file>contact_form.html</template_file>
                         <config_data_path>contacts/email/email_template</config_data_path>
@@ -392,7 +392,7 @@
 
                     <sitemap_generate_warning>
                         <execute>1</execute>
-                        <template_code>Sitemap Generierung Warnungen</template_code>
+                        <template_code>Alerte de génération du Sitemap</template_code>
                         <template_type>1</template_type>
                         <template_file>sitemap_generate_warning.html</template_file>
                         <config_data_path>sitemap/generate/error_email_template</config_data_path>
@@ -403,7 +403,7 @@
 
                     <product_stock_alert>
                         <execute>1</execute>
-                        <template_code>Produkt wieder verfügbar</template_code>
+                        <template_code>Produit de nouveau disponible</template_code>
                         <template_type>2</template_type>
                         <template_file>product_stock_alert.html</template_file>
                         <config_data_path>catalog/productalert/email_stock_template</config_data_path>
@@ -414,7 +414,7 @@
 
                     <product_price_alert>
                         <execute>1</execute>
-                        <template_code>Produkt Preisänderung</template_code>
+                        <template_code>Modification du prix du produit</template_code>
                         <template_type>2</template_type>
                         <template_file>product_price_alert.html</template_file>
                         <config_data_path>catalog/productalert/email_price_template</config_data_path>
@@ -425,7 +425,7 @@
 
                     <product_alert_cron_error>
                         <execute>1</execute>
-                        <template_code>Produkt Cron Fehler</template_code>
+                        <template_code>Erreur Cron Produit</template_code>
                         <template_type>2</template_type>
                         <template_file>product_alert_cron_error.html</template_file>
                         <config_data_path>catalog/productalert_cron/error_email_template</config_data_path>
@@ -436,7 +436,7 @@
 
                     <enterprise_invitation>
                         <execute>1</execute>
-                        <template_code>Kundeneinladung [Invitation]</template_code>
+                        <template_code>Invitation</template_code>
                         <template_type>2</template_type>
                         <template_file>enterprise_invitation.html</template_file>
                         <config_data_path>enterprise_invitation/email/template</config_data_path>
@@ -447,7 +447,7 @@
 
                     <token>
                         <execute>1</execute>
-                        <template_code>OAuth Tokenänderung</template_code>
+                        <template_code>OAuth: changement de jeton</template_code>
                         <template_type>2</template_type>
                         <template_file>token.html</template_file>
                         <config_data_path>oauth/email/template</config_data_path>
