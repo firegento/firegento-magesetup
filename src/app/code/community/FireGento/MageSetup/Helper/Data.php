@@ -62,4 +62,22 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return Mage::getUrl('magesetup/frontend/agreements', array('id' => $agreement->getId()));
     }
+
+    /**
+     * Get available countries
+     *
+     * @return array
+     */
+    public function getAvailableCountries()
+    {
+        $availableCountries = array();
+        $config = Mage::getConfig()->getNode('global/magesetup/available_countries');
+        if ($config) {
+            foreach (array_keys($config->asArray()) as $countryId) {
+                $availableCountries[$countryId] = Mage::app()->getLocale()->getCountryTranslation(strtoupper($countryId));
+            }
+        }
+        asort($availableCountries);
+        return $availableCountries;
+    }
 }
