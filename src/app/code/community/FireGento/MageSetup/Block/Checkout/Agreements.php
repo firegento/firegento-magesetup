@@ -31,10 +31,8 @@
  * @version   $Id:$
  * @since     1.2.2
  */
-
 class FireGento_MageSetup_Block_Checkout_Agreements extends Mage_Checkout_Block_Agreements
 {
-
     /**
      * Filter by "Agreement Type"
      *
@@ -59,6 +57,8 @@ class FireGento_MageSetup_Block_Checkout_Agreements extends Mage_Checkout_Block_
     }
 
     /**
+     * Retrieve the customer session
+     *
      * @return Mage_Customer_Model_Session
      */
     protected function _getCustomerSession()

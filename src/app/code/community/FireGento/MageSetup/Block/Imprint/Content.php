@@ -35,8 +35,6 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
 {
     /**
      * Constructor to set config store view.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -47,8 +45,7 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
     /**
      * Set StoreId to get impressum data for this store.
      *
-     * @param  int  $storeId Store id.
-     * @return void
+     * @param int $storeId Store id.
      */
     public function setStoreId($storeId)
     {

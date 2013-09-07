@@ -139,8 +139,6 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
 
     /**
      * Update the old product tax classes to the new tax class ids
-     *
-     * @return void
      */
     protected function _updateProductTaxClasses()
     {
@@ -156,8 +154,6 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
 
     /**
      * Mark relevant indices as outdated after chinging tax rates
-     *
-     * @return void
      */
     protected function _markIndicesOutdated()
     {

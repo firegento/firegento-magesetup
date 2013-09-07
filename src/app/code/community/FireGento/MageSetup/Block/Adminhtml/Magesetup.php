@@ -35,8 +35,6 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
 {
     /**
      * Class Constructor
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -127,14 +125,24 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
      */
     public function isMultiStore()
     {
-        return (sizeof(Mage::app()->getStores(false)) > 1);
+        return (sizeof($this->getStores()) > 1);
     }
 
+    /**
+     * Retrieve all stores
+     *
+     * @return array
+     */
     public function getStores()
     {
         return Mage::app()->getStores(false);
     }
 
+    /**
+     * Retrieve all available countries for MageSetup
+     *
+     * @return array
+     */
     public function getAvailableCountriesForSetup()
     {
         return Mage::helper('magesetup')->getAvailableCountries();

@@ -46,7 +46,7 @@ class FireGento_MageSetup_Block_Checkout_Information extends Mage_Core_Block_Tem
     /**
      * Retrieve the additional information for the review page
      *
-     * @return string|boolean
+     * @return string|bool
      */
     public function getCheckoutAdditionalInformation()
     {

@@ -36,8 +36,6 @@ class FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status
 {
     /**
      * Class constructor
-     *
-     * @return void
      */
     public function __construct()
     {
