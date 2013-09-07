@@ -5,7 +5,7 @@
    "description": "MageSetup ist eine deutlich verbesserte Alternative zu bereits existierenden Modulen.",
    "homepage": "https://github.com/firegento/firegento-magesetup",
    "require": {
-      "magento-hackathon/magento-composer-installer": "1.2"
+      "magento-hackathon/magento-composer-installer": "9f8193533a1749f06e6ae9f2c629591f0bee68c5"
    },
     "require-dev": {
       "ecomdev/mage-ci": "master-dev"
