@@ -3,6 +3,7 @@ php:
   - 5.3
 before_install:
   - mkdir test/
+  - composer self-update
   - composer install --dev
 before_script:
   - CURR_DIR=$(pwd)
