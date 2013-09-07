@@ -1,7 +1,7 @@
 FireGento_MageSetup
 =====================
 MageSetup configures a shop for a national market. It's the international variant and successor of [GermanSetup](https://github.com/firegento/firegento-germansetup).
-Currently supported countries: Germany, Austria, Switzerland, Russia. More to follow.
+Currently supported countries: Austria, France, Germany, Italy, Russia, Switzerland. More to follow.
 
 Build Status
 ------------
@@ -40,13 +40,16 @@ Compatibility
 
 Installation
 -----------------------
-After you have installed the module, you should log off from admin panel. When you log on again, you should see the following hint:
+Please create the desired websites and store view as well as install any language packs before running MageSetup.
+
+Copy all files from the src/ folder to your magento directory in order to install the MageSetup module.
+After you have installed the module, you should clear the cache and log off from admin panel. When you log on again, you should see the following hint:
 
     MageSetup has been installed. Click here to set up your pages, blocks, emails and tax settings.
 
 If you don't see that hint, please check that the configuration setting **System -> Configuration -> Developer -> Template Settings -> Allow Symlinks** is enabled.
 
-On the linked page, you can make the desired settings and then click "Run MageSetup" on the top right. The adjustments will be made.
+On the linked page, you can make the desired settings and then click "Run MageSetup" on the top or bottom right. The adjustments will be made.
 
 Support
 -------
