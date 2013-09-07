@@ -53,7 +53,7 @@ You can choose a different language for every store view.
 
 Email Setup
 ---------
-![Email Setup](raw.https://github.com/firegento/firegento-magesetup/development/docs/features/images/setup-email.png "Email Setup")
+![Email Setup](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/setup-email.png "Email Setup")
   
 - Setup Emails 
     * Choose a different language for every store view 
@@ -63,3 +63,16 @@ Email Setup
         - Store information (template can be found at **/app/design/frontend/base/default/template/magesetup/imprint/email_footer.phtml**)
         - Business terms (taken from created static block)
         - Declaration of Revocation (taken from created static block)
+        
+Checkout Agreements
+-------------------
+- Option to display checkout agreements on checkout, and customer registration, on both or none
+- Option to make checkout agreements required (display checkbox on frontend) or optional (does not display checkbox, just the test)  
+![Checkout Agreements](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/checkout-agreements.png "Checkout Agreements")
+
+Newsletter Subscribers Status History
+-------------------------------------
+- Store all newsletter subscription statusses of all subscribers
+- Document all status changes in order to be able to prove subscriptions and unsubscriptions   
+![Newsletter History](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/newsletter-history.png "Newsletter History")
+
