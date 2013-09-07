@@ -43,9 +43,17 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
     {
         foreach($locale as $storeId => $localeCode) {
 
-            if (!$localeCode) continue;
+            if (!$localeCode) {
+                if (sizeof($locale) == 1) {
+                    continue;
+                }
+                $localeCode = $locale['default'];
+            }
 
             if ($storeId == 'default') {
+                if (sizeof($locale) > 1) {
+                    continue;
+                }
                 $storeId = null;
             }
 
