@@ -41,7 +41,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Setup Pages, Blocks and especially Footer Block
      *
-     * @param array $locale
+     * @param array $locale Locale options
      */
     public function setup($locale = array('default' => 'de_DE'))
     {
@@ -78,7 +78,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Get pages/default from config file
      *
-     * @return array
+     * @return array Config pages
      */
     protected function _getConfigPages()
     {
@@ -88,7 +88,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Get blocks/default from config file
      *
-     * @return array
+     * @return array Config blocks
      */
     protected function _getConfigBlocks()
     {
@@ -98,8 +98,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Get footer_links/default from config file
      *
-     * @param  int|null $storeId
-     * @return array
+     * @param  int|null $storeId Store ID
+     * @return array Footer Links
      */
     protected function _getFooterLinks($storeId)
     {
@@ -115,10 +115,10 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Collect data and create CMS page
      *
-     * @param  array   $pageData cms page data
-     * @param  string  $locale
-     * @param  boolean $override  override email template if set
-     * @param  int|null $storeId
+     * @param  array    $pageData Cms page data
+     * @param  string   $locale   Locale
+     * @param  boolean  $override Override email template if set
+     * @param  int|null $storeId  Store ID
      * @return void
      */
     protected function _createCmsPage($pageData, $locale, $override = true, $storeId = null)
@@ -191,10 +191,10 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Collect data and create CMS block
      *
-     * @param  array   $blockData cms block data
-     * @param  string  $locale
-     * @param  boolean $override  override email template if set
-     * @param  int|null $storeId
+     * @param  array    $blockData Cms block data
+     * @param  string   $locale    Locale
+     * @param  boolean  $override  Override email template if set
+     * @param  int|null $storeId   Store ID
      * @return void
      */
     protected function _createCmsBlock($blockData, $locale, $override = true, $storeId = null)
@@ -233,8 +233,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Generate footer_links block from config data
      *
-     * @param  int|null $storeId
-     * @return string
+     * @param  int|null $storeId Store ID
+     * @return string Footer Links Content
      */
     protected function _createFooterLinksContent($storeId)
     {
@@ -261,8 +261,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Update footer_links cms block
      *
-     * @param array $blockData cms block data
-     * @param int|null $storeId
+     * @param array    $blockData     Cms block data
+     * @param int|null $storeId Store ID
      */
     protected function _updateFooterLinksBlock($blockData, $storeId = null)
     {
@@ -313,8 +313,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Retrieve the default block for the given identifier
      *
-     * @param  string $identifier
-     * @return Mage_Cms_Model_Block
+     * @param  string $identifier Block Identifier
+     * @return Mage_Cms_Model_Block Block Model
      */
     protected function _getDefaultBlock($identifier)
     {

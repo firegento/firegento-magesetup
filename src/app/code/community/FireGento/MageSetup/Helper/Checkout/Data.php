@@ -81,7 +81,7 @@ class FireGento_MageSetup_Helper_Checkout_Data
     /**
      * Retrieve the customer session
      *
-     * @return Mage_Customer_Model_Session
+     * @return Mage_Customer_Model_Session Customer Session
      */
     protected function _getCustomerSession()
     {

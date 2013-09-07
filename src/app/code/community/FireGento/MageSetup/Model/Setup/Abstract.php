@@ -55,7 +55,7 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     /**
      * Get config.xml data
      *
-     * @return array
+     * @return array Config data
      */
     public function getConfigData()
     {
@@ -67,9 +67,11 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     }
 
     /**
-     * @param string $configPath
-     * @param string $value
-     * @param int|null $storeId
+     * Saves a system config value for the given config path and the given store id
+     *
+     * @param string $configPath Config Path
+     * @param string $value      Value
+     * @param int|null $storeId  Store ID
      */
     public function setConfigData($configPath, $value, $storeId = null)
     {
@@ -84,10 +86,9 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     /**
      * Get config.xml data
      *
-     * @param string      $node      xml node
-     * @param string|null $childNode if set, child node of the first node
-     *
-     * @return array
+     * @param  string      $node      xml node
+     * @param  string|null $childNode if set, child node of the first node
+     * @return array Config Node
      */
     protected function _getConfigNode($node, $childNode = null)
     {
@@ -102,8 +103,8 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     /**
      * Get template content
      *
-     * @param string $filename template file name
-     * @return string
+     * @param  string $filename Template file name
+     * @return string Template content
      */
     public function getTemplateContent($filename)
     {
@@ -113,9 +114,9 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     /**
      * Load a model by attribute code
      *
-     * @param  Mage_Core_Model_Abstract $model
-     * @param  string                   $attributeCode
-     * @param  string                   $value
+     * @param  Mage_Core_Model_Abstract $model         Collection
+     * @param  string                   $attributeCode Attribute code
+     * @param  string                   $value         Value
      * @return Mage_Core_Model_Abstract
      */
     protected function _loadExistingModel($model, $attributeCode, $value)
@@ -132,7 +133,9 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     }
 
     /**
-     * @return Varien_Db_Adapter_Interface
+     * Retrieve the database connection
+     *
+     * @return Varien_Db_Adapter_Interface Database connection
      */
     protected function _getConnection()
     {
@@ -140,7 +143,9 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     }
 
     /**
-     * @return Mage_Eav_Model_Entity_Setup
+     * Retrieve the Magento setup model class
+     *
+     * @return Mage_Eav_Model_Entity_Setup Setup Model
      */
     protected function _getSetup()
     {

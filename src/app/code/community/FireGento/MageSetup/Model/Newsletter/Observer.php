@@ -34,10 +34,11 @@
 class FireGento_MageSetup_Model_Newsletter_Observer
 {
     /**
-     * Enter description here ...
+     * Saves the subscriber status change in a custom history
+     * after a subscriber was saved.
      *
-     * @magentoEevent newsletter_subscriber_save_after
-     * @param Varien_Event_Observer $observer
+     * @magentoEvent newsletter_subscriber_save_after
+     * @param Varien_Event_Observer $observer Observer
      */
     public function saveSubscriberStatusHistory(Varien_Event_Observer $observer)
     {

@@ -31,7 +31,6 @@
  * @version   $Id:$
  * @since     1.2.2
  */
-
 class FireGento_MageSetup_Model_Source_AgreementType
 {
     const AGREEMENT_TYPE_CHECKOUT = 0;
@@ -42,7 +41,7 @@ class FireGento_MageSetup_Model_Source_AgreementType
     /**
      * Options getter
      *
-     * @return array
+     * @return array Agreement types as option array
      */
     public function toOptionArray()
     {
@@ -68,7 +67,7 @@ class FireGento_MageSetup_Model_Source_AgreementType
     }
 
     /**
-     * @return array
+     * @return array Agreement types as option hash
      */
     public function getOptionArray()
     {

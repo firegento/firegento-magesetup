@@ -36,7 +36,7 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Generate URL to configured shipping cost page, or '' if none.
      *
-     * @return string
+     * @return string Shipping cost url
      */
     public function getShippingCostUrl()
     {
@@ -55,8 +55,8 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Get url of agreement view for checkout
      *
-     * @param  Mage_Checkout_Model_Agreement $agreement
-     * @return string
+     * @param  Mage_Checkout_Model_Agreement $agreement Agreement
+     * @return string URL for the given agreement
      */
     public function getAgreementUrl(Mage_Checkout_Model_Agreement $agreement)
     {
@@ -66,7 +66,7 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Get available countries
      *
-     * @return array
+     * @return array All available countries
      */
     public function getAvailableCountries()
     {

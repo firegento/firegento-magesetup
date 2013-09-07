@@ -36,7 +36,7 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
     /**
      * Setup Checkout Agreements
      *
-     * @param array $locale
+     * @param array $locale Locale options
      */
     public function setup($locale = array('default' => 'de_DE'))
     {
@@ -71,10 +71,10 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
     /**
      * Collect data and create Agreement
      *
-     * @param  array    $agreementData cms page data
-     * @param  string   $locale
-     * @param  boolean  $override override cms page if it exists
-     * @param  int|null $storeId
+     * @param  array    $agreementData Cms page data
+     * @param  string   $locale        Locale
+     * @param  boolean  $override      Override cms page if it exists
+     * @param  int|null $storeId       Store Id
      * @return void
      */
     protected function _createAgreement($agreementData, $locale, $override=true, $storeId = null)
@@ -132,7 +132,7 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
     /**
      * Get pages/default from config file
      *
-     * @return array
+     * @return array Config agreements
      */
     protected function _getConfigAgreements()
     {

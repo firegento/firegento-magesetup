@@ -102,7 +102,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get tax classes from config file
      *
-     * @return array
+     * @return array Config tax classes
      */
     protected function _getConfigTaxClasses()
     {
@@ -122,7 +122,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get tax calculation rules from config file
      *
-     * @return array
+     * @return array Config tax calculation rules
      */
     protected function _getConfigTaxCalcRules()
     {
@@ -142,7 +142,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get tax calculation rates from config file
      *
-     * @return array
+     * @return array Config tax calculation rates
      */
     protected function _getConfigTaxCalcRates()
     {
@@ -185,7 +185,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get tax calculations from config file
      *
-     * @return array
+     * @return array Config tax calculations
      */
     protected function _getConfigTaxCalculations()
     {
@@ -216,7 +216,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get tax calculations from config file
      *
-     * @return array
+     * @return array Config tax config
      */
     protected function _getConfigTaxConfig()
     {
@@ -250,7 +250,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Truncate a database table
      *
-     * @param string $table
+     * @param string $table Table which should be truncated
      */
     protected function _truncateTable($table)
     {
@@ -261,29 +261,13 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Insert a line into a database table
      *
-     * @param string $table
-     * @param array  $data
+     * @param string $table Table in which the given data should be inserted
+     * @param array  $data  Insert data
      */
     protected function _insertIntoTable($table, $data)
     {
         unset($data['execute']);
         $tableName = $this->_getSetup()->getTable($table);
         $this->_getConnection()->insert($tableName, $data);
-    }
-
-    /**
-     * @return Varien_Db_Adapter_Interface
-     */
-    protected function _getConnection()
-    {
-        return $this->_connection;
-    }
-
-    /**
-     * @return Mage_Eav_Model_Entity_Setup
-     */
-    protected function _getSetup()
-    {
-        return $this->_setup;
     }
 }

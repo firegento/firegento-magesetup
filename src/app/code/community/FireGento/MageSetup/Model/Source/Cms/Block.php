@@ -42,7 +42,7 @@ class FireGento_MageSetup_Model_Source_Cms_Block
     /**
      * Return option array
      *
-     * @return array options
+     * @return array Blocks as option array
      */
     public function toOptionArray()
     {
@@ -75,7 +75,7 @@ class FireGento_MageSetup_Model_Source_Cms_Block
     /**
      * Get all options as array
      *
-     * @return array options
+     * @return array Blocks as option array
      */
     public function getAllOptions()
     {

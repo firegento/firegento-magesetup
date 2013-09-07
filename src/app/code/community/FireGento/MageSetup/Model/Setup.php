@@ -37,9 +37,9 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
      * Setup MageSetup as if a user sends the adminhtml form
      * See method _getDefaultParams for possible params
      *
-     * @param  array $params
-     * @param  bool  $notify
-     * @return FireGento_MageSetup_Model_Setup
+     * @param  array $params Setup params
+     * @param  bool  $notify Flag if admin notifications should be added
+     * @return FireGento_MageSetup_Model_Setup Setup Model
      */
     public function setup($params = array(), $notify=false)
     {
@@ -127,7 +127,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
     /**
      * Get default parameters like they are in the backend form
      *
-     * @return array
+     * @return array Default setup params
      */
     protected function _getDefaultParams()
     {
@@ -153,7 +153,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
     /**
      * Update the old product tax classes to the new tax class ids
      *
-     * @param array $params
+     * @param array $params Setup params
      */
     protected function _updateProductTaxClasses($params)
     {
@@ -187,7 +187,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
     /**
      * Retrieve the helper class
      *
-     * @return FireGento_MageSetup_Helper_Data
+     * @return FireGento_MageSetup_Helper_Data Helper Class
      */
     protected function _getHelper()
     {
@@ -197,7 +197,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
     /**
      * Retrieve the adminhtml session for setup notifications
      *
-     * @return Mage_Adminhtml_Model_Session
+     * @return Mage_Adminhtml_Model_Session Admin Session
      */
     protected function _getAdminhtmlSession()
     {

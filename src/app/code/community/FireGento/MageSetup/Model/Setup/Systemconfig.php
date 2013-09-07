@@ -55,7 +55,7 @@ class FireGento_MageSetup_Model_Setup_Systemconfig extends FireGento_MageSetup_M
     /**
      * Get tax calculations from config file
      *
-     * @return array
+     * @return array Config System Config
      */
     protected function _getConfigSystemConfig()
     {

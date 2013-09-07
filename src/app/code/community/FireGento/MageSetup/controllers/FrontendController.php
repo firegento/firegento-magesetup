@@ -34,7 +34,7 @@
 class FireGento_MageSetup_FrontendController extends Mage_Core_Controller_Front_Action
 {
     /**
-     * Show an agreement
+     * Shows the given agreement
      */
     public function agreementsAction()
     {

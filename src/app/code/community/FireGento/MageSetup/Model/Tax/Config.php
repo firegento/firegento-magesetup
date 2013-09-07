@@ -41,8 +41,8 @@ class FireGento_MageSetup_Model_Tax_Config extends Mage_Tax_Model_Config
      * Get tax class id specified for shipping tax estimation based on highest product
      * tax rate of the products in the current customer quote.
      *
-     * @param  Mage_Core_Model_Store $store
-     * @return int
+     * @param  Mage_Core_Model_Store $store Store Model
+     * @return int Shipping tax class id
      */
     public function getShippingTaxClass($store = null)
     {
@@ -130,8 +130,8 @@ class FireGento_MageSetup_Model_Tax_Config extends Mage_Tax_Model_Config
     /**
      * Gets tax percents for current sales quote item
      *
-     * @param  Mage_Sales_Model_Quote_Item $item
-     * @return string
+     * @param  Mage_Sales_Model_Quote_Item $item Quote Item
+     * @return string Tax percent for the given quote item
      */
     protected function _loadTaxCalculationRate(Mage_Sales_Model_Quote_Item $item)
     {

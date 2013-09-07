@@ -36,7 +36,7 @@ class FireGento_MageSetup_Model_Source_Tax_DynamicType
     /**
      * Options getter
      *
-     * @return array
+     * @return array Dynamic types as option array
      */
     public function toOptionArray()
     {

@@ -34,7 +34,7 @@
 class FireGento_MageSetup_Adminhtml_NewsletterController extends Mage_Adminhtml_Controller_Action
 {
     /**
-     * Enter description here ...
+     * Displays the newsletter subscribers status history
      */
     public function indexAction()
     {
