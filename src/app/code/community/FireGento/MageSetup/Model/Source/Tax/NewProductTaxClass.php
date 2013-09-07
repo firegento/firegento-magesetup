@@ -90,8 +90,10 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
     {
         if (!$this->_defaultOption) {
             $taxClasses = $this->_getConfigNode('tax_classes', 'default');
-            foreach ($taxClasses as $taxClass) {
-                if ($taxClass['class_type'] != 'PRODUCT' || $taxClass['execute'] != 1) {
+            foreach ($taxClasses as $identifier => $taxClass) {
+                if ($taxClass['class_type'] != 'PRODUCT'
+                    || $taxClass['execute'] != 1
+                    || strpos($identifier, 'shipping') === 0) {
                     continue;
                 }
 
