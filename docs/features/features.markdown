@@ -3,7 +3,7 @@ FireGento_MageSetup - Features
 General
 -------
 - Display a hint to fill out configuration form after first login  
-![Hint after Installation](https://github.com/firegento/firegento-magesetup/tree/development/docs/features/images/install-hint.png "Hint after Installation")
+![Hint after Installation](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/install-hint.png "Hint after Installation")
 - Supports the following countries right now:
     * Austria
     * France
@@ -14,14 +14,14 @@ General
     
 Configuration Setup
 -----
-![Configuration Setup](https://github.com/firegento/firegento-magesetup/tree/development/docs/features/images/setup-configuration.png "Configuration Setup")
+![Configuration Setup](https://raw.github.com/firegento/firegento-magesetup/tree/development/docs/features/images/setup-configuration.png "Configuration Setup")
 
 - Choose a country which will be configured as shipping source
 - Set country specific configuration settings (i.e. newsletter confirmation
 
 Tax Setup
 ---------
-![Tax Setup](https://github.com/firegento/firegento-magesetup/tree/development/docs/features/images/setup-tax.png "Tax Setup")
+![Tax Setup](https://raw.github.com/firegento/firegento-magesetup/tree/development/docs/features/images/setup-tax.png "Tax Setup")
 
 - Tax settings for the selected country (see **Configuration Setup**) 
 - All tax classes, rates and rules are deleted in the process and new ones are created
@@ -30,7 +30,7 @@ Tax Setup
 
 CMS Setup
 ---------
-![CMS Setup](https://github.com/firegento/firegento-magesetup/tree/development/docs/features/images/setup-cms.png "CMS Setup")
+![CMS Setup](https://raw.github.com/firegento/firegento-magesetup/tree/development/docs/features/images/setup-cms.png "CMS Setup")
 
 - Setup preconfigured, language dependant CMS pages:  
     * 404 error
@@ -53,7 +53,7 @@ You can choose a different language for every store view.
 
 Email Setup
 ---------
-![Email Setup](https://github.com/firegento/firegento-magesetup/tree/development/docs/features/images/setup-email.png "Email Setup")
+![Email Setup](raw.https://github.com/firegento/firegento-magesetup/tree/development/docs/features/images/setup-email.png "Email Setup")
   
 - Setup Emails 
     * Choose a different language for every store view 
