@@ -156,7 +156,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>DE reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_DE_reduced>
 
@@ -189,7 +189,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>BE reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_BE_reduced>
 
@@ -222,7 +222,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>BG reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_BG_reduced>
 
@@ -255,7 +255,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>DK reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_DK_reduced>
 
@@ -288,7 +288,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>EE reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_EE_reduced>
 
@@ -321,7 +321,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>FI reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_FI_reduced>
 
@@ -354,7 +354,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>FR reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_FR_reduced>
 
@@ -387,7 +387,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>GR reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_GR_reduced>
 
@@ -420,7 +420,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>IE reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_IE_reduced>
 
@@ -453,7 +453,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>IT reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_IT_reduced>
 
@@ -486,7 +486,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LV reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_LV_reduced>
 
@@ -519,7 +519,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LT reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_LT_reduced>
 
@@ -552,7 +552,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>LU reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_LU_reduced>
 
@@ -585,7 +585,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>MT reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_MT_reduced>
 
@@ -618,7 +618,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>NL reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_NL_reduced>
 
@@ -651,7 +651,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>AT reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_AT_reduced>
 
@@ -684,7 +684,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>PL reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_PL_reduced>
 
@@ -717,7 +717,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>PT reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_PT_reduced>
 
@@ -750,7 +750,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>RO reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_RO_reduced>
 
@@ -783,7 +783,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SE reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_SE_reduced>
 
@@ -816,7 +816,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SK reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_SK_reduced>
 
@@ -849,7 +849,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>SI reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_SI_reduced>
 
@@ -882,7 +882,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>ES reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_ES_reduced>
 
@@ -915,7 +915,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>CZ reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_CZ_reduced>
 
@@ -948,7 +948,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>HU reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_HU_reduced>
 
@@ -981,7 +981,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>GB reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_GB_reduced>
 
@@ -1014,7 +1014,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>CY reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_CY_reduced>
 
@@ -1047,7 +1047,7 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <code>HR reduced</code>
-                        <label>réduite TVA</label>
+                        <label>TVA réduite</label>
                         <rate>7</rate>
                     </tax_calculation_rate_HR_reduced>
 
@@ -3759,15 +3759,15 @@
             </tax_calculations>
             <tax_config>
                 <default>
-                    <general__country__default>DE</general__country__default>
+                    <general__country__default>FR</general__country__default>
                     <tax__classes__shipping_tax_class>4</tax__classes__shipping_tax_class>
                     <tax__calculation__based_on>billing</tax__calculation__based_on>
                     <tax__calculation__price_includes_tax>1</tax__calculation__price_includes_tax>
                     <tax__calculation__shipping_includes_tax>1</tax__calculation__shipping_includes_tax>
                     <tax__calculation__apply_after_discount>1</tax__calculation__apply_after_discount>
                     <tax__calculation__discount_tax>1</tax__calculation__discount_tax>
-                    <tax__defaults__country>DE</tax__defaults__country>
-                    <tax__defaults__region>79</tax__defaults__region>
+                    <tax__defaults__country>FR</tax__defaults__country>
+                    <tax__defaults__region></tax__defaults__region>
                     <tax__defaults__postcode>12345</tax__defaults__postcode>
                     <tax__display__type>2</tax__display__type>
                     <tax__display__shipping>2</tax__display__shipping>
@@ -3783,10 +3783,10 @@
                     <tax__sales_display__grandtotal>0</tax__sales_display__grandtotal>
                     <tax__sales_display__full_summary>1</tax__sales_display__full_summary>
                     <tax__sales_display__zero_tax>1</tax__sales_display__zero_tax>
-                    <shipping__origin__country_id>DE</shipping__origin__country_id>
+                    <shipping__origin__country_id>FR</shipping__origin__country_id>
                     <shipping__origin__region_id>79</shipping__origin__region_id>
                     <shipping__origin__postcode>12345</shipping__origin__postcode>
-                    <shipping__origin__city>Musterstadt</shipping__origin__city>
+                    <shipping__origin__city>Ma Ville</shipping__origin__city>
                 </default>
             </tax_config>
         </magesetup>

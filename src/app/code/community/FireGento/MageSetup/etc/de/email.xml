@@ -447,7 +447,7 @@
 
                     <token>
                         <execute>1</execute>
-                        <template_code>OAuth Tokenänderung [Invitation]</template_code>
+                        <template_code>OAuth Tokenänderung</template_code>
                         <template_type>2</template_type>
                         <template_file>token.html</template_file>
                         <config_data_path>oauth/email/template</config_data_path>
