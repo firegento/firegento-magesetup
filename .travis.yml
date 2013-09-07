@@ -3,7 +3,6 @@ php:
   - 5.3
 before_install:
   - mkdir test/
-  - composer install --dev
 before_script:
   - CURR_DIR=$(pwd)
   - bin/mage-ci install test 1.7.0.2 magento_test -c -t -r http://mage-ci.ecomdev.org
