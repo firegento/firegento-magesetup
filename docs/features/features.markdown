@@ -92,9 +92,7 @@ You can choose a different language for every store view.
 ![Shipping costs in cart](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/cart-shipping-costs.png "Shipping costs in cart")
 - Can be configured in **System -> Configuration -> Checkout -> Shopping cart -> Hide estimated shipping costs in cart**
 
-### Checkout confirm page
-- Display additional text (can be configured in **System -> Configuration -> Checkout -> Checkout Options -> Display Additional Information**)  
-
 ### Redesign Checkout review page
 - ![Checkout review page](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/checkout-review.png "Checkout review page")  
    Regrouping for better overview and due to legal issues
+- Display additional text (can be configured in **System -> Configuration -> Checkout -> Checkout Options -> Display Additional Information**)  
