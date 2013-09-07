@@ -46,7 +46,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Add content of template block below price html if defined in config
      *
-     * @return string
+     * @return string Price HTML
      */
     public function _toHtml()
     {
@@ -91,7 +91,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Add delivery time on category pages only
      *
-     * @param $htmlObject
+     * @param Varien_Object $htmlObject Transport object
      */
     protected function _addDeliveryTimeHtml($htmlObject)
     {
@@ -114,7 +114,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Read tax rate from current product.
      *
-     * @return string
+     * @return string Tax Rate
      */
     public function getTaxRate()
     {
@@ -129,7 +129,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Retrieves formatted string of tax rate for user output
      *
-     * @return string
+     * @return string Formatted Tax Rate for the given locale
      */
     public function getFormattedTaxRate()
     {
@@ -148,7 +148,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Returns whether or not the price contains taxes
      *
-     * @return bool
+     * @return bool Flag if prices are shown with including tax
      */
     public function isIncludingTax()
     {
@@ -162,7 +162,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Returns whether or not the price contains taxes
      *
-     * @return bool
+     * @return bool Flag if shipping costs are including taxes
      */
     public function isIncludingShippingCosts()
     {
@@ -180,7 +180,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
      * Returns whether the shipping link needs to be shown
      * on the frontend or not.
      *
-     * @return bool
+     * @return bool Flag if shipping link should be displayed
      */
     public function isShowShippingLink()
     {
@@ -196,8 +196,8 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Gets tax percents for current product
      *
-     * @param  Mage_Catalog_Model_Product $product
-     * @return string
+     * @param  Mage_Catalog_Model_Product $product Product Model
+     * @return string Tax Rate
      */
     protected function _loadTaxCalculationRate(Mage_Catalog_Model_Product $product)
     {
@@ -220,7 +220,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Check if Shipping by Weight is active
      *
-     * @return bool
+     * @return bool Flag if product weight should be displayed
      */
     public function getIsShowWeightInfo()
     {
@@ -230,7 +230,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Get formatted weight incl. unit
      *
-     * @return string
+     * @return string Formatted weight
      */
     public function getFormattedWeight()
     {
@@ -240,7 +240,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     /**
      * Translate block sentence
      *
-     * @return string
+     * @return string Translated text
      */
     public function __()
     {

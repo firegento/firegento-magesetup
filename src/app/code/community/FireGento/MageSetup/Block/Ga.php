@@ -38,7 +38,7 @@ class FireGento_MageSetup_Block_Ga extends Mage_GoogleAnalytics_Block_Ga
     /**
      * Prepare and return block's html output
      *
-     * @return string
+     * @return string Google Analytics JS Tracking Code
      */
     protected function _toHtml()
     {

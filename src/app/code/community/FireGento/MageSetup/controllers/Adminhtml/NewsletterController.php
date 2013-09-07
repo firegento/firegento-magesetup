@@ -35,8 +35,6 @@ class FireGento_MageSetup_Adminhtml_NewsletterController extends Mage_Adminhtml_
 {
     /**
      * Enter description here ...
-     *
-     * @return void
      */
     public function indexAction()
     {
@@ -71,8 +69,6 @@ class FireGento_MageSetup_Adminhtml_NewsletterController extends Mage_Adminhtml_
 
     /**
      * Retrieve the new grid layout via ajax requests
-     *
-     * @return void
      */
     public function gridAction()
     {
