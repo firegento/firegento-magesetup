@@ -60,7 +60,11 @@ You can choose a different language for every store view.
         - Business terms (taken from created static block)
         - Declaration of Revocation (taken from created static block)
         
-## Backend Features        
+## Backend Features    
+### New configuration fields for shop information (imprint)
+- Can be found in **System -> Configuration -> General -> Imprint**
+- Displays entered information in cms page "imprint" and in email footer
+    
 ### Checkout Agreements
 - Option to display checkout agreements on checkout, and customer registration, on both or none
 - Option to make checkout agreements required (display checkbox on frontend) or optional (does not display checkbox, just the test)  
@@ -74,7 +78,20 @@ You can choose a different language for every store view.
 ## Frontend Features
 ### Info Block below Prices
 - Display a block below prices on product list and product view pages  
-![Block on product list page](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/price-text-list.png "Block on product list page")
+![Block on product list page](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/price-text-list.png "Block on product list page")  
 ![Block on product view page](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/price-text-view.png "Block on product view page")
 - Configure via backend in **System -> Configuration -> Catalog -> Price**  
 ![Price configuration](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/price-configuration.png "Price configuration")
+
+### Display additional attribute in cart and on checkout review page
+- Can be selected by attribute in **Catalog -> Attributes -> Manage Attributes**
+![Attribute management](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/attribute-display-checkout.png "Attribute management")  
+![Additional attribute in cart](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/attribute-display-checkout-cart.png "Additional attribute in cart"}  
+
+### Shipping Costs block on cart page
+- Block can be replaced with a simple link to the shipping costs cms page  
+![Shipping costs in cart](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/cart-shipping-costs.png "Shipping costs in cart")
+- Can be configured in **System -> Configuration -> Checkout -> Shopping cart -> Hide estimated shipping costs in cart**
+
+### Checkout confirm page
+- Display additional text (can be configured in **System -> Configuration -> Checkout -> Checkout Options -> Display Additional Information**)  
