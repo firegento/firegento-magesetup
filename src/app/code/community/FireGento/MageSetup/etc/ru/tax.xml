@@ -27,61 +27,30 @@
         <magesetup>
             <tax_calculation_rules>
                 <default>
-                    <!-- Customers -->
-                    <products_full_tax>
+                    <products_rate_1 tax_rate="tax_calculation_rate_1"
+                                     tax_customer_class="customers_end_consumers,customers_companies"
+                                     tax_product_class="products_full_tax,shipping_full_tax">
                         <execute>1</execute>
-                        <tax_calculation_rule_id>3</tax_calculation_rule_id>
-                        <code>End Customers buy Products with full Tax</code>
+                        <code>Customers buy products with full tax</code>
                         <priority>1</priority>
                         <position>0</position>
-                    </products_full_tax>
-                    <products_reduced_tax>
+                    </products_rate_1>
+                    <products_rate_2 tax_rate="tax_calculation_rate_2"
+                                     tax_customer_class="customers_end_users,customers_companies"
+                                     tax_product_class="products_reduced_tax,shipping_reduced_tax">
                         <execute>1</execute>
-                        <tax_calculation_rule_id>4</tax_calculation_rule_id>
-                        <code>End Customers buy Products with reduced Tax</code>
-                        <priority>2</priority>
-                        <position>0</position>
-                    </products_reduced_tax>
-
-                    <!-- Companies -->
-                    <products_full_tax_companies>
-                        <execute>1</execute>
-                        <tax_calculation_rule_id>6</tax_calculation_rule_id>
-                        <code>Taxable Companies buy Products with full Tax</code>
+                        <code>Customers buy products with reduced tax</code>
                         <priority>1</priority>
                         <position>0</position>
-                    </products_full_tax_companies>
-                    <products_reduced_tax_companies>
+                    </products_rate_2>
+                    <products_rate_3 tax_rate="tax_calculation_rate_3"
+                                     tax_customer_class="customers_companies_no_vat"
+                                     tax_product_class="products_full_tax,shipping_full_tax,products_reduced_tax,shipping_reduced_tax">
                         <execute>1</execute>
-                        <tax_calculation_rule_id>8</tax_calculation_rule_id>
-                        <code>Taxable Companies buy Products with reduced Tax</code>
-                        <priority>2</priority>
-                        <position>0</position>
-                    </products_reduced_tax_companies>
-                    <products_companies_vat>
-                        <execute>1</execute>
-                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
-                        <code>Non-taxable Companies buy Products with full and reduced Tax</code>
+                        <code>Non-taxable companies buy products with full and reduced tax</code>
                         <priority>1</priority>
                         <position>0</position>
-                    </products_companies_vat>
-
-                    <!-- Shipping -->
-                    <shipping_full_tax>
-                        <execute>1</execute>
-                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
-                        <code>Shipping with full Tax</code>
-                        <priority>3</priority>
-                        <position>0</position>
-                    </shipping_full_tax>
-                    <shipping_reduced_tax>
-                        <execute>1</execute>
-                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
-                        <code>Shipping with reduced Tax</code>
-                        <priority>3</priority>
-                        <position>0</position>
-                    </shipping_reduced_tax>
-
+                    </products_rate_3>
                 </default>
             </tax_calculation_rules>
 
@@ -101,185 +70,73 @@
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </products_reduced_tax>
-                    <customer_customers>
-                        <execute>1</execute>
-                        <class_id>3</class_id>
-                        <class_name>End Customers</class_name>
-                        <class_type>CUSTOMER</class_type>
-                    </customer_customers>
                     <shipping_full_tax>
                         <execute>1</execute>
-                        <class_id>4</class_id>
+                        <class_id>3</class_id>
                         <class_name>Shipping with full Tax</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping_full_tax>
                     <shipping_reduced_tax>
                         <execute>1</execute>
-                        <class_id>7</class_id>
+                        <class_id>4</class_id>
                         <class_name>Shipping with reduced Tax</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping_reduced_tax>
-                    <customer_companies>
+                    <customers_end_consumers>
                         <execute>1</execute>
                         <class_id>5</class_id>
-                        <class_name>Taxable Companies</class_name>
+                        <class_name>End Consumers</class_name>
                         <class_type>CUSTOMER</class_type>
-                    </customer_companies>
-                    <customer_companies_vat>
+                    </customers_end_consumers>
+                    <customers_companies>
                         <execute>1</execute>
                         <class_id>6</class_id>
+                        <class_name>Taxable Companies</class_name>
+                        <class_type>CUSTOMER</class_type>
+                    </customers_companies>
+                    <customers_companies_no_vat>
+                        <execute>1</execute>
+                        <class_id>7</class_id>
                         <class_name>Non-Taxable Companies</class_name>
                         <class_type>CUSTOMER</class_type>
-                    </customer_companies_vat>
+                    </customers_companies_no_vat>
                 </default>
             </tax_classes>
 
             <tax_calculation_rates>
                 <default>
-
-                    <tax_calculation_rate_RU_full>
+                    <tax_calculation_rate_1>
                         <execute>1</execute>
-                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
-                        <tax_country_id>RU</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>RU full</code>
                         <label>VAT</label>
                         <rate>18</rate>
-                    </tax_calculation_rate_RU_full>
+                    </tax_calculation_rate_1>
 
-                    <tax_calculation_rate_RU_reduced>
+                    <tax_calculation_rate_2>
                         <execute>1</execute>
-                        <tax_calculation_rate_id>4</tax_calculation_rate_id>
-                        <tax_country_id>RU</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>RU reduced</code>
                         <label>reduced VAT</label>
                         <rate>10</rate>
-                    </tax_calculation_rate_RU_reduced>
+                    </tax_calculation_rate_2>
 
-                    <tax_calculation_rate_RU_zero>
+                    <tax_calculation_rate_3>
                         <execute>1</execute>
-                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
-                        <tax_country_id>RU</tax_country_id>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <code>RU zero</code>
                         <label>without VAT</label>
                         <rate>0</rate>
-                    </tax_calculation_rate_RU_zero>
-
+                    </tax_calculation_rate_3>
                 </default>
             </tax_calculation_rates>
 
-            <tax_calculations>
-                <default>
-
-                    <tax_calculation_RU_full_customer>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>3</tax_calculation_rule_id>
-                        <customer_tax_class_id>3</customer_tax_class_id>
-                        <product_tax_class_id>1</product_tax_class_id>
-                    </tax_calculation_RU_full_customer>
-
-                    <tax_calculation_RU_full_companies>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>6</tax_calculation_rule_id>
-                        <customer_tax_class_id>5</customer_tax_class_id>
-                        <product_tax_class_id>1</product_tax_class_id>
-                    </tax_calculation_RU_full_companies>
-
-                    <tax_calculation_RU_full_shipping_customer>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
-                        <customer_tax_class_id>3</customer_tax_class_id>
-                        <product_tax_class_id>4</product_tax_class_id>
-                    </tax_calculation_RU_full_shipping_customer>
-
-                    <tax_calculation_RU_full_shipping_companies>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>3</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>5</tax_calculation_rule_id>
-                        <customer_tax_class_id>5</customer_tax_class_id>
-                        <product_tax_class_id>4</product_tax_class_id>
-                    </tax_calculation_RU_full_shipping_companies>
-
-                    <tax_calculation_RU_reduced_customer>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>4</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>4</tax_calculation_rule_id>
-                        <customer_tax_class_id>3</customer_tax_class_id>
-                        <product_tax_class_id>2</product_tax_class_id>
-                    </tax_calculation_RU_reduced_customer>
-
-                    <tax_calculation_RU_reduced_companies>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>4</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>8</tax_calculation_rule_id>
-                        <customer_tax_class_id>5</customer_tax_class_id>
-                        <product_tax_class_id>2</product_tax_class_id>
-                    </tax_calculation_RU_reduced_companies>
-
-                    <tax_calculation_RU_reduced_shipping_customer>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>4</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
-                        <customer_tax_class_id>3</customer_tax_class_id>
-                        <product_tax_class_id>7</product_tax_class_id>
-                    </tax_calculation_RU_reduced_shipping_customer>
-
-                    <tax_calculation_RU_reduced_shipping_companies>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>4</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>7</tax_calculation_rule_id>
-                        <customer_tax_class_id>5</customer_tax_class_id>
-                        <product_tax_class_id>7</product_tax_class_id>
-                    </tax_calculation_RU_reduced_shipping_companies>
-
-                    <tax_calculation_RU_full_companies_vat>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
-                        <customer_tax_class_id>6</customer_tax_class_id>
-                        <product_tax_class_id>1</product_tax_class_id>
-                    </tax_calculation_RU_full_companies_vat>
-
-                    <tax_calculation_RU_reduced_companies_vat>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
-                        <customer_tax_class_id>6</customer_tax_class_id>
-                        <product_tax_class_id>2</product_tax_class_id>
-                    </tax_calculation_RU_reduced_companies_vat>
-
-                    <tax_calculation_RU_full_shipping_companies_vat>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
-                        <customer_tax_class_id>6</customer_tax_class_id>
-                        <product_tax_class_id>4</product_tax_class_id>
-                    </tax_calculation_RU_full_shipping_companies_vat>
-
-                    <tax_calculation_RU_reduced_shipping_companies_vat>
-                        <execute>1</execute>
-                        <tax_calculation_rate_id>5</tax_calculation_rate_id>
-                        <tax_calculation_rule_id>10</tax_calculation_rule_id>
-                        <customer_tax_class_id>6</customer_tax_class_id>
-                        <product_tax_class_id>7</product_tax_class_id>
-                    </tax_calculation_RU_reduced_shipping_companies_vat>
-
-                </default>
-            </tax_calculations>
             <tax_config>
                 <default>
                     <general__country__default>RU</general__country__default>
-                    <tax__classes__shipping_tax_class>4</tax__classes__shipping_tax_class>
+                    <tax__classes__shipping_tax_class>3</tax__classes__shipping_tax_class>
                     <tax__calculation__based_on>billing</tax__calculation__based_on>
                     <tax__calculation__price_includes_tax>1</tax__calculation__price_includes_tax>
                     <tax__calculation__shipping_includes_tax>1</tax__calculation__shipping_includes_tax>
