@@ -50,6 +50,6 @@ Who is behind FireGento_MageSetup?
 ----------------------------------
 ![FireGento Logo](http://www.avs-webentwicklung.de/fileadmin/images/FireGento.png "FireGento Logo")  
 FireGento is a group of Magento developers, working as freelancers and in companies. Starting in 2011, we began developing free modules for the community. 
-We don't have any commercial interests and founded an association in 2013, based in Germany.
-GermanSetup was one of the first modules to be published, and is the most well known project up to now. It's used widely in Germany, Austria and Switzerland up to now. 
-It was started at a small meeting of ~15 persons at the German North Aea coast, and since then, a lot of work has been done in the free time of a couple of developers at home, at work, at conferences and meetings. 
+We don't have any commercial interests. We founded an association in 2013, based in Germany, in order to organize events like the [Magento Hackathons](http://www.mage-hackathon.de/) more easily.
+GermanSetup was one of the first modules to be published, and is the most well known project up to now. It's widely used in Germany, Austria and Switzerland up to now. 
+It was started at a small meeting of ~15 persons at the German North Sea coast, and since then, a lot of work has been done in the free time of a couple of developers at home, at work, at conferences and meetings. 
