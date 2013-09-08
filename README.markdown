@@ -1,6 +1,7 @@
 FireGento_MageSetup
 =====================
 MageSetup configures a shop for a national market. It's the international variant and successor of [GermanSetup](https://github.com/firegento/firegento-germansetup).
+
 Currently supported countries: Austria, France, Germany, Italy, Russia, Switzerland. More to follow.
 
 Build Status
