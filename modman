@@ -7,6 +7,8 @@ src/app/locale/en_US/FireGento_MageSetup.csv                      app/locale/en_
 src/app/locale/en_US/template/magesetup/                          app/locale/en_US/template/magesetup/
 src/app/locale/ru_RU/FireGento_MageSetup.csv                      app/locale/ru_RU/FireGento_MageSetup.csv
 src/app/locale/ru_RU/template/magesetup/                          app/locale/ru_RU/template/magesetup/
+src/app/locale/fr_FR/FireGento_MageSetup.csv                      app/locale/fr_FR/FireGento_MageSetup.csv
+src/app/locale/fr_FR/template/magesetup/                          app/locale/fr_FR/template/magesetup/
 src/app/design/adminhtml/default/default/layout/magesetup.xml     app/design/adminhtml/default/default/layout/magesetup.xml
 src/app/design/adminhtml/default/default/template/magesetup/      app/design/adminhtml/default/default/template/magesetup/
 src/app/design/frontend/base/default/layout/magesetup.xml         app/design/frontend/base/default/layout/magesetup.xml
