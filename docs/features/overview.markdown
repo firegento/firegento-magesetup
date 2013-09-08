@@ -1,12 +1,12 @@
 FireGento_MageSetup - the fast way to setup your Magento store
 ====================================================
-FireGento_MageSetup is a free community module for Magento which simplifies the process to setup your Magento store. 
+MageSetup is a free community module for Magento which simplifies the process to setup your Magento store. 
 Its broad set of features makes the shops comply to most national laws.
 It has evolved from **GermanSetup**, a module which has grown very famous in Germany, Austria and Switzerland. Germany is known to have very rigid laws which was the foremost reason to start this module. 
 
 What does it do?
 ----------------
-FireGento_MageSetup provides a new backend form which allows you to make a few decisions, mainly which country you are shipping from and which language(s) you are using. When submitting the form, FireGento_MageSetup does the following:
+MageSetup provides a new backend form which allows you to make a few decisions, mainly which country you are shipping from and which language(s) you are using. When submitting the form, FireGento_MageSetup does the following:
   
 * Setup **tax** configuration for worldwide shipping. It sets up all necessary **product** and **customer tax classes** as well as all tax rates and calculation rules. 
    In particular, the complicated rules for shipping from a EU country are supported, so end customers from another EU country got to pay taxes while companies with a VAT ID don't.
@@ -28,6 +28,7 @@ At the moment of writing this post, we support the following countries:
 * Italy
 * Russia
 * Switzerland
+* United Kingdom
 
 However, it is quite simple to add your own country. We will post a small developers guide to do so soon. 
 
