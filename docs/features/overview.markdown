@@ -46,6 +46,7 @@ Follow the link, fill out the form and submit in order to apply the settings.
 
 Who is behind FireGento_MageSetup?
 ----------------------------------
+<img src="http://www.avs-webentwicklung.de/fileadmin/images/FireGento.png" alte="FireGento Logo" style="float: right; margin: 0 0 10px 10px;" />
 FireGento is a group of Magento developers, working as freelancers and in companies. Starting in 2011, we began developing free modules for the community. 
 We don't have any commercial interests and founded an association in 2013, based in Germany.
 GermanSetup was one of the first modules to be published, and is the most well known project up to now. It's used widely in Germany, Austria and Switzerland up to now. 
