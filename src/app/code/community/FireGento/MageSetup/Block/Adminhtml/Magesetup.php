@@ -152,6 +152,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     {
         $countryTaxClasses = array();
         foreach(Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+
             $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . $countryId . DS . 'tax.xml';
 
             // If the given file does not exist, use the default file
@@ -170,6 +171,8 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
                 }
                 $countryTaxClasses[$countryId][(string)$taxClass->class_id] = (string)$taxClass->class_name;
             }
+
+            $countryTaxClasses[$countryId][] = $this->__('No tax');
         }
         
         return Zend_Json::encode($countryTaxClasses);
