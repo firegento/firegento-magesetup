@@ -1,6 +1,6 @@
 FireGento_MageSetup - the fast way to setup your Magento store
 ====================================================
-MageSetup is a free community module for Magento which simplifies the process to setup your Magento store. 
+MageSetup is a **free community module** for Magento which simplifies the process to setup your Magento store. 
 Its broad set of features makes the shops comply to most national laws.
 It has evolved from **GermanSetup**, a module which has grown very famous in Germany, Austria and Switzerland. Germany is known to have very rigid laws which was the foremost reason to start this module. 
 
@@ -43,6 +43,8 @@ The module can be installed via
 When the module is installed, please clear the cache, logout and login again. You will see the following hint:  
 ![Hint after Installation](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/install-hint.png "Hint after Installation")
 Follow the link, fill out the form and submit in order to apply the settings.
+
+**Attention:** As stated in the setup form, all tax settings will be overwritten.
 
 Who is behind FireGento_MageSetup?
 ----------------------------------
