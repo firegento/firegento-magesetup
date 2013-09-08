@@ -376,6 +376,11 @@ Tel: {{var telephone}}
             <default_country>de</default_country>
         </magesetup>
 
+        <general>
+            <country>
+                <eu_countries>AT,BE,BG,CY,CZ,DK,EE,FI,FR,DE,GR,HU,HR,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB</eu_countries>
+            </country>
+        </general>
     </default>
 
     <phpunit>
