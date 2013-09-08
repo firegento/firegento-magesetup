@@ -55,15 +55,11 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     /**
      * Get config.xml data
      *
-     * @return array Config data
+     * @return Varien_Simplexml_Element Config data
      */
     public function getConfigData()
     {
-        $configData = Mage::getSingleton('magesetup/config')
-            ->getNode('default/magesetup')
-            ->asArray();
-
-        return $configData;
+        return Mage::getSingleton('magesetup/config')->getNode('default/magesetup');
     }
 
     /**
@@ -92,7 +88,7 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
      */
     protected function _getConfigNode($node, $childNode = null)
     {
-        $configData = $this->getConfigData();
+        $configData = $this->getConfigData()->asArray();
         if ($childNode) {
             return $configData[$node][$childNode];
         } else {
@@ -150,5 +146,18 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     protected function _getSetup()
     {
         return $this->_setup;
+    }
+
+    /**
+     * Get setup country ID
+     *
+     * @return string
+     */
+    public function getCountryId()
+    {
+        if (!$this->_getData('country_id')) {
+            $this->setData('country_id', Mage::registry('setup_country'));
+        }
+        return $this->_getData('country_id');
     }
 }
