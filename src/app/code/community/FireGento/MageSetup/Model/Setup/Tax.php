@@ -140,7 +140,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
         if (Mage::helper('magesetup')->isCountryInEU($this->getCountryId())) {
             return Mage::helper('magesetup')->getEUCountries();
         }
-        return array($this->getCountryId());
+        return array(strtoupper($this->getCountryId()));
     }
 
     /**
