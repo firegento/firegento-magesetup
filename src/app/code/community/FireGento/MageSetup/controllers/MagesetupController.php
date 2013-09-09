@@ -63,7 +63,7 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
     public function saveAction()
     {
         if ($this->getRequest()->isPost()) {
-            $params = $this->getRequest()->getParams();
+            $params = $this->_getParams();
 
             try {
                 /* @var $setupModel FireGento_MageSetup_Model_Setup */
@@ -93,5 +93,35 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
             ->_setActiveMenu('system/magesetup/extensions')
             ->_addBreadcrumb($helper->__('MageSetup'), $helper->__('MageSetup'))
             ->renderLayout();
+    }
+
+    /**
+     * @return array
+     */
+    protected function _getParams()
+    {
+        $params = $this->getRequest()->getParams();
+        
+        if (!isset($params['systemconfig'])) {
+            $params['systemconfig'] = false;
+        }
+
+        if (!isset($params['tax'])) {
+            $params['tax'] = false;
+        }
+
+        if (!isset($params['cms'])) {
+            $params['cms'] = false;
+        }
+
+        if (!isset($params['agreements'])) {
+            $params['agreements'] = false;
+        }
+
+        if (!isset($params['email'])) {
+            $params['email'] = false;
+        }
+        
+        return $params;
     }
 }

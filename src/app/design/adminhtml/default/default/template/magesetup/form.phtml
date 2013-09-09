@@ -78,6 +78,60 @@
             </div>
         </div>
 
+
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Tax Settings') ?></h4>
+            <div class="form-buttons"></div>
+        </div>
+
+        <div class="fieldset fieldset-wide" id="group_fields10">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                    <tr>
+                        <td class="label"><label for="checkbox_tax"><?php echo $this->__('Configure Tax') ?></label></td>
+                        <td class="value">
+                            <input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
+                        </td>
+                        <td class="value">
+                            <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
+                            <?php echo $this->__('All tax settings will be overwritten!') ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Update Product Tax Classes') ?></label></td>
+                        <td class="value"></td>
+                        <td class="value">
+                            <table cellspacing="5" class="">
+                                <tbody>
+                                <?php foreach($this->getProductTaxClasses() as $oldTaxClass): ?>
+                                    <tr>
+                                        <td><?php echo $this->__('Old') ?>: </td>
+                                        <td><strong><?php echo $oldTaxClass['label'] ?></strong></td>
+                                        <td><?php echo $this->__('New') ?>: </td>
+                                        <td>
+                                            <select id="product_tax_classes_new_<?php echo $oldTaxClass['value'] ?>" name="product_tax_class_target[<?php echo $oldTaxClass['value'] ?>]">
+                                                <?php foreach($this->getNewProductTaxClasses() as $newTaxClass): ?>
+                                                    <option
+                                                        value="<?php echo $newTaxClass['value'] ?>"
+                                                        <?php if ($this->getDefaultProductTaxClass() == $newTaxClass['value']): ?>selected="selected"<?php endif ?>
+                                                        >
+                                                        <?php echo $newTaxClass['label'] ?></option>
+                                                <?php endforeach ?>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
         <div class="entry-edit-head">
             <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('CMS Settings') ?></h4>
             <div class="form-buttons"></div>
@@ -210,58 +264,6 @@
                             <td class="value"></td>
                         </tr>
                         <?php endif ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="entry-edit-head">
-            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Tax Settings') ?></h4>
-            <div class="form-buttons"></div>
-        </div>
-
-        <div class="fieldset fieldset-wide" id="group_fields10">
-            <div class="hor-scroll">
-                <table cellspacing="0" class="form-list">
-                    <tbody>
-                        <tr>
-                            <td class="label"><label for="checkbox_tax"><?php echo $this->__('Configure Tax') ?></label></td>
-                            <td class="value">
-                                <input type="checkbox" name="tax" id="checkbox_tax" value="1" checked="checked" />
-                            </td>
-                            <td class="value">
-                                <img src="<?php echo $this->getSkinUrl('images/error_msg_icon.gif') ?>" alt="Notification" />
-                                <?php echo $this->__('All tax settings will be overwritten!') ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label><?php echo $this->__('Update Product Tax Classes') ?></label></td>
-                            <td class="value"></td>
-                            <td class="value">
-                                <table cellspacing="5" class="">
-                                    <tbody>
-                                        <?php foreach($this->getProductTaxClasses() as $oldTaxClass): ?>
-                                        <tr>
-                                            <td><?php echo $this->__('Old') ?>: </td>
-                                            <td><strong><?php echo $oldTaxClass['label'] ?></strong></td>
-                                            <td><?php echo $this->__('New') ?>: </td>
-                                            <td>
-                                                <select id="product_tax_classes_new_<?php echo $oldTaxClass['value'] ?>" name="product_tax_class_target[<?php echo $oldTaxClass['value'] ?>]">
-                                                    <?php foreach($this->getNewProductTaxClasses() as $newTaxClass): ?>
-                                                        <option
-                                                            value="<?php echo $newTaxClass['value'] ?>"
-                                                            <?php if ($this->getDefaultProductTaxClass() == $newTaxClass['value']): ?>selected="selected"<?php endif ?>
-                                                        >
-                                                        <?php echo $newTaxClass['label'] ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <?php endforeach ?>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
