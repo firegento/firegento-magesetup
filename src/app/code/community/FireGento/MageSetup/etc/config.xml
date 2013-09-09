@@ -276,7 +276,7 @@
                 <zip>12345</zip>
                 <street>Musterstr. 1</street>
                 <city>Musterstadt</city>
-                <email>info@musterdomain.de</email>
+                <email>info@example.com</email>
             </imprint>
         </general>
         <checkout>
