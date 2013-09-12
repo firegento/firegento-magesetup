@@ -43,6 +43,7 @@ The module can be installed via
 When the module is installed, please clear the cache, logout and login again. You will see the following hint:  
 ![Hint after Installation](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/install-hint.png "Hint after Installation")
 Follow the link, fill out the form and submit in order to apply the settings.
+![Setup Form](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/setup-overview.png "Setup Form")
 
 **Attention:** As stated in the setup form, all tax settings will be overwritten.
 

@@ -18,10 +18,11 @@
  * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.1.0
+ * @since     2.0.1
  */
+
 /**
- * Tax Source model for product tax classes
+ * Data upgrade script; for migration from GermanSetup to MageSetup
  *
  * @category  FireGento
  * @package   FireGento_MageSetup
@@ -29,35 +30,16 @@
  * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     1.2.0
+ * @since     2.0.2
  */
-class FireGento_MageSetup_Model_Source_Tax_ProductTaxClass extends Mage_Tax_Model_Class_Source_Product
-{
-    /**
-     * Retrieve all product tax classes as array
-     *
-     * @param  bool $withEmpty Flag if an empty option should be prepended to the option array
-     * @return array Product tax class option array
-     */
-    public function getAllOptions($withEmpty = false)
-    {
-        $options = parent::getAllOptions($withEmpty);
-        foreach ($options as $optionKey => $option) {
-            if (intval($option['value']) <= 0) {
-                continue;
-            }
 
-            /* @var $productCollection Mage_Catalog_Model_Resource_Product_Collection */
-            $productCollection = Mage::getModel('catalog/product')
-                ->getCollection()
-                ->addAttributeToFilter('tax_class_id', $option['value'])
-                ->setPageSize(1);
+/* @var $this Mage_Eav_Model_Entity_Setup */
+$installer = $this;
 
-            if (!$productCollection->getSize()) {
-                unset($options[$optionKey]);
-            }
-        }
+$installer->startSetup();
 
-        return $options;
-    }
+if (Mage::getStoreConfig('germansetup/is_initialized')) {
+    $this->setConfigData('magesetup/is_initialized', 1);
 }
+
+$installer->endSetup();

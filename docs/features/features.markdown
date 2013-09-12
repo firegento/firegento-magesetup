@@ -31,7 +31,7 @@ FireGento_MageSetup - Features
 - Tax settings for the selected country (see **Configuration Setup**) 
 - All tax classes, rates and rules are deleted in the process and new ones are created
 - For EU countries, shipping to all EU countries is supported
-- You can select new tax classes for your products (if you have any yet) depending on the old product tax class
+- You can select new tax classes for your products (if you have any yet) and customer groups depending on the old tax classes
 
 ### CMS Setup
 ![CMS Setup](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/setup-cms.png "CMS Setup")
@@ -95,7 +95,7 @@ You can choose a different language for every store view.
 - Configure via backend in **System -> Configuration -> Catalog -> Price**  
 ![Price configuration](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/price-configuration.png "Price configuration")
 
-### Display additional attribute in cart and on checkout review page
+### Display additional attributes in cart and on checkout review page
 - Can be selected by attribute in **Catalog -> Attributes -> Manage Attributes**  
 ![Attribute management](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/attribute-display-checkout.png "Attribute management")  
 ![Additional attribute in cart](https://raw.github.com/firegento/firegento-magesetup/development/docs/features/images/attribute-display-checkout-cart.png "Additional attribute in cart")  
