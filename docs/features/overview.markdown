@@ -32,6 +32,17 @@ At the moment of writing this post, we support the following countries:
 
 However, it is quite simple to add your own country. We will post a small developers guide to do so soon. 
 
+Requirements
+-------------------------
+
+### Store Views
+Prepare your store views if you have a multi language store before to proceed.
+
+### Language package
+All necessary locale packages should be installed before to proceed the setup. For example, if you want to support German and French countries,
+please install the locale de_DE and fr_FR. See [Magento Connect] (http://www.magentocommerce.com/magento-connect/customer-experience/internationalization-localization.html) to get the packages or install them thanks to composer and our [FireGento Module repository](http://packages.firegento.com/). With composer and our example, you should have to add the name "connect20/locale_mage_community_de_DE" and "connect20/locale_mage_community_fr_FR"
+
+
 How to install FireGento_MageSetup?
 -------------------------
 The module can be installed via 
