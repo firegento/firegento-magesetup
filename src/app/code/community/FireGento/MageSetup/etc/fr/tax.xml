@@ -54,7 +54,7 @@
                         <position>0</position>
                     </products_rate_3>
                     
-                    <products_rate_4 tax_rate="tax_calculation_rate_3"
+                    <products_rate_4 tax_rate="tax_calculation_rate_4"
                                      tax_customer_class="customers_companies_no_vat"
                                      tax_product_class="products_rate_1,products_rate_2,products_rate_3,shipping">
                         <execute>1</execute>
@@ -83,14 +83,14 @@
                     </products_rate_2>
                     <products_rate_3>
                         <execute>1</execute>
-                        <class_id>2</class_id>
+                        <class_id>3</class_id>
                         <class_name>Produits au taux réduit de 5.5%</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </products_rate_3>                    
                     <shipping>
                         <execute>1</execute>
-                        <class_id>3</class_id>
+                        <class_id>4</class_id>
                         <class_name>Livraison avec TVA à taux plein</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
