@@ -37,7 +37,7 @@
                     </products_full_tax>
                     <products_reduced_tax tax_rate="tax_calculation_rate_2"
                                           tax_customer_class="customers_end_users,customers_companies"
-                                          tax_product_class="products_rate_2,shipping_rate_2">
+                                          tax_product_class="products_rate_2">
                         <execute>1</execute>
                         <code>Kunden kaufen ermäßigtbesteuerte Artikel</code>
                         <priority>2</priority>
@@ -45,7 +45,7 @@
                     </products_reduced_tax>
                     <products_no_vat tax_rate="tax_calculation_rate_3"
                                      tax_customer_class="customers_companies_no_vat"
-                                     tax_product_class="product_rate_1,products_rate_2,shipping_rate_1,shipping_rate_2">
+                                     tax_product_class="products_rate_1,products_rate_2,shipping_rate_1">
                         <execute>1</execute>
                         <code>Ust.-befreite Unternehmen kaufen voll- und ermäßigtbesteuerte Artikel</code>
                         <priority>2</priority>
@@ -77,13 +77,14 @@
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping_rate_1>
-                    <shipping_rate_2>
-                        <execute>1</execute>
-                        <class_id>4</class_id>
-                        <class_name>Ermäßigtbesteuerter Versand</class_name>
-                        <class_type>PRODUCT</class_type>
-                        <default>0</default>
-                    </shipping_rate_2>
+                    <!--<shipping_rate_2>&lt;!&ndash; This class doesn't exist or am I wrong? &ndash;&gt;-->
+                        <!--<execute>1</execute>-->
+                        <!--<class_id>4</class_id>-->
+                        <!--<class_name>Ermäßigtbesteuerter Versand</class_name>-->
+                        <!--<class_type>PRODUCT</class_type>-->
+                        <!--<default>0</default>-->
+                    <!--</shipping_rate_2>-->
+
                     <customers_end_users>
                         <execute>1</execute>
                         <class_id>5</class_id>
