@@ -21,7 +21,7 @@
  * @since     0.1.0
  */
 /**
- * Tax Source model for new product tax classes, possibly not created yet
+ * Tax Source model for new customer tax classes, possibly not created yet
  *
  * @category  FireGento
  * @package   FireGento_MageSetup
@@ -29,9 +29,9 @@
  * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     0.5.0
+ * @since     2.0.0
  */
-class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
+class FireGento_MageSetup_Model_Source_Tax_NewCustomerTaxClass
     extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
     /**
@@ -54,9 +54,8 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
         if (!sizeof($this->_options)) {
             $taxClasses = $this->_getConfigNode('tax_classes', 'default');
             foreach ($taxClasses as $identifier => $taxClass) {
-                if ($taxClass['class_type'] != 'PRODUCT'
-                    || $taxClass['execute'] != 1
-                    || strpos($identifier, 'shipping') === 0) {
+                if ($taxClass['class_type'] != 'CUSTOMER'
+                    || $taxClass['execute'] != 1) {
                     continue;
                 }
 
@@ -91,9 +90,8 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
         if (!$this->_defaultOption) {
             $taxClasses = $this->_getConfigNode('tax_classes', 'default');
             foreach ($taxClasses as $identifier => $taxClass) {
-                if ($taxClass['class_type'] != 'PRODUCT'
-                    || $taxClass['execute'] != 1
-                    || strpos($identifier, 'shipping') === 0) {
+                if ($taxClass['class_type'] != 'CUSTOMER'
+                    || $taxClass['execute'] != 1) {
                     continue;
                 }
 

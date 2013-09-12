@@ -280,6 +280,30 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     }
 
     /**
+     * Update the tax class of all customer groups with specified tax class id
+     *
+     * @param int $source source tax class id
+     * @param int $target target tax class id
+     */
+    public function updateCustomerTaxClasses($source, $target)
+    {
+        if (!Mage::getModel('tax/class')->load(intval($target))->getId()) {
+            return;
+        }
+
+        $customerGroupCollection = Mage::getModel('customer/group')
+            ->getCollection()
+            ->addFieldToFilter('tax_class_id', intval($source));
+
+        foreach ($customerGroupCollection as $customerGroup) {
+
+            /** @var $customerGroup Mage_Customer_Model_Group */
+            $customerGroup->setTaxClassId(intval($target));
+            $customerGroup->save();
+        }
+    }
+
+    /**
      * Truncate a database table
      *
      * DELETE is used, in order to prevent problems with

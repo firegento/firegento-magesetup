@@ -21,7 +21,7 @@
  * @since     0.1.0
  */
 /**
- * Tax Source model for product tax classes
+ * Tax Source model for existing customer tax classes
  *
  * @category  FireGento
  * @package   FireGento_MageSetup
@@ -29,9 +29,9 @@
  * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
- * @since     1.2.0
+ * @since     2.0.0
  */
-class FireGento_MageSetup_Model_Source_Tax_ProductTaxClass extends Mage_Tax_Model_Class_Source_Product
+class FireGento_MageSetup_Model_Source_Tax_CustomerTaxClass extends Mage_Tax_Model_Class_Source_Customer
 {
     /**
      * Retrieve all product tax classes as array
@@ -47,13 +47,13 @@ class FireGento_MageSetup_Model_Source_Tax_ProductTaxClass extends Mage_Tax_Mode
                 continue;
             }
 
-            /* @var $productCollection Mage_Catalog_Model_Resource_Product_Collection */
-            $productCollection = Mage::getModel('catalog/product')
+            /* @var $customerGroupCollection Mage_Customer_Model_Resource_Group_Collection */
+            $customerGroupCollection = Mage::getModel('customer/group')
                 ->getCollection()
-                ->addAttributeToFilter('tax_class_id', $option['value'])
+                ->addFieldToFilter('tax_class_id', $option['value'])
                 ->setPageSize(1);
 
-            if (!$productCollection->getSize()) {
+            if (!$customerGroupCollection->getSize()) {
                 unset($options[$optionKey]);
             }
         }

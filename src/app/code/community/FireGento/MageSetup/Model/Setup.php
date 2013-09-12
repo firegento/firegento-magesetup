@@ -114,6 +114,14 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
                     $this->_getHelper()->__('MageSetup: Product Tax Classes have been updated.')
                 );
             }
+
+            // Update customer tax classes
+            $this->_updateCustomerTaxClasses($params);
+            if ($notify) {
+                $this->_getAdminhtmlSession()->addSuccess(
+                    $this->_getHelper()->__('MageSetup: Customer Tax Classes have been updated.')
+                );
+            }
         }
 
         // Set a config flag to indicate that the setup has been initialized and refresh config cache.
@@ -136,6 +144,11 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
             $productTaxClassTargets[$option['value']] = 1;
         }
 
+        $customerTaxClassTargets = array();
+        foreach (Mage::getSingleton('magesetup/source_tax_customerTaxClass')->getAllOptions() as $option) {
+            $customerTaxClassTargets[$option['value']] = 1;
+        }
+
         return array(
             'country'                   => 'de',
             'systemconfig'              => true,
@@ -147,6 +160,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
             'overwrite_emails'          => false,
             'tax'                       => true,
             'product_tax_class_target'  => $productTaxClassTargets,
+            'customer_tax_class_target'  => $customerTaxClassTargets,
         );
     }
 
@@ -165,6 +179,21 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
         }
 
         $this->_markIndicesOutdated();
+    }
+
+    /**
+     * Update the old product tax classes to the new tax class ids
+     *
+     * @param array $params Setup params
+     */
+    protected function _updateCustomerTaxClasses($params)
+    {
+        $taxClasses = $params['customer_tax_class_target'];
+        foreach ($taxClasses as $source => $target) {
+            if ($target = intval($target)) {
+                Mage::getSingleton('magesetup/setup_tax')->updateCustomerTaxClasses($source, $target);
+            }
+        }
     }
 
     /**

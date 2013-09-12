@@ -126,6 +126,32 @@
                             </table>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Update Customer Tax Classes') ?></label></td>
+                        <td class="value"></td>
+                        <td class="value">
+                            <table cellspacing="5" class="">
+                                <tbody>
+                                <?php foreach($this->getCustomerTaxClasses() as $oldTaxClass): ?>
+                                    <tr>
+                                        <td><?php echo $this->__('Old') ?>: </td>
+                                        <td><strong><?php echo $oldTaxClass['label'] ?></strong></td>
+                                        <td><?php echo $this->__('New') ?>: </td>
+                                        <td>
+                                            <select id="customer_tax_classes_new_<?php echo $oldTaxClass['value'] ?>" name="customer_tax_class_target[<?php echo $oldTaxClass['value'] ?>]">
+                                                <?php foreach($this->getNewCustomerTaxClasses() as $newTaxClass): ?>
+                                                    <option value="<?php echo $newTaxClass['value'] ?>">
+                                                        <?php echo $newTaxClass['label'] ?>
+                                                    </option>
+                                                <?php endforeach ?>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -281,16 +307,26 @@
         }
     }
 
-    var newTaxClassesByCountry = <?php echo $this->getNewProductTaxClassesJson() ?>;
+    var newProductTaxClassesByCountry = <?php echo $this->getNewProductTaxClassesJson() ?>;
+    var newCustomerTaxClassesByCountry = <?php echo $this->getNewCustomerTaxClassesJson() ?>;
 
     updateNewTaxClassSelect = function(countryId) {
-        if (newTaxClassesByCountry[countryId]) {
+        if (newProductTaxClassesByCountry[countryId]) {
             var optionsHtml = '';
-            newTaxClassesByCountry[countryId].foreach(function(countryId, countryName) {
+            newProductTaxClassesByCountry[countryId].foreach(function(countryId, countryName) {
                 optionsHtml += '<option value="' + countryId + '">' + countryName + '</option>';
             });
             <?php foreach($this->getProductTaxClasses() as $oldTaxClass): ?>
             $('product_tax_classes_new_<?php echo $oldTaxClass['value'] ?>').innerHTML = optionsHtml;
+            <?php endforeach ?>
+        }
+        if (newCustomerTaxClassesByCountry[countryId]) {
+            var optionsHtml = '';
+            newCustomerTaxClassesByCountry[countryId].foreach(function(countryId, countryName) {
+                optionsHtml += '<option value="' + countryId + '">' + countryName + '</option>';
+            });
+            <?php foreach($this->getCustomerTaxClasses() as $oldTaxClass): ?>
+            $('customer_tax_classes_new_<?php echo $oldTaxClass['value'] ?>').innerHTML = optionsHtml;
             <?php endforeach ?>
         }
     }
