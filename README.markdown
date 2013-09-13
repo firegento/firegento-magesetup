@@ -14,6 +14,7 @@ Facts
 - Version: check [config.xml](https://github.com/firegento/firegento-magesetup/blob/master/src/app/code/community/FireGento/MageSetup/etc/config.xml)
 - Extension key: FireGento_MageSetup
 - [Extension on GitHub](https://github.com/firegento/firegento-magesetup/)
+- Composer name: firegento/magesetup on [packages.firegento.com](http://packages.firegento.com/)
 
 Description
 ------------
@@ -30,6 +31,7 @@ Central features of MageSetup are:
 * Automatical generation of meta data to products
 * Saving of every status change of newsletter subscriptions
 * Presets are configurable via xml files for every country seperately
+* Many more, see the [full list of features](https://github.com/firegento/firegento-magesetup/blob/development/docs/features/features.markdown) including several screenshots.
 
 Requirements
 ------------
@@ -41,7 +43,7 @@ Compatibility
 
 Installation
 -----------------------
-Please create the desired websites and store view as well as install any language packs before running MageSetup.
+Please create the desired websites and store views as well as install any language packs before running MageSetup.
 
 Copy all files from the src/ folder to your magento directory in order to install the MageSetup module.
 After you have installed the module, you should clear the cache and log off from admin panel. When you log on again, you should see the following hint:
