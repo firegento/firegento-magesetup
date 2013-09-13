@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Helper_Data" namespace="" name="FireGento_MageSetup_Helper_Data" abstract="false" final="false" start="34" end="83">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Data.php" size="2862" time="2013-09-07T20:07:44+02:00" unixtime="1378577264" sha1="d05604ffeb9024f7985ddeefd490433d3d678e63"/>
+  <docblock>
+    <description compact="Dummy data helper for translation issues."/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="0.1.0"/>
+  </docblock>
+  <extends full="Mage_Core_Helper_Abstract" namespace="" name="Mage_Core_Helper_Abstract"/>
+  <method name="getShippingCostUrl" start="41" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate URL to configured shipping cost page, or '' if none."/>
+      <return description="Shipping cost url" type="string"/>
+    </docblock>
+  </method>
+  <method name="getAgreementUrl" start="61" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get url of agreement view for checkout"/>
+      <param description="Agreement" type="object" variable="$agreement">
+        <type full="Mage_Checkout_Model_Agreement" namespace="" name="Mage_Checkout_Model_Agreement"/>
+      </param>
+      <return description="URL for the given agreement" type="string"/>
+    </docblock>
+    <parameter name="agreement" byreference="false" type="object">
+      <type full="\\Mage_Checkout_Model_Agreement" namespace="\" name="Mage_Checkout_Model_Agreement"/>
+    </parameter>
+  </method>
+  <method name="getAvailableCountries" start="71" end="82" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get available countries"/>
+      <return description="All available countries" type="array"/>
+    </docblock>
+  </method>
+</class>

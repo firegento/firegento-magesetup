@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_MageSetup - FireGento_MageSetup_Model_Setup - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_MageSetup - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#_getAdminhtmlSession">_getAdminhtmlSession</a>
+          </li>
+          <li>
+            <a href="#_getDefaultParams">_getDefaultParams</a>
+          </li>
+          <li>
+            <a href="#_getHelper">_getHelper</a>
+          </li>
+          <li>
+            <a href="#_markIndicesOutdated">_markIndicesOutdated</a>
+          </li>
+          <li>
+            <a href="#_updateProductTaxClasses">_updateProductTaxClasses</a>
+          </li>
+          <li>
+            <a href="#setup">setup</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_MageSetup_Model_Setup</h2>
+        <div class="file-notice">
+          <p>Setup class</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="setup"/>
+            <h4><span class="label public">public</span>setup<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $notify</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Setup MageSetup as if a user sends the adminhtml form See method _getDefaultParams for possible params</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - Setup params</li>
+                <li><code>$notify</code> - Flag if admin notifications should be added</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Setup Model</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getAdminhtmlSession"/>
+            <h4><span class="label protected">protected</span>_getAdminhtmlSession<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the adminhtml session for setup notifications</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Admin Session</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getDefaultParams"/>
+            <h4><span class="label protected">protected</span>_getDefaultParams<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get default parameters like they are in the backend form</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Default setup params</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getHelper"/>
+            <h4><span class="label protected">protected</span>_getHelper<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the helper class</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Helper Class</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_markIndicesOutdated"/>
+            <h4><span class="label protected">protected</span>_markIndicesOutdated<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Mark relevant indices as outdated after changing tax rates</li>
+            </p>
+          </li>
+          <li>
+            <a name="_updateProductTaxClasses"/>
+            <h4><span class="label protected">protected</span>_updateProductTaxClasses<span style="font-size:90%;">( <span class="param-type">array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Update the old product tax classes to the new tax class ids</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - Setup params</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

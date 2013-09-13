@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Customer_Account_Agreements" namespace="" name="FireGento_MageSetup_Block_Customer_Account_Agreements" abstract="false" final="false" start="34" end="51">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Customer/Account" file="Agreements.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Customer/Account/Agreements.php" size="1863" time="2013-09-07T20:02:57+02:00" unixtime="1378576977" sha1="c87109948a3047d5a3259ccad84395235cebb20c"/>
+  <docblock>
+    <description compact="Block to display agreements on customer registration."/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="1.2.2"/>
+  </docblock>
+  <extends full="Mage_Checkout_Block_Agreements" namespace="" name="Mage_Checkout_Block_Agreements"/>
+  <method name="getAgreements" start="41" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Filter by &quot;Agreement Type&quot;"/>
+      <return description="Agreements" type="object">
+        <type full="Mage_Checkout_Model_Resource_Agreement_Collection" namespace="" name="Mage_Checkout_Model_Resource_Agreement_Collection"/>
+      </return>
+    </docblock>
+  </method>
+</class>

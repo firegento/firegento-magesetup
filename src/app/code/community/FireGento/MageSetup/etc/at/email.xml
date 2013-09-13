@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the FIREGENTO project.
+ *
+ * FireGento_MageSetup is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_MageSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   $Id:$
+ * @since     0.1.0
+ */
+ -->
+<config>
+    <default>
+        <magesetup>
+            <emails>
+                <default>
+                    <admin_password_new>
+                        <execute>1</execute>
+                        <template_code>Neues Admin-Passwort</template_code>
+                        <template_type>2</template_type>
+                        <template_file>admin_password_new.html</template_file>
+                        <config_data_path>admin/emails/forgot_email_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </admin_password_new>
+
+                    <admin_password_reset_confirmation>
+                        <execute>1</execute>
+                        <template_code>Admin-Passwort zurücksetzen</template_code>
+                        <template_type>2</template_type>
+                        <template_file>admin_password_reset_confirmation.html</template_file>
+                        <config_data_path>admin/emails/forgot_email_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </admin_password_reset_confirmation>
+
+                    <currency_update_warning>
+                        <execute>1</execute>
+                        <template_code>Währung Aktualisierung</template_code>
+                        <template_type>1</template_type>
+                        <template_file>currency_update_warning.html</template_file>
+                        <config_data_path>currency/import/error_email_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </currency_update_warning>
+
+                    <account_new>
+                        <execute>1</execute>
+                        <template_code>Neues Konto</template_code>
+                        <template_type>2</template_type>
+                        <template_file>account_new.html</template_file>
+                        <config_data_path>customer/create_account/email_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </account_new>
+
+                    <customer_password_remind_email_template>
+                        <execute>1</execute>
+                        <template_code>Passwort Erinnerung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>password_new.html</template_file>
+                        <config_data_path>customer/password/remind_email_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </customer_password_remind_email_template>
+
+                    <account_new_confirmation>
+                        <execute>1</execute>
+                        <template_code>Neues Konto Aktivierung </template_code>
+                        <template_type>2</template_type>
+                        <template_file>account_new_confirmation.html</template_file>
+                        <config_data_path>customer/create_account/email_confirmation_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </account_new_confirmation>
+
+                    <account_new_confirmed>
+                        <execute>1</execute>
+                        <template_code>Neues Konto Bestätigung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>account_new_confirmed.html</template_file>
+                        <config_data_path>customer/create_account/email_confirmed_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </account_new_confirmed>
+
+                    <password_new>
+                        <execute>1</execute>
+                        <template_code>Neues Passwort</template_code>
+                        <template_type>2</template_type>
+                        <template_file>password_new.html</template_file>
+                        <config_data_path>customer/password/forgot_email_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </password_new>
+
+                    <account_password_reset_confirmation>
+                        <execute>1</execute>
+                        <template_code>Kunden Konto Passwort Zurücksetzen Bestätigung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>account_password_reset_confirmation.html</template_file>
+                        <config_data_path>customer/password/forgot_email_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </account_password_reset_confirmation>
+
+                    <order_new>
+                        <execute>1</execute>
+                        <template_code>Neue Bestellung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/order_new.html</template_file>
+                        <config_data_path>sales_email/order/template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>1</add_business_terms>
+                        <add_revocation>1</add_revocation>
+                    </order_new>
+
+                    <order_new_guest>
+                        <execute>1</execute>
+                        <template_code>Neue Bestellung Gast</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/order_new_guest.html</template_file>
+                        <config_data_path>sales_email/order/guest_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>1</add_business_terms>
+                        <add_revocation>1</add_revocation>
+                    </order_new_guest>
+
+                    <order_update>
+                        <execute>1</execute>
+                        <template_code>Bestellung Aktualsierung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/order_update.html</template_file>
+                        <config_data_path>sales_email/order_comment/template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </order_update>
+
+                    <order_update_guest>
+                        <execute>1</execute>
+                        <template_code>Bestellung Aktualsierung Gast</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/order_update_guest.html</template_file>
+                        <config_data_path>sales_email/order_comment/guest_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </order_update_guest>
+
+                    <invoice_new>
+                        <execute>1</execute>
+                        <template_code>Neue Rechnung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/invoice_new.html</template_file>
+                        <config_data_path>sales_email/invoice/template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </invoice_new>
+
+                    <invoice_new_guest>
+                        <execute>1</execute>
+                        <template_code>Neue Rechnung Gast</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/invoice_new_guest.html</template_file>
+                        <config_data_path>sales_email/invoice/guest_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </invoice_new_guest>
+
+                    <invoice_update>
+                        <execute>1</execute>
+                        <template_code>Rechnung Aktualisierung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/invoice_update.html</template_file>
+                        <config_data_path>sales_email/invoice_comment/template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </invoice_update>
+
+                    <invoice_update_guest>
+                        <execute>1</execute>
+                        <template_code>Rechnung Aktualisierung Gast</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/invoice_update_guest.html</template_file>
+                        <config_data_path>sales_email/invoice_comment/guest_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </invoice_update_guest>
+
+                    <creditmemo_new>
+                        <execute>1</execute>
+                        <template_code>Neue Gutschrift</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/creditmemo_new.html</template_file>
+                        <config_data_path>sales_email/creditmemo/template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </creditmemo_new>
+
+                    <creditmemo_new_guest>
+                        <execute>1</execute>
+                        <template_code>Neue Gutschrift Gast</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/creditmemo_new_guest.html</template_file>
+                        <config_data_path>sales_email/creditmemo/guest_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </creditmemo_new_guest>
+
+                    <creditmemo_update>
+                        <execute>1</execute>
+                        <template_code>Gutschrift Aktualisierung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/creditmemo_update.html</template_file>
+                        <config_data_path>sales_email/creditmemo_comment/template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </creditmemo_update>
+
+                    <creditmemo_update_guest>
+                        <execute>1</execute>
+                        <template_code>Gutschrift Aktualisierung Gast</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/creditmemo_update_guest.html</template_file>
+                        <config_data_path>sales_email/creditmemo_comment/guest_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </creditmemo_update_guest>
+
+                    <shipment_new>
+                        <execute>1</execute>
+                        <template_code>Neue Lieferung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/shipment_new.html</template_file>
+                        <config_data_path>sales_email/shipment/template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </shipment_new>
+
+                    <shipment_new_guest>
+                        <execute>1</execute>
+                        <template_code>Neue Lieferung Gast</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/shipment_new_guest.html</template_file>
+                        <config_data_path>sales_email/shipment/guest_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </shipment_new_guest>
+
+                    <shipment_update>
+                        <execute>1</execute>
+                        <template_code>Lieferung Aktualisierung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/shipment_update.html</template_file>
+                        <config_data_path>sales_email/shipment_comment/template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </shipment_update>
+
+                    <shipment_update_guest>
+                        <execute>1</execute>
+                        <template_code>Lieferung Aktualisierung Gast</template_code>
+                        <template_type>2</template_type>
+                        <template_file>sales/shipment_update_guest.html</template_file>
+                        <config_data_path>sales_email/shipment_comment/guest_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </shipment_update_guest>
+
+                    <payment_failed>
+                        <execute>1</execute>
+                        <template_code>Zahlung fehlgeschlagen</template_code>
+                        <template_type>2</template_type>
+                        <template_file>payment_failed.html</template_file>
+                        <config_data_path>checkout/payment_failed/template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </payment_failed>
+
+                    <log_clean_warning>
+                        <execute>1</execute>
+                        <template_code>Protokoll Bereinigung Warnungen</template_code>
+                        <template_type>1</template_type>
+                        <template_file>log_clean_warning.html</template_file>
+                        <config_data_path>system/log/error_email_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </log_clean_warning>
+
+                    <newsletter_subscr_confirm>
+                        <execute>1</execute>
+                        <template_code>Newsletter Anmeldung Bestätigung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>newsletter_subscr_confirm.html</template_file>
+                        <config_data_path>newsletter/subscription/confirm_email_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </newsletter_subscr_confirm>
+
+                    <newsletter_subscr_success>
+                        <execute>1</execute>
+                        <template_code>Newsletter Anmeldung Erfolg</template_code>
+                        <template_type>2</template_type>
+                        <template_file>newsletter_subscr_success.html</template_file>
+                        <config_data_path>newsletter/subscription/success_email_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </newsletter_subscr_success>
+
+                    <newsletter_unsub_success>
+                        <execute>1</execute>
+                        <template_code>Newsletter Abmeldung Erfolg</template_code>
+                        <template_type>2</template_type>
+                        <template_file>newsletter_unsub_success.html</template_file>
+                        <config_data_path>newsletter/subscription/un_email_template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </newsletter_unsub_success>
+
+                    <wishlist_share>
+                        <execute>1</execute>
+                        <template_code>Wunschliste gemeinsam nutzen</template_code>
+                        <template_type>2</template_type>
+                        <template_file>wishlist_share.html</template_file>
+                        <config_data_path>wishlist/email/email_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </wishlist_share>
+
+                    <product_share>
+                        <execute>1</execute>
+                        <template_code>Produkt an einen Freund verschicken</template_code>
+                        <template_type>2</template_type>
+                        <template_file>product_share.html</template_file>
+                        <config_data_path>sendfriend/email/template</config_data_path>
+                        <add_footer>1</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </product_share>
+
+                    <contact_form>
+                        <execute>1</execute>
+                        <template_code>Kontaktformular</template_code>
+                        <template_type>1</template_type>
+                        <template_file>contact_form.html</template_file>
+                        <config_data_path>contacts/email/email_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </contact_form>
+
+                    <sitemap_generate_warning>
+                        <execute>1</execute>
+                        <template_code>Sitemap Generierung Warnungen</template_code>
+                        <template_type>1</template_type>
+                        <template_file>sitemap_generate_warning.html</template_file>
+                        <config_data_path>sitemap/generate/error_email_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </sitemap_generate_warning>
+
+                    <product_stock_alert>
+                        <execute>1</execute>
+                        <template_code>Produkt wieder verfügbar</template_code>
+                        <template_type>2</template_type>
+                        <template_file>product_stock_alert.html</template_file>
+                        <config_data_path>catalog/productalert/email_stock_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </product_stock_alert>
+
+                    <product_price_alert>
+                        <execute>1</execute>
+                        <template_code>Produkt Preisänderung</template_code>
+                        <template_type>2</template_type>
+                        <template_file>product_price_alert.html</template_file>
+                        <config_data_path>catalog/productalert/email_price_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </product_price_alert>
+
+                    <product_alert_cron_error>
+                        <execute>1</execute>
+                        <template_code>Produkt Cron Fehler</template_code>
+                        <template_type>2</template_type>
+                        <template_file>product_alert_cron_error.html</template_file>
+                        <config_data_path>catalog/productalert_cron/error_email_template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </product_alert_cron_error>
+
+                    <enterprise_invitation>
+                        <execute>1</execute>
+                        <template_code>Kundeneinladung [Invitation]</template_code>
+                        <template_type>2</template_type>
+                        <template_file>enterprise_invitation.html</template_file>
+                        <config_data_path>enterprise_invitation/email/template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </enterprise_invitation>
+
+                    <token>
+                        <execute>1</execute>
+                        <template_code>OAuth Tokenänderung [Invitation]</template_code>
+                        <template_type>2</template_type>
+                        <template_file>token.html</template_file>
+                        <config_data_path>oauth/email/template</config_data_path>
+                        <add_footer>0</add_footer>
+                        <add_business_terms>0</add_business_terms>
+                        <add_revocation>0</add_revocation>
+                    </token>
+                </default>
+            </emails>
+            <email_footers>
+                <default>
+                    <footer>
+                        <![CDATA[
+                        <tr>
+                            <td>
+                                {{block type="magesetup/imprint_content" template="magesetup/imprint/email_footer.phtml"}}
+                            </td>
+                        </tr>
+                        ]]>
+                    </footer>
+                    <business_terms>
+                        <![CDATA[
+                        <tr><td style="border-bottom:2px solid #eee;">&nbsp;</td></tr>
+                        <tr>
+                            <td style="font:9px/1em Verdana, Arial, Helvetica, sans-serif;">
+                                {{block type="cms/block" block_id="business_terms"}}
+                            </td>
+                        </tr>
+                        ]]>
+                    </business_terms>
+                    <revocation>
+                        <![CDATA[
+                        <tr><td style="border-bottom:2px solid #eee;">&nbsp;</td></tr>
+                        <tr>
+                            <td style="font:9px/1em Verdana, Arial, Helvetica, sans-serif;">
+                                {{block type="cms/block" block_id="revocation"}}
+                            </td>
+                        </tr>
+                        ]]>
+                    </revocation>
+                </default>
+            </email_footers>
+        </magesetup>
+    </default>
+</config>

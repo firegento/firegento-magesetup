@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Setup_Tax" namespace="" name="FireGento_MageSetup_Model_Setup_Tax" abstract="false" final="false" start="34" end="273">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Setup" file="Tax.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Setup/Tax.php" size="7835" time="2013-09-07T20:26:16+02:00" unixtime="1378578376" sha1="e503706caace4e2320a6af2ba6abef1337f63991"/>
+  <docblock>
+    <description compact="Setup class for Tax Settings"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="0.5.0"/>
+  </docblock>
+  <extends full="FireGento_MageSetup_Model_Setup_Abstract" namespace="" name="FireGento_MageSetup_Model_Setup_Abstract"/>
+  <member name="_setup" type="{unknown}" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="object">
+        <type full="Mage_Eav_Model_Entity_Setup" namespace="" name="Mage_Eav_Model_Entity_Setup"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_connection" type="{unknown}" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="object">
+        <type full="Varien_Db_Adapter_Interface" namespace="" name="Varien_Db_Adapter_Interface"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="49" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup setup class and connection"/>
+    </docblock>
+  </constructor>
+  <method name="setup" start="58" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup Tax setting"/>
+    </docblock>
+  </method>
+  <method name="_getConfigTaxClasses" start="107" end="110" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get tax classes from config file"/>
+      <return description="Config tax classes" type="array"/>
+    </docblock>
+  </method>
+  <method name="_createTaxClass" start="117" end="120" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Collect data and create tax class"/>
+      <param description="tax class data" type="array" variable="$taxClassData"/>
+    </docblock>
+    <parameter name="taxClassData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getConfigTaxCalcRules" start="127" end="130" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get tax calculation rules from config file"/>
+      <return description="Config tax calculation rules" type="array"/>
+    </docblock>
+  </method>
+  <method name="_createTaxCalcRule" start="137" end="140" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Collect data and create tax calculation rules"/>
+      <param description="tax class data" type="array" variable="$taxCalcRuleData"/>
+    </docblock>
+    <parameter name="taxCalcRuleData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getConfigTaxCalcRates" start="147" end="150" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get tax calculation rates from config file"/>
+      <return description="Config tax calculation rates" type="array"/>
+    </docblock>
+  </method>
+  <method name="_createTaxCalcRate" start="157" end="183" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Collect data and create tax calculation rates"/>
+      <param description="tax class data" type="array" variable="$taxCalcRateData"/>
+    </docblock>
+    <parameter name="taxCalcRateData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getConfigTaxCalculations" start="190" end="193" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get tax calculations from config file"/>
+      <return description="Config tax calculations" type="array"/>
+    </docblock>
+  </method>
+  <method name="_createTaxCalculation" start="200" end="203" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Collect data and create tax calculations"/>
+      <param description="tax class data" type="array" variable="$taxCalculationData"/>
+    </docblock>
+    <parameter name="taxCalculationData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_updateConfigData" start="208" end="214" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Update configuration settings"/>
+    </docblock>
+  </method>
+  <method name="_getConfigTaxConfig" start="221" end="224" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get tax calculations from config file"/>
+      <return description="Config tax config" type="array"/>
+    </docblock>
+  </method>
+  <method name="updateProductTaxClasses" start="232" end="248" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update the tax class of all products with specified tax class id"/>
+      <param description="source tax class id" type="int" variable="$source"/>
+      <param description="target tax class id" type="int" variable="$target"/>
+    </docblock>
+    <parameter name="source" byreference="false" type="{unknown}"/>
+    <parameter name="target" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_truncateTable" start="255" end="259" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Truncate a database table"/>
+      <param description="Table which should be truncated" type="string" variable="$table"/>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_insertIntoTable" start="267" end="272" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Insert a line into a database table"/>
+      <param description="Table in which the given data should be inserted" type="string" variable="$table"/>
+      <param description="Insert data" type="array" variable="$data"/>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="FireGento_MageSetup_Model_Setup_Abstract" namepsace="" name="FireGento_MageSetup_Model_Setup_Abstract">
+    <extends full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+    <member name="_setup" type="{unknown}" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="object">
+        <type full="Mage_Eav_Model_Entity_Setup" namespace="" name="Mage_Eav_Model_Entity_Setup"/>
+      </var>
+    </docblock>
+  </member>
+    <member name="_connection" type="{unknown}" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="object">
+        <type full="Varien_Db_Adapter_Interface" namespace="" name="Varien_Db_Adapter_Interface"/>
+      </var>
+    </docblock>
+  </member>
+    <constructor name="__construct" start="49" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup setup class and connection"/>
+    </docblock>
+  </constructor>
+    <method name="getConfigData" start="60" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get config.xml data"/>
+      <return description="Config data" type="array"/>
+    </docblock>
+  </method>
+    <method name="setConfigData" start="76" end="84" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Saves a system config value for the given config path and the given store id"/>
+      <param description="Config Path" type="string" variable="$configPath"/>
+      <param description="Value" type="string" variable="$value"/>
+      <param description="Store ID" type="object" variable="$storeId">
+        <type full="int|null" namespace="" name="int|null"/>
+      </param>
+    </docblock>
+    <parameter name="configPath" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="storeId" byreference="false" type="{unknown}" default="null"/>
+  </method>
+    <method name="_getConfigNode" start="93" end="101" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get config.xml data"/>
+      <param description="xml node" type="string" variable="$node"/>
+      <param description="if set, child node of the first node" type="object" variable="$childNode">
+        <type full="string|null" namespace="" name="string|null"/>
+      </param>
+      <return description="Config Node" type="array"/>
+    </docblock>
+    <parameter name="node" byreference="false" type="{unknown}"/>
+    <parameter name="childNode" byreference="false" type="{unknown}" default="null"/>
+  </method>
+    <method name="getTemplateContent" start="109" end="112" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get template content"/>
+      <param description="Template file name" type="string" variable="$filename"/>
+      <return description="Template content" type="string"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+  </method>
+    <method name="_loadExistingModel" start="122" end="133" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Load a model by attribute code"/>
+      <param description="Collection" type="object" variable="$model">
+        <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+      </param>
+      <param description="Attribute code" type="string" variable="$attributeCode"/>
+      <param description="Value" type="string" variable="$value"/>
+      <return type="object">
+        <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+      </return>
+    </docblock>
+    <parameter name="model" byreference="false" type="{unknown}"/>
+    <parameter name="attributeCode" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+    <method name="_getConnection" start="140" end="143" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the database connection"/>
+      <return description="Database connection" type="object">
+        <type full="Varien_Db_Adapter_Interface" namespace="" name="Varien_Db_Adapter_Interface"/>
+      </return>
+    </docblock>
+  </method>
+    <method name="_getSetup" start="150" end="153" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the Magento setup model class"/>
+      <return description="Setup Model" type="object">
+        <type full="Mage_Eav_Model_Entity_Setup" namespace="" name="Mage_Eav_Model_Entity_Setup"/>
+      </return>
+    </docblock>
+  </method>
+  </parent>
+</class>

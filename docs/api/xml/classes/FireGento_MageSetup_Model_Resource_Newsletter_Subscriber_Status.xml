@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status" namespace="" name="FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status" abstract="false" final="false" start="34" end="44">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Resource/Newsletter/Subscriber" file="Status.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Resource/Newsletter/Subscriber/Status.php" size="1524" time="2013-09-07T17:52:04+02:00" unixtime="1378569124" sha1="1a65d06d13505823c81a80312a974c168952b877"/>
+  <docblock>
+    <description compact="Subscriber Status Resource Model"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="1.1.4"/>
+  </docblock>
+  <extends full="Mage_Core_Model_Resource_Db_Abstract" namespace="" name="Mage_Core_Model_Resource_Db_Abstract"/>
+  <method name="_construct" start="40" end="43" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Init main table and id field name"/>
+    </docblock>
+  </method>
+</class>

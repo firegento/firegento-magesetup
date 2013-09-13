@@ -1,0 +1,13 @@
+result:
+  -
+    value: 0
+    label: "On checkout (Magento Default)"
+  -
+    value: 1
+    label: "On customer registration (or on checkout, if customer not registered before)"
+  -
+    value: 2
+    label: "On customer registration and on checkout"
+  -
+    value: 3
+    label: "Nowhere"

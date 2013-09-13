@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.de/src#">
+  <dir name="src">
+    <dir name="app">
+      <dir name="code">
+        <dir name="community">
+          <dir name="FireGento">
+            <dir name="MageSetup">
+              <dir name="Block">
+                <dir name="Adminhtml">
+                  <file name="Magesetup.php" size="4377" time="2013-09-07T19:52:35+02:00" unixtime="1378576355" sha1="ab3f73429d8f176c9d494c061e8d8af9d2cfc01e"/>
+                  <dir name="Newsletter">
+                    <dir name="Subscriber">
+                      <dir name="Status">
+                        <file name="Grid.php" size="4316" time="2013-09-07T19:53:38+02:00" unixtime="1378576418" sha1="c1c89f24adb680fa76a04f928b3cc743f023f8ca"/>
+                      </dir>
+                      <file name="Status.php" size="1736" time="2013-09-07T19:27:29+02:00" unixtime="1378574849" sha1="811a143639830ba3fbb741fc77682d02a1f73fd7"/>
+                    </dir>
+                  </dir>
+                  <file name="Notifications.php" size="2387" time="2013-09-07T19:54:49+02:00" unixtime="1378576489" sha1="2c4337765e50a43f720c99b5be58134d4cebeead"/>
+                </dir>
+                <dir name="Bundle">
+                  <dir name="Catalog">
+                    <dir name="Product">
+                      <dir name="Price">
+                        <file name="Abstract.php" size="1788" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="37633bfcdef4dfe56f3d0e4d2996c2bffbcb4cf4"/>
+                      </dir>
+                      <file name="Price.php" size="5377" time="2013-09-07T19:56:54+02:00" unixtime="1378576614" sha1="4993dd9853f88635dd0bbc8bdf53819880edacbc"/>
+                    </dir>
+                  </dir>
+                </dir>
+                <dir name="Catalog">
+                  <dir name="Product">
+                    <dir name="Price">
+                      <file name="Abstract.php" size="2133" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="2037a60c51a430fb19ce95dc0006af102b6b5d7d"/>
+                    </dir>
+                    <file name="Price.php" size="8197" time="2013-09-07T20:01:04+02:00" unixtime="1378576864" sha1="7f31f7f6d4356e724020e3093e8eb76829cea2f3"/>
+                  </dir>
+                </dir>
+                <dir name="Checkout">
+                  <file name="Agreements.php" size="2536" time="2013-09-07T20:02:02+02:00" unixtime="1378576922" sha1="c5f63b214a161c4ba2c80e112ffc59b76f629d45"/>
+                  <file name="Information.php" size="2470" time="2013-09-07T20:02:17+02:00" unixtime="1378576937" sha1="dee10a06867f08899cbb9657a7f3ffe79f1ff7f4"/>
+                </dir>
+                <dir name="Customer">
+                  <dir name="Account">
+                    <file name="Agreements.php" size="1863" time="2013-09-07T20:02:57+02:00" unixtime="1378576977" sha1="c87109948a3047d5a3259ccad84395235cebb20c"/>
+                  </dir>
+                </dir>
+                <file name="Ga.php" size="2169" time="2013-09-07T20:04:38+02:00" unixtime="1378577078" sha1="2026a9c0e822d20af5c1daaaa3678df750e892d9"/>
+                <dir name="Imprint">
+                  <file name="Content.php" size="3170" time="2013-09-07T20:03:40+02:00" unixtime="1378577020" sha1="64377ce44d9eccdca698489833033f318ba0e4be"/>
+                  <file name="Field.php" size="1523" time="2013-09-07T20:04:13+02:00" unixtime="1378577053" sha1="1e75a2390a3fb6cf49456302915e68496194f850"/>
+                </dir>
+              </dir>
+              <dir name="controllers">
+                <dir name="Adminhtml">
+                  <file name="NewsletterController.php" size="2629" time="2013-09-07T20:05:12+02:00" unixtime="1378577112" sha1="472df511b69da3ffde9541d2212afa8d9816dab3"/>
+                </dir>
+                <file name="FrontendController.php" size="2368" time="2013-09-07T20:05:26+02:00" unixtime="1378577126" sha1="64922c0a705c9e7f2fec301ab1c71f08a824e23d"/>
+                <file name="MagesetupController.php" size="3275" time="2013-09-07T19:47:19+02:00" unixtime="1378576039" sha1="36af03d3b8300a3a398045c59eadd832c6b76c40"/>
+              </dir>
+              <dir name="data">
+                <dir name="magesetup_setup">
+                  <file name="data-upgrade-2.0.0-2.0.1.php" size="4744" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="bf7e4aa14b20949164c01d155c1f423091e9e816"/>
+                </dir>
+              </dir>
+              <dir name="Helper">
+                <dir name="Catalog">
+                  <dir name="Product">
+                    <file name="Configuration.php" size="4700" time="2013-09-07T20:07:04+02:00" unixtime="1378577224" sha1="08b1588eb119e15e09c67f7a245760480a07fb09"/>
+                  </dir>
+                </dir>
+                <dir name="Checkout">
+                  <file name="Data.php" size="3276" time="2013-09-07T20:07:17+02:00" unixtime="1378577237" sha1="302cb1ce33b9365cfc78c6aa9582f3a35857e18d"/>
+                </dir>
+                <file name="Data.php" size="2862" time="2013-09-07T20:07:44+02:00" unixtime="1378577264" sha1="d05604ffeb9024f7985ddeefd490433d3d678e63"/>
+              </dir>
+              <dir name="Model">
+                <file name="Config.php" size="4070" time="2013-09-07T20:30:37+02:00" unixtime="1378578637" sha1="9f30b8596dcad09e12ba13818a7fd326c61ac9f0"/>
+                <dir name="Newsletter">
+                  <file name="Observer.php" size="2292" time="2013-09-07T20:09:06+02:00" unixtime="1378577346" sha1="bcf83126c221d405890390c843a05526379df4c1"/>
+                  <dir name="Subscriber">
+                    <file name="Status.php" size="1474" time="2013-09-07T17:51:47+02:00" unixtime="1378569107" sha1="19e88d47f81ff1c254680393eb8c63a05abea85c"/>
+                  </dir>
+                </dir>
+                <file name="Observer.php" size="12961" time="2013-09-07T20:31:25+02:00" unixtime="1378578685" sha1="c496939447420245cd9d4ca5817f8c0edaae7df5"/>
+                <dir name="Resource">
+                  <dir name="Newsletter">
+                    <dir name="Subscriber">
+                      <dir name="Status">
+                        <file name="Collection.php" size="1567" time="2013-09-07T17:52:27+02:00" unixtime="1378569147" sha1="5ecdcaab53e8560e55d27734a3750868cfcda638"/>
+                      </dir>
+                      <file name="Status.php" size="1524" time="2013-09-07T17:52:04+02:00" unixtime="1378569124" sha1="1a65d06d13505823c81a80312a974c168952b877"/>
+                    </dir>
+                  </dir>
+                </dir>
+                <dir name="Setup">
+                  <file name="Abstract.php" size="4310" time="2013-09-07T20:11:29+02:00" unixtime="1378577489" sha1="fcc626b8d326d656fa278b16cef6b4432c2ebd05"/>
+                  <file name="Agreements.php" size="4884" time="2013-09-07T20:12:25+02:00" unixtime="1378577545" sha1="7753dac04caf28bdc1b9db58f7d99aba9b14658d"/>
+                  <file name="Cms.php" size="10420" time="2013-09-07T20:14:10+02:00" unixtime="1378577650" sha1="c2c4405a0aefd628588f98dd00e002f214a9f960"/>
+                  <file name="Email.php" size="7499" time="2013-09-07T20:24:13+02:00" unixtime="1378578253" sha1="ddfbfb71c8cc4dc1301ffa86d1dde5a65676122f"/>
+                  <file name="Systemconfig.php" size="1979" time="2013-09-07T20:24:25+02:00" unixtime="1378578265" sha1="db892ae8920fd7486396099eb79a5c1580e130d6"/>
+                  <file name="Tax.php" size="7835" time="2013-09-07T20:26:16+02:00" unixtime="1378578376" sha1="e503706caace4e2320a6af2ba6abef1337f63991"/>
+                </dir>
+                <file name="Setup.php" size="7353" time="2013-09-07T20:32:36+02:00" unixtime="1378578756" sha1="1c31153da91112fa8f881425dc9e630a75a36153"/>
+                <dir name="Source">
+                  <file name="AgreementType.php" size="2651" time="2013-09-07T20:29:17+02:00" unixtime="1378578557" sha1="f202d6157c378e1eb9386e93525e3a11c7f6cae5"/>
+                  <dir name="Cms">
+                    <file name="Block.php" size="2653" time="2013-09-07T20:27:02+02:00" unixtime="1378578422" sha1="76b2c998070ed293ebb12c6a081f49c162841a66"/>
+                    <file name="Page.php" size="2631" time="2013-09-07T20:27:12+02:00" unixtime="1378578432" sha1="60a679946bfeeded5f72ce9153a64d5a80f0f58c"/>
+                  </dir>
+                  <dir name="Tax">
+                    <file name="DynamicType.php" size="2110" time="2013-09-07T20:27:25+02:00" unixtime="1378578445" sha1="0216722e9cd9ad26ac2e26912798d20c284453e7"/>
+                    <file name="NewProductTaxClass.php" size="4148" time="2013-09-07T20:28:07+02:00" unixtime="1378578487" sha1="d29edef07c605930853aa364518d8c33a2689aaf"/>
+                    <file name="ProductTaxClass.php" size="2289" time="2013-09-07T20:28:52+02:00" unixtime="1378578532" sha1="f7f45c0416a01ee3e5fff35b062b0ac8f2ca896f"/>
+                  </dir>
+                </dir>
+                <dir name="Tax">
+                  <file name="Config.php" size="5981" time="2013-09-07T20:29:51+02:00" unixtime="1378578591" sha1="a00316a7651d0eefa37bd058ea22ecb1795635d8"/>
+                </dir>
+              </dir>
+              <dir name="sql">
+                <dir name="magesetup_setup">
+                  <file name="mysql4-install-0.5.0.php" size="2197" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="9eed6def2bdd65e2cd71a4532153713206966d95"/>
+                  <file name="mysql4-upgrade-1.0.4-1.0.5.php" size="1991" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="a5b35b6bbf4bd83edffac7f1bebe197a600ed556"/>
+                  <file name="mysql4-upgrade-1.1.2-1.1.3.php" size="2043" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="22f0b4fe13e9772afdc2da5e15292ad22b678e19"/>
+                  <file name="mysql4-upgrade-1.1.3-1.1.4.php" size="3512" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="c592d8608b0a06d060c6e122444253f4ce3515d5"/>
+                  <file name="mysql4-upgrade-1.1.4-1.2.0.php" size="2238" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="9b0deed9a1881ac977c4d2877de37d240b596ad0"/>
+                  <file name="mysql4-upgrade-1.2.0-1.2.1.php" size="1534" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="890052f1685b30f52b848bf2274d2769195862a7"/>
+                  <file name="mysql4-upgrade-1.2.1-1.2.2.php" size="2038" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="69fb43e0f70cfd137275fc9b77a69790b0749383"/>
+                  <file name="mysql4-upgrade-1.2.2-1.2.3.php" size="2128" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="2626f95dc0a24a1767b55c0398c4986c02eaf4b5"/>
+                </dir>
+              </dir>
+              <dir name="Test">
+                <dir name="Config">
+                  <file name="Main.php" size="6925" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="ee9b4cdb22b885061d52c18e256f10dd345bf854"/>
+                </dir>
+                <dir name="Model">
+                  <dir name="Source">
+                    <file name="AgreementType.php" size="2195" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="1f03f5e0f7faf69c83ce868bd579fe791900d310"/>
+                    <dir name="Tax">
+                      <file name="DynamicType.php" size="1900" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="52143e46f9913272036648a1dba24ba76d6ce054"/>
+                    </dir>
+                  </dir>
+                </dir>
+              </dir>
+            </dir>
+          </dir>
+        </dir>
+      </dir>
+    </dir>
+  </dir>
+</source>

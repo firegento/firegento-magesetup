@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Catalog_Product_Price_Abstract" namespace="" name="FireGento_MageSetup_Block_Catalog_Product_Price_Abstract" abstract="true" final="false" start="57" end="61">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Catalog/Product/Price" file="Abstract.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Catalog/Product/Price/Abstract.php" size="2133" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="2037a60c51a430fb19ce95dc0006af102b6b5d7d"/>
+  <extends full="Mage_Catalog_Block_Product_Price" namespace="" name="Mage_Catalog_Block_Product_Price"/>
+  <extender full="FireGento_MageSetup_Block_Catalog_Product_Price" namespace="" name="FireGento_MageSetup_Block_Catalog_Product_Price"/>
+</class>

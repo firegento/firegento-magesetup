@@ -1,0 +1,25 @@
+{
+  "name": "firegento/magesetup",
+  "license": ["GPL-3.0"],
+  "type": "magento-module",
+  "description": "MageSetup configures a shop for a national market. It creates configuration and tax settings, email templates, cms blocks and pages.",
+  "homepage": "https://github.com/firegento/firegento-magesetup",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "require-dev": {
+    "ecomdev/mage-ci": "master-dev"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://packages.firegento.com"
+    }
+  ],
+  "extra":{
+    "magento-root-dir": "test/"
+  }
+}

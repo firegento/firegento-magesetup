@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Config" namespace="" name="FireGento_MageSetup_Model_Config" abstract="false" final="false" start="34" end="128">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Config.php" size="4070" time="2013-09-07T20:30:37+02:00" unixtime="1378578637" sha1="9f30b8596dcad09e12ba13818a7fd326c61ac9f0"/>
+  <docblock>
+    <description compact="Config class"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="0.2.0"/>
+  </docblock>
+  <extends full="Varien_Simplexml_Config" namespace="" name="Varien_Simplexml_Config"/>
+  <constant name="CACHE_ID" value="'magesetup_config'"/>
+  <constant name="CACHE_TAG" value="'magesetup_config'"/>
+  <member name="_country" type="string" default="" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="49" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets cache ID and cache tags and loads configuration"/>
+      <param description="XML Source Data" type="object" variable="$sourceData">
+        <type full="string|Varien_Simplexml_Element" namespace="" name="string|Varien_Simplexml_Element"/>
+      </param>
+    </docblock>
+    <parameter name="sourceData" byreference="false" type="{unknown}" default="null"/>
+  </constructor>
+  <method name="setCountry" start="63" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the current country for the config"/>
+      <param description="Country" type="string" variable="$country"/>
+      <return description="Config Model" type="object">
+        <type full="FireGento_MageSetup_Model_Config" namespace="" name="FireGento_MageSetup_Model_Config"/>
+      </return>
+    </docblock>
+    <parameter name="country" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_loadConfig" start="74" end="103" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Merge default config with config from additional xml files"/>
+      <return description="Config Model" type="object">
+        <type full="FireGento_MageSetup_Model_Config" namespace="" name="FireGento_MageSetup_Model_Config"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_addConfigFile" start="111" end="127" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Add a config file to the given merge config"/>
+      <param description="File to load" type="string" variable="$fileName"/>
+      <param description="Global config for merging" type="object" variable="$mergeConfig">
+        <type full="Mage_Core_Model_Config_Base" namespace="" name="Mage_Core_Model_Config_Base"/>
+      </param>
+    </docblock>
+    <parameter name="fileName" byreference="false" type="{unknown}"/>
+    <parameter name="mergeConfig" byreference="false" type="{unknown}"/>
+  </method>
+</class>

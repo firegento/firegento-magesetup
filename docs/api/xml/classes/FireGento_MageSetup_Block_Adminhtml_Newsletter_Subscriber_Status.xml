@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status" namespace="" name="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status" abstract="false" final="false" start="34" end="48">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Newsletter/Subscriber" file="Status.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Newsletter/Subscriber/Status.php" size="1736" time="2013-09-07T19:27:29+02:00" unixtime="1378574849" sha1="811a143639830ba3fbb741fc77682d02a1f73fd7"/>
+  <docblock>
+    <description compact="Newsletter Subscriber Status Grid Container"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="1.1.4"/>
+  </docblock>
+  <extends full="Mage_Adminhtml_Block_Widget_Grid_Container" namespace="" name="Mage_Adminhtml_Block_Widget_Grid_Container"/>
+  <constructor name="__construct" start="40" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Class constructor"/>
+    </docblock>
+  </constructor>
+</class>

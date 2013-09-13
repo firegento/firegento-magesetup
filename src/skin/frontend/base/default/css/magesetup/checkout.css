@@ -1,0 +1,64 @@
+#checkout-review-table tfoot tr {
+    background-color: #FBFAF6 !important;
+}
+
+#checkout-review-table tr.odd,
+#checkout-review-table tr.even {
+    background-color: #FBFAF6;
+}
+
+#checkout-review-table td.last {
+    text-align: right;
+}
+#checkout-review-table td.last .price {
+    font-weight: bold;
+}
+
+#checkout-review-table-wrapper {
+    border: 2px solid #0A263D;
+    border-bottom: 0;
+}
+
+#opc-review #checkout-step-review .additional-information {
+    border: 2px solid #0A263D;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+#checkout-review-submit {
+    background-color: #FBFAF6;
+    border: 2px solid #0A263D;
+    border-top: 0;
+}
+
+#opc-review .additional-information {
+	clear: both;
+	margin:0;
+	padding: 15px 10px;
+	text-align: right;
+}
+
+.checkout-multishipping-overview .additional-information {
+	margin: 0;
+	padding: 0 10px 25px;
+	text-align: right;
+}
+
+.checkout-multishipping-overview .checkout-agreements {
+	margin-bottom: 25px;
+}
+
+.opc .checkout-agreements li,
+.checkout-multishipping-overview .checkout-agreements li {
+	margin: 10px 0;
+}
+
+.opc .checkout-agreements .agree,
+.checkout-multishipping-overview .checkout-agreements .agree {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#review-buttons-container p.f-left {
+    display: none;
+}

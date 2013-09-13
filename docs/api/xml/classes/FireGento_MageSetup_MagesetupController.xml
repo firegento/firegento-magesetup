@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_MagesetupController" namespace="" name="FireGento_MageSetup_MagesetupController" abstract="false" final="false" start="34" end="97">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers" file="MagesetupController.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers/MagesetupController.php" size="3275" time="2013-09-07T19:47:19+02:00" unixtime="1378576039" sha1="36af03d3b8300a3a398045c59eadd832c6b76c40"/>
+  <docblock>
+    <description compact="Adminhtml Controller for dislaying a form for some actions"/>
+    <category value="FireGento"/>
+    <package value="FireGento_MageSetup"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
+    <version value="$Id:$"/>
+    <since value="0.4.0"/>
+  </docblock>
+  <extends full="Mage_Adminhtml_Controller_Action" namespace="" name="Mage_Adminhtml_Controller_Action"/>
+  <method name="indexAction" start="39" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Basic action: setup form"/>
+    </docblock>
+  </method>
+  <method name="saveAction" start="63" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Basic action: setup save action Will be called from form, rendered in indexAction"/>
+    </docblock>
+  </method>
+  <method name="extensionsAction" start="84" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Recommended extensions"/>
+    </docblock>
+  </method>
+</class>
