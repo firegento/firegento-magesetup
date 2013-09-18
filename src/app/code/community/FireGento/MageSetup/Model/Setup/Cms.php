@@ -161,7 +161,12 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
 
         $data['content'] = $templateContent;
 
-        $page = Mage::getModel('cms/page')->setStoreId($storeId)->load($data['identifier']);
+        if (is_null($storeId)) {
+            $page = $this->_getDefaultPage($data['identifier']);
+        } else {
+            $page = Mage::getModel('cms/page')->setStoreId($storeId)->load($data['identifier']);
+        }
+
         if (is_array($page->getStoreId()) && !in_array(intval($storeId), $page->getStoreId())) {
             $page = Mage::getModel('cms/page');
         } else {
@@ -169,7 +174,10 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         }
 
         if (!(int) $page->getId() || $override) {
-            $page->setData($data)->save();
+            $page->addData($data);
+            Mage::log($page->getData());
+            $page->save();
+            Mage::log('saved');
         }
 
         if (!$storeId) {
@@ -319,6 +327,19 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     protected function _getDefaultBlock($identifier)
     {
         return Mage::getResourceModel('cms/block_collection')
+            ->addFieldToFilter('identifier', $identifier)
+            ->addStoreFilter(0)->getFirstItem();
+    }
+
+    /**
+     * Retrieve the default page for the given identifier
+     *
+     * @param  string $identifier Page Identifier
+     * @return Mage_Cms_Model_Page Page Model
+     */
+    protected function _getDefaultPage($identifier)
+    {
+        return Mage::getResourceModel('cms/page_collection')
             ->addFieldToFilter('identifier', $identifier)
             ->addStoreFilter(0)->getFirstItem();
     }
