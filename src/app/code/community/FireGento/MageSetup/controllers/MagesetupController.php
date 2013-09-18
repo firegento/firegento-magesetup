@@ -79,6 +79,17 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
     }
 
     /**
+     * Skip setup by setting the config flag accordingly
+     */
+    public function skipAction()
+    {
+        /* @var $helper FireGento_MageSetup_Helper_Data */
+        $helper = Mage::helper('magesetup');
+        $helper->setIsInitialized();
+        $this->_redirectReferer();
+    }
+
+    /**
      * Recommended extensions
      */
     public function extensionsAction()
@@ -101,7 +112,7 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
     protected function _getParams()
     {
         $params = $this->getRequest()->getParams();
-        
+
         if (!isset($params['systemconfig'])) {
             $params['systemconfig'] = false;
         }
@@ -121,7 +132,7 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
         if (!isset($params['email'])) {
             $params['email'] = false;
         }
-        
+
         return $params;
     }
 }
