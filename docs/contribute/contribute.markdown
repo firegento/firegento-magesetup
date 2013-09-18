@@ -11,17 +11,19 @@ agreements, cms pages, etc. according to the country which you want to sell your
 ##General settings
 First of all, you have to add your country to the file config.xml (app/code/community/FireGento/MageSetup/etc/config.xml).
 In config->global->available_countries you just add your country, by making a self closing tag with the iso2 code of your country.
-![General Settings in config.xml](https://raw.github.com/firegento/firegento-magesetup/development/docs/contribute/images/config-xml.png "config.xml")
+![General Settings in config.xml](https://raw.github.com/firegento/firegento-magesetup/development/docs/contribute/images/countries.png "config.xml")
 
 After that, add a folder here: app/code/community/FireGento/MageSetup/etc/
 The name should be the iso2 code of your country too.
 
 This newly created folder may contain up to 5 xml files:
+
 - systemconfig.xml
 - tax.xml
 - cms.xml
 - agreement.xml
 - email.xml
+
 You can take the default files from the folder app/code/community/FireGento/MageSetup/etc/default/. 
 If any of these 5 files does not exist, it falls back to the default folder. 
 Usually, having a tax.xml and in many cases an email.xml is sufficient.
@@ -88,16 +90,17 @@ If you want to add other settings, just apply to the way it's shown here.
 
 ##Setting up the taxes
 Taxes are a bit tricky, because it's different all over the world.
-    * If it's an eu country and there are two tax rates, than copy the tax.xml from the folder **uk** (folder gb).
-    * If it's an eu country and there are three tax rates, than copy the tax.xml from the folder **fr**.
-    * If it's an non eu country and there are two tax rates, than copy the tax.xml from the folder **ch**.
-    * If it's an non eu country and there is no real tax at all, than copy the tax.xml from the folder **br** (in development).
+
+* If it's an eu country and there are two tax rates, than copy the tax.xml from the folder **uk** (folder gb).
+* If it's an eu country and there are three tax rates, than copy the tax.xml from the folder **fr**.
+* If it's an non eu country and there are two tax rates, than copy the tax.xml from the folder **ch**.
+* If it's an non eu country and there is no real tax at all, than copy the tax.xml from the folder **br** (in development).
 
 After that, you can adjust the settings. Please try to change only the text fields and the percentages of the tax calculation rates.
 
 ##Setting up translation files, mail templates and agreements
-- To setup all translations for mail templates and so on, you need to create a new subfolder in app/locale.
+To setup all translations for mail templates and so on, you need to create a new subfolder in app/locale.
 Copy the en_US folder and give it the corresponding name for your language.
 After that you need to do the hard work and translate the text parts of every file by hand.
 
-This step is only needed for new languages which are not supported yet.
+This step is only needed for new languages which were not supported before.
