@@ -125,9 +125,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
         }
 
         // Set a config flag to indicate that the setup has been initialized and refresh config cache.
-        Mage::getModel('eav/entity_setup', 'core_setup')->setConfigData('magesetup/is_initialized', '1');
-        Mage::app()->getCacheInstance()->cleanType('config');
-        Mage::dispatchEvent('adminhtml_cache_refresh_type', array('type' => 'config'));
+        $this->_getHelper()->setIsInitialized();
 
         return $this;
     }

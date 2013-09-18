@@ -104,4 +104,17 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return explode(',', Mage::getStoreConfig(self::XML_PATH_EU_COUNTRIES_LIST));
     }
+
+    /**
+     * Set initialization status config flag and refresh config cache.
+     *
+     * @param boolean $isInitialized
+     */
+    public function setIsInitialized($isInitialized = true)
+    {
+        $isInitialized  = (bool)$isInitialized ? '1' : '0';
+        Mage::getModel('eav/entity_setup', 'core_setup')->setConfigData('magesetup/is_initialized', $isInitialized);
+        Mage::app()->getCacheInstance()->cleanType('config');
+        Mage::dispatchEvent('adminhtml_cache_refresh_type', array('type' => 'config'));
+    }
 }
