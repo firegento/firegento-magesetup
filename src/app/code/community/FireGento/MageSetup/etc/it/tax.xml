@@ -96,18 +96,21 @@
                         <class_id>5</class_id>
                         <class_name>Clienti privati</class_name>
                         <class_type>CUSTOMER</class_type>
+                        <default>1</default>
                     </customers_end_users>
                     <customers_companies>
                         <execute>1</execute>
                         <class_id>6</class_id>
                         <class_name>Imprese</class_name>
                         <class_type>CUSTOMER</class_type>
+                        <default>0</default>
                     </customers_companies>
                     <customers_companies_no_vat>
                         <execute>1</execute>
                         <class_id>7</class_id>
                         <class_name>Imprese esenti IVA</class_name>
                         <class_type>CUSTOMER</class_type>
+                        <default>0</default>
                     </customers_companies_no_vat>
                 </default>
             </tax_classes>

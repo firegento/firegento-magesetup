@@ -141,12 +141,12 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
     {
         $productTaxClassTargets = array();
         foreach (Mage::getSingleton('magesetup/source_tax_productTaxClass')->getAllOptions() as $option) {
-            $productTaxClassTargets[$option['value']] = 1;
+            $productTaxClassTargets[$option['value']] = Mage::getSingleton('magesetup/source_tax_newProductTaxClass')->getDefaultOption();
         }
 
         $customerTaxClassTargets = array();
         foreach (Mage::getSingleton('magesetup/source_tax_customerTaxClass')->getAllOptions() as $option) {
-            $customerTaxClassTargets[$option['value']] = 1;
+            $customerTaxClassTargets[$option['value']] = Mage::getSingleton('magesetup/source_tax_newCustomerTaxClass')->getDefaultOption();
         }
 
         return array(

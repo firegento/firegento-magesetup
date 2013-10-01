@@ -101,18 +101,21 @@
                         <class_id>5</class_id>
                         <class_name>Clients finaux</class_name>
                         <class_type>CUSTOMER</class_type>
+                        <default>1</default>
                     </customers_end_consumers>
                     <customers_companies>
                         <execute>1</execute>
                         <class_id>6</class_id>
                         <class_name>Entreprises assujetties à la TVA</class_name>
                         <class_type>CUSTOMER</class_type>
+                        <default>0</default>
                     </customers_companies>
                     <customers_companies_no_vat>
                         <execute>1</execute>
                         <class_id>7</class_id>
                         <class_name>Entreprises non-assujetties à la TVA</class_name>
                         <class_type>CUSTOMER</class_type>
+                        <default>0</default>
                     </customers_companies_no_vat>
                 </default>
             </tax_classes>
