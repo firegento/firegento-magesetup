@@ -17,6 +17,7 @@
 "Shipping Weight %s","Versandgewicht %s"
 
 "If you want to add additional StoreViews (i.e. for multiple languages), please do so before submitting this form.","Wenn Sie (z.B. für mehrere Sprachen) zusätzliche StoreViews anlegen möchten, tun Sie dies bitte, bevor Sie dieses Formular ausfüllen."
+"Skip installation","Installation überspringen"
 "MageSetup has been installed.","MageSetup wurde installiert."
 "Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Klicken Sie <a href=""%s"">hier</a>, um CMS-Seiten, Blöcke, E-Mails und Steuer-Einstellungen zu initialisieren."
 "Please choose the requested setups:","Bitte wählen Sie die gewünschten Setups:"
