@@ -43,11 +43,17 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
      */
     public function setup($params = array(), $notify=false)
     {
+        if (!isset($params['country'])) {
+            Mage::throwException(
+                $this->_getHelper()->__('MageSetup: Please set up a country in your parameters.')
+            );
+        }
+
+        Mage::register('setup_country', $params['country']);
+
         $defaultParams = $this->_getDefaultParams();
 
         $params = array_merge($defaultParams, $params);
-
-        Mage::register('setup_country', $params['country']);
 
         if ($params['systemconfig']) {
             Mage::getSingleton('magesetup/setup_systemconfig')->setup();
