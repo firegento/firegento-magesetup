@@ -161,8 +161,8 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
      */
     protected function _createTaxClass($taxClassData)
     {
-        $this->_insertIntoTable($this->_getTable('tax/tax_class'), $taxClassData);
-        return $this->_lastInsertId($this->_getTable('tax/tax_class'));
+        $this->_insertIntoTable('tax/tax_class', $taxClassData);
+        return $this->_lastInsertId('tax/tax_class');
     }
 
     /**
@@ -202,7 +202,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
         }
 
         // base tax rate db entry
-        $calculationRateTable = $this->_getTable('tax/tax_calculation_rate');
+        $calculationRateTable = 'tax/tax_calculation_rate';
         $this->_insertIntoTable($calculationRateTable, $taxCalcRateData);
         $rateId = $this->_lastInsertId($calculationRateTable);
 
@@ -214,7 +214,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
                     'store_id' => $storeId,
                     'value' => $label,
                 );
-                $this->_insertIntoTable($this->_getTable('tax/tax_calculation_rate_title'), $bind);
+                $this->_insertIntoTable('tax/tax_calculation_rate_title', $bind);
             }
         }
 
@@ -321,13 +321,14 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Insert a line into a database table
      *
-     * @param  string $tableName Table Name
+     * @param  string $table Table
      * @param  array $data
      * @return void
      */
-    protected function _insertIntoTable($tableName, $data)
+    protected function _insertIntoTable($table, $data)
     {
         unset($data['execute']);
+        $tableName = $this->_getTable($table);
         $this->_getConnection()->insert($tableName, $data);
     }
 
@@ -361,11 +362,12 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get last insert ID
      *
-     * @param string $tableName Table Name
+     * @param string $table Table
      * @return int
      */
-    protected function _lastInsertId($tableName)
+    protected function _lastInsertId($table)
     {
+        $tableName = $this->_getTable($table);
         return $this->_getConnection()->lastInsertId($tableName);
     }
 }
