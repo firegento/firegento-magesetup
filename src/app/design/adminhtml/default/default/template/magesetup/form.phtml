@@ -54,7 +54,7 @@
                             <td class="value" style="width:160px !important;">
                                 <select name="country" id="select_country" style="width:150px !important;">
                                     <?php foreach ($this->getAvailableCountriesForSetup() as $countryCode => $countryName): ?>
-                                    <option value="<?php echo $countryCode ?>"<?php if (Mage::getStoreConfig('magesetup/default_country') == $countryCode): ?> selected="selected"<?php endif ?>><?php echo $countryName ?></option>
+                                    <option value="<?php echo $countryCode ?>"<?php if (strtolower(Mage::getStoreConfig('general/country/default')) == $countryCode): ?> selected="selected"<?php endif ?>><?php echo $countryName ?></option>
                                     <?php endforeach ?>
                                 </select>
                             </td>

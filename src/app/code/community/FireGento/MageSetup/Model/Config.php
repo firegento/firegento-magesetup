@@ -39,7 +39,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
     /**
      * @var string
      */
-    protected $_country = 'de';
+    protected $_country;
 
     /**
      * Sets cache ID and cache tags and loads configuration
@@ -64,6 +64,19 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
     {
         $this->_country = $country;
         return $this;
+    }
+
+    /**
+     * Get the current country for the config
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        if(empty($this->_country)) {
+            $this->_country = strtolower(Mage::getStoreConfig('general/country/default'));
+        }
+        return $this->_country;
     }
 
     /**
@@ -111,7 +124,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
     protected function _addConfigFile($fileName, $mergeConfig)
     {
         $config = Mage::getConfig();
-        $configFile = $config->getModuleDir('etc', 'FireGento_MageSetup') . DS . $this->_country . DS . $fileName;
+        $configFile = $config->getModuleDir('etc', 'FireGento_MageSetup') . DS . $this->getCountry() . DS . $fileName;
 
         // If the given file does not exist, use the default file
         if (!file_exists($configFile)) {

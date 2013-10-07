@@ -113,6 +113,14 @@
                 <ru />
             </available_countries>
         </magesetup>
+        <locale>
+            <allow>
+                <codes>
+                    <fr_CH />
+                    <de_CH />
+                </codes>
+            </allow>
+        </locale>
     </global>
     <frontend>
         <secure_url>
@@ -373,10 +381,6 @@ Tel: {{var telephone}}
                 </char0220>
             </convert>
         </url>
-
-        <magesetup>
-            <default_country>de</default_country>
-        </magesetup>
 
         <general>
             <country>
