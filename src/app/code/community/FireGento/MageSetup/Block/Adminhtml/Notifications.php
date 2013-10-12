@@ -42,7 +42,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
     }
 
     /**
-     * Returns a value that indicates if some of the german setup settings have already been initialized.
+     * Returns a value that indicates if some of the magesetup settings have already been initialized.
      *
      * @return bool Flag if MageSetup is already initialized
      */
