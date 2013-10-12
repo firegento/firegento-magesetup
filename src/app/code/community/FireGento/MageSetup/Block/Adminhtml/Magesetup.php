@@ -173,20 +173,22 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
      */
     public function getNewProductTaxClassesJson()
     {
-        $countryTaxClasses = array();
-        foreach(Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+        $moduleDir = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup');
 
-            $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . $countryId . DS . 'tax.xml';
+        $countryTaxClasses = array();
+        foreach (Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+            // Get the config file for the given country
+            $configFile = $moduleDir . DS . $countryId . DS . 'tax.xml';
 
             // If the given file does not exist, use the default file
             if (!file_exists($configFile)) {
-                $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . 'default' . DS . 'tax.xml';
+                $configFile = $moduleDir . DS . 'default' . DS . 'tax.xml';
             }
 
             $xml = new SimpleXMLElement(file_get_contents($configFile));
-            
+
             $taxClasses = $xml->default->magesetup->tax_classes->default;
-            foreach($taxClasses->children() as $identifier => $taxClass) {
+            foreach ($taxClasses->children() as $identifier => $taxClass) {
                 if ($taxClass->class_type != 'PRODUCT'
                     || $taxClass->execute != 1
                     || strpos($identifier, 'shipping') === 0) {
@@ -197,7 +199,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
 
             $countryTaxClasses[$countryId][] = $this->__('No tax');
         }
-        
+
         return Zend_Json::encode($countryTaxClasses);
     }
 
@@ -206,20 +208,22 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
      */
     public function getNewCustomerTaxClassesJson()
     {
-        $countryTaxClasses = array();
-        foreach(Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+        $moduleDir = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup');
 
-            $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . $countryId . DS . 'tax.xml';
+        $countryTaxClasses = array();
+        foreach (Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+            // Get the config file for the given country
+            $configFile = $moduleDir . DS . $countryId . DS . 'tax.xml';
 
             // If the given file does not exist, use the default file
             if (!file_exists($configFile)) {
-                $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . 'default' . DS . 'tax.xml';
+                $configFile = $moduleDir. DS . 'default' . DS . 'tax.xml';
             }
 
             $xml = new SimpleXMLElement(file_get_contents($configFile));
 
             $taxClasses = $xml->default->magesetup->tax_classes->default;
-            foreach($taxClasses->children() as $identifier => $taxClass) {
+            foreach ($taxClasses->children() as $identifier => $taxClass) {
                 if ($taxClass->class_type != 'CUSTOMER'
                     || $taxClass->execute != 1) {
                     continue;

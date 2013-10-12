@@ -77,7 +77,8 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
         $config = Mage::getConfig()->getNode('global/magesetup/available_countries');
         if ($config) {
             foreach (array_keys($config->asArray()) as $countryId) {
-                $availableCountries[$countryId] = Mage::app()->getLocale()->getCountryTranslation(strtoupper($countryId));
+                $countryName = Mage::app()->getLocale()->getCountryTranslation(strtoupper($countryId));
+                $availableCountries[$countryId] = $countryName;
             }
         }
         asort($availableCountries);

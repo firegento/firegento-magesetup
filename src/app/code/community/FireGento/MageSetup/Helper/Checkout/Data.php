@@ -37,7 +37,7 @@ class FireGento_MageSetup_Helper_Checkout_Data
     /**
      * Avoid loss of translation
      */
-    function __construct()
+    public function __construct()
     {
         $this->_moduleName = 'Mage_Checkout';
     }

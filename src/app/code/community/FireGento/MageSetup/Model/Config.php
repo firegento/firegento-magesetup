@@ -73,7 +73,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
      */
     public function getCountry()
     {
-        if(empty($this->_country)) {
+        if (empty($this->_country)) {
             $this->_country = strtolower(Mage::getStoreConfig('general/country/default'));
         }
         return $this->_country;
