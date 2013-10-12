@@ -189,6 +189,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
 
             $xml = new SimpleXMLElement(file_get_contents($configFile));
 
+            // @codingStandardsIgnoreStart
             $taxClasses = $xml->default->magesetup->tax_classes->default;
             foreach ($taxClasses->children() as $identifier => $taxClass) {
                 if ($taxClass->class_type != 'PRODUCT'
@@ -196,8 +197,10 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
                     || strpos($identifier, 'shipping') === 0) {
                     continue;
                 }
+
                 $countryTaxClasses[$countryId][(string)$taxClass->class_id] = (string)$taxClass->class_name;
             }
+            // @codingStandardsIgnoreEnd
 
             $countryTaxClasses[$countryId][] = $this->__('No tax');
         }
@@ -226,6 +229,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
 
             $xml = new SimpleXMLElement(file_get_contents($configFile));
 
+            // @codingStandardsIgnoreStart
             $taxClasses = $xml->default->magesetup->tax_classes->default;
             foreach ($taxClasses->children() as $identifier => $taxClass) {
                 if ($taxClass->class_type != 'CUSTOMER'
@@ -234,6 +238,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
                 }
                 $countryTaxClasses[$countryId][(string)$taxClass->class_id] = (string)$taxClass->class_name;
             }
+            // @codingStandardsIgnoreEnd
         }
 
         return Zend_Json::encode($countryTaxClasses);
