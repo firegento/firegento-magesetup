@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Helper_Catalog_Product_Configuration" namespace="" name="FireGento_MageSetup_Helper_Catalog_Product_Configuration" abstract="false" final="false" start="34" end="138">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Catalog/Product" file="Configuration.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Catalog/Product/Configuration.php" size="4700" time="2013-09-07T20:07:04+02:00" unixtime="1378577224" sha1="08b1588eb119e15e09c67f7a245760480a07fb09"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Helper_Catalog_Product_Configuration" namespace="" name="FireGento_MageSetup_Helper_Catalog_Product_Configuration" abstract="false" final="false" start="34" end="137">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Catalog/Product" file="Configuration.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Catalog/Product/Configuration.php" size="4629" time="2013-10-12T16:19:10+02:00" unixtime="1381587550" sha1="f74c87c8ae173b6abd8b45111dc58f22b8c10457"/>
   <docblock>
     <description compact="Changed product configuration to add product attributes on checkout"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="1.0.5"/>
@@ -24,10 +24,9 @@
       <var type="array"/>
     </docblock>
   </member>
-  <method name="getCustomOptions" start="54" end="61" abstract="false" final="false" static="false" visibility="public">
+  <method name="getCustomOptions" start="53" end="60" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Merge Attributes"/>
-      <see value="parent::getCustomOptions()"/>
       <param description="Quote item" type="object" variable="$item">
         <type full="Mage_Catalog_Model_Product_Configuration_Item_Interface" namespace="" name="Mage_Catalog_Model_Product_Configuration_Item_Interface"/>
       </param>
@@ -37,7 +36,7 @@
       <type full="\\Mage_Catalog_Model_Product_Configuration_Item_Interface" namespace="\" name="Mage_Catalog_Model_Product_Configuration_Item_Interface"/>
     </parameter>
   </method>
-  <method name="_getProduct" start="69" end="82" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_getProduct" start="68" end="81" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Get the product for the current quote item"/>
       <param description="Quote item" type="object" variable="$item">
@@ -49,7 +48,7 @@
     </docblock>
     <parameter name="item" byreference="false" type="{unknown}"/>
   </method>
-  <method name="_getAttributes" start="90" end="103" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_getAttributes" start="89" end="102" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Retreve the product attributes"/>
       <param description="Quote item" type="object" variable="$item">
@@ -59,7 +58,7 @@
     </docblock>
     <parameter name="item" byreference="false" type="{unknown}"/>
   </method>
-  <method name="_getAdditionalData" start="111" end="137" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_getAdditionalData" start="110" end="136" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Retrieve the attributes which are visible on the checkout page"/>
       <param description="Product Model" type="object" variable="$product">

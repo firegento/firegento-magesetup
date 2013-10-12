@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Config" namespace="" name="FireGento_MageSetup_Model_Config" abstract="false" final="false" start="34" end="128">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Config.php" size="4070" time="2013-09-07T20:30:37+02:00" unixtime="1378578637" sha1="9f30b8596dcad09e12ba13818a7fd326c61ac9f0"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Config" namespace="" name="FireGento_MageSetup_Model_Config" abstract="false" final="false" start="34" end="141">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Config.php" size="4346" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="bcde98c03ee6e677f3c614b697b2fbe9991c756e"/>
   <docblock>
     <description compact="Config class"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.2.0"/>
@@ -14,7 +14,7 @@
   <extends full="Varien_Simplexml_Config" namespace="" name="Varien_Simplexml_Config"/>
   <constant name="CACHE_ID" value="'magesetup_config'"/>
   <constant name="CACHE_TAG" value="'magesetup_config'"/>
-  <member name="_country" type="string" default="" visibility="protected">
+  <member name="_country" type="{unknown}" visibility="protected">
     <docblock>
       <description compact=""/>
       <var type="string"/>
@@ -39,7 +39,13 @@
     </docblock>
     <parameter name="country" byreference="false" type="{unknown}"/>
   </method>
-  <method name="_loadConfig" start="74" end="103" abstract="false" final="false" static="false" visibility="protected">
+  <method name="getCountry" start="74" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the current country for the config"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="_loadConfig" start="87" end="116" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Merge default config with config from additional xml files"/>
       <return description="Config Model" type="object">
@@ -47,7 +53,7 @@
       </return>
     </docblock>
   </method>
-  <method name="_addConfigFile" start="111" end="127" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_addConfigFile" start="124" end="140" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Add a config file to the given merge config"/>
       <param description="File to load" type="string" variable="$fileName"/>

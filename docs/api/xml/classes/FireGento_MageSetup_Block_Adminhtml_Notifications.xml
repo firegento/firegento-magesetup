@@ -1,38 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Adminhtml_Notifications" namespace="" name="FireGento_MageSetup_Block_Adminhtml_Notifications" abstract="false" final="false" start="34" end="82">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml" file="Notifications.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Notifications.php" size="2387" time="2013-09-07T19:54:49+02:00" unixtime="1378576489" sha1="2c4337765e50a43f720c99b5be58134d4cebeead"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Adminhtml_Notifications" namespace="" name="FireGento_MageSetup_Block_Adminhtml_Notifications" abstract="false" final="false" start="34" end="87">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml" file="Notifications.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Notifications.php" size="2495" time="2013-10-12T16:25:19+02:00" unixtime="1381587919" sha1="04e44d65eeb59b960cad67ed8dbe45162daf8c3d"/>
   <docblock>
     <description compact="Displays MageSetup notifications"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.4.0"/>
   </docblock>
   <extends full="Mage_Adminhtml_Block_Template" namespace="" name="Mage_Adminhtml_Block_Template"/>
-  <method name="_construct" start="40" end="47" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_construct" start="39" end="42" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
-      <description compact="(non-PHPdoc)"/>
-      <see value="Mage_Core_Block_Template::_construct()"/>
+      <description compact="Disable the block caching for this block"/>
     </docblock>
   </method>
-  <method name="isInitialized" start="54" end="57" abstract="false" final="false" static="false" visibility="public">
+  <method name="isInitialized" start="49" end="52" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="Returns a value that indicates if some of the german setup settings have already been initialized."/>
+      <description compact="Returns a value that indicates if some of the magesetup settings have already been initialized."/>
       <return description="Flag if MageSetup is already initialized" type="object">
         <type full="bool" namespace="" name="bool"/>
       </return>
     </docblock>
   </method>
-  <method name="getManageUrl" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
+  <method name="getManageUrl" start="59" end="62" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Get magesetup management url"/>
       <return description="URL for MageSetup form" type="string"/>
     </docblock>
   </method>
-  <method name="_toHtml" start="74" end="81" abstract="false" final="false" static="false" visibility="protected">
+  <method name="getSkipUrl" start="69" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get magesetup installation skip action"/>
+      <return description="URL for skip action" type="string"/>
+    </docblock>
+  </method>
+  <method name="_toHtml" start="79" end="86" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="ACL validation before html generation"/>
       <return description="Notification content" type="string"/>

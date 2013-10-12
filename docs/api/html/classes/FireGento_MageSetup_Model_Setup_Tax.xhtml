@@ -44,12 +44,6 @@
             <a href="#_createTaxCalcRate">_createTaxCalcRate</a>
           </li>
           <li>
-            <a href="#_createTaxCalcRule">_createTaxCalcRule</a>
-          </li>
-          <li>
-            <a href="#_createTaxCalculation">_createTaxCalculation</a>
-          </li>
-          <li>
             <a href="#_createTaxClass">_createTaxClass</a>
           </li>
           <li>
@@ -74,10 +68,25 @@
             <a href="#_getConnection">_getConnection</a>
           </li>
           <li>
+            <a href="#_getConnection">_getConnection</a>
+          </li>
+          <li>
+            <a href="#_getCountries">_getCountries</a>
+          </li>
+          <li>
             <a href="#_getSetup">_getSetup</a>
           </li>
           <li>
+            <a href="#_getSetup">_getSetup</a>
+          </li>
+          <li>
+            <a href="#_getTable">_getTable</a>
+          </li>
+          <li>
             <a href="#_insertIntoTable">_insertIntoTable</a>
+          </li>
+          <li>
+            <a href="#_lastInsertId">_lastInsertId</a>
           </li>
           <li>
             <a href="#_loadExistingModel">_loadExistingModel</a>
@@ -92,6 +101,9 @@
             <a href="#getConfigData">getConfigData</a>
           </li>
           <li>
+            <a href="#getCountryId">getCountryId</a>
+          </li>
+          <li>
             <a href="#getTemplateContent">getTemplateContent</a>
           </li>
           <li>
@@ -99,6 +111,9 @@
           </li>
           <li>
             <a href="#setup">setup</a>
+          </li>
+          <li>
+            <a href="#updateCustomerTaxClasses">updateCustomerTaxClasses</a>
           </li>
           <li>
             <a href="#updateProductTaxClasses">updateProductTaxClasses</a>
@@ -112,7 +127,7 @@
         </div>
         <ul class="fileinfos">
           <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
-          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.com)</li>
           <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
         </ul>
         <h3>Members</h3>
@@ -149,6 +164,32 @@
         <h3>Methods</h3>
         <ul class="varlist">
           <li>
+            <a name="_getConfigTaxCalcRates"/>
+            <h4><span class="label public">public</span>_getConfigTaxCalcRates<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get tax calculation rates from config file</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getConfigTaxCalculations"/>
+            <h4><span class="label public">public</span>_getConfigTaxCalculations<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get tax calculations from config file</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
             <a name="getConfigData"/>
             <h4><span class="label public">public</span>getConfigData<span style="font-size:90%;">(  )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
@@ -158,6 +199,19 @@
               <h4 class="return">Returns:</h4>
               <ul class="return">
                 <li>Config data</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCountryId"/>
+            <h4><span class="label public">public</span>getCountryId<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get setup country ID</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
               </ul>
             </ul>
           </li>
@@ -201,6 +255,26 @@
             <p style="font-size:110%; padding-top:5px;">
               <li>Setup Tax setting</li>
             </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="updateCustomerTaxClasses"/>
+            <h4><span class="label public">public</span>updateCustomerTaxClasses<span style="font-size:90%;">( <span class="param-type">int</span><strong> $source</strong>, <span class="param-type">int</span><strong> $target</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Update the tax class of all customer groups with specified tax class id</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$source</code> - source tax class id</li>
+                <li><code>$target</code> - target tax class id</li>
+              </ul>
+            </ul>
           </li>
           <li>
             <a name="updateProductTaxClasses"/>
@@ -228,30 +302,10 @@
                 <li><code>$taxCalcRateData</code> - tax class data</li>
               </ul>
             </ul>
-          </li>
-          <li>
-            <a name="_createTaxCalcRule"/>
-            <h4><span class="label protected">protected</span>_createTaxCalcRule<span style="font-size:90%;">( <span class="param-type">array</span><strong> $taxCalcRuleData</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Collect data and create tax calculation rules</li>
-            </p>
             <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$taxCalcRuleData</code> - tax class data</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_createTaxCalculation"/>
-            <h4><span class="label protected">protected</span>_createTaxCalculation<span style="font-size:90%;">( <span class="param-type">array</span><strong> $taxCalculationData</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Collect data and create tax calculations</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$taxCalculationData</code> - tax class data</li>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>ID of the created tax calculation rate</li>
               </ul>
             </ul>
           </li>
@@ -265,6 +319,12 @@
               <h4 class="param">Parameters:</h4>
               <ul class="param">
                 <li><code>$taxClassData</code> - tax class data</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>ID of the last inserted item</li>
               </ul>
             </ul>
           </li>
@@ -289,19 +349,6 @@
             </ul>
           </li>
           <li>
-            <a name="_getConfigTaxCalcRates"/>
-            <h4><span class="label protected">protected</span>_getConfigTaxCalcRates<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get tax calculation rates from config file</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Config tax calculation rates</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
             <a name="_getConfigTaxCalcRules"/>
             <h4><span class="label protected">protected</span>_getConfigTaxCalcRules<span style="font-size:90%;">(  )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
@@ -310,20 +357,7 @@
             <ul>
               <h4 class="return">Returns:</h4>
               <ul class="return">
-                <li>Config tax calculation rules</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getConfigTaxCalculations"/>
-            <h4><span class="label protected">protected</span>_getConfigTaxCalculations<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get tax calculations from config file</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Config tax calculations</li>
+                <li/>
               </ul>
             </ul>
           </li>
@@ -336,7 +370,7 @@
             <ul>
               <h4 class="return">Returns:</h4>
               <ul class="return">
-                <li>Config tax classes</li>
+                <li/>
               </ul>
             </ul>
           </li>
@@ -349,7 +383,20 @@
             <ul>
               <h4 class="return">Returns:</h4>
               <ul class="return">
-                <li>Config tax config</li>
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getConnection"/>
+            <h4><span class="label protected">protected</span>_getConnection<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the database adapter</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Database Adapter</li>
               </ul>
             </ul>
           </li>
@@ -367,6 +414,34 @@
             </ul>
           </li>
           <li>
+            <a name="_getCountries"/>
+            <h4><span class="label protected">protected</span>_getCountries<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get countries for tax rate calculations<pre>If the country is in the EU, all EU countries
+are returned. If not, the array only contains the
+country ID of the configuration setup country</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getSetup"/>
+            <h4><span class="label protected">protected</span>_getSetup<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the setup class</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Setup Class</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
             <a name="_getSetup"/>
             <h4><span class="label protected">protected</span>_getSetup<span style="font-size:90%;">(  )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
@@ -380,6 +455,25 @@
             </ul>
           </li>
           <li>
+            <a name="_getTable"/>
+            <h4><span class="label protected">protected</span>_getTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableAlias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get table name from table alias</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableAlias</code> - Table Alias</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Correct Table Name</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
             <a name="_insertIntoTable"/>
             <h4><span class="label protected">protected</span>_insertIntoTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $table</strong>, <span class="param-type">array</span><strong> $data</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
@@ -388,8 +482,27 @@
             <ul>
               <h4 class="param">Parameters:</h4>
               <ul class="param">
-                <li><code>$table</code> - Table in which the given data should be inserted</li>
-                <li><code>$data</code> - Insert data</li>
+                <li><code>$table</code> - Table</li>
+                <li><code>$data</code> - Data to insert</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_lastInsertId"/>
+            <h4><span class="label protected">protected</span>_lastInsertId<span style="font-size:90%;">( <span class="param-type">string</span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get last insert ID</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$table</code> - Table</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Last inserted id</li>
               </ul>
             </ul>
           </li>
@@ -418,12 +531,13 @@
             <a name="_truncateTable"/>
             <h4><span class="label protected">protected</span>_truncateTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $table</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
-              <li>Truncate a database table</li>
+              <li>Truncate a database table<pre>DELETE is used, in order to prevent problems with
+foreign key checks.</pre></li>
             </p>
             <ul>
               <h4 class="param">Parameters:</h4>
               <ul class="param">
-                <li><code>$table</code> - Table which should be truncated</li>
+                <li><code>$table</code> - Database to truncate</li>
               </ul>
             </ul>
           </li>
@@ -433,6 +547,12 @@
             <p style="font-size:110%; padding-top:5px;">
               <li>Update configuration settings</li>
             </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
           </li>
         </ul>
         <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>

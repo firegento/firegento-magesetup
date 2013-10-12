@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Source_Cms_Block" namespace="" name="FireGento_MageSetup_Model_Source_Cms_Block" abstract="false" final="false" start="34" end="84">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Cms" file="Block.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Cms/Block.php" size="2653" time="2013-09-07T20:27:02+02:00" unixtime="1378578422" sha1="76b2c998070ed293ebb12c6a081f49c162841a66"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Cms" file="Block.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Cms/Block.php" size="2624" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="67e1255caff96b3599613264e1edca82b412b92e"/>
   <docblock>
     <description compact="CMS Source model for configuration dropdown of CMS static blocks"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.1.0"/>

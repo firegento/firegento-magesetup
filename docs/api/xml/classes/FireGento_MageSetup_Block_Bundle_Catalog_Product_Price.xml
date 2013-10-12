@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Bundle_Catalog_Product_Price" namespace="" name="FireGento_MageSetup_Block_Bundle_Catalog_Product_Price" abstract="false" final="false" start="35" end="170">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Bundle/Catalog/Product" file="Price.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Bundle/Catalog/Product/Price.php" size="5377" time="2013-09-07T19:56:54+02:00" unixtime="1378576614" sha1="4993dd9853f88635dd0bbc8bdf53819880edacbc"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Bundle/Catalog/Product" file="Price.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Bundle/Catalog/Product/Price.php" size="5348" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="736829aefb7c2a95bcf6826b5150cdd41f006328"/>
   <docblock>
     <description compact="Enhanced block for product price display of bundle products. Contains the normal price.phtml rendering and additionally a configured static block."/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.1.0"/>

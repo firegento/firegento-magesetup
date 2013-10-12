@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Imprint_Content" namespace="" name="FireGento_MageSetup_Block_Imprint_Content" abstract="false" final="false" start="34" end="103">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Imprint" file="Content.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Imprint/Content.php" size="3170" time="2013-09-07T20:03:40+02:00" unixtime="1378577020" sha1="64377ce44d9eccdca698489833033f318ba0e4be"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Imprint" file="Content.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Imprint/Content.php" size="3139" time="2013-10-12T16:19:39+02:00" unixtime="1381587579" sha1="02c2b4c44ea439c68125f4b268a1221753c4b18f"/>
   <docblock>
     <description compact="Block to retrieve data from imprint config."/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.1.0"/>
@@ -48,4 +48,5 @@
       <return description="Country" type="string"/>
     </docblock>
   </method>
-<extender full="FireGento_MageSetup_Block_Imprint_Field" namespace="" name="FireGento_MageSetup_Block_Imprint_Field"/></class>
+  <extender full="FireGento_MageSetup_Block_Imprint_Field" namespace="" name="FireGento_MageSetup_Block_Imprint_Field"/>
+</class>
