@@ -23,13 +23,9 @@
 /**
  * Setup script; Adds the meta_autogenerate attribute for products
  *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     1.2.3
+ * @category FireGento
+ * @package  FireGento_MageSetup
+ * @author   FireGento Team <team@firegento.com>
  */
 
 /** @var $installer Mage_Catalog_Model_Resource_Eav_Mysql4_Setup */
