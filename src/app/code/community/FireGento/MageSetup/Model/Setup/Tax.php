@@ -59,15 +59,11 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
      */
     public function setup()
     {
-        $canTruncate = true;
-
-        if ($canTruncate) {
-            $this->_truncateTable('tax/tax_class');
-            $this->_truncateTable('tax/tax_calculation_rule');
-            $this->_truncateTable('tax/tax_calculation_rate');
-            $this->_truncateTable('tax/tax_calculation_rate_title');
-            $this->_truncateTable('tax/tax_calculation');
-        }
+        $this->_truncateTable('tax/tax_class');
+        $this->_truncateTable('tax/tax_calculation_rule');
+        $this->_truncateTable('tax/tax_calculation_rate');
+        $this->_truncateTable('tax/tax_calculation_rate_title');
+        $this->_truncateTable('tax/tax_calculation');
 
         // Tax classes
         $taxClasses = array();
