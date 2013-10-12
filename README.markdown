@@ -1,5 +1,5 @@
 FireGento_MageSetup
-=====================
+===================
 MageSetup configures a shop for a national market. It's the international variant and successor of [GermanSetup](https://github.com/firegento/firegento-germansetup).
 
 Currently supported countries: Austria, France, Germany, Italy, Russia, Switzerland, United Kingdom. More to follow.
@@ -10,14 +10,14 @@ Build Status
 * Development Branch: [![Development Branch](https://travis-ci.org/firegento/firegento-magesetup.png?branch=development)](https://travis-ci.org/firegento/firegento-magesetup)
 
 Facts
-------
+-----
 - Version: check [config.xml](https://github.com/firegento/firegento-magesetup/blob/master/src/app/code/community/FireGento/MageSetup/etc/config.xml)
 - Extension key: FireGento_MageSetup
 - [Extension on GitHub](https://github.com/firegento/firegento-magesetup/)
-- Composer name: firegento/magesetup on [packages.firegento.com](http://packages.firegento.com/)
+- Composer name: `firegento/magesetup` on [packages.firegento.com](http://packages.firegento.com/)
 
 Description
-------------
+-----------
 Central features of MageSetup are:
 
 * Setting of important configuration settings
@@ -38,11 +38,11 @@ Requirements
 - PHP >= 5.3.0
 
 Compatibility
---------------
+-------------
 - Magento >= 1.6
 
 Installation
------------------------
+------------
 Please create the desired websites and store views as well as install any language packs before running MageSetup.
 
 Copy all files from the src/ folder to your magento directory in order to install the MageSetup module.
