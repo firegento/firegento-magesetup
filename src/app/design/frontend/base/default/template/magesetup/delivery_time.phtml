@@ -10,35 +10,20 @@
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- * PHP version 5
- *
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     0.1.0
  */
-/**
- * Template for displaying delivery time
- *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     1.2.0
- */
-
+?>
+<?php
 /**
  * @var $this Mage_Catalog_Block_Product_View_Abstract
  */
 ?>
-
 <?php if ($this->getProduct()->getDeliveryTime()): ?>
-<p class="delivery-time">
-    <?php echo $this->__('Delivery Time') ?>: <?php echo $this->getProduct()->getDeliveryTime() ?>
-</p>
+    <p class="delivery-time">
+        <?php echo $this->__('Delivery Time') ?>: <?php echo $this->getProduct()->getDeliveryTime() ?>
+    </p>
 <?php endif ?>
