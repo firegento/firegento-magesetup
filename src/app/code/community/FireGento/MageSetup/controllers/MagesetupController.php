@@ -107,6 +107,8 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
     }
 
     /**
+     * Retrieve the submitted params of the setup form
+     *
      * @return array
      */
     protected function _getParams()

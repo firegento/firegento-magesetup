@@ -169,7 +169,9 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     }
 
     /**
-     * @return string
+     * Retrieve the new product tax classes as JSON
+     *
+     * @return string JSON with Product Tax Classes
      */
     public function getNewProductTaxClassesJson()
     {
@@ -204,7 +206,9 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     }
 
     /**
-     * @return string
+     * Retrieve the new customer tax classes as JSON
+     *
+     * @return string JSON with Customer Tax Classes
      */
     public function getNewCustomerTaxClassesJson()
     {

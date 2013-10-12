@@ -72,7 +72,7 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
      * Retrieve the setting "website". If parameter checkForProtocol is true,
      * check if there is a valid protocol given, otherwise add http:// manually.
      *
-     * @param  bool   $checkForProtocol Flag if website url should be checked for http(s) protocol
+     * @param  bool $checkForProtocol Flag if website url should be checked for http(s) protocol
      * @return string Website URL
      */
     public function getWeb($checkForProtocol=false)

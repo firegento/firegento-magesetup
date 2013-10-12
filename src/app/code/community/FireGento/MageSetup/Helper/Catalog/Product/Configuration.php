@@ -47,7 +47,6 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
     /**
      * Merge Attributes
      *
-     * @see    parent::getCustomOptions()
      * @param  Mage_Catalog_Model_Product_Configuration_Item_Interface $item Quote item
      * @return array Custom Options
      */

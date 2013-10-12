@@ -67,6 +67,8 @@ class FireGento_MageSetup_Model_Source_AgreementType
     }
 
     /**
+     * Retrieve all agreements as option hash
+     *
      * @return array Agreement types as option hash
      */
     public function getOptionArray()

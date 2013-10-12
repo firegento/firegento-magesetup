@@ -36,7 +36,7 @@ class FireGento_MageSetup_Model_Observer
     /**
      * Add "Visible on Checkout Review on Front-end" Option to Attribute Settings
      *
-     * @magentoEvent adminhtml_catalog_product_attribute_edit_prepare_form
+     * Event: <adminhtml_catalog_product_attribute_edit_prepare_form>
      *
      * @param  Varien_Event_Observer $observer Observer
      * @return FireGento_MageSetup_Model_Observer Observer
@@ -68,7 +68,7 @@ class FireGento_MageSetup_Model_Observer
      * Filters all agreements against the Magento template filter. This enables the Magento
      * administrator define a cms static block as the content of the checkout agreements..
      *
-     * @magentoEvent core_block_abstract_to_html_before
+     * Event: <core_block_abstract_to_html_before>
      *
      * @param  Varien_Event_Observer $observer Observer
      * @return FireGento_MageSetup_Model_Observer Observer
@@ -108,8 +108,7 @@ class FireGento_MageSetup_Model_Observer
 
     /**
      * Auto-Generates the meta information of a product.
-     *
-     * @magentoEvent catalog_product_save_before
+     * Event: <catalog_product_save_before>
      *
      * @param  Varien_Event_Observer $observer Observer
      * @return FireGento_MageSetup_Model_Observer Observer
@@ -218,7 +217,7 @@ class FireGento_MageSetup_Model_Observer
     /**
      * Processes the category array and generates a string
      *
-     * @param  array  $categoryTypes Categories
+     * @param  array $categoryTypes Categories
      * @return string Keywords
      */
     protected function _buildKeywords($categoryTypes)
@@ -238,7 +237,7 @@ class FireGento_MageSetup_Model_Observer
     /**
      * Add "Required" and "Visible on Custom Creation" Option to Checkout Agreements
      *
-     * @magentoEvent adminhtml_block_html_before
+     * Event: <adminhtml_block_html_before>
      *
      * @param  Varien_Event_Observer $observer Observer
      * @return FireGento_MageSetup_Model_Observer Observer
@@ -288,7 +287,7 @@ class FireGento_MageSetup_Model_Observer
     /**
      * After updating the quantities of cart items, it might be needed to recalculate the shipping tax
      *
-     * @magentoEvent checkout_cart_update_items_after
+     * Event: <checkout_cart_update_items_after>
      *
      * @param Varien_Event_Observer $observer Observer
      */
@@ -328,7 +327,7 @@ class FireGento_MageSetup_Model_Observer
      * Check if there are required agreements for the customer registration
      * and validate them if applicable.
      *
-     * @magentoEvent controller_action_predispatch_customer_account_createpost
+     * Event: <controller_action_predispatch_customer_account_createpost>
      *
      * @param Varien_Event_Observer $observer Observer
      */

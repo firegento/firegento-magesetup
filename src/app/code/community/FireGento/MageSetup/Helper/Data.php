@@ -88,8 +88,8 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Check whether specified country is in EU countries list
      *
-     * @param string $countryCode
-     * @return bool
+     * @param  string $countryCode Country Code
+     * @return bool Flag if country is an EU country
      */
     public function isCountryInEU($countryCode)
     {
@@ -99,7 +99,7 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Get countries in the EU
      *
-     * @return array
+     * @return array EU Countries
      */
     public function getEUCountries()
     {
@@ -109,7 +109,7 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Set initialization status config flag and refresh config cache.
      *
-     * @param boolean $isInitialized
+     * @param bool $isInitialized Flag for initialization
      */
     public function setIsInitialized($isInitialized = true)
     {

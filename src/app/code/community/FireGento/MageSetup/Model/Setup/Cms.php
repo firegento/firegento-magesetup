@@ -269,8 +269,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Update footer_links cms block
      *
-     * @param array    $blockData     Cms block data
-     * @param int|null $storeId Store ID
+     * @param array    $blockData Cms block data
+     * @param int|null $storeId   Store ID
      */
     protected function _updateFooterLinksBlock($blockData, $storeId = null)
     {

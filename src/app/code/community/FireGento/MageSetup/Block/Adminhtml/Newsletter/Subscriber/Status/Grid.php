@@ -50,7 +50,6 @@ class FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid
     /**
      * Prepares the grid collection
      *
-     * @see    Mage_Adminhtml_Block_Widget_Grid::_prepareCollection()
      * @return FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid Grid
      */
     protected function _prepareCollection()
@@ -64,7 +63,6 @@ class FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid
     /**
      * Prepares the grid columns
      *
-     * @see    Mage_Adminhtml_Block_Widget_Grid::_prepareColumns()
      * @return FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid Grid
      */
     protected function _prepareColumns()
@@ -117,8 +115,7 @@ class FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid
     /**
      * Deactivate the grid row url
      *
-     * @see    Mage_Adminhtml_Block_Widget_Grid::getRowUrl()
-     * @param  Varien_Object $row
+     * @param  Varien_Object $row Newsletter Subscriber Status Model
      * @return bool Row Url
      */
     public function getRowUrl($row)

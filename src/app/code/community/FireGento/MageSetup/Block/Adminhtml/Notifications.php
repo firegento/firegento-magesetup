@@ -34,16 +34,11 @@
 class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_Block_Template
 {
     /**
-     * (non-PHPdoc)
-     * @see Mage_Core_Block_Template::_construct()
+     * Disable the block caching for this block
      */
     protected function _construct()
     {
-        $this->addData(
-            array(
-                'cache_lifetime'=> null
-            )
-        );
+        $this->addData(array('cache_lifetime'=> null));
     }
 
     /**
@@ -68,6 +63,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
 
     /**
      * Get magesetup installation skip action
+     *
      * @return string URL for skip action
      */
     public function getSkipUrl()

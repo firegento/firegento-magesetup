@@ -305,8 +305,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
      * DELETE is used, in order to prevent problems with
      * foreign key checks.
      *
-     * @param  string $table
-     * @return void
+     * @param string $table Database to truncate
      */
     protected function _truncateTable($table)
     {
@@ -317,9 +316,8 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Insert a line into a database table
      *
-     * @param  string $table Table
-     * @param  array $data
-     * @return void
+     * @param string $table Table
+     * @param array  $data  Data to insert
      */
     protected function _insertIntoTable($table, $data)
     {
@@ -329,7 +327,9 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     }
 
     /**
-     * @return Varien_Db_Adapter_Pdo_Mysql
+     * Retrieve the database adapter
+     *
+     * @return Varien_Db_Adapter_Pdo_Mysql Database Adapter
      */
     protected function _getConnection()
     {
@@ -337,7 +337,9 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     }
 
     /**
-     * @return Mage_Eav_Model_Entity_Setup
+     * Retrieve the setup class
+     *
+     * @return Mage_Eav_Model_Entity_Setup Setup Class
      */
     protected function _getSetup()
     {
@@ -347,8 +349,8 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get table name from table alias
      *
-     * @param string $tableAlias
-     * @return string
+     * @param  string $tableAlias Table Alias
+     * @return string Correct Table Name
      */
     protected function _getTable($tableAlias)
     {
@@ -358,8 +360,8 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get last insert ID
      *
-     * @param string $table Table
-     * @return int
+     * @param  string $table Table
+     * @return int Last inserted id
      */
     protected function _lastInsertId($table)
     {

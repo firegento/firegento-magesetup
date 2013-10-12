@@ -33,6 +33,7 @@
  * @since     0.1.0
  */
 
+// @codingStandardsIgnoreStart
 if (
     Mage::getConfig()->getModuleConfig('Sitewards_B2BProfessional')->is('active', 'true')
     && version_compare (Mage::getConfig()->getModuleConfig('Sitewards_B2BProfessional')->version, '2.1.0', '<=' )
@@ -61,3 +62,4 @@ if (
     }
 
 }
+// @codingStandardsIgnoreEnd

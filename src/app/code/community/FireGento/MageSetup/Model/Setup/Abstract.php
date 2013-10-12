@@ -65,9 +65,9 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     /**
      * Saves a system config value for the given config path and the given store id
      *
-     * @param string $configPath Config Path
-     * @param string $value      Value
-     * @param int|null $storeId  Store ID
+     * @param string   $configPath Config Path
+     * @param string   $value      Value
+     * @param int|null $storeId    Store ID
      */
     public function setConfigData($configPath, $value, $storeId = null)
     {

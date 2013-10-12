@@ -33,6 +33,7 @@
  * @since     0.1.0
  */
 
+// @codingStandardsIgnoreStart
 if (Mage::getConfig()->getModuleConfig('Sitewards_B2BProfessional')->is('active', 'true')) {
 
     abstract class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract
@@ -50,3 +51,4 @@ if (Mage::getConfig()->getModuleConfig('Sitewards_B2BProfessional')->is('active'
     }
 
 }
+// @codingStandardsIgnoreEnd
