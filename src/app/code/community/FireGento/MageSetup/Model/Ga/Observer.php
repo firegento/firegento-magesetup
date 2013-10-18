@@ -9,6 +9,8 @@
 
 class FireGento_MageSetup_Model_Ga_Observer
 {
+    const CONFIG_GOOGLE_ANALYTICS_IP_ANONYMIZATION = 'google/analytics/ip_anonymization';
+
     public function appendAccountInformation(Varien_Event_Observer $observer)
     {
         if (($block = $observer->getEvent()->getBlock()) instanceof Mage_GoogleAnalytics_Block_Ga) {
