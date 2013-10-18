@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Richard.Vogel
- * Date: 18.10.13
- * Time: 07:22
- * To change this template use File | Settings | File Templates.
- */
 
 class FireGento_MageSetup_Model_Ga_Observer
 {
