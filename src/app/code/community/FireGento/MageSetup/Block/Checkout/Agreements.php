@@ -32,24 +32,31 @@ class FireGento_MageSetup_Block_Checkout_Agreements extends Mage_Checkout_Block_
     /**
      * Filter by "Agreement Type"
      *
-     * @return Mage_Checkout_Model_Resource_Agreement_Collection Agreements
+     * @return Mage_Checkout_Model_Resource_Agreement_Collection Agreements|array
      */
     public function getAgreements()
     {
-        $agreements = parent::getAgreements();
-        if ($this->_getCustomerSession()->isLoggedIn()) {
-            $agreements->addFieldToFilter('agreement_type', array('in' => array(
-                FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CHECKOUT,
-                FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
-            )));
-        } else {
-            $agreements->addFieldToFilter('agreement_type', array('in' => array(
-                FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CUSTOMER,
-                FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CHECKOUT,
-                FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
-            )));
+        if (!$this->hasAgreements()) {
+            if (!Mage::getStoreConfigFlag('checkout/options/enable_agreements')) {
+                $agreements = array();
+            } else {
+                $agreements = parent::getAgreements();
+                if ($this->_getCustomerSession()->isLoggedIn()) {
+                    $agreements->addFieldToFilter('agreement_type', array('in' => array(
+                        FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CHECKOUT,
+                        FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
+                    )));
+                } else {
+                    $agreements->addFieldToFilter('agreement_type', array('in' => array(
+                        FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CUSTOMER,
+                        FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CHECKOUT,
+                        FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
+                    )));
+                }
+            }
+            $this->setAgreements($agreements);
         }
-        return $agreements;
+        return $this->getData('agreements');
     }
 
     /**
