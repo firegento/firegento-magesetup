@@ -171,9 +171,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
 
         if (!(int) $page->getId() || $override) {
             $page->addData($data);
-            Mage::log($page->getData());
             $page->save();
-            Mage::log('saved');
         }
 
         if (!$storeId) {
