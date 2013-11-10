@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Adminhtml_NewsletterController" namespace="" name="FireGento_MageSetup_Adminhtml_NewsletterController" abstract="false" final="false" start="34" end="80">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers/Adminhtml" file="NewsletterController.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers/Adminhtml/NewsletterController.php" size="2629" time="2013-09-07T20:05:12+02:00" unixtime="1378577112" sha1="472df511b69da3ffde9541d2212afa8d9816dab3"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers/Adminhtml" file="NewsletterController.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers/Adminhtml/NewsletterController.php" size="2600" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="ac1b7d1cb5b041f4634ed4437d7baf1d4c2239c3"/>
   <docblock>
     <description compact="Newsletter Subscriber Status Adminhtml Controller"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="1.1.4"/>

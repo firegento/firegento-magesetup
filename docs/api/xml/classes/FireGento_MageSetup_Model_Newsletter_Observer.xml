@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Newsletter_Observer" namespace="" name="FireGento_MageSetup_Model_Newsletter_Observer" abstract="false" final="false" start="34" end="60">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Newsletter" file="Observer.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Newsletter/Observer.php" size="2292" time="2013-09-07T20:09:06+02:00" unixtime="1378577346" sha1="bcf83126c221d405890390c843a05526379df4c1"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Newsletter_Observer" namespace="" name="FireGento_MageSetup_Model_Newsletter_Observer" abstract="false" final="false" start="34" end="61">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Newsletter" file="Observer.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Newsletter/Observer.php" size="2265" time="2013-10-12T16:17:02+02:00" unixtime="1381587422" sha1="1899dd1994709cb6d1923761856959539ce159fb"/>
   <docblock>
     <description compact="Observer class"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="1.1.4"/>
   </docblock>
-  <method name="saveSubscriberStatusHistory" start="43" end="59" abstract="false" final="false" static="false" visibility="public">
+  <method name="saveSubscriberStatusHistory" start="44" end="60" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="Saves the subscriber status change in a custom history after a subscriber was saved."/>
-      <magentoEvent value="newsletter_subscriber_save_after"/>
+      <description compact="Saves the subscriber status change in a custom history after a subscriber was saved.">Event: &lt;newsletter_subscriber_save_after&gt;</description>
       <param description="Observer" type="object" variable="$observer">
         <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
       </param>

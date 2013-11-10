@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Tax_Config" namespace="" name="FireGento_MageSetup_Model_Tax_Config" abstract="false" final="false" start="34" end="153">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Tax" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Tax/Config.php" size="5981" time="2013-09-07T20:29:51+02:00" unixtime="1378578591" sha1="a00316a7651d0eefa37bd058ea22ecb1795635d8"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Tax_Config" namespace="" name="FireGento_MageSetup_Model_Tax_Config" abstract="false" final="false" start="30" end="149">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Tax" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Tax/Config.php" size="5749" time="2013-10-12T15:34:36+02:00" unixtime="1381584876" sha1="04f65b4973945028fcf434a5d0f46be93b9bd2b6"/>
   <docblock>
     <description compact="Tax config model with new shipping tax class calculation"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
-    <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
-    <version value="$Id:$"/>
-    <since value="0.6.2"/>
   </docblock>
   <extends full="Mage_Tax_Model_Config" namespace="" name="Mage_Tax_Model_Config"/>
   <constant name="XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX" value="'tax/classes/shipping_tax_on_product_tax'"/>
   <constant name="USE_HIGHTES_TAX_ON_PRODUCTS" value="1"/>
   <constant name="USE_TAX_DEPENDING_ON_PRODUCT_VALUES" value="2"/>
-  <method name="getShippingTaxClass" start="47" end="128" abstract="false" final="false" static="false" visibility="public">
+  <method name="getShippingTaxClass" start="43" end="124" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Get tax class id specified for shipping tax estimation based on highest product tax rate of the products in the current customer quote."/>
       <param description="Store Model" type="object" variable="$store">
@@ -25,7 +21,7 @@
     </docblock>
     <parameter name="store" byreference="false" type="{unknown}" default="null"/>
   </method>
-  <method name="_loadTaxCalculationRate" start="136" end="152" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_loadTaxCalculationRate" start="132" end="148" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Gets tax percents for current sales quote item"/>
       <param description="Quote Item" type="object" variable="$item">

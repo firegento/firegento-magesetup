@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status" namespace="" name="FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status" abstract="false" final="false" start="34" end="44">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Resource/Newsletter/Subscriber" file="Status.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Resource/Newsletter/Subscriber/Status.php" size="1524" time="2013-09-07T17:52:04+02:00" unixtime="1378569124" sha1="1a65d06d13505823c81a80312a974c168952b877"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Resource/Newsletter/Subscriber" file="Status.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Resource/Newsletter/Subscriber/Status.php" size="1495" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="ac810ea372e8315959a67d3a46f110ee0ea347c4"/>
   <docblock>
     <description compact="Subscriber Status Resource Model"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="1.1.4"/>

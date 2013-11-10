@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Source_Tax_DynamicType" namespace="" name="FireGento_MageSetup_Model_Source_Tax_DynamicType" abstract="false" final="false" start="34" end="59">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax" file="DynamicType.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax/DynamicType.php" size="2110" time="2013-09-07T20:27:25+02:00" unixtime="1378578445" sha1="0216722e9cd9ad26ac2e26912798d20c284453e7"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax" file="DynamicType.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax/DynamicType.php" size="2081" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="62a86f0d976635ed8d105f80acac8a462ec80035"/>
   <docblock>
     <description compact="CMS Source model for configuration dropdown of CMS pages"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="1.2.0"/>

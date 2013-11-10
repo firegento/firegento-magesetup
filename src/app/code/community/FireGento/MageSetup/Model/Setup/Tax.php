@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the FIREGENTO project.
+ * This file is part of a FireGento e.V. module.
  *
- * FireGento_MageSetup is free software; you can redistribute it and/or
+ * This FireGento e.V. module is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.2.0
@@ -23,13 +23,9 @@
 /**
  * Setup class for Tax Settings
  *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     0.5.0
+ * @category FireGento
+ * @package  FireGento_MageSetup
+ * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setup_Abstract
 {
@@ -59,15 +55,11 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
      */
     public function setup()
     {
-        $canTruncate = true;
-
-        if ($canTruncate) {
-            $this->_truncateTable('tax/tax_class');
-            $this->_truncateTable('tax/tax_calculation_rule');
-            $this->_truncateTable('tax/tax_calculation_rate');
-            $this->_truncateTable('tax/tax_calculation_rate_title');
-            $this->_truncateTable('tax/tax_calculation');
-        }
+        $this->_truncateTable('tax/tax_class');
+        $this->_truncateTable('tax/tax_calculation_rule');
+        $this->_truncateTable('tax/tax_calculation_rate');
+        $this->_truncateTable('tax/tax_calculation_rate_title');
+        $this->_truncateTable('tax/tax_calculation');
 
         // Tax classes
         $taxClasses = array();
@@ -309,8 +301,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
      * DELETE is used, in order to prevent problems with
      * foreign key checks.
      *
-     * @param  string $table
-     * @return void
+     * @param string $table Database to truncate
      */
     protected function _truncateTable($table)
     {
@@ -321,9 +312,8 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Insert a line into a database table
      *
-     * @param  string $table Table
-     * @param  array $data
-     * @return void
+     * @param string $table Table
+     * @param array  $data  Data to insert
      */
     protected function _insertIntoTable($table, $data)
     {
@@ -333,7 +323,9 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     }
 
     /**
-     * @return Varien_Db_Adapter_Pdo_Mysql
+     * Retrieve the database adapter
+     *
+     * @return Varien_Db_Adapter_Pdo_Mysql Database Adapter
      */
     protected function _getConnection()
     {
@@ -341,7 +333,9 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     }
 
     /**
-     * @return Mage_Eav_Model_Entity_Setup
+     * Retrieve the setup class
+     *
+     * @return Mage_Eav_Model_Entity_Setup Setup Class
      */
     protected function _getSetup()
     {
@@ -351,8 +345,8 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get table name from table alias
      *
-     * @param string $tableAlias
-     * @return string
+     * @param  string $tableAlias Table Alias
+     * @return string Correct Table Name
      */
     protected function _getTable($tableAlias)
     {
@@ -362,8 +356,8 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     /**
      * Get last insert ID
      *
-     * @param string $table Table
-     * @return int
+     * @param  string $table Table
+     * @return int Last inserted id
      */
     protected function _lastInsertId($table)
     {

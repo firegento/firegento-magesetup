@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the FIREGENTO project.
+ * This file is part of a FireGento e.V. module.
  *
- * FireGento_MageSetup is free software; you can redistribute it and/or
+ * This FireGento e.V. module is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.4.0
@@ -23,13 +23,9 @@
 /**
  * Displays a form with some options to setup things
  *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     0.4.0
+ * @category FireGento
+ * @package  FireGento_MageSetup
+ * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block_Widget
 {
@@ -169,63 +165,76 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     }
 
     /**
-     * @return string
+     * Retrieve the new product tax classes as JSON
+     *
+     * @return string JSON with Product Tax Classes
      */
     public function getNewProductTaxClassesJson()
     {
-        $countryTaxClasses = array();
-        foreach(Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+        $moduleDir = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup');
 
-            $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . $countryId . DS . 'tax.xml';
+        $countryTaxClasses = array();
+        foreach (Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+            // Get the config file for the given country
+            $configFile = $moduleDir . DS . $countryId . DS . 'tax.xml';
 
             // If the given file does not exist, use the default file
             if (!file_exists($configFile)) {
-                $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . 'default' . DS . 'tax.xml';
+                $configFile = $moduleDir . DS . 'default' . DS . 'tax.xml';
             }
 
             $xml = new SimpleXMLElement(file_get_contents($configFile));
-            
+
+            // @codingStandardsIgnoreStart
             $taxClasses = $xml->default->magesetup->tax_classes->default;
-            foreach($taxClasses->children() as $identifier => $taxClass) {
+            foreach ($taxClasses->children() as $identifier => $taxClass) {
                 if ($taxClass->class_type != 'PRODUCT'
                     || $taxClass->execute != 1
                     || strpos($identifier, 'shipping') === 0) {
                     continue;
                 }
+
                 $countryTaxClasses[$countryId][(string)$taxClass->class_id] = (string)$taxClass->class_name;
             }
+            // @codingStandardsIgnoreEnd
 
             $countryTaxClasses[$countryId][] = $this->__('No tax');
         }
-        
+
         return Zend_Json::encode($countryTaxClasses);
     }
 
     /**
-     * @return string
+     * Retrieve the new customer tax classes as JSON
+     *
+     * @return string JSON with Customer Tax Classes
      */
     public function getNewCustomerTaxClassesJson()
     {
-        $countryTaxClasses = array();
-        foreach(Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+        $moduleDir = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup');
 
-            $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . $countryId . DS . 'tax.xml';
+        $countryTaxClasses = array();
+        foreach (Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
+            // Get the config file for the given country
+            $configFile = $moduleDir . DS . $countryId . DS . 'tax.xml';
 
             // If the given file does not exist, use the default file
             if (!file_exists($configFile)) {
-                $configFile = Mage::getConfig()->getModuleDir('etc', 'FireGento_MageSetup') . DS . 'default' . DS . 'tax.xml';
+                $configFile = $moduleDir. DS . 'default' . DS . 'tax.xml';
             }
 
             $xml = new SimpleXMLElement(file_get_contents($configFile));
 
+            // @codingStandardsIgnoreStart
             $taxClasses = $xml->default->magesetup->tax_classes->default;
-            foreach($taxClasses->children() as $identifier => $taxClass) {
+            foreach ($taxClasses->children() as $identifier => $taxClass) {
                 if ($taxClass->class_type != 'CUSTOMER'
                     || $taxClass->execute != 1) {
                     continue;
                 }
                 $countryTaxClasses[$countryId][(string)$taxClass->class_id] = (string)$taxClass->class_name;
             }
+            // @codingStandardsIgnoreEnd
         }
 
         return Zend_Json::encode($countryTaxClasses);

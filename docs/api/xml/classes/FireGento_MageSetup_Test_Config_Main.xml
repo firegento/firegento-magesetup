@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Test_Config_Main" namespace="" name="FireGento_MageSetup_Test_Config_Main" abstract="false" final="false" start="34" end="131">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Test/Config" file="Main.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Test/Config/Main.php" size="6925" time="2013-09-07T17:17:01+02:00" unixtime="1378567021" sha1="ee9b4cdb22b885061d52c18e256f10dd345bf854"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Test/Config" file="Main.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Test/Config/Main.php" size="6896" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="1a6a3156eceb35b1561a6a60954fa96c6e5ec968"/>
   <docblock>
     <description compact="PHPUnit Test Class"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="2.0.0"/>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Observer" namespace="" name="FireGento_MageSetup_Model_Observer" abstract="false" final="false" start="34" end="356">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model" file="Observer.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Observer.php" size="12961" time="2013-09-07T20:31:25+02:00" unixtime="1378578685" sha1="c496939447420245cd9d4ca5817f8c0edaae7df5"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Observer" namespace="" name="FireGento_MageSetup_Model_Observer" abstract="false" final="false" start="34" end="355">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model" file="Observer.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Observer.php" size="12894" time="2013-10-12T16:15:54+02:00" unixtime="1381587354" sha1="d7ce208160d5911c5f0fb7359695fe0358178d1a"/>
   <docblock>
     <description compact="Observer class"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.2.0"/>
   </docblock>
   <method name="addIsVisibleOnCheckoutOption" start="44" end="63" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="Add &quot;Visible on Checkout Review on Front-end&quot; Option to Attribute Settings"/>
-      <magentoEvent value="adminhtml_catalog_product_attribute_edit_prepare_form"/>
+      <description compact="Add &quot;Visible on Checkout Review on Front-end&quot; Option to Attribute Settings">Event: &lt;adminhtml_catalog_product_attribute_edit_prepare_form&gt;</description>
       <param description="Observer" type="object" variable="$observer">
         <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
       </param>
@@ -29,8 +28,9 @@
   <method name="filterAgreements" start="76" end="92" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Filters all agreements">Filters all agreements against the Magento template filter. This enables the Magento
-administrator define a cms static block as the content of the checkout agreements..</description>
-      <magentoEvent value="core_block_abstract_to_html_before"/>
+administrator define a cms static block as the content of the checkout agreements..
+
+Event: &lt;core_block_abstract_to_html_before&gt;</description>
       <param description="Observer" type="object" variable="$observer">
         <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
       </param>
@@ -50,10 +50,9 @@ administrator define a cms static block as the content of the checkout agreement
     </docblock>
     <parameter name="string" byreference="false" type="{unknown}"/>
   </method>
-  <method name="autogenerateMetaInformation" start="117" end="152" abstract="false" final="false" static="false" visibility="public">
+  <method name="autogenerateMetaInformation" start="116" end="151" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="Auto-Generates the meta information of a product."/>
-      <magentoEvent value="catalog_product_save_before"/>
+      <description compact="Auto-Generates the meta information of a product.">Event: &lt;catalog_product_save_before&gt;</description>
       <param description="Observer" type="object" variable="$observer">
         <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
       </param>
@@ -65,7 +64,7 @@ administrator define a cms static block as the content of the checkout agreement
       <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
     </parameter>
   </method>
-  <method name="_getCategoryKeywords" start="160" end="167" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_getCategoryKeywords" start="159" end="166" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Get the categories of the current product"/>
       <param description="Product" type="object" variable="$product">
@@ -75,7 +74,7 @@ administrator define a cms static block as the content of the checkout agreement
     </docblock>
     <parameter name="product" byreference="false" type="{unknown}"/>
   </method>
-  <method name="_fetchCategoryNames" start="176" end="216" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_fetchCategoryNames" start="175" end="215" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Fetches all category names via category path; adds first the assigned categories and second all categories via path."/>
       <param description="Category Ids" type="array" variable="$categories"/>
@@ -83,7 +82,7 @@ administrator define a cms static block as the content of the checkout agreement
     </docblock>
     <parameter name="categories" byreference="false" type="{unknown}"/>
   </method>
-  <method name="_buildKeywords" start="224" end="236" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_buildKeywords" start="223" end="235" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Processes the category array and generates a string"/>
       <param description="Categories" type="array" variable="$categoryTypes"/>
@@ -91,10 +90,9 @@ administrator define a cms static block as the content of the checkout agreement
     </docblock>
     <parameter name="categoryTypes" byreference="false" type="{unknown}"/>
   </method>
-  <method name="addOptionsForAgreements" start="246" end="286" abstract="false" final="false" static="false" visibility="public">
+  <method name="addOptionsForAgreements" start="245" end="285" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="Add &quot;Required&quot; and &quot;Visible on Custom Creation&quot; Option to Checkout Agreements"/>
-      <magentoEvent value="adminhtml_block_html_before"/>
+      <description compact="Add &quot;Required&quot; and &quot;Visible on Custom Creation&quot; Option to Checkout Agreements">Event: &lt;adminhtml_block_html_before&gt;</description>
       <param description="Observer" type="object" variable="$observer">
         <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
       </param>
@@ -106,10 +104,9 @@ administrator define a cms static block as the content of the checkout agreement
       <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
     </parameter>
   </method>
-  <method name="recollectAfterQuoteItemUpdate" start="295" end="306" abstract="false" final="false" static="false" visibility="public">
+  <method name="recollectAfterQuoteItemUpdate" start="294" end="305" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="After updating the quantities of cart items, it might be needed to recalculate the shipping tax"/>
-      <magentoEvent value="checkout_cart_update_items_after"/>
+      <description compact="After updating the quantities of cart items, it might be needed to recalculate the shipping tax">Event: &lt;checkout_cart_update_items_after&gt;</description>
       <param description="Observer" type="object" variable="$observer">
         <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
       </param>
@@ -118,16 +115,15 @@ administrator define a cms static block as the content of the checkout agreement
       <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
     </parameter>
   </method>
-  <method name="_getCustomerCreateAgreements" start="313" end="325" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_getCustomerCreateAgreements" start="312" end="324" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Get required agreements on custom registration"/>
       <return description="Customer agreement ids" type="array"/>
     </docblock>
   </method>
-  <method name="customerCreatePreDispatch" start="335" end="355" abstract="false" final="false" static="false" visibility="public">
+  <method name="customerCreatePreDispatch" start="334" end="354" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="Check if there are required agreements for the customer registration and validate them if applicable."/>
-      <magentoEvent value="controller_action_predispatch_customer_account_createpost"/>
+      <description compact="Check if there are required agreements for the customer registration and validate them if applicable.">Event: &lt;controller_action_predispatch_customer_account_createpost&gt;</description>
       <param description="Observer" type="object" variable="$observer">
         <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
       </param>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Ga" namespace="" name="FireGento_MageSetup_Block_Ga" abstract="false" final="false" start="34" end="60">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block" file="Ga.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Ga.php" size="2169" time="2013-09-07T20:04:38+02:00" unixtime="1378577078" sha1="2026a9c0e822d20af5c1daaaa3678df750e892d9"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block" file="Ga.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Ga.php" size="2140" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="9af350a7e3ae2f2a48cb235d4da9ebe91ba28d68"/>
   <docblock>
     <description compact="Block to enable ip anonymization for german tracking."/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.1.0"/>

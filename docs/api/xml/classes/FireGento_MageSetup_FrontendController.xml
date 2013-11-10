@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_FrontendController" namespace="" name="FireGento_MageSetup_FrontendController" abstract="false" final="false" start="34" end="64">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers" file="FrontendController.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers/FrontendController.php" size="2368" time="2013-09-07T20:05:26+02:00" unixtime="1378577126" sha1="64922c0a705c9e7f2fec301ab1c71f08a824e23d"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers" file="FrontendController.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/controllers/FrontendController.php" size="2339" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="581f28650f6de9a72edee7cbe821d77d26b6e4be"/>
   <docblock>
     <description compact="Adminhtml Controller for dislaying a form for some actions"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.4.0"/>
