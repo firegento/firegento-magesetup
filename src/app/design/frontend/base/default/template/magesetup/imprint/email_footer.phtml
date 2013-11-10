@@ -99,4 +99,7 @@
     <?php if (strlen(trim($this->getIban()))): ?>
         <?php echo $this->__('IBAN') ?>: <?php echo $this->getIban() ?><br />
     <?php endif ?>
+    <?php if (strlen(trim($this->getClearing()))): ?>
+        <?php echo $this->__('Clearing') ?>: <?php echo $this->getClearing() ?><br />
+    <?php endif ?>
 </p>

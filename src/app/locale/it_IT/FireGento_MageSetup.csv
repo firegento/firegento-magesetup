@@ -62,6 +62,7 @@ CEO,Amministratore
 "Fax","Fax"
 "Financial office","Ufficio tributario"
 "IBAN","IBAN"
+"Clearing","Clearing"
 "Register court","Registro delle imprese"
 "Register number","HRB-Nummer"
 "SWIFT","SWIFT"
@@ -146,3 +147,4 @@ Nowhere,Mai
 "Invoice Payment","Pagamento su Fattura"
 "Extension Key","Codice modulo"
 "MagentoConnect","MagentoConnect"
+"Bank Information","Bank Information"

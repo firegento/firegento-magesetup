@@ -57,6 +57,7 @@
 "E-Mail","E-Mail"
 "Fax","Факс"
 "IBAN","IBAN"
+"Clearing","Clearing"
 "SWIFT","SWIFT"
 "BIC/SWIFT","BIC/SWIFT"
 "Tax number","Tax number"
@@ -130,3 +131,4 @@
 "Invoice Payment","Invoice Payment"
 "Extension Key","Ключ модуля"
 "MagentoConnect","MagentoConnect"
+"Bank Information","Bank Information"

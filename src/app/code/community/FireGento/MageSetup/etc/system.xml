@@ -356,6 +356,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </iban>
+                        <clearing translate="label">
+                            <label>Clearing</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </clearing>
                     </fields>
                 </imprint>
             </groups>

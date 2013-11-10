@@ -62,6 +62,7 @@
 "Fax","Fax"
 "Financial office","Bureau des finances"
 "IBAN","IBAN"
+"Clearing","Clearing"
 "Register court","Tribunal de commerce"
 "Register number","Numéro du tribunal de commerce"
 "SWIFT","SWIFT"
@@ -142,3 +143,4 @@
 "Invoice Payment","Facture"
 "Extension Key","Extension Key"
 "MagentoConnect","MagentoConnect"
+"Bank Information","Information bancaire"

@@ -28,7 +28,7 @@
 ?>
 
 <?php if (strlen(trim($this->getBankAccount())) || strlen(trim($this->getSwift()))): ?>
-    <h3>Bankverbindung</h3>
+    <h3><?php echo $this->__('Bank Information'); ?></h3>
 <?php endif ?>
 
 <?php if (strlen(trim($this->getBankAccountOwner()))): ?>
@@ -48,4 +48,7 @@
 <?php endif ?>
 <?php if (strlen(trim($this->getIban()))): ?>
     <?php echo $this->__('IBAN') ?>: <?php echo $this->getIban() ?><br />
+<?php endif ?>
+<?php if (strlen(trim($this->getClearing()))): ?>
+    <?php echo $this->__('Clearing') ?>: <?php echo $this->getClearing() ?><br />
 <?php endif ?>
