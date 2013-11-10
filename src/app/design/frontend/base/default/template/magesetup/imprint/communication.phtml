@@ -31,4 +31,4 @@
 <?php if (strlen(trim($this->getWeb()))): ?>
 <?php echo $this->__('Web') ?>: <a href="<?php echo $this->getWeb(true) ?>" title="<?php echo $this->getCompanyFirst() ?>"><?php echo $this->getWeb() ?></a><br />
 <?php endif ?>
-<?php echo $this->__('E-Mail') ?>: <a href="mailto:<?php echo $this->getEmail() ?>" title="<?php echo $this->getCompanyFirst() ?>"><?php echo $this->getEmail() ?></a>
+<?php echo $this->__('E-Mail') ?>: <?php echo $this->getEmail(true) ?>

@@ -96,4 +96,33 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
 
         return Mage::app()->getLocale()->getCountryTranslation($countryCode);
     }
+
+    /**
+     * Try to limit spam by generating a javascript email link
+     *
+     * @return string
+     */
+    public function getEmail($antispam = false)
+    {
+        $email = $this->getData('email');
+        $parts = explode('@', $email);
+
+        if (!$antispam) {return $email;}
+        if (count($parts) == 0) {return;}
+
+        $html = '<a href="#" onclick="javascript:toRecipient();">';
+        $html .= $parts[0] .'<span style="display:none">nospamplease</span>@<span style="display:none">nospamplease</span>'.$parts[1];
+        $html .= '</a>';
+        $html .= $this->getEmailJs($parts);
+
+        return $html;
+    }
+
+    public function getEmailJs($parts)
+    {
+        $js = <<<JS
+<script>function toRecipient(){var m = '$parts[0]';m += '@';m += '$parts[1]';location.href= "mailto:"+m;}</script>
+JS;
+        return $js;
+    }
 }
