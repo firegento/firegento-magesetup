@@ -63,17 +63,7 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
      */
     protected function _getProduct($item)
     {
-        $productId = $item->getProduct()->getId();
-        if (!array_key_exists($productId, $this->_products)) {
-            /* @var $product Mage_Catalog_Model_Product */
-            $product = Mage::getModel('catalog/product')
-                ->setStoreId(Mage::app()->getStore()->getId())
-                ->load($productId);
-
-            $this->_products[$productId] = $product;
-        }
-
-        return $this->_products[$productId];
+        return $item->getProduct();
     }
 
     /**
