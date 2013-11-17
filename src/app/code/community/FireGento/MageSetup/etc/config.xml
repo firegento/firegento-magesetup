@@ -96,6 +96,15 @@
                     </magesetup_observer>
                 </observers>
             </newsletter_subscriber_save_after>
+            <sales_quote_config_get_product_attributes>
+                <observers>
+                    <magesetup_quoteitems>
+                        <class>magesetup/observer</class>
+                        <type>singleton</type>
+                        <method>addProductAttributesToQuoteItems</method>
+                    </magesetup_quoteitems>
+                </observers>
+            </sales_quote_config_get_product_attributes>
         </events>
         <magesetup>
             <available_countries>
@@ -167,15 +176,6 @@
                     </magesetup_observer>
                 </observers>
             </controller_action_predispatch_customer_account_createpost>
-            <sales_quote_config_get_product_attributes>
-                <observers>
-                    <magesetup_quoteitems>
-                        <class>magesetup/observer</class>
-                        <type>singleton</type>
-                        <method>addProductAttributesToQuoteItems</method>
-                    </magesetup_quoteitems>
-                </observers>
-            </sales_quote_config_get_product_attributes>
         </events>
         <routers>
             <magesetup>
