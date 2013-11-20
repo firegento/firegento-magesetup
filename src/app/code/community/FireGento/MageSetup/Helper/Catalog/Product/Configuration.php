@@ -100,6 +100,10 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
         $attributes = $product->getAttributes();
         foreach ($attributes as $attribute) {
             if ($attribute->getIsVisibleOnCheckout()) {
+				if(in_array($attribute->getFrontendInput(), array('select','multiselect')) && !$product->getData($attribute->getAttributeCode()))
+				{
+					continue;
+				}
                 $value = $attribute->getFrontend()->getValue($product);
                 if (!$product->hasData($attribute->getAttributeCode()) || (string) $value == '') {
                     $value = '';
