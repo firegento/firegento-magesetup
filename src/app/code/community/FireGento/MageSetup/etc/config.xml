@@ -98,6 +98,24 @@
             </newsletter_subscriber_save_after>
         </events>
         <magesetup>
+        	<additional_files>
+        		<cms>
+    	    		<filename>cms.xml</filename>
+	        		<overwrite>0</overwrite>
+	        	</cms>
+        		<email>
+    	    		<filename>email.xml</filename>
+	        	</email>
+        		<systemconfig>
+    	    		<filename>systemconfig.xml</filename>
+	        	</systemconfig>
+        		<agreement>
+    	    		<filename>agreement.xml</filename>
+	        	</agreement>
+        		<tax>
+    	    		<filename>tax.xml</filename>
+	        	</tax>
+        	</additional_files>
             <available_countries>
                 <at />
                 <ch />
