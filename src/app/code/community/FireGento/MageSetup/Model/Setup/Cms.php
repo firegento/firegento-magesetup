@@ -72,13 +72,47 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     }
 
     /**
+     * Sort Config Nodes based on values of a given tagname, defaults to <position>
+     *
+     * @param array  $nodes
+     * @param string $sortTag
+     *
+     * @return array Config Nodes
+     */
+    protected function _sortConfigNodes(array $nodes, $sortTag = 'position')
+    {
+        $i = 0;
+        foreach ($nodes as &$node) {
+            if (array_key_exists($sortTag, $node) && !is_null($node[$sortTag]) && $node[$sortTag] > $i) {
+                $i = $node[$sortTag];
+            }
+        }
+        foreach ($nodes as &$node) {
+            if (!array_key_exists($sortTag, $node) || is_null($node[$sortTag])) {
+                $i += 10;
+                $node[$sortTag] = (string)$i;
+            }
+        }
+
+        uasort($nodes, function ($a, $b) {
+            if ($a['position'] == $b['position']) { return 0; }
+            return ($a['position'] < $b['position']) ? -1 : 1;
+        });
+
+        return $nodes;
+    }
+
+    /**
      * Get pages/default from config file
      *
      * @return array Config pages
      */
     protected function _getConfigPages()
     {
-        return $this->_getConfigNode('pages', 'default');
+        $configPages = $this->_getConfigNode('pages', 'default');
+        $configPages = $this->_sortConfigNodes($configPages);
+
+        return $configPages;
     }
 
     /**
@@ -137,6 +171,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
 
         if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
             $data['title'] = $matches[1];
+            $data['content_heading'] = $matches[1];
             $templateContent = str_replace($matches[0], '', $templateContent);
         }
 
