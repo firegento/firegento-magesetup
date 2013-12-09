@@ -96,7 +96,10 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
         $config = Mage::getConfig();
 
         // Load additional config files
-        $this->_addConfigFile('cms.xml', $mergeConfig);
+        foreach($config->getNode('global/magesetup/additional_files')->asCanonicalArray() as $file) {
+            $this->_addConfigFile($file['filename'], $mergeConfig, (array_key_exists('overwrite', $file) && (bool) $file['overwrite'] === false ? false : true));
+        }
+        $this->_addConfigFile('cms.xml', $mergeConfig, false);
         $this->_addConfigFile('email.xml', $mergeConfig);
         $this->_addConfigFile('systemconfig.xml', $mergeConfig);
         $this->_addConfigFile('agreement.xml', $mergeConfig);
@@ -117,7 +120,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
      * @param string                      $fileName    File to load
      * @param Mage_Core_Model_Config_Base $mergeConfig Global config for merging
      */
-    protected function _addConfigFile($fileName, $mergeConfig)
+    protected function _addConfigFile($fileName, $mergeConfig, $overwrite = true)
     {
         $config = Mage::getConfig();
         $configFile = $config->getModuleDir('etc', 'FireGento_MageSetup') . DS . $this->getCountry() . DS . $fileName;
@@ -130,7 +133,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
         // Load the given config file
         if (file_exists($configFile)) {
             if ($mergeConfig->loadFile($configFile)) {
-                $config->extend($mergeConfig, true);
+                $config->extend($mergeConfig, $overwrite);
             }
         }
     }
