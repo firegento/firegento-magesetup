@@ -348,4 +348,33 @@ class FireGento_MageSetup_Model_Observer
             );
         }
     }
+
+    /**
+     * add product attributes to quote items collection
+     *
+     * @magentoEvent sales_quote_config_get_product_attributes
+     *
+     * @param Varien_Event_Observer $observer Observer
+     */
+    public function addProductAttributesToQuoteItems(Varien_Event_Observer $observer)
+    {
+        $cachetag = 'magesetup_quote_attributes';
+        if(Mage::app()->useCache('eav') && Mage::app()->loadCache($cachetag))
+        {
+            foreach(explode(',', Mage::app()->loadCache($cachetag)) as $_cacheRow)
+            {
+                $observer->getAttributes()->setData($_cacheRow, '');
+            }
+        } else {
+            $collection = Mage::getResourceModel('catalog/product_attribute_collection')
+                    ->setItemObjectClass('catalog/resource_eav_attribute')
+                    ->addFieldToFilter('additional_table.is_visible_on_checkout', 1);
+            $attrList = array();
+            foreach($collection as $_attribute) {
+                $attrList[] = $_attribute->getAttributeCode();
+                $observer->getAttributes()->setData($_attribute->getAttributeCode(), '');
+            }
+            Mage::app()->saveCache(implode(',', $attrList), $cachetag, array('eav'), false);
+        }
+    }
 }

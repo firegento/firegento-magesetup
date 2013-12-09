@@ -63,17 +63,7 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
      */
     protected function _getProduct($item)
     {
-        $productId = $item->getProduct()->getId();
-        if (!array_key_exists($productId, $this->_products)) {
-            /* @var $product Mage_Catalog_Model_Product */
-            $product = Mage::getModel('catalog/product')
-                ->setStoreId(Mage::app()->getStore()->getId())
-                ->load($productId);
-
-            $this->_products[$productId] = $product;
-        }
-
-        return $this->_products[$productId];
+        return $item->getProduct();
     }
 
     /**
@@ -110,6 +100,10 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
         $attributes = $product->getAttributes();
         foreach ($attributes as $attribute) {
             if ($attribute->getIsVisibleOnCheckout()) {
+				if(in_array($attribute->getFrontendInput(), array('select','multiselect')) && !$product->getData($attribute->getAttributeCode()))
+				{
+					continue;
+				}
                 $value = $attribute->getFrontend()->getValue($product);
                 if (!$product->hasData($attribute->getAttributeCode()) || (string) $value == '') {
                     $value = '';
