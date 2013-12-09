@@ -53,6 +53,11 @@
                 },
                 {
                     "type":"magelocale",
+                    "structure":"dir",
+                    "path":"de_CH/template/magesetup"
+                },
+                {
+                    "type":"magelocale",
                     "structure":"file",
                     "path":"de_DE/FireGento_MageSetup.csv"
                 },
@@ -80,6 +85,11 @@
                     "type":"magelocale",
                     "structure":"dir",
                     "path":"ru_RU/template/magesetup"
+                },
+                {
+                    "type":"magelocale",
+                    "structure":"dir",
+                    "path":"fr_CH/template/magesetup"
                 },
                 {
                     "type":"magelocale",
