@@ -100,6 +100,7 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
     /**
      * Try to limit spam by generating a javascript email link
      *
+     * @param boolean true
      * @return string
      */
     public function getEmail($antispam = false)
@@ -107,17 +108,28 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
         $email = $this->getData('email');
         $parts = explode('@', $email);
 
-        if (!$antispam) {return $email;}
-        if (count($parts) == 0) {return;}
+        if (!$antispam) {
+            return $email;
+        }
+
+        if (count($parts) == 0) {
+            return;
+        }
 
         $html = '<a href="#" onclick="javascript:toRecipient();">';
-        $html .= $parts[0] .'<span style="display:none">nospamplease</span>@<span style="display:none">nospamplease</span>'.$parts[1];
+        $html .= $parts[0] .'<span class="no-display">nospamplease</span>@<span class="no-display">nospamplease</span>'.$parts[1];
         $html .= '</a>';
         $html .= $this->getEmailJs($parts);
 
         return $html;
     }
 
+    /**
+     * Generate JS code
+     *
+     * @param $parts
+     * @return string
+     */
     public function getEmailJs($parts)
     {
         $js = <<<JS
