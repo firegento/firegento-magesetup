@@ -40,7 +40,7 @@
                                      tax_customer_class="customers_end_consumers,customers_companies"
                                      tax_product_class="products_rate_2">
                         <execute>1</execute>
-                        <code>Clients achètent les produits au taux réduit de 7%</code>
+                        <code>Clients achètent les produits au taux réduit de 10%</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_rate_2>
@@ -70,14 +70,14 @@
                     <products_rate_1>
                         <execute>1</execute>
                         <class_id>1</class_id>
-                        <class_name>Produits au taux plein de 19.6%</class_name>
+                        <class_name>Produits au taux plein de 20%</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>1</default>
                     </products_rate_1>
                     <products_rate_2>
                         <execute>1</execute>
                         <class_id>2</class_id>
-                        <class_name>Produits au taux réduit de 7%</class_name>
+                        <class_name>Produits au taux réduit de 10%</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </products_rate_2>
@@ -123,16 +123,16 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>TVA de 19.6%</label>
-                        <rate>19.6</rate>
+                        <label>TVA de 20%</label>
+                        <rate>20</rate>
                     </tax_calculation_rate_1>
 
                     <tax_calculation_rate_2>
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>TVA réduite de 7%</label>
-                        <rate>7</rate>
+                        <label>TVA réduite de 10%</label>
+                        <rate>10</rate>
                     </tax_calculation_rate_2>
                     
                     <tax_calculation_rate_3>
