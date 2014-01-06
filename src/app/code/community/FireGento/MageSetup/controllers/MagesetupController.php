@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the FIREGENTO project.
+ * This file is part of a FireGento e.V. module.
  *
- * FireGento_MageSetup is free software; you can redistribute it and/or
+ * This FireGento e.V. module is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
@@ -23,13 +23,9 @@
 /**
  * Adminhtml Controller for dislaying a form for some actions
  *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     0.4.0
+ * @category FireGento
+ * @package  FireGento_MageSetup
+ * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_Action
 {
@@ -41,9 +37,9 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
         $helper = Mage::helper('magesetup');
 
         if (!Mage::getStoreConfig('magesetup/is_initialized')) {
-            Mage::getSingleton('adminhtml/session')->addNotice(
-                $this->__('If you want to add additional StoreViews (i.e. for multiple languages), please do so before submitting this form.')
-            );
+            $notice = 'If you want to add additional StoreViews (i.e. for multiple languages), ';
+            $notice .= 'please do so before submitting this form.';
+            Mage::getSingleton('adminhtml/session')->addNotice($this->__($notice));
         }
 
         $this->_title($helper->__('System'))
@@ -79,6 +75,17 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
     }
 
     /**
+     * Skip setup by setting the config flag accordingly
+     */
+    public function skipAction()
+    {
+        /* @var $helper FireGento_MageSetup_Helper_Data */
+        $helper = Mage::helper('magesetup');
+        $helper->setIsInitialized();
+        $this->_redirectReferer();
+    }
+
+    /**
      * Recommended extensions
      */
     public function extensionsAction()
@@ -96,12 +103,14 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
     }
 
     /**
+     * Retrieve the submitted params of the setup form
+     *
      * @return array
      */
     protected function _getParams()
     {
         $params = $this->getRequest()->getParams();
-        
+
         if (!isset($params['systemconfig'])) {
             $params['systemconfig'] = false;
         }
@@ -121,7 +130,7 @@ class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_
         if (!isset($params['email'])) {
             $params['email'] = false;
         }
-        
+
         return $params;
     }
 }

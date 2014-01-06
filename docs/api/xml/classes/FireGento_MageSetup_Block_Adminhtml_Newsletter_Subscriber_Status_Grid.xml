@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid" namespace="" name="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid" abstract="false" final="false" start="34" end="128">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Newsletter/Subscriber/Status" file="Grid.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Newsletter/Subscriber/Status/Grid.php" size="4316" time="2013-09-07T19:53:38+02:00" unixtime="1378576418" sha1="c1c89f24adb680fa76a04f928b3cc743f023f8ca"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid" namespace="" name="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid" abstract="false" final="false" start="34" end="125">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Newsletter/Subscriber/Status" file="Grid.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Newsletter/Subscriber/Status/Grid.php" size="4124" time="2013-10-12T16:23:51+02:00" unixtime="1381587831" sha1="ae34c0c50b453926ecfb2561c053f418d4c24c83"/>
   <docblock>
     <description compact="Newsletter Subscriber Status Grid"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="1.1.4"/>
@@ -17,35 +17,32 @@
       <description compact="Class constructor"/>
     </docblock>
   </constructor>
-  <method name="_prepareCollection" start="56" end="62" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_prepareCollection" start="55" end="61" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Prepares the grid collection"/>
-      <see value="Mage_Adminhtml_Block_Widget_Grid::_prepareCollection()"/>
       <return description="Grid" type="object">
         <type full="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid" namespace="" name="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid"/>
       </return>
     </docblock>
   </method>
-  <method name="_prepareColumns" start="70" end="105" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_prepareColumns" start="68" end="103" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Prepares the grid columns"/>
-      <see value="Mage_Adminhtml_Block_Widget_Grid::_prepareColumns()"/>
       <return description="Grid" type="object">
         <type full="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid" namespace="" name="FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid"/>
       </return>
     </docblock>
   </method>
-  <method name="getGridUrl" start="112" end="115" abstract="false" final="false" static="false" visibility="public">
+  <method name="getGridUrl" start="110" end="113" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve the grid url for ajax reloads"/>
       <return description="Grid Url" type="string"/>
     </docblock>
   </method>
-  <method name="getRowUrl" start="124" end="127" abstract="false" final="false" static="false" visibility="public">
+  <method name="getRowUrl" start="121" end="124" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Deactivate the grid row url"/>
-      <see value="Mage_Adminhtml_Block_Widget_Grid::getRowUrl()"/>
-      <param type="object" variable="$row">
+      <param description="Newsletter Subscriber Status Model" type="object" variable="$row">
         <type full="Varien_Object" namespace="" name="Varien_Object"/>
       </param>
       <return description="Row Url" type="object">

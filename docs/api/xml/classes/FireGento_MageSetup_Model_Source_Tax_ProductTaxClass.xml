@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Source_Tax_ProductTaxClass" namespace="" name="FireGento_MageSetup_Model_Source_Tax_ProductTaxClass" abstract="false" final="false" start="34" end="63">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax" file="ProductTaxClass.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax/ProductTaxClass.php" size="2289" time="2013-09-07T20:28:52+02:00" unixtime="1378578532" sha1="f7f45c0416a01ee3e5fff35b062b0ac8f2ca896f"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax" file="ProductTaxClass.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/Tax/ProductTaxClass.php" size="2238" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="e74fd90e28f40ea3040656be59d8255849904f00"/>
   <docblock>
-    <description compact="Tax Source model for new tax classes, possibly not created yet"/>
+    <description compact="Tax Source model for product tax classes"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="1.2.0"/>

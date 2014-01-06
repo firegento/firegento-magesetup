@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Adminhtml_Magesetup" namespace="" name="FireGento_MageSetup_Block_Adminhtml_Magesetup" abstract="false" final="false" start="34" end="150">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml" file="Magesetup.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Magesetup.php" size="4377" time="2013-09-07T19:52:35+02:00" unixtime="1378576355" sha1="ab3f73429d8f176c9d494c061e8d8af9d2cfc01e"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Adminhtml_Magesetup" namespace="" name="FireGento_MageSetup_Block_Adminhtml_Magesetup" abstract="false" final="false" start="34" end="241">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml" file="Magesetup.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Adminhtml/Magesetup.php" size="7659" time="2013-10-12T16:24:39+02:00" unixtime="1381587879" sha1="6a3bc1ca12b4e656f5326202348b7b831fa2566c"/>
   <docblock>
     <description compact="Displays a form with some options to setup things"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.4.0"/>
@@ -29,31 +29,43 @@
       <return description="All existing product tax classes" type="array"/>
     </docblock>
   </method>
-  <method name="getNewProductTaxClasses" start="70" end="73" abstract="false" final="false" static="false" visibility="public">
+  <method name="getCustomerTaxClasses" start="70" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get old product tax classes"/>
+      <return description="All existing product tax classes" type="array"/>
+    </docblock>
+  </method>
+  <method name="getNewProductTaxClasses" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Get new product tax classes (yet to be created)"/>
       <return description="All new product tax classes" type="array"/>
     </docblock>
   </method>
-  <method name="getDefaultProductTaxClass" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+  <method name="getNewCustomerTaxClasses" start="90" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get new product tax classes (yet to be created)"/>
+      <return description="All new product tax classes" type="array"/>
+    </docblock>
+  </method>
+  <method name="getDefaultProductTaxClass" start="100" end="103" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve the default default new product tax class (yet to be created)"/>
       <return description="Default Product Tax Class" type="int"/>
     </docblock>
   </method>
-  <method name="getLocaleOptionsForEmailTemplates" start="90" end="101" abstract="false" final="false" static="false" visibility="public">
+  <method name="getLocaleOptionsForEmailTemplates" start="110" end="121" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve all locales where the directory email/template exists"/>
       <return description="Locale options for email templates" type="array"/>
     </docblock>
   </method>
-  <method name="getLocaleOptionsForCmsContent" start="108" end="119" abstract="false" final="false" static="false" visibility="public">
+  <method name="getLocaleOptionsForCmsContent" start="128" end="139" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve all locales where the directory email/template exists"/>
       <return description="Locale options for CMS content" type="array"/>
     </docblock>
   </method>
-  <method name="isMultiStore" start="126" end="129" abstract="false" final="false" static="false" visibility="public">
+  <method name="isMultiStore" start="146" end="149" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Check if there is more than one Store View"/>
       <return description="Flag if there are more than one store" type="object">
@@ -61,16 +73,28 @@
       </return>
     </docblock>
   </method>
-  <method name="getStores" start="136" end="139" abstract="false" final="false" static="false" visibility="public">
+  <method name="getStores" start="156" end="159" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve all stores"/>
       <return description="All stores" type="array"/>
     </docblock>
   </method>
-  <method name="getAvailableCountriesForSetup" start="146" end="149" abstract="false" final="false" static="false" visibility="public">
+  <method name="getAvailableCountriesForSetup" start="166" end="169" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve all available countries for MageSetup"/>
       <return description="All allowed countries" type="array"/>
+    </docblock>
+  </method>
+  <method name="getNewProductTaxClassesJson" start="176" end="206" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the new product tax classes as JSON"/>
+      <return description="JSON with Product Tax Classes" type="string"/>
+    </docblock>
+  </method>
+  <method name="getNewCustomerTaxClassesJson" start="213" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the new customer tax classes as JSON"/>
+      <return description="JSON with Customer Tax Classes" type="string"/>
     </docblock>
   </method>
 </class>

@@ -64,7 +64,7 @@
         </div>
         <ul class="fileinfos">
           <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
-          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.de). All rights served.</li>
+          <li><b>Copyright: </b>2013 FireGento Team (http://www.firegento.com)</li>
           <li><b>License: </b>http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)</li>
         </ul>
         <h3>Methods</h3>
@@ -73,7 +73,7 @@
             <a name="addIsVisibleOnCheckoutOption"/>
             <h4><span class="label public">public</span>addIsVisibleOnCheckoutOption<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
-              <li>Add "Visible on Checkout Review on Front-end" Option to Attribute Settings</li>
+              <li>Add "Visible on Checkout Review on Front-end" Option to Attribute Settings<pre>Event: &lt;adminhtml_catalog_product_attribute_edit_prepare_form&gt;</pre></li>
             </p>
             <ul>
               <h4 class="param">Parameters:</h4>
@@ -92,7 +92,7 @@
             <a name="addOptionsForAgreements"/>
             <h4><span class="label public">public</span>addOptionsForAgreements<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
-              <li>Add "Required" and "Visible on Custom Creation" Option to Checkout Agreements</li>
+              <li>Add "Required" and "Visible on Custom Creation" Option to Checkout Agreements<pre>Event: &lt;adminhtml_block_html_before&gt;</pre></li>
             </p>
             <ul>
               <h4 class="param">Parameters:</h4>
@@ -111,7 +111,7 @@
             <a name="autogenerateMetaInformation"/>
             <h4><span class="label public">public</span>autogenerateMetaInformation<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
-              <li>Auto-Generates the meta information of a product.</li>
+              <li>Auto-Generates the meta information of a product.<pre>Event: &lt;catalog_product_save_before&gt;</pre></li>
             </p>
             <ul>
               <h4 class="param">Parameters:</h4>
@@ -130,7 +130,7 @@
             <a name="customerCreatePreDispatch"/>
             <h4><span class="label public">public</span>customerCreatePreDispatch<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
-              <li>Check if there are required agreements for the customer registration and validate them if applicable.</li>
+              <li>Check if there are required agreements for the customer registration and validate them if applicable.<pre>Event: &lt;controller_action_predispatch_customer_account_createpost&gt;</pre></li>
             </p>
             <ul>
               <h4 class="param">Parameters:</h4>
@@ -144,7 +144,9 @@
             <h4><span class="label public">public</span>filterAgreements<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
               <li>Filters all agreements<pre>Filters all agreements against the Magento template filter. This enables the Magento
-administrator define a cms static block as the content of the checkout agreements..</pre></li>
+administrator define a cms static block as the content of the checkout agreements..
+
+Event: &lt;core_block_abstract_to_html_before&gt;</pre></li>
             </p>
             <ul>
               <h4 class="param">Parameters:</h4>
@@ -163,7 +165,7 @@ administrator define a cms static block as the content of the checkout agreement
             <a name="recollectAfterQuoteItemUpdate"/>
             <h4><span class="label public">public</span>recollectAfterQuoteItemUpdate<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
-              <li>After updating the quantities of cart items, it might be needed to recalculate the shipping tax</li>
+              <li>After updating the quantities of cart items, it might be needed to recalculate the shipping tax<pre>Event: &lt;checkout_cart_update_items_after&gt;</pre></li>
             </p>
             <ul>
               <h4 class="param">Parameters:</h4>

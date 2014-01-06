@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * @category  FireGento
+ * @package   FireGento_MageSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ */
+ -->
+<config>
+    <default>
+        <magesetup>
+            <tax_calculation_rules>
+                <default>
+                    <products_full_tax tax_rate="tax_calculation_rate_1"
+                                       tax_customer_class="customers_end_users,customers_companies"
+                                       tax_product_class="products_rate_1,shipping_rate_1">
+                        <execute>1</execute>
+                        <code>Customers buy Products with full Tax</code>
+                        <priority>1</priority>
+                        <position>0</position>
+                    </products_full_tax>
+                    <products_reduced_tax tax_rate="tax_calculation_rate_2"
+                                          tax_customer_class="customers_end_users,customers_companies"
+                                          tax_product_class="products_rate_2,shipping_rate_2">
+                        <execute>1</execute>
+                        <code>Customers buy Products with reduced Tax</code>
+                        <priority>2</priority>
+                        <position>0</position>
+                    </products_reduced_tax>
+                    <products_no_vat tax_rate="tax_calculation_rate_3"
+                                     tax_customer_class="customers_companies_no_vat"
+                                     tax_product_class="product_rate_1,products_rate_2,shipping_rate_1,shipping_rate_2">
+                        <execute>1</execute>
+                        <code>Non-taxable Companies buy Products with full and reduced Tax</code>
+                        <priority>2</priority>
+                        <position>0</position>
+                    </products_no_vat>
+                </default>
+            </tax_calculation_rules>
+
+            <tax_classes>
+                <default>
+                    <products_rate_1>
+                        <execute>1</execute>
+                        <class_id>1</class_id>
+                        <class_name>Products with full Tax</class_name>
+                        <class_type>PRODUCT</class_type>
+                        <default>1</default>
+                    </products_rate_1>
+                    <products_rate_2>
+                        <execute>1</execute>
+                        <class_id>2</class_id>
+                        <class_name>Products with reduced Tax</class_name>
+                        <class_type>PRODUCT</class_type>
+                        <default>0</default>
+                    </products_rate_2>
+                    <shipping_rate_1>
+                        <execute>1</execute>
+                        <class_id>3</class_id>
+                        <class_name>Shipping with full Tax</class_name>
+                        <class_type>PRODUCT</class_type>
+                        <default>0</default>
+                    </shipping_rate_1>
+                    <shipping_rate_2>
+                        <execute>1</execute>
+                        <class_id>4</class_id>
+                        <class_name>Shipping with reduced Tax</class_name>
+                        <class_type>PRODUCT</class_type>
+                        <default>0</default>
+                    </shipping_rate_2>
+                    <customers_end_users>
+                        <execute>1</execute>
+                        <class_id>5</class_id>
+                        <class_name>End Customers</class_name>
+                        <class_type>CUSTOMER</class_type>
+                    </customers_end_users>
+                    <customers_companies>
+                        <execute>1</execute>
+                        <class_id>6</class_id>
+                        <class_name>Taxable Companies</class_name>
+                        <class_type>CUSTOMER</class_type>
+                    </customers_companies>
+                    <customers_companies_no_vat>
+                        <execute>1</execute>
+                        <class_id>7</class_id>
+                        <class_name>Non-Taxable Companies</class_name>
+                        <class_type>CUSTOMER</class_type>
+                    </customers_companies_no_vat>
+                </default>
+            </tax_classes>
+
+            <tax_calculation_rates>
+                <default>
+                    <tax_calculation_rate_1>
+                        <execute>1</execute>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
+                        <label>VAT</label>
+                        <rate>21</rate>
+                    </tax_calculation_rate_1>
+
+                    <tax_calculation_rate_2>
+                        <execute>1</execute>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
+                        <label>reduced VAT</label>
+                        <rate>6</rate>
+                    </tax_calculation_rate_2>
+
+                    <tax_calculation_rate_3>
+                        <execute>1</execute>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
+                        <label>without VAT</label>
+                        <rate>0</rate>
+                    </tax_calculation_rate_3>
+                </default>
+
+            </tax_calculation_rates>
+
+            <tax_config>
+                <default>
+                    <general__country__default>NL</general__country__default>
+                    <tax__classes__shipping_tax_class>3</tax__classes__shipping_tax_class>
+                    <tax__calculation__based_on>billing</tax__calculation__based_on>
+                    <tax__calculation__price_includes_tax>1</tax__calculation__price_includes_tax>
+                    <tax__calculation__shipping_includes_tax>1</tax__calculation__shipping_includes_tax>
+                    <tax__calculation__apply_after_discount>1</tax__calculation__apply_after_discount>
+                    <tax__calculation__discount_tax>1</tax__calculation__discount_tax>
+                    <tax__defaults__country>NL</tax__defaults__country>
+                    <tax__defaults__region></tax__defaults__region>
+                    <tax__defaults__postcode>1234</tax__defaults__postcode>
+                    <tax__display__type>2</tax__display__type>
+                    <tax__display__shipping>2</tax__display__shipping>
+                    <tax__cart_display__subtotal>2</tax__cart_display__subtotal>
+                    <tax__cart_display__full_summary>1</tax__cart_display__full_summary>
+                    <tax__cart_display__shipping>2</tax__cart_display__shipping>
+                    <tax__cart_display__price>2</tax__cart_display__price>
+                    <tax__cart_display__zero_tax>1</tax__cart_display__zero_tax>
+                    <tax__cart_display__grandtotal>0</tax__cart_display__grandtotal>
+                    <tax__sales_display__price>2</tax__sales_display__price>
+                    <tax__sales_display__subtotal>2</tax__sales_display__subtotal>
+                    <tax__sales_display__shipping>2</tax__sales_display__shipping>
+                    <tax__sales_display__grandtotal>0</tax__sales_display__grandtotal>
+                    <tax__sales_display__full_summary>1</tax__sales_display__full_summary>
+                    <tax__sales_display__zero_tax>1</tax__sales_display__zero_tax>
+                    <shipping__origin__country_id>NL</shipping__origin__country_id>
+                    <shipping__origin__region_id></shipping__origin__region_id>
+                    <shipping__origin__postcode>1234</shipping__origin__postcode>
+                    <shipping__origin__city>Sample City</shipping__origin__city>
+                </default>
+            </tax_config>
+        </magesetup>
+    </default>
+</config>

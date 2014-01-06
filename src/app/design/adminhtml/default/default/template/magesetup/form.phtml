@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the FIREGENTO project.
+ * This file is part of a FireGento e.V. module.
  *
- * FireGento_MageSetup is free software; you can redistribute it and/or
+ * This FireGento e.V. module is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
@@ -10,20 +10,15 @@
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- * PHP version 5
- *
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     0.4.0
  */
 ?>
 <?php
 /**
- * @see FireGento_MageSetup_Block_Adminhtml_Magesetup
  * @var $this FireGento_MageSetup_Block_Adminhtml_Magesetup
  */
 ?>
@@ -54,7 +49,7 @@
                             <td class="value" style="width:160px !important;">
                                 <select name="country" id="select_country" style="width:150px !important;">
                                     <?php foreach ($this->getAvailableCountriesForSetup() as $countryCode => $countryName): ?>
-                                    <option value="<?php echo $countryCode ?>"<?php if (Mage::getStoreConfig('magesetup/default_country') == $countryCode): ?> selected="selected"<?php endif ?>><?php echo $countryName ?></option>
+                                    <option value="<?php echo $countryCode ?>"<?php if (strtolower(Mage::getStoreConfig('general/country/default')) == $countryCode): ?> selected="selected"<?php endif ?>><?php echo $countryName ?></option>
                                     <?php endforeach ?>
                                 </select>
                             </td>
@@ -156,8 +151,8 @@
                 </table>
             </div>
         </div>
-        
-        
+
+
         <div class="entry-edit-head">
             <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('CMS Settings') ?></h4>
             <div class="form-buttons"></div>
@@ -330,9 +325,9 @@
             <?php endforeach ?>
         }
     }
-    
+
     updateNewTaxClassSelect($F('select_country'));
-    
+
     $('select_country').observe('change', function(event) {
         updateNewTaxClassSelect($F('select_country'));
     });

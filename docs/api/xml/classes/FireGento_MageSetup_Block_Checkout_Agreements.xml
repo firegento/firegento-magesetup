@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Checkout_Agreements" namespace="" name="FireGento_MageSetup_Block_Checkout_Agreements" abstract="false" final="false" start="34" end="68">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Checkout" file="Agreements.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Checkout/Agreements.php" size="2536" time="2013-09-07T20:02:02+02:00" unixtime="1378576922" sha1="c5f63b214a161c4ba2c80e112ffc59b76f629d45"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Checkout" file="Agreements.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Checkout/Agreements.php" size="2507" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="a49053ccbf7b57689359f4c8d3270db3cb781c1d"/>
   <docblock>
     <description compact="Block to display agreements on checkout."/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="1.2.2"/>

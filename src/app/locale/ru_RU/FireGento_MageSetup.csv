@@ -16,6 +16,7 @@
 "Shipping Weight %s","Вес посылки %s"
 
 "If you want to add additional StoreViews (i.e. for multiple languages), please do so before submitting this form.","Если вы хотите добавить дополнительные представления магазинов (для других языков), пожалуйста, сделайте это до сохранения этой формы."
+"Skip installation","Skip installation"
 "MageSetup has been installed.","MageSetup установлен."
 "Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Нажмите <a href=""%s"">сюда</a> для настройки ваших страниц, блоков, писем и налоговых правил."
 "Please choose the requested setups:","Пожалуйста, выберите необходимые установки:"
@@ -56,6 +57,7 @@
 "E-Mail","E-Mail"
 "Fax","Факс"
 "IBAN","IBAN"
+"Clearing","Clearing"
 "SWIFT","SWIFT"
 "BIC/SWIFT","BIC/SWIFT"
 "Tax number","Tax number"
@@ -129,3 +131,4 @@
 "Invoice Payment","Invoice Payment"
 "Extension Key","Ключ модуля"
 "MagentoConnect","MagentoConnect"
+"Bank Information","Bank Information"

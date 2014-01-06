@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the FIREGENTO project.
+ * This file is part of a FireGento e.V. module.
  *
- * FireGento_MageSetup is free software; you can redistribute it and/or
+ * This FireGento e.V. module is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.2.0
@@ -23,13 +23,9 @@
 /**
  * Setup class
  *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     1.2.0
+ * @category FireGento
+ * @package  FireGento_MageSetup
+ * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
 {
@@ -43,11 +39,17 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
      */
     public function setup($params = array(), $notify=false)
     {
+        if (!isset($params['country'])) {
+            Mage::throwException(
+                $this->_getHelper()->__('MageSetup: Please set up a country in your parameters.')
+            );
+        }
+
+        Mage::register('setup_country', $params['country']);
+
         $defaultParams = $this->_getDefaultParams();
 
         $params = array_merge($defaultParams, $params);
-
-        Mage::register('setup_country', $params['country']);
 
         if ($params['systemconfig']) {
             Mage::getSingleton('magesetup/setup_systemconfig')->setup();
@@ -125,9 +127,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
         }
 
         // Set a config flag to indicate that the setup has been initialized and refresh config cache.
-        Mage::getModel('eav/entity_setup', 'core_setup')->setConfigData('magesetup/is_initialized', '1');
-        Mage::app()->getCacheInstance()->cleanType('config');
-        Mage::dispatchEvent('adminhtml_cache_refresh_type', array('type' => 'config'));
+        $this->_getHelper()->setIsInitialized();
 
         return $this;
     }
@@ -141,12 +141,14 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
     {
         $productTaxClassTargets = array();
         foreach (Mage::getSingleton('magesetup/source_tax_productTaxClass')->getAllOptions() as $option) {
-            $productTaxClassTargets[$option['value']] = 1;
+            $value = Mage::getSingleton('magesetup/source_tax_newProductTaxClass')->getDefaultOption();
+            $productTaxClassTargets[$option['value']] = $value;
         }
 
         $customerTaxClassTargets = array();
         foreach (Mage::getSingleton('magesetup/source_tax_customerTaxClass')->getAllOptions() as $option) {
-            $customerTaxClassTargets[$option['value']] = 1;
+            $value = Mage::getSingleton('magesetup/source_tax_newCustomerTaxClass')->getDefaultOption();
+            $customerTaxClassTargets[$option['value']] = $value;
         }
 
         return array(

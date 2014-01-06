@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the FIREGENTO project.
+ * This file is part of a FireGento e.V. module.
  *
- * FireGento_MageSetup is free software; you can redistribute it and/or
+ * This FireGento e.V. module is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.2.0
@@ -23,13 +23,9 @@
 /**
  * Setup class for CMS pages and blocks
  *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     0.5.0
+ * @category FireGento
+ * @package  FireGento_MageSetup
+ * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setup_Abstract
 {
@@ -161,7 +157,12 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
 
         $data['content'] = $templateContent;
 
-        $page = Mage::getModel('cms/page')->setStoreId($storeId)->load($data['identifier']);
+        if (is_null($storeId)) {
+            $page = $this->_getDefaultPage($data['identifier']);
+        } else {
+            $page = Mage::getModel('cms/page')->setStoreId($storeId)->load($data['identifier']);
+        }
+
         if (is_array($page->getStoreId()) && !in_array(intval($storeId), $page->getStoreId())) {
             $page = Mage::getModel('cms/page');
         } else {
@@ -169,7 +170,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         }
 
         if (!(int) $page->getId() || $override) {
-            $page->setData($data)->save();
+            $page->addData($data);
+            $page->save();
         }
 
         if (!$storeId) {
@@ -261,8 +263,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     /**
      * Update footer_links cms block
      *
-     * @param array    $blockData     Cms block data
-     * @param int|null $storeId Store ID
+     * @param array    $blockData Cms block data
+     * @param int|null $storeId   Store ID
      */
     protected function _updateFooterLinksBlock($blockData, $storeId = null)
     {
@@ -319,6 +321,19 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     protected function _getDefaultBlock($identifier)
     {
         return Mage::getResourceModel('cms/block_collection')
+            ->addFieldToFilter('identifier', $identifier)
+            ->addStoreFilter(0)->getFirstItem();
+    }
+
+    /**
+     * Retrieve the default page for the given identifier
+     *
+     * @param  string $identifier Page Identifier
+     * @return Mage_Cms_Model_Page Page Model
+     */
+    protected function _getDefaultPage($identifier)
+    {
+        return Mage::getResourceModel('cms/page_collection')
             ->addFieldToFilter('identifier', $identifier)
             ->addStoreFilter(0)->getFirstItem();
     }

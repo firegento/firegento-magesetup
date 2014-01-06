@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the FIREGENTO project.
+ * This file is part of a FireGento e.V. module.
  *
- * FireGento_MageSetup is free software; you can redistribute it and/or
+ * This FireGento e.V. module is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
@@ -23,13 +23,9 @@
 /**
  * Block to retrieve data from imprint config.
  *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     0.1.0
+ * @category FireGento
+ * @package  FireGento_MageSetup
+ * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
 {
@@ -72,7 +68,7 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
      * Retrieve the setting "website". If parameter checkForProtocol is true,
      * check if there is a valid protocol given, otherwise add http:// manually.
      *
-     * @param  bool   $checkForProtocol Flag if website url should be checked for http(s) protocol
+     * @param  bool $checkForProtocol Flag if website url should be checked for http(s) protocol
      * @return string Website URL
      */
     public function getWeb($checkForProtocol=false)
@@ -99,5 +95,34 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
         $countryCode = $this->getData('country');
 
         return Mage::app()->getLocale()->getCountryTranslation($countryCode);
+    }
+
+    /**
+     * Try to limit spam by generating a javascript email link
+     *
+     * @return string
+     */
+    public function getEmail($antispam = false)
+    {
+        $email = $this->getData('email');
+        $parts = explode('@', $email);
+
+        if (!$antispam) {return $email;}
+        if (count($parts) == 0) {return;}
+
+        $html = '<a href="#" onclick="javascript:toRecipient();">';
+        $html .= $parts[0] .'<span style="display:none">nospamplease</span>@<span style="display:none">nospamplease</span>'.$parts[1];
+        $html .= '</a>';
+        $html .= $this->getEmailJs($parts);
+
+        return $html;
+    }
+
+    public function getEmailJs($parts)
+    {
+        $js = <<<JS
+<script>function toRecipient(){var m = '$parts[0]';m += '@';m += '$parts[1]';location.href= "mailto:"+m;}</script>
+JS;
+        return $js;
     }
 }

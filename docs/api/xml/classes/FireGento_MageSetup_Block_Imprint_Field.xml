@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Block_Imprint_Field" namespace="" name="FireGento_MageSetup_Block_Imprint_Field" abstract="false" final="false" start="34" end="45">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Imprint" file="Field.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Imprint/Field.php" size="1523" time="2013-09-07T20:04:13+02:00" unixtime="1378577053" sha1="1e75a2390a3fb6cf49456302915e68496194f850"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Imprint" file="Field.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Block/Imprint/Field.php" size="1494" time="2013-10-12T12:57:24+02:00" unixtime="1381575444" sha1="679a4c475b4662ce8d6cb039561ad7d344a08527"/>
   <docblock>
     <description compact="Block to retrieve data from imprint config field."/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.1.0"/>
@@ -21,40 +21,40 @@
   <parent full="FireGento_MageSetup_Block_Imprint_Content" namepsace="" name="FireGento_MageSetup_Block_Imprint_Content">
     <extends full="Mage_Core_Block_Template" namespace="" name="Mage_Core_Block_Template"/>
     <constructor name="__construct" start="39" end="43" abstract="false" final="false" static="false" visibility="public">
-    <docblock>
-      <description compact="Constructor to set config store view."/>
-    </docblock>
-  </constructor>
+      <docblock>
+        <description compact="Constructor to set config store view."/>
+      </docblock>
+    </constructor>
     <method name="setStoreId" start="50" end="53" abstract="false" final="false" static="false" visibility="public">
-    <docblock>
-      <description compact="Set StoreId to get impressum data for this store."/>
-      <param description="Store id." type="int" variable="$storeId"/>
-    </docblock>
-    <parameter name="storeId" byreference="false" type="{unknown}"/>
-  </method>
+      <docblock>
+        <description compact="Set StoreId to get impressum data for this store."/>
+        <param description="Store id." type="int" variable="$storeId"/>
+      </docblock>
+      <parameter name="storeId" byreference="false" type="{unknown}"/>
+    </method>
     <method name="getStoreId" start="61" end="69" abstract="false" final="false" static="false" visibility="protected">
-    <docblock>
-      <description compact="Getting StoreId to get proper store related information in order comments."/>
-      <return description="Store Id" type="object">
-        <type full="int|null" namespace="" name="int|null"/>
-      </return>
-    </docblock>
-  </method>
+      <docblock>
+        <description compact="Getting StoreId to get proper store related information in order comments."/>
+        <return description="Store Id" type="object">
+          <type full="int|null" namespace="" name="int|null"/>
+        </return>
+      </docblock>
+    </method>
     <method name="getWeb" start="78" end="90" abstract="false" final="false" static="false" visibility="public">
-    <docblock>
-      <description compact="Retrieve the setting &quot;website&quot;. If parameter checkForProtocol is true, check if there is a valid protocol given, otherwise add http:// manually."/>
-      <param description="Flag if website url should be checked for http(s) protocol" type="object" variable="$checkForProtocol">
-        <type full="bool" namespace="" name="bool"/>
-      </param>
-      <return description="Website URL" type="string"/>
-    </docblock>
-    <parameter name="checkForProtocol" byreference="false" type="{unknown}" default="false"/>
-  </method>
+      <docblock>
+        <description compact="Retrieve the setting &quot;website&quot;. If parameter checkForProtocol is true, check if there is a valid protocol given, otherwise add http:// manually."/>
+        <param description="Flag if website url should be checked for http(s) protocol" type="object" variable="$checkForProtocol">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return description="Website URL" type="string"/>
+      </docblock>
+      <parameter name="checkForProtocol" byreference="false" type="{unknown}" default="false"/>
+    </method>
     <method name="getCountry" start="97" end="102" abstract="false" final="false" static="false" visibility="public">
-    <docblock>
-      <description compact="Retrieve the specific country name by the selected country code"/>
-      <return description="Country" type="string"/>
-    </docblock>
-  </method>
+      <docblock>
+        <description compact="Retrieve the specific country name by the selected country code"/>
+        <return description="Country" type="string"/>
+      </docblock>
+    </method>
   </parent>
 </class>

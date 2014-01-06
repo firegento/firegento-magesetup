@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the FIREGENTO project.
+ * This file is part of a FireGento e.V. module.
  *
- * FireGento_MageSetup is free software; you can redistribute it and/or
+ * This FireGento e.V. module is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
@@ -23,13 +23,9 @@
 /**
  * Dummy data helper for translation issues.
  *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     0.1.0
+ * @category FireGento
+ * @package  FireGento_MageSetup
+ * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
 {
@@ -77,7 +73,8 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
         $config = Mage::getConfig()->getNode('global/magesetup/available_countries');
         if ($config) {
             foreach (array_keys($config->asArray()) as $countryId) {
-                $availableCountries[$countryId] = Mage::app()->getLocale()->getCountryTranslation(strtoupper($countryId));
+                $countryName = Mage::app()->getLocale()->getCountryTranslation(strtoupper($countryId));
+                $availableCountries[$countryId] = $countryName;
             }
         }
         asort($availableCountries);
@@ -87,8 +84,8 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Check whether specified country is in EU countries list
      *
-     * @param string $countryCode
-     * @return bool
+     * @param  string $countryCode Country Code
+     * @return bool Flag if country is an EU country
      */
     public function isCountryInEU($countryCode)
     {
@@ -98,10 +95,23 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Get countries in the EU
      *
-     * @return array
+     * @return array EU Countries
      */
     public function getEUCountries()
     {
         return explode(',', Mage::getStoreConfig(self::XML_PATH_EU_COUNTRIES_LIST));
+    }
+
+    /**
+     * Set initialization status config flag and refresh config cache.
+     *
+     * @param bool $isInitialized Flag for initialization
+     */
+    public function setIsInitialized($isInitialized = true)
+    {
+        $isInitialized  = (bool)$isInitialized ? '1' : '0';
+        Mage::getModel('eav/entity_setup', 'core_setup')->setConfigData('magesetup/is_initialized', $isInitialized);
+        Mage::app()->getCacheInstance()->cleanType('config');
+        Mage::dispatchEvent('adminhtml_cache_refresh_type', array('type' => 'config'));
     }
 }

@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the FIREGENTO project.
+ * This file is part of a FireGento e.V. module.
  *
- * FireGento_MageSetup is free software; you can redistribute it and/or
+ * This FireGento e.V. module is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.4.0
@@ -23,31 +23,22 @@
 /**
  * Displays MageSetup notifications
  *
- * @category  FireGento
- * @package   FireGento_MageSetup
- * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
- * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     0.4.0
+ * @category FireGento
+ * @package  FireGento_MageSetup
+ * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_Block_Template
 {
     /**
-     * (non-PHPdoc)
-     * @see Mage_Core_Block_Template::_construct()
+     * Disable the block caching for this block
      */
     protected function _construct()
     {
-        $this->addData(
-            array(
-                'cache_lifetime'=> null
-            )
-        );
+        $this->addData(array('cache_lifetime'=> null));
     }
 
     /**
-     * Returns a value that indicates if some of the german setup settings have already been initialized.
+     * Returns a value that indicates if some of the magesetup settings have already been initialized.
      *
      * @return bool Flag if MageSetup is already initialized
      */
@@ -64,6 +55,16 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
     public function getManageUrl()
     {
         return $this->getUrl('adminhtml/magesetup');
+    }
+
+    /**
+     * Get magesetup installation skip action
+     *
+     * @return string URL for skip action
+     */
+    public function getSkipUrl()
+    {
+        return $this->getUrl('adminhtml/magesetup/skip');
     }
 
     /**

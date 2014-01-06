@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Source_AgreementType" namespace="" name="FireGento_MageSetup_Model_Source_AgreementType" abstract="false" final="false" start="34" end="80">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source" file="AgreementType.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/AgreementType.php" size="2651" time="2013-09-07T20:29:17+02:00" unixtime="1378578557" sha1="f202d6157c378e1eb9386e93525e3a11c7f6cae5"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Model_Source_AgreementType" namespace="" name="FireGento_MageSetup_Model_Source_AgreementType" abstract="false" final="false" start="34" end="82">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source" file="AgreementType.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Model/Source/AgreementType.php" size="2675" time="2013-10-12T15:13:03+02:00" unixtime="1381583583" sha1="388f36d2964ca7475f22e85014db89827d899820"/>
   <docblock>
     <description compact="Source model for attribute &quot;agreement_type&quot;"/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="1.2.2"/>
@@ -21,9 +21,9 @@
       <return description="Agreement types as option array" type="array"/>
     </docblock>
   </method>
-  <method name="getOptionArray" start="72" end="79" abstract="false" final="false" static="false" visibility="public">
+  <method name="getOptionArray" start="74" end="81" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact=""/>
+      <description compact="Retrieve all agreements as option hash"/>
       <return description="Agreement types as option hash" type="array"/>
     </docblock>
   </method>

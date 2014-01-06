@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Helper_Data" namespace="" name="FireGento_MageSetup_Helper_Data" abstract="false" final="false" start="34" end="83">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Data.php" size="2862" time="2013-09-07T20:07:44+02:00" unixtime="1378577264" sha1="d05604ffeb9024f7985ddeefd490433d3d678e63"/>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_MageSetup_Helper_Data" namespace="" name="FireGento_MageSetup_Helper_Data" abstract="false" final="false" start="34" end="121">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-magesetup/src/app/code/community/FireGento/MageSetup/Helper/Data.php" size="4086" time="2013-10-12T16:18:39+02:00" unixtime="1381587519" sha1="f883247b7a4135a0aa4f67b259e85c7bcf3faf54"/>
   <docblock>
     <description compact="Dummy data helper for translation issues."/>
     <category value="FireGento"/>
     <package value="FireGento_MageSetup"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
-    <copyright value="2013 FireGento Team (http://www.firegento.de). All rights served."/>
+    <copyright value="2013 FireGento Team (http://www.firegento.com)"/>
     <license name="http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)"/>
     <version value="$Id:$"/>
     <since value="0.1.0"/>
   </docblock>
   <extends full="Mage_Core_Helper_Abstract" namespace="" name="Mage_Core_Helper_Abstract"/>
-  <method name="getShippingCostUrl" start="41" end="53" abstract="false" final="false" static="false" visibility="public">
+  <constant name="XML_PATH_EU_COUNTRIES_LIST" value="'general/country/eu_countries'"/>
+  <method name="getShippingCostUrl" start="44" end="56" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Generate URL to configured shipping cost page, or '' if none."/>
       <return description="Shipping cost url" type="string"/>
     </docblock>
   </method>
-  <method name="getAgreementUrl" start="61" end="64" abstract="false" final="false" static="false" visibility="public">
+  <method name="getAgreementUrl" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Get url of agreement view for checkout"/>
       <param description="Agreement" type="object" variable="$agreement">
@@ -30,10 +31,35 @@
       <type full="\\Mage_Checkout_Model_Agreement" namespace="\" name="Mage_Checkout_Model_Agreement"/>
     </parameter>
   </method>
-  <method name="getAvailableCountries" start="71" end="82" abstract="false" final="false" static="false" visibility="public">
+  <method name="getAvailableCountries" start="74" end="86" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Get available countries"/>
       <return description="All available countries" type="array"/>
     </docblock>
+  </method>
+  <method name="isCountryInEU" start="94" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check whether specified country is in EU countries list"/>
+      <param description="Country Code" type="string" variable="$countryCode"/>
+      <return description="Flag if country is an EU country" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="countryCode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getEUCountries" start="104" end="107" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get countries in the EU"/>
+      <return description="EU Countries" type="array"/>
+    </docblock>
+  </method>
+  <method name="setIsInitialized" start="114" end="120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set initialization status config flag and refresh config cache."/>
+      <param description="Flag for initialization" type="object" variable="$isInitialized">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="isInitialized" byreference="false" type="{unknown}" default="true"/>
   </method>
 </class>
