@@ -403,14 +403,15 @@
                 <template>bundle/catalog/product/price.phtml</template>
             </action>
         </reference>
-	<reference name="product.clone_prices">
- 	    <action method="addPriceBlockType">
-	        <type>bundle</type>
-            	<block>magesetup/bundle_catalog_product_price</block>
-            	<template>bundle/catalog/product/view/price.phtml</template>
-            </action>
-    	</reference>
     </catalog_product_view>
+
+    <reference name="product.clone_prices">
+        <action method="addPriceBlockType">
+            <type>bundle</type>
+            <block>magesetup/bundle_catalog_product_price</block>
+            <template>bundle/catalog/product/view/price.phtml</template>
+        </action>
+    </reference>
 
     <PRODUCT_TYPE_simple>
         <reference name="product.info.simple.extra">
