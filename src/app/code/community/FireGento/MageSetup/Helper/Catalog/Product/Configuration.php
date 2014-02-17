@@ -41,6 +41,11 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
     protected $_products = array();
 
     /**
+     * @var array
+     */
+    protected $_attributes = array();
+
+    /**
      * Merge Attributes
      *
      * @param  Mage_Catalog_Model_Product_Configuration_Item_Interface $item Quote item
@@ -67,7 +72,7 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
     }
 
     /**
-     * Retreve the product attributes
+     * Retrieve the product attributes
      *
      * @param  Mage_Catalog_Model_Product_Configuration_Item_Interface $item Quote item
      * @return array Attributes
@@ -78,10 +83,11 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
         if (!isset($this->_finished[$itemId])) {
             $this->_finished[$itemId] = true;
             $product    = $this->_getProduct($item);
-            $attributes = $this->_getAdditionalData($product);
-            if (count($attributes) > 0) {
-                return $attributes;
-            }
+            $this->_attributes[$itemId] = $this->_getAdditionalData($product);
+        }
+
+        if (count($this->_attributes[$itemId]) > 0) {
+            return $this->_attributes[$itemId];
         }
 
         return array();
