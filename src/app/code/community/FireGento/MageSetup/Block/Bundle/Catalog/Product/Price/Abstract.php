@@ -30,7 +30,7 @@
  */
 
 // @codingStandardsIgnoreStart
-if (Mage::getConfig()->getModuleConfig('Sitewards_B2BProfessional')->is('active', 'true')) {
+if (Mage::getConfig()->getModuleConfig('Sitewards_B2BProfessional')->is('active', 'true') && class_exists('Sitewards_B2BProfessional_Block_Price')) {
 
     abstract class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract
         extends Sitewards_B2BProfessional_Block_Price
