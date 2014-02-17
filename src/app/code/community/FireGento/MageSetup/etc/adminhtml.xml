@@ -24,7 +24,7 @@
             <children>
                 <subscriber_status translate="title" module="magesetup">
                     <title>Newsletter Subscribers Status History</title>
-                    <action>magesetup/adminhtml_newsletter/</action>
+                    <action>magesetup/newsletter/</action>
                 </subscriber_status>
 			</children>
 		</newsletter>
