@@ -24,14 +24,14 @@
             <block type="magesetup/adminhtml_notifications" name="magesetup_notifications" template="magesetup/notifications.phtml" before="-" />
         </reference>
     </default>
-	<adminhtml_magesetup_index>
+	<magesetup_magesetup_index>
         <reference name="content">
             <block type="magesetup/adminhtml_magesetup" name="magesetup.index" template="magesetup/form.phtml"/>
         </reference>
-    </adminhtml_magesetup_index>
-	<adminhtml_magesetup_extensions>
+    </magesetup_magesetup_index>
+	<magesetup_magesetup_extensions>
         <reference name="content">
             <block type="adminhtml/template" name="magesetup.extensions" template="magesetup/extensions.phtml"/>
         </reference>
-    </adminhtml_magesetup_extensions>
+    </magesetup_magesetup_extensions>
 </layout>

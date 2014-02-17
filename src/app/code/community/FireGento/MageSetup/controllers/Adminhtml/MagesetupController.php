@@ -27,7 +27,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_Action
+class FireGento_MageSetup_Adminhtml_MagesetupController extends Mage_Adminhtml_Controller_Action
 {
     /**
      * Basic action: setup form

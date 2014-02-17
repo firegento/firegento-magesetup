@@ -195,44 +195,6 @@
                 </FireGento_MageSetup>
             </modules>
         </translate>
-        <menu>
-            <system>
-                <children>
-                    <magesetup translate="title">
-                        <title>MageSetup</title>
-                        <sort_order>11</sort_order>
-                        <children>
-                            <setup>
-                                <title>Setup</title>
-                                <action>adminhtml/magesetup</action>
-                                <sort_order>10</sort_order>
-                            </setup>
-                            <recommended_extensions>
-                                <title>Recommended Extensions</title>
-                                <action>adminhtml/magesetup/extensions</action>
-                                <sort_order>15</sort_order>
-                            </recommended_extensions>
-                        </children>
-                    </magesetup>
-                </children>
-            </system>
-        </menu>
-        <acl>
-            <resources>
-                <admin>
-                    <children>
-                        <system>
-                            <children>
-                                <magesetup translate="title">
-                                    <title>MageSetup</title>
-                                    <sort_order>11</sort_order>
-                                </magesetup>
-                            </children>
-                        </system>
-                    </children>
-                </admin>
-            </resources>
-        </acl>
         <events>
             <adminhtml_catalog_product_attribute_edit_prepare_form>
                 <observers>

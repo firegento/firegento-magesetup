@@ -96,8 +96,10 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
         $config = Mage::getConfig();
 
         // Load additional config files
-        foreach($config->getNode('global/magesetup/additional_files')->asCanonicalArray() as $file) {
-            $this->_addConfigFile($file['filename'], $mergeConfig, (array_key_exists('overwrite', $file) && (bool) $file['overwrite'] === false ? false : true));
+        if ($config->getNode('global/magesetup/additional_files')) {
+            foreach($config->getNode('global/magesetup/additional_files')->asCanonicalArray() as $file) {
+                $this->_addConfigFile($file['filename'], $mergeConfig, (array_key_exists('overwrite', $file) && (bool) $file['overwrite'] === false ? false : true));
+            }
         }
         $this->_addConfigFile('cms.xml', $mergeConfig, false);
         $this->_addConfigFile('email.xml', $mergeConfig);
