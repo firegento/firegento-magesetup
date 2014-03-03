@@ -515,6 +515,19 @@
         </reference>
     </checkout_multishipping_overview>
 
+    <paypal_express_review>
+        <reference name="paypal.express.review">
+            <action method="setTemplate">
+                <name>magesetup/paypal/express/review.phtml</name>
+            </action>
+            <action method="unsetChild">
+                <alias>agreements</alias>
+            </action>
+            <block type="checkout/agreements" name="checkout.multishipping.agreements" as="agreements"
+                   template="magesetup/checkout/multishipping/agreements.phtml"/>
+        </reference>
+    </paypal_express_review>
+
     <!-- Customer Terms and Condition Confirmation -->
     <customer_account_create>
         <reference name="form.additional.info">
