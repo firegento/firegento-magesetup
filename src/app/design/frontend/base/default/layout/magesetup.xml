@@ -516,6 +516,11 @@
     </checkout_multishipping_overview>
 
     <paypal_express_review>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/magesetup/checkout.css</stylesheet>
+            </action>
+        </reference>
         <reference name="paypal.express.review">
             <action method="setTemplate">
                 <name>magesetup/paypal/express/review.phtml</name>
@@ -523,8 +528,13 @@
             <action method="unsetChild">
                 <alias>agreements</alias>
             </action>
-            <block type="checkout/agreements" name="checkout.multishipping.agreements" as="agreements"
+            <block type="checkout/agreements" name="paypal.express.agreements" as="agreements"
                    template="magesetup/checkout/multishipping/agreements.phtml"/>
+            <block type="core/text_list" name="paypal.express.review.info.items.after" as="items_after">
+                <label>Items After</label>
+                <block type="magesetup/checkout_information" name="paypal.express.additional" as="additional"
+                   template="magesetup/checkout/additional.phtml"/>
+            </block>
         </reference>
     </paypal_express_review>
 

@@ -42,6 +42,7 @@ $shippingAddress = $this->getShippingAddress();
 </h2>
 <div class="paypal-review-order">
     <form method="post" id="order_review_form" action="<?php echo $this->getPlaceOrderUrl() ?>">
+    <?php echo $this->getChildHtml('agreements'); ?>
     <?php if(!$billingBlock->isCustomerLoggedIn()): ?>
         <div class="info-set col2-set">
             <h2 class="legend"><?php echo $this->__('Customer Information') ?></h2>
@@ -93,7 +94,8 @@ $shippingAddress = $this->getShippingAddress();
             <?php echo $this->getChildHtml('details') ?>
         </div>
     </div>
-        <?php echo $this->getChildHtml('agreements'); ?>
+    <?php echo $this->getChildHtml('items_after') ?>
+        
         <div class="buttons-set buttons-set-order" id="review-buttons-container">
             <button type="button" id="review_button" value="<?php echo $this->__('Place Order') ?>" class="button btn-checkout"><span><span><?php echo $this->__('Place Order') ?></span></span></button>
             <button type="button" id="review_submit" value="<?php echo $this->__('Place Order') ?>" class="button btn-checkout"><span><span><?php echo $this->__('Place Order') ?></span></span></button>
