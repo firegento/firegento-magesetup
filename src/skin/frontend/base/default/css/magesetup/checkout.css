@@ -28,4 +28,6 @@
 .checkout-multishipping-overview .checkout-agreements{margin-bottom:25px}
 .opc .checkout-agreements li,.checkout-multishipping-overview .checkout-agreements li,.paypal-review-order .checkout-agreements li{margin:10px 0}
 .opc .checkout-agreements .agree,.checkout-multishipping-overview .checkout-agreements .agree,.paypal-review-order .checkout-agreements .agree{padding-top:0;padding-bottom:0}
+.paypal-review-order #review-buttons-container {border-bottom:2px solid #0A263D;padding: 20px;}
 #review-buttons-container p.f-left{display:none}
+
