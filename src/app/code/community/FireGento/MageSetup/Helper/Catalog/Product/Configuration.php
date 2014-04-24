@@ -86,15 +86,12 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
     {
         $itemId = $item->getId();
         if (!isset($this->_finished[$itemId])) {
-            $this->_finished[$itemId] = true;
             $product    = $this->_getProduct($item);
             $attributes = $this->_getAdditionalData($product);
-            if (count($attributes) > 0) {
-                return $attributes;
-            }
+            $this->_finished[$itemId] = $attributes;
         }
 
-        return array();
+        return $this->_finished[$itemId];
     }
 
     /**
