@@ -246,4 +246,9 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
 
         return Mage::app()->getTranslator()->translate($args);
     }
+    
+    public function addTierpriceDefaultTemplate($template)
+    {
+        $this->_tierPriceDefaultTemplates[] = $template;
+    }
 }
