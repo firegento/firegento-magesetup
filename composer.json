@@ -6,15 +6,15 @@
     "homepage": "https://github.com/firegento/firegento-magesetup",
     "authors": [
         {
-            "name":"Team FireGento",
-            "email":"team@firegento.com"
+            "name": "Team FireGento",
+            "email": "team@firegento.com"
         }
     ],
     "require": {
         "magento-hackathon/magento-composer-installer": "*"
     },
     "require-dev": {
-        "ecomdev/mage-ci": "master-dev"
+        "firegento/mage-ci": "master-dev"
     },
     "config": {
         "bin-dir": "bin"
@@ -27,114 +27,114 @@
     ],
     "extra": {
         "magento-root-dir": "test/",
-        "magento_connect":{
-            "name":"FireGento_MageSetup",
-            "summary":"MageSetup configures a shop for a national market. It creates configuration and tax settings, email templates, cms blocks and pages.",
-            "channel":"community",
-            "php_min":"5.3.0",
-            "php_max":"7.9.9",
-            "stability":"stable",
-            "license_uri":"http://www.gnu.org/licenses/gpl-3.0.html",
+        "magento_connect": {
+            "name": "FireGento_MageSetup",
+            "summary": "MageSetup configures a shop for a national market. It creates configuration and tax settings, email templates, cms blocks and pages.",
+            "channel": "community",
+            "php_min": "5.3.0",
+            "php_max": "7.9.9",
+            "stability": "stable",
+            "license_uri": "http://www.gnu.org/licenses/gpl-3.0.html",
             "content":[
                 {
-                    "type":"magecommunity",
-                    "structure":"dir",
-                    "path":"FireGento/MageSetup"
+                    "type": "magecommunity",
+                    "structure": "dir",
+                    "path": "FireGento/MageSetup"
                 },
                 {
-                    "type":"mageetc",
-                    "structure":"file",
-                    "path":"modules/FireGento_MageSetup.xml"
+                    "type": "mageetc",
+                    "structure": "file",
+                    "path": "modules/FireGento_MageSetup.xml"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"file",
-                    "path":"de_AT/FireGento_MageSetup.csv"
+                    "type": "magelocale",
+                    "structure": "file",
+                    "path": "de_AT/FireGento_MageSetup.csv"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"dir",
-                    "path":"de_CH/template/magesetup"
+                    "type": "magelocale",
+                    "structure": "dir",
+                    "path": "de_CH/template/magesetup"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"file",
-                    "path":"de_DE/FireGento_MageSetup.csv"
+                    "type": "magelocale",
+                    "structure": "file",
+                    "path": "de_DE/FireGento_MageSetup.csv"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"dir",
-                    "path":"de_DE/template/magesetup"
+                    "type": "magelocale",
+                    "structure": "dir",
+                    "path": "de_DE/template/magesetup"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"file",
-                    "path":"en_US/FireGento_MageSetup.csv"
+                    "type": "magelocale",
+                    "structure": "file",
+                    "path": "en_US/FireGento_MageSetup.csv"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"dir",
-                    "path":"en_US/template/magesetup"
+                    "type": "magelocale",
+                    "structure": "dir",
+                    "path": "en_US/template/magesetup"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"file",
-                    "path":"ru_RU/FireGento_MageSetup.csv"
+                    "type": "magelocale",
+                    "structure": "file",
+                    "path": "ru_RU/FireGento_MageSetup.csv"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"dir",
-                    "path":"ru_RU/template/magesetup"
+                    "type": "magelocale",
+                    "structure": "dir",
+                    "path": "ru_RU/template/magesetup"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"dir",
-                    "path":"fr_CH/template/magesetup"
+                    "type": "magelocale",
+                    "structure": "dir",
+                    "path": "fr_CH/template/magesetup"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"file",
-                    "path":"fr_FR/FireGento_MageSetup.csv"
+                    "type": "magelocale",
+                    "structure": "file",
+                    "path": "fr_FR/FireGento_MageSetup.csv"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"dir",
-                    "path":"fr_FR/template/magesetup"
+                    "type": "magelocale",
+                    "structure": "dir",
+                    "path": "fr_FR/template/magesetup"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"file",
-                    "path":"it_IT/FireGento_MageSetup.csv"
+                    "type": "magelocale",
+                    "structure": "file",
+                    "path": "it_IT/FireGento_MageSetup.csv"
                 },
                 {
-                    "type":"magelocale",
-                    "structure":"dir",
-                    "path":"it_IT/template/magesetup"
+                    "type": "magelocale",
+                    "structure": "dir",
+                    "path": "it_IT/template/magesetup"
                 },
                 {
-                    "type":"magedesign",
-                    "structure":"file",
-                    "path":"adminhtml/default/default/layout/magesetup.xml"
+                    "type": "magedesign",
+                    "structure": "file",
+                    "path": "adminhtml/default/default/layout/magesetup.xml"
                 },
                 {
-                    "type":"magedesign",
-                    "structure":"dir",
-                    "path":"adminhtml/default/default/template/magesetup"
+                    "type": "magedesign",
+                    "structure": "dir",
+                    "path": "adminhtml/default/default/template/magesetup"
                 },
                 {
-                    "type":"magedesign",
-                    "structure":"file",
-                    "path":"frontend/base/default/layout/magesetup.xml"
+                    "type": "magedesign",
+                    "structure": "file",
+                    "path": "frontend/base/default/layout/magesetup.xml"
                 },
                 {
-                    "type":"magedesign",
-                    "structure":"dir",
-                    "path":"frontend/base/default/template/magesetup"
+                    "type": "magedesign",
+                    "structure": "dir",
+                    "path": "frontend/base/default/template/magesetup"
                 },
                 {
-                    "type":"mageskin",
-                    "structure":"dir",
-                    "path":"frontend/base/default/css/magesetup"
+                    "type": "mageskin",
+                    "structure": "dir",
+                    "path": "frontend/base/default/css/magesetup"
                 }
             ]
         }

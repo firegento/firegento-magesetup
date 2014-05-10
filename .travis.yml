@@ -1,6 +1,7 @@
 language: php
 php:
   - 5.3
+  - 5.4
 before_install:
   - mkdir test/
   - curl -sS https://getcomposer.org/installer | php
@@ -9,9 +10,9 @@ before_install:
   - ./composer.phar install --dev
 before_script:
   - CURR_DIR=$(pwd)
-  - bin/mage-ci install test 1.7.0.2 magento_test -c -t -r http://mage-ci.ecomdev.org
+  - bin/mage-ci install test 1.8.1.0 magento_test -c -t -r http://mage-ci.firegento.com
   - bin/mage-ci install-module test $CURR_DIR
-  - git clone https://github.com/EcomDev/EcomDev_PHPUnit.git ./phpunit/
+  - git clone https://github.com/EcomDev/EcomDev_PHPUnit.git -b dev ./phpunit/
   - bin/mage-ci install-module $CURR_DIR/test $CURR_DIR/phpunit/
 script:
   - bin/mage-ci phpunit test
