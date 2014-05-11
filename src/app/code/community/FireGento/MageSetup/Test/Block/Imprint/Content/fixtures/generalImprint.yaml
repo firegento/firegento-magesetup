@@ -1,0 +1,4 @@
+config:
+  default/general/imprint/email: foo@bar.com
+  default/general/imprint/country: DE
+  default/general/imprint/web: firegento.com

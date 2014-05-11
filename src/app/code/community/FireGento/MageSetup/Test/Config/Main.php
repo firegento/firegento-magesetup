@@ -124,4 +124,68 @@ class FireGento_MageSetup_Test_Config_Main extends EcomDev_PHPUnit_Test_Case_Con
 
         $this->assertModelAlias('tax/config', 'FireGento_MageSetup_Model_Tax_Config');
     }
+
+    /**
+     * @test
+     */
+    public function testSetupResource()
+    {
+        $this->assertSetupResourceDefined('FireGento_MageSetup', 'magesetup_setup');
+        $this->assertSetupResourceExists('FireGento_MageSetup', 'magesetup_setup');
+    }
+
+    /**
+     * @test
+     */
+    public function testEventObserver()
+    {
+        // Global event observers
+        $this->assertEventObserverDefined(
+            'global',
+            'catalog_product_save_before',
+            'magesetup/observer',
+            'autogenerateMetaInformation'
+        );
+        $this->assertEventObserverDefined(
+            'global',
+            'newsletter_subscriber_save_after',
+            'magesetup/newsletter_observer',
+            'saveSubscriberStatusHistory'
+        );
+
+        // Frontend event observers
+        $this->assertEventObserverDefined(
+            'frontend',
+            'core_block_abstract_to_html_before',
+            'magesetup/observer',
+            'filterAgreements'
+        );
+        $this->assertEventObserverDefined(
+            'frontend',
+            'checkout_cart_update_items_after',
+            'magesetup/observer',
+            'recollectAfterQuoteItemUpdate'
+        );
+        $this->assertEventObserverDefined(
+            'frontend',
+            'controller_action_predispatch_customer_account_createpost',
+            'magesetup/observer',
+            'customerCreatePreDispatch'
+        );
+
+        // Adminhtml event observers
+        $this->assertEventObserverDefined(
+            'adminhtml',
+            'adminhtml_catalog_product_attribute_edit_prepare_form',
+            'magesetup/observer',
+            'addIsVisibleOnCheckoutOption'
+        );
+        $this->assertEventObserverDefined(
+            'adminhtml',
+            'adminhtml_block_html_before',
+            'magesetup/observer',
+            'addOptionsForAgreements'
+        );
+
+    }
 }

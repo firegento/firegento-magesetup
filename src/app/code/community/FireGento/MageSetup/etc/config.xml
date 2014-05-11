@@ -152,8 +152,8 @@
             <checkout_cart_update_items_after>
                 <observers>
                     <recalculate_dynamic_shipping_tax>
+                        <class>magesetup/observer</class>
                         <type>singleton</type>
-                        <class>FireGento_MageSetup_Model_Observer</class>
                         <method>recollectAfterQuoteItemUpdate</method>
                     </recalculate_dynamic_shipping_tax>
                 </observers>
