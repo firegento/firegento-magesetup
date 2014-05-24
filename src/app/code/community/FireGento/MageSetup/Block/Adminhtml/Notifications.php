@@ -54,7 +54,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
      */
     public function getManageUrl()
     {
-        return $this->getUrl('adminhtml/magesetup');
+        return $this->getUrl('magesetup/magesetup');
     }
 
     /**
