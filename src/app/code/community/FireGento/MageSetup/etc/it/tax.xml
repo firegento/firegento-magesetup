@@ -27,7 +27,7 @@
                                      tax_customer_class="customers_end_users,customers_companies"
                                      tax_product_class="products_rate_1,shipping">
                         <execute>1</execute>
-                        <code>IVA 21%</code>
+                        <code>IVA 22%</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_rate_1>
@@ -117,8 +117,8 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>IVA 21%</label>
-                        <rate>21</rate>
+                        <label>IVA 22%</label>
+                        <rate>22</rate>
                     </tax_calculation_rate_1>
 
                     <tax_calculation_rate_2>
