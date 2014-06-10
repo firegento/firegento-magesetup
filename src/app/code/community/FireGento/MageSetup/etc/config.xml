@@ -21,7 +21,7 @@
 <config>
     <modules>
         <FireGento_MageSetup>
-            <version>2.1.1</version>
+            <version>2.2.0</version>
         </FireGento_MageSetup>
     </modules>
     <global>
@@ -253,7 +253,9 @@
         </general>
         <checkout>
             <options>
-                <additional_information><![CDATA[Beim Versand ins Nicht-EU-Ausland können zusätzlich Zölle, Steuern und Gebühren entstehen.]]></additional_information></options>
+                <additional_information><![CDATA[Beim Versand ins Nicht-EU-Ausland können zusätzlich Zölle, Steuern und Gebühren entstehen.]]></additional_information>
+                <default_revocation_product_type>goods</default_revocation_product_type>
+            </options>
             <cart>
                 <hide_shipping>1</hide_shipping>
             </cart>

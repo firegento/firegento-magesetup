@@ -267,6 +267,15 @@ class FireGento_MageSetup_Model_Observer
                 'options' => Mage::getSingleton('magesetup/source_agreementType')->getOptionArray(),
             ));
 
+            $fieldset->addField('revocation_product_type', 'select', array(
+                'label' => $helper->__('Display for following Revocation Product Types'),
+                'title' => $helper->__('Display for following Revocation Product Types'),
+                'note' => $helper->__('Will only be displayed if at least one product of the selected type is in cart'),
+                'name' => 'revocation_product_type',
+                'required' => false,
+                'options' => Mage::getSingleton('magesetup/source_revocationProductType')->getOptionArray(),
+            ));
+
             Mage::dispatchEvent('magesetup_adminhtml_checkout_agreement_edit_form', array(
                 'form' => $form,
                 'fieldset' => $fieldset,
