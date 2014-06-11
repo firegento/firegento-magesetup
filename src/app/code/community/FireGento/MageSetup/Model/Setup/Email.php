@@ -210,6 +210,10 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
             $blocks[] = $configFooters['revocation'];
         }
 
+        if ($emailData['add_revocation_form'] == 1) {
+            $blocks[] = $configFooters['revocation_form'];
+        }
+
         return $blocks;
     }
 }
