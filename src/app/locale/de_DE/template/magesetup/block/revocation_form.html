@@ -1,47 +1,54 @@
 <!--@title Formular zur Widerrufsbelehrung @-->
-<pre>Muster-Widerrufsformular
+<h3 style="font-style:italic; color:red;">Muster-Widerrufsformular</h3>
 
-Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.
+<p style="font-style:italic; color:red;">
+    Nach neuem Recht muss der Verbraucher außerdem vor Abgabe seiner Bestellung über das Muster-Widerrufsformular informiert werden. Dieses ist nicht zu verwechseln mit Widerrufsbelehrung und muss unabhängig von der Art der Belehrung stets verwendet werden. Außerdem muss das Widerrufsformular dem Verbraucher auf einem dauerhaften Datenträger zur Verfügung gestellt werden. Es bietet sich an, dieses unterhalb der Widerrufsbelehrung mit aufzuführen, sodass der Verbraucher die Widerrufsbelehrung und das Widerrufs-Formular zusammen in einem Dokument erhält.
+<hr/>
+</p>
 
+<p>
+    Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.
+</p>
+<p>
+    An<br/>
+    <strong>
+        {{block type="magesetup/imprint_field" value="shop_name"}}<br/>
+        {{block type="magesetup/imprint_field" value="company_first"}}<br/>
+        {{block type="magesetup/imprint_field" value="street"}}<br/>
+        {{block type="magesetup/imprint_field" value="zip"}} {{block type="magesetup/imprint_field" value="city"}}
+    </strong>
+</p>
+<p>
+    per Fax an: <strong>{{block type="magesetup/imprint_field" value="fax"}}</strong><br/>
+    oder per E-Mail an: <strong>{{block type="magesetup/imprint_field" value="email"}}</strong>
+</p>
+<p>
+    Hiermit widerrufe(n) ich/wir<sup>*</sup> den von mir/uns<sup>*</sup> abgeschlossenen Vertrag über den Kauf der folgenden Waren<sup>*</sup> / die Erbringung der folgenden Dienstleistung<sup>*</sup>
+</p>
+<p style="min-height:200px;">
+    &nbsp;
+</p>
 
-An 
-{{block type="magesetup/imprint_field" value="shop_name"}}
-{{block type="magesetup/imprint_field" value="company_first"}}
-{{block type="magesetup/imprint_field" value="street"}}
-{{block type="magesetup/imprint_field" value="zip"}} {{block type="magesetup/imprint_field" value="city"}}
-
-per Fax an: {{block type="magesetup/imprint_field" value="fax"}}
-oder per E-Mail an: {{block type="magesetup/imprint_field" value="email"}}
-
-
-Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag
-    über den Kauf der folgenden Waren (*)/
-die Erbringung der folgenden Dienstleistung (*)
-
-__________________________________________________
-__________________________________________________
-__________________________________________________
-__________________________________________________
-__________________________________________________
-__________________________________________________
-__________________________________________________
-__________________________________________________
-
-
-__________________________________________________
-Bestellt am (*)/erhalten am (*)
-
-__________________________________________________
+<p style="padding-top:14px;">
+<hr style="width:50%;">
+Bestellt am<sup>*</sup>/ erhalten am<sup>*</sup>
+</p>
+<p style="padding-top:14px;">
+<hr style="width:50%;">
 Name des/der Verbraucher(s)
-
-__________________________________________________
+</p>
+<p style="padding-top:14px;">
+<hr style="width:50%;">
 Anschrift des/der Verbraucher(s)
-
-__________________________________________________
-Unterschrift des/der Verbraucher(s)
-(nur bei Mitteilung auf Papier)
-
-__________________________________________________
+</p>
+<p style="padding-top:14px;">
+<hr style="width:50%;">
+Unterschrift des/der Verbraucher(s) <em>(nur bei Mitteilung auf Papier)</em>
+</p>
+<p style="padding-top:14px;">
+<hr style="width:50%;">
 Datum
-
-(*) Unzutreffendes streichen.</pre>
+</p>
+<p>
+    <sup>*</sup> Unzutreffendes streichen.
+</p>
