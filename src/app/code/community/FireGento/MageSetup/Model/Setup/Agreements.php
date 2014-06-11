@@ -111,6 +111,7 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
             'is_html' => $agreementData['is_html'],
             'is_required' => $agreementData['is_required'],
             'agreement_type' => $agreementData['agreement_type'],
+            'revocation_product_type' => isset($agreementData['revocation_product_type']) ? $agreementData['revocation_product_type'] : '',
             'stores' => $storeId ? $storeId : 0,
         );
 

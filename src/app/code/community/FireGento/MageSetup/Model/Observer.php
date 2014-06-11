@@ -245,7 +245,11 @@ class FireGento_MageSetup_Model_Observer
             $helper = Mage::helper('magesetup');
             $form = $block->getForm();
 
+            /** @var Varien_Data_Form_Element_Fieldset $fieldset */
             $fieldset = $form->getElement('base_fieldset');
+            
+            $form->getElement('content')->setRequired(false);
+            
             $fieldset->addField('is_required', 'select', array(
                 'label' => $helper->__('Required'),
                 'title' => $helper->__('Required'),

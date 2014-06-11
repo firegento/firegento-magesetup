@@ -40,6 +40,26 @@
                         <agreement_type>0</agreement_type>
                         <filename>magesetup/agreement/revocation.html</filename>
                     </revocation>
+
+                    <revocation_digital>
+                        <execute>1</execute>
+                        <is_active>1</is_active>
+                        <is_html>1</is_html>
+                        <is_required>1</is_required>
+                        <agreement_type>0</agreement_type>
+                        <filename>magesetup/agreement/revocation_digital.html</filename>
+                        <revocation_product_type>digital</revocation_product_type>
+                    </revocation_digital>
+
+                    <revocation_service>
+                        <execute>1</execute>
+                        <is_active>1</is_active>
+                        <is_html>1</is_html>
+                        <is_required>1</is_required>
+                        <agreement_type>0</agreement_type>
+                        <filename>magesetup/agreement/revocation_service.html</filename>
+                        <revocation_product_type>service</revocation_product_type>
+                    </revocation_service>
                 </default>
             </agreements>
         </magesetup>
