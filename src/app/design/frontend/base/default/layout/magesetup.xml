@@ -482,6 +482,11 @@
             <action method="unsetChild">
                 <alias>agreements</alias>
             </action>
+            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
         </reference>
         <reference name="checkout.onepage.review.info.items.before">
             <block type="magesetup/checkout_agreements" name="magesetup.checkout.agreements" as="agreements"
@@ -492,6 +497,26 @@
                    template="magesetup/checkout/additional.phtml"/>
         </reference>
     </checkout_onepage_review>
+
+    <paypal_express_review>
+        <reference name="paypal.express.review.details">
+            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+        </reference>
+    </paypal_express_review>
+
+    <paypal_express_review_details>
+        <reference name="paypal.express.review.details">
+            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+        </reference>
+    </paypal_express_review_details>
 
     <checkout_multishipping_overview>
         <reference name="head">
