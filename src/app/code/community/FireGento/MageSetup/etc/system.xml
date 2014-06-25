@@ -161,6 +161,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </telephone>
+                        <telephone_additional translate="label">
+                            <label>Supplementary Information for Telephone</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </telephone_additional>
                         <fax translate="label">
                             <label>Fax</label>
                             <frontend_type>text</frontend_type>
