@@ -23,12 +23,16 @@
  */
 ?>
 <?php if (strlen(trim($this->getTelephone()))): ?>
-    <?php echo $this->__('Telephone') ?>: <?php echo $this->getTelephone() ?><br />
+    <?php echo $this->__('Telephone') ?>: <?php echo $this->getTelephone() ?>
+    <?php if (strlen(trim($this->getTelephoneAdditional()))): ?>
+        (<?php echo $this->getTelephoneAdditional() ?>)
+    <?php endif ?>
+    <br />
 <?php endif ?>
 <?php if (strlen(trim($this->getFax()))): ?>
-<?php echo $this->__('Fax') ?>: <?php echo $this->getFax() ?><br />
+    <?php echo $this->__('Fax') ?>: <?php echo $this->getFax() ?><br />
 <?php endif ?>
 <?php if (strlen(trim($this->getWeb()))): ?>
-<?php echo $this->__('Web') ?>: <a href="<?php echo $this->getWeb(true) ?>" title="<?php echo $this->getCompanyFirst() ?>"><?php echo $this->getWeb() ?></a><br />
+    <?php echo $this->__('Web') ?>: <a href="<?php echo $this->getWeb(true) ?>" title="<?php echo $this->getCompanyFirst() ?>"><?php echo $this->getWeb() ?></a><br />
 <?php endif ?>
 <?php echo $this->__('E-Mail') ?>: <?php echo $this->getEmail(true) ?>
