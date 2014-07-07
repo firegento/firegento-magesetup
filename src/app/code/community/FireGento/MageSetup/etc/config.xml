@@ -336,12 +336,7 @@ Tel: {{var telephone}}
 {{depend telephone}}Tel: {{var telephone}}{{/depend}}|
 {{depend fax}}<br/>Fax: {{var fax}}{{/depend}}|
                 ]]></pdf>
-                <js_template template="title" module="customer">
-                    <title>Javascript Template</title>
-                    <defaultFormat>
-                        <![CDATA[#{company}<br/>#{prefix} #{firstname} #{middlename} #{lastname} #{suffix}<br/>#{street0}<br/>#{street1}<br/>#{street2}<br/>#{street3}<br/>#{postcode} #{city}<br/>#{country_id}<br/>Tel: #{telephone}<br/>Fax: #{fax}]]>
-                    </defaultFormat>
-                </js_template>
+                <js_template><![CDATA[#{company}<br/>#{prefix} #{firstname} #{middlename} #{lastname} #{suffix}<br/>#{street0}<br/>#{street1}<br/>#{street2}<br/>#{street3}<br/>#{postcode} #{city}<br/>#{country_id}<br/>Tel: #{telephone}<br/>Fax: #{fax}]]></js_template>
             </address_templates>
         </customer>
 
