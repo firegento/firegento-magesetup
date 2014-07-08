@@ -1,0 +1,155 @@
+Display Block below Price,Mostrar bloque bajo el Precio
+Display tax info and shipping cost link below the price on all pages,Mostrar la información de impuestos y el link de los gastos de envío bajo el precio en todas las páginas
+Display Delivery time on Category Pages,Muestra el tiempo de entrega en Páginas de Categoría
+CMS Page for Shipping Info,Página CMS para la información de envío
+"Show ""incl. Shipping Cost"" instead of ""excl. Shipping Cost""","Mostrar ""Gastos de envío incluidos"" en lugar de ""gastos de envío excluidos"""
+"Show ""incl. Shipping Cost"" instead of ""excl. Shipping Cost""","Mostrar ""Gastos de envío incluidos"" en lugar de ""gastos de envío excluidos"""
+No Page,No hay Página
+No Block,No hay Bloque
+Incl. Tax,Impuestos incluidos
+Incl. %s Tax,Incluidos % s Impuestos
+Excl. %s Tax,Excluidos % s Impuestos
+"excl. <a href=""%s"">Shipping Cost</a>","Excluidos <a href=""%s"">Gastos de envío</a>"
+"incl. <a href=""%s"">Shipping Cost</a>","Incluidos <a href=""%s"">Gastos de envío</a>"
+Display Product Weight below Price,Mostrar el peso del producto bajo el precio
+Unit for Product Weight,Unidad para el Peso del producto
+"e.g. g, kg, lb, ...","por ejemplo g, kg, lb, ..."
+Shipping Weight %s,Peso del envío %s
+,
+"If you want to add additional StoreViews (i.e. for multiple languages), please do so before submitting this form.","Si desea agregar vistas de las tiendas adicionales (por ejemplo, para varios idiomas), por favor, hágalo antes de enviar este formulario."
+Skip installation,Saltar instalación
+MageSetup has been installed.,MageSetup ha sido instalado
+"Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Haga clic <a href=""%s"">aquí</a> para configurar sus páginas, bloques, correos electrónicos y los ajustes de impuestos."
+Please choose the requested setups:,"Por favor, elija los ajustes solicitados:"
+Run MageSetup,Ejecutar MageSetup
+Update System Config Settings,Actualizar los ajustes de configuración del Sistema
+"i.e. newsletter confirmation, account confirmation, ..","Ej:  confirmación de suscripción a la newsletter, confirmación de la cuenta..."
+Create CMS Pages and Blocks,Crear Páginas y Bloques CMS
+"i.e. shipping, conditions, revocation","Ej: información de envío, condiciones generales y derecho de desestimiento"
+Create Checkout Agreements,Crear Condiciones de Venta
+Conditions,Condiciones
+Display Checkbox on Frontend,Mostrar Checkbox en Frontend
+Require Confirmation on Customer Registration and/or Checkout,Requerir confirmación para el registro del cliente y / o Pedido
+Language Package for CMS Pages/Blocks/Agreements,El paquete de idioma para Páginas CMS / Bloques / Acuerdos
+Create Email Templates,Crear plantillas de correo electrónico
+German Email Templates,Plantillas de correo electrónico en alemán
+Configure Tax,Configurar impuestos
+Shipping from Germany,Envío desde Alemania
+All tax settings will be overwritten!,¡Todos los ajustes de impuestos serán sobreescritos!
+Update Product Tax Classes,Actualizar clases de impuestos del producto
+Update Customer Tax Classes,Actualizar clases de impuestos del producto
+Old,Antiguo
+New,Nuevo
+No tax,Ningún impuesto
+Newsletter Subscribers Status History,Historial  de estados de suscritos a la newsletter
+,
+MageSetup: CMS Blocks and Pages have been created.,MageSetup: se han creado bloques y páginas CMS.
+MageSetup: Checkout Agreements have been created.,MageSetup: se han creado Condiciones Generales de Venta para el Checkout.
+MageSetup: Email Templates have been created.,MageSetup: se han creado plantillas de correo electrónico.
+MageSetup: Tax Settings have been created.,MageSetup: se han creado la configuración de impuestos.
+MageSetup: Product Tax Classes have been updated.,MageSetup: Clases de impuestos del producto han sido actualizados.
+MageSetup: System Config Settings have been updated.,MageSetup: Las opciones de configuración del sistema han sido actualizadas.
+,
+Imprint,pie de imprenta/ créditos
+Account,Número de Cuenta 
+Account owner,Titular 
+Bank number,Código del banco
+Bank name,Nombre del Banco 
+CEO,Director ejecutivo 
+Owner,Propietario
+Responsible according to § 5 TMG,Responsable de acuerdo a § 5 TMG
+Responsible for content,Responsable para contenido 
+Responsible for content address,Dirección del responsable de contenido 
+Responsible in the interests of the press law,Responsable en interés de la ley de prensa 
+E-Mail,E-Mail
+Fax,Fax
+Financial office,Delegación de hacienda autorizada 
+IBAN,IBAN
+Clearing,Borrando 
+Register court,Tribunal de Registro
+Register number,Número del registro mercantil 
+SWIFT,SWIFT
+BIC/SWIFT,BIC/SWIFT
+Tax number,Número de Identificación Fiscal
+Telephone,Teléfono 
+Supplementary Information for Telephone,Teléfono de información complementaria 
+Web,web
+VAT-ID,NIF / CIF
+Company 1,Empresa 1 
+Company 2,Empresa 2 
+Street,Calle 
+Zip,Código postal 
+City,Ciudad 
+Telephone,Teléfono 
+Tax number,Número de Identificación Fiscal
+Register court,Tribunal de Registro
+Financial office,Oficina financiera
+Register number,Número de registro
+"Reference for business rules (physician, physician...)",Referencia de reglas de negocio
+Authority (ECG),Autoridad (ECG)
+Shareholdings,Participaciones
+Editorial Concept,Concepto editorial
+relevant for Austrian shops,Relevante para las tiendas austriacas
+Account owner,Titular 
+Account,Número de la cuenta 
+Bank number,Código bancario 
+Bank name,Nombre del Banco 
+,
+%s%%,%s%%
+,
+Recommended Extensions,Extensiones recomendadas
+Popular Payment Methods in Germany,Métodos de pago populares en Alemania
+Ip anonymization,IP anónima
+Ensures that the ip address of the customers doesnt get involved into the tracking,Asegurese de que la dirección IP de los clientes no se involucra en el seguimiento
+,
+Dynamic Shipping Tax Class Calculation,Cálculo dinámico del impuesto sobre el envío
+"Set to ""yes"" if you want to calculate the shipping tax rate based on the highest product tax rate in cart.<br /><b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","Marque ""Sí"" si quiere calcular la tasa de impuestos de envío basada en el tipo impositivo más alto producto en la cesta. <br/><b> ATENCIÓN:</b> Esta opción sobreescribe la ""Clase de Impuesto para el envío"" el establecida arriba!"
+,
+Shipping from,Enviar desde
+This setting is base for the tax rate setup!,Esta configuración es la base para la configuración de la tasa de impuestos!
+,
+[Show],[Mostrar]
+Visible in Checkout,Visible en el Checkout
+,
+Display Additional Information,Mostrar información adicional
+Display content from text field below at the checkout confirm page directly above the checkout button,Mostrar contenido del campo de texto abajo en la página de confirmación de pago directamente encima del botón de pago
+,
+"Directory ""%s"" not found. Locale not installed?","Directorio ""% s"" no se encuentra. ¿No se ha nstalado Locale?"
+Default Setting,Configuración predeterminada
+Use Default Setting,Utilizar Configuración predeterminada
+Select Locale,Seleccione Configuración Local
+Create Transational Email Templates to be managed in the Magento admin area,Crear Plantillas de email transaccionales para que puedan ser gestionadas desde el admin de Magento
+Language Package for Email Templates,Paquete de idioma para plantillas de correo electrónico
+"If your desired locale is missing, please check if it installed.","Si no encuentra el paquete de idioma que busca, compruebe si está instalado"
+"If your desired locale is missing, it is not supported yet by MageSetup.","Si no encuentra el paquete de idioma que busca, puede ser debido a que aun no está incluido por MageSetup."
+,
+Configuration Settings,Opciones de configuración
+CMS Settings,Configuración de CMS
+Email Settings,Configuración de correo electrónico
+Tax Settings,Ajustes de impuestos
+,
+Delivery Time,Tiempo de Entrega
+Shipping Costs,Gastos de Envío
+Hide estimated shipping costs in cart,No mostrar gastos de envío estimados en el carrito
+Replace with a link to the shipping costs cms page,Reemplazar con un link a la Página CMS de gastos de envío
+Here you find information regarding the shipping costs.,Aquí encontrará información sobre los gastos de envío.
+"Hide box ""Last Ordered Items""","Ocultar cuadro ""Últimos artículos pedidos"""
+Tax Settings,Ajustes de impuestos
+,
+Display on,Mostrar en
+On checkout (Magento Default),En el Checkout (por defecto de Magento)
+"On customer registration (or on checkout, if customer not registered before)","En el registro del cliente (o en el Checkout, si el cliente no se ha registrado antes)"
+On customer registration and on checkout,En el registro de clientes y en el Checkout
+Nowhere,en ninguna parte
+Agreements not confirmed.,Acuerdos no confirmados.
+,
+German Language Pack,Paquete de idioma alemán
+Base Price,Precio Base
+"Newsletter Unsubscription for Guests, Double Opt In for registered Customers","Cancelación de la suscripción a la newsletter para Invitados, Opt Doble para clientes registrados"
+Debit Payment,Pago a Débito
+Cash on Delivery,Pago Contra Reembolso
+Bank Payment,Transferencia Bancaria
+Invoice Payment,Pago de la factura
+Extension Key,Clave de la extensión
+MagentoConnect,MagentoConnect
+Bank Information,Información bancaria
