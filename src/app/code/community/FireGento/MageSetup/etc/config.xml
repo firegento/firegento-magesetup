@@ -244,11 +244,11 @@
         </catalog>
         <general>
             <imprint>
-                <shop_name>Beispielshop</shop_name>
-                <company_first>Musterfirma GmbH</company_first>
+                <shop_name>Any Store</shop_name>
+                <company_first>Any Company Inc.</company_first>
                 <zip>12345</zip>
-                <street>Musterstr. 1</street>
-                <city>Musterstadt</city>
+                <street>123 Anywhere Street</street>
+                <city>Anytown</city>
                 <email>info@example.com</email>
             </imprint>
         </general>
