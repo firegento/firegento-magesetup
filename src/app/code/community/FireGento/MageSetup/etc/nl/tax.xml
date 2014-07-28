@@ -162,7 +162,7 @@
                     <shipping__origin__country_id>NL</shipping__origin__country_id>
                     <shipping__origin__region_id></shipping__origin__region_id>
                     <shipping__origin__postcode>1234</shipping__origin__postcode>
-                    <shipping__origin__city>Sample City</shipping__origin__city>
+                    <shipping__origin__city>Anytown</shipping__origin__city>
                 </default>
             </tax_config>
         </magesetup>

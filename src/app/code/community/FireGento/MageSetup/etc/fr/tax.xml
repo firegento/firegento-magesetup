@@ -179,7 +179,7 @@
                     <tax__sales_display__full_summary>1</tax__sales_display__full_summary>
                     <tax__sales_display__zero_tax>1</tax__sales_display__zero_tax>
                     <shipping__origin__country_id>FR</shipping__origin__country_id>
-                    <shipping__origin__region_id>79</shipping__origin__region_id>
+                    <shipping__origin__region_id></shipping__origin__region_id>
                     <shipping__origin__postcode>12345</shipping__origin__postcode>
                     <shipping__origin__city>Ma Ville</shipping__origin__city>
                 </default>
