@@ -245,7 +245,11 @@ class FireGento_MageSetup_Model_Observer
             $helper = Mage::helper('magesetup');
             $form = $block->getForm();
 
+            /** @var Varien_Data_Form_Element_Fieldset $fieldset */
             $fieldset = $form->getElement('base_fieldset');
+            
+            $form->getElement('content')->setRequired(false);
+            
             $fieldset->addField('is_required', 'select', array(
                 'label' => $helper->__('Required'),
                 'title' => $helper->__('Required'),
@@ -265,6 +269,15 @@ class FireGento_MageSetup_Model_Observer
                 'name' => 'agreement_type',
                 'required' => true,
                 'options' => Mage::getSingleton('magesetup/source_agreementType')->getOptionArray(),
+            ));
+
+            $fieldset->addField('revocation_product_type', 'select', array(
+                'label' => $helper->__('Display for following Revocation Product Types'),
+                'title' => $helper->__('Display for following Revocation Product Types'),
+                'note' => $helper->__('Will only be displayed if at least one product of the selected type is in cart'),
+                'name' => 'revocation_product_type',
+                'required' => false,
+                'options' => Mage::getSingleton('magesetup/source_revocationProductType')->getOptionArray(),
             ));
 
             Mage::dispatchEvent('magesetup_adminhtml_checkout_agreement_edit_form', array(

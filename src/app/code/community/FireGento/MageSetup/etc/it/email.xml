@@ -32,6 +32,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </admin_password_new>
 
                     <admin_password_reset_confirmation>
@@ -43,6 +44,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </admin_password_reset_confirmation>
 
                     <currency_update_warning>
@@ -54,6 +56,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </currency_update_warning>
 
                     <account_new>
@@ -65,6 +68,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </account_new>
 
                     <customer_password_remind_email_template>
@@ -76,6 +80,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </customer_password_remind_email_template>
 
                     <account_new_confirmation>
@@ -87,6 +92,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </account_new_confirmation>
 
                     <account_new_confirmed>
@@ -98,6 +104,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </account_new_confirmed>
 
                     <password_new>
@@ -109,6 +116,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </password_new>
 
                     <account_password_reset_confirmation>
@@ -120,6 +128,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </account_password_reset_confirmation>
 
                     <order_new>
@@ -131,6 +140,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>1</add_business_terms>
                         <add_revocation>1</add_revocation>
+                        <add_revocation_form>1</add_revocation_form>
                     </order_new>
 
                     <order_new_guest>
@@ -142,6 +152,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>1</add_business_terms>
                         <add_revocation>1</add_revocation>
+                        <add_revocation_form>1</add_revocation_form>
                     </order_new_guest>
 
                     <order_update>
@@ -153,6 +164,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </order_update>
 
                     <order_update_guest>
@@ -164,6 +176,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </order_update_guest>
 
                     <invoice_new>
@@ -175,6 +188,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </invoice_new>
 
                     <invoice_new_guest>
@@ -186,6 +200,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </invoice_new_guest>
 
                     <invoice_update>
@@ -197,6 +212,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </invoice_update>
 
                     <invoice_update_guest>
@@ -208,6 +224,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </invoice_update_guest>
 
                     <creditmemo_new>
@@ -219,6 +236,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </creditmemo_new>
 
                     <creditmemo_new_guest>
@@ -230,6 +248,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </creditmemo_new_guest>
 
                     <creditmemo_update>
@@ -241,6 +260,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </creditmemo_update>
 
                     <creditmemo_update_guest>
@@ -252,6 +272,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </creditmemo_update_guest>
 
                     <shipment_new>
@@ -263,6 +284,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </shipment_new>
 
                     <shipment_new_guest>
@@ -274,6 +296,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </shipment_new_guest>
 
                     <shipment_update>
@@ -285,6 +308,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </shipment_update>
 
                     <shipment_update_guest>
@@ -296,6 +320,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </shipment_update_guest>
 
                     <payment_failed>
@@ -307,6 +332,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </payment_failed>
 
                     <log_clean_warning>
@@ -318,6 +344,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </log_clean_warning>
 
                     <newsletter_subscr_confirm>
@@ -329,6 +356,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </newsletter_subscr_confirm>
 
                     <newsletter_subscr_success>
@@ -340,6 +368,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </newsletter_subscr_success>
 
                     <newsletter_unsub_success>
@@ -351,6 +380,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </newsletter_unsub_success>
 
                     <wishlist_share>
@@ -362,6 +392,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </wishlist_share>
 
                     <product_share>
@@ -373,6 +404,7 @@
                         <add_footer>1</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </product_share>
 
                     <contact_form>
@@ -384,6 +416,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </contact_form>
 
                     <sitemap_generate_warning>
@@ -395,6 +428,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </sitemap_generate_warning>
 
                     <product_stock_alert>
@@ -406,6 +440,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </product_stock_alert>
 
                     <product_price_alert>
@@ -417,6 +452,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </product_price_alert>
 
                     <product_alert_cron_error>
@@ -428,6 +464,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </product_alert_cron_error>
 
                     <enterprise_invitation>
@@ -439,6 +476,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </enterprise_invitation>
 
                     <token>
@@ -450,6 +488,7 @@
                         <add_footer>0</add_footer>
                         <add_business_terms>0</add_business_terms>
                         <add_revocation>0</add_revocation>
+                        <add_revocation_form>0</add_revocation_form>
                     </token>
                 </default>
             </emails>
@@ -484,6 +523,16 @@
                         </tr>
                         ]]>
                     </revocation>
+                    <revocation_form>
+                        <![CDATA[
+                        <tr><td style="border-bottom:2px solid #eee;">&nbsp;</td></tr>
+                        <tr>
+                            <td style="font:9px/1em Verdana, Arial, Helvetica, sans-serif;">
+                                {{block type="cms/block" block_id="revocation_form"}}
+                            </td>
+                        </tr>
+                        ]]>
+                    </revocation_form>
                 </default>
             </email_footers>
         </magesetup>
