@@ -20,7 +20,7 @@ before_script:
   - CURR_DIR=$(pwd)
   - bin/mage-ci install test ${MAGENTO_VERSION} magento_test -c -t -r http://mage-ci.firegento.com
   - bin/mage-ci install-module test $CURR_DIR
-  - git clone https://github.com/EcomDev/EcomDev_PHPUnit.git -b dev ./phpunit/
+  - git clone https://github.com/EcomDev/EcomDev_PHPUnit.git ./phpunit/
   - bin/mage-ci install-module $CURR_DIR/test $CURR_DIR/phpunit/
 
 script:
