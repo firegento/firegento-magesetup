@@ -46,9 +46,12 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
      */
     protected function _beforeToHtml()
     {
-        $templates = Mage::getStoreConfig('firegento_magesetup/price/tierprice_default_templates');
-        foreach ($templates as $template) {
-            $this->addTierpriceDefaultTemplate($template);
+        $templatesNode = Mage::getConfig()->getNode('magesetup/price/tierprice_default_templates');
+        if ($templatesNode) {
+            $templates = $templatesNode->asArray();
+            foreach ($templates as $template) {
+                $this->addTierpriceDefaultTemplate($template);
+            }
         }
 
         return parent::_beforeToHtml();

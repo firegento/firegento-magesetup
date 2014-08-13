@@ -217,7 +217,6 @@
             </adminhtml_block_html_before>
         </events>
     </adminhtml>
-
     <admin>
         <routers>
             <magesetup>
@@ -232,7 +231,6 @@
             </magesetup>
         </routers>
     </admin>
-
     <default>
         <catalog>
             <price>
@@ -346,7 +344,6 @@ Tel: {{var telephone}}
             </country>
         </general>
     </default>
-
     <phpunit>
         <suite>
             <modules>
