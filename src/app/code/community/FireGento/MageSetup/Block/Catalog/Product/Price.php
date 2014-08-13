@@ -40,6 +40,21 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     );
 
     /**
+     * Add the tierprice default templates
+     *
+     * @return FireGento_MageSetup_Block_Catalog_Product_Price
+     */
+    protected function _beforeToHtml()
+    {
+        $templates = Mage::getStoreConfig('firegento_magesetup/price/tierprice_default_templates');
+        foreach ($templates as $template) {
+            $this->addTierpriceDefaultTemplate($template);
+        }
+
+        return parent::_beforeToHtml();
+    }
+
+    /**
      * Add content of template block below price html if defined in config
      *
      * @return string Price HTML
@@ -231,6 +246,18 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     public function getFormattedWeight()
     {
         return floatval($this->getProduct()->getWeight()) . ' ' . Mage::getStoreConfig('catalog/price/weight_unit');
+    }
+
+    /**
+     * Add a tierprice default template
+     *
+     * @param  string $template Template
+     * @return FireGento_MageSetup_Block_Catalog_Product_Price
+     */
+    public function addTierpriceDefaultTemplate($template)
+    {
+        $this->_tierPriceDefaultTemplates[] = $template;
+        return $this;
     }
 
     /**
