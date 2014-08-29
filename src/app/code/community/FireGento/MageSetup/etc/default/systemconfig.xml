@@ -26,6 +26,7 @@
                      <customer__create_account__confirm>0</customer__create_account__confirm>
                      <newsletter__subscription__confirm>1</newsletter__subscription__confirm>
                      <catalog__price__display_block_below_price>1</catalog__price__display_block_below_price>
+                     <general__region__state_required>CA,US</general__region__state_required>
                  </default>
             </system_config>
         </magesetup>
