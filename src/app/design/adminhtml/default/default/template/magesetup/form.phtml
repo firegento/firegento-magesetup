@@ -185,7 +185,8 @@
                             <td class="value">
                                 <select name="cms_locale[default]" id="select_cms_locale">
                                     <?php foreach($this->getLocaleOptionsForCmsContent() as $_option): ?>
-                                        <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
+                                        <?php $isSelected = ($_option['value'] == Mage::app()->getLocale()->getLocaleCode()) ?>
+                                        <option value="<?php echo $_option['value'] ?>"<?php if ($isSelected): ?> selected="selected"<?php endif ?>><?php echo $_option['label']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </td>
@@ -248,7 +249,8 @@
                             <td class="value">
                                 <select name="email_locale[default]" id="select_email_locale">
                                     <?php foreach($this->getLocaleOptionsForEmailTemplates() as $_option): ?>
-                                        <option value="<?php echo $_option['value'] ?>"><?php echo $_option['label']; ?></option>
+                                        <?php $isSelected = ($_option['value'] == Mage::app()->getLocale()->getLocaleCode()) ?>
+                                        <option value="<?php echo $_option['value'] ?>"<?php if ($isSelected): ?> selected="selected"<?php endif ?>><?php echo $_option['label']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </td>
