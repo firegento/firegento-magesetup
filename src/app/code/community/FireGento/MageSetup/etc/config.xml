@@ -259,6 +259,11 @@
                 <hide_shipping>1</hide_shipping>
             </cart>
         </checkout>
+        <sales>
+            <reorder>
+                <hide_sidebar_box>1</hide_sidebar_box>
+            </reorder>
+        </sales>
         <customer>
             <create_account>
                 <avoid_tc>Yes</avoid_tc>
