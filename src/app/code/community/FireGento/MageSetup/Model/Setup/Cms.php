@@ -171,6 +171,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
 
         if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
             $data['title'] = $matches[1];
+            $data['content_heading'] = $matches[1];
             $templateContent = str_replace($matches[0], '', $templateContent);
         }
 
