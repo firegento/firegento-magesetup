@@ -276,4 +276,18 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
 
         return Mage::app()->getTranslator()->translate($args);
     }
+    
+    public function addTierpriceDefaultTemplate($template)
+    {
+        $this->_tierPriceDefaultTemplates[] = $template;
+    }
+    
+    protected function _beforeToHtml()
+    {
+        $templates = Mage::getStoreConfig('firegento_magesetup/price/tierprice_default_templates');
+        foreach($templates as $template) {
+            $this->addTierpriceDefaultTemplate($template);
+        }
+        return parent::_beforeToHtml();
+    }
 }

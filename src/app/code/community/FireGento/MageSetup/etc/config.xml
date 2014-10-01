@@ -348,6 +348,16 @@ Tel: {{var telephone}}
                 <eu_countries>AT,BE,BG,CY,CZ,DE,DK,EE,FI,FR,DE,GR,HU,HR,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB</eu_countries>
             </country>
         </general>
+        <!--
+        <firegento_magesetup>
+            <price>
+                <tierprice_default_templates>
+                    <your_identifier><![CDATA[your/template/path.phtml]]></your_identifier>
+                    <b71a_basetierprice><![CDATA[b71a/basepricetierprice/tierprices.phtml]]></b71a_basetierprice>
+                </tierprice_default_templates>
+            </price>
+        </firegento_magesetup>
+        -->        
     </default>
     <phpunit>
         <suite>
