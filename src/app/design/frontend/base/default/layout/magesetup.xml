@@ -403,13 +403,6 @@
                 <template>bundle/catalog/product/price.phtml</template>
             </action>
         </reference>
-	<reference name="product.clone_prices">
- 	    <action method="addPriceBlockType">
-	        <type>bundle</type>
-            	<block>magesetup/bundle_catalog_product_price</block>
-            	<template>bundle/catalog/product/view/price.phtml</template>
-            </action>
-    	</reference>
     </catalog_product_view>
 
     <PRODUCT_TYPE_simple>
@@ -446,6 +439,23 @@
                    template="magesetup/delivery_time.phtml"/>
         </reference>
     </PRODUCT_TYPE_downloadable>
+
+    <PRODUCT_TYPE_bundle>
+        <reference name="product.clone_prices">
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/view/price.phtml</template>
+            </action>
+        </reference>
+        <reference name="product.info">
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </PRODUCT_TYPE_bundle>
 
     <!--
     Changes for Button Loesung
