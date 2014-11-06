@@ -117,8 +117,6 @@ class FireGento_MageSetup_Test_Config_Main extends EcomDev_PHPUnit_Test_Case_Con
      */
     public function testRewrites()
     {
-        $this->assertBlockAlias('googleanalytics/ga', 'FireGento_MageSetup_Block_Ga');
-
         $this->assertHelperAlias('catalog/product_configuration', 'FireGento_MageSetup_Helper_Catalog_Product_Configuration');
         $this->assertHelperAlias('checkout/data', 'FireGento_MageSetup_Helper_Checkout_Data');
 

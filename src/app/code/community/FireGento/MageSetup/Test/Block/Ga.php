@@ -30,7 +30,7 @@
 class FireGento_MageSetup_Test_Block_Ga extends EcomDev_PHPUnit_Test_Case
 {
     /**
-     * @var FireGento_MageSetup_Block_Ga
+     * @var Mage_GoogleAnalytics_Block_Ga
      */
     protected $_block;
 
