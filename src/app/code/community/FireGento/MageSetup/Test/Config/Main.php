@@ -170,6 +170,12 @@ class FireGento_MageSetup_Test_Config_Main extends EcomDev_PHPUnit_Test_Case_Con
             'magesetup/observer',
             'customerCreatePreDispatch'
         );
+        $this->assertEventObserverDefined(
+            'frontend',
+            'core_block_abstract_to_html_after',
+            'magesetup/observer',
+            'setGAAnonymizerCode'
+        );
 
         // Adminhtml event observers
         $this->assertEventObserverDefined(
