@@ -29,11 +29,6 @@
             <magesetup>
                 <class>FireGento_MageSetup_Block</class>
             </magesetup>
-            <googleanalytics>
-                <rewrite>
-                    <ga>FireGento_MageSetup_Block_Ga</ga>
-                </rewrite>
-            </googleanalytics>
         </blocks>
         <helpers>
             <magesetup>
@@ -168,6 +163,15 @@
                     </magesetup_observer>
                 </observers>
             </controller_action_predispatch_customer_account_createpost>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <magesetup_observer>
+                        <class>magesetup/observer</class>
+                        <type>model</type>
+                        <method>setGAAnonymizerCode</method>
+                    </magesetup_observer>
+                </observers>
+            </core_block_abstract_to_html_after>
         </events>
         <routers>
             <magesetup>

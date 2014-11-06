@@ -390,4 +390,34 @@ class FireGento_MageSetup_Model_Observer
             Mage::app()->saveCache(implode(',', $attrList), $cachetag, array('eav'), false);
         }
     }
+    
+    /**
+     * Compatibility for Magento < 1.9
+     *
+     * Event
+     * - core_block_abstract_to_html_after
+     */
+    public function setGAAnonymizerCode(Varien_Event_Observer $observer)
+    {
+        $block = $observer->getEvent()->getBlock();
+        if ($block instanceof Mage_GoogleAnalytics_Block_Ga && version_compare(Mage::getVersion(), '1.9') == -1 ) {
+            $transport = $observer->getEvent()->getTransport();
+
+            $html = $transport->getHtml();
+
+            if (!Mage::getStoreConfigFlag( self::CONFIG_GOOGLE_ANALYTICS_IP_ANONYMIZATION )) {
+                return;
+            }
+
+            $matches = array();
+            $setAccountExpression = '/_gaq\.push\(\[\'_setAccount\', \'[a-zA-Z0-9-_]+\'\]\);\n/';
+            $append = '_gaq.push([\'_gat._anonymizeIp\']);';
+
+            if (preg_match_all($setAccountExpression, $html, $matches) && count($matches) && count($matches[0])) {
+                $html = preg_replace($setAccountExpression, $matches[0][0] . $append . "\n", $html);
+            }
+
+            $transport->setHtml($html);
+        }
+    }
 }
