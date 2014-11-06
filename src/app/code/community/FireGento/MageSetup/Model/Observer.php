@@ -29,6 +29,8 @@
  */
 class FireGento_MageSetup_Model_Observer
 {
+     const CONFIG_GOOGLE_ANALYTICS_IP_ANONYMIZATION = 'google/analytics/ip_anonymization';
+
     /**
      * Add "Visible on Checkout Review on Front-end" Option to Attribute Settings
      *
