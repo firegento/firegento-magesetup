@@ -48,7 +48,6 @@ class FireGento_MageSetup_Test_Block_Ga extends EcomDev_PHPUnit_Test_Case
      */
     public function testInstance()
     {
-        $this->assertInstanceOf('FireGento_MageSetup_Block_Ga', $this->_block);
         $this->assertInstanceOf('Mage_GoogleAnalytics_Block_Ga', $this->_block);
     }
 
