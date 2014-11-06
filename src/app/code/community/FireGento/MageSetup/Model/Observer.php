@@ -402,7 +402,7 @@ class FireGento_MageSetup_Model_Observer
     public function setGAAnonymizerCode(Varien_Event_Observer $observer)
     {
         $block = $observer->getEvent()->getBlock();
-        if ($block instanceof Mage_GoogleAnalytics_Block_Ga && version_compare(Mage::getVersion(), '1.9') == -1 ) {
+        if ($block instanceof Mage_GoogleAnalytics_Block_Ga && version_compare(Mage::getVersion(), '1.9', '<=')) {
             $transport = $observer->getEvent()->getTransport();
 
             $html = $transport->getHtml();
