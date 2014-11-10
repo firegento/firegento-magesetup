@@ -43,7 +43,7 @@ class FireGento_MageSetup_Model_Source_Tax_DynamicType
                 'label' => $helper->__('No dynamic shipping tax caluclation')
             ),
             array(
-                'value' => FireGento_MageSetup_Model_Tax_Config::USE_HIGHTES_TAX_ON_PRODUCTS,
+                'value' => FireGento_MageSetup_Model_Tax_Config::USE_HIGHEST_TAX_ON_PRODUCTS,
                 'label' => $helper->__('Use the highest product tax')
             ),
         );
