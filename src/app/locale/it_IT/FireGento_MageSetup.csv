@@ -98,7 +98,7 @@
 "Ensures that the ip address of the customers doesnt get involved into the tracking","Assicura che l'IP del cliente non venga coinvolto nel tracciamento"
 
 "Dynamic Shipping Tax Class Calculation","Calcolo dinamico della classe fiscale delle spedizioni"
-"Set to ""yes"" if you want to calculate the shipping tax rate based on the highest product tax rate in cart.<br /><b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","Imposta su ""si"" se vuoi calcolare la tassazione delle spedizioni sulla base della tassazione più altra tra i prodotti presenti nel carrello.<br /><b>ATTENZIONE:</b> Questa impostazione sovrascrive la configurazione ""Classe fiscale per le spedizioni"" di cui sopra!"
+"<b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","<b>ATTENZIONE:</b> Questa impostazione sovrascrive la configurazione ""Classe fiscale per le spedizioni"" di cui sopra!"
 
 "Shipping from","Spedito da"
 "This setting is base for the tax rate setup!","Questo settaggio è utilizzato per la configurazione delle tasse!"
