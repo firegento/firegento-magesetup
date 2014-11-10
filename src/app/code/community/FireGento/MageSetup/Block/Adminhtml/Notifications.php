@@ -34,6 +34,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
      */
     protected function _construct()
     {
+        parent::_construct();
         $this->addData(array('cache_lifetime'=> null));
     }
 
