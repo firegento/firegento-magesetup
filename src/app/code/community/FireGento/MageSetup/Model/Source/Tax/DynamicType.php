@@ -46,10 +46,6 @@ class FireGento_MageSetup_Model_Source_Tax_DynamicType
                 'value' => FireGento_MageSetup_Model_Tax_Config::USE_HIGHTES_TAX_ON_PRODUCTS,
                 'label' => $helper->__('Use the highest product tax')
             ),
-            array(
-                'value' => FireGento_MageSetup_Model_Tax_Config::USE_TAX_DEPENDING_ON_PRODUCT_VALUES,
-                'label' => $helper->__('Use the tax rate of products that make up the biggest amount')
-            ),
         );
     }
 }
