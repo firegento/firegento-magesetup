@@ -80,37 +80,16 @@ class FireGento_MageSetup_Model_Tax_Config extends Mage_Tax_Model_Config
                 continue;
             }
 
-            if (Mage::getStoreConfig(self::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX, $store)
-                == self::USE_TAX_DEPENDING_ON_PRODUCT_VALUES
-            ) {
-                // sum up all product values grouped by the tax class id
-                if (isset($taxClassSums[$item->getTaxClassId()])) {
-                    $taxClassSums[$item->getTaxClassId()] += $item->getPriceInclTax() * $item->getQty();
-                } else {
-                    $taxClassSums[$item->getTaxClassId()] = $item->getPriceInclTax() * $item->getQty();
-                }
-            } else {
-                $taxPercent = $this->_loadTaxCalculationRate($item);
-                if (is_float($taxPercent) && !in_array($taxPercent, $taxClassIds)) {
-                    $taxClassIds[$taxPercent] = $item->getTaxClassId();
-                }
+            $taxPercent = $this->_loadTaxCalculationRate($item);
+            if (is_float($taxPercent) && !in_array($taxPercent, $taxClassIds)) {
+                $taxClassIds[$taxPercent] = $item->getTaxClassId();
             }
         }
 
-        if (Mage::getStoreConfig(self::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX, $store)
-            == self::USE_TAX_DEPENDING_ON_PRODUCT_VALUES
-        ) {
-            // get the highest value of the sums and set the taxClass
-            arsort($taxClassSums);
-            if (count($taxClassSums)) {
-                $highestTaxRate = key($taxClassSums);
-            }
-        } else {
-            // Get the highest tax rate
-            ksort($taxClassIds);
-            if (count($taxClassIds)) {
-                $highestTaxRate = array_pop($taxClassIds);
-            }
+        // Get the highest tax rate
+        ksort($taxClassIds);
+        if (count($taxClassIds)) {
+            $highestTaxRate = array_pop($taxClassIds);
         }
 
         if (!$highestTaxRate || is_null($highestTaxRate)) {
