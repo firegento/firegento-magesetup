@@ -95,7 +95,7 @@
 "Ensures that the ip address of the customers doesnt get involved into the tracking","Il assure que l'adresse IP du client ne va pas être transmettre au tracker (protection des donn?es)"
 
 "Dynamic Shipping Tax Class Calculation","Calculation dynamique de la classe de taxe livraison"
-"Set to ""yes"" if you want to calculate the shipping tax rate based on the highest product tax rate in cart.<br /><b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!", "Sélectionnez ""Oui"" si vous souhaitez calculer le taux de la taxe de livraison basé sur le plus haut taux de taxe produit du panier.<br /><b>ATTENTION:</b> ce réglage écrase le réglage ""Classe de taxe de livraison"" ci-dessus!"
+"<b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!", "<b>ATTENTION:</b> ce réglage écrase le réglage ""Classe de taxe de livraison"" ci-dessus!"
 
 "Shipping from","Livraison depuis"
 "This setting is base for the tax rate setup!","Ce réglage est la base pour le réglage du taux de la taxe!"

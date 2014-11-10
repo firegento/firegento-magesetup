@@ -102,7 +102,7 @@
 "Ensures that the ip address of the customers doesnt get involved into the tracking","Zorgt ervoor dat het ip adres van de klanten niet meegenomen worden in de tracking"
 
 "Dynamic Shipping Tax Class Calculation","Dynamische verzendkosten BTW groep berekening"
-"Set to ""yes"" if you want to calculate the shipping tax rate based on the highest product tax rate in cart.<br /><b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","Zet op ""ja"" als je wilt dat de verzendkosten BTW op basis van het hoogste BTW product in winkelwagen wordt berekend <br /> <b>. LET OP: </ b> Deze instelling overschrijft de ""BTW groep voor verzendingen"" instelling hierboven!"
+"<b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","<b>LET OP:</b> Deze instelling overschrijft de ""BTW groep voor verzendingen"" instelling hierboven!"
 
 "Shipping from","Verzending van"
 "This setting is base for the tax rate setup!","Deze instelling is de basis voor de BTW setup!"
