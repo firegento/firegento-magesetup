@@ -31,7 +31,6 @@ class FireGento_MageSetup_Model_Tax_Config extends Mage_Tax_Model_Config
 {
     const XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX = 'tax/classes/shipping_tax_on_product_tax';
     const USE_HIGHTES_TAX_ON_PRODUCTS = 1;
-    const USE_TAX_DEPENDING_ON_PRODUCT_VALUES = 2;
 
     /**
      * Get tax class id specified for shipping tax estimation based on highest product
