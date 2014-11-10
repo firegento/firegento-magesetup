@@ -48,6 +48,19 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
     }
 
     /**
+     * Returns a value that indicates if the shipping tax config is wrong.
+     *
+     * @return bool Flag if Shipping Tax Config is wrong
+     */
+    public function isWrongShippingTaxConfig()
+    {
+        if(Mage::getModel('magesetup/shippingtax_flag')->loadSelf()->getFlagData() == 'wrong'){
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * Get magesetup management url
      *
      * @return string URL for MageSetup form

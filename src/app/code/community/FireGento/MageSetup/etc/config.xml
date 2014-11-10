@@ -219,6 +219,14 @@
                     </magesetup_observer_agreement>
                 </observers>
             </adminhtml_block_html_before>
+            <admin_session_user_login_success>
+                <observers>
+                    <firegento_magesetup>
+                        <class>magesetup/observer</class>
+                        <method>checkForInvalidShippingTaxCalculationAlgo</method>
+                    </firegento_magesetup>
+                </observers>
+            </admin_session_user_login_success>
         </events>
     </adminhtml>
     <admin>

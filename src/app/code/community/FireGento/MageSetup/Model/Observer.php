@@ -249,9 +249,9 @@ class FireGento_MageSetup_Model_Observer
 
             /** @var Varien_Data_Form_Element_Fieldset $fieldset */
             $fieldset = $form->getElement('base_fieldset');
-            
+
             $form->getElement('content')->setRequired(false);
-            
+
             $fieldset->addField('is_required', 'select', array(
                 'label' => $helper->__('Required'),
                 'title' => $helper->__('Required'),
@@ -392,7 +392,7 @@ class FireGento_MageSetup_Model_Observer
             Mage::app()->saveCache(implode(',', $attrList), $cachetag, array('eav'), false);
         }
     }
-    
+
     /**
      * Compatibility for Magento < 1.9
      *
@@ -420,6 +420,30 @@ class FireGento_MageSetup_Model_Observer
             }
 
             $transport->setHtml($html);
+        }
+    }
+
+    /**
+     * Checks for old but invalid tax calculation algo with value '2'
+     * was formerly known as "Use the tax rate of products that make up the biggest amount"
+     *
+     * @param Varien_Event_Observer $observer
+     */
+    public function checkForInvalidShippingTaxCalculationAlgo(Varien_Event_Observer $observer){
+
+        $resource   = Mage::getSingleton('core/resource');
+        $connection = $resource->getConnection('core_read');
+
+        $select = $connection->select();
+        $select->from($resource->getTableName('core/config_data'))->where('path = ?', FireGento_MageSetup_Model_Tax_Config::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX)->where('value = ?', '2');
+
+        $result = $connection->fetchAll($select);
+        if(count($result) !== 0) {
+            // This work-around might be neccessary due to less meaningful config values in the future
+            // So we can reuse config value '2' for dynamic shipping tax calc algo without
+            // confusing it with the prior 2.2.0 version
+            Mage::getModel('magesetup/shippingtax_flag')->setFlagData('wrong')->save();
+            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('magesetup')->__('Please check your dynamic shipping tax configuration in <a href="%s">system config at tax -> classes!</a> You have to reconfigure it, as the current value "Use the tax rate of products that make up the biggest amount" is not valid anymore.', Mage::getModel('adminhtml/url')->getUrl('*/system_config/edit', array('section' => 'tax'))));
         }
     }
 }

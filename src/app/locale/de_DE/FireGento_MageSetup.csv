@@ -98,10 +98,12 @@
 "Recommended Extensions","Empfohlene Erweiterungen"
 "Popular Payment Methods","Beliebte Zahlungsmethoden"
 "Ip anonymization", "IP Adresse verschleiern"
-"Ensures that the ip address of the customers doesnt get involved into the tracking", "Stellt sicher das die IP Adresse der Kunden beim Tracking nicht mit übertragen werden (Datenschutz)"
+"Ensures that the ip address of the customers doesnt get involved into the tracking", "Stellt sicher, dass die IP Adresse der Kunden beim Tracking nicht mit übertragen werden (Datenschutz)"
 
 "Dynamic Shipping Tax Class Calculation","Dynamische Berechnung der Versand-Steuerklasse"
 "<b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","<b>ACHTUNG:</b> Diese Einstellung überschreibt die Einstellung ""Steuerklasse für den Versand"" darüber."
+"Please check your dynamic shipping tax configuration in <a href=""%s"">system config at tax -&gt; classes!</a> You have to reconfigure it, as the current value ""Use the tax rate of products that make up the biggest amount"" is not valid anymore.","Bitte prüfen Sie Ihre Einstellungen zur dymischen Versandsteuerberechnung in der <a href=""%s"">Systemkonfiguration unter Steuern -&gt; Steuerklassen!</a> Sie müssen die Einstellungen ändern, da der bisherige Wert ""Use the tax rate of products that make up the biggest amount"" nicht länger gültig ist."
+"Shipping Tax Configuration:","Versandsteuer-Konfiguration:"
 
 "Shipping from","Versand aus"
 "This setting is base for the tax rate setup!","Diese Einstellung wird für das Setup der Steuereinstellungen verwendet!"
