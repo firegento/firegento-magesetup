@@ -48,6 +48,14 @@ if (
     {
 
     }
+	
+} elseif (Mage::getConfig()->getModuleConfig('OrganicInternet_SimpleConfigurableProducts')->is('active', 'true')) {
+
+    abstract class FireGento_MageSetup_Block_Catalog_Product_Price_Abstract
+        extends OrganicInternet_SimpleConfigurableProducts_Catalog_Block_Product_Price
+    {
+
+    }
 
 } else {
 
