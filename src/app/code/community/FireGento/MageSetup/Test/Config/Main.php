@@ -160,12 +160,6 @@ class FireGento_MageSetup_Test_Config_Main extends EcomDev_PHPUnit_Test_Case_Con
         );
         $this->assertEventObserverDefined(
             'frontend',
-            'checkout_cart_update_items_after',
-            'magesetup/observer',
-            'recollectAfterQuoteItemUpdate'
-        );
-        $this->assertEventObserverDefined(
-            'frontend',
             'controller_action_predispatch_customer_account_createpost',
             'magesetup/observer',
             'customerCreatePreDispatch'
