@@ -297,26 +297,6 @@ class FireGento_MageSetup_Model_Observer
     }
 
     /**
-     * After updating the quantities of cart items, it might be needed to recalculate the shipping tax
-     *
-     * Event: <checkout_cart_update_items_after>
-     *
-     * @param Varien_Event_Observer $observer Observer
-     */
-    public function recollectAfterQuoteItemUpdate(Varien_Event_Observer $observer)
-    {
-        $store = Mage::app()->getStore();
-        if (Mage::getStoreConfig(FireGento_MageSetup_Model_Tax_Config::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX, $store)
-            == FireGento_MageSetup_Model_Tax_Config::USE_TAX_DEPENDING_ON_PRODUCT_VALUES
-        ) {
-            Mage::getSingleton('checkout/session')
-                ->getQuote()
-                ->setTotalsCollectedFlag(false)
-                ->collectTotals();
-        }
-    }
-
-    /**
      * Get required agreements on custom registration
      *
      * @return array Customer agreement ids
