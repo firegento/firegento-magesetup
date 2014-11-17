@@ -145,15 +145,6 @@
                     </magesetup_observer>
                 </observers>
             </core_block_abstract_to_html_before>
-            <checkout_cart_update_items_after>
-                <observers>
-                    <recalculate_dynamic_shipping_tax>
-                        <class>magesetup/observer</class>
-                        <type>singleton</type>
-                        <method>recollectAfterQuoteItemUpdate</method>
-                    </recalculate_dynamic_shipping_tax>
-                </observers>
-            </checkout_cart_update_items_after>
             <controller_action_predispatch_customer_account_createpost>
                 <observers>
                     <magesetup_observer>
