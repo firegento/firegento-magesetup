@@ -90,6 +90,11 @@
                 {
                     "type": "magelocale",
                     "structure": "dir",
+                    "path": "pl_PL/template/magesetup"
+                },
+                {
+                    "type": "magelocale",
+                    "structure": "dir",
                     "path": "fr_CH/template/magesetup"
                 },
                 {
