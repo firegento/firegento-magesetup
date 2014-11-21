@@ -95,6 +95,11 @@
                 {
                     "type": "magelocale",
                     "structure": "dir",
+                    "path": "ro_RO/template/magesetup"
+                },
+                {
+                    "type": "magelocale",
+                    "structure": "dir",
                     "path": "fr_CH/template/magesetup"
                 },
                 {

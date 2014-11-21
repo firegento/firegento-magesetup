@@ -19,6 +19,8 @@ src/app/locale/ru_RU/FireGento_MageSetup.csv                      app/locale/ru_
 src/app/locale/ru_RU/template/magesetup/                          app/locale/ru_RU/template/magesetup/
 src/app/locale/pl_PL/FireGento_MageSetup.csv                      app/locale/pl_PL/FireGento_MageSetup.csv
 src/app/locale/pl_PL/template/magesetup/                          app/locale/pl_PL/template/magesetup/
+src/app/locale/ro_RO/FireGento_MageSetup.csv                      app/locale/ro_RO/FireGento_MageSetup.csv
+src/app/locale/ro_RO/template/magesetup/                          app/locale/ro_RO/template/magesetup/
 src/app/design/adminhtml/default/default/layout/magesetup.xml     app/design/adminhtml/default/default/layout/magesetup.xml
 src/app/design/adminhtml/default/default/template/magesetup/      app/design/adminhtml/default/default/template/magesetup/
 src/app/design/frontend/base/default/layout/magesetup.xml         app/design/frontend/base/default/layout/magesetup.xml
