@@ -167,7 +167,8 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     public function isIncludingTax()
     {
         if (!$this->getData('is_including_tax')) {
-            $this->setData('is_including_tax', Mage::getStoreConfig('tax/display/type'));
+            $includesTax = Mage::helper('tax')->priceIncludesTax();
+            $this->setData('is_including_tax', $includesTax);
         }
 
         return $this->getData('is_including_tax');
