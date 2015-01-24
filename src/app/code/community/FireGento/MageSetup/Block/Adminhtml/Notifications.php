@@ -34,6 +34,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
      */
     protected function _construct()
     {
+        parent::_construct();
         $this->addData(array('cache_lifetime'=> null));
     }
 
@@ -45,6 +46,19 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
     public function isInitialized()
     {
         return Mage::getStoreConfigFlag('magesetup/is_initialized');
+    }
+
+    /**
+     * Returns a value that indicates if the shipping tax config is wrong.
+     *
+     * @return bool Flag if Shipping Tax Config is wrong
+     */
+    public function isWrongShippingTaxConfig()
+    {
+        if(Mage::getModel('magesetup/shippingtax_flag')->loadSelf()->getFlagData() == 'wrong'){
+            return true;
+        }
+        return false;
     }
 
     /**

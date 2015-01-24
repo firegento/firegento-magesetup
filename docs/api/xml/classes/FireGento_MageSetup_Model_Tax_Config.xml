@@ -9,7 +9,7 @@
   </docblock>
   <extends full="Mage_Tax_Model_Config" namespace="" name="Mage_Tax_Model_Config"/>
   <constant name="XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX" value="'tax/classes/shipping_tax_on_product_tax'"/>
-  <constant name="USE_HIGHTES_TAX_ON_PRODUCTS" value="1"/>
+  <constant name="USE_HIGHEST_TAX_ON_PRODUCTS" value="1"/>
   <constant name="USE_TAX_DEPENDING_ON_PRODUCT_VALUES" value="2"/>
   <method name="getShippingTaxClass" start="43" end="124" abstract="false" final="false" static="false" visibility="public">
     <docblock>

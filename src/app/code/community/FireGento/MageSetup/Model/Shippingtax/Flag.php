@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of a FireGento e.V. module.
  *
@@ -15,37 +16,25 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
- * @since     1.2.0
+ * @since     0.2.0
  */
 /**
- * CMS Source model for configuration dropdown of CMS pages
+ * Flag class
  *
  * @category FireGento
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Model_Source_Tax_DynamicType
-{
+
+class FireGento_MageSetup_Model_Shippingtax_Flag extends Mage_Core_Model_Flag {
+
     /**
-     * Options getter
+     * Flag code
      *
-     * @return array Dynamic types as option array
+     * @var string
      */
-    public function toOptionArray()
-    {
-        $helper = Mage::helper('magesetup');
-        return array(
-            array(
-                'value' => 0,
-                'label' => $helper->__('No dynamic shipping tax caluclation')
-            ),
-            array(
-                'value' => FireGento_MageSetup_Model_Tax_Config::USE_HIGHEST_TAX_ON_PRODUCTS,
-                'label' => $helper->__('Use the highest product tax')
-            ),
-        );
-    }
+    protected $_flagCode = 'magesetup_shipping_tax_config';
+
 }

@@ -31,3 +31,11 @@
         <?php echo $this->helper('magesetup')->__('Click <a href="%s">here</a> to set up your pages, blocks, emails and tax settings.', $this->getManageUrl()) ?>
     </div>
 <?php endif ?>
+<?php if ($this->isWrongShippingTaxConfig()): ?>
+    <div class="notification-global">
+        <span class="span.critical">
+            <strong><?php echo $this->helper('magesetup')->__('Shipping Tax Configuration:') ?></strong>
+            <?php echo $this->helper('magesetup')->__('Please check your dynamic shipping tax configuration in <a href="%s">system config at tax -&gt; classes!</a> You have to reconfigure it, as the current value "Use the tax rate of products that make up the biggest amount" is not valid anymore.', Mage::getModel('adminhtml/url')->getUrl('*/system_config/edit', array('section' => 'tax'))); ?>
+            </span>
+    </div>
+<?php endif ?>
