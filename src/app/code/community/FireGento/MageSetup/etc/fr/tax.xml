@@ -51,13 +51,22 @@
                     </products_rate_3>
 
                     <products_rate_4 tax_rate="tax_calculation_rate_4"
+                                     tax_customer_class="customers_end_consumers,customers_companies"
+                                     tax_product_class="products_rate_4">
+                        <execute>1</execute>
+                        <code>Clients achètent les produits au taux réduit de 2.1%</code>
+                        <priority>1</priority>
+                        <position>0</position>
+                    </products_rate_4>
+
+                    <products_rate_5 tax_rate="tax_calculation_rate_5"
                                      tax_customer_class="customers_companies_no_vat"
-                                     tax_product_class="products_rate_1,products_rate_2,products_rate_3,shipping">
+                                     tax_product_class="products_rate_1,products_rate_2,products_rate_3,products_rate_4,shipping">
                         <execute>1</execute>
                         <code>Entreprises non-assujetties à la TVA achètent les produits au taux plein (TVA nominale) et au taux réduit (TVA réduite)</code>
                         <priority>1</priority>
                         <position>0</position>
-                    </products_rate_4>
+                    </products_rate_5>
                 </default>
             </tax_calculation_rules>
 
@@ -84,9 +93,16 @@
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </products_rate_3>
-                    <shipping>
+                    <products_rate_4>
                         <execute>1</execute>
                         <class_id>4</class_id>
+                        <class_name>Produits au taux réduit de 2.1%</class_name>
+                        <class_type>PRODUCT</class_type>
+                        <default>0</default>
+                    </products_rate_4>
+                    <shipping>
+                        <execute>1</execute>
+                        <class_id>5</class_id>
                         <class_name>Livraison avec TVA à taux plein</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
@@ -94,21 +110,21 @@
 
                     <customers_end_consumers>
                         <execute>1</execute>
-                        <class_id>5</class_id>
+                        <class_id>6</class_id>
                         <class_name>Clients finaux</class_name>
                         <class_type>CUSTOMER</class_type>
                         <default>1</default>
                     </customers_end_consumers>
                     <customers_companies>
                         <execute>1</execute>
-                        <class_id>6</class_id>
+                        <class_id>7</class_id>
                         <class_name>Entreprises assujetties à la TVA</class_name>
                         <class_type>CUSTOMER</class_type>
                         <default>0</default>
                     </customers_companies>
                     <customers_companies_no_vat>
                         <execute>1</execute>
-                        <class_id>7</class_id>
+                        <class_id>8</class_id>
                         <class_name>Entreprises non-assujetties à la TVA</class_name>
                         <class_type>CUSTOMER</class_type>
                         <default>0</default>
@@ -146,9 +162,17 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
+                        <label>TVA réduite de 2.1%</label>
+                        <rate>2.1</rate>
+                    </tax_calculation_rate_4>
+
+                    <tax_calculation_rate_5>
+                        <execute>1</execute>
+                        <tax_region_id>0</tax_region_id>
+                        <tax_postcode>*</tax_postcode>
                         <label>Sans TVA</label>
                         <rate>0</rate>
-                    </tax_calculation_rate_4>
+                    </tax_calculation_rate_5>
                 </default>
             </tax_calculation_rates>
 
