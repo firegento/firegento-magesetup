@@ -3,12 +3,23 @@ language: php
 php:
   - 5.3
   - 5.4
+  - 5.5
 
 env:
   - MAGENTO_VERSION="1.6.2.0"
   - MAGENTO_VERSION="1.7.0.2"
   - MAGENTO_VERSION="1.8.1.0"
   - MAGENTO_VERSION="1.9.0.1"
+  - MAGENTO_VERSION="1.9.1.0"
+
+matrix:
+  fast_finish: true
+  exclude:
+    - php: 5.5
+      env: MAGENTO_VERSION="1.6.2.0"
+
+    - php: 5.5
+      env: MAGENTO_VERSION="1.7.0.2"
 
 before_install:
   - mkdir test/
