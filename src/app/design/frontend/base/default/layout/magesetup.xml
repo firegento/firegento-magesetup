@@ -304,6 +304,15 @@
     </tag_customer_view>
 
     <default>
+        <reference name="footer">
+            <block type="core/template" name="cms_footer_links" before="footer_links" after="cms_footer_links_sm" template="magesetup/footer/links.phtml">
+                <!--
+                    The content of this block is taken from the database by its block_id.
+                    You can manage it in admin CMS -> Static Blocks
+                -->
+                <action method="setBlockId"><block_id>footer_links</block_id></action>
+            </block>
+        </reference>
         <reference name="wishlist_sidebar">
             <action method="addPriceBlockType">
                 <type>simple</type>

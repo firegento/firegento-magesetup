@@ -25,4 +25,5 @@ src/app/design/adminhtml/default/default/layout/magesetup.xml     app/design/adm
 src/app/design/adminhtml/default/default/template/magesetup/      app/design/adminhtml/default/default/template/magesetup/
 src/app/design/frontend/base/default/layout/magesetup.xml         app/design/frontend/base/default/layout/magesetup.xml
 src/app/design/frontend/base/default/template/magesetup/          app/design/frontend/base/default/template/magesetup/
+src/app/design/frontend/rwd/default/template/magesetup/           app/design/frontend/rwd/default/template/magesetup/
 src/skin/frontend/base/default/css/magesetup/                     skin/frontend/base/default/css/magesetup
