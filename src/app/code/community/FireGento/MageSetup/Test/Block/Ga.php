@@ -57,7 +57,7 @@ class FireGento_MageSetup_Test_Block_Ga extends EcomDev_PHPUnit_Test_Case
      */
     public function testToHtmlEnabled()
     {
-        //$this->assertContains('_anonymizeIp', $this->_block->toHtml());
+        $this->assertContains('_anonymizeIp', $this->_block->toHtml());
     }
 
     /**
@@ -66,6 +66,6 @@ class FireGento_MageSetup_Test_Block_Ga extends EcomDev_PHPUnit_Test_Case
      */
     public function testToHtmlDisabled()
     {
-        //$this->assertNotContains('_anonymizeIp', $this->_block->toHtml());
+        $this->assertNotContains('_anonymizeIp', $this->_block->toHtml());
     }
 }

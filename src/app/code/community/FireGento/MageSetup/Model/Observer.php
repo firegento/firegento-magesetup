@@ -20,6 +20,7 @@
  * @version   $Id:$
  * @since     0.2.0
  */
+
 /**
  * Observer class
  *
@@ -29,7 +30,7 @@
  */
 class FireGento_MageSetup_Model_Observer
 {
-     const CONFIG_GOOGLE_ANALYTICS_IP_ANONYMIZATION = 'google/analytics/ip_anonymization';
+    const CONFIG_GOOGLE_ANALYTICS_IP_ANONYMIZATION = 'google/analytics/ip_anonymization';
 
     /**
      * Add "Visible on Checkout Review on Front-end" Option to Attribute Settings
@@ -50,9 +51,9 @@ class FireGento_MageSetup_Model_Observer
             'is_visible_on_checkout',
             'select',
             array(
-                'name' => 'is_visible_on_checkout',
-                'label' => Mage::helper('magesetup')->__('Visible in Checkout'),
-                'title' => Mage::helper('magesetup')->__('Visible in Checkout'),
+                'name'   => 'is_visible_on_checkout',
+                'label'  => Mage::helper('magesetup')->__('Visible in Checkout'),
+                'title'  => Mage::helper('magesetup')->__('Visible in Checkout'),
                 'values' => $source,
             )
         );
@@ -174,7 +175,7 @@ class FireGento_MageSetup_Model_Observer
     {
         $return = array(
             'assigned' => array(),
-            'path' => array()
+            'path'     => array()
         );
 
         foreach ($categories as $categoryId) {
@@ -249,41 +250,41 @@ class FireGento_MageSetup_Model_Observer
 
             /** @var Varien_Data_Form_Element_Fieldset $fieldset */
             $fieldset = $form->getElement('base_fieldset');
-            
+
             $form->getElement('content')->setRequired(false);
-            
+
             $fieldset->addField('is_required', 'select', array(
-                'label' => $helper->__('Required'),
-                'title' => $helper->__('Required'),
-                'note' => $helper->__('Display Checkbox on Frontend'),
-                'name' => 'is_required',
+                'label'    => $helper->__('Required'),
+                'title'    => $helper->__('Required'),
+                'note'     => $helper->__('Display Checkbox on Frontend'),
+                'name'     => 'is_required',
                 'required' => true,
-                'options' => array(
+                'options'  => array(
                     '1' => $helper->__('Yes'),
                     '0' => $helper->__('No'),
                 ),
             ));
 
             $fieldset->addField('agreement_type', 'select', array(
-                'label' => $helper->__('Display on'),
-                'title' => $helper->__('Display on'),
-                'note' => $helper->__('Require Confirmation on Customer Registration and/or Checkout'),
-                'name' => 'agreement_type',
+                'label'    => $helper->__('Display on'),
+                'title'    => $helper->__('Display on'),
+                'note'     => $helper->__('Require Confirmation on Customer Registration and/or Checkout'),
+                'name'     => 'agreement_type',
                 'required' => true,
-                'options' => Mage::getSingleton('magesetup/source_agreementType')->getOptionArray(),
+                'options'  => Mage::getSingleton('magesetup/source_agreementType')->getOptionArray(),
             ));
 
             $fieldset->addField('revocation_product_type', 'select', array(
-                'label' => $helper->__('Display for following Revocation Product Types'),
-                'title' => $helper->__('Display for following Revocation Product Types'),
-                'note' => $helper->__('Will only be displayed if at least one product of the selected type is in cart'),
-                'name' => 'revocation_product_type',
+                'label'    => $helper->__('Display for following Revocation Product Types'),
+                'title'    => $helper->__('Display for following Revocation Product Types'),
+                'note'     => $helper->__('Will only be displayed if at least one product of the selected type is in cart'),
+                'name'     => 'revocation_product_type',
                 'required' => false,
-                'options' => Mage::getSingleton('magesetup/source_revocationProductType')->getOptionArray(),
+                'options'  => Mage::getSingleton('magesetup/source_revocationProductType')->getOptionArray(),
             ));
 
             Mage::dispatchEvent('magesetup_adminhtml_checkout_agreement_edit_form', array(
-                'form' => $form,
+                'form'     => $form,
                 'fieldset' => $fieldset,
             ));
 
@@ -328,7 +329,7 @@ class FireGento_MageSetup_Model_Observer
             ->addFieldToFilter('agreement_type', array('in' => array(
                 FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CUSTOMER,
                 FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
-            ))) // Only get Required Elements
+            )))// Only get Required Elements
             ->getAllIds();
 
         return $ids;
@@ -355,7 +356,7 @@ class FireGento_MageSetup_Model_Observer
                 Mage::helper('magesetup')->__('Agreements not confirmed.')
             );
 
-            $controller->getResponse()->setRedirect( Mage::getUrl('*/*/create', array('_secure' => true)) );
+            $controller->getResponse()->setRedirect(Mage::getUrl('*/*/create', array('_secure' => true)));
             $controller->setFlag(
                 $controller->getRequest()->getActionName(),
                 Mage_Core_Controller_Varien_Action::FLAG_NO_DISPATCH,
@@ -374,30 +375,29 @@ class FireGento_MageSetup_Model_Observer
     public function addProductAttributesToQuoteItems(Varien_Event_Observer $observer)
     {
         $cachetag = 'magesetup_quote_attributes';
-        if(Mage::app()->useCache('eav') && Mage::app()->loadCache($cachetag))
-        {
-            foreach(explode(',', Mage::app()->loadCache($cachetag)) as $_cacheRow)
-            {
+        if (Mage::app()->useCache('eav') && Mage::app()->loadCache($cachetag)) {
+            foreach (explode(',', Mage::app()->loadCache($cachetag)) as $_cacheRow) {
                 $observer->getAttributes()->setData($_cacheRow, '');
             }
         } else {
             $collection = Mage::getResourceModel('catalog/product_attribute_collection')
-                    ->setItemObjectClass('catalog/resource_eav_attribute')
-                    ->addFieldToFilter('additional_table.is_visible_on_checkout', 1);
+                ->setItemObjectClass('catalog/resource_eav_attribute')
+                ->addFieldToFilter('additional_table.is_visible_on_checkout', 1);
             $attrList = array();
-            foreach($collection as $_attribute) {
+            foreach ($collection as $_attribute) {
                 $attrList[] = $_attribute->getAttributeCode();
                 $observer->getAttributes()->setData($_attribute->getAttributeCode(), '');
             }
             Mage::app()->saveCache(implode(',', $attrList), $cachetag, array('eav'), false);
         }
     }
-    
+
     /**
      * Compatibility for Magento < 1.9
      *
-     * Event
-     * - core_block_abstract_to_html_after
+     * @magentoEvent core_block_abstract_to_html_after
+     *
+     * @param Varien_Event_Observer $observer Observer
      */
     public function setGAAnonymizerCode(Varien_Event_Observer $observer)
     {
@@ -407,7 +407,7 @@ class FireGento_MageSetup_Model_Observer
 
             $html = $transport->getHtml();
 
-            if (!Mage::getStoreConfigFlag( self::CONFIG_GOOGLE_ANALYTICS_IP_ANONYMIZATION )) {
+            if (!Mage::getStoreConfigFlag(self::CONFIG_GOOGLE_ANALYTICS_IP_ANONYMIZATION)) {
                 return;
             }
 
