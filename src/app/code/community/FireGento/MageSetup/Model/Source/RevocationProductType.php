@@ -66,9 +66,10 @@ class FireGento_MageSetup_Model_Source_RevocationProductType extends Mage_Eav_Mo
      */
     public function getAllOptions()
     {
-        $options = array_merge(array(
-            self::REVOCATION_PRODUCT_TYPE_DEFAULT => Mage::helper('magesetup')->__('Default (Configuration)')
-        ), $this->toOptionArray());
+        $options = array_merge(array(array(
+            'value' => self::REVOCATION_PRODUCT_TYPE_DEFAULT,
+            'label' => Mage::helper('magesetup')->__('Default (Configuration)'),
+        )), $this->toOptionArray());
 
         return $options;
     }
