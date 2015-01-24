@@ -68,7 +68,7 @@ class FireGento_MageSetup_Model_Setup_Abstract extends Mage_Core_Model_Abstract
     public function setConfigData($configPath, $value, $storeId = null)
     {
         $setup = $this->_getSetup();
-        if (is_null($storeId)) {
+        if (is_null($storeId) || $storeId == 0) {
             $setup->setConfigData($configPath, $value);
         } else {
             $setup->setConfigData($configPath, $value, 'stores', $storeId);
