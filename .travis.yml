@@ -17,7 +17,6 @@ matrix:
   exclude:
     - php: 5.5
       env: MAGENTO_VERSION="1.6.2.0"
-
     - php: 5.5
       env: MAGENTO_VERSION="1.7.0.2"
 
