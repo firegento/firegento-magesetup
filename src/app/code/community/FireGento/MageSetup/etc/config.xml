@@ -91,6 +91,15 @@
                     </magesetup_observer>
                 </observers>
             </newsletter_subscriber_save_after>
+            <sales_quote_config_get_product_attributes>
+                <observers>
+                    <magesetup_observer>
+                        <class>magesetup/observer</class>
+                        <type>singleton</type>
+                        <method>addProductAttributesToQuoteItems</method>
+                    </magesetup_observer>
+                </observers>
+            </sales_quote_config_get_product_attributes>
         </events>
         <magesetup>
             <available_countries>
