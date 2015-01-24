@@ -179,8 +179,14 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     {
         $origTemplateText = $templateText;
         $lastPos = strripos($templateText, '</table>');
+        if ($lastPos === false) {
+            return $origTemplateText;
+        }
         $part = substr($templateText, 0, $lastPos);
         $penultimatePos = strripos($part, '</table>');
+        if ($penultimatePos === false) {
+            return $origTemplateText;
+        }
         $templateText = substr($templateText, 0, $penultimatePos);
         foreach ($blocks as $block) {
             $templateText .= $block;
