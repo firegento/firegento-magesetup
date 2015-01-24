@@ -374,9 +374,9 @@ class FireGento_MageSetup_Model_Observer
      */
     public function addProductAttributesToQuoteItems(Varien_Event_Observer $observer)
     {
-        $cachetag = 'magesetup_quote_attributes';
-        if (Mage::app()->useCache('eav') && Mage::app()->loadCache($cachetag)) {
-            foreach (explode(',', Mage::app()->loadCache($cachetag)) as $_cacheRow) {
+        $cacheTag = 'magesetup_quote_attributes';
+        if (Mage::app()->useCache('eav') && Mage::app()->loadCache($cacheTag)) {
+            foreach (explode(',', Mage::app()->loadCache($cacheTag)) as $_cacheRow) {
                 $observer->getAttributes()->setData($_cacheRow, '');
             }
         } else {
@@ -388,7 +388,7 @@ class FireGento_MageSetup_Model_Observer
                 $attrList[] = $_attribute->getAttributeCode();
                 $observer->getAttributes()->setData($_attribute->getAttributeCode(), '');
             }
-            Mage::app()->saveCache(implode(',', $attrList), $cachetag, array('eav'), false);
+            Mage::app()->saveCache(implode(',', $attrList), $cacheTag, array('eav'), false);
         }
     }
 
