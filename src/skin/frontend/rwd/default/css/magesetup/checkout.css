@@ -39,7 +39,7 @@
 
 #opc-review #checkout-step-review .additional-information {
     border: 2px solid #0A263D;
-    border-top: 1px solid #ededed;
+    border-top: 0;
     border-bottom: 0
 }
 
@@ -57,10 +57,14 @@
 #opc-review .additional-information {
     clear: both;
     margin: 0;
-    padding: 15px 10px;
     text-align: right;
     background-color: #fbfaf6;
     border-top: 1px solid #ededed;
+}
+
+#opc-review .additional-information .info {
+    border-top: 1px solid #ededed;
+    padding: 15px 10px;
 }
 
 .checkout-multishipping-overview .additional-information {
