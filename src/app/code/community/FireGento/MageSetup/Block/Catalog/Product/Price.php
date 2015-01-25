@@ -79,6 +79,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
                 ->setFormattedTaxRate($this->getFormattedTaxRate())
                 ->setIsIncludingTax($this->isIncludingTax())
                 ->setIsIncludingShippingCosts($this->isIncludingShippingCosts())
+                ->setPriceDisplayType(Mage::helper('tax')->getPriceDisplayType())
                 ->setIsShowShippingLink($this->isShowShippingLink())
                 ->setIsShowWeightInfo($this->getIsShowWeightInfo())
                 ->setFormattedWeight($this->getFormattedWeight())
@@ -90,7 +91,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             Mage::dispatchEvent('magesetup_after_product_price',
                 array(
                     'html_obj' => $htmlObject,
-                    'block'    => $this,
+                    'block' => $this,
                 )
             );
 
@@ -116,8 +117,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
 
         $pathInfo = Mage::app()->getRequest()->getPathInfo();
         if (strpos($pathInfo, 'catalog/category/view') !== false
-            || strpos($pathInfo, 'catalogsearch/result') !== false
-        ) {
+            || strpos($pathInfo, 'catalogsearch/result') !== false) {
             if ($this->getProduct()->getDeliveryTime()) {
                 $html = '<p class="delivery-time">';
                 $html .= $this->__('Delivery Time') . ': ' . $this->getProduct()->getDeliveryTime();
@@ -134,7 +134,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
      */
     public function getTaxRate()
     {
-        $taxRateKey = 'tax_rate_' . $this->getProduct()->getId();
+        $taxRateKey = 'tax_rate_'.$this->getProduct()->getId();
         if (!$this->getData($taxRateKey)) {
             $this->setData($taxRateKey, $this->_loadTaxCalculationRate($this->getProduct()));
         }
@@ -155,7 +155,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             return '';
         }
 
-        $locale = Mage::app()->getLocale()->getLocaleCode();
+        $locale  = Mage::app()->getLocale()->getLocaleCode();
         $taxRate = Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale));
 
         return $this->__('%s%%', $taxRate);
