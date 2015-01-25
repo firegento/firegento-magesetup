@@ -151,6 +151,11 @@
                     "type": "mageskin",
                     "structure": "dir",
                     "path": "frontend/base/default/css/magesetup"
+                },
+                {
+                    "type": "mageskin",
+                    "structure": "dir",
+                    "path": "frontend/rwd/default/css/magesetup"
                 }
             ]
         }

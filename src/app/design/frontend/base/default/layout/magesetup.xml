@@ -14,7 +14,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
  -->
@@ -304,6 +304,11 @@
     </tag_customer_view>
 
     <default>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/magesetup/default.css</stylesheet>
+            </action>
+        </reference>
         <reference name="footer">
             <block type="core/template" name="cms_footer_links" before="footer_links" after="cms_footer_links_sm" template="magesetup/footer/links.phtml">
                 <!--
