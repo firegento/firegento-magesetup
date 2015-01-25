@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
@@ -91,7 +91,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             Mage::dispatchEvent('magesetup_after_product_price',
                 array(
                     'html_obj' => $htmlObject,
-                    'block' => $this,
+                    'block'    => $this,
                 )
             );
 
@@ -117,7 +117,8 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
 
         $pathInfo = Mage::app()->getRequest()->getPathInfo();
         if (strpos($pathInfo, 'catalog/category/view') !== false
-            || strpos($pathInfo, 'catalogsearch/result') !== false) {
+            || strpos($pathInfo, 'catalogsearch/result') !== false
+        ) {
             if ($this->getProduct()->getDeliveryTime()) {
                 $html = '<p class="delivery-time">';
                 $html .= $this->__('Delivery Time') . ': ' . $this->getProduct()->getDeliveryTime();
@@ -134,7 +135,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
      */
     public function getTaxRate()
     {
-        $taxRateKey = 'tax_rate_'.$this->getProduct()->getId();
+        $taxRateKey = 'tax_rate_' . $this->getProduct()->getId();
         if (!$this->getData($taxRateKey)) {
             $this->setData($taxRateKey, $this->_loadTaxCalculationRate($this->getProduct()));
         }
@@ -155,7 +156,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             return '';
         }
 
-        $locale  = Mage::app()->getLocale()->getLocaleCode();
+        $locale = Mage::app()->getLocale()->getLocaleCode();
         $taxRate = Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale));
 
         return $this->__('%s%%', $taxRate);

@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
  */
+
 /**
  * Block to retrieve data from imprint config.
  *
@@ -71,14 +72,14 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
      * @param  bool $checkForProtocol Flag if website url should be checked for http(s) protocol
      * @return string Website URL
      */
-    public function getWeb($checkForProtocol=false)
+    public function getWeb($checkForProtocol = false)
     {
         $web = $this->getData('web');
         if ($checkForProtocol && strlen(trim($web))) {
             if (strpos($web, 'http://') === false
                 && strpos($web, 'https://') === false
             ) {
-                $web = 'http://'.$web;
+                $web = 'http://' . $web;
             }
         }
 
@@ -117,7 +118,7 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
         }
 
         $html = '<a href="#" onclick="javascript:toRecipient();">';
-        $html .= $parts[0] .'<span class="no-display">nospamplease</span>@<span class="no-display">nospamplease</span>'.$parts[1];
+        $html .= $parts[0] . '<span class="no-display">nospamplease</span>@<span class="no-display">nospamplease</span>' . $parts[1];
         $html .= '</a>';
         $html .= $this->getEmailJs($parts);
 
@@ -135,6 +136,7 @@ class FireGento_MageSetup_Block_Imprint_Content extends Mage_Core_Block_Template
         $js = <<<JS
 <script>function toRecipient(){var m = '$parts[0]';m += '@';m += '$parts[1]';location.href= "mailto:"+m;}</script>
 JS;
+
         return $js;
     }
 }

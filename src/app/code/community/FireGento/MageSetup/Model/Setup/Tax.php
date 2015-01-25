@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.2.0
  */
+
 /**
  * Setup class for Tax Settings
  *
@@ -94,14 +95,14 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
                 foreach ($calculation->attributes() as $attribute => $values) {
                     switch ($attribute) {
                         case 'tax_rate':
-                            if (isset($taxRates[(string) $values])) {
-                                $rule->setTaxRate($taxRates[(string) $values]);
+                            if (isset($taxRates[(string)$values])) {
+                                $rule->setTaxRate($taxRates[(string)$values]);
                             }
                             break;
                         case 'tax_customer_class':
                         case 'tax_product_class':
                             $classes = array();
-                            foreach (explode(',', (string) $values) as $value) {
+                            foreach (explode(',', (string)$values) as $value) {
                                 if (isset($taxClasses[$value])) {
                                     $classes[] = $taxClasses[$value];
                                 }
@@ -132,6 +133,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
         if (Mage::helper('magesetup')->isCountryInEU($this->getCountryId())) {
             return Mage::helper('magesetup')->getEUCountries();
         }
+
         return array(strtoupper($this->getCountryId()));
     }
 
@@ -154,6 +156,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     protected function _createTaxClass($taxClassData)
     {
         $this->_insertIntoTable('tax/tax_class', $taxClassData);
+
         return $this->_lastInsertId('tax/tax_class');
     }
 
@@ -203,8 +206,8 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
             foreach (Mage::app()->getStores() as $storeId => $store) {
                 $bind = array(
                     'tax_calculation_rate_id' => $rateId,
-                    'store_id' => $storeId,
-                    'value' => $label,
+                    'store_id'                => $storeId,
+                    'value'                   => $label,
                 );
                 $this->_insertIntoTable('tax/tax_calculation_rate_title', $bind);
             }
@@ -221,6 +224,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     public function _getConfigTaxCalculations()
     {
         $configData = $this->getConfigData();
+
         return $configData->xpath('//tax_calculation_rules/default/*');
     }
 
@@ -362,6 +366,7 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
     protected function _lastInsertId($table)
     {
         $tableName = $this->_getTable($table);
+
         return $this->_getConnection()->lastInsertId($tableName);
     }
 }

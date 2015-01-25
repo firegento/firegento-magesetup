@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
  */
+
 /**
  * Dummy data helper for translation issues.
  *
@@ -78,6 +79,7 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
             }
         }
         asort($availableCountries);
+
         return $availableCountries;
     }
 
@@ -109,7 +111,7 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function setIsInitialized($isInitialized = true)
     {
-        $isInitialized  = (bool)$isInitialized ? '1' : '0';
+        $isInitialized = (bool)$isInitialized ? '1' : '0';
         Mage::getModel('eav/entity_setup', 'core_setup')->setConfigData('magesetup/is_initialized', $isInitialized);
         Mage::app()->getCacheInstance()->cleanType('config');
         Mage::dispatchEvent('adminhtml_cache_refresh_type', array('type' => 'config'));

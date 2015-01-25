@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.4.0
  */
+
 /**
  * Displays MageSetup notifications
  *
@@ -35,7 +36,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
     protected function _construct()
     {
         parent::_construct();
-        $this->addData(array('cache_lifetime'=> null));
+        $this->addData(array('cache_lifetime' => null));
     }
 
     /**

@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.2.0
  */
+
 /**
  * Config class
  *
@@ -29,7 +30,7 @@
  */
 class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
 {
-    const CACHE_ID  = 'magesetup_config';
+    const CACHE_ID = 'magesetup_config';
     const CACHE_TAG = 'magesetup_config';
 
     /**
@@ -42,7 +43,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
      *
      * @param string|Varien_Simplexml_Element $sourceData XML Source Data
      */
-    public function __construct($sourceData=null)
+    public function __construct($sourceData = null)
     {
         $this->setCacheId(self::CACHE_ID);
         $this->setCacheTags(array(self::CACHE_TAG));
@@ -59,6 +60,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
     public function setCountry($country)
     {
         $this->_country = $country;
+
         return $this;
     }
 
@@ -72,6 +74,7 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
         if (empty($this->_country)) {
             $this->_country = strtolower(Mage::getStoreConfig('general/country/default'));
         }
+
         return $this->_country;
     }
 
@@ -97,8 +100,8 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
 
         // Load additional config files
         if ($config->getNode('global/magesetup/additional_files')) {
-            foreach($config->getNode('global/magesetup/additional_files')->asCanonicalArray() as $file) {
-                $this->_addConfigFile($file['filename'], $mergeConfig, (array_key_exists('overwrite', $file) && (bool) $file['overwrite'] === false ? false : true));
+            foreach ($config->getNode('global/magesetup/additional_files')->asCanonicalArray() as $file) {
+                $this->_addConfigFile($file['filename'], $mergeConfig, (array_key_exists('overwrite', $file) && (bool)$file['overwrite'] === false ? false : true));
             }
         }
         $this->_addConfigFile('cms.xml', $mergeConfig, false);

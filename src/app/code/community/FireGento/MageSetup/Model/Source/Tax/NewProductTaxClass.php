@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
  */
+
 /**
  * Tax Source model for new product tax classes, possibly not created yet
  *
@@ -52,7 +53,8 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
             foreach ($taxClasses as $identifier => $taxClass) {
                 if ($taxClass['class_type'] != 'PRODUCT'
                     || $taxClass['execute'] != 1
-                    || strpos($identifier, 'shipping') === 0) {
+                    || strpos($identifier, 'shipping') === 0
+                ) {
                     continue;
                 }
 
@@ -61,7 +63,7 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
                     'label' => $taxClass['class_name'],
                 );
             }
-            array_unshift($this->_options, array('value' => '', 'label' =>''));
+            array_unshift($this->_options, array('value' => '', 'label' => ''));
         }
 
         return $this->_options;
@@ -89,7 +91,8 @@ class FireGento_MageSetup_Model_Source_Tax_NewProductTaxClass
             foreach ($taxClasses as $identifier => $taxClass) {
                 if ($taxClass['class_type'] != 'PRODUCT'
                     || $taxClass['execute'] != 1
-                    || strpos($identifier, 'shipping') === 0) {
+                    || strpos($identifier, 'shipping') === 0
+                ) {
                     continue;
                 }
 

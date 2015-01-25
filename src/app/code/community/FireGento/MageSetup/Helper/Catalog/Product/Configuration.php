@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     1.0.5
  */
+
 /**
  * Changed product configuration to add product attributes on checkout
  *
@@ -54,8 +55,8 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
     public function getCustomOptions(Mage_Catalog_Model_Product_Configuration_Item_Interface $item)
     {
         $optionsParent = parent::getCustomOptions($item);
-        $optionsSelf   = $this->_getAttributes($item);
-        $options       = array_merge($optionsSelf, $optionsParent);
+        $optionsSelf = $this->_getAttributes($item);
+        $options = array_merge($optionsSelf, $optionsParent);
 
         return $options;
     }
@@ -82,7 +83,7 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
         $itemId = $item->getId();
         if (!isset($this->_finished[$itemId])) {
             $this->_finished[$itemId] = true;
-            $product    = $this->_getProduct($item);
+            $product = $this->_getProduct($item);
             $this->_attributes[$itemId] = $this->_getAdditionalData($product);
         }
 
@@ -106,12 +107,11 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
         $attributes = $product->getAttributes();
         foreach ($attributes as $attribute) {
             if ($attribute->getIsVisibleOnCheckout()) {
-                if(in_array($attribute->getFrontendInput(), array('select','multiselect')) && !$product->getData($attribute->getAttributeCode()))
-                {
+                if (in_array($attribute->getFrontendInput(), array('select', 'multiselect')) && !$product->getData($attribute->getAttributeCode())) {
                     continue;
                 }
                 $value = $attribute->getFrontend()->getValue($product);
-                if (!$product->hasData($attribute->getAttributeCode()) || (string) $value == '') {
+                if (!$product->hasData($attribute->getAttributeCode()) || (string)$value == '') {
                     $value = '';
                 } elseif ($attribute->getFrontendInput() == 'price' && is_string($value)) {
                     $value = Mage::app()->getStore()->convertPrice($value, true);

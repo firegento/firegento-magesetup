@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   $Id:$
  * @since     0.1.0
  */
+
 /**
  * Enhanced block for product price display of bundle products. Contains the normal price.phtml
  * rendering and additionally a configured static block.
@@ -83,7 +84,7 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price
             return '';
         }
 
-        $locale  = Mage::app()->getLocale()->getLocaleCode();
+        $locale = Mage::app()->getLocale()->getLocaleCode();
         $taxRate = Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale));
 
         return $this->__('%s%%', $taxRate);
@@ -132,7 +133,7 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price
         if (is_null($taxPercent)) {
             $taxClassId = $product->getTaxClassId();
             if ($taxClassId) {
-                $request    = Mage::getSingleton('tax/calculation')->getRateRequest(null, null, null, null);
+                $request = Mage::getSingleton('tax/calculation')->getRateRequest(null, null, null, null);
                 $taxPercent = Mage::getSingleton('tax/calculation')->getRate($request->setProductClassId($taxClassId));
             }
         }
