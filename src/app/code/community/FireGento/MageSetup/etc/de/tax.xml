@@ -14,8 +14,9 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   2.2.1
  */
  -->
 <config>
@@ -41,7 +42,7 @@
                     </products_reduced_tax>
                     <products_no_vat tax_rate="tax_calculation_rate_3"
                                      tax_customer_class="customers_companies_no_vat"
-                                     tax_product_class="product_rate_1,products_rate_2,shipping_rate_1,shipping_rate_2">
+                                     tax_product_class="products_rate_1,products_rate_2,shipping_rate_1,shipping_rate_2">
                         <execute>1</execute>
                         <code>Ust.-befreite Unternehmen kaufen voll- und ermäßigtbesteuerte Artikel</code>
                         <priority>2</priority>
@@ -110,7 +111,7 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>MwSt.</label>
+                        <label>USt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_1>
 
@@ -118,7 +119,7 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>reduzierte MwSt.</label>
+                        <label>reduzierte USt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_2>
 
@@ -126,7 +127,7 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>ohne MwSt.</label>
+                        <label>ohne USt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_3>
                 </default>

@@ -14,8 +14,9 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   2.2.1
  */
  -->
 <config>
@@ -27,7 +28,7 @@
                                      tax_customer_class="customers_end_users,customers_companies"
                                      tax_product_class="products_rate_1,shipping">
                         <execute>1</execute>
-                        <code>IVA 21%</code>
+                        <code>IVA 22%</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_rate_1>
@@ -62,7 +63,7 @@
                     <products_rate_1>
                         <execute>1</execute>
                         <class_id>1</class_id>
-                        <class_name>IVA 21%</class_name>
+                        <class_name>IVA 22%</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>1</default>
                     </products_rate_1>
@@ -117,8 +118,8 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>IVA 21%</label>
-                        <rate>21</rate>
+                        <label>IVA 22%</label>
+                        <rate>22</rate>
                     </tax_calculation_rate_1>
 
                     <tax_calculation_rate_2>
@@ -149,15 +150,15 @@
 
             <tax_config>
                 <default>
-                    <general__country__default>DE</general__country__default>
+                    <general__country__default>IT</general__country__default>
                     <tax__classes__shipping_tax_class>4</tax__classes__shipping_tax_class>
                     <tax__calculation__based_on>billing</tax__calculation__based_on>
                     <tax__calculation__price_includes_tax>1</tax__calculation__price_includes_tax>
                     <tax__calculation__shipping_includes_tax>1</tax__calculation__shipping_includes_tax>
                     <tax__calculation__apply_after_discount>1</tax__calculation__apply_after_discount>
                     <tax__calculation__discount_tax>1</tax__calculation__discount_tax>
-                    <tax__defaults__country>DE</tax__defaults__country>
-                    <tax__defaults__region>79</tax__defaults__region>
+                    <tax__defaults__country>IT</tax__defaults__country>
+                    <tax__defaults__region></tax__defaults__region>
                     <tax__defaults__postcode>12345</tax__defaults__postcode>
                     <tax__display__type>2</tax__display__type>
                     <tax__display__shipping>2</tax__display__shipping>
@@ -173,10 +174,10 @@
                     <tax__sales_display__grandtotal>0</tax__sales_display__grandtotal>
                     <tax__sales_display__full_summary>1</tax__sales_display__full_summary>
                     <tax__sales_display__zero_tax>1</tax__sales_display__zero_tax>
-                    <shipping__origin__country_id>DE</shipping__origin__country_id>
-                    <shipping__origin__region_id>79</shipping__origin__region_id>
+                    <shipping__origin__country_id>IT</shipping__origin__country_id>
+                    <shipping__origin__region_id></shipping__origin__region_id>
                     <shipping__origin__postcode>12345</shipping__origin__postcode>
-                    <shipping__origin__city>Musterstadt</shipping__origin__city>
+                    <shipping__origin__city>Anytown</shipping__origin__city>
                 </default>
             </tax_config>
         </magesetup>

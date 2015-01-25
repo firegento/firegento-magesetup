@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     0.1.0
  */
+
 /**
  * Block to display agreements on customer registration.
  *
@@ -36,12 +37,18 @@ class FireGento_MageSetup_Block_Customer_Account_Agreements extends Mage_Checkou
      */
     public function getAgreements()
     {
-        $agreements = parent::getAgreements();
-        $agreements->addFieldToFilter('agreement_type', array('in' => array(
-            FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CUSTOMER,
-            FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
-        )));
-        return $agreements;
-    }
+        if (!$this->hasAgreements()) {
+            $agreements = Mage::getModel('checkout/agreement')->getCollection()
+                ->addStoreFilter(Mage::app()->getStore()->getId())
+                ->addFieldToFilter('is_active', 1)
+                ->addFieldToFilter('agreement_type', array('in' => array(
+                    FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_CUSTOMER,
+                    FireGento_MageSetup_Model_Source_AgreementType::AGREEMENT_TYPE_BOTH,
+                )));
 
+            $this->setAgreements($agreements);
+        }
+
+        return $this->getData('agreements');
+    }
 }

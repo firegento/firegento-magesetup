@@ -13,7 +13,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
 ?>
@@ -38,7 +38,9 @@ $agreements = $this->getAgreements();
                 <input type="checkbox" id="agreement-<?php echo $agreement->getId()?>" name="agreement[<?php echo $agreement->getId()?>]" value="1" title="<?php echo $this->htmlEscape($agreement->getCheckboxText()) ?>" class="checkbox" />
             <?php endif; ?>
             <label <?php if($agreement->getIsRequired()): ?>for="agreement-<?php echo $agreement->getId()?>"<?php endif; ?>><?php echo $agreement->getIsHtml() ? $agreement->getCheckboxText() : $this->escapeHtml($agreement->getCheckboxText()) ?></label>
-            <a href="<?php echo $helper->getAgreementUrl($agreement) ?>" onclick="window.open(this.href, '', 'width=600,height=600,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes').focus(); return false;"><?php echo $this->__('[Show]') ?></a>
+            <?php if (trim($agreement->getContent())): ?>
+                <a href="<?php echo $helper->getAgreementUrl($agreement) ?>" onclick="window.open(this.href, '', 'width=600,height=600,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes').focus(); return false;"><?php echo $this->__('[Show]') ?></a>
+            <?php endif ?>
         </p>
     </li>
 <?php endforeach ?>

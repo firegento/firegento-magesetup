@@ -14,8 +14,9 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   2.2.1
  */
  -->
 <config>
@@ -43,7 +44,7 @@
                                      tax_customer_class="customers_companies_no_vat"
                                      tax_product_class="products_rate_1,products_rate_2,shipping_rate_1">
                         <execute>1</execute>
-                        <code>Ust.-befreite Unternehmen kaufen voll- und ermäßigtbesteuerte Artikel</code>
+                        <code>MwSt.-befreite Unternehmen kaufen voll- und ermäßigtbesteuerte Artikel</code>
                         <priority>2</priority>
                         <position>0</position>
                     </products_no_vat>
@@ -91,14 +92,14 @@
                     <customers_companies>
                         <execute>1</execute>
                         <class_id>6</class_id>
-                        <class_name>USt.-pflichtige Unternehmen</class_name>
+                        <class_name>MwSt.-pflichtige Unternehmen</class_name>
                         <class_type>CUSTOMER</class_type>
                         <default>0</default>
                     </customers_companies>
                     <customers_companies_no_vat>
                         <execute>1</execute>
                         <class_id>7</class_id>
-                        <class_name>USt.-befreite Unternehmen</class_name>
+                        <class_name>MwSt.-befreite Unternehmen</class_name>
                         <class_type>CUSTOMER</class_type>
                         <default>0</default>
                     </customers_companies_no_vat>

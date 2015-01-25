@@ -72,6 +72,7 @@
 "BIC/SWIFT","BIC/SWIFT"
 "Tax number","Tax number"
 "Telephone","Telephone"
+"Supplementary Information for Telephone","Supplementary Information for Telephone"
 "Web","Web"
 "VAT-ID","VAT-ID"
 "Company 1","Company 1"
@@ -102,7 +103,7 @@
 "Ensures that the ip address of the customers doesnt get involved into the tracking","Ensures that the ip address of the customers doesnt get involved into the tracking"
 
 "Dynamic Shipping Tax Class Calculation","Dynamic Shipping Tax Class Calculation"
-"Set to ""yes"" if you want to calculate the shipping tax rate based on the highest product tax rate in cart.<br /><b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","Set to ""yes"" if you want to calculate the shipping tax rate based on the highest product tax rate in cart.<br /><b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!"
+"<b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","<b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!"
 
 "Shipping from","Shipping from"
 "This setting is base for the tax rate setup!","This setting is base for the tax rate setup!"

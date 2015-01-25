@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     0.1.0
  */
+
 /**
  * Enhanced block for product price display of all products in spite of bundles (got own block!).
  * Contains the normal price.phtml rendering and additionally a configured static block.
@@ -38,6 +39,24 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
         'catalog/product/view/tierprices.phtml',
         'dermodpro/bcp/catalog/product/view/tierprices.phtml'
     );
+
+    /**
+     * Add the tierprice default templates
+     *
+     * @return FireGento_MageSetup_Block_Catalog_Product_Price
+     */
+    protected function _beforeToHtml()
+    {
+        $templatesNode = Mage::getConfig()->getNode('magesetup/price/tierprice_default_templates');
+        if ($templatesNode) {
+            $templates = $templatesNode->asArray();
+            foreach ($templates as $template) {
+                $this->addTierpriceDefaultTemplate($template);
+            }
+        }
+
+        return parent::_beforeToHtml();
+    }
 
     /**
      * Add content of template block below price html if defined in config
@@ -60,6 +79,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
                 ->setFormattedTaxRate($this->getFormattedTaxRate())
                 ->setIsIncludingTax($this->isIncludingTax())
                 ->setIsIncludingShippingCosts($this->isIncludingShippingCosts())
+                ->setPriceDisplayType(Mage::helper('tax')->getPriceDisplayType())
                 ->setIsShowShippingLink($this->isShowShippingLink())
                 ->setIsShowWeightInfo($this->getIsShowWeightInfo())
                 ->setFormattedWeight($this->getFormattedWeight())
@@ -71,7 +91,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             Mage::dispatchEvent('magesetup_after_product_price',
                 array(
                     'html_obj' => $htmlObject,
-                    'block' => $this,
+                    'block'    => $this,
                 )
             );
 
@@ -97,7 +117,8 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
 
         $pathInfo = Mage::app()->getRequest()->getPathInfo();
         if (strpos($pathInfo, 'catalog/category/view') !== false
-            || strpos($pathInfo, 'catalogsearch/result') !== false) {
+            || strpos($pathInfo, 'catalogsearch/result') !== false
+        ) {
             if ($this->getProduct()->getDeliveryTime()) {
                 $html = '<p class="delivery-time">';
                 $html .= $this->__('Delivery Time') . ': ' . $this->getProduct()->getDeliveryTime();
@@ -114,7 +135,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
      */
     public function getTaxRate()
     {
-        $taxRateKey = 'tax_rate_'.$this->getProduct()->getId();
+        $taxRateKey = 'tax_rate_' . $this->getProduct()->getId();
         if (!$this->getData($taxRateKey)) {
             $this->setData($taxRateKey, $this->_loadTaxCalculationRate($this->getProduct()));
         }
@@ -135,7 +156,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             return '';
         }
 
-        $locale  = Mage::app()->getLocale()->getLocaleCode();
+        $locale = Mage::app()->getLocale()->getLocaleCode();
         $taxRate = Zend_Locale_Format::toFloat($this->getTaxRate(), array('locale' => $locale));
 
         return $this->__('%s%%', $taxRate);
@@ -149,7 +170,8 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     public function isIncludingTax()
     {
         if (!$this->getData('is_including_tax')) {
-            $this->setData('is_including_tax', Mage::getStoreConfig('tax/display/type'));
+            $includesTax = Mage::helper('tax')->priceIncludesTax();
+            $this->setData('is_including_tax', $includesTax);
         }
 
         return $this->getData('is_including_tax');
@@ -201,7 +223,14 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
         if (is_null($taxPercent)) {
             $taxClassId = $product->getTaxClassId();
             if ($taxClassId) {
-                $request    = Mage::getSingleton('tax/calculation')->getRateRequest(null, null, null, null);
+                $storeId = Mage::app()->getStore()->getId();
+                $groupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
+                $group = Mage::getModel('customer/group')->load($groupId);
+                $customerTaxClassId = $group->getData('tax_class_id');
+
+                /* @var $calculation Mage_Tax_Model_Calculation */
+                $calculation = Mage::getSingleton('tax/calculation');
+                $request = $calculation->getRateRequest(null, null, $customerTaxClassId, $storeId);
                 $taxPercent = Mage::getSingleton('tax/calculation')->getRate($request->setProductClassId($taxClassId));
             }
         }
@@ -231,6 +260,19 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     public function getFormattedWeight()
     {
         return floatval($this->getProduct()->getWeight()) . ' ' . Mage::getStoreConfig('catalog/price/weight_unit');
+    }
+
+    /**
+     * Add a tierprice default template
+     *
+     * @param  string $template Template
+     * @return FireGento_MageSetup_Block_Catalog_Product_Price
+     */
+    public function addTierpriceDefaultTemplate($template)
+    {
+        $this->_tierPriceDefaultTemplates[] = $template;
+
+        return $this;
     }
 
     /**

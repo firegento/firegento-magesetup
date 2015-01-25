@@ -13,7 +13,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
 ?>
@@ -35,13 +35,17 @@
 
 <p>
     <?php if (strlen(trim($this->getTelephone()))): ?>
-        <?php echo $this->__('Telephone') ?>: <?php echo $this->getTelephone() ?><br />
+        <?php echo $this->__('Telephone') ?>: <?php echo $this->getTelephone() ?>
+        <?php if (strlen(trim($this->getTelephoneAdditional()))): ?>
+            (<?php echo $this->getTelephoneAdditional() ?>)
+        <?php endif ?>
+        <br />
     <?php endif ?>
     <?php if (strlen(trim($this->getFax()))): ?>
-    <?php echo $this->__('Fax') ?>: <?php echo $this->getFax() ?><br />
+        <?php echo $this->__('Fax') ?>: <?php echo $this->getFax() ?><br />
     <?php endif ?>
     <?php if (strlen(trim($this->getWeb()))): ?>
-    <?php echo $this->__('Web') ?>: <a href="http://<?php echo $this->getWeb() ?>" title="<?php echo $this->getCompanyFirst() ?>"><?php echo $this->getWeb() ?></a><br />
+        <?php echo $this->__('Web') ?>: <a href="http://<?php echo $this->getWeb() ?>" title="<?php echo $this->getCompanyFirst() ?>"><?php echo $this->getWeb() ?></a><br />
     <?php endif ?>
     <?php echo $this->__('E-Mail') ?>: <?php echo $this->getEmail(false) ?>
 </p>

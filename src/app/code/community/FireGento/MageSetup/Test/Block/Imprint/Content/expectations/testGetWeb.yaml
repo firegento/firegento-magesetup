@@ -1,0 +1,4 @@
+testWithoutProtocolCheck:
+  result: firegento.com
+testWithProtocolCheck:
+  result: http://firegento.com

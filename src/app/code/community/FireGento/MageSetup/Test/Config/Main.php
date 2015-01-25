@@ -15,9 +15,9 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     2.0.0
  */
 /**
@@ -117,11 +117,73 @@ class FireGento_MageSetup_Test_Config_Main extends EcomDev_PHPUnit_Test_Case_Con
      */
     public function testRewrites()
     {
-        $this->assertBlockAlias('googleanalytics/ga', 'FireGento_MageSetup_Block_Ga');
-
         $this->assertHelperAlias('catalog/product_configuration', 'FireGento_MageSetup_Helper_Catalog_Product_Configuration');
         $this->assertHelperAlias('checkout/data', 'FireGento_MageSetup_Helper_Checkout_Data');
 
         $this->assertModelAlias('tax/config', 'FireGento_MageSetup_Model_Tax_Config');
+    }
+
+    /**
+     * @test
+     */
+    public function testSetupResource()
+    {
+        $this->assertSetupResourceDefined('FireGento_MageSetup', 'magesetup_setup');
+        $this->assertSetupResourceExists('FireGento_MageSetup', 'magesetup_setup');
+    }
+
+    /**
+     * @test
+     */
+    public function testEventObserver()
+    {
+        // Global event observers
+        $this->assertEventObserverDefined(
+            'global',
+            'catalog_product_save_before',
+            'magesetup/observer',
+            'autogenerateMetaInformation'
+        );
+        $this->assertEventObserverDefined(
+            'global',
+            'newsletter_subscriber_save_after',
+            'magesetup/newsletter_observer',
+            'saveSubscriberStatusHistory'
+        );
+
+        // Frontend event observers
+        $this->assertEventObserverDefined(
+            'frontend',
+            'core_block_abstract_to_html_before',
+            'magesetup/observer',
+            'filterAgreements'
+        );
+        $this->assertEventObserverDefined(
+            'frontend',
+            'controller_action_predispatch_customer_account_createpost',
+            'magesetup/observer',
+            'customerCreatePreDispatch'
+        );
+        $this->assertEventObserverDefined(
+            'frontend',
+            'core_block_abstract_to_html_after',
+            'magesetup/observer',
+            'setGAAnonymizerCode'
+        );
+
+        // Adminhtml event observers
+        $this->assertEventObserverDefined(
+            'adminhtml',
+            'adminhtml_catalog_product_attribute_edit_prepare_form',
+            'magesetup/observer',
+            'addIsVisibleOnCheckoutOption'
+        );
+        $this->assertEventObserverDefined(
+            'adminhtml',
+            'adminhtml_block_html_before',
+            'magesetup/observer',
+            'addOptionsForAgreements'
+        );
+
     }
 }

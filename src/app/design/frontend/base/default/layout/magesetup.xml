@@ -14,7 +14,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
  -->
@@ -304,6 +304,20 @@
     </tag_customer_view>
 
     <default>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/magesetup/default.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="footer">
+            <block type="core/template" name="cms_footer_links" before="footer_links" after="cms_footer_links_sm" template="magesetup/footer/links.phtml">
+                <!--
+                    The content of this block is taken from the database by its block_id.
+                    You can manage it in admin CMS -> Static Blocks
+                -->
+                <action method="setBlockId"><block_id>footer_links</block_id></action>
+            </block>
+        </reference>
         <reference name="wishlist_sidebar">
             <action method="addPriceBlockType">
                 <type>simple</type>
@@ -405,14 +419,6 @@
         </reference>
     </catalog_product_view>
 
-    <reference name="product.clone_prices">
-        <action method="addPriceBlockType">
-            <type>bundle</type>
-            <block>magesetup/bundle_catalog_product_price</block>
-            <template>bundle/catalog/product/view/price.phtml</template>
-        </action>
-    </reference>
-
     <PRODUCT_TYPE_simple>
         <reference name="product.info.simple.extra">
             <block type="catalog/product_view_type_simple" name="magesetup.deliverytime"
@@ -447,6 +453,23 @@
                    template="magesetup/delivery_time.phtml"/>
         </reference>
     </PRODUCT_TYPE_downloadable>
+
+    <PRODUCT_TYPE_bundle>
+        <reference name="product.clone_prices">
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/view/price.phtml</template>
+            </action>
+        </reference>
+        <reference name="product.info">
+            <action method="addPriceBlockType">
+                <type>bundle</type>
+                <block>magesetup/bundle_catalog_product_price</block>
+                <template>bundle/catalog/product/price.phtml</template>
+            </action>
+        </reference>
+    </PRODUCT_TYPE_bundle>
 
     <!--
     Changes for Button Loesung
@@ -483,6 +506,11 @@
             <action method="unsetChild">
                 <alias>agreements</alias>
             </action>
+            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
         </reference>
         <reference name="checkout.onepage.review.info.items.before">
             <block type="magesetup/checkout_agreements" name="magesetup.checkout.agreements" as="agreements"
@@ -493,6 +521,26 @@
                    template="magesetup/checkout/additional.phtml"/>
         </reference>
     </checkout_onepage_review>
+
+    <paypal_express_review>
+        <reference name="paypal.express.review.details">
+            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+        </reference>
+    </paypal_express_review>
+
+    <paypal_express_review_details>
+        <reference name="paypal.express.review.details">
+            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
+        </reference>
+    </paypal_express_review_details>
 
     <checkout_multishipping_overview>
         <reference name="head">

@@ -1,0 +1,4 @@
+testWithoutAntispam:
+  result: foo@bar.com
+testWithAntispam:
+  result: <a href="#" onclick="javascript:toRecipient();">foo<span class="no-display">nospamplease</span>@<span class="no-display">nospamplease</span>bar.com</a><script>function toRecipient(){var m = 'foo';m += '@';m += 'bar.com';location.href= "mailto:"+m;}</script>

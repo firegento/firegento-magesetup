@@ -14,8 +14,9 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   2.2.1
  */
  -->
 <config>
@@ -71,6 +72,12 @@
                         <filename>magesetup/page/revocation.html</filename>
                         <footerlink>1</footerlink>
                     </magesetup_revocation>
+
+                    <magesetup_revocation_form>
+                        <execute>1</execute>
+                        <filename>magesetup/page/revocation_form.html</filename>
+                        <footerlink>0</footerlink>
+                    </magesetup_revocation_form>
                 </default>
             </pages>
 
@@ -87,6 +94,12 @@
                         <identifier>revocation</identifier>
                         <filename>magesetup/block/revocation.html</filename>
                     </revocation>
+
+                    <revocation_form>
+                        <execute>1</execute>
+                        <identifier>revocation_form</identifier>
+                        <filename>magesetup/block/revocation_form.html</filename>
+                    </revocation_form>
 
                     <footerlinks>
                         <execute>1</execute>

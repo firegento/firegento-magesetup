@@ -1,0 +1,5 @@
+config:
+  default/google/analytics/active: 1
+  default/google/analytics/account: UA-XXXXXXX
+  default/google/analytics/anonymization: 1
+  default/google/analytics/ip_anonymization: 1

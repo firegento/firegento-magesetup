@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     0.4.0
  */
+
 /**
  * Displays a form with some options to setup things
  *
@@ -107,7 +108,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     {
         $options = Mage::getSingleton('adminhtml/system_config_source_locale')->toOptionArray();
         foreach ($options as $key => $value) {
-            $filePath = Mage::getBaseDir('locale')  . DS . $value['value'] . DS . 'template' . DS . 'email';
+            $filePath = Mage::getBaseDir('locale') . DS . $value['value'] . DS . 'template' . DS . 'email';
             if (!file_exists($filePath)) {
                 unset($options[$key]);
             }
@@ -125,7 +126,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     {
         $options = Mage::getSingleton('adminhtml/system_config_source_locale')->toOptionArray();
         foreach ($options as $key => $value) {
-            $filePath = Mage::getBaseDir('locale')  . DS . $value['value'] . DS . 'template' . DS . 'magesetup';
+            $filePath = Mage::getBaseDir('locale') . DS . $value['value'] . DS . 'template' . DS . 'magesetup';
             if (!file_exists($filePath)) {
                 unset($options[$key]);
             }
@@ -190,7 +191,8 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
             foreach ($taxClasses->children() as $identifier => $taxClass) {
                 if ($taxClass->class_type != 'PRODUCT'
                     || $taxClass->execute != 1
-                    || strpos($identifier, 'shipping') === 0) {
+                    || strpos($identifier, 'shipping') === 0
+                ) {
                     continue;
                 }
 
@@ -220,7 +222,7 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
 
             // If the given file does not exist, use the default file
             if (!file_exists($configFile)) {
-                $configFile = $moduleDir. DS . 'default' . DS . 'tax.xml';
+                $configFile = $moduleDir . DS . 'default' . DS . 'tax.xml';
             }
 
             $xml = new SimpleXMLElement(file_get_contents($configFile));
@@ -229,7 +231,8 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
             $taxClasses = $xml->default->magesetup->tax_classes->default;
             foreach ($taxClasses->children() as $identifier => $taxClass) {
                 if ($taxClass->class_type != 'CUSTOMER'
-                    || $taxClass->execute != 1) {
+                    || $taxClass->execute != 1
+                ) {
                     continue;
                 }
                 $countryTaxClasses[$countryId][(string)$taxClass->class_id] = (string)$taxClass->class_name;

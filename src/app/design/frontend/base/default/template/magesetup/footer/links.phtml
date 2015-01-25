@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
+<?php
 /**
  * This file is part of a FireGento e.V. module.
  *
@@ -14,20 +13,11 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
- -->
-<config>
-    <default>
-        <magesetup>
-            <system_config>
-                 <default>
-                     <customer__create_account__confirm>0</customer__create_account__confirm>
-                     <newsletter__subscription__confirm>1</newsletter__subscription__confirm>
-                     <catalog__price__display_block_below_price>0</catalog__price__display_block_below_price>
-                 </default>
-            </system_config>
-        </magesetup>
-    </default>
-</config>
+?>
+<?php
+/* @var $this Mage_Core_Block_Template */
+?>
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($this->getBlockId())->toHtml() ?>

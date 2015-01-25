@@ -14,7 +14,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
  -->
@@ -24,14 +24,9 @@
             <block type="magesetup/adminhtml_notifications" name="magesetup_notifications" template="magesetup/notifications.phtml" before="-" />
         </reference>
     </default>
-	<adminhtml_magesetup_index>
+	<magesetup_magesetup_index>
         <reference name="content">
             <block type="magesetup/adminhtml_magesetup" name="magesetup.index" template="magesetup/form.phtml"/>
         </reference>
-    </adminhtml_magesetup_index>
-	<adminhtml_magesetup_extensions>
-        <reference name="content">
-            <block type="adminhtml/template" name="magesetup.extensions" template="magesetup/extensions.phtml"/>
-        </reference>
-    </adminhtml_magesetup_extensions>
+    </magesetup_magesetup_index>
 </layout>

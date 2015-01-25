@@ -14,14 +14,15 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   2.2.1
  */
  -->
 <config>
     <modules>
         <FireGento_MageSetup>
-            <version>2.1.1</version>
+            <version>2.2.1</version>
         </FireGento_MageSetup>
     </modules>
     <global>
@@ -29,11 +30,6 @@
             <magesetup>
                 <class>FireGento_MageSetup_Block</class>
             </magesetup>
-            <googleanalytics>
-                <rewrite>
-                    <ga>FireGento_MageSetup_Block_Ga</ga>
-                </rewrite>
-            </googleanalytics>
         </blocks>
         <helpers>
             <magesetup>
@@ -96,17 +92,29 @@
                     </magesetup_observer>
                 </observers>
             </newsletter_subscriber_save_after>
+            <sales_quote_config_get_product_attributes>
+                <observers>
+                    <magesetup_observer>
+                        <class>magesetup/observer</class>
+                        <type>singleton</type>
+                        <method>addProductAttributesToQuoteItems</method>
+                    </magesetup_observer>
+                </observers>
+            </sales_quote_config_get_product_attributes>
         </events>
         <magesetup>
             <available_countries>
                 <at />
                 <ch />
                 <de />
+                <es />
                 <fr />
                 <gb />
                 <it />
                 <nl />
                 <ru />
+                <pl />
+                <ro />
             </available_countries>
         </magesetup>
         <locale>
@@ -149,15 +157,6 @@
                     </magesetup_observer>
                 </observers>
             </core_block_abstract_to_html_before>
-            <checkout_cart_update_items_after>
-                <observers>
-                    <recalculate_dynamic_shipping_tax>
-                        <type>singleton</type>
-                        <class>FireGento_MageSetup_Model_Observer</class>
-                        <method>recollectAfterQuoteItemUpdate</method>
-                    </recalculate_dynamic_shipping_tax>
-                </observers>
-            </checkout_cart_update_items_after>
             <controller_action_predispatch_customer_account_createpost>
                 <observers>
                     <magesetup_observer>
@@ -167,6 +166,15 @@
                     </magesetup_observer>
                 </observers>
             </controller_action_predispatch_customer_account_createpost>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <magesetup_observer>
+                        <class>magesetup/observer</class>
+                        <type>model</type>
+                        <method>setGAAnonymizerCode</method>
+                    </magesetup_observer>
+                </observers>
+            </core_block_abstract_to_html_after>
         </events>
         <routers>
             <magesetup>
@@ -195,44 +203,6 @@
                 </FireGento_MageSetup>
             </modules>
         </translate>
-        <menu>
-            <system>
-                <children>
-                    <magesetup translate="title">
-                        <title>MageSetup</title>
-                        <sort_order>11</sort_order>
-                        <children>
-                            <setup>
-                                <title>Setup</title>
-                                <action>adminhtml/magesetup</action>
-                                <sort_order>10</sort_order>
-                            </setup>
-                            <recommended_extensions>
-                                <title>Recommended Extensions</title>
-                                <action>adminhtml/magesetup/extensions</action>
-                                <sort_order>15</sort_order>
-                            </recommended_extensions>
-                        </children>
-                    </magesetup>
-                </children>
-            </system>
-        </menu>
-        <acl>
-            <resources>
-                <admin>
-                    <children>
-                        <system>
-                            <children>
-                                <magesetup translate="title">
-                                    <title>MageSetup</title>
-                                    <sort_order>11</sort_order>
-                                </magesetup>
-                            </children>
-                        </system>
-                    </children>
-                </admin>
-            </resources>
-        </acl>
         <events>
             <adminhtml_catalog_product_attribute_edit_prepare_form>
                 <observers>
@@ -256,13 +226,16 @@
     </adminhtml>
     <admin>
         <routers>
-            <adminhtml>
+            <magesetup>
+                <use>admin</use>
                 <args>
+                    <module>FireGento_MageSetup</module>
+                    <frontName>magesetup</frontName>
                     <modules>
-                        <FireGento_MageSetup before="Mage_Adminhtml">FireGento_MageSetup</FireGento_MageSetup>
+                        <FireGento_MageSetup after="Mage_Adminhtml">FireGento_MageSetup_Adminhtml</FireGento_MageSetup>
                     </modules>
                 </args>
-            </adminhtml>
+            </magesetup>
         </routers>
     </admin>
     <default>
@@ -276,21 +249,28 @@
         </catalog>
         <general>
             <imprint>
-                <shop_name>Beispielshop</shop_name>
-                <company_first>Musterfirma GmbH</company_first>
+                <shop_name>Any Store</shop_name>
+                <company_first>Any Company Inc.</company_first>
                 <zip>12345</zip>
-                <street>Musterstr. 1</street>
-                <city>Musterstadt</city>
+                <street>123 Anywhere Street</street>
+                <city>Anytown</city>
                 <email>info@example.com</email>
             </imprint>
         </general>
         <checkout>
             <options>
-                <additional_information><![CDATA[Beim Versand ins Nicht-EU-Ausland können zusätzlich Zölle, Steuern und Gebühren entstehen.]]></additional_information></options>
+                <additional_information><![CDATA[Beim Versand ins Nicht-EU-Ausland können zusätzlich Zölle, Steuern und Gebühren entstehen.]]></additional_information>
+                <default_revocation_product_type>goods</default_revocation_product_type>
+            </options>
             <cart>
                 <hide_shipping>1</hide_shipping>
             </cart>
         </checkout>
+        <sales>
+            <reorder>
+                <hide_sidebar_box>1</hide_sidebar_box>
+            </reorder>
+        </sales>
         <customer>
             <create_account>
                 <avoid_tc>Yes</avoid_tc>
@@ -309,8 +289,7 @@ Tel: {{var telephone}}
 {{depend fax}}Fax: {{var fax}}
 {{/depend}}
                 ]]></text>
-                <oneline>
-                    <![CDATA[{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}, {{var street}}, {{var postcode}} {{var city}}, {{var country}}]]></oneline>
+                <oneline><![CDATA[{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}, {{var street}}, {{var postcode}} {{var city}}, {{var country}}]]></oneline>
                 <html><![CDATA[
 {{depend company}}{{var company}}<br />{{/depend}}
 {{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}<br/>
@@ -336,15 +315,9 @@ Tel: {{var telephone}}
 {{depend telephone}}Tel: {{var telephone}}{{/depend}}|
 {{depend fax}}<br/>Fax: {{var fax}}{{/depend}}|
                 ]]></pdf>
-                <js_template template="title" module="customer">
-                    <title>Javascript Template</title>
-                    <defaultFormat>
-                        <![CDATA[#{company}<br/>#{prefix} #{firstname} #{middlename} #{lastname} #{suffix}<br/>#{street0}<br/>#{street1}<br/>#{street2}<br/>#{street3}<br/>#{postcode} #{city}<br/>#{country_id}<br/>Tel: #{telephone}<br/>Fax: #{fax}]]>
-                    </defaultFormat>
-                </js_template>
+                <js_template><![CDATA[#{company}<br/>#{prefix} #{firstname} #{middlename} #{lastname} #{suffix}<br/>#{street0}<br/>#{street1}<br/>#{street2}<br/>#{street3}<br/>#{postcode} #{city}<br/>#{country_id}<br/>Tel: #{telephone}<br/>Fax: #{fax}]]></js_template>
             </address_templates>
         </customer>
-
         <url>
             <convert>
                 <char0228>
@@ -377,14 +350,12 @@ Tel: {{var telephone}}
                 </char0220>
             </convert>
         </url>
-
         <general>
             <country>
-                <eu_countries>AT,BE,BG,CY,CZ,DK,EE,FI,FR,DE,GR,HU,HR,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB</eu_countries>
+                <eu_countries>AT,BE,BG,CY,CZ,DE,DK,EE,FI,FR,DE,GR,HU,HR,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB</eu_countries>
             </country>
         </general>
     </default>
-
     <phpunit>
         <suite>
             <modules>

@@ -1,0 +1,4 @@
+testWithoutProtocolCheck:
+  checkForProtocol: 0
+testWithProtocolCheck:
+  checkForProtocol: 1

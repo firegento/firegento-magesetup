@@ -1,0 +1,4 @@
+testWithoutAntispam:
+  antispam: 0
+testWithAntispam:
+  antispam: 1

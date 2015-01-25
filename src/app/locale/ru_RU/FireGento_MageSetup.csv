@@ -80,7 +80,7 @@
 "Ensures that the ip address of the customers doesnt get involved into the tracking","Гарантирует, что IP адреса клиентов не отслеживаются"
 
 "Dynamic Shipping Tax Class Calculation","Динамические вычисление налогового класса доставки"
-"Set to ""yes"" if you want to calculate the shipping tax rate based on the highest product tax rate in cart.<br /><b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","Установите ""да"" для расчёта налоговой ставки на доставку, основанной на наибольшей налоговой ставке товара в корзине.<br /><b>ВНИМАНИЕ:</b> Эта настройка заменяет настройку ""Налоговый класс на доставку"", расположенную выше!"
+"<b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","<b>ВНИМАНИЕ:</b> Эта настройка заменяет настройку ""Налоговый класс на доставку"", расположенную выше!"
 
 "Germany","Германия"
 "Austria","Австрия"

@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     0.1.0
  */
+
 /**
  * Adminhtml Controller for dislaying a form for some actions
  *
@@ -27,7 +28,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_MagesetupController extends Mage_Adminhtml_Controller_Action
+class FireGento_MageSetup_Adminhtml_MagesetupController extends Mage_Adminhtml_Controller_Action
 {
     /**
      * Basic action: setup form
