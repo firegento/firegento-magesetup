@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     0.1.0
  */
+
 /**
  * Tax config model with new shipping tax class calculation
  *
@@ -66,7 +67,7 @@ class FireGento_MageSetup_Model_Tax_Config extends Mage_Tax_Model_Config
         if (!Mage::getStoreConfigFlag(self::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX, $store)
             || count($quoteItems) == 0
         ) {
-            $taxClassId = (int) Mage::getStoreConfig(self::CONFIG_XML_PATH_SHIPPING_TAX_CLASS, $store);
+            $taxClassId = (int)Mage::getStoreConfig(self::CONFIG_XML_PATH_SHIPPING_TAX_CLASS, $store);
 
             return $taxClassId;
         }
@@ -98,7 +99,7 @@ class FireGento_MageSetup_Model_Tax_Config extends Mage_Tax_Model_Config
             $taxClassId = $highestTaxRate;
         }
 
-        return (int) $taxClassId;
+        return (int)$taxClassId;
     }
 
     /**

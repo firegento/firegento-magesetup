@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     0.1.0
  */
+
 /**
  * Enhanced block for product price display of all products in spite of bundles (got own block!).
  * Contains the normal price.phtml rendering and additionally a configured static block.
@@ -32,7 +33,7 @@
 // @codingStandardsIgnoreStart
 if (
     Mage::getConfig()->getModuleConfig('Sitewards_B2BProfessional')->is('active', 'true')
-    && version_compare (Mage::getConfig()->getModuleConfig('Sitewards_B2BProfessional')->version, '2.1.0', '<=' )
+    && version_compare(Mage::getConfig()->getModuleConfig('Sitewards_B2BProfessional')->version, '2.1.0', '<=')
 ) {
 
     abstract class FireGento_MageSetup_Block_Catalog_Product_Price_Abstract
@@ -48,7 +49,7 @@ if (
     {
 
     }
-	
+
 } elseif (Mage::getConfig()->getModuleConfig('OrganicInternet_SimpleConfigurableProducts')->is('active', 'true')) {
 
     abstract class FireGento_MageSetup_Block_Catalog_Product_Price_Abstract

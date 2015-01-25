@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2014 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     2.2.0
  */
+
 /**
  * Source model for attribute "revocation_product_type"
  *
@@ -43,6 +44,7 @@ class FireGento_MageSetup_Model_Source_RevocationProductType extends Mage_Eav_Mo
     public function toOptionArray()
     {
         $helper = Mage::helper('magesetup');
+
         return array(
             array(
                 'value' => self::REVOCATION_PRODUCT_TYPE_GOODS,
@@ -87,6 +89,7 @@ class FireGento_MageSetup_Model_Source_RevocationProductType extends Mage_Eav_Mo
         foreach ($this->toOptionArray() as $option) {
             $options[$option['value']] = $option['label'];
         }
+
         return $options;
     }
 }

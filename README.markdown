@@ -76,4 +76,4 @@ Licence
 
 Copyright
 ---------
-(c) 2011-2013 FireGento Team
+(c) 2013-2015 FireGento Team

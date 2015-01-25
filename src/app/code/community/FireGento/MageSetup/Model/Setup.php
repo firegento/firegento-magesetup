@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     0.2.0
  */
+
 /**
  * Setup class
  *
@@ -37,7 +38,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
      * @param  bool  $notify Flag if admin notifications should be added
      * @return FireGento_MageSetup_Model_Setup Setup Model
      */
-    public function setup($params = array(), $notify=false)
+    public function setup($params = array(), $notify = false)
     {
         if (!isset($params['country'])) {
             Mage::throwException(
@@ -162,7 +163,7 @@ class FireGento_MageSetup_Model_Setup extends Mage_Core_Model_Abstract
             'overwrite_emails'          => false,
             'tax'                       => true,
             'product_tax_class_target'  => $productTaxClassTargets,
-            'customer_tax_class_target'  => $customerTaxClassTargets,
+            'customer_tax_class_target' => $customerTaxClassTargets,
         );
     }
 

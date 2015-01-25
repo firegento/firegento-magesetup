@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     0.2.0
  */
+
 /**
  * Setup class for transaction emails
  *
@@ -152,7 +153,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     protected function _getLocaleEmailPath($locale)
     {
         if (!isset($this->_localeTemplatePath[$locale])) {
-            $_localeTemplatePath =  'app' . DS . 'locale' . DS . $locale . DS . 'template' . DS . 'email' . DS;
+            $_localeTemplatePath = 'app' . DS . 'locale' . DS . $locale . DS . 'template' . DS . 'email' . DS;
             $this->_localeTemplatePath[$locale] = Mage::getBaseDir() . DS . $_localeTemplatePath;
 
             if (!is_dir($this->_localeTemplatePath[$locale])) {

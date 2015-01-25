@@ -15,11 +15,12 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     1.2.0
  */
+
 /**
  * CMS Source model for configuration dropdown of CMS pages
  *
@@ -37,6 +38,7 @@ class FireGento_MageSetup_Model_Source_Tax_DynamicType
     public function toOptionArray()
     {
         $helper = Mage::helper('magesetup');
+
         return array(
             array(
                 'value' => 0,

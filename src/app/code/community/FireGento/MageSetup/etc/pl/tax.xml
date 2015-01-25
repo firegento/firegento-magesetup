@@ -16,9 +16,9 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.de). All rights served.
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.de). All rights served.
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   $Id:$
+ * @version   2.2.1
  * @since     0.1.0
  */
  -->
@@ -35,7 +35,7 @@
                         <priority>1</priority>
                         <position>0</position>
                     </products_rate_1>
-                    
+
                     <products_rate_2 tax_rate="tax_calculation_rate_2"
                                      tax_customer_class="customers_end_consumers,customers_companies"
                                      tax_product_class="products_rate_2">
@@ -44,7 +44,7 @@
                         <priority>1</priority>
                         <position>0</position>
                     </products_rate_2>
-                    
+
                     <products_rate_3 tax_rate="tax_calculation_rate_3"
                                      tax_customer_class="customers_end_consumers,customers_companies"
                                      tax_product_class="products_rate_3">
@@ -53,7 +53,7 @@
                         <priority>1</priority>
                         <position>0</position>
                     </products_rate_3>
-                    
+
                     <products_rate_4 tax_rate="tax_calculation_rate_4"
                                      tax_customer_class="customers_companies_no_vat"
                                      tax_product_class="products_rate_1,products_rate_2,products_rate_3,shipping">
@@ -87,7 +87,7 @@
                         <class_name>Obniżoną stawką 5%</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
-                    </products_rate_3>                    
+                    </products_rate_3>
                     <shipping>
                         <execute>1</execute>
                         <class_id>4</class_id>
@@ -95,7 +95,7 @@
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping>
-                    
+
                     <customers_end_consumers>
                         <execute>1</execute>
                         <class_id>5</class_id>
@@ -134,7 +134,7 @@
                         <label>Zmniejszona 8% VAT</label>
                         <rate>7</rate>
                     </tax_calculation_rate_2>
-                    
+
                     <tax_calculation_rate_3>
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
@@ -142,7 +142,7 @@
                         <label>Obniżona stawka podatku VAT w wysokości 5%</label>
                         <rate>5.5</rate>
                     </tax_calculation_rate_3>
-                    
+
                     <tax_calculation_rate_4>
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
