@@ -39,7 +39,7 @@
 
 #opc-review #checkout-step-review .additional-information {
     border: 2px solid #0A263D;
-    border-top: 0;
+    border-top: 1px solid #ededed;
     border-bottom: 0
 }
 
