@@ -37,7 +37,7 @@ class FireGento_MageSetup_Block_Imprint_Field extends FireGento_MageSetup_Block_
      */
     protected function _toHtml()
     {
-        if ($this->getValue() == 'email') {
+        if ($this->getValue() == 'email' && !(bool) $this->getData('antispam')) {
             return $this->getEmail(true);
         }
 
