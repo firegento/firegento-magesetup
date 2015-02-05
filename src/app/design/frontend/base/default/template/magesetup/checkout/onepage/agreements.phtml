@@ -35,7 +35,7 @@ $agreements = $this->getAgreements();
     <li>
         <p class="agree">
             <?php if($agreement->getIsRequired()): ?>
-                <input type="checkbox" id="agreement-<?php echo $agreement->getId()?>" name="agreement[<?php echo $agreement->getId()?>]" value="1" title="<?php echo $this->htmlEscape($agreement->getCheckboxText()) ?>" class="checkbox" />
+                <input type="checkbox" id="agreement-<?php echo $agreement->getId()?>" name="agreement[<?php echo $agreement->getId()?>]" value="1" title="<?php echo $this->escapeHtml($agreement->getCheckboxText()) ?>" class="checkbox" />
             <?php endif; ?>
             <label <?php if($agreement->getIsRequired()): ?>for="agreement-<?php echo $agreement->getId()?>"<?php endif; ?>><?php echo $agreement->getIsHtml() ? $agreement->getCheckboxText() : $this->escapeHtml($agreement->getCheckboxText()) ?></label>
             <?php if (trim($agreement->getContent())): ?>
