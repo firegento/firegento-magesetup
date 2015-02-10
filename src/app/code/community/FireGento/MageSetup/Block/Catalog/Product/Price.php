@@ -76,6 +76,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             $htmlObject->setParentHtml($html);
             $htmlTemplate = $this->getLayout()->createBlock('core/template')
                 ->setTemplate('magesetup/price_info.phtml')
+                ->setProduct($this->getProduct())
                 ->setFormattedTaxRate($this->getFormattedTaxRate())
                 ->setIsIncludingTax($this->isIncludingTax())
                 ->setIsIncludingShippingCosts($this->isIncludingShippingCosts())
