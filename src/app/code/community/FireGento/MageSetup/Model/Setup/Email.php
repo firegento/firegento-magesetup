@@ -107,6 +107,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
             $template
                 ->setTemplateCode($templateCode)
                 ->setTemplateType($emailData['template_type'])
+                ->setAddedAt(Mage::getSingleton('core/date')->gmtDate())
                 ->setModifiedAt(Mage::getSingleton('core/date')->gmtDate());
 
             // Filter areas from template file
