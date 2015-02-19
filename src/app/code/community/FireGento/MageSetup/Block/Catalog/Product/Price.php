@@ -224,15 +224,15 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
         if (is_null($taxPercent)) {
             $taxClassId = $product->getTaxClassId();
             if ($taxClassId) {
-                $storeId = Mage::app()->getStore()->getId();
+                $store = Mage::app()->getStore();
                 $groupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
                 $group = Mage::getModel('customer/group')->load($groupId);
                 $customerTaxClassId = $group->getData('tax_class_id');
 
                 /* @var $calculation Mage_Tax_Model_Calculation */
                 $calculation = Mage::getSingleton('tax/calculation');
-                $request = $calculation->getRateRequest(null, null, $customerTaxClassId, $storeId);
-                $taxPercent = Mage::getSingleton('tax/calculation')->getRate($request->setProductClassId($taxClassId));
+                $request = $calculation->getRateRequest(null, null, $customerTaxClassId, $store);
+                $taxPercent = $calculation->getRate($request->setProductClassId($taxClassId));
             }
         }
 
