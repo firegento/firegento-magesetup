@@ -139,6 +139,7 @@ class FireGento_MageSetup_Model_Observer
             if (empty($description)) {
                 $description = $keywords;
             }
+            $description = strip_tags($description);
             if (mb_strlen($description) > 255) {
                 $remainder = '';
                 $description = Mage::helper('core/string')->truncate($description, 255, '...', $remainder, false);
