@@ -153,6 +153,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     {
         if ($this->getTaxRate() === null
             || $this->getProduct()->getTypeId() == 'bundle'
+            || $this->getProduct()->getTypeId() == 'grouped'
         ) {
             return '';
         }
