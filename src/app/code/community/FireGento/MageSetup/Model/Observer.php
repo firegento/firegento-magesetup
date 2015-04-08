@@ -122,7 +122,7 @@ class FireGento_MageSetup_Model_Observer
             $product->setMetaTitle($product->getName());
 
             // Set Meta Keywords
-            $keywords = $this->_getCategoryKeywords($product);
+            $keywords = $this->_getCategoryKeywords($product, $product->getStoreId());
             if (!empty($keywords)) {
                 if (mb_strlen($keywords) > 255) {
                     $remainder = '';
@@ -156,10 +156,10 @@ class FireGento_MageSetup_Model_Observer
      * @param  Mage_Catalog_Model_Product $product Product
      * @return array Categories
      */
-    protected function _getCategoryKeywords($product)
+    protected function _getCategoryKeywords($product, $storeid = 0)
     {
         $categories = $product->getCategoryIds();
-        $categoryArr = $this->_fetchCategoryNames($categories);
+        $categoryArr = $this->_fetchCategoryNames($categories, $storeid);
         $keywords = $this->_buildKeywords($categoryArr);
 
         return $keywords;
@@ -172,7 +172,7 @@ class FireGento_MageSetup_Model_Observer
      * @param  array $categories Category Ids
      * @return array Categories
      */
-    protected function _fetchCategoryNames($categories)
+    protected function _fetchCategoryNames($categories, $storeid=0)
     {
         $return = array(
             'assigned' => array(),
@@ -188,7 +188,7 @@ class FireGento_MageSetup_Model_Observer
             }
 
             /* @var $category Mage_Catalog_Model_Category */
-            $category = Mage::getModel('catalog/category')->load($categoryId);
+            $category = Mage::getModel('catalog/category')->setStoreId($storeid)->load($categoryId);
             $return['assigned'][$categoryId] = $category->getName();
 
             // Fetch path ids and remove the first two (base and root category)
