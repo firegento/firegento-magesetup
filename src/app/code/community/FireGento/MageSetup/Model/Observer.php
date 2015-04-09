@@ -202,19 +202,19 @@ class FireGento_MageSetup_Model_Observer
             if($categoryRootCategoryId == $storeRootCategoryId){
                 $return['assigned'][$categoryId] = $category->getName();
 
-            // Fetch the names from path categories
-            if (count($pathIds) > 0) {
-                foreach ($pathIds as $pathId) {
-                    if (!array_key_exists($pathId, $return['assigned'])
-                        && !array_key_exists($pathId, $return['path'])
-                    ) {
-                        /* @var $pathCategory Mage_Catalog_Model_Category */
-                        $pathCategory = Mage::getModel('catalog/category')->setStoreId($storeid)->load($pathId);
-                        $return['path'][$pathId] = $pathCategory->getName();
+                // Fetch the names from path categories
+                if (count($pathIds) > 0) {
+                    foreach ($pathIds as $pathId) {
+                        if (!array_key_exists($pathId, $return['assigned'])
+                            && !array_key_exists($pathId, $return['path'])
+                        ) {
+                            /* @var $pathCategory Mage_Catalog_Model_Category */
+                            $pathCategory = Mage::getModel('catalog/category')->setStoreId($storeid)->load($pathId);
+                            $return['path'][$pathId] = $pathCategory->getName();
+                        }
                     }
                 }
             }
-        }
         }
 
         return $return;
@@ -234,10 +234,10 @@ class FireGento_MageSetup_Model_Observer
 
         $keywords = array();
         foreach ($categoryTypes as $categories) {
-            $keywords[] = implode(', ', $categories);
+            $keywords[] = trim(implode(', ', $categories), ', ');
         }
 
-        return implode(', ', $keywords);
+        return trim(implode(', ', $keywords), ', ');
     }
 
     /**
