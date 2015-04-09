@@ -179,6 +179,8 @@ class FireGento_MageSetup_Model_Observer
             'path'     => array()
         );
 
+        $storeRootCategoryId = Mage::app()->getStore($storeid)->getRootCategoryId();
+
         foreach ($categories as $categoryId) {
             // Check if category was already added
             if (array_key_exists($categoryId, $return['assigned'])
@@ -189,13 +191,16 @@ class FireGento_MageSetup_Model_Observer
 
             /* @var $category Mage_Catalog_Model_Category */
             $category = Mage::getModel('catalog/category')->setStoreId($storeid)->load($categoryId);
-            $return['assigned'][$categoryId] = $category->getName();
 
-            // Fetch path ids and remove the first two (base and root category)
             $path = $category->getPath();
             $pathIds = explode('/', $path);
-            array_shift($pathIds);
-            array_shift($pathIds);
+            // Fetch path ids and remove the first two (base and root category)
+            $categorySuperRootCategoryId = array_shift($pathIds);
+            $categoryRootCategoryId = array_shift($pathIds);
+
+            // use category names only if root category id matches
+            if($categoryRootCategoryId == $storeRootCategoryId){
+                $return['assigned'][$categoryId] = $category->getName();
 
             // Fetch the names from path categories
             if (count($pathIds) > 0) {
@@ -209,6 +214,7 @@ class FireGento_MageSetup_Model_Observer
                     }
                 }
             }
+        }
         }
 
         return $return;
