@@ -199,7 +199,7 @@ class FireGento_MageSetup_Model_Observer
             $categoryRootCategoryId = array_shift($pathIds);
 
             // use category names only if root category id matches
-            if($categoryRootCategoryId == $storeRootCategoryId){
+            if($categoryRootCategoryId == $storeRootCategoryId || 0 == $storeid){
                 $return['assigned'][$categoryId] = $category->getName();
 
                 // Fetch the names from path categories
