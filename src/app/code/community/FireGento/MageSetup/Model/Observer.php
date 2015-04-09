@@ -204,7 +204,7 @@ class FireGento_MageSetup_Model_Observer
                         && !array_key_exists($pathId, $return['path'])
                     ) {
                         /* @var $pathCategory Mage_Catalog_Model_Category */
-                        $pathCategory = Mage::getModel('catalog/category')->load($pathId);
+                        $pathCategory = Mage::getModel('catalog/category')->setStoreId($storeid)->load($pathId);
                         $return['path'][$pathId] = $pathCategory->getName();
                     }
                 }
