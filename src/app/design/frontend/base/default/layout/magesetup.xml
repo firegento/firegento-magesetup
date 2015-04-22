@@ -523,6 +523,11 @@
     </checkout_onepage_review>
 
     <paypal_express_review>
+        <reference name="paypal.express.review">
+            <remove name="agreements"/>
+            <block type="magesetup/checkout_agreements" name="magesetup.checkout.agreements" as="agreements"
+                   template="magesetup/checkout/onepage/agreements.phtml" after="details"/>
+        </reference>
         <reference name="paypal.express.review.details">
             <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
             <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
