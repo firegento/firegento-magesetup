@@ -92,7 +92,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             Mage::dispatchEvent('magesetup_after_product_price',
                 array(
                     'html_obj' => $htmlObject,
-                    'block'    => $this,
+                    'block' => $this,
                 )
             );
 
@@ -121,10 +121,14 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             || strpos($pathInfo, 'catalogsearch/result') !== false
         ) {
             if ($this->getProduct()->getDeliveryTime()) {
+
+
                 $html = '<p class="delivery-time">';
-                $html .= $this->__('Delivery Time') . ': ' . $this->getProduct()->getDeliveryTime();
+                $html .= $this->__('Delivery Time') . ': ' . Mage::helper('magesetup')->getDeliveryTimeFromProduct($this->getProduct());
                 $html .= '</p>';
                 $htmlObject->setSuffix($html);
+
+
             }
         }
     }

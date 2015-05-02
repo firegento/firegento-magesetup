@@ -24,6 +24,6 @@
 ?>
 <?php if ($this->getProduct()->getDeliveryTime()): ?>
     <p class="delivery-time">
-        <?php echo $this->__('Delivery Time') ?>: <?php echo $this->getProduct()->getDeliveryTime() ?>
+        <?php echo $this->__('Delivery Time') ?>: <?php echo Mage::helper('magesetup')->getDeliveryTimeFromProduct($this->getProduct()) ?>
     </p>
 <?php endif ?>
