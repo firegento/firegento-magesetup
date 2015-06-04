@@ -120,12 +120,12 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
         if (strpos($pathInfo, 'catalog/category/view') !== false
             || strpos($pathInfo, 'catalogsearch/result') !== false
         ) {
-            if ($this->getProduct()->getDeliveryTime()) {
-                $html = '<p class="delivery-time">';
-                $html .= $this->__('Delivery Time') . ': ' . $this->getProduct()->getDeliveryTime();
-                $html .= '</p>';
-                $htmlObject->setSuffix($html);
-            }
+            $block = $this->getLayout()->createBlock('core/template', 'magesetup.deliverytime', array(
+                'product' => $this->getProduct(),
+                'template' => 'magesetup/delivery_time.phtml'
+                )
+            );
+            $htmlObject->setSuffix($block->toHtml());
         }
     }
 
