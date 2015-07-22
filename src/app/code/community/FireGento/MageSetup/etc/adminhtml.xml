@@ -26,7 +26,7 @@
                 <magesetup translate="title">
                     <title>MageSetup</title>
                     <sort_order>10</sort_order>
-                    <action>magesetup/magesetup</action>
+                    <action>adminhtml/magesetup</action>
                 </magesetup>
             </children>
         </system>
@@ -34,7 +34,7 @@
             <children>
                 <subscriber_status translate="title" module="magesetup">
                     <title>Newsletter Subscribers Status History</title>
-                    <action>magesetup/newsletter/</action>
+                    <action>adminhtml/newsletter</action>
                 </subscriber_status>
             </children>
         </newsletter>
