@@ -226,16 +226,13 @@
     </adminhtml>
     <admin>
         <routers>
-            <magesetup>
-                <use>admin</use>
+            <adminhtml>
                 <args>
-                    <module>FireGento_MageSetup</module>
-                    <frontName>magesetup</frontName>
                     <modules>
                         <FireGento_MageSetup after="Mage_Adminhtml">FireGento_MageSetup_Adminhtml</FireGento_MageSetup>
                     </modules>
                 </args>
-            </magesetup>
+            </adminhtml>
         </routers>
     </admin>
     <default>

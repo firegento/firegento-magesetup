@@ -74,4 +74,9 @@ class FireGento_MageSetup_Adminhtml_NewsletterController extends Mage_Adminhtml_
             $this->getLayout()->createBlock('magesetup/adminhtml_newsletter_subscriber_status_grid')->toHtml()
         );
     }
+
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('newsletter/subscriber_status');
+    }
 }
