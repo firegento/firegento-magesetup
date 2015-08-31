@@ -172,30 +172,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             return;
         }
 
-        $templateContent = $this->getTemplateContent($filename);
-
-        if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
-            $data['title'] = $matches[1];
-            $data['content_heading'] = $matches[1];
-            $templateContent = str_replace($matches[0], '', $templateContent);
-        }
-
-        if (preg_match('/<!--@identifier\s*((?:.)*?)\s*@-->/us', $templateContent, $matches)) {
-            $data['identifier'] = $matches[1];
-            $templateContent = str_replace($matches[0], '', $templateContent);
-        }
-
-        if (preg_match('/<!--@root_template\s*(.*?)\s*@-->/s', $templateContent, $matches)) {
-            $data['root_template'] = $matches[1];
-            $templateContent = str_replace($matches[0], '', $templateContent);
-        }
-
-        /**
-         * Remove comment lines
-         */
-        $templateContent = preg_replace('#\{\*.*\*\}#suU', '', $templateContent);
-
-        $data['content'] = $templateContent;
+        $data = $this->_extractPageData($data, $this->getTemplateContent($filename));
 
         if (is_null($storeId)) {
             $page = $this->_getDefaultPage($data['identifier']);
@@ -228,6 +205,51 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         if (isset($pageData['config_option'])) {
             $this->setConfigData($pageData['config_option'], $data['identifier'], $storeId);
         }
+    }
+
+    /**
+     * Get page data as array from template content
+     *
+     * @param array $data CMS page data
+     * @param string $templateContent Template content extracted from file
+     * @return array
+     */
+    protected function _extractPageData($data = array(), $templateContent)
+    {
+        if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
+            $data['title'] = $matches[1];
+            $data['content_heading'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@identifier\s*((?:.)*?)\s*@-->/us', $templateContent, $matches)) {
+            $data['identifier'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@root_template\s*(.*?)\s*@-->/s', $templateContent, $matches)) {
+            $data['root_template'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@meta_keywords\s*((?:.)*?)\s*@-->/us', $templateContent, $matches)) {
+            $data['meta_keywords'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@meta_description\s*((?:.)*?)\s*@-->/us', $templateContent, $matches)) {
+            $data['meta_description'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        /**
+         * Remove comment lines
+         */
+        $templateContent = preg_replace('#\{\*.*\*\}#suU', '', $templateContent);
+
+        $data['content'] = $templateContent;
+
+        return $data;
     }
 
     /**
