@@ -1,7 +1,7 @@
 result:
   -
     value: 0
-    label: "No dynamic shipping tax caluclation"
+    label: "No dynamic shipping tax calculation"
   -
     value: 1
     label: "Use the highest product tax"
