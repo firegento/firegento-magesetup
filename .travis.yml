@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 5.3
   - 5.4
   - 5.5
 
@@ -22,10 +21,10 @@ matrix:
 
 before_install:
   - mkdir test/
-  - curl -sS https://getcomposer.org/installer | php
-  - chmod +x ./composer.phar
-  - ./composer.phar --version
-  - ./composer.phar install --dev
+  - travis_retry composer self-update
+
+install:
+  - travis_retry composer install --prefer-source --no-interaction --ignore-platform-reqs
 
 before_script:
   - CURR_DIR=$(pwd)

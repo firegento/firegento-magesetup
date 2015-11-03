@@ -29,6 +29,7 @@
                      <catalog__price__display_block_below_price>1</catalog__price__display_block_below_price>
                      <general__region__state_required>CA,US</general__region__state_required>
                      <sales__reorder__allow>0</sales__reorder__allow>
+                     <sales__reorder__hide_sidebar_box>1</sales__reorder__hide_sidebar_box>
                  </default>
             </system_config>
         </magesetup>
