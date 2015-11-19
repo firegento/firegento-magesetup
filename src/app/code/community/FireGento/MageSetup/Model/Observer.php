@@ -179,6 +179,8 @@ class FireGento_MageSetup_Model_Observer
             'path'     => array()
         );
 
+        $storeRootCategoryId = Mage::app()->getStore($storeid)->getRootCategoryId();
+
         foreach ($categories as $categoryId) {
             // Check if category was already added
             if (array_key_exists($categoryId, $return['assigned'])
@@ -189,23 +191,27 @@ class FireGento_MageSetup_Model_Observer
 
             /* @var $category Mage_Catalog_Model_Category */
             $category = Mage::getModel('catalog/category')->setStoreId($storeid)->load($categoryId);
-            $return['assigned'][$categoryId] = $category->getName();
 
-            // Fetch path ids and remove the first two (base and root category)
             $path = $category->getPath();
             $pathIds = explode('/', $path);
-            array_shift($pathIds);
-            array_shift($pathIds);
+            // Fetch path ids and remove the first two (base and root category)
+            $categorySuperRootCategoryId = array_shift($pathIds);
+            $categoryRootCategoryId = array_shift($pathIds);
 
-            // Fetch the names from path categories
-            if (count($pathIds) > 0) {
-                foreach ($pathIds as $pathId) {
-                    if (!array_key_exists($pathId, $return['assigned'])
-                        && !array_key_exists($pathId, $return['path'])
-                    ) {
-                        /* @var $pathCategory Mage_Catalog_Model_Category */
-                        $pathCategory = Mage::getModel('catalog/category')->setStoreId($storeid)->load($pathId);
-                        $return['path'][$pathId] = $pathCategory->getName();
+            // use category names only if root category id matches
+            if($categoryRootCategoryId == $storeRootCategoryId || 0 == $storeid){
+                $return['assigned'][$categoryId] = $category->getName();
+
+                // Fetch the names from path categories
+                if (count($pathIds) > 0) {
+                    foreach ($pathIds as $pathId) {
+                        if (!array_key_exists($pathId, $return['assigned'])
+                            && !array_key_exists($pathId, $return['path'])
+                        ) {
+                            /* @var $pathCategory Mage_Catalog_Model_Category */
+                            $pathCategory = Mage::getModel('catalog/category')->setStoreId($storeid)->load($pathId);
+                            $return['path'][$pathId] = $pathCategory->getName();
+                        }
                     }
                 }
             }
@@ -228,10 +234,10 @@ class FireGento_MageSetup_Model_Observer
 
         $keywords = array();
         foreach ($categoryTypes as $categories) {
-            $keywords[] = implode(', ', $categories);
+            $keywords[] = trim(implode(', ', $categories), ', ');
         }
 
-        return implode(', ', $keywords);
+        return trim(implode(', ', $keywords), ', ');
     }
 
     /**
