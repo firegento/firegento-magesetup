@@ -44,9 +44,11 @@ if (version_compare($adminVersion, '1.6.1.1', '>')) {
     if ($table) {
         $blockNames = array(
             'cms/block',
+            'germansetup/imprint_field',
+            'germansetup/imprint_content',
         );
         foreach ($blockNames as $blockName) {
-            $connection->insertIgnore(
+            $connection->insertOnDuplicate(
                 $table,
                 array(
                     'block_name' => $blockName,
