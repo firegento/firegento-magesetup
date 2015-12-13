@@ -47,7 +47,7 @@ if (version_compare($adminVersion, '1.6.1.1', '>')) {
             'magesetup/imprint_content'
         );
         foreach ($blockNames as $blockName) {
-            $connection->insertIgnore(
+            $connection->insertOnDuplicate(
                 $table,
                 array(
                     'block_name' => $blockName,
