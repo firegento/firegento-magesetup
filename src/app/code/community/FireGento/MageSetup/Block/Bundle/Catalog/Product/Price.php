@@ -49,6 +49,7 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price
             ->setTemplate('magesetup/price_info.phtml')
             ->setFormattedTaxRate($this->getFormattedTaxRate())
             ->setIsIncludingTax($this->isIncludingTax())
+            ->setPriceDisplayType(Mage::helper('tax')->getPriceDisplayType())
             ->setIsShowShippingLink($this->isShowShippingLink())
             ->setIsShowWeightInfo($this->getIsShowWeightInfo())
             ->setFormattedWeight($this->getFormattedWeight())

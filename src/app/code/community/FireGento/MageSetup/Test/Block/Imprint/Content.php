@@ -26,6 +26,8 @@
  * @category FireGento
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
+ * 
+ * @loadFixture defaultEnvironment.yaml
  */
 class FireGento_MageSetup_Test_Block_Imprint_Content extends EcomDev_PHPUnit_Test_Case
 {
