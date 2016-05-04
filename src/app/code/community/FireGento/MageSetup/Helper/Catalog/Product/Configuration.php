@@ -69,6 +69,9 @@ class FireGento_MageSetup_Helper_Catalog_Product_Configuration
      */
     protected function _getProduct($item)
     {
+        if ($option = $item->getOptionByCode('simple_product')) {
+            return $option->getProduct();
+        }
         return $item->getProduct();
     }
 
