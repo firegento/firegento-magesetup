@@ -14,7 +14,7 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
+ * @copyright 2013-2016 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
  -->
@@ -584,4 +584,13 @@
             </action>
         </reference>
     </customer_logged_in>
+
+	<!-- for updated contact form with checkbox to accept agreement -->
+	<contacts_index_index>
+		<reference name="contactForm">
+			<action method="setTemplate">
+				<template>magesetup/contacts/form.phtml</template>
+			</action>
+		</reference>
+	</contacts_index_index>
 </layout>
