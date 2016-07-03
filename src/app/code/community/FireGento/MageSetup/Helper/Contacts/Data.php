@@ -14,7 +14,8 @@
  *
  * @category  FireGento
  * @package   FireGento_MageSetup
- * @author    Julian Wittorf <jwittorf@die-netzwerkstatt.de>
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2016 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
 

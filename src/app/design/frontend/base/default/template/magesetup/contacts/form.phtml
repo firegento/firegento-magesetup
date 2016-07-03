@@ -12,7 +12,8 @@
  *
  * @category  FireGento
  * @package   FireGento_MageSetup
- * @author    Julian Wittorf <jwittorf@die-netzwerkstatt.de>
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2016 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
 ?>
@@ -53,8 +54,8 @@
             <?php if(Mage::helper('contacts')->isAcceptAgreement()): ?>
                 <li>
                     <div class="input-box">
-                        <label for="accept-agreements">
-                            <input name="accept-agreements" id="accept-agreements" title=""
+                        <label for="accept-agreement">
+                            <input name="accept-agreement" id="accept-agreement" title=""
                                    value="" class="input-checkbox validate-required-accept-agreement" type="checkbox" >
                             <?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('I agree that my contact details are saved permanently for allocation and any further queries.')) ?>
                         </label>
