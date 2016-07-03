@@ -14,9 +14,8 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013-2016 FireGento Team (http://www.firegento.com)
+ * @copyright 2016 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   2.2.4
  */
  -->
 <config>
@@ -45,11 +44,11 @@
                     <data>FireGento_MageSetup_Helper_Checkout_Data</data>
                 </rewrite>
             </checkout>
-			<contacts>
-				<rewrite>
-					<data>FireGento_MageSetup_Helper_Contacts_Data</data>
-				</rewrite>
-			</contacts>
+            <contacts>
+                <rewrite>
+                    <data>FireGento_MageSetup_Helper_Contacts_Data</data>
+                </rewrite>
+            </contacts>
         </helpers>
         <models>
             <magesetup>
@@ -189,6 +188,13 @@
                     <frontName>magesetup</frontName>
                 </args>
             </magesetup>
+            <contacts>
+                <args>
+                    <modules>
+                        <contacts before="Mage_Contacts">FireGento_MageSetup_Contacts</contacts>
+                    </modules>
+                </args>
+            </contacts>
         </routers>
     </frontend>
     <adminhtml>
@@ -357,11 +363,11 @@ Tel: {{var telephone}}
                 <eu_countries>AT,BE,BG,CY,CZ,DE,DK,EE,FI,FR,DE,GR,HU,HR,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB</eu_countries>
             </country>
         </general>
-		<contacts>
-			<contacts>
-				<accept_agreement>0</accept_agreement>
-			</contacts>
-		</contacts>
+        <contacts>
+            <contacts>
+                <accept_agreement>0</accept_agreement>
+            </contacts>
+        </contacts>
     </default>
     <phpunit>
         <suite>

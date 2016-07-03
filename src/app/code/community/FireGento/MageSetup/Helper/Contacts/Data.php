@@ -14,11 +14,9 @@
  *
  * @category  FireGento
  * @package   FireGento_MageSetup
- * @author    Julian Wittorf <jwittorf@die-netzwerkstatt.de>
- * @copyright 2013-2016 FireGento Team (http://www.firegento.com)
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2016 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   2.2.4
- * @since     2.2.4
  */
 
 class FireGento_MageSetup_Helper_Contacts_Data
