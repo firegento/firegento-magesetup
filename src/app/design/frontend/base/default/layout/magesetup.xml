@@ -14,15 +14,14 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013-2016 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
  -->
 <layout version="0.1.0">
 
     <!--
-	Adding custom product price block
-	-->
+    Adding custom product price block
+    -->
     <catalog_category_default>
         <reference name="product_list">
             <action method="addPriceBlockType">
@@ -585,12 +584,12 @@
         </reference>
     </customer_logged_in>
 
-	<!-- for updated contact form with checkbox to accept agreement -->
-	<contacts_index_index>
-		<reference name="contactForm">
-			<action method="setTemplate">
-				<template>magesetup/contacts/form.phtml</template>
-			</action>
-		</reference>
-	</contacts_index_index>
+    <!-- for updated contact form with checkbox to accept agreement -->
+    <contacts_index_index>
+        <reference name="contactForm">
+            <action method="setTemplate">
+                <template>magesetup/contacts/form.phtml</template>
+            </action>
+        </reference>
+    </contacts_index_index>
 </layout>
