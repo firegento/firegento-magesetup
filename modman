@@ -6,6 +6,7 @@ src/app/locale/de_DE/FireGento_MageSetup.csv                      app/locale/de_
 src/app/locale/de_DE/template/magesetup/                          app/locale/de_DE/template/magesetup/
 src/app/locale/en_US/FireGento_MageSetup.csv                      app/locale/en_US/FireGento_MageSetup.csv
 src/app/locale/en_US/template/magesetup/                          app/locale/en_US/template/magesetup/
+src/app/locale/en_US/template/email/contact_form.html             app/locale/en_US/template/email/contact_form.html
 src/app/locale/es_ES/FireGento_MageSetup.csv                      app/locale/es_ES/FireGento_MageSetup.csv
 src/app/locale/es_ES/template/magesetup/                          app/locale/es_ES/template/magesetup/
 src/app/locale/fr_CH/template/magesetup/                          app/locale/fr_CH/template/magesetup/
