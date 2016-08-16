@@ -22,7 +22,7 @@
  * @var $this Mage_Catalog_Block_Product_View_Abstract
  */
 ?>
-<?php if ($this->getProduct()->getDeliveryTime()): ?>
+<?php if ( Mage::getStoreConfigFlag('catalog/price/display_delivery_time_on_prod_detail') && $this->getProduct()->getDeliveryTime()): ?>
     <p class="delivery-time">
         <?php echo $this->__('Delivery Time') ?>: <?php echo $this->getProduct()->getDeliveryTime() ?>
     </p>
