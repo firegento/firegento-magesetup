@@ -92,7 +92,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
             Mage::dispatchEvent('magesetup_after_product_price',
                 array(
                     'html_obj' => $htmlObject,
-                    'block'    => $this,
+                    'block' => $this,
                 )
             );
 
