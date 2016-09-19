@@ -47,6 +47,7 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price
 
         $html .= $this->getLayout()->createBlock('core/template')
             ->setTemplate('magesetup/price_info.phtml')
+            ->setProduct($this->getProduct())
             ->setFormattedTaxRate($this->getFormattedTaxRate())
             ->setIsIncludingTax($this->isIncludingTax())
             ->setPriceDisplayType(Mage::helper('tax')->getPriceDisplayType())
