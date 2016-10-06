@@ -26,7 +26,7 @@
                 <default>
                     <admin_password_new>
                         <execute>1</execute>
-                        <template_code>New Admin Password</template_code>
+                        <template_code>Tạo mật khẩu quản trị viên mới</template_code>
                         <template_type>2</template_type>
                         <template_file>admin_password_new.html</template_file>
                         <config_data_path>admin/emails/forgot_email_template</config_data_path>
@@ -38,7 +38,7 @@
 
                     <admin_password_reset_confirmation>
                         <execute>1</execute>
-                        <template_code>Reset Admin Password</template_code>
+                        <template_code>Lập lại mật khẩu quản trị viên</template_code>
                         <template_type>2</template_type>
                         <template_file>admin_password_reset_confirmation.html</template_file>
                         <config_data_path>admin/emails/forgot_email_template</config_data_path>
@@ -50,7 +50,7 @@
 
                     <currency_update_warning>
                         <execute>1</execute>
-                        <template_code>Currency Update</template_code>
+                        <template_code>Cập nhật đơn vị tiền tệ</template_code>
                         <template_type>1</template_type>
                         <template_file>currency_update_warning.html</template_file>
                         <config_data_path>currency/import/error_email_template</config_data_path>
@@ -62,7 +62,7 @@
 
                     <account_new>
                         <execute>1</execute>
-                        <template_code>New Account</template_code>
+                        <template_code>Tạo tài khoản mới</template_code>
                         <template_type>2</template_type>
                         <template_file>account_new.html</template_file>
                         <config_data_path>customer/create_account/email_template</config_data_path>
@@ -74,7 +74,7 @@
 
                     <customer_password_remind_email_template>
                         <execute>1</execute>
-                        <template_code>Password Reminder</template_code>
+                        <template_code>Ghi nhớ mật khẩu</template_code>
                         <template_type>2</template_type>
                         <template_file>password_new.html</template_file>
                         <config_data_path>customer/password/remind_email_template</config_data_path>
@@ -86,7 +86,7 @@
 
                     <account_new_confirmation>
                         <execute>1</execute>
-                        <template_code>New Account Confirmation</template_code>
+                        <template_code>Xác nhận tài khoản mới</template_code>
                         <template_type>2</template_type>
                         <template_file>account_new_confirmation.html</template_file>
                         <config_data_path>customer/create_account/email_confirmation_template</config_data_path>
@@ -98,7 +98,7 @@
 
                     <account_new_confirmed>
                         <execute>1</execute>
-                        <template_code>New Account Confirmed</template_code>
+                        <template_code>Tài khoản mới đã được xác nhận</template_code>
                         <template_type>2</template_type>
                         <template_file>account_new_confirmed.html</template_file>
                         <config_data_path>customer/create_account/email_confirmed_template</config_data_path>
@@ -110,7 +110,7 @@
 
                     <password_new>
                         <execute>1</execute>
-                        <template_code>New Password</template_code>
+                        <template_code>Tạo tài khoản mới</template_code>
                         <template_type>2</template_type>
                         <template_file>password_new.html</template_file>
                         <config_data_path>customer/password/forgot_email_template</config_data_path>
@@ -122,7 +122,7 @@
 
                     <account_password_reset_confirmation>
                         <execute>1</execute>
-                        <template_code>Password Reset Confirmation</template_code>
+                        <template_code>Xác nhận thiết lập mật khẩu</template_code>
                         <template_type>2</template_type>
                         <template_file>account_password_reset_confirmation.html</template_file>
                         <config_data_path>customer/password/forgot_email_template</config_data_path>
@@ -134,7 +134,7 @@
 
                     <order_new>
                         <execute>1</execute>
-                        <template_code>New Order</template_code>
+                        <template_code>Tạo đơn hàng mới</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/order_new.html</template_file>
                         <config_data_path>sales_email/order/template</config_data_path>
@@ -146,7 +146,7 @@
 
                     <order_new_guest>
                         <execute>1</execute>
-                        <template_code>New Order Guest</template_code>
+                        <template_code>Tạo đơn hàng cho khách chưa có tài khoản</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/order_new_guest.html</template_file>
                         <config_data_path>sales_email/order/guest_template</config_data_path>
@@ -158,7 +158,7 @@
 
                     <order_update>
                         <execute>1</execute>
-                        <template_code>Order Update</template_code>
+                        <template_code>Cập nhật đơn hàng</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/order_update.html</template_file>
                         <config_data_path>sales_email/order_comment/template</config_data_path>
@@ -170,7 +170,7 @@
 
                     <order_update_guest>
                         <execute>1</execute>
-                        <template_code>Order Update Guest</template_code>
+                        <template_code>Cập nhật đơn hàng cho khách chưa có tài khoản</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/order_update_guest.html</template_file>
                         <config_data_path>sales_email/order_comment/guest_template</config_data_path>
@@ -182,7 +182,7 @@
 
                     <invoice_new>
                         <execute>1</execute>
-                        <template_code>New Invoice</template_code>
+                        <template_code>Tạo hóa đơn</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/invoice_new.html</template_file>
                         <config_data_path>sales_email/invoice/template</config_data_path>
@@ -194,7 +194,7 @@
 
                     <invoice_new_guest>
                         <execute>1</execute>
-                        <template_code>New Invoice Guest</template_code>
+                        <template_code>Tạo hóa đơn cho khách chưa có tài khoản</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/invoice_new_guest.html</template_file>
                         <config_data_path>sales_email/invoice/guest_template</config_data_path>
@@ -206,7 +206,7 @@
 
                     <invoice_update>
                         <execute>1</execute>
-                        <template_code>Rechnung Update</template_code>
+                        <template_code>Cập nhật hóa đơn</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/invoice_update.html</template_file>
                         <config_data_path>sales_email/invoice_comment/template</config_data_path>
@@ -218,7 +218,7 @@
 
                     <invoice_update_guest>
                         <execute>1</execute>
-                        <template_code>Rechnung Update Guest</template_code>
+                        <template_code>Cập nhật hóa đơn cho khách chưa có tài khoản</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/invoice_update_guest.html</template_file>
                         <config_data_path>sales_email/invoice_comment/guest_template</config_data_path>
@@ -230,7 +230,7 @@
 
                     <creditmemo_new>
                         <execute>1</execute>
-                        <template_code>New Credit Memo</template_code>
+                        <template_code>Tạo chứng từ hoàn trả tiền</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/creditmemo_new.html</template_file>
                         <config_data_path>sales_email/creditmemo/template</config_data_path>
@@ -242,7 +242,7 @@
 
                     <creditmemo_new_guest>
                         <execute>1</execute>
-                        <template_code>New Credit Memo Guest</template_code>
+                        <template_code>Tạo chứng từ hoàn lại tiền cho khách chưa có tài khoản</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/creditmemo_new_guest.html</template_file>
                         <config_data_path>sales_email/creditmemo/guest_template</config_data_path>
@@ -254,7 +254,7 @@
 
                     <creditmemo_update>
                         <execute>1</execute>
-                        <template_code>Credit Memo Update</template_code>
+                        <template_code>Cập nhật chứng từ hoàn trả tiền</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/creditmemo_update.html</template_file>
                         <config_data_path>sales_email/creditmemo_comment/template</config_data_path>
@@ -266,7 +266,7 @@
 
                     <creditmemo_update_guest>
                         <execute>1</execute>
-                        <template_code>Credit Memo Update Guest</template_code>
+                        <template_code>Cập nhật chứng từ hoàn trả tiền cho khách chưa có tài khoản</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/creditmemo_update_guest.html</template_file>
                         <config_data_path>sales_email/creditmemo_comment/guest_template</config_data_path>
@@ -278,7 +278,7 @@
 
                     <shipment_new>
                         <execute>1</execute>
-                        <template_code>New Shipment</template_code>
+                        <template_code>Chuyển hàng</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/shipment_new.html</template_file>
                         <config_data_path>sales_email/shipment/template</config_data_path>
@@ -290,7 +290,7 @@
 
                     <shipment_new_guest>
                         <execute>1</execute>
-                        <template_code>New Shipment Guest</template_code>
+                        <template_code>Chuyển hàng cho khách chưa có tài khoản</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/shipment_new_guest.html</template_file>
                         <config_data_path>sales_email/shipment/guest_template</config_data_path>
@@ -302,7 +302,7 @@
 
                     <shipment_update>
                         <execute>1</execute>
-                        <template_code>Shipment Update</template_code>
+                        <template_code>Cập nhật chuyển hàng</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/shipment_update.html</template_file>
                         <config_data_path>sales_email/shipment_comment/template</config_data_path>
@@ -314,7 +314,7 @@
 
                     <shipment_update_guest>
                         <execute>1</execute>
-                        <template_code>Shipment Update Guest</template_code>
+                        <template_code>Cập nhật chuyển hàng cho khách chưa có tài khoản</template_code>
                         <template_type>2</template_type>
                         <template_file>sales/shipment_update_guest.html</template_file>
                         <config_data_path>sales_email/shipment_comment/guest_template</config_data_path>
@@ -326,7 +326,7 @@
 
                     <payment_failed>
                         <execute>1</execute>
-                        <template_code>Payment failed</template_code>
+                        <template_code>Thanh toán không thành công</template_code>
                         <template_type>2</template_type>
                         <template_file>payment_failed.html</template_file>
                         <config_data_path>checkout/payment_failed/template</config_data_path>
@@ -338,7 +338,7 @@
 
                     <log_clean_warning>
                         <execute>1</execute>
-                        <template_code>Log Clean Warnung</template_code>
+                        <template_code>Xóa tập tin chứa cảnh báo</template_code>
                         <template_type>1</template_type>
                         <template_file>log_clean_warning.html</template_file>
                         <config_data_path>system/log/error_email_template</config_data_path>
@@ -350,7 +350,7 @@
 
                     <newsletter_subscr_confirm>
                         <execute>1</execute>
-                        <template_code>Newsletter Subscription Confirm</template_code>
+                        <template_code>Xác nhận đăng kí nhận bản tin điện tử</template_code>
                         <template_type>2</template_type>
                         <template_file>newsletter_subscr_confirm.html</template_file>
                         <config_data_path>newsletter/subscription/confirm_email_template</config_data_path>
@@ -362,7 +362,7 @@
 
                     <newsletter_subscr_success>
                         <execute>1</execute>
-                        <template_code>Newsletter Subscription Success</template_code>
+                        <template_code>Đăng kí thành công nhận bản tin điện tử</template_code>
                         <template_type>2</template_type>
                         <template_file>newsletter_subscr_success.html</template_file>
                         <config_data_path>newsletter/subscription/success_email_template</config_data_path>
@@ -374,7 +374,7 @@
 
                     <newsletter_unsub_success>
                         <execute>1</execute>
-                        <template_code>Newsletter Unsubscription Success</template_code>
+                        <template_code>Hủy thành công đăng kí nhận bản tin điện tử</template_code>
                         <template_type>2</template_type>
                         <template_file>newsletter_unsub_success.html</template_file>
                         <config_data_path>newsletter/subscription/un_email_template</config_data_path>
@@ -386,7 +386,7 @@
 
                     <wishlist_share>
                         <execute>1</execute>
-                        <template_code>Share Wishlist</template_code>
+                        <template_code>Chia sẻ danh mục sản phẩm yêu thích</template_code>
                         <template_type>2</template_type>
                         <template_file>wishlist_share.html</template_file>
                         <config_data_path>wishlist/email/email_template</config_data_path>
@@ -398,7 +398,7 @@
 
                     <product_share>
                         <execute>1</execute>
-                        <template_code>Send Product to Friend</template_code>
+                        <template_code>Chia sẻ sản phẩm</template_code>
                         <template_type>2</template_type>
                         <template_file>product_share.html</template_file>
                         <config_data_path>sendfriend/email/template</config_data_path>
@@ -410,7 +410,7 @@
 
                     <contact_form>
                         <execute>1</execute>
-                        <template_code>Contact Form</template_code>
+                        <template_code>Mẫu liên hệ </template_code>
                         <template_type>1</template_type>
                         <template_file>contact_form.html</template_file>
                         <config_data_path>contacts/email/email_template</config_data_path>
@@ -422,7 +422,7 @@
 
                     <sitemap_generate_warning>
                         <execute>1</execute>
-                        <template_code>Sitemap Generate Warning</template_code>
+                        <template_code>Cảnh báo tự động tạo sitemap</template_code>
                         <template_type>1</template_type>
                         <template_file>sitemap_generate_warning.html</template_file>
                         <config_data_path>sitemap/generate/error_email_template</config_data_path>
@@ -434,7 +434,7 @@
 
                     <product_stock_alert>
                         <execute>1</execute>
-                        <template_code>Product Stock Alert</template_code>
+                        <template_code>Thông báo khi thay đổi số lượng sản phẩm</template_code>
                         <template_type>2</template_type>
                         <template_file>product_stock_alert.html</template_file>
                         <config_data_path>catalog/productalert/email_stock_template</config_data_path>
@@ -446,7 +446,7 @@
 
                     <product_price_alert>
                         <execute>1</execute>
-                        <template_code>Product Price Alert</template_code>
+                        <template_code>Thông báo khi thay đổi giá sản phẩm</template_code>
                         <template_type>2</template_type>
                         <template_file>product_price_alert.html</template_file>
                         <config_data_path>catalog/productalert/email_price_template</config_data_path>
@@ -458,7 +458,7 @@
 
                     <product_alert_cron_error>
                         <execute>1</execute>
-                        <template_code>Product Alert Cron Error</template_code>
+                        <template_code>Lỗi Cron của sản phẩm</template_code>
                         <template_type>2</template_type>
                         <template_file>product_alert_cron_error.html</template_file>
                         <config_data_path>catalog/productalert_cron/error_email_template</config_data_path>
@@ -470,7 +470,7 @@
 
                     <enterprise_invitation>
                         <execute>1</execute>
-                        <template_code>Invitation</template_code>
+                        <template_code>Gửi thư mời</template_code>
                         <template_type>2</template_type>
                         <template_file>enterprise_invitation.html</template_file>
                         <config_data_path>enterprise_invitation/email/template</config_data_path>
@@ -482,7 +482,7 @@
 
                     <token>
                         <execute>1</execute>
-                        <template_code>OAuth Token</template_code>
+                        <template_code>Mã xác thực</template_code>
                         <template_type>2</template_type>
                         <template_file>token.html</template_file>
                         <config_data_path>oauth/email/template</config_data_path>
