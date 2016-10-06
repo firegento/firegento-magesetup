@@ -28,7 +28,7 @@
                                        tax_customer_class="customers_end_users,customers_companies"
                                        tax_product_class="products_rate_1,shipping_rate_1">
                         <execute>1</execute>
-                        <code>Customers buy Products with full Tax</code>
+                        <code>Khách hàng mua hàng chịu mức thuế cao nhất</code>
                         <priority>1</priority>
                         <position>0</position>
                     </products_full_tax>
@@ -36,7 +36,7 @@
                                           tax_customer_class="customers_end_users,customers_companies"
                                           tax_product_class="products_rate_2,shipping_rate_2">
                         <execute>1</execute>
-                        <code>Customers buy Products with reduced Tax</code>
+                        <code>Khách hàng mua hàng chịu mức thuế ưu đãi</code>
                         <priority>2</priority>
                         <position>0</position>
                     </products_reduced_tax>
@@ -44,7 +44,7 @@
                                      tax_customer_class="customers_companies_no_vat"
                                      tax_product_class="products_rate_1,products_rate_2,shipping_rate_1,shipping_rate_2">
                         <execute>1</execute>
-                        <code>Non-taxable Companies buy Products with full and reduced Tax</code>
+                        <code>Khách hàng mua hàng với mức thuế bằng 0</code>
                         <priority>2</priority>
                         <position>0</position>
                     </products_no_vat>
@@ -56,49 +56,49 @@
                     <products_rate_1>
                         <execute>1</execute>
                         <class_id>1</class_id>
-                        <class_name>Products with full Tax</class_name>
+                        <class_name>Hàng hóa chịu mức thuế cao nhất</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>1</default>
                     </products_rate_1>
                     <products_rate_2>
                         <execute>1</execute>
                         <class_id>2</class_id>
-                        <class_name>Products with reduced Tax</class_name>
+                        <class_name>Hàng hóa chịu mức thuế ưu đãi</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </products_rate_2>
                     <shipping_rate_1>
                         <execute>1</execute>
                         <class_id>3</class_id>
-                        <class_name>Shipping with full Tax</class_name>
+                        <class_name>Vận chuyển hàng hóa chịu mức thuế cao nhất</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping_rate_1>
                     <shipping_rate_2>
                         <execute>1</execute>
                         <class_id>4</class_id>
-                        <class_name>Shipping with reduced Tax</class_name>
+                        <class_name>Vận chuyển hàng hóa chịu mức thuế ưu đãi</class_name>
                         <class_type>PRODUCT</class_type>
                         <default>0</default>
                     </shipping_rate_2>
                     <customers_end_users>
                         <execute>1</execute>
                         <class_id>5</class_id>
-                        <class_name>End Customers</class_name>
+                        <class_name>Khách hàng cuối cùng</class_name>
                         <class_type>CUSTOMER</class_type>
                         <default>1</default>
                     </customers_end_users>
                     <customers_companies>
                         <execute>1</execute>
                         <class_id>6</class_id>
-                        <class_name>Taxable Companies</class_name>
+                        <class_name>Đối tượng chịu thuế</class_name>
                         <class_type>CUSTOMER</class_type>
                         <default>0</default>
                     </customers_companies>
                     <customers_companies_no_vat>
                         <execute>1</execute>
                         <class_id>7</class_id>
-                        <class_name>Non-Taxable Companies</class_name>
+                        <class_name>Đối tượng không chịu thuế</class_name>
                         <class_type>CUSTOMER</class_type>
                         <default>0</default>
                     </customers_companies_no_vat>
@@ -112,14 +112,14 @@
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
                         <label>VAT</label>
-                        <rate>20</rate>
+                        <rate>10</rate>
                     </tax_calculation_rate_1>
 
                     <tax_calculation_rate_2>
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>reduced VAT</label>
+                        <label>VAT ưu đãi</label>
                         <rate>5</rate>
                     </tax_calculation_rate_2>
 
@@ -127,7 +127,7 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>without VAT</label>
+                        <label>VAT bằng O</label>
                         <rate>0</rate>
                     </tax_calculation_rate_3>
                 </default>
@@ -136,16 +136,16 @@
 
             <tax_config>
                 <default>
-                    <general__country__default>UK</general__country__default>
+                    <general__country__default>Việt Nam</general__country__default>
                     <tax__classes__shipping_tax_class>3</tax__classes__shipping_tax_class>
-                    <tax__calculation__based_on>billing</tax__calculation__based_on>
+                    <tax__calculation__based_on>Hóa đơn</tax__calculation__based_on>
                     <tax__calculation__price_includes_tax>1</tax__calculation__price_includes_tax>
                     <tax__calculation__shipping_includes_tax>1</tax__calculation__shipping_includes_tax>
                     <tax__calculation__apply_after_discount>1</tax__calculation__apply_after_discount>
                     <tax__calculation__discount_tax>1</tax__calculation__discount_tax>
-                    <tax__defaults__country>UK</tax__defaults__country>
+                    <tax__defaults__country>Việt Nam</tax__defaults__country>
                     <tax__defaults__region></tax__defaults__region>
-                    <tax__defaults__postcode>SW1A 1AA</tax__defaults__postcode>
+                    <tax__defaults__postcode>100000</tax__defaults__postcode>
                     <tax__display__type>2</tax__display__type>
                     <tax__display__shipping>2</tax__display__shipping>
                     <tax__cart_display__subtotal>2</tax__cart_display__subtotal>
@@ -160,10 +160,10 @@
                     <tax__sales_display__grandtotal>0</tax__sales_display__grandtotal>
                     <tax__sales_display__full_summary>1</tax__sales_display__full_summary>
                     <tax__sales_display__zero_tax>1</tax__sales_display__zero_tax>
-                    <shipping__origin__country_id>UK</shipping__origin__country_id>
+                    <shipping__origin__country_id>Việt Nam</shipping__origin__country_id>
                     <shipping__origin__region_id></shipping__origin__region_id>
-                    <shipping__origin__postcode>SW1A 1AA</shipping__origin__postcode>
-                    <shipping__origin__city>London</shipping__origin__city>
+                    <shipping__origin__postcode>100000</shipping__origin__postcode>
+                    <shipping__origin__city>Hà Nội</shipping__origin__city>
                 </default>
             </tax_config>
         </magesetup>
