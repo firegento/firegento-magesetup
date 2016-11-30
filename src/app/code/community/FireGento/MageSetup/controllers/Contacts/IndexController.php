@@ -57,7 +57,7 @@ class FireGento_MageSetup_Contacts_IndexController extends Mage_Contacts_IndexCo
 
                 // checkbox validation needs to be done before creating $postObject
                 // otherwise data for email template can't be set
-                if(!array_key_exists('accept-agreement', $post)) {
+                if(!array_key_exists('accept-agreement', $post) && Mage::helper('contacts')->isAcceptAgreement()) {
                     $error = true;
                 } else {
                     $post['accept-agreement'] = Mage::helper('contacts')->__('Agreement accepted');
