@@ -332,24 +332,40 @@ class FireGento_MageSetup_Model_Observer
      */
     public function customerCreatePreDispatch(Varien_Event_Observer $observer)
     {
-        $requiredAgreements = $this->_getCustomerCreateAgreements();
         $controller = $observer->getEvent()->getControllerAction();
-        $postedAgreements = array_keys($controller->getRequest()->getPost('agreement', array()));
-
-        if ($diff = array_diff($requiredAgreements, $postedAgreements)) {
+        if (!$this->requiredAgreementsAccepted($controller)) {
             $session = Mage::getSingleton('customer/session');
             $session->addException(
                 new Mage_Customer_Exception('Cannot create customer: agreements not confirmed'),
                 Mage::helper('magesetup')->__('Agreements not confirmed.')
             );
 
-            $controller->getResponse()->setRedirect(Mage::getUrl('*/*/create', array('_secure' => true)));
+            $controller->getResponse()->setRedirect(Mage::getUrl('*/*/create', ['_secure' => true]));
             $controller->setFlag(
                 $controller->getRequest()->getActionName(),
                 Mage_Core_Controller_Varien_Action::FLAG_NO_DISPATCH,
                 true
             );
         }
+    }
+
+    private function requiredAgreementsAccepted($controller)
+    {
+        $requiredAgreements = $this->_getCustomerCreateAgreements();
+        if (!$requiredAgreements) {
+            return false;
+        }
+        $postedAgreements = $controller->getRequest()->getPost('agreement', []);
+        if (!is_array($postedAgreements)) {
+            return false;
+        }
+
+        $postedAgreements = array_keys($postedAgreements);
+        $diff = array_diff($requiredAgreements, $postedAgreements);
+        if ($diff) {
+            return false;
+        }
+        return true;
     }
 
     /**
