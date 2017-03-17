@@ -57,14 +57,12 @@ $installer->addAttribute(
 );
 
 if (version_compare(Mage::getVersion(), '1.6', '<')) {
-
     $installer->run("
         ALTER TABLE `{$installer->getTable('checkout/agreement')}`
         ADD `revocation_product_type` VARCHAR( 255 ) NOT NULL COMMENT 'Revocation Product Type'
     ");
 
 } else {
-
     $installer->getConnection()->addColumn(
         $installer->getTable('checkout/agreement'),
         'revocation_product_type',

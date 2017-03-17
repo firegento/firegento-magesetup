@@ -28,8 +28,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Helper_Checkout_Data
-    extends Mage_Checkout_Helper_Data
+class FireGento_MageSetup_Helper_Checkout_Data extends Mage_Checkout_Helper_Data
 {
     /**
      * Avoid loss of translation

@@ -44,7 +44,6 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
     public function setup($locale = array('default' => 'de_DE'), $overwrite = false)
     {
         foreach ($locale as $storeId => $localeCode) {
-
             if (!$localeCode) {
                 continue;
             }
@@ -55,9 +54,7 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
 
             // execute emails
             foreach ($this->_getConfigEmails($localeCode) as $data) {
-
                 if ($data['execute'] == 1) {
-
                     // Change override param from false to true to override existing templates for testing
                     $this->_createEmail($data, $localeCode, $overwrite, $storeId);
                 }
@@ -101,7 +98,6 @@ class FireGento_MageSetup_Model_Setup_Email extends FireGento_MageSetup_Model_Se
             ->loadByCode($templateCode);
 
         if (!$template->getId() || $override) {
-
             $localeEmailPath = $this->_getLocaleEmailPath($locale);
 
             $template

@@ -172,7 +172,7 @@ class FireGento_MageSetup_Model_Observer
      * @param  array $categories Category Ids
      * @return array Categories
      */
-    protected function _fetchCategoryNames($categories, $storeid=0)
+    protected function _fetchCategoryNames($categories, $storeid = 0)
     {
         $return = array(
             'assigned' => array(),
@@ -199,7 +199,7 @@ class FireGento_MageSetup_Model_Observer
             $categoryRootCategoryId = array_shift($pathIds);
 
             // use category names only if root category id matches
-            if($categoryRootCategoryId == $storeRootCategoryId || 0 == $storeid){
+            if ($categoryRootCategoryId == $storeRootCategoryId || 0 == $storeid) {
                 $return['assigned'][$categoryId] = $category->getName();
 
                 // Fetch the names from path categories

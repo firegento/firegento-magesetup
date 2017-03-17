@@ -108,8 +108,9 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     {
         $options = Mage::getSingleton('adminhtml/system_config_source_locale')->toOptionArray();
         foreach ($options as $key => $value) {
-            $filePath = Mage::getBaseDir('locale') . DS . $value['value'] . DS . 'template' . DS . 'email';
-            if (!file_exists($filePath)) {
+            $filePath = Mage::getBaseDir('locale') . DS . $value['value'] . DS . 'template';
+            $validatorNot = new Zend_Validate_File_NotExists($filePath);
+            if ($validatorNot->isValid('email')) {
                 unset($options[$key]);
             }
         }
@@ -126,8 +127,9 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
     {
         $options = Mage::getSingleton('adminhtml/system_config_source_locale')->toOptionArray();
         foreach ($options as $key => $value) {
-            $filePath = Mage::getBaseDir('locale') . DS . $value['value'] . DS . 'template' . DS . 'magesetup';
-            if (!file_exists($filePath)) {
+            $filePath = Mage::getBaseDir('locale') . DS . $value['value'] . DS . 'template';
+            $validatorNot = new Zend_Validate_File_NotExists($filePath);
+            if ($validatorNot->isValid('magesetup')) {
                 unset($options[$key]);
             }
         }
@@ -177,20 +179,21 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
         $countryTaxClasses = array();
         foreach (Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
             // Get the config file for the given country
-            $configFile = $moduleDir . DS . $countryId . DS . 'tax.xml';
+            $fileName = 'tax.xml';
+            $configFile = $moduleDir . DS . $countryId;
 
             // If the given file does not exist, use the default file
-            if (!file_exists($configFile)) {
-                $configFile = $moduleDir . DS . 'default' . DS . 'tax.xml';
+            $validatorNot = new Zend_Validate_File_NotExists($configFile);
+            if ($validatorNot->isValid($fileName)) {
+                $configFile = $moduleDir . DS . 'default';
             }
 
-            $xml = new SimpleXMLElement(file_get_contents($configFile));
-
-            // @codingStandardsIgnoreStart
+            $configFile .= DS . $fileName
+            $xml = new Zend_Config_Xml($configFile);
             $taxClasses = $xml->default->magesetup->tax_classes->default;
-            foreach ($taxClasses->children() as $identifier => $taxClass) {
-                if ($taxClass->class_type != 'PRODUCT'
-                    || $taxClass->execute != 1
+            foreach ($taxClasses as $identifier => $taxClass) {
+                if ($taxClass->get('class_type') != 'PRODUCT'
+                    || $taxClass->get('execute') != 1
                     || strpos($identifier, 'shipping') === 0
                 ) {
                     continue;
@@ -198,7 +201,6 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
 
                 $countryTaxClasses[$countryId][(string)$taxClass->class_id] = (string)$taxClass->class_name;
             }
-            // @codingStandardsIgnoreEnd
 
             $countryTaxClasses[$countryId][] = $this->__('No tax');
         }
@@ -218,29 +220,28 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
         $countryTaxClasses = array();
         foreach (Mage::helper('magesetup')->getAvailableCountries() as $countryId => $countryName) {
             // Get the config file for the given country
-            $configFile = $moduleDir . DS . $countryId . DS . 'tax.xml';
+            $fileName = 'tax.xml';
+            $configFile = $moduleDir . DS . $countryId;
 
             // If the given file does not exist, use the default file
-            if (!file_exists($configFile)) {
-                $configFile = $moduleDir . DS . 'default' . DS . 'tax.xml';
+            $validatorNot = new Zend_Validate_File_NotExists($configFile);
+            if ($validatorNot->isValid($fileName)) {
+                $configFile = $moduleDir . DS . 'default';
             }
 
-            $xml = new SimpleXMLElement(file_get_contents($configFile));
-
-            // @codingStandardsIgnoreStart
+            $configFile .= DS . $fileName
+            $xml = new Zend_Config_Xml($configFile);
             $taxClasses = $xml->default->magesetup->tax_classes->default;
-            foreach ($taxClasses->children() as $identifier => $taxClass) {
-                if ($taxClass->class_type != 'CUSTOMER'
-                    || $taxClass->execute != 1
+            foreach ($taxClasses as $identifier => $taxClass) {
+                if ($taxClass->get('class_type') != 'CUSTOMER'
+                    || $taxClass->get('execute') != 1
                 ) {
                     continue;
                 }
                 $countryTaxClasses[$countryId][(string)$taxClass->class_id] = (string)$taxClass->class_name;
             }
-            // @codingStandardsIgnoreEnd
         }
 
         return Zend_Json::encode($countryTaxClasses);
     }
 }
-
