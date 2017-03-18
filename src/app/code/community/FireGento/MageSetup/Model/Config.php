@@ -140,7 +140,8 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
         // Load the given config file
         $validator = new Zend_Validate_File_Exists($configFile);
         if ($validator->isValid($fileName)) {
-            if ($mergeConfig->loadFile($configFile . DS . $fileName)) {
+            $fileName = $configFile . DS . $fileName;
+            if ($mergeConfig->loadFile($fileName)) {
                 $config->extend($mergeConfig, $overwrite);
             }
         }
