@@ -188,12 +188,12 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
                 $configFile = $moduleDir . DS . 'default';
             }
 
-            $configFile .= DS . $fileName
-            $xml = new Zend_Config_Xml($configFile);
-            $taxClasses = $xml->default->magesetup->tax_classes->default;
-            foreach ($taxClasses as $identifier => $taxClass) {
-                if ($taxClass->get('class_type') != 'PRODUCT'
-                    || $taxClass->get('execute') != 1
+            $configFile .= DS . $fileName;
+            $xml = new Varien_Simplexml_Config($configFile);
+            $taxClasses = $xml->getNode('default/magesetup/tax_classes/default');
+            foreach ($taxClasses->children() as $identifier => $taxClass) {
+                if ($taxClass->class_type != 'PRODUCT'
+                    || $taxClass->execute != 1
                     || strpos($identifier, 'shipping') === 0
                 ) {
                     continue;
@@ -229,12 +229,12 @@ class FireGento_MageSetup_Block_Adminhtml_Magesetup extends Mage_Adminhtml_Block
                 $configFile = $moduleDir . DS . 'default';
             }
 
-            $configFile .= DS . $fileName
-            $xml = new Zend_Config_Xml($configFile);
-            $taxClasses = $xml->default->magesetup->tax_classes->default;
-            foreach ($taxClasses as $identifier => $taxClass) {
-                if ($taxClass->get('class_type') != 'CUSTOMER'
-                    || $taxClass->get('execute') != 1
+            $configFile .= DS . $fileName;
+            $xml = new Varien_Simplexml_Config($configFile);
+            $taxClasses = $xml->getNode('default/magesetup/tax_classes/default');
+            foreach ($taxClasses->children() as $identifier => $taxClass) {
+                if ($taxClass->class_type != 'CUSTOMER'
+                    || $taxClass->execute != 1
                 ) {
                     continue;
                 }
