@@ -340,7 +340,7 @@ class FireGento_MageSetup_Model_Observer
                 Mage::helper('magesetup')->__('Agreements not confirmed.')
             );
 
-            $controller->getResponse()->setRedirect(Mage::getUrl('*/*/create', ['_secure' => true]));
+            $controller->getResponse()->setRedirect(Mage::getUrl('*/*/create', array('_secure' => true)));
             $controller->setFlag(
                 $controller->getRequest()->getActionName(),
                 Mage_Core_Controller_Varien_Action::FLAG_NO_DISPATCH,
@@ -355,7 +355,7 @@ class FireGento_MageSetup_Model_Observer
         if (!$requiredAgreements) {
             return false;
         }
-        $postedAgreements = $controller->getRequest()->getPost('agreement', []);
+        $postedAgreements = $controller->getRequest()->getPost('agreement', array());
         if (!is_array($postedAgreements)) {
             return false;
         }
