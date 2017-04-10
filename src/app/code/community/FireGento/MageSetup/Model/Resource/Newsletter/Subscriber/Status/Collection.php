@@ -28,8 +28,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status_Collection
-    extends Mage_Core_Model_Resource_Db_Collection_Abstract
+class FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract
 {
     /**
      * Initialize the model and resource for the collection

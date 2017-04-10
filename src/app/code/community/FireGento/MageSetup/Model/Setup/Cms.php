@@ -43,7 +43,6 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     public function setup($locale = array('default' => 'de_DE'))
     {
         foreach ($locale as $storeId => $localeCode) {
-
             if (!$localeCode) {
                 continue;
             }
@@ -167,12 +166,13 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             'is_active' => 1,
         );
 
-        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $pageData['filename'];
-        if (!file_exists($filename)) {
+        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template';
+        $validatorNot = new Zend_Validate_File_NotExists($filename);
+        if ($validatorNot->isValid($pageData['filename'])) {
             return;
         }
 
-        $data = $this->_extractPageData($data, $this->getTemplateContent($filename));
+        $data = $this->_extractPageData($this->getTemplateContent($filename), $data);
 
         if (is_null($storeId)) {
             $page = $this->_getDefaultPage($data['identifier']);
@@ -214,7 +214,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
      * @param string $templateContent Template content extracted from file
      * @return array
      */
-    protected function _extractPageData($data = array(), $templateContent)
+    protected function _extractPageData($templateContent, $data = array())
     {
         if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
             $data['title'] = $matches[1];
@@ -269,7 +269,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         }
 
         $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $blockData['filename'];
-        if (!file_exists($filename)) {
+        $validatorNot = new Zend_Validate_File_NotExists($filename);
+        if ($validatorNot->isValid($blockData['filename'])) {
             return;
         }
 
@@ -342,11 +343,9 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         }
 
         if ($block->getId()) {
-
             /** @var $backupBlock Mage_Cms_Model_Block */
             $backupBlock = Mage::getModel('cms/block')->load('footer_links_backup');
             if (!$backupBlock->getId()) {
-
                 // create copy of original block
                 $data = array();
                 $data['block_id'] = $block->getId();
@@ -384,7 +383,9 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     {
         return Mage::getResourceModel('cms/block_collection')
             ->addFieldToFilter('identifier', $identifier)
-            ->addStoreFilter(0)->getFirstItem();
+            ->addStoreFilter(0)
+            ->setPageSize(1)
+            ->getFirstItem();
     }
 
     /**
@@ -397,6 +398,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     {
         return Mage::getResourceModel('cms/page_collection')
             ->addFieldToFilter('identifier', $identifier)
-            ->addStoreFilter(0)->getFirstItem();
+            ->addStoreFilter(0)
+            ->setPageSize(1)
+            ->getFirstItem();
     }
 }

@@ -35,20 +35,14 @@ require_once Mage::getModuleDir('controllers', 'Mage_Contacts') . DS . 'IndexCon
 
 class FireGento_MageSetup_Contacts_IndexController extends Mage_Contacts_IndexController
 {
-
     const XML_PATH_EMAIL_RECIPIENT  = 'contacts/email/recipient_email';
     const XML_PATH_EMAIL_SENDER     = 'contacts/email/sender_email_identity';
     const XML_PATH_EMAIL_TEMPLATE   = 'contacts/email/email_template';
 
-    public function indexAction()
-    {
-        parent::indexAction();
-    }
-
     public function postAction()
     {
         $post = $this->getRequest()->getPost();
-        if ( $post ) {
+        if ($post) {
             $translate = Mage::getSingleton('core/translate');
             /* @var $translate Mage_Core_Model_Translate */
             $translate->setTranslateInline(false);
@@ -57,7 +51,7 @@ class FireGento_MageSetup_Contacts_IndexController extends Mage_Contacts_IndexCo
 
                 // checkbox validation needs to be done before creating $postObject
                 // otherwise data for email template can't be set
-                if(!array_key_exists('accept-agreement', $post) && Mage::helper('contacts')->isAcceptAgreement()) {
+                if (!array_key_exists('accept-agreement', $post) && Mage::helper('contacts')->isAcceptAgreement()) {
                     $error = true;
                 } else {
                     $post['accept-agreement'] = Mage::helper('contacts')->__('Agreement accepted');
@@ -66,11 +60,11 @@ class FireGento_MageSetup_Contacts_IndexController extends Mage_Contacts_IndexCo
                 $postObject = new Varien_Object();
                 $postObject->setData($post);
 
-                if (!Zend_Validate::is(trim($post['name']) , 'NotEmpty')) {
+                if (!Zend_Validate::is(trim($post['name']), 'NotEmpty')) {
                     $error = true;
                 }
 
-                if (!Zend_Validate::is(trim($post['comment']) , 'NotEmpty')) {
+                if (!Zend_Validate::is(trim($post['comment']), 'NotEmpty')) {
                     $error = true;
                 }
 
@@ -119,5 +113,4 @@ class FireGento_MageSetup_Contacts_IndexController extends Mage_Contacts_IndexCo
             $this->_redirect('*/*/');
         }
     }
-
 }

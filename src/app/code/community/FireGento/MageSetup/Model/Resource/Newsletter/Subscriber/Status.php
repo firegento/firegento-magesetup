@@ -28,8 +28,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status
-    extends Mage_Core_Model_Resource_Db_Abstract
+class FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status extends Mage_Core_Model_Resource_Db_Abstract
 {
     /**
      * Init main table and id field name

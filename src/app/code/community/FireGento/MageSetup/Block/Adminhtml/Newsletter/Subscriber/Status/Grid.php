@@ -28,8 +28,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid
-    extends Mage_Adminhtml_Block_Widget_Grid
+class FireGento_MageSetup_Block_Adminhtml_Newsletter_Subscriber_Status_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
     /**
      * Class constructor
