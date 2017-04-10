@@ -85,7 +85,7 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
             return;
         }
 
-        $templateContent = $this->getTemplateContent($filename);
+        $templateContent = $this->getTemplateContent($filename.DS.$agreementData['filename']);
 
         // Find name
         $name = '';

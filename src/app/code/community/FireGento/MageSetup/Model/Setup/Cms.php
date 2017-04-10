@@ -172,7 +172,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             return;
         }
 
-        $data = $this->_extractPageData($this->getTemplateContent($filename), $data);
+        $data = $this->_extractPageData($this->getTemplateContent($filename.DS.$pageData['filename']), $data);
 
         if (is_null($storeId)) {
             $page = $this->_getDefaultPage($data['identifier']);
@@ -274,7 +274,7 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             return;
         }
 
-        $templateContent = $this->getTemplateContent($filename);
+        $templateContent = $this->getTemplateContent($filename.DS.$blockData['filename']);
 
         // Find title
         if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
