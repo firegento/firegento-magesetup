@@ -28,8 +28,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Helper_Catalog_Product_Configuration
-    extends Mage_Catalog_Helper_Product_Configuration
+class FireGento_MageSetup_Helper_Catalog_Product_Configuration extends Mage_Catalog_Helper_Product_Configuration
 {
     /**
      * @var array

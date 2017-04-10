@@ -75,9 +75,14 @@ class FireGento_MageSetup_Model_Tax_Config extends Mage_Tax_Model_Config
         // Fetch the tax rates from the quote items
         $taxClassSums = array();
         foreach ($quoteItems as $item) {
-
             /** @var $item Mage_Sales_Model_Quote_Item */
             if ($item->getParentItem()) {
+                $parentProduct = $item->getParentItem()->getProduct();
+                if ($parentProduct->getTypeId() == 'bundle' && $parentProduct->getPriceType() != 0) {
+                    continue;
+                }
+            }
+            if ($item->getProduct()->getTypeId() == 'bundle' && $item->getProduct()->getPriceType() == 0) {
                 continue;
             }
 

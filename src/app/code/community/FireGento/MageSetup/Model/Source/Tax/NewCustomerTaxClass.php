@@ -28,8 +28,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Model_Source_Tax_NewCustomerTaxClass
-    extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
+class FireGento_MageSetup_Model_Source_Tax_NewCustomerTaxClass extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
     /**
      * @var array $_options cached options

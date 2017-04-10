@@ -29,8 +29,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price
-    extends FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract
+class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price extends FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract
 {
     /**
      * Add content of template block below price html if defined in config

@@ -33,7 +33,6 @@ $installer = $this;
 $installer->startSetup();
 
 if (version_compare(Mage::getVersion(), '1.6', '<')) {
-
     $installer->run("
         DROP TABLE IF EXISTS `{$installer->getTable('magesetup/newsletter_subscriber_status')}`;
         CREATE TABLE `{$installer->getTable('magesetup/newsletter_subscriber_status')}` (
@@ -47,14 +46,17 @@ if (version_compare(Mage::getVersion(), '1.6', '<')) {
     ");
 
 } else {
-
     $subscriberStatusTable = $installer->getTable('magesetup/newsletter_subscriber_status');
     if ($installer->getConnection()->isTableExists($subscriberStatusTable)) {
         $installer->getConnection()->dropTable($subscriberStatusTable);
     }
 
     $subscriberStatusTable = $installer->getConnection()->newTable($subscriberStatusTable)
-        ->addColumn('id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+        ->addColumn(
+            'id',
+            Varien_Db_Ddl_Table::TYPE_INTEGER,
+            null,
+            array(
             'unsigned' => true,
             'nullable' => false,
             'primary'  => true,
@@ -62,23 +64,39 @@ if (version_compare(Mage::getVersion(), '1.6', '<')) {
             ),
             'ID'
         )
-        ->addColumn('subscriber', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+        ->addColumn(
+            'subscriber',
+            Varien_Db_Ddl_Table::TYPE_INTEGER,
+            null,
+            array(
             'unsigned'  => true,
             'nullable'  => false,
             ),
             'Subscriber Id'
         )
-        ->addColumn('status', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+        ->addColumn(
+            'status',
+            Varien_Db_Ddl_Table::TYPE_INTEGER,
+            null,
+            array(
             'nullable'  => false,
             'default'   => '0',
             ),
             'Subscriber Status'
         )
-        ->addColumn('email', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
+        ->addColumn(
+            'email',
+            Varien_Db_Ddl_Table::TYPE_TEXT,
+            null,
+            array(
             ),
             'Subscriber Status'
         )
-        ->addColumn('created_at', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
+        ->addColumn(
+            'created_at',
+            Varien_Db_Ddl_Table::TYPE_TIMESTAMP,
+            null,
+            array(
             ),
             'Changed at'
         )

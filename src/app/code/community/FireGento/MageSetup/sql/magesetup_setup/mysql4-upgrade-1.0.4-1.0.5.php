@@ -33,14 +33,12 @@ $installer = $this;
 $installer->startSetup();
 
 if (version_compare(Mage::getVersion(), '1.6', '<')) {
-
     $installer->run("
         ALTER TABLE `{$installer->getTable('catalog/eav_attribute')}`
         ADD `is_visible_on_checkout` SMALLINT(5) NOT NULL DEFAULT '0';
     ");
 
 } else {
-
     $installer->getConnection()->addColumn(
         $installer->getTable('catalog/eav_attribute'),
         'is_visible_on_checkout',

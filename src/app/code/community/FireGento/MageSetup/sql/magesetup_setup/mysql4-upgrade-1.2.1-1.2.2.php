@@ -32,25 +32,23 @@ $installer = $this;
 $installer->startSetup();
 
 if (version_compare(Mage::getVersion(), '1.6', '<')) {
-
     $installer->run("
         ALTER TABLE `{$installer->getTable('checkout/agreement')}`
         ADD `agreement_type` SMALLINT( 5 ) NOT NULL DEFAULT '0' COMMENT 'Agreement Type'
     ");
 
 } else {
-
     $installer->getConnection()->addColumn(
-            $installer->getTable('checkout/agreement'),
-            'agreement_type',
-            array(
+        $installer->getTable('checkout/agreement'),
+        'agreement_type',
+        array(
                 'type'      => Varien_Db_Ddl_Table::TYPE_SMALLINT,
                 'unsigned'  => true,
                 'nullable'  => false,
                 'default'   => '0',
                 'comment'   => 'Agreement Type'
             )
-        );
+    );
 }
 
 $installer->endSetup();
