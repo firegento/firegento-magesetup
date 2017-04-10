@@ -172,7 +172,7 @@ class FireGento_MageSetup_Model_Observer
      * @param  array $categories Category Ids
      * @return array Categories
      */
-    protected function _fetchCategoryNames($categories, $storeid = 0)
+    protected function _fetchCategoryNames($categories, $storeid=0)
     {
         $return = array(
             'assigned' => array(),
@@ -199,7 +199,7 @@ class FireGento_MageSetup_Model_Observer
             $categoryRootCategoryId = array_shift($pathIds);
 
             // use category names only if root category id matches
-            if ($categoryRootCategoryId == $storeRootCategoryId || 0 == $storeid) {
+            if ($categoryRootCategoryId == $storeRootCategoryId || 0 == $storeid) {
                 $return['assigned'][$categoryId] = $category->getName();
 
                 // Fetch the names from path categories
@@ -332,11 +332,8 @@ class FireGento_MageSetup_Model_Observer
      */
     public function customerCreatePreDispatch(Varien_Event_Observer $observer)
     {
-        $requiredAgreements = $this->_getCustomerCreateAgreements();
         $controller = $observer->getEvent()->getControllerAction();
-        $postedAgreements = array_keys($controller->getRequest()->getPost('agreement', array()));
-
-        if ($diff = array_diff($requiredAgreements, $postedAgreements)) {
+        if (!$this->requiredAgreementsAccepted($controller)) {
             $session = Mage::getSingleton('customer/session');
             $session->addException(
                 new Mage_Customer_Exception('Cannot create customer: agreements not confirmed'),
@@ -350,6 +347,25 @@ class FireGento_MageSetup_Model_Observer
                 true
             );
         }
+    }
+
+    private function requiredAgreementsAccepted($controller)
+    {
+        $requiredAgreements = $this->_getCustomerCreateAgreements();
+        if (!$requiredAgreements) {
+            return false;
+        }
+        $postedAgreements = $controller->getRequest()->getPost('agreement', array());
+        if (!is_array($postedAgreements)) {
+            return false;
+        }
+
+        $postedAgreements = array_keys($postedAgreements);
+        $diff = array_diff($requiredAgreements, $postedAgreements);
+        if ($diff) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -410,3 +426,4 @@ class FireGento_MageSetup_Model_Observer
         }
     }
 }
+
