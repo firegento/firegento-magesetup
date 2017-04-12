@@ -33,7 +33,7 @@
             "summary": "MageSetup configures a shop for a national market. It creates configuration and tax settings, email templates, cms blocks and pages.",
             "channel": "community",
             "php_min": "5.3.0",
-            "php_max": "7.9.9",
+            "php_max": "8.0.0",
             "stability": "stable",
             "license_uri": "http://www.gnu.org/licenses/gpl-3.0.html",
             "content":[
