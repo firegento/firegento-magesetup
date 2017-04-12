@@ -40,122 +40,146 @@
         {
           "type" :      "magecommunity",
           "structure" : "dir",
-          "path" :      "FireGento/MageSetup"
+          "path" :      "FireGento/MageSetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "mageetc",
           "structure" : "file",
-          "path" :      "modules/FireGento_MageSetup.xml"
+          "path" :      "modules/FireGento_MageSetup.xml",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "file",
-          "path" :      "de_AT/FireGento_MageSetup.csv"
+          "path" :      "de_AT/FireGento_MageSetup.csv",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "dir",
-          "path" :      "de_CH/template/magesetup"
+          "path" :      "de_CH/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "file",
-          "path" :      "de_DE/FireGento_MageSetup.csv"
+          "path" :      "de_DE/FireGento_MageSetup.csv",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "dir",
-          "path" :      "de_DE/template/magesetup"
+          "path" :      "de_DE/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "file",
-          "path" :      "en_US/FireGento_MageSetup.csv"
+          "path" :      "en_US/FireGento_MageSetup.csv",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "dir",
-          "path" :      "en_US/template/magesetup"
+          "path" :      "en_US/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "file",
-          "path" :      "ru_RU/FireGento_MageSetup.csv"
+          "path" :      "ru_RU/FireGento_MageSetup.csv",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "dir",
-          "path" :      "ru_RU/template/magesetup"
+          "path" :      "ru_RU/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "dir",
-          "path" :      "pl_PL/template/magesetup"
+          "path" :      "pl_PL/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "dir",
-          "path" :      "ro_RO/template/magesetup"
+          "path" :      "ro_RO/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "dir",
-          "path" :      "fr_CH/template/magesetup"
+          "path" :      "fr_CH/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "file",
-          "path" :      "fr_FR/FireGento_MageSetup.csv"
+          "path" :      "fr_FR/FireGento_MageSetup.csv",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "dir",
-          "path" :      "fr_FR/template/magesetup"
+          "path" :      "fr_FR/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "file",
-          "path" :      "it_IT/FireGento_MageSetup.csv"
+          "path" :      "it_IT/FireGento_MageSetup.csv",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magelocale",
           "structure" : "dir",
-          "path" :      "it_IT/template/magesetup"
+          "path" :      "it_IT/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magedesign",
           "structure" : "file",
-          "path" :      "adminhtml/default/default/layout/magesetup.xml"
+          "path" :      "adminhtml/default/default/layout/magesetup.xml",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magedesign",
           "structure" : "dir",
-          "path" :      "adminhtml/default/default/template/magesetup"
+          "path" :      "adminhtml/default/default/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magedesign",
           "structure" : "file",
-          "path" :      "frontend/base/default/layout/magesetup.xml"
+          "path" :      "frontend/base/default/layout/magesetup.xml",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magedesign",
           "structure" : "dir",
-          "path" :      "frontend/base/default/template/magesetup"
+          "path" :      "frontend/base/default/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "magedesign",
           "structure" : "dir",
-          "path" :      "frontend/rwd/default/template/magesetup"
+          "path" :      "frontend/rwd/default/template/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "mageskin",
           "structure" : "dir",
-          "path" :      "frontend/base/default/css/magesetup"
+          "path" :      "frontend/base/default/css/magesetup",
+          "ignore" :    "/DS_Store/"
         },
         {
           "type" :      "mageskin",
           "structure" : "dir",
-          "path" :      "frontend/rwd/default/css/magesetup"
+          "path" :      "frontend/rwd/default/css/magesetup",
+          "ignore" :    "/DS_Store/"
         }
       ]
     }
