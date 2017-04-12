@@ -111,7 +111,7 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>USt.</label>
+                        <label>MwSt.</label>
                         <rate>19</rate>
                     </tax_calculation_rate_1>
 
@@ -119,7 +119,7 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>reduzierte USt.</label>
+                        <label>reduzierte MwSt.</label>
                         <rate>7</rate>
                     </tax_calculation_rate_2>
 
@@ -127,7 +127,7 @@
                         <execute>1</execute>
                         <tax_region_id>0</tax_region_id>
                         <tax_postcode>*</tax_postcode>
-                        <label>ohne USt.</label>
+                        <label>ohne MwSt.</label>
                         <rate>0</rate>
                     </tax_calculation_rate_3>
                 </default>
