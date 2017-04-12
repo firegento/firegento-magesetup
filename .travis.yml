@@ -7,7 +7,6 @@ php:
   - 5.5
   - 5.6
   - 7.0
-  - hhvm
 
 env:
   - MAGENTO_VERSION="magento-mirror-1.6.2.0"
@@ -23,10 +22,6 @@ env:
 
 matrix:
   fast_finish: true
-  allow_failures:
-    - php: 5.6
-    - php: 7.0
-    - php: hhvm
   exclude:
     # Newer Magento versions uses newer PHP versions
     - php: 5.3
@@ -58,6 +53,26 @@ matrix:
       env: MAGENTO_VERSION="magento-mirror-1.6.2.0"
     - php: 5.5
       env: MAGENTO_VERSION="magento-mirror-1.7.0.2"
+
+    # Old Magento Versions are not officially supported to run with PHP 5.6
+    - php: 5.6
+      env: MAGENTO_VERSION="magento-mirror-1.6.2.0"
+    - php: 5.6
+      env: MAGENTO_VERSION="magento-mirror-1.7.0.2"
+    - php: 5.6
+      env: MAGENTO_VERSION="magento-mirror-1.8.1.0"
+    - php: 5.6
+      env: MAGENTO_VERSION="magento-mirror-1.9.0.1"
+
+    # Old Magento Versions are not officially supported to run with PHP 7.0
+    - php: 7.0
+      env: MAGENTO_VERSION="magento-mirror-1.6.2.0"
+    - php: 7.0
+      env: MAGENTO_VERSION="magento-mirror-1.7.0.2"
+    - php: 7.0
+      env: MAGENTO_VERSION="magento-mirror-1.8.1.0"
+    - php: 7.0
+      env: MAGENTO_VERSION="magento-mirror-1.9.0.1"
 
 script:
   - curl --retry 2 --retry-delay 5 -f -sSL https://raw.githubusercontent.com/AOEpeople/MageTestStand/master/setup.sh | bash
