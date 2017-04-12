@@ -20,7 +20,6 @@ env:
   - MAGENTO_VERSION="magento-mirror-1.9.2.4"
   - MAGENTO_VERSION="magento-mirror-1.9.3.0"
   - MAGENTO_VERSION="magento-mirror-1.9.3.1"
-  - MAGENTO_VERSION="magento-mirror-1.9.3.2"
 
 matrix:
   fast_finish: true
@@ -53,9 +52,6 @@ matrix:
 
     - php: 5.3
       env: MAGENTO_VERSION="magento-mirror-1.9.3.1"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.3.2"
 
     # Old Magento Versions are not officially supported to run with PHP 5.5
     - php: 5.5
