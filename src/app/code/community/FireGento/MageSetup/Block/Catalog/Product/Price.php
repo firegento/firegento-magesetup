@@ -29,8 +29,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Block_Catalog_Product_Price
-    extends FireGento_MageSetup_Block_Catalog_Product_Price_Abstract
+class FireGento_MageSetup_Block_Catalog_Product_Price extends FireGento_MageSetup_Block_Catalog_Product_Price_Abstract
 {
     /**
      * @var array Path to common tier price template
@@ -89,10 +88,11 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
 
             $this->_addDeliveryTimeHtml($htmlObject);
 
-            Mage::dispatchEvent('magesetup_after_product_price',
+            Mage::dispatchEvent(
+                'magesetup_after_product_price',
                 array(
                     'html_obj' => $htmlObject,
-                    'block'    => $this,
+                    'block' => $this,
                 )
             );
 
@@ -120,12 +120,11 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
         if (strpos($pathInfo, 'catalog/category/view') !== false
             || strpos($pathInfo, 'catalogsearch/result') !== false
         ) {
-            if ($this->getProduct()->getDeliveryTime()) {
-                $html = '<p class="delivery-time">';
-                $html .= $this->__('Delivery Time') . ': ' . $this->getProduct()->getDeliveryTime();
-                $html .= '</p>';
-                $htmlObject->setSuffix($html);
-            }
+            $block = $this->getLayout()->createBlock('core/template', 'magesetup.deliverytime', array(
+                'product' => $this->getProduct(),
+                'template' => 'magesetup/delivery_time.phtml'
+                ));
+            $htmlObject->setSuffix($block->toHtml());
         }
     }
 
@@ -153,6 +152,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price
     {
         if ($this->getTaxRate() === null
             || $this->getProduct()->getTypeId() == 'bundle'
+            || $this->getProduct()->getTypeId() == 'grouped'
         ) {
             return '';
         }

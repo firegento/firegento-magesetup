@@ -14,15 +14,15 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
+ * @copyright 2016 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
  -->
 <layout version="0.1.0">
 
     <!--
-	Adding custom product price block
-	-->
+    Adding custom product price block
+    -->
     <catalog_category_default>
         <reference name="product_list">
             <action method="addPriceBlockType">
@@ -523,6 +523,11 @@
     </checkout_onepage_review>
 
     <paypal_express_review>
+        <reference name="paypal.express.review">
+            <remove name="agreements"/>
+            <block type="magesetup/checkout_agreements" name="magesetup.checkout.agreements" as="agreements"
+                   template="magesetup/checkout/onepage/agreements.phtml" after="details"/>
+        </reference>
         <reference name="paypal.express.review.details">
             <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
             <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>magesetup/checkout/onepage/review/item.phtml</template></action>
@@ -584,4 +589,13 @@
             </action>
         </reference>
     </customer_logged_in>
+
+    <!-- for updated contact form with checkbox to accept agreement -->
+    <contacts_index_index>
+        <reference name="contactForm">
+            <action method="setTemplate">
+                <template>magesetup/contacts/form.phtml</template>
+            </action>
+        </reference>
+    </contacts_index_index>
 </layout>

@@ -1,147 +1,146 @@
-"Display Block below Price","Afficher le bloc sous le prix"
-"Display tax info and shipping cost link below the price on all pages","Afficher le lien avec des informations de taxe et coût de livraision sous le prix sur toutes les pages"
-"Display Delivery time on Category Pages","Afficher le délai de livraison sur les pages de catégorie"
-"CMS Page for Shipping Info","CMS page pour les informations de livraison"
-"Show ""incl. Shipping Cost"" instead of ""excl. Shipping Cost""","Afficher ""incl. les frais de livraison"" au lieu ""excl. les frais de livraison"""
-"No Page","Pas de page"
-"No Block","Pas de bloc"
-"Incl. Tax","Taxe comprise"
-"Incl. %s Tax","%s taxe inclut"
-"Excl. %s Tax","%s taxe exclut"
-"excl. <a href=""%s"">Shipping Cost</a>","<a href=""%s"">Coût de livraison</a> exclut"
-"incl. <a href=""%s"">Shipping Cost</a>","<a href=""%s"">Coût de livraison</a> compris"
-"Display Product Weight below Price","Afficher le poids du produit sous le prix"
-"Unit for Product Weight","Unité de mesure pour le poids des produits"
-"e.g. g, kg, lb, ...","expl. g, kg, lb, ..."
-"Shipping Weight %s","Poids de la livraison %s"
-
-"If you want to add additional StoreViews (i.e. for multiple languages), please do so before submitting this form.","Si vous sohaitez ajouter plus de vues de magasin (expl. langue multiple), vous devez le faire avant l'envoi de ce formulaire."
-"Skip installation","Passez l'installation"
-"MageSetup has been installed.","MageSetup a été installé."
-"Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Cliquez <a href=""%s"">ici</a> pour modifier vos pages, blocs, courriels et réglage de taxe."
-"Please choose the requested setups:","Choisissez les réglages souhaités:"
-"Run MageSetup","Lancer MageSetup"
-"Update System Config Settings","Mettre à jour les réglages de la configuration système"
-"i.e. newsletter confirmation, account confirmation, ..", "expl. confirmation de newsletter, confirmation de création de compte, ..."
-"Create CMS Pages and Blocks","Créer les pages CMS et blocs"
-"i.e. shipping, conditions, revocation","expl. livraisons, conditions, révocation"
-"Create Checkout Agreements","Créer des conditions de vente"
-"Conditions","Conditions"
-"Display Checkbox on Frontend","Afficher les checkbox en Frontend"
-"Require Confirmation on Customer Registration and/or Checkout","Demander une confirmation lors de la création d'un compte client et/ou lors du processus d'achat"
-"Language Package for CMS Pages/Blocks/Agreements","Paquet de langues pour les pages/blocs/conventions CMS"
-"Create Email Templates","Créer des modèles d'email"
-"German Email Templates","Modèles d'email Allemand"
-"Configure Tax","Configurer les taxes"
-"Shipping from Germany","Livraison depuis l'Allemagne"
-"All tax settings will be overwritten!","Tous les réglages de taxes seront écrasés!"
-"Update Product Tax Classes","Mettre à jour les classes de taxe produit"
-"Update Customer Tax Classes","Mettre à jour les classes de taxe client"
-"Old","Ancien"
-"New","Nouveau"
-"No tax","Pas de taxe"
-"Newsletter Subscribers Status History", "Historique des statuts des abonnés à la newsletter"
-
-"MageSetup: CMS Blocks and Pages have been created.","MageSetup: les blocs et pages CMS ont été créés."
-"MageSetup: Checkout Agreements have been created.","MageSetup: les conventions de vente ont été créés."
-"MageSetup: Email Templates have been created.","MageSetup: les modèles d'email ont été créés."
-"MageSetup: Tax Settings have been created.","MageSetup: les réglages de taxe ont été créés."
-"MageSetup: Product Tax Classes have been updated.","MageSetup: les classes de taxe produit ont été créés."
-"MageSetup: System Config Settings have been updated.","MageSetup: les réglages de la configuration système ont été créés."
-
-"Imprint","Mentions légales"
-"Account","Numéro de compte"
-"Account owner","Titulaire du compte"
-"Bank number","Numéro de la banque"
-"Bank name","Numéro de la banque"
-"CEO","Gérant"
-"Owner","Titulaire"
-"Responsible according to § 5 TMG","Le responsable conforme au §5 TMG (lois allemandes)"
-"Responsible for content","Le rédacteur en chef"
-"Responsible for content address","Le responsable des liens de contenu"
-"Responsible in the interests of the press law","Attaché de presse"
-"E-Mail","Courriel"
-"Fax","Fax"
-"Financial office","Bureau des finances"
-"IBAN","IBAN"
-"Clearing","Clearing"
-"Register court","Tribunal de commerce"
-"Register number","Numéro de Siret"
-"SWIFT","SWIFT"
-"BIC/SWIFT","BIC/SWIFT"
-"Tax number","Numéro de TVA"
-"Telephone","Téléphone"
-"Supplementary Information for Telephone","Informations complémentaires pour Téléphone"
-"Web","Web"
-"VAT-ID","Numéro de TVA"
-"Company 1","Société 1"
-"Company 2","Société 2"
-"Street","Rue"
-"Zip","Code postal"
-"City","Ville"
-"Reference for business rules (physician, physician...)","Référence aux régimes professionnels (expl. pour les médecins, pharmaciens)"
-"Authority (ECG)","Autorité acc. ECG (loi E-Commerce)"
-"Shareholdings","Investissements"
-"Editorial Concept","Concept éditorial"
-"relevant for Austrian shops","Important pour les boutiques Autrichiennes"
-"Bank number","Numéro de la banque"
-"Bank name","Nom de la banque"
-
-"%s%%","%s%%"
-
-"Recommended Extensions","Extensions recommandés"
-"Popular Payment Methods","Méthodes de paiement populaires"
-"Ip anonymization", "Anonymisation de l'adresse IP"
-"Ensures that the ip address of the customers doesnt get involved into the tracking","Il assure que l'adresse IP du client ne va pas être transmettre au tracker (protection des donn?es)"
-
-"Dynamic Shipping Tax Class Calculation","Calculation dynamique de la classe de taxe livraison"
-"<b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!", "<b>ATTENTION:</b> ce réglage écrase le réglage ""Classe de taxe de livraison"" ci-dessus!"
-
-"Shipping from","Livraison depuis"
-"This setting is base for the tax rate setup!","Ce réglage est la base pour le réglage du taux de la taxe!"
-
-"[Show]","[Afficher]"
-"Visible in Checkout","Visible dans le processus d'achat"
-
-"Display Additional Information","Afficher les informations complémentaires"
-"Display content from text field below at the checkout confirm page directly above the checkout button","Afficher le contenu du champ de texte ci-dessous dans la page de la confirmation d'achat (directamente au-dessus du bouton d'achat)"
-
-"Directory ""%s"" not found. Locale not installed?","Dossier ""%s"" non trouvé. Est-ce que le paquet de langue a été installé correctement?"
-"Default Setting","Réglage par défaut"
-"Use Default Setting","Utiliser le réglage par défaut"
-"Select Locale","Paquet de langue choisi"
-"Create Transational Email Templates to be managed in the Magento admin area", "Créer les modèles d'email transactionnels pouvant être modifié à partir de la partie administration de Magento"
-"Language Package for Email Templates","Paquet de langue pour les modèles d'email"
-"If your desired locale is missing, please check if it installed.","Si le paquet de langue souhaité est manquant, veuillez vérifier que le paquet est correctement installé."
-"If your desired locale is missing, it is not supported yet by MageSetup.","Si le paquet de langue souhaité est manquant, c'est qu'il n'est pas encore supporté par MageSetup"
-
-"Configuration Settings", "Réglages de la configuration"
-"CMS Settings","Réglages CMS"
-"Email Settings","Réglages du courriel"
-"Tax Settings","Réglages de taxe"
-
-"Delivery Time","Délai de livraison"
-"Shipping Costs","Frais de livraison"
-"Hide estimated shipping costs in cart","Cacher les estimations des frais de livraison dans le panier d'achat"
-"Replace with a link to the shipping costs cms page","Remplacer avec un lien vers une page CMS "frais de livraison""
-"Here you find information regarding the shipping costs.","Vous trouverez les informations concernant les frais de livraison ici."
-"Hide box ""Last Ordered Items""","Cacher la boite ""les derniers articles commandés"""
-"Tax Settings","Réglages de taxe"
-
-"Display on","Afficher sur"
-"On checkout (Magento Default)","Dans le processus d'achat (Par défaut dans Magento)"
-"On customer registration (or on checkout, if customer not registered before)","Pendant la création d'un compte client (ou pendant le prossesus d'achat si le client n'est pas enregistré)"
-"On customer registration and on checkout","Pendant la création d'un compte client ou dans le prossesus d'achat"
-"Nowhere","Nulle part"
-"Agreements not confirmed.","Conditions ne sont pas confirmées."
-
-"German Language Pack","Pack de langue allemand"
-"Base Price","Prix de base"
-"Newsletter Unsubscription for Guests, Double Opt In for registered Customers","Désinscription à la newsletter pour les invités, Double Opt-In pour les clients enregistrés"
-"Debit Payment","Prélèvement automatique"
-"Cash on Delivery","Contre-Remboursement"
-"Bank Payment","Paiement d'avance"
-"Invoice Payment","Facture"
-"Extension Key","Extension Key"
-"MagentoConnect","MagentoConnect"
-"Bank Information","Référence bancaire"
+Display Block below Price,Afficher le bloc sous le prix,
+Display tax info and shipping cost link below the price on all pages,Afficher le lien avec des informations de taxe et coût de livraision sous le prix sur toutes les pages,
+Display Delivery time on Category Pages,Afficher le délai de livraison sur les pages de catégorie,
+CMS Page for Shipping Info,CMS page pour les informations de livraison,
+"Show ""incl. Shipping Cost"" instead of ""excl. Shipping Cost""","Afficher ""incl. les frais de livraison"" au lieu ""excl. les frais de livraison""",
+No Page,Pas de page,
+No Block,Pas de bloc,
+Incl. Tax,Taxe comprise,
+Incl. %s Tax,%s taxe inclut,
+Excl. %s Tax,%s taxe exclut,
+"excl. <a href=""%s"">Shipping Cost</a>","<a href=""%s"">Coût de livraison</a> exclut",
+"incl. <a href=""%s"">Shipping Cost</a>","<a href=""%s"">Coût de livraison</a> compris",
+Display Product Weight below Price,Afficher le poids du produit sous le prix,
+Unit for Product Weight,Unité de mesure pour le poids des produits,
+"e.g. g, kg, lb, ...","ex. g, kg, lb, ...",
+Shipping Weight %s,Poids de la livraison %s,
+"If you want to add additional StoreViews (i.e. for multiple languages), please do so before submitting this form.","Si vous souhaitez ajouter plus de vues de magasin (p. ex. langue multiple), vous devez le faire avant l'envoi de ce formulaire.",
+Skip installation,Passez l'installation,
+MageSetup has been installed.,MageSetup a été installé.,
+"Click <a href=""%s"">here</a> to set up your pages, blocks, emails and tax settings.","Cliquez <a href=""%s"">ici</a> pour modifier vos pages, blocs, courriels et réglage de taxe.",
+Please choose the requested setups:,Choisissez les réglages souhaités:,
+Run MageSetup,Lancer MageSetup,
+Update System Config Settings,Mettre à jour les réglages de la configuration système,
+"i.e. newsletter confirmation, account confirmation, ..","ex. confirmation de newsletter, confirmation de création de compte, ...",
+Create CMS Pages and Blocks,Créer les pages CMS et blocs,
+"i.e. shipping, conditions, revocation","ex. livraison, conditions, rétractation",
+Create Checkout Agreements,Créer des conditions de vente,
+Conditions,Conditions,
+Display Checkbox on Frontend,Afficher les checkbox en Frontend,
+Require Confirmation on Customer Registration and/or Checkout,Demander une confirmation lors de la création d'un compte client et/ou lors du processus d'achat,
+Language Package for CMS Pages/Blocks/Agreements,Paquet de langues pour les pages/blocs/conventions CMS,
+Create Email Templates,Créer des modèles d'email,
+German Email Templates,Modèles d'email Allemand,
+Configure Tax,Configurer les taxes,
+Shipping from Germany,Livraison depuis l'Allemagne,
+All tax settings will be overwritten!,Tous les réglages de taxes seront écrasés!,
+Update Product Tax Classes,Mettre à jour les classes de taxe produit,
+Update Customer Tax Classes,Mettre à jour les classes de taxe client,
+Old,Ancien,
+New,Nouveau,
+No tax,Pas de taxe,
+Newsletter Subscribers Status History,Historique des statuts des abonnés à la newsletter,
+,,
+MageSetup: CMS Blocks and Pages have been created.,MageSetup: les blocs et pages CMS ont été créés.,
+MageSetup: Checkout Agreements have been created.,MageSetup: les conventions de vente ont été créés.,
+MageSetup: Email Templates have been created.,MageSetup: les modèles d'email ont été créés.,
+MageSetup: Tax Settings have been created.,MageSetup: les réglages de taxe ont été créés.,
+MageSetup: Product Tax Classes have been updated.,MageSetup: les classes de taxe produit ont été créés.,
+MageSetup: System Config Settings have been updated.,MageSetup: les réglages de la configuration système ont été créés.,
+,,
+Imprint,Mentions légales,
+Account,Numéro de compte,
+Account owner,Titulaire du compte,
+Bank number,Numéro de la banque,
+Bank name,Numéro de la banque,
+CEO,Gérant,
+Owner,Titulaire,
+Responsible according to § 5 TMG,Le responsable conforme au §5 TMG (lois allemandes),
+Responsible for content,Le rédacteur en chef,
+Responsible for content address,Le responsable des liens de contenu,
+Responsible in the interests of the press law,Attaché de presse,
+E-Mail,Courriel,
+Fax,Fax,
+Financial office,Bureau des finances,
+IBAN,IBAN,
+Clearing,Clearing,
+Register court,Tribunal de commerce,
+Register number,Numéro de Siret,
+SWIFT,SWIFT,
+BIC/SWIFT,BIC/SWIFT,
+Tax number,Numéro de TVA,
+Telephone,Téléphone,
+Supplementary Information for Telephone,Informations complémentaires pour Téléphone,
+Web,Web,
+VAT-ID,Numéro de TVA,
+Company 1,Société 1,
+Company 2,Société 2,
+Street,Rue,
+Zip,Code postal,
+City,Ville,
+"Reference for business rules (physician, physician...)","Référence aux régimes professionnels (ex. pour les médecins, pharmaciens)",
+Authority (ECG),Autorité acc. ECG (loi E-Commerce),
+Shareholdings,Investissements,
+Editorial Concept,Concept éditorial,
+relevant for Austrian shops,Important pour les boutiques Autrichiennes,
+Bank number,Numéro de la banque,
+Bank name,Nom de la banque,
+,,
+%s%%,%s%%,
+,,
+Recommended Extensions,Extensions recommandés,
+Popular Payment Methods,Méthodes de paiement populaires,
+Ip anonymization,Anonymisation de l'adresse IP,
+Ensures that the ip address of the customers doesnt get involved into the tracking,Il assure que l'adresse IP du client ne va pas être transmettre au tracker (protection des donn?es),
+,,
+Dynamic Shipping Tax Class Calculation,Calculation dynamique de la classe de taxe livraison,
+"<b>ATTENTION:</b> This setting overwrites the ""Tax Class for Shipping"" setting above!","<b>ATTENTION:</b> ce réglage écrase le réglage ""Classe de taxe de livraison"" ci-dessus!",
+,,
+Shipping from,Livraison depuis,
+This setting is base for the tax rate setup!,Ce réglage est la base pour le réglage du taux de la taxe!,
+,,
+[Show],[Afficher],
+Visible in Checkout,Visible dans le processus d'achat,
+,,
+Display Additional Information,Afficher les informations complémentaires,
+Display content from text field below at the checkout confirm page directly above the checkout button,Afficher le contenu du champ de texte ci-dessous dans la page de la confirmation d'achat (directamente au-dessus du bouton d'achat),
+,,
+"Directory ""%s"" not found. Locale not installed?","Dossier ""%s"" non trouvé. Est-ce que le paquet de langue a été installé correctement?",
+Default Setting,Réglage par défaut,
+Use Default Setting,Utiliser le réglage par défaut,
+Select Locale,Paquet de langue choisi,
+Create Transational Email Templates to be managed in the Magento admin area,Créer les modèles d'email transactionnels pouvant être modifié à partir de la partie administration de Magento,
+Language Package for Email Templates,Paquet de langue pour les modèles d'email,
+"If your desired locale is missing, please check if it installed.","Si le paquet de langue souhaité est manquant, veuillez vérifier que le paquet est correctement installé.",
+"If your desired locale is missing, it is not supported yet by MageSetup.","Si le paquet de langue souhaité est manquant, c'est qu'il n'est pas encore supporté par MageSetup",
+,,
+Configuration Settings,Réglages de la configuration,
+CMS Settings,Réglages CMS,
+Email Settings,Réglages du courriel,
+Tax Settings,Réglages de taxe,
+,,
+Delivery Time,Délai de livraison,
+Shipping Costs,Frais de livraison,
+Hide estimated shipping costs in cart,Cacher les estimations des frais de livraison dans le panier d'achat,
+Replace with a link to the shipping costs cms page,"Remplacer avec un lien vers une page CMS ""frais de livraison""
+""Here you find information regarding the shipping costs.",Vous trouverez les informations concernant les frais de livraison ici.
+"Hide box ""Last Ordered Items""","Cacher la boite ""les derniers articles commandés""",
+Tax Settings,Réglages de taxe,
+,,
+Display on,Afficher sur,
+On checkout (Magento Default),Dans le processus d'achat (Par défaut dans Magento),
+"On customer registration (or on checkout, if customer not registered before)",Pendant la création d'un compte client (ou pendant le prossesus d'achat si le client n'est pas enregistré),
+On customer registration and on checkout,Pendant la création d'un compte client ou dans le prossesus d'achat,
+Nowhere,Nulle part,
+Agreements not confirmed.,Conditions ne sont pas confirmées.,
+,,
+German Language Pack,Pack de langue allemand,
+Base Price,Prix de base,
+"Newsletter Unsubscription for Guests, Double Opt In for registered Customers","Désinscription à la newsletter pour les invités, Double Opt-In pour les clients enregistrés",
+Debit Payment,Prélèvement automatique,
+Cash on Delivery,Contre-Remboursement,
+Bank Payment,Paiement d'avance,
+Invoice Payment,Facture,
+Extension Key,Extension Key,
+MagentoConnect,MagentoConnect,
+Bank Information,Référence bancaire,

@@ -43,7 +43,6 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     public function setup($locale = array('default' => 'de_DE'))
     {
         foreach ($locale as $storeId => $localeCode) {
-
             if (!$localeCode) {
                 continue;
             }
@@ -167,35 +166,13 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             'is_active' => 1,
         );
 
-        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $pageData['filename'];
-        if (!file_exists($filename)) {
+        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template';
+        $validatorNot = new Zend_Validate_File_NotExists($filename);
+        if ($validatorNot->isValid($pageData['filename'])) {
             return;
         }
 
-        $templateContent = $this->getTemplateContent($filename);
-
-        if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
-            $data['title'] = $matches[1];
-            $data['content_heading'] = $matches[1];
-            $templateContent = str_replace($matches[0], '', $templateContent);
-        }
-
-        if (preg_match('/<!--@identifier\s*((?:.)*?)\s*@-->/us', $templateContent, $matches)) {
-            $data['identifier'] = $matches[1];
-            $templateContent = str_replace($matches[0], '', $templateContent);
-        }
-
-        if (preg_match('/<!--@root_template\s*(.*?)\s*@-->/s', $templateContent, $matches)) {
-            $data['root_template'] = $matches[1];
-            $templateContent = str_replace($matches[0], '', $templateContent);
-        }
-
-        /**
-         * Remove comment lines
-         */
-        $templateContent = preg_replace('#\{\*.*\*\}#suU', '', $templateContent);
-
-        $data['content'] = $templateContent;
+        $data = $this->_extractPageData($this->getTemplateContent($filename.DS.$pageData['filename']), $data);
 
         if (is_null($storeId)) {
             $page = $this->_getDefaultPage($data['identifier']);
@@ -231,6 +208,51 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     }
 
     /**
+     * Get page data as array from template content
+     *
+     * @param array $data CMS page data
+     * @param string $templateContent Template content extracted from file
+     * @return array
+     */
+    protected function _extractPageData($templateContent, $data = array())
+    {
+        if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
+            $data['title'] = $matches[1];
+            $data['content_heading'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@identifier\s*((?:.)*?)\s*@-->/us', $templateContent, $matches)) {
+            $data['identifier'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@root_template\s*(.*?)\s*@-->/s', $templateContent, $matches)) {
+            $data['root_template'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@meta_keywords\s*((?:.)*?)\s*@-->/us', $templateContent, $matches)) {
+            $data['meta_keywords'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        if (preg_match('/<!--@meta_description\s*((?:.)*?)\s*@-->/us', $templateContent, $matches)) {
+            $data['meta_description'] = $matches[1];
+            $templateContent = str_replace($matches[0], '', $templateContent);
+        }
+
+        /**
+         * Remove comment lines
+         */
+        $templateContent = preg_replace('#\{\*.*\*\}#suU', '', $templateContent);
+
+        $data['content'] = $templateContent;
+
+        return $data;
+    }
+
+    /**
      * Collect data and create CMS block
      *
      * @param  array    $blockData Cms block data
@@ -246,12 +268,13 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
             $block = Mage::getModel('cms/block');
         }
 
-        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $blockData['filename'];
-        if (!file_exists($filename)) {
+        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template';
+        $validatorNot = new Zend_Validate_File_NotExists($filename);
+        if ($validatorNot->isValid($blockData['filename'])) {
             return;
         }
 
-        $templateContent = $this->getTemplateContent($filename);
+        $templateContent = $this->getTemplateContent($filename.DS.$blockData['filename']);
 
         // Find title
         if (preg_match('/<!--@title\s*(.*?)\s*@-->/u', $templateContent, $matches)) {
@@ -320,11 +343,9 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
         }
 
         if ($block->getId()) {
-
             /** @var $backupBlock Mage_Cms_Model_Block */
             $backupBlock = Mage::getModel('cms/block')->load('footer_links_backup');
             if (!$backupBlock->getId()) {
-
                 // create copy of original block
                 $data = array();
                 $data['block_id'] = $block->getId();
@@ -362,7 +383,9 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     {
         return Mage::getResourceModel('cms/block_collection')
             ->addFieldToFilter('identifier', $identifier)
-            ->addStoreFilter(0)->getFirstItem();
+            ->addStoreFilter(0)
+            ->setPageSize(1)
+            ->getFirstItem();
     }
 
     /**
@@ -375,6 +398,8 @@ class FireGento_MageSetup_Model_Setup_Cms extends FireGento_MageSetup_Model_Setu
     {
         return Mage::getResourceModel('cms/page_collection')
             ->addFieldToFilter('identifier', $identifier)
-            ->addStoreFilter(0)->getFirstItem();
+            ->addStoreFilter(0)
+            ->setPageSize(1)
+            ->getFirstItem();
     }
 }

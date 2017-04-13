@@ -33,25 +33,23 @@ $installer = $this;
 $installer->startSetup();
 
 if (version_compare(Mage::getVersion(), '1.6', '<')) {
-
     $installer->run("
         ALTER TABLE `{$installer->getTable('checkout/agreement')}`
         ADD `is_required` SMALLINT( 5 ) NOT NULL DEFAULT '1' COMMENT 'Agreement is Required'
     ");
 
 } else {
-
     $installer->getConnection()->addColumn(
-            $installer->getTable('checkout/agreement'),
-            'is_required',
-            array(
+        $installer->getTable('checkout/agreement'),
+        'is_required',
+        array(
                 'type'      => Varien_Db_Ddl_Table::TYPE_SMALLINT,
                 'unsigned'  => true,
                 'nullable'  => false,
                 'default'   => '1',
                 'comment'   => 'Agreement is Required'
             )
-        );
+    );
 }
 
 $installer->endSetup();

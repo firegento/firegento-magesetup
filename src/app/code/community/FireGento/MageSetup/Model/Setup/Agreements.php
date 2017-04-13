@@ -38,7 +38,6 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
     public function setup($locale = array('default' => 'de_DE'))
     {
         foreach ($locale as $storeId => $localeCode) {
-
             if (!$localeCode) {
                 if (sizeof($locale) == 1) {
                     continue;
@@ -80,12 +79,13 @@ class FireGento_MageSetup_Model_Setup_Agreements extends FireGento_MageSetup_Mod
             return;
         }
 
-        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template' . DS . $agreementData['filename'];
-        if (!file_exists($filename)) {
+        $filename = Mage::getBaseDir('locale') . DS . $locale . DS . 'template';
+        $validatorNot = new Zend_Validate_File_NotExists($filename);
+        if ($validatorNot->isValid($agreementData['filename'])) {
             return;
         }
 
-        $templateContent = $this->getTemplateContent($filename);
+        $templateContent = $this->getTemplateContent($filename.DS.$agreementData['filename']);
 
         // Find name
         $name = '';

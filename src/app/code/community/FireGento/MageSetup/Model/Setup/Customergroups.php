@@ -18,23 +18,16 @@
  * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @version   2.2.2
- * @since     1.1.4
+ * @since     0.2.0
  */
 
 /**
- * Subscriber Status Resource Model
+ * Setup class for CMS pages and blocks
  *
  * @category FireGento
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status extends Mage_Core_Model_Resource_Db_Abstract
+class FireGento_MageSetup_Model_Setup_Customergroups extends FireGento_MageSetup_Model_Setup_Abstract
 {
-    /**
-     * Init main table and id field name
-     */
-    protected function _construct()
-    {
-        $this->_init('magesetup/newsletter_subscriber_status', 'id');
-    }
 }

@@ -116,4 +116,27 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
         Mage::app()->getCacheInstance()->cleanType('config');
         Mage::dispatchEvent('adminhtml_cache_refresh_type', array('type' => 'config'));
     }
+
+    /**
+     * Gets the value of the delivery time attribute:
+     * @param $product
+     * @return string Delivery Time
+     */
+    public function getDeliveryTimeFromProduct($product)
+    {
+        $attribute = $product->getResource()->getAttribute("delivery_time");
+        switch ($attribute->getFrontendInput()) {
+            case "select":
+                $deliveryTime = $product->getAttributeText("delivery_time");
+                break;
+            case "text":
+            case "textarea":
+                $deliveryTime = $product->getDeliveryTime();
+                break;
+            default:
+                $deliveryTime = null;
+                break;
+        }
+        return $deliveryTime;
+    }
 }

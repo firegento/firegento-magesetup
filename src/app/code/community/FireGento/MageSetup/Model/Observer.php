@@ -122,7 +122,7 @@ class FireGento_MageSetup_Model_Observer
             $product->setMetaTitle($product->getName());
 
             // Set Meta Keywords
-            $keywords = $this->_getCategoryKeywords($product);
+            $keywords = $this->_getCategoryKeywords($product, $product->getStoreId());
             if (!empty($keywords)) {
                 if (mb_strlen($keywords) > 255) {
                     $remainder = '';
@@ -139,6 +139,7 @@ class FireGento_MageSetup_Model_Observer
             if (empty($description)) {
                 $description = $keywords;
             }
+            $description = strip_tags($description);
             if (mb_strlen($description) > 255) {
                 $remainder = '';
                 $description = Mage::helper('core/string')->truncate($description, 255, '...', $remainder, false);
@@ -155,10 +156,10 @@ class FireGento_MageSetup_Model_Observer
      * @param  Mage_Catalog_Model_Product $product Product
      * @return array Categories
      */
-    protected function _getCategoryKeywords($product)
+    protected function _getCategoryKeywords($product, $storeid = 0)
     {
         $categories = $product->getCategoryIds();
-        $categoryArr = $this->_fetchCategoryNames($categories);
+        $categoryArr = $this->_fetchCategoryNames($categories, $storeid);
         $keywords = $this->_buildKeywords($categoryArr);
 
         return $keywords;
@@ -171,12 +172,14 @@ class FireGento_MageSetup_Model_Observer
      * @param  array $categories Category Ids
      * @return array Categories
      */
-    protected function _fetchCategoryNames($categories)
+    protected function _fetchCategoryNames($categories, $storeid=0)
     {
         $return = array(
             'assigned' => array(),
             'path'     => array()
         );
+
+        $storeRootCategoryId = Mage::app()->getStore($storeid)->getRootCategoryId();
 
         foreach ($categories as $categoryId) {
             // Check if category was already added
@@ -187,24 +190,28 @@ class FireGento_MageSetup_Model_Observer
             }
 
             /* @var $category Mage_Catalog_Model_Category */
-            $category = Mage::getModel('catalog/category')->load($categoryId);
-            $return['assigned'][$categoryId] = $category->getName();
+            $category = Mage::getModel('catalog/category')->setStoreId($storeid)->load($categoryId);
 
-            // Fetch path ids and remove the first two (base and root category)
             $path = $category->getPath();
             $pathIds = explode('/', $path);
-            array_shift($pathIds);
-            array_shift($pathIds);
+            // Fetch path ids and remove the first two (base and root category)
+            $categorySuperRootCategoryId = array_shift($pathIds);
+            $categoryRootCategoryId = array_shift($pathIds);
 
-            // Fetch the names from path categories
-            if (count($pathIds) > 0) {
-                foreach ($pathIds as $pathId) {
-                    if (!array_key_exists($pathId, $return['assigned'])
-                        && !array_key_exists($pathId, $return['path'])
-                    ) {
-                        /* @var $pathCategory Mage_Catalog_Model_Category */
-                        $pathCategory = Mage::getModel('catalog/category')->load($pathId);
-                        $return['path'][$pathId] = $pathCategory->getName();
+            // use category names only if root category id matches
+            if ($categoryRootCategoryId == $storeRootCategoryId || 0 == $storeid) {
+                $return['assigned'][$categoryId] = $category->getName();
+
+                // Fetch the names from path categories
+                if (count($pathIds) > 0) {
+                    foreach ($pathIds as $pathId) {
+                        if (!array_key_exists($pathId, $return['assigned'])
+                            && !array_key_exists($pathId, $return['path'])
+                        ) {
+                            /* @var $pathCategory Mage_Catalog_Model_Category */
+                            $pathCategory = Mage::getModel('catalog/category')->setStoreId($storeid)->load($pathId);
+                            $return['path'][$pathId] = $pathCategory->getName();
+                        }
                     }
                 }
             }
@@ -227,10 +234,10 @@ class FireGento_MageSetup_Model_Observer
 
         $keywords = array();
         foreach ($categoryTypes as $categories) {
-            $keywords[] = implode(', ', $categories);
+            $keywords[] = trim(implode(', ', $categories), ', ');
         }
 
-        return implode(', ', $keywords);
+        return trim(implode(', ', $keywords), ', ');
     }
 
     /**
@@ -325,11 +332,8 @@ class FireGento_MageSetup_Model_Observer
      */
     public function customerCreatePreDispatch(Varien_Event_Observer $observer)
     {
-        $requiredAgreements = $this->_getCustomerCreateAgreements();
         $controller = $observer->getEvent()->getControllerAction();
-        $postedAgreements = array_keys($controller->getRequest()->getPost('agreement', array()));
-
-        if ($diff = array_diff($requiredAgreements, $postedAgreements)) {
+        if (!$this->requiredAgreementsAccepted($controller)) {
             $session = Mage::getSingleton('customer/session');
             $session->addException(
                 new Mage_Customer_Exception('Cannot create customer: agreements not confirmed'),
@@ -343,6 +347,25 @@ class FireGento_MageSetup_Model_Observer
                 true
             );
         }
+    }
+
+    private function requiredAgreementsAccepted($controller)
+    {
+        $requiredAgreements = $this->_getCustomerCreateAgreements();
+        if (!$requiredAgreements) {
+            return false;
+        }
+        $postedAgreements = $controller->getRequest()->getPost('agreement', array());
+        if (!is_array($postedAgreements)) {
+            return false;
+        }
+
+        $postedAgreements = array_keys($postedAgreements);
+        $diff = array_diff($requiredAgreements, $postedAgreements);
+        if ($diff) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -403,3 +426,4 @@ class FireGento_MageSetup_Model_Observer
         }
     }
 }
+

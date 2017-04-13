@@ -17,10 +17,11 @@
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   2.2.2
  * @since     0.1.0
  */
 /**
- * Setup script; Adds the is_required field for the checkout agreements
+ * Setup script; Adds the revocation_product_type attribute for products
  *
  * @category FireGento
  * @package  FireGento_MageSetup
@@ -31,24 +32,31 @@
 $installer = $this;
 $installer->startSetup();
 
-if (version_compare(Mage::getVersion(), '1.6', '<')) {
-    $installer->run("
-        ALTER TABLE `{$installer->getTable('checkout/agreement')}`
-        ADD `agreement_type` SMALLINT( 5 ) NOT NULL DEFAULT '0' COMMENT 'Agreement Type'
-    ");
+// Make sure the upgrade is not performed on legacy installations with tables missing
+$adminVersion = Mage::getConfig()->getModuleConfig('Mage_Admin')->version;
+if (version_compare($adminVersion, '1.6.1.1', '>')) {
+    $connection = $installer->getConnection();
 
-} else {
-    $installer->getConnection()->addColumn(
-        $installer->getTable('checkout/agreement'),
-        'agreement_type',
-        array(
-                'type'      => Varien_Db_Ddl_Table::TYPE_SMALLINT,
-                'unsigned'  => true,
-                'nullable'  => false,
-                'default'   => '0',
-                'comment'   => 'Agreement Type'
-            )
-    );
+    //---------------------------------------------------
+    // Add blocks
+    //---------------------------------------------------
+    $table = $installer->getTable('admin/permission_block');
+    if ($table) {
+        $blockNames = array(
+            'cms/block',
+            'germansetup/imprint_field',
+            'germansetup/imprint_content',
+        );
+        foreach ($blockNames as $blockName) {
+            $connection->insertOnDuplicate(
+                $table,
+                array(
+                    'block_name' => $blockName,
+                    'is_allowed' => 1,
+                )
+            );
+        }
+    }
 }
 
 $installer->endSetup();

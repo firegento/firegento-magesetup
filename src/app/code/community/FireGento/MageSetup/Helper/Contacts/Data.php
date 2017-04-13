@@ -15,26 +15,25 @@
  * @category  FireGento
  * @package   FireGento_MageSetup
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
+ * @copyright 2016 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   2.2.2
- * @since     1.1.4
  */
 
-/**
- * Subscriber Status Resource Model
- *
- * @category FireGento
- * @package  FireGento_MageSetup
- * @author   FireGento Team <team@firegento.com>
- */
-class FireGento_MageSetup_Model_Resource_Newsletter_Subscriber_Status extends Mage_Core_Model_Resource_Db_Abstract
+class FireGento_MageSetup_Helper_Contacts_Data extends Mage_Contacts_Helper_Data
 {
+
+    const XML_PATH_ACCEPT_AGREEMENT   = 'contacts/contacts/accept_agreement';
+
     /**
-     * Init main table and id field name
+     * Avoid loss of translation
      */
-    protected function _construct()
+    public function __construct()
     {
-        $this->_init('magesetup/newsletter_subscriber_status', 'id');
+        $this->_moduleName = 'Mage_Contacts';
+    }
+
+    public function isAcceptAgreement()
+    {
+        return Mage::getStoreConfig(self::XML_PATH_ACCEPT_AGREEMENT);
     }
 }

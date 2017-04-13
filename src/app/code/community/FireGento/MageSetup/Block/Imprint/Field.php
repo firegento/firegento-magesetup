@@ -37,8 +37,15 @@ class FireGento_MageSetup_Block_Imprint_Field extends FireGento_MageSetup_Block_
      */
     protected function _toHtml()
     {
+
         if ($this->getValue() == 'email') {
-            return $this->getEmail(true);
+            $isFrontend = ($this->getLayout()->getArea() === 'frontend');
+            $isCheckout = ($this->getRequest()->getActionName() === 'placeOrder');
+
+            // protect email address in frontend but not when placing order where it is used to
+            // send order confirmation mails (which might include imprint's mail address, i.e.
+            // in the withdrawal form)
+            return $this->getEmail($isFrontend && !$isCheckout);
         }
 
         return $this->getData($this->getValue());

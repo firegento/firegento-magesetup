@@ -29,8 +29,7 @@
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price
-    extends FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract
+class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price extends FireGento_MageSetup_Block_Bundle_Catalog_Product_Price_Abstract
 {
     /**
      * Add content of template block below price html if defined in config
@@ -47,8 +46,10 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price
 
         $html .= $this->getLayout()->createBlock('core/template')
             ->setTemplate('magesetup/price_info.phtml')
+            ->setProduct($this->getProduct())
             ->setFormattedTaxRate($this->getFormattedTaxRate())
             ->setIsIncludingTax($this->isIncludingTax())
+            ->setPriceDisplayType(Mage::helper('tax')->getPriceDisplayType())
             ->setIsShowShippingLink($this->isShowShippingLink())
             ->setIsShowWeightInfo($this->getIsShowWeightInfo())
             ->setFormattedWeight($this->getFormattedWeight())

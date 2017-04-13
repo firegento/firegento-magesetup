@@ -128,16 +128,20 @@ class FireGento_MageSetup_Model_Config extends Varien_Simplexml_Config
     protected function _addConfigFile($fileName, $mergeConfig, $overwrite = true)
     {
         $config = Mage::getConfig();
-        $configFile = $config->getModuleDir('etc', 'FireGento_MageSetup') . DS . $this->getCountry() . DS . $fileName;
+        $moduleDir = $config->getModuleDir('etc', 'FireGento_MageSetup');
+        $configFile = $moduleDir . DS . $this->getCountry();
 
         // If the given file does not exist, use the default file
-        if (!file_exists($configFile)) {
-            $configFile = $config->getModuleDir('etc', 'FireGento_MageSetup') . DS . 'default' . DS . $fileName;
+        $validatorNot = new Zend_Validate_File_NotExists($configFile);
+        if ($validatorNot->isValid($fileName)) {
+            $configFile = $moduleDir . DS . 'default';
         }
 
         // Load the given config file
-        if (file_exists($configFile)) {
-            if ($mergeConfig->loadFile($configFile)) {
+        $validator = new Zend_Validate_File_Exists($configFile);
+        if ($validator->isValid($fileName)) {
+            $fileName = $configFile . DS . $fileName;
+            if ($mergeConfig->loadFile($fileName)) {
                 $config->extend($mergeConfig, $overwrite);
             }
         }

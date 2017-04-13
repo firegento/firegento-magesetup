@@ -1,6 +1,7 @@
 "Display Block below Price","Display Block below Price"
 "Display tax info and shipping cost link below the price on all pages","Display tax info and shipping cost link below the price on all pages"
 "Display Delivery time on Category Pages","Display Delivery time on Category Pages"
+"Display Delivery time on Product Detail","Display Delivery time on Product Detail"
 "CMS Page for Shipping Info","CMS Page for Shipping Info"
 "Show ""incl. Shipping Cost"" instead of ""excl. Shipping Cost""","Show ""incl. Shipping Cost"" instead of ""excl. Shipping Cost"""
 "Show ""incl. Shipping Cost"" instead of ""excl. Shipping Cost""","Show ""incl. Shipping Cost"" instead of ""excl. Shipping Cost"""
@@ -153,3 +154,10 @@
 "Extension Key","Extension Key"
 "MagentoConnect","MagentoConnect"
 "Bank Information","Bank Information"
+
+"I agree that my contact details are saved permanently for allocation and any further queries.","I agree that my contact details are saved permanently for allocation and any further queries."
+"Notice","Notice"
+"You can revoke this agreement at any time and for the future by sending an e-mail to %s.","You can revoke this agreement at any time and for the future by sending an e-mail to %s."
+"Please accept the agreement or call us by phone.","Please accept the agreement or call us."
+"This setting is required by German law due a ruling by OLG Köln from 11.03.2016","This setting is required by German law due a ruling by OLG Köln from 11.03.2016"
+"Agreement accepted","Agreement accepted"
