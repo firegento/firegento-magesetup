@@ -352,9 +352,12 @@ class FireGento_MageSetup_Model_Observer
     private function requiredAgreementsAccepted($controller)
     {
         $requiredAgreements = $this->_getCustomerCreateAgreements();
-        if (!$requiredAgreements) {
+        if (!is_array($requiredAgreements)) {
             return false;
+        } elseif (is_array($requiredAgreements) && count($requiredAgreements) === 0) {
+            return true;
         }
+        
         $postedAgreements = $controller->getRequest()->getPost('agreement', array());
         if (!is_array($postedAgreements)) {
             return false;
