@@ -66,7 +66,7 @@ class FireGento_MageSetup_Block_Adminhtml_Notifications extends Mage_Adminhtml_B
      */
     public function getSkipUrl()
     {
-        return $this->getUrl('adminhtml/magesetup/skip');
+        return $this->getUrl('magesetup/magesetup/skip');
     }
 
     /**
