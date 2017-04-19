@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * @category  FireGento
+ * @package   FireGento_MageSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   2.2.2
+ */
+ -->
+<config>
+    <default>
+        <magesetup>
+            <system_config>
+                 <default>
+                     <customer__create_account__confirm>0</customer__create_account__confirm>
+                     <newsletter__subscription__confirm>1</newsletter__subscription__confirm>
+                     <catalog__price__display_block_below_price>1</catalog__price__display_block_below_price>
+                     <general__region__state_required>CA,US</general__region__state_required>
+                     <sales__reorder__allow>0</sales__reorder__allow>
+                 </default>
+            </system_config>
+        </magesetup>
+    </default>
+</config>

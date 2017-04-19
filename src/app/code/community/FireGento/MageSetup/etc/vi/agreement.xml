@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * @category  FireGento
+ * @package   FireGento_MageSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   2.2.2
+ */
+ -->
+<config>
+    <default>
+        <magesetup>
+            <agreements>
+                <default>
+                    <business_terms>
+                        <execute>1</execute>
+                        <is_active>1</is_active>
+                        <is_html>1</is_html>
+                        <is_required>1</is_required>
+                        <agreement_type>0</agreement_type>
+                        <filename>magesetup/agreement/business_terms.html</filename>
+                    </business_terms>
+
+                    <revocation>
+                        <execute>1</execute>
+                        <is_active>1</is_active>
+                        <is_html>1</is_html>
+                        <is_required>1</is_required>
+                        <agreement_type>0</agreement_type>
+                        <filename>magesetup/agreement/revocation.html</filename>
+                    </revocation>
+
+                    <revocation_digital>
+                        <execute>1</execute>
+                        <is_active>1</is_active>
+                        <is_html>1</is_html>
+                        <is_required>1</is_required>
+                        <agreement_type>0</agreement_type>
+                        <filename>magesetup/agreement/revocation_digital.html</filename>
+                        <revocation_product_type>digital</revocation_product_type>
+                    </revocation_digital>
+
+                    <revocation_service>
+                        <execute>1</execute>
+                        <is_active>1</is_active>
+                        <is_html>1</is_html>
+                        <is_required>1</is_required>
+                        <agreement_type>0</agreement_type>
+                        <filename>magesetup/agreement/revocation_service.html</filename>
+                        <revocation_product_type>service</revocation_product_type>
+                    </revocation_service>
+                </default>
+            </agreements>
+        </magesetup>
+    </default>
+</config>

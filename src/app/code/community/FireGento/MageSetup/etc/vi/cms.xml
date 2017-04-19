@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * @category  FireGento
+ * @package   FireGento_MageSetup
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ * @version   2.2.2
+ */
+ -->
+<config>
+    <default>
+        <magesetup>
+            <pages>
+                <default>
+                    <magesetup_404>
+                        <execute>1</execute>
+                        <filename>magesetup/page/404.html</filename>
+                        <footerlink>0</footerlink>
+                    </magesetup_404>
+
+                    <magesetup_imprint>
+                        <execute>1</execute>
+                        <filename>magesetup/page/imprint.html</filename>
+                        <footerlink>1</footerlink>
+                    </magesetup_imprint>
+
+                    <magesetup_payment>
+                        <execute>1</execute>
+                        <filename>magesetup/page/payment.html</filename>
+                        <footerlink>1</footerlink>
+                    </magesetup_payment>
+
+                    <magesetup_privacy>
+                        <execute>1</execute>
+                        <filename>magesetup/page/privacy.html</filename>
+                        <footerlink>1</footerlink>
+                    </magesetup_privacy>
+
+                    <magesetup_shipping>
+                        <execute>1</execute>
+                        <filename>magesetup/page/shipping.html</filename>
+                        <footerlink>1</footerlink>
+                        <config_option>catalog/price/cms_page_shipping</config_option>
+                    </magesetup_shipping>
+
+                    <magesetup_order>
+                        <execute>1</execute>
+                        <filename>magesetup/page/order.html</filename>
+                        <footerlink>1</footerlink>
+                    </magesetup_order>
+
+                    <magesetup_business_terms>
+                        <execute>1</execute>
+                        <filename>magesetup/page/business_terms.html</filename>
+                        <footerlink>1</footerlink>
+                    </magesetup_business_terms>
+
+                    <magesetup_revocation>
+                        <execute>1</execute>
+                        <filename>magesetup/page/revocation.html</filename>
+                        <footerlink>1</footerlink>
+                    </magesetup_revocation>
+
+                    <magesetup_revocation_form>
+                        <execute>1</execute>
+                        <filename>magesetup/page/revocation_form.html</filename>
+                        <footerlink>0</footerlink>
+                    </magesetup_revocation_form>
+                </default>
+            </pages>
+
+            <blocks>
+                <default>
+                    <business_terms>
+                        <execute>1</execute>
+                        <identifier>business_terms</identifier>
+                        <filename>magesetup/block/business_terms.html</filename>
+                    </business_terms>
+
+                    <revocation>
+                        <execute>1</execute>
+                        <identifier>revocation</identifier>
+                        <filename>magesetup/block/revocation.html</filename>
+                    </revocation>
+
+                    <revocation_form>
+                        <execute>1</execute>
+                        <identifier>revocation_form</identifier>
+                        <filename>magesetup/block/revocation_form.html</filename>
+                    </revocation_form>
+
+                    <footerlinks>
+                        <execute>1</execute>
+                        <identifier>footer_links</identifier>
+                    </footerlinks>
+                </default>
+            </blocks>
+        </magesetup>
+    </default>
+</config>
