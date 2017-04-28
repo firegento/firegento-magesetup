@@ -51,12 +51,11 @@
                     <textarea name="comment" id="comment" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Comment')) ?>" class="required-entry input-text" cols="5" rows="3"></textarea>
                 </div>
             </li>
-            <?php if(Mage::helper('contacts')->isAcceptAgreement()): ?>
+            <?php if (Mage::helper('magesetup/contacts')->isAcceptAgreement()): ?>
                 <li>
                     <div class="input-box">
                         <label for="accept-agreement">
-                            <input name="accept-agreement" id="accept-agreement" title=""
-                                   value="" class="input-checkbox validate-required-accept-agreement" type="checkbox" >
+                            <input name="accept-agreement" id="accept-agreement" title="" value="" class="input-checkbox validate-required-accept-agreement" type="checkbox" >
                             <?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('I agree that my contact details are saved permanently for allocation and any further queries.')) ?>
                         </label>
                     </div>
@@ -80,18 +79,17 @@
     Validation.addAllThese([
         ['validate-required-accept-agreement', '<?php echo $this->__('Please accept the agreement or call us.'); ?>', function (v,elm) {
             var input = $$('input[name="' + elm.name.replace(/([\\"])/g, '\\$1') + '"]');
-
             var error = 1;
 
-            if(input[0].type == 'checkbox' && input[0].checked == true) {
+            if (input[0].type == 'checkbox' && input[0].checked == true) {
                 error = 0;
             }
 
-            if(Validation.isOnChange && input[0].type == 'checkbox') {
+            if (Validation.isOnChange && input[0].type == 'checkbox') {
                 Validation.reset(input[0]);
             }
 
-            if( error == 0 ) {
+            if (error == 0) {
                 return true;
             } else {
                 return false;

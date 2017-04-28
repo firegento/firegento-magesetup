@@ -19,18 +19,12 @@
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
 
-class FireGento_MageSetup_Helper_Contacts_Data extends Mage_Contacts_Helper_Data
+class FireGento_MageSetup_Helper_Contacts extends Mage_Core_Helper_Abstract
 {
-
     const XML_PATH_ACCEPT_AGREEMENT   = 'contacts/contacts/accept_agreement';
 
-    /**
-     * Avoid loss of translation
-     */
-    public function __construct()
-    {
-        $this->_moduleName = 'Mage_Contacts';
-    }
+    /** @var string $_moduleName Module name */
+    protected $_moduleName = 'FireGento_MageSetup';
 
     public function isAcceptAgreement()
     {
