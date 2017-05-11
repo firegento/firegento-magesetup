@@ -31,7 +31,7 @@ Central features of MageSetup are:
 * Automatical generation of meta data to products
 * Saving of every status change of newsletter subscriptions
 * Presets are configurable via xml files for every country seperately
-* Many more, see the [full list of features](https://github.com/firegento/firegento-magesetup/blob/development/docs/features/features.markdown) including several screenshots.
+* Many more, see the [full list of features](https://github.com/firegento/firegento-magesetup/blob/development/docs/features/features.md) including several screenshots.
 
 Requirements
 ------------
