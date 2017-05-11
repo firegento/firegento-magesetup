@@ -1,6 +1,6 @@
 FireGento_MageSetup - Features
 =====================
-##Contents
+## Contents
 - [Setup features](#setup-features)
 - [Backend features](#backend-features)
 - [Frontend features](#frontend-features)
