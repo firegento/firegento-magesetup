@@ -297,6 +297,8 @@ class FireGento_MageSetup_Model_Observer
                 'title'    => $helper->__('Position'),
                 'name'     => 'position',
                 'value'    => '0',
+                'required' => true,
+                'class'    => 'validate-zero-or-greater',
             ));
 
             Mage::dispatchEvent('magesetup_adminhtml_checkout_agreement_edit_form', array(
