@@ -33,6 +33,8 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
     // Add support for Magento < 1.7
     const XML_PATH_EU_COUNTRIES_LIST = 'general/country/eu_countries';
 
+    protected static $_shippingCostUrl;
+
     /**
      * Generate URL to configured shipping cost page, or '' if none.
      *
@@ -40,16 +42,20 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function getShippingCostUrl()
     {
-        /** @var $cmsPage Mage_Cms_Model_Page */
-        $cmsPage = Mage::getModel('cms/page')
-            ->setStoreId(Mage::app()->getStore()->getId())
-            ->load(Mage::getStoreConfig('catalog/price/cms_page_shipping'));
+        if (static::$_shippingCostUrl === null) {
+            /** @var $cmsPage Mage_Cms_Model_Page */
+            $cmsPage = Mage::getModel('cms/page')
+                ->setStoreId(Mage::app()->getStore()->getId())
+                ->load(Mage::getStoreConfig('catalog/price/cms_page_shipping'));
 
-        if (!$cmsPage->getId() || !$cmsPage->getIsActive()) {
-            return '';
+            if (!$cmsPage->getId() || !$cmsPage->getIsActive()) {
+                static::$_shippingCostUrl = '';
+            } else {
+                static::$_shippingCostUrl = Mage::helper('cms/page')->getPageUrl($cmsPage->getId());
+            }
         }
 
-        return Mage::helper('cms/page')->getPageUrl($cmsPage->getId());
+        return static::$_shippingCostUrl;
     }
 
     /**
@@ -137,6 +143,7 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
                 $deliveryTime = null;
                 break;
         }
+
         return $deliveryTime;
     }
 }
