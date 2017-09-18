@@ -62,7 +62,7 @@ Contribution
 ------------
 Any contribution to the development of MageSetup is highly welcome. The best possibility to provide any code is to open a [pull request on GitHub](https://help.github.com/articles/using-pull-requests).
 
-Please also see have a look at our [contribution guide](https://github.com/firegento/firegento-magesetup/blob/master/docs/contribute/contribute.markdown) for this extension and our [general contribution process](https://github.com/firegento/coding-guidelines/blob/master/guidelines/05_CONTRIBUTIONS.md) for FireGento extensions.
+Please also see have a look at our [contribution guide](https://github.com/firegento/firegento-magesetup/blob/development/docs/contribute/contribute.md) for this extension and our [general contribution process](https://github.com/firegento/coding-guidelines/blob/master/guidelines/05_CONTRIBUTIONS.md) for FireGento extensions.
 
 Developer
 ---------
