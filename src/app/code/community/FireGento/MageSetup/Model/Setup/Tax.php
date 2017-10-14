@@ -71,7 +71,6 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
             }
         }
 
-
         // Tax Rates
         $taxRates = array();
         foreach ($this->_getConfigTaxCalcRates() as $identifier => $data) {
