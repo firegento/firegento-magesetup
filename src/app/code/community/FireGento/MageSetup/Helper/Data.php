@@ -51,7 +51,7 @@ class FireGento_MageSetup_Helper_Data extends Mage_Core_Helper_Abstract
             if (!$cmsPage->getId() || !$cmsPage->getIsActive()) {
                 static::$_shippingCostUrl = '';
             } else {
-                static::$_shippingCostUrl = Mage::helper('cms/page')->getPageUrl($cmsPage->getId());
+                static::$_shippingCostUrl = Mage::getUrl(null, array('_direct' => $cmsPage->getIdentifier()));
             }
         }
 
