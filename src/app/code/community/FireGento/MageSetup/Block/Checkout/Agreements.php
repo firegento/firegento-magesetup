@@ -57,6 +57,7 @@ class FireGento_MageSetup_Block_Checkout_Agreements extends Mage_Checkout_Block_
                 }
 
                 $this->_addRevocationProductTypesFilter($agreements);
+                $agreements->setOrder('position', Varien_Data_Collection::SORT_ORDER_ASC);
             }
 
             $this->setAgreements($agreements);
