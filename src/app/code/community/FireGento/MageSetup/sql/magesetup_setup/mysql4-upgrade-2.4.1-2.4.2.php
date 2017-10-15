@@ -21,8 +21,6 @@
  * @since     0.1.0
  */
 /**
- * Setup script; Adds the revocation_product_type attribute for products
- *
  * @category FireGento
  * @package  FireGento_MageSetup
  * @author   FireGento Team <team@firegento.com>
