@@ -498,6 +498,10 @@
             <action method="addCss">
                 <stylesheet>css/magesetup/checkout.css</stylesheet>
             </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/magesetup/checkout.js</name>
+            </action>
         </reference>
     </checkout_onepage_index>
 
