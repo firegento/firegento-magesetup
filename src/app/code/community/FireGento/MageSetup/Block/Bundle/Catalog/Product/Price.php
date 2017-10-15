@@ -77,9 +77,14 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price extends FireGento_M
      */
     public function getFormattedTaxRate()
     {
-        if ($this->getTaxRate() === null
-            || $this->getProduct()->getTypeId() == 'bundle'
-        ) {
+        if ($this->getTaxRate() === null) {
+            return '';
+        }
+
+        if ($this->getProduct()->getTypeId() === 'bundle'
+            && $this->getProduct()->getPriceType() == Mage_Bundle_Model_Product_Price::PRICE_TYPE_DYNAMIC) {
+            // the tax rate for a bundle product with dynamic pricing is undefined
+            // it cannot be configured in the backend and depends on the respective child products
             return '';
         }
 
