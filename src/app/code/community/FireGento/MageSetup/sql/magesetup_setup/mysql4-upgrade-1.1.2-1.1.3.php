@@ -17,8 +17,6 @@
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   2.2.2
- * @since     1.0.7
  */
 /**
  * Setup script; Adds the is_required field for the checkout agreements
