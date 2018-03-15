@@ -17,8 +17,6 @@
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   2.2.2
- * @since     0.1.0
  */
 
 /**
@@ -171,7 +169,7 @@ class FireGento_MageSetup_Block_Catalog_Product_Price extends FireGento_MageSetu
     public function isIncludingTax()
     {
         if (!$this->getData('is_including_tax')) {
-            $includesTax = Mage::helper('tax')->priceIncludesTax();
+            $includesTax = Mage::helper('tax')->getConfig()->getPriceDisplayType();
             $this->setData('is_including_tax', $includesTax);
         }
 

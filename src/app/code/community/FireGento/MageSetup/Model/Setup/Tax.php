@@ -17,8 +17,6 @@
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   2.2.2
- * @since     0.2.0
  */
 
 /**
@@ -70,7 +68,6 @@ class FireGento_MageSetup_Model_Setup_Tax extends FireGento_MageSetup_Model_Setu
                 $taxClasses[$identifier] = $this->_createTaxClass($data);
             }
         }
-
 
         // Tax Rates
         $taxRates = array();

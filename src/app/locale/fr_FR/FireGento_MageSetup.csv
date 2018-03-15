@@ -25,7 +25,7 @@ Update System Config Settings,Mettre à jour les réglages de la configuration s
 Create CMS Pages and Blocks,Créer les pages CMS et blocs,
 "i.e. shipping, conditions, revocation","ex. livraison, conditions, rétractation",
 Create Checkout Agreements,Créer des conditions de vente,
-Conditions,Conditions,
+i.e. terms and conditions, cancellation policy,Conditions,
 Display Checkbox on Frontend,Afficher les checkbox en Frontend,
 Require Confirmation on Customer Registration and/or Checkout,Demander une confirmation lors de la création d'un compte client et/ou lors du processus d'achat,
 Language Package for CMS Pages/Blocks/Agreements,Paquet de langues pour les pages/blocs/conventions CMS,

@@ -17,8 +17,6 @@
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   2.2.2
- * @since     1.1.4
  */
 
 /**
@@ -44,13 +42,18 @@ class FireGento_MageSetup_Model_Newsletter_Observer
             /* @var $subscriber Mage_Newsletter_Model_Subscriber */
             $subscriber = $observer->getEvent()->getSubscriber();
 
-            /* @var $status FireGento_MageSetup_Model_Newsletter_Subscriber_Status */
-            $status = Mage::getModel('magesetup/newsletter_subscriber_status');
-            $status->setData('subscriber', $subscriber->getId());
-            $status->setData('status', $subscriber->getData('subscriber_status'));
-            $status->setData('email', $subscriber->getData('subscriber_email'));
-            $status->setData('created_at', now());
-            $status->save();
+            if (
+                $subscriber->dataHasChangedFor('subscriber_status') ||
+                $subscriber->dataHasChangedFor('subscriber_email')
+            ) {
+                /* @var $status FireGento_MageSetup_Model_Newsletter_Subscriber_Status */
+                $status = Mage::getModel('magesetup/newsletter_subscriber_status');
+                $status->setData('subscriber', $subscriber->getId());
+                $status->setData('status', $subscriber->getData('subscriber_status'));
+                $status->setData('email', $subscriber->getData('subscriber_email'));
+                $status->setData('created_at', now());
+                $status->save();
+            }
         } catch (Exception $e) {
             Mage::logException($e);
         }

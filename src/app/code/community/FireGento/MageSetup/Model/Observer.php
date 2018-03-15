@@ -17,8 +17,6 @@
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   2.2.2
- * @since     0.2.0
  */
 
 /**
@@ -77,6 +75,8 @@ class FireGento_MageSetup_Model_Observer
         $block = $observer->getEvent()->getBlock();
         if ($block->getType() == 'checkout/agreements') {
             if ($agreements = $block->getAgreements()) {
+                $agreements->setOrder('position', Varien_Data_Collection::SORT_ORDER_ASC);
+
                 $collection = new Varien_Data_Collection();
                 foreach ($agreements as $agreement) {
                     $agreement->setData('content', $this->_filterString($agreement->getData('content')));
@@ -288,6 +288,15 @@ class FireGento_MageSetup_Model_Observer
                 'name'     => 'revocation_product_type',
                 'required' => false,
                 'options'  => Mage::getSingleton('magesetup/source_revocationProductType')->getOptionArray(),
+            ));
+
+            $fieldset->addField('position', 'text', array(
+                'label'    => $helper->__('Position'),
+                'title'    => $helper->__('Position'),
+                'name'     => 'position',
+                'value'    => '0',
+                'required' => true,
+                'class'    => 'validate-zero-or-greater',
             ));
 
             Mage::dispatchEvent('magesetup_adminhtml_checkout_agreement_edit_form', array(

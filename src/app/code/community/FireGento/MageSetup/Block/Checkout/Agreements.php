@@ -17,8 +17,6 @@
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2013-2015 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @version   2.2.2
- * @since     0.1.0
  */
 
 /**
@@ -57,6 +55,7 @@ class FireGento_MageSetup_Block_Checkout_Agreements extends Mage_Checkout_Block_
                 }
 
                 $this->_addRevocationProductTypesFilter($agreements);
+                $agreements->setOrder('position', Varien_Data_Collection::SORT_ORDER_ASC);
             }
 
             $this->setAgreements($agreements);

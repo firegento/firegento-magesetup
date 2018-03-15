@@ -28,16 +28,24 @@
 $installer = $this;
 $installer->startSetup();
 
-$bind = array('value' => 1);
-$where = array(
-    'path = ?'  => FireGento_MageSetup_Model_Tax_Config::XML_PATH_SHIPPING_TAX_ON_PRODUCT_TAX,
-    'value = ?' => '2'
-);
+if (version_compare(Mage::getVersion(), '1.6', '<')) {
+    $installer->run("
+        ALTER TABLE `{$installer->getTable('checkout/agreement')}`
+        ADD `position` SMALLINT( 2 ) NOT NULL COMMENT 'Agreement Position'
+    ");
 
-$result = $installer->getConnection()->update(
-    $installer->getTable('core/config_data'),
-    $bind,
-    $where
-);
+} else {
+    $installer->getConnection()->addColumn(
+        $installer->getTable('checkout/agreement'),
+        'position',
+        array(
+            'type'      => Varien_Db_Ddl_Table::TYPE_SMALLINT,
+            'length'    => 2,
+            'nullable'  => false,
+            'default'   => 0,
+            'comment'   => 'Agreement Position'
+        )
+    );
+}
 
 $installer->endSetup();
