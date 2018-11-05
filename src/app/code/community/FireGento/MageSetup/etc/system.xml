@@ -496,10 +496,9 @@
             <groups>
                 <contacts>
                     <fields>
-                        <accept_agreement translate="label">
+                        <accept_agreement translate="label,comment">
                             <label>Enable Checkbox To Accept Agreement</label>
-                            <comment>
-                                <![CDATA[This setting is required by German law due to a ruling by OLG Köln from 11.03.2016]]></comment>
+                            <comment>This setting is required by German law due to a ruling by OLG Köln from 11.03.2016</comment>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <backend_model>contacts/system_config_backend_links</backend_model>
