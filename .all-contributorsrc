@@ -126,6 +126,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "gfobe",
+      "name": "Gerhard Fobe",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1615283?v=4",
+      "profile": "https://www.gerhard-fobe.de/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
