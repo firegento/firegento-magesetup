@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Contributors ✨
 
@@ -18,6 +18,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.simonsprankel.com/"><img src="https://avatars1.githubusercontent.com/u/930199?v=4" width="100px;" alt=""/><br /><sub><b>Simon Sprankel</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=sprankhub" title="Code">💻</a></td>
     <td align="center"><a href="http://www.fabian-blechschmidt.de/"><img src="https://avatars1.githubusercontent.com/u/379680?v=4" width="100px;" alt=""/><br /><sub><b>Fabian Blechschmidt</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=Schrank" title="Code">💻</a></td>
     <td align="center"><a href="http://www.mage-profis.de/"><img src="https://avatars0.githubusercontent.com/u/710748?v=4" width="100px;" alt=""/><br /><sub><b>Mathis Klooß</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=mklooss" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://magento.stackexchange.com/users/46249/sv3n"><img src="https://avatars1.githubusercontent.com/u/5022236?v=4" width="100px;" alt=""/><br /><sub><b>sv3n</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=sreichel" title="Code">💻</a></td>
   </tr>
 </table>
 
