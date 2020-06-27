@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Contributors ✨
 
@@ -27,6 +27,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://twitter.com/sirawesome_"><img src="https://avatars3.githubusercontent.com/u/2085721?v=4" width="100px;" alt=""/><br /><sub><b>Julian</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=jwittorf" title="Code">💻</a></td>
     <td align="center"><a href="http://www.multichannelsystems.com/"><img src="https://avatars3.githubusercontent.com/u/1866724?v=4" width="100px;" alt=""/><br /><sub><b>Martin Grossmann</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=grossmann" title="Code">💻</a></td>
     <td align="center"><a href="https://www.gerhard-fobe.de/"><img src="https://avatars3.githubusercontent.com/u/1615283?v=4" width="100px;" alt=""/><br /><sub><b>Gerhard Fobe</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=gfobe" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://twitter.com/benmarks"><img src="https://avatars1.githubusercontent.com/u/2141138?v=4" width="100px;" alt=""/><br /><sub><b>Ben Marks</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=benmarks" title="Code">💻</a></td>
   </tr>
 </table>
 
