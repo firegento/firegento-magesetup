@@ -163,6 +163,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "Vinai",
+      "name": "Vinai Kopp",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/72463?v=4",
+      "profile": "http://vinaikopp.com/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

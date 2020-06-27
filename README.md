@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Contributors ✨
 
@@ -32,6 +32,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://twitter.com/benmarks"><img src="https://avatars1.githubusercontent.com/u/2141138?v=4" width="100px;" alt=""/><br /><sub><b>Ben Marks</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=benmarks" title="Code">💻</a></td>
     <td align="center"><a href="https://www.paepper.com/"><img src="https://avatars0.githubusercontent.com/u/4135790?v=4" width="100px;" alt=""/><br /><sub><b>Marc Päpper</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=mpaepper" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/kkrieger85"><img src="https://avatars2.githubusercontent.com/u/4435523?v=4" width="100px;" alt=""/><br /><sub><b>Kevin Krieger</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=kkrieger85" title="Code">💻</a> <a href="https://github.com/firegento/firegento-magesetup/commits?author=kkrieger85" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://vinaikopp.com/"><img src="https://avatars0.githubusercontent.com/u/72463?v=4" width="100px;" alt=""/><br /><sub><b>Vinai Kopp</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=Vinai" title="Code">💻</a></td>
   </tr>
 </table>
 
