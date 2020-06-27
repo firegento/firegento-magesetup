@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Contributors ✨
 
@@ -40,6 +40,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="http://solidbox.de/"><img src="https://avatars1.githubusercontent.com/u/5131653?v=4" width="100px;" alt=""/><br /><sub><b>Michael Wagner</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=rengaw83" title="Code">💻</a></td>
     <td align="center"><a href="https://wambo-agency.com/"><img src="https://avatars2.githubusercontent.com/u/98465?v=4" width="100px;" alt=""/><br /><sub><b>René Penner</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=renepenner" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.openstream.ch/"><img src="https://avatars2.githubusercontent.com/u/58966?v=4" width="100px;" alt=""/><br /><sub><b>Nick Weisser</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=nickw108" title="Code">💻</a></td>
   </tr>
 </table>
 

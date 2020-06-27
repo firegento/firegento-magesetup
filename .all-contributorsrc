@@ -217,6 +217,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "nickw108",
+      "name": "Nick Weisser",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/58966?v=4",
+      "profile": "https://www.openstream.ch/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
