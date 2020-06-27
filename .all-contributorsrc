@@ -262,6 +262,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "LG-Development",
+      "name": "lg-development",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/13308681?v=4",
+      "profile": "https://github.com/LG-Development",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
