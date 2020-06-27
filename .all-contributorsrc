@@ -316,6 +316,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "crysix",
+      "name": "Christian Hinz",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12525017?v=4",
+      "profile": "http://www.christian-hinz.de/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
