@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Contributors ✨
 
@@ -23,6 +23,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://magento.stackexchange.com/users/46249/sv3n"><img src="https://avatars1.githubusercontent.com/u/5022236?v=4" width="100px;" alt=""/><br /><sub><b>sv3n</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=sreichel" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/cphilipp"><img src="https://avatars1.githubusercontent.com/u/2188398?v=4" width="100px;" alt=""/><br /><sub><b>Christian Philipp</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=cphilipp" title="Code">💻</a></td>
     <td align="center"><a href="http://www.webguys.de/"><img src="https://avatars1.githubusercontent.com/u/940631?v=4" width="100px;" alt=""/><br /><sub><b>Tobias Vogt</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=tobi-pb" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/winkelsdorf"><img src="https://avatars0.githubusercontent.com/u/1413291?v=4" width="100px;" alt=""/><br /><sub><b>Frederik Winkelsdorf</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=winkelsdorf" title="Code">💻</a></td>
   </tr>
 </table>
 
