@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-36-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-37-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Contributors ✨
 
@@ -57,6 +57,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://muench.dev/"><img src="https://avatars2.githubusercontent.com/u/211294?v=4" width="100px;" alt=""/><br /><sub><b>Christian Münch</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=cmuench" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ckressibucherTIM"><img src="https://avatars2.githubusercontent.com/u/3985914?v=4" width="100px;" alt=""/><br /><sub><b>ckressibucherTIM</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=ckressibucherTIM" title="Code">💻</a></td>
   </tr>
 </table>
 
