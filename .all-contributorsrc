@@ -298,6 +298,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "dsdata",
+      "name": "Daniel Sasse",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/927446?v=4",
+      "profile": "https://github.com/dsdata",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
