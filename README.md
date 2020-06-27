@@ -31,7 +31,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="http://twitter.com/benmarks"><img src="https://avatars1.githubusercontent.com/u/2141138?v=4" width="100px;" alt=""/><br /><sub><b>Ben Marks</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=benmarks" title="Code">💻</a></td>
     <td align="center"><a href="https://www.paepper.com/"><img src="https://avatars0.githubusercontent.com/u/4135790?v=4" width="100px;" alt=""/><br /><sub><b>Marc Päpper</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=mpaepper" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/kkrieger85"><img src="https://avatars2.githubusercontent.com/u/4435523?v=4" width="100px;" alt=""/><br /><sub><b>Kevin Krieger</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=kkrieger85" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/kkrieger85"><img src="https://avatars2.githubusercontent.com/u/4435523?v=4" width="100px;" alt=""/><br /><sub><b>Kevin Krieger</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=kkrieger85" title="Code">💻</a> <a href="https://github.com/firegento/firegento-magesetup/commits?author=kkrieger85" title="Documentation">📖</a></td>
   </tr>
 </table>
 
