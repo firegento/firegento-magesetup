@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Contributors ✨
 
@@ -36,6 +36,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/EliasKotlyar"><img src="https://avatars0.githubusercontent.com/u/9529505?v=4" width="100px;" alt=""/><br /><sub><b>Elias Kotlyar</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=EliasKotlyar" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/tkn98"><img src="https://avatars2.githubusercontent.com/u/10513307?v=4" width="100px;" alt=""/><br /><sub><b>Tom Klingenberg</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=tkn98" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/skrollme"><img src="https://avatars2.githubusercontent.com/u/1336659?v=4" width="100px;" alt=""/><br /><sub><b>Sebastian K</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=skrollme" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://solidbox.de/"><img src="https://avatars1.githubusercontent.com/u/5131653?v=4" width="100px;" alt=""/><br /><sub><b>Michael Wagner</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=rengaw83" title="Code">💻</a></td>
   </tr>
 </table>
 
