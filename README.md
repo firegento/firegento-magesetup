@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-35-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-36-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Contributors ✨
 
@@ -54,6 +54,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/dsdata"><img src="https://avatars3.githubusercontent.com/u/927446?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Sasse</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=dsdata" title="Code">💻</a></td>
     <td align="center"><a href="https://www.xing.com/profile/Daniel_Rose16"><img src="https://avatars1.githubusercontent.com/u/489806?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Rose</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=daniel-rose" title="Code">💻</a></td>
     <td align="center"><a href="http://www.christian-hinz.de/"><img src="https://avatars1.githubusercontent.com/u/12525017?v=4" width="100px;" alt=""/><br /><sub><b>Christian Hinz</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=crysix" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://muench.dev/"><img src="https://avatars2.githubusercontent.com/u/211294?v=4" width="100px;" alt=""/><br /><sub><b>Christian Münch</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=cmuench" title="Code">💻</a></td>
   </tr>
 </table>
 
