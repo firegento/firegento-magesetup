@@ -261,6 +261,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jg-development",
+      "name": "Jan Gantzert",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6112739?v=4",
+      "profile": "https://github.com/jg-development",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
