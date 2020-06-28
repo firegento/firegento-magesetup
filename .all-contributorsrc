@@ -234,6 +234,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "matiaso",
+      "name": "Matias Orlando",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/261406?v=4",
+      "profile": "http://www.magento-saigon.com/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
