@@ -90,6 +90,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "tobi-pb",
+      "name": "Tobias Vogt",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/940631?v=4",
+      "profile": "http://www.webguys.de/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
