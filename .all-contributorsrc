@@ -1,0 +1,24 @@
+{
+  "projectName": "firegento-magesetup",
+  "projectOwner": "firegento",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "avstudnitz",
+      "name": "Andreas von Studnitz",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/662059?v=4",
+      "profile": "http://www.integer-net.de/agentur/andreas-von-studnitz/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
