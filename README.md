@@ -146,4 +146,4 @@ FireGento Team
 
 ## Copyright
 
-(c) 2013-2015 FireGento Team
+(c) 2013-2020 FireGento Team
