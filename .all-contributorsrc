@@ -288,6 +288,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "dmanners",
+      "name": "David Manners",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1572836?v=4",
+      "profile": "http://davidmanners.de/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
