@@ -1,6 +1,6 @@
 FireGento_MageSetup
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ===================
 MageSetup configures a shop for a national market. It's the international variant and successor of [GermanSetup](https://github.com/firegento/firegento-germansetup).
@@ -118,6 +118,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="http://solidbox.de/"><img src="https://avatars1.githubusercontent.com/u/5131653?v=4" width="100px;" alt=""/><br /><sub><b>Michael Wagner</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=rengaw83" title="Code">💻</a></td>
+    <td align="center"><a href="https://wambo-agency.com/"><img src="https://avatars2.githubusercontent.com/u/98465?v=4" width="100px;" alt=""/><br /><sub><b>René Penner</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=renepenner" title="Code">💻</a></td>
   </tr>
 </table>
 
