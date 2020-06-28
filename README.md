@@ -1,26 +1,26 @@
-FireGento_MageSetup
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-39-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-===================
+# FireGento_MageSetup
+
 MageSetup configures a shop for a national market. It's the international variant and successor of [GermanSetup](https://github.com/firegento/firegento-germansetup).
 
 Currently supported countries: Austria, France, Germany, Italy, Russia, Switzerland, United Kingdom. More to follow.
 
-Build Status
-------------
+## Build Status
+
 * Latest Release: [![Master Branch](https://travis-ci.org/firegento/firegento-magesetup.png?branch=master)](https://travis-ci.org/firegento/firegento-magesetup)
 * Development Branch: [![Development Branch](https://travis-ci.org/firegento/firegento-magesetup.png?branch=development)](https://travis-ci.org/firegento/firegento-magesetup)
 
-Facts
------
+## Facts
+
 - Version: check [config.xml](https://github.com/firegento/firegento-magesetup/blob/master/src/app/code/community/FireGento/MageSetup/etc/config.xml)
 - Extension key: FireGento_MageSetup
 - [Extension on GitHub](https://github.com/firegento/firegento-magesetup/)
 - Composer name: `firegento/magesetup` on [packages.firegento.com](http://packages.firegento.com/)
 
-Description
------------
+## Description
+
 Central features of MageSetup are:
 
 * Setting of important configuration settings
@@ -36,16 +36,16 @@ Central features of MageSetup are:
 * Presets are configurable via xml files for every country seperately
 * Many more, see the [full list of features](https://github.com/firegento/firegento-magesetup/blob/development/docs/features/features.md) including several screenshots.
 
-Requirements
-------------
+## Requirements
+
 - PHP >= 5.3.0
 
-Compatibility
--------------
+## Compatibility
+
 - Magento >= 1.6
 
-Installation
-------------
+## Installation
+
 Please create the desired websites and store views as well as install any language packs before running MageSetup.
 
 Copy all files from the src/ folder to your magento directory in order to install the MageSetup module.
@@ -57,29 +57,15 @@ If you don't see that hint, please check that the configuration setting **System
 
 On the linked page, you can make the desired settings and then click "Run MageSetup" on the top or bottom right. The adjustments will be made.
 
-Support
--------
+## Support
+
 If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/firegento/firegento-magesetup/issues).
 
-Contribution
-------------
+## Contribution
+
 Any contribution to the development of MageSetup is highly welcome. The best possibility to provide any code is to open a [pull request on GitHub](https://help.github.com/articles/using-pull-requests).
 
 Please also see have a look at our [contribution guide](https://github.com/firegento/firegento-magesetup/blob/development/docs/contribute/contribute.md) for this extension and our [general contribution process](https://github.com/firegento/coding-guidelines/blob/master/guidelines/05_CONTRIBUTIONS.md) for FireGento extensions.
-
-Developer
----------
-FireGento Team
-* Website: [http://firegento.com](http://firegento.com)
-* Twitter: [@firegento](https://twitter.com/firegento)
-
-Licence
--------
-[GNU General Public License, version 3 (GPLv3)](http://opensource.org/licenses/gpl-3.0)
-
-Copyright
----------
-(c) 2013-2015 FireGento Team
 
 ## Contributors ✨
 
@@ -147,3 +133,17 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Developer
+
+FireGento Team
+* Website: [http://firegento.com](http://firegento.com)
+* Twitter: [@firegento](https://twitter.com/firegento)
+
+## Licence
+
+[GNU General Public License, version 3 (GPLv3)](http://opensource.org/licenses/gpl-3.0)
+
+## Copyright
+
+(c) 2013-2015 FireGento Team
