@@ -1,6 +1,6 @@
 FireGento_MageSetup
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-30-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ===================
 MageSetup configures a shop for a national market. It's the international variant and successor of [GermanSetup](https://github.com/firegento/firegento-germansetup).
@@ -127,6 +127,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/jg-development"><img src="https://avatars1.githubusercontent.com/u/6112739?v=4" width="100px;" alt=""/><br /><sub><b>Jan Gantzert</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=jg-development" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/easyMaxi"><img src="https://avatars3.githubusercontent.com/u/965733?v=4" width="100px;" alt=""/><br /><sub><b>easyMaxi</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=easyMaxi" title="Code">💻</a></td>
   </tr>
 </table>
 
