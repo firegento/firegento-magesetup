@@ -1,6 +1,6 @@
 FireGento_MageSetup
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-39-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ===================
 MageSetup configures a shop for a national market. It's the international variant and successor of [GermanSetup](https://github.com/firegento/firegento-germansetup).
@@ -138,6 +138,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/ckressibucherTIM"><img src="https://avatars2.githubusercontent.com/u/3985914?v=4" width="100px;" alt=""/><br /><sub><b>ckressibucherTIM</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=ckressibucherTIM" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/borriglione"><img src="https://avatars2.githubusercontent.com/u/465544?v=4" width="100px;" alt=""/><br /><sub><b>André Herrn</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=borriglione" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/bastianccm"><img src="https://avatars1.githubusercontent.com/u/1145424?v=4" width="100px;" alt=""/><br /><sub><b>Bastian</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=bastianccm" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.jumplink.eu/"><img src="https://avatars2.githubusercontent.com/u/1073989?v=4" width="100px;" alt=""/><br /><sub><b>Pascal Garber</b></sub></a><br /><a href="https://github.com/firegento/firegento-magesetup/commits?author=JumpLink" title="Code">💻</a></td>
   </tr>
 </table>
 
