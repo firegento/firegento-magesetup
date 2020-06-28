@@ -144,6 +144,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "mpaepper",
+      "name": "Marc Päpper",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4135790?v=4",
+      "profile": "https://www.paepper.com/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
