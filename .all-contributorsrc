@@ -135,6 +135,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "benmarks",
+      "name": "Ben Marks",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2141138?v=4",
+      "profile": "http://twitter.com/benmarks",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
