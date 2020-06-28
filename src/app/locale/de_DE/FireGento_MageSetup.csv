@@ -48,6 +48,7 @@
 "MageSetup: Email Templates have been created.","MageSetup: Email-Vorlagen wurden erfolgreich angelegt."
 "MageSetup: Tax Settings have been created.","MageSetup: Steuereinstellungen wurden erfolgreich angelegt."
 "MageSetup: Product Tax Classes have been updated.","MageSetup: Produktsteuerklassen wurden aktualisiert."
+"MageSetup: Customer Tax Classes have been updated.","MageSetup: Kundensteuerklassen wurden aktualisiert."
 "MageSetup: System Config Settings have been updated.","MageSetup: Einstellungen in der Systemkonfiguration wurden aktualisiert."
 
 "Imprint","Impressum"
@@ -162,9 +163,13 @@
 "MagentoConnect","MagentoConnect"
 "Bank Information","Bankverbindung"
 
+"Enable Checkbox To Accept Agreement","Abfrage aktivieren, ob Daten gespeichert werden dürfen"
 "I agree that my contact details are saved permanently for allocation and any further queries.","Ich willige ein, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden."
 "Notice","Hinweis"
 "You can revoke this agreement at any time and for the future by sending an e-mail to %s.","Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie eine E-Mail an %s schicken."
 "Please accept the agreement or call us.","Bitte erklären Sie Ihre Einwilligung oder kontaktieren Sie uns telefonisch."
 "This setting is required by German law due a ruling by OLG Köln from 11.03.2016","Diese Einstellung ist erforderlich nach deutschem Gesetz auf Grund eines Urteils vom OLG Köln vom 11.03.2016"
+"Agreement accepted","Einwilligung erteilt"
+"Required field for contact to user.","Pflichtfeld für Kontaktaufnahme mit Nutzer."
+"Because of GDPR only email OR telephone can be required. Please choose here.","Aufgrund der DSGVO können nur E-Mail ODER Telefon Pflichtfeld sein. Bitte hier wählen."
 "Agreement accepted","Einwilligung erteilt"

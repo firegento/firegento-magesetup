@@ -155,9 +155,12 @@
 "MagentoConnect","MagentoConnect"
 "Bank Information","Bank Information"
 
+"Enable Checkbox To Accept Agreement","Enable Checkbox To Accept Agreement"
 "I agree that my contact details are saved permanently for allocation and any further queries.","I agree that my contact details are saved permanently for allocation and any further queries."
 "Notice","Notice"
 "You can revoke this agreement at any time and for the future by sending an e-mail to %s.","You can revoke this agreement at any time and for the future by sending an e-mail to %s."
 "Please accept the agreement or call us by phone.","Please accept the agreement or call us."
 "This setting is required by German law due a ruling by OLG Köln from 11.03.2016","This setting is required by German law due a ruling by OLG Köln from 11.03.2016"
 "Agreement accepted","Agreement accepted"
+"Required field for contact to user.","Required field for contact to user."
+"Because of GDPR only email OR telephone can be required. Choose here.","Because of GDPR only email OR telephone can be required. Choose here."

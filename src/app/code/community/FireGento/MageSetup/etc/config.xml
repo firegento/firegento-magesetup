@@ -21,7 +21,7 @@
 <config>
     <modules>
         <FireGento_MageSetup>
-            <version>2.4.2</version>
+            <version>2.6.0</version>
         </FireGento_MageSetup>
     </modules>
     <global>
@@ -56,6 +56,9 @@
                     <newsletter_subscriber_status>
                         <table>newsletter_subscriber_status</table>
                     </newsletter_subscriber_status>
+                    <consent>
+                        <table>consent</table>
+                    </consent>
                 </entities>
             </magesetup_resource>
             <tax>

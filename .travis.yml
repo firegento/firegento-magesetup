@@ -1,10 +1,8 @@
 language: php
 sudo: false
+dist: trusty
 
 php:
-  - 5.3
-  - 5.4
-  - 5.5
   - 5.6
   - 7.0
 
@@ -19,41 +17,11 @@ env:
   - MAGENTO_VERSION="magento-mirror-1.9.2.4"
   - MAGENTO_VERSION="magento-mirror-1.9.3.0"
   - MAGENTO_VERSION="magento-mirror-1.9.3.1"
+  - MAGENTO_VERSION="magento-mirror-1.9.3.8"
 
 matrix:
   fast_finish: true
   exclude:
-    # Newer Magento versions uses newer PHP versions
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.0.1"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.1.1"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.2.1"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.2.2"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.2.3"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.2.4"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.3.0"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.3.1"
-
-    # Old Magento Versions are not officially supported to run with PHP 5.5
-    - php: 5.5
-      env: MAGENTO_VERSION="magento-mirror-1.6.2.0"
-    - php: 5.5
-      env: MAGENTO_VERSION="magento-mirror-1.7.0.2"
-
     # Old Magento Versions are not officially supported to run with PHP 5.6
     - php: 5.6
       env: MAGENTO_VERSION="magento-mirror-1.6.2.0"
