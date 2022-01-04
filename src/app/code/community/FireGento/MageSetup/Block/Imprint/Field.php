@@ -35,17 +35,41 @@ class FireGento_MageSetup_Block_Imprint_Field extends FireGento_MageSetup_Block_
      */
     protected function _toHtml()
     {
-
         if ($this->getValue() == 'email') {
-            $isFrontend = ($this->getLayout()->getArea() === 'frontend');
-            $isCheckout = ($this->getRequest()->getActionName() === 'placeOrder');
-
             // protect email address in frontend but not when placing order where it is used to
             // send order confirmation mails (which might include imprint's mail address, i.e.
             // in the withdrawal form)
-            return $this->getEmail($isFrontend && !$isCheckout);
+            $useAntiSpam = $this->_shouldUseMailAntiSpam();
+
+            return $this->getEmail($useAntiSpam);
         }
 
         return $this->getData($this->getValue());
+    }
+
+    protected function _shouldUseMailAntiSpam()
+    {
+        /** @var Mage_Core_Controller_Varien_Action $action */
+        $action         = Mage::app()->getFrontController()->getData('action');
+        $fullActionName = $action->getFullActionName();
+        // when order mails are sent via the admin panel
+        $excludedFullActionNames = ['adminhtml_sales_order_email'];
+        if (in_array($fullActionName, $excludedFullActionNames, true)) {
+            return false;
+        }
+
+        $isFrontend          = ($this->getLayout()->getArea() === 'frontend');
+        $actionName          = $this->getRequest()->getActionName();
+        $excludedActionNames = [
+            // used by the standard checkout
+            'saveOrder',
+            // used by PayPal Express
+            'placeOrder'
+        ];
+        if ($isFrontend && in_array($actionName, $excludedActionNames, true)) {
+            return false;
+        }
+
+        return true;
     }
 }

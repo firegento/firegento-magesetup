@@ -22,6 +22,7 @@
 class FireGento_MageSetup_Helper_Contacts extends Mage_Core_Helper_Abstract
 {
     const XML_PATH_ACCEPT_AGREEMENT   = 'contacts/contacts/accept_agreement';
+    const XML_PATH_REQUIRED_USER_CONTACT_METHOD = 'contacts/contacts/required_user_contact_method';
 
     /** @var string $_moduleName Module name */
     protected $_moduleName = 'FireGento_MageSetup';
@@ -29,5 +30,27 @@ class FireGento_MageSetup_Helper_Contacts extends Mage_Core_Helper_Abstract
     public function isAcceptAgreement()
     {
         return Mage::getStoreConfig(self::XML_PATH_ACCEPT_AGREEMENT);
+    }
+
+    /**
+     * check config if telephone is required
+     * Hint: on GDPR only email OR telephone can be required
+     *
+     * @return bool - telephone is required
+     */
+    public function isTelephoneRequired()
+    {
+        return Mage::getStoreConfigFlag(self::XML_PATH_REQUIRED_USER_CONTACT_METHOD);
+    }
+
+    /**
+     * check config if email is required
+     * Hint: on GDPR only email OR telephone can be required
+     *
+     * @return bool - emaile is required
+     */
+    public function isEmailRequired()
+    {
+        return !$this->isTelephoneRequired();
     }
 }

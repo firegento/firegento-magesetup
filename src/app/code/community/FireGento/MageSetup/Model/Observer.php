@@ -290,14 +290,16 @@ class FireGento_MageSetup_Model_Observer
                 'options'  => Mage::getSingleton('magesetup/source_revocationProductType')->getOptionArray(),
             ));
 
-            $fieldset->addField('position', 'text', array(
-                'label'    => $helper->__('Position'),
-                'title'    => $helper->__('Position'),
-                'name'     => 'position',
-                'value'    => '0',
-                'required' => true,
-                'class'    => 'validate-zero-or-greater',
-            ));
+            if (!$fieldset->getElements()->searchById('position')) {
+                $fieldset->addField('position', 'text', array(
+                    'label'    => $helper->__('Position'),
+                    'title'    => $helper->__('Position'),
+                    'name'     => 'position',
+                    'value'    => '0',
+                    'required' => true,
+                    'class'    => 'validate-zero-or-greater',
+                ));
+            }
 
             Mage::dispatchEvent('magesetup_adminhtml_checkout_agreement_edit_form', array(
                 'form'     => $form,
