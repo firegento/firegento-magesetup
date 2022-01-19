@@ -116,13 +116,7 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price extends FireGento_M
      */
     public function isShowShippingLink()
     {
-        $productTypeId = $this->getProduct()->getTypeId();
-        $ignoreTypeIds = array('virtual', 'downloadable');
-        if (in_array($productTypeId, $ignoreTypeIds)) {
-            return false;
-        }
-
-        return true;
+        return !$this->getProduct()->isVirtual();
     }
 
     /**
@@ -156,6 +150,9 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price extends FireGento_M
      */
     public function getIsShowWeightInfo()
     {
+        if ($this->getProduct()->isVirtual()) {
+            return false;
+        }
         return Mage::getStoreConfigFlag('catalog/price/display_product_weight');
     }
 
@@ -166,6 +163,9 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price extends FireGento_M
      */
     public function getFormattedWeight()
     {
+        if (!$this->getIsShowWeightInfo()) {
+            return '';
+        }
         return floatval($this->getProduct()->getWeight()) . ' ' . Mage::getStoreConfig('catalog/price/weight_unit');
     }
 }
