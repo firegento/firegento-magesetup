@@ -164,7 +164,7 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price extends FireGento_M
     public function getFormattedWeight()
     {
         if ($this->getProduct()->isVirtual()) {
-            return "";
+            return '';
         }
         return floatval($this->getProduct()->getWeight()) . ' ' . Mage::getStoreConfig('catalog/price/weight_unit');
     }
