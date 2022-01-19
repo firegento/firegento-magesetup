@@ -151,7 +151,7 @@ class FireGento_MageSetup_Block_Bundle_Catalog_Product_Price extends FireGento_M
     public function getIsShowWeightInfo()
     {
         if ($this->getProduct()->isVirtual()) {
-            return;
+            return false;
         }
         return Mage::getStoreConfigFlag('catalog/price/display_product_weight');
     }
