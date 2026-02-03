@@ -16,3 +16,4 @@ build.properties
 .vagrant/**/*
 Vagrantfile
 /.idea
+vendor/*

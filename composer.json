@@ -14,16 +14,19 @@
     "magento-hackathon/magento-composer-installer" : "*"
   },
   "require-dev" :  {
-    "phpunit/phpunit" :   "4.1.*@dev",
+    "phpunit/phpunit" :   "^12.5",
     "firegento/mage-ci" : "master-dev"
   },
   "config" :       {
-    "bin-dir" : "bin"
+    "bin-dir" : "bin",
+    "allow-plugins": {
+      "magento-hackathon/magento-composer-installer": true
+    }
   },
   "repositories" : [
     {
       "type" : "composer",
-      "url" :  "http://packages.firegento.com"
+      "url" :  "https://packages.firegento.com"
     }
   ],
   "extra" :        {
